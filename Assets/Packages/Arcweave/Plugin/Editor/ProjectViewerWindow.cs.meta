@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: a9f8b35754fd4a34c8de2e2c13f73a48
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 148326
+  packageName: Arcweave for Unity
+  packageVersion: 2.0
+  assetPath: Assets/Arcweave/Plugin/Editor/ProjectViewerWindow.cs
+  uploadId: 653702

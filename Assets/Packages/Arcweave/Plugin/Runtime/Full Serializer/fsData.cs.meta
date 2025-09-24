@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 780ba11f7939c2643a2c94ba9a4c2c6d
+timeCreated: 1458897573
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 148326
+  packageName: Arcweave for Unity
+  packageVersion: 2.0
+  assetPath: Assets/Arcweave/Plugin/Runtime/Full Serializer/fsData.cs
+  uploadId: 653702

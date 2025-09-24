@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: c00e5ee9fdcb1cf4fa3e604852fdeed4
+TextScriptImporter:
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 148326
+  packageName: Arcweave for Unity
+  packageVersion: 2.0
+  assetPath: Assets/Arcweave/Plugin/Runtime/Full Serializer/LICENSE (FullSerializer).txt
+  uploadId: 653702

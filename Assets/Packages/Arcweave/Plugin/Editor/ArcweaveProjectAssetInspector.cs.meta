@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 6632912964126884fa5a0f693f46e5eb
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 148326
+  packageName: Arcweave for Unity
+  packageVersion: 2.0
+  assetPath: Assets/Arcweave/Plugin/Editor/ArcweaveProjectAssetInspector.cs
+  uploadId: 653702

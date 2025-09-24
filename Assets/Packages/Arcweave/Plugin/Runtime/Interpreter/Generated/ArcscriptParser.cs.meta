@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 8d79891d2e9a83340b00faa281c48e17
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 148326
+  packageName: Arcweave for Unity
+  packageVersion: 2.0
+  assetPath: Assets/Arcweave/Plugin/Runtime/Interpreter/Generated/ArcscriptParser.cs
+  uploadId: 653702

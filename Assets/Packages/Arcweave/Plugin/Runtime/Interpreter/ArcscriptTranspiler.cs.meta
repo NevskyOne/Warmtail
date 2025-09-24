@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 820bc34a95634e1429d0ce0bd20ff43d
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 148326
+  packageName: Arcweave for Unity
+  packageVersion: 2.0
+  assetPath: Assets/Arcweave/Plugin/Runtime/Interpreter/ArcscriptTranspiler.cs
+  uploadId: 653702

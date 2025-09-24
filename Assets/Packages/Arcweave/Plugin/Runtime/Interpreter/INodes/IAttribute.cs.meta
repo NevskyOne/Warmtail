@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 3708bb709a26bd44b9d756257f98ef6a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 148326
+  packageName: Arcweave for Unity
+  packageVersion: 2.0
+  assetPath: Assets/Arcweave/Plugin/Runtime/Interpreter/INodes/IAttribute.cs
+  uploadId: 653702

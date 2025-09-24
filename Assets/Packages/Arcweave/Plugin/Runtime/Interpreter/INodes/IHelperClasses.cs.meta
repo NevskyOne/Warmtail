@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 8f97cb536719dc2408660fe58b219bf3
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 148326
+  packageName: Arcweave for Unity
+  packageVersion: 2.0
+  assetPath: Assets/Arcweave/Plugin/Runtime/Interpreter/INodes/IHelperClasses.cs
+  uploadId: 653702

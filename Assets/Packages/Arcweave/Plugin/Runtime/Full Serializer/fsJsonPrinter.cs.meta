@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: cdbea492eb6faf24799cb4d10cc56762
+timeCreated: 1458897574
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 148326
+  packageName: Arcweave for Unity
+  packageVersion: 2.0
+  assetPath: Assets/Arcweave/Plugin/Runtime/Full Serializer/fsJsonPrinter.cs
+  uploadId: 653702

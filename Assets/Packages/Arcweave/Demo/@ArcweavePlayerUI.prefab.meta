@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: e8f9dc58e4b2d4e4eb832a4bb5274656
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 148326
+  packageName: Arcweave for Unity
+  packageVersion: 2.0
+  assetPath: Assets/Arcweave/Demo/@ArcweavePlayerUI.prefab
+  uploadId: 653702
