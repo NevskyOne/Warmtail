@@ -20,10 +20,20 @@ MonoBehaviour:
   dependencies:
   - dependency: {fileID: 2800000, guid: 3028dc075ba8c584d9bc7d1e0255e038, type: 3}
     instantiationMode: 0
+  - dependency: {fileID: 2800000, guid: ee148e281f3c41c5b4ff5f8a5afe5a6c, type: 3}
+    instantiationMode: 1
+  - dependency: {fileID: 2800000, guid: 2fd6421f253b4ef1a19526541f9ffc0c, type: 3}
+    instantiationMode: 1
+  - dependency: {fileID: 11400000, guid: d84427b98c9ab8f419c04f31b291e6b1, type: 2}
+    instantiationMode: 1
+  - dependency: {fileID: 12800000, guid: ebbd119f7eae2d740b6ce33ebafb71b5, type: 3}
+    instantiationMode: 1
   - dependency: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
     instantiationMode: 0
   - dependency: {fileID: 2800000, guid: 57da91ef0c2a5489891995dc81537253, type: 3}
     instantiationMode: 0
+  - dependency: {fileID: 11400000, guid: 9bd651b5e7f8c7540b7ce5cbf02df79e, type: 2}
+    instantiationMode: 1
   templatePipeline: {fileID: 11500000, guid: 45a923cc2c05cab47908985328711bff, type: 3}
   badge: {fileID: 0}
   addToDefaults: 1
