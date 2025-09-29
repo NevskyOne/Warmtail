@@ -1,3 +1,4 @@
+using Systems;
 using Systems.DataSystems;
 using UnityEngine;
 using Zenject;
@@ -10,6 +11,7 @@ namespace Entities.Core
         public override void InstallBindings()
         {
             Container.Bind<SaveSystem>().FromNew().AsSingle();
+            Container.Bind<CrossfadeSystem>().FromNew().AsSingle();
             Container.Bind<GlobalDataSystem>().FromInstance(_globalData).AsSingle();
         }
     }
