@@ -1,9 +1,6 @@
 using Data.Player;
-using Interfaces;
-using TriInspector;
 using UnityEngine;
 using Zenject;
-using R3;
 using Systems.DataSystems;
 
 namespace Entities.Player
