@@ -9,7 +9,6 @@ namespace Entities.Core
     public class SceneLoader : MonoBehaviour
     {
         private static readonly int EndTransition = Animator.StringToHash("EndTransition");
-        [SerializeField, Scene] private string _sceneBetween;
         [SerializeField] private Animator _animPrefab;
         [SerializeField, Unit("Milliseconds")] private int _animDuration;
 
@@ -22,7 +21,6 @@ namespace Entities.Core
         
         public async void StartSceneProcess(int sceneInd)
         {
-            await SceneManager.LoadSceneAsync(_sceneBetween);
             var animator = Instantiate(_animPrefab);
             DontDestroyOnLoad(animator);
             
