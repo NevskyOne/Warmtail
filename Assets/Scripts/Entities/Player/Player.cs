@@ -1,4 +1,3 @@
-using Data.Player;
 using UnityEngine;
 using Zenject;
 using Systems.DataSystems;
@@ -13,31 +12,6 @@ namespace Entities.Player
         private void Construct(GlobalDataSystem globalDataSystem)
         {
             _globalDataSystem = globalDataSystem;
-            _globalDataSystem.SubscribeTo<SavablePlayerData>(Notify);
-            _globalDataSystem.SubscribeTo<RuntimePlayerData>(HP);
-        }
-        
-
-        public void Damage(int value)
-        {
-            _globalDataSystem.Edit<RuntimePlayerData>(p =>
-            {
-                p.Hp -= value;
-            });
-            
-            _globalDataSystem.Edit<SavablePlayerData>(p => {
-                p.Coins += 50;
-            });
-        }
-
-        public void Notify()
-        {
-            Debug.Log($"Coins updated: {_globalDataSystem.Get<SavablePlayerData>().Coins}");
-        }
-        
-        public void HP()
-        {
-            Debug.Log($"Player HP: {_globalDataSystem.Get<RuntimePlayerData>().Hp}");
         }
     }
 }

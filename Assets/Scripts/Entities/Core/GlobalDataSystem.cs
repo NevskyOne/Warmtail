@@ -19,6 +19,13 @@ namespace Systems.DataSystems
 
         private SaveSystem _saveSystem;
 
+        [Button("Delete Save Data"), GUIColor("red")]
+        public void DeleteSaveData()
+        {
+            PlayerPrefs.DeleteAll();
+            print("Data deleted!");
+        }
+        
         [Inject]
         private void Construct(SaveSystem saveSystem)
         {

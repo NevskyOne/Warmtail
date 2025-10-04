@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using AYellowpaper.SerializedCollections;
 using Systems;
+using Systems.Effects;
 using TriInspector;
 using UnityEngine;
 
@@ -8,7 +10,7 @@ namespace Entities.UI
     public class UIStateSystem : MonoBehaviour
     {
         [SerializeReference, Range(0.5f, 3f)] private float _crossFadeTime;
-        [ShowInInspector] private readonly Dictionary<UIState, CanvasGroup> _canvasGroups = new();
+        [SerializeField] private SerializedDictionary<UIState, CanvasGroup> _canvasGroups = new();
 
         private UIState _currentState;
         

@@ -14,12 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Data.CharacterHolder
   _characters:
   - Character: 0
-    Emotions: 0000000001000000
-    Sprites:
-    - {fileID: 21300000, guid: 36004fc597fe0034f85b1bc4e37e8e6d, type: 3}
-    - {fileID: 21300000, guid: 36004fc597fe0034f85b1bc4e37e8e6d, type: 3}
+    EmotionSprites:
+      _serializedList:
+      - Key: 0
+        Value: {fileID: 0}
+      - Key: 1
+        Value: {fileID: 0}
   - Character: 1
-    Emotions: 0000000001000000
-    Sprites:
-    - {fileID: 21300000, guid: 36004fc597fe0034f85b1bc4e37e8e6d, type: 3}
-    - {fileID: 21300000, guid: 36004fc597fe0034f85b1bc4e37e8e6d, type: 3}
+    EmotionSprites:
+      _serializedList:
+      - Key: 0
+        Value: {fileID: 0}
+      - Key: 1
+        Value: {fileID: 0}
