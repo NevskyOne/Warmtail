@@ -1,17 +1,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Systems.Dialogues.Nodes
+[NodeWidth(330)]
+public class ChoiceNode : BaseNode
 {
-    [NodeWidth(330)]
-    public class ChoiceNode : BaseNode
-    {
-        [Input, SerializeField] private int _entry;
-        public List<string> Choices;
+    [Input, SerializeField] private int _entry;
+    public List<string> Choices = new();
 
-        public override void Activate()
-        {
-        
-        }
+    public override void Activate()
+    {
+    
     }
 }

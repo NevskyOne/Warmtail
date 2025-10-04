@@ -22,7 +22,7 @@ namespace Entities.Player
         {
             _globalDataSystem.Edit<RuntimePlayerData>(p =>
             {
-                p.HP -= value;
+                p.Hp -= value;
             });
             
             _globalDataSystem.Edit<SavablePlayerData>(p => {
@@ -37,7 +37,7 @@ namespace Entities.Player
         
         public void HP()
         {
-            Debug.Log($"Player HP: {_globalDataSystem.Get<RuntimePlayerData>().HP}");
+            Debug.Log($"Player HP: {_globalDataSystem.Get<RuntimePlayerData>().Hp}");
         }
     }
 }

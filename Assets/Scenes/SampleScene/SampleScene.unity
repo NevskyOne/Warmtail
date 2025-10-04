@@ -393,8 +393,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000020981, y: 0}
-  m_SizeDelta: {x: 1222.1506, y: 157.8771}
+  m_AnchoredPosition: {x: 0.000005722, y: 0}
+  m_SizeDelta: {x: 1165.5681, y: 157.8771}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &137941491
 MonoBehaviour:
@@ -428,12 +428,12 @@ MonoBehaviour:
     rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
-  m_colorMode: 3
+  m_colorMode: 1
   m_fontColorGradient:
     topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 0}
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 0}
   m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
@@ -465,11 +465,11 @@ MonoBehaviour:
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 0
-  m_ActiveFontFeatures: 6e72656b
+  m_ActiveFontFeatures: 6e72656b6167696c6b72616d
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
-  m_EmojiFallbackSupport: 1
+  m_EmojiFallbackSupport: 0
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -535,7 +535,7 @@ MonoBehaviour:
   _bubbleObject: {fileID: 1484534056}
   _bubbleText: {fileID: 0}
   _bubbleName: {fileID: 0}
-  _dialogueGraph: {fileID: 11400000, guid: c6aff68eabccd6e47b990fd9240ea6a7, type: 2}
+  _dialogueGraph: {fileID: 11400000, guid: 8ca4eb35ccf92e54ca39c441adf05e04, type: 2}
   references:
     version: 2
     RefIds:
@@ -1277,17 +1277,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1129732877}
-  m_LocalRotation: {x: 0, y: 0, z: 0.09358697, w: 0.9956112}
+  m_LocalRotation: {x: 0, y: 0, z: 0.11771069, w: 0.99304795}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1583665218}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 10.74}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 13.52}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -626, y: 117}
-  m_SizeDelta: {x: 411.9402, y: 97.6135}
+  m_AnchoredPosition: {x: -594.521, y: 108}
+  m_SizeDelta: {x: 464.2982, y: 97.6135}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1129732879
 MonoBehaviour:
@@ -1336,14 +1336,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 55
-  m_fontSizeBase: 55
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 4
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1743,6 +1743,78 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2007960626
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2007960628}
+  - component: {fileID: 2007960627}
+  m_Layer: 0
+  m_Name: GlobalData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2007960627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2007960626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5231938e41fd4accbacfa45424a23590, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Systems.DataSystems.GlobalDataSystem
+  _savableData:
+  - rid: 5469746612614725706
+  - rid: 6360630886348357704
+  _runtimeData:
+  - rid: 5469746612614725707
+  references:
+    version: 2
+    RefIds:
+    - rid: 5469746612614725706
+      type: {class: SavablePlayerData, ns: Data.Player, asm: Assembly-CSharp}
+      data:
+        PlayerName: Nevsky
+        Level: 69
+        Coins: -99999
+    - rid: 5469746612614725707
+      type: {class: RuntimePlayerData, ns: Data.Player, asm: Assembly-CSharp}
+      data:
+        Hp: 0
+    - rid: 6360630886348357704
+      type: {class: DialogueVarData, ns: Data, asm: Assembly-CSharp}
+      data:
+        Variables:
+        - Type: 1
+          Name: sex
+          Value: false
+        - Type: 2
+          Name: badSmell
+          Value: 10
+--- !u!4 &2007960628
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2007960626}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 910.75183, y: 280.1276, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2050093928
 GameObject:
   m_ObjectHideFlags: 0
@@ -1754,7 +1826,6 @@ GameObject:
   - component: {fileID: 2050093930}
   - component: {fileID: 2050093929}
   - component: {fileID: 2050093932}
-  - component: {fileID: 2050093931}
   m_Layer: 0
   m_Name: SceneContext
   m_TagString: Untagged
@@ -1809,35 +1880,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2050093931
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2050093928}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5231938e41fd4accbacfa45424a23590, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Systems.DataSystems.GlobalDataSystem
-  _savableData:
-  - rid: 5469746612614725706
-  _runtimeData:
-  - rid: 5469746612614725707
-  references:
-    version: 2
-    RefIds:
-    - rid: 5469746612614725706
-      type: {class: SavablePlayerData, ns: Data.Player, asm: Assembly-CSharp}
-      data:
-        PlayerName: Bear
-        Level: 1
-        Coins: 20
-    - rid: 5469746612614725707
-      type: {class: RuntimePlayerData, ns: Data.Player, asm: Assembly-CSharp}
-      data:
-        HP: 15
 --- !u!114 &2050093932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1850,7 +1892,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b40edae541a84e818eb7af08f59d2442, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entities.Core.GlobalInstaller
-  _globalData: {fileID: 2050093931}
+  _globalData: {fileID: 2007960627}
   _dialogueSystem: {fileID: 317742019}
   _playerInput: {fileID: 642883203}
 --- !u!1660057539 &9223372036854775807
@@ -1867,3 +1909,4 @@ SceneRoots:
   - {fileID: 1836109678}
   - {fileID: 1484534058}
   - {fileID: 317742020}
+  - {fileID: 2007960628}

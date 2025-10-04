@@ -16,13 +16,15 @@ namespace Systems.Dialogues.NodesEditors
             {
                 _conditionNode = target as ConditionNode;
             }
+            
             serializedObject.Update();
             
             NodeEditorGUILayout.PropertyField(serializedObject.FindProperty("_entry"));
             NodeEditorGUILayout.PropertyField(serializedObject.FindProperty("Conditions"));
-
-            if (_conditionNode != null && _lastConditionsCount != _conditionNode.Conditions.Count)
+            
+            if (_lastConditionsCount != _conditionNode!.Conditions.Count)
             {
+                _conditionNode.ClearDynamicPorts();
                 for (int i = 0; i < _conditionNode.Conditions.Count; i++)
                 {
                     _conditionNode.AddDynamicOutput(typeof(int),Node.ConnectionType.Multiple, Node.TypeConstraint.None, $"{i}");
@@ -35,7 +37,6 @@ namespace Systems.Dialogues.NodesEditors
                 if (NodeEditorGUILayout.IsDynamicPortListPort(dynamicPort)) continue;
                 NodeEditorGUILayout.PortField(dynamicPort);
             }
-            serializedObject.Update();
         }
     }
 }

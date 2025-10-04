@@ -15,7 +15,7 @@ namespace Systems.DataSystems
         [SerializeReference] private List<ISavableData> _savableData = new();
         [SerializeReference] private List<IRuntimeData> _runtimeData = new();
         
-        [ShowInInspector, ReadOnly] private readonly Dictionary<IData, List<DataEventFunc>> _subs = new();
+        private readonly Dictionary<IData, List<DataEventFunc>> _subs = new();
 
         private SaveSystem _saveSystem;
 
@@ -24,6 +24,12 @@ namespace Systems.DataSystems
         {
             _saveSystem = saveSystem;
             _saveSystem.Load(ref _savableData);
+
+            var allDataList = _savableData.Concat<IData>(_runtimeData).ToList();
+            foreach (var data in allDataList)
+            {
+                _subs[data] = new List<DataEventFunc>();
+            }
         }
         
         public void SubscribeTo<T>(DataEventFunc selector) where T : class, IData
@@ -42,7 +48,6 @@ namespace Systems.DataSystems
             
             if (key != null)
             {
-                if(!_subs.ContainsKey(key))_subs[key] = new List<DataEventFunc>();
                 _subs[key].Add(selector);
                 Debug.Log($"Added {typeof(T).Name}");
             }

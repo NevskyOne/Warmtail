@@ -12,6 +12,6 @@ namespace Data.Player
     [Serializable]
     public class RuntimePlayerData : IRuntimeData
     {
-        public int HP;
+        public int Hp;
     }
 }

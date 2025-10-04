@@ -8,7 +8,7 @@ namespace Systems.Dialogues.NodesEditors
     public class ChoiceNodeDrawer : NodeEditor
     {
         private ChoiceNode _choiceNode;
-        private int _lastChoicesCount;
+        private int _lastChoicesCount = 0;
         
         public override void OnBodyGUI()
         {
@@ -16,13 +16,15 @@ namespace Systems.Dialogues.NodesEditors
             {
                 _choiceNode = target as ChoiceNode;
             }
+            
             serializedObject.Update();
             
             NodeEditorGUILayout.PropertyField(serializedObject.FindProperty("_entry"));
             NodeEditorGUILayout.PropertyField(serializedObject.FindProperty("Choices"));
-
-            if (_choiceNode != null && _lastChoicesCount != _choiceNode.Choices.Count)
+            
+            if (_lastChoicesCount != _choiceNode!.Choices.Count)
             {
+                _choiceNode.ClearDynamicPorts();
                 for (int i = 0; i < _choiceNode.Choices.Count; i++)
                 {
                     _choiceNode.AddDynamicOutput(typeof(int),Node.ConnectionType.Multiple, Node.TypeConstraint.None, $"{i}");
@@ -35,7 +37,6 @@ namespace Systems.Dialogues.NodesEditors
                 if (NodeEditorGUILayout.IsDynamicPortListPort(dynamicPort)) continue;
                 NodeEditorGUILayout.PortField(dynamicPort);
             }
-            serializedObject.Update();
         }
     }
 }

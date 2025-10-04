@@ -1,3 +1,4 @@
+using System;
 using Data;
 using Interfaces;
 using Systems.Dialogues.Nodes;
@@ -14,7 +15,7 @@ namespace Systems.Dialogues
     
     [DeclareBoxGroup("BoxFrame")]
     [DeclareBoxGroup("BubbleFrame")]
-    public class DialogueSystem : MonoBehaviour
+    public class DialogueSystem : MonoBehaviour, IDisposable
     {
         [Title("Settings")]
         [SerializeReference] private CharacterHolder _holder;
@@ -78,7 +79,6 @@ namespace Systems.Dialogues
 
         public void IterateDialogue()
         {
-            _dialogueGraph.Current = (BaseNode)_dialogueGraph.Current.GetOutputPort("_exit").Connection.node;
             _diContainer.Inject(_dialogueGraph.Current);
             _dialogueGraph.Current.Activate();
         }
@@ -99,6 +99,12 @@ namespace Systems.Dialogues
                     break;
             }
             _effect.StartEffect();
+        }
+
+        private void OnDisable() => Dispose();
+        public void Dispose()
+        {
+            EndDialogue();
         }
     }
 }
