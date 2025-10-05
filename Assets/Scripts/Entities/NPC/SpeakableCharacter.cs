@@ -1,7 +1,8 @@
+using Data.Nodes;
 using Interfaces;
-using Systems.Dialogues;
-using Systems.Dialogues.Nodes;
+using Systems;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using Zenject;
 
 namespace Entities.NPC
@@ -9,18 +10,18 @@ namespace Entities.NPC
     public class SpeakableCharacter : MonoBehaviour, IInteractable
     {
         [SerializeField] private DialogueGraph _graph;
-        private DiContainer _diContainer;
+        private DialogueSystem _dialogueSystem;
         
         [Inject]
-        private void Construct(DiContainer diContainer)
+        private void Construct(DialogueSystem dialogueSystem, PlayerInput input)
         {
-            _diContainer = diContainer;
+            _dialogueSystem = dialogueSystem;
+            input.actions.FindAction("E").performed += _ => Interact();
         }
         
         public void Interact()
         {
-            _diContainer.Inject(_graph.Current);
-            _graph.Current.Activate();
+            _dialogueSystem.StartDialogue(_graph, transform);
         }
     }
     

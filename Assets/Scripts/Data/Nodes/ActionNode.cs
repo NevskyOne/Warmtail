@@ -1,6 +1,4 @@
-using Entities.UI;
-using Systems.Dialogues;
-using Systems.Dialogues.Nodes;
+using Systems;
 using UnityEngine;
 using UnityEngine.Events;
 using Zenject;
@@ -18,9 +16,8 @@ public class ActionNode : BaseNode
     {
         _event.Invoke();
         
-        var dialogueGraph = (DialogueGraph)graph;
-        dialogueGraph.Current = (BaseNode)GetOutputPort("_exit").Connection.node;
-        _dialogueSystem.IterateDialogue();
+        _dialogueSystem.SetNewNode();
+        _dialogueSystem.ActivateNewNode();
     }
 }
 

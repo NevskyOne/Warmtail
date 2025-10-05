@@ -37,7 +37,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: _entry
-        node: {fileID: -2453455156659748959}
+        node: {fileID: -7200192505694089275}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -49,6 +49,43 @@ MonoBehaviour:
   - VarName: badSmell
     Operation: 1
     Value: 1
+--- !u!114 &-7200192505694089275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: End
+  m_EditorClassIdentifier: Assembly-CSharp::EndNode
+  graph: {fileID: 11400000}
+  position: {x: 2664, y: 104}
+  ports:
+    keys:
+    - _entry
+    values:
+    - _fieldName: _entry
+      _node: {fileID: -7200192505694089275}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: _exit
+        node: {fileID: -9089798781121332624}
+        reroutePoints: []
+      - fieldName: _exit
+        node: {fileID: 7604574550831962093}
+        reroutePoints: []
+      - fieldName: _exit
+        node: {fileID: 7711565773151945469}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  _entry: 0
 --- !u!114 &-5812663023113735950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,8 +178,8 @@ MonoBehaviour:
   ports:
     keys:
     - _entry
-    - 0
     - 1
+    - 0
     values:
     - _fieldName: _entry
       _node: {fileID: -5523024300919714051}
@@ -156,18 +193,6 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-    - _fieldName: 0
-      _node: {fileID: -5523024300919714051}
-      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: _entry
-        node: {fileID: -4229144197862181885}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 1
     - _fieldName: 1
       _node: {fileID: -5523024300919714051}
       _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
@@ -175,6 +200,18 @@ MonoBehaviour:
       connections:
       - fieldName: _entry
         node: {fileID: 7711565773151945469}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: 0
+      _node: {fileID: -5523024300919714051}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: _entry
+        node: {fileID: -4229144197862181885}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -230,7 +267,7 @@ MonoBehaviour:
   _entry: 0
   _exit: 0
   _text: Owww, u smell soooo good!
-  _character: 0
+  _character: 1
   _emotion: 0
   _displayName: 
 --- !u!114 &-4659627331775086547
@@ -246,7 +283,7 @@ MonoBehaviour:
   m_Name: Text
   m_EditorClassIdentifier: Assembly-CSharp::TextNode
   graph: {fileID: 11400000}
-  position: {x: -328, y: -72}
+  position: {x: -712, y: -72}
   ports:
     keys:
     - _entry
@@ -270,7 +307,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: _entry
-        node: {fileID: 1732761275546563738}
+        node: {fileID: 6467915187876770141}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -279,7 +316,7 @@ MonoBehaviour:
   _entry: 0
   _exit: 0
   _text: Hi, bitch!
-  _character: 0
+  _character: 1
   _emotion: 0
   _displayName: '?'
 --- !u!114 &-4229144197862181885
@@ -328,7 +365,7 @@ MonoBehaviour:
   _entry: 0
   _exit: 0
   _text: Okayyy, gosh...
-  _character: 0
+  _character: 1
   _emotion: 0
   _displayName: Whore
 --- !u!114 &-2453455156659748959
@@ -381,7 +418,7 @@ MonoBehaviour:
   m_Name: Start
   m_EditorClassIdentifier: Assembly-CSharp::StartNode
   graph: {fileID: 11400000}
-  position: {x: -552, y: -72}
+  position: {x: -936, y: -72}
   ports:
     keys:
     - _exit
@@ -416,7 +453,6 @@ MonoBehaviour:
   - {fileID: -4659627331775086547}
   - {fileID: 1732761275546563738}
   - {fileID: -9089798781121332624}
-  - {fileID: -2453455156659748959}
   - {fileID: -5812663023113735950}
   - {fileID: -5088104267497273070}
   - {fileID: 5429692254123599368}
@@ -424,7 +460,9 @@ MonoBehaviour:
   - {fileID: -4229144197862181885}
   - {fileID: 7711565773151945469}
   - {fileID: 7604574550831962093}
-  Current: {fileID: -1963975452911621152}
+  - {fileID: 6467915187876770141}
+  - {fileID: -7200192505694089275}
+  _startNode: {fileID: -1963975452911621152}
 --- !u!114 &1732761275546563738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -450,7 +488,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: _exit
-        node: {fileID: -4659627331775086547}
+        node: {fileID: 6467915187876770141}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -471,7 +509,7 @@ MonoBehaviour:
   _entry: 0
   _exit: 0
   _text: I`m Ashly.
-  _character: 0
+  _character: 1
   _emotion: 0
   _displayName: 
 --- !u!114 &5429692254123599368
@@ -520,8 +558,57 @@ MonoBehaviour:
   _entry: 0
   _exit: 0
   _text: Get out of here!
-  _character: 0
+  _character: 1
   _emotion: 1
+  _displayName: 
+--- !u!114 &6467915187876770141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9d74a14bb242a1b74546a7e2e9399e, type: 3}
+  m_Name: Text
+  m_EditorClassIdentifier: Assembly-CSharp::TextNode
+  graph: {fileID: 11400000}
+  position: {x: -287.78467, y: 40.811943}
+  ports:
+    keys:
+    - _entry
+    - _exit
+    values:
+    - _fieldName: _entry
+      _node: {fileID: 6467915187876770141}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: _exit
+        node: {fileID: -4659627331775086547}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: _exit
+      _node: {fileID: 6467915187876770141}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: _entry
+        node: {fileID: 1732761275546563738}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  _entry: 0
+  _exit: 0
+  _text: Hi, who are u?
+  _character: 0
+  _emotion: 0
   _displayName: 
 --- !u!114 &7604574550831962093
 MonoBehaviour:
@@ -560,7 +647,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: _entry
-        node: {fileID: -2453455156659748959}
+        node: {fileID: -7200192505694089275}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -609,7 +696,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: _entry
-        node: {fileID: -2453455156659748959}
+        node: {fileID: -7200192505694089275}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -618,6 +705,6 @@ MonoBehaviour:
   _entry: 0
   _exit: 0
   _text: '*cries'
-  _character: 0
+  _character: 1
   _emotion: 1
   _displayName: 

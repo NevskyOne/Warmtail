@@ -1,7 +1,11 @@
+using System.Threading.Tasks;
+using TMPro;
+
 namespace Interfaces
 {
     public interface IPrintEffect
     {
-        public void StartEffect();
+        public Task<bool> StartEffect(TMP_Text text);
+        public void SpeedUpEffect();
     }
 }

@@ -52,18 +52,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Space",
+                    "name": "E",
                     "type": "Button",
-                    "id": "421033a2-376e-45c5-b585-72a36bb0a65d",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "1",
-                    "type": "Button",
-                    "id": "26e94172-357e-45b0-8c3c-4ac18bfff0b3",
+                    "id": "945536ba-a6de-49db-9235-cb0bd8c7a32d",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -117,23 +108,12 @@
                 },
                 {
                     "name": "",
-                    "id": "cb4dc92f-749b-4435-b261-25d29e30471a",
-                    "path": "<Keyboard>/space",
+                    "id": "7c1435bf-0105-4293-852c-0bda92099cf9",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "Space",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "63ebf3a3-7fe2-4704-8745-d0ef5337a41c",
-                    "path": "<Keyboard>/1",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "1",
+                    "action": "E",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -650,6 +630,34 @@
                     "processors": "",
                     "groups": "XR",
                     "action": "TrackedDeviceOrientation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Dialogue",
+            "id": "58fe8fd0-1431-46d7-87cd-4232efda8318",
+            "actions": [
+                {
+                    "name": "Space",
+                    "type": "Button",
+                    "id": "1863be96-5a05-4887-9346-43482f9ff0db",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "d57f3274-2352-4165-ac06-487398a6345b",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Space",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

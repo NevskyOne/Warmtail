@@ -1,10 +1,8 @@
 using System;
 using System.Collections.Generic;
 using Data;
-using Entities.UI;
+using Systems;
 using Systems.DataSystems;
-using Systems.Dialogues;
-using Systems.Dialogues.Nodes;
 using UnityEngine;
 using Zenject;
 
@@ -34,9 +32,9 @@ public class ConditionNode : BaseNode
             
             targetOutput++;
         }
-        var dialogueGraph = (DialogueGraph)graph;
-        dialogueGraph.Current = (BaseNode)GetOutputPort(targetOutput.ToString()).Connection.node;
-        _dialogueSystem.IterateDialogue();
+        
+        _dialogueSystem.SetNewNode(targetOutput.ToString());
+        _dialogueSystem.ActivateNewNode();
     }
 }
 

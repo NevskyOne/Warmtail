@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using XNode;
 
-namespace Systems.Dialogues.Nodes
+namespace Data.Nodes
 {
 	[CreateAssetMenu]
 	public class DialogueGraph : NodeGraph
 	{
-		public BaseNode Current;
+		[SerializeField] private BaseNode _startNode;
+		public BaseNode StartNode => _startNode;
+		public BaseNode Current { get; set; }
 	}
 }

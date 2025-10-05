@@ -1,6 +1,5 @@
 using Entities.UI;
-using Systems.Dialogues;
-using Systems.Dialogues.Nodes;
+using Systems;
 using UnityEngine;
 using Zenject;
 
@@ -27,21 +26,11 @@ public class TextNode : BaseNode
     public string DisplayName => _displayName;
 
     [Inject] private DialogueSystem _dialogueSystem;
+    [Inject] private DialogueVisuals _dialogueVisuals;
 
     public override void Activate()
     {
-        _dialogueSystem.RequestNewLine(this);
-        var dialogueGraph = (DialogueGraph)graph;
-        dialogueGraph.Current = (BaseNode)GetOutputPort("_exit").Connection.node;
+        _dialogueVisuals.RequestNewLine(this);
+        _dialogueSystem.SetNewNode();
     }
-}
-
-public enum Characters
-{
-    Ashly, Bob
-}
-
-public enum CharactersEmotions
-{
-    Happy, Sad
 }

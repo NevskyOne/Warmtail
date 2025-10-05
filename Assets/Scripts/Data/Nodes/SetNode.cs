@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using Data;
+using Data.Nodes;
 using Entities.UI;
+using Systems;
 using Systems.DataSystems;
-using Systems.Dialogues;
-using Systems.Dialogues.Nodes;
 using UnityEngine;
 using Zenject;
 
@@ -83,9 +83,8 @@ public class SetNode : BaseNode
             _globalData.Edit<DialogueVarData>(x => x.Variables[index] = varData);
         }
         
-        var dialogueGraph = (DialogueGraph)graph;
-        dialogueGraph.Current = (BaseNode)GetOutputPort("_exit").Connection.node;
-        _dialogueSystem.IterateDialogue();
+        _dialogueSystem.SetNewNode();
+        _dialogueSystem.ActivateNewNode();
     }
 }
 

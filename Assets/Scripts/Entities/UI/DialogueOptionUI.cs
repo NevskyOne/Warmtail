@@ -5,7 +5,7 @@ namespace Entities.UI
 {
     public class DialogueOptionUI : MonoBehaviour
     {
-        [Inject] private DialogueSystem _dialogueSystem;
+        [Inject] private DialogueVisuals _dialogueVisuals;
 
         public void ChooseOption()
         {
@@ -13,7 +13,7 @@ namespace Entities.UI
             {
                 if (transform.parent.GetChild(i) == transform)
                 {
-                    _dialogueSystem.ChooseOption(i);
+                    _dialogueVisuals.ChooseOption(i);
                     break;
                 }
             }

@@ -1,6 +1,6 @@
+using Data.Nodes;
 using Entities.UI;
-using Systems.Dialogues;
-using Systems.Dialogues.Nodes;
+using Systems;
 using UnityEngine;
 using Zenject;
 
@@ -9,14 +9,7 @@ using Zenject;
 public class StartNode : BaseNode
 {
     [Output, SerializeField] private int _exit;
-    [Inject] private DialogueSystem _dialogueSystem;
-    
-    public override void Activate()
-    {
-        var dialogueGraph = (DialogueGraph)graph;
-        dialogueGraph.Current = (BaseNode)dialogueGraph.Current.GetOutputPort("_exit").Connection.node;
-        _dialogueSystem.StartDialogue((DialogueGraph)graph, this);
-    }
+    public override void Activate() { }
 }
 
 [NodeWidth(100)]

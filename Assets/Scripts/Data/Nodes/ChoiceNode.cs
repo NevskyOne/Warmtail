@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using Entities.UI;
-using Systems.Dialogues;
 using UnityEngine;
 using Zenject;
 
@@ -10,10 +9,10 @@ public class ChoiceNode : BaseNode
     [Input, SerializeField] private int _entry;
     public List<string> Choices = new();
     
-    [Inject] private DialogueSystem _dialogueSystem;
+    [Inject] private DialogueVisuals _dialogueVisuals;
     
     public override void Activate()
     {
-        _dialogueSystem.ShowOptions(Choices);
+        _dialogueVisuals.ShowOptions(Choices);
     }
 }
