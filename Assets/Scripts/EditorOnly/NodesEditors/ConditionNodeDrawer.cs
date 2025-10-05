@@ -17,6 +17,9 @@ namespace EditorOnly.NodesEditors
             if (_conditionNode == null)
             {
                 _conditionNode = target as ConditionNode;
+                _lastConditionsCount = _conditionNode.Conditions.Count;
+                _portsList = _conditionNode.DynamicOutputs.ToList();
+                _portsList.Sort((a,b) => int.Parse(a.fieldName).CompareTo(int.Parse(b.fieldName)));
             }
             
             serializedObject.Update();

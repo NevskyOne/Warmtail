@@ -17,6 +17,9 @@ namespace EditorOnly.NodesEditors
             if (_choiceNode == null)
             {
                 _choiceNode = target as ChoiceNode;
+                _lastChoicesCount = _choiceNode.Choices.Count;
+                _portsList = _choiceNode.DynamicOutputs.ToList();
+                _portsList.Sort((a,b) => int.Parse(a.fieldName).CompareTo(int.Parse(b.fieldName)));
             }
             
             serializedObject.Update();
