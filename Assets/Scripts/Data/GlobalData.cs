@@ -1,15 +1,17 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Systems.DataSystems;
 using TriInspector;
 using UnityEngine;
 using Zenject;
 
-namespace Systems.DataSystems
+namespace Data
 {
     public delegate void DataEventFunc();
     
-    public class GlobalDataSystem : MonoBehaviour, IDisposable
+    [CreateAssetMenu(fileName = "Global Data", menuName = "Configs/Global Data")]
+    public class GlobalData : ScriptableObject, IDisposable
     {
         [Title("Data")]
         [SerializeReference] private List<ISavableData> _savableData = new();
@@ -23,7 +25,7 @@ namespace Systems.DataSystems
         public void DeleteSaveData()
         {
             PlayerPrefs.DeleteAll();
-            print("Data deleted!");
+            Debug.Log("Data deleted!");
         }
         
         [Inject]

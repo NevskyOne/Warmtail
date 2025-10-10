@@ -16,7 +16,7 @@ public class SetNode : BaseNode
     [Output, SerializeField] private int _exit;
     [SerializeField] private List<SetStruct> _variables;
 
-    [Inject] private GlobalDataSystem _globalData;
+    [Inject] private GlobalData _globalData;
     [Inject] private DialogueSystem _dialogueSystem;
     
     public override void Activate()

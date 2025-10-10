@@ -1380,11 +1380,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 424214787}
   - {fileID: 2050093930}
+  - {fileID: 424214787}
   - {fileID: 1836109678}
   - {fileID: 952794402}
-  - {fileID: 2007960628}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1236217073
@@ -2120,76 +2119,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.InputActionReference
   m_Asset: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_ActionId: 32b35790-4ed0-4e9a-aa41-69ac6d629449
---- !u!1 &2007960626
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2007960628}
-  - component: {fileID: 2007960627}
-  m_Layer: 0
-  m_Name: GlobalData
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2007960627
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2007960626}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5231938e41fd4accbacfa45424a23590, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Systems.DataSystems.GlobalDataSystem
-  _savableData:
-  - rid: 5469746612614725706
-  - rid: 6360630918503989321
-  _runtimeData:
-  - rid: 5469746612614725707
-  references:
-    version: 2
-    RefIds:
-    - rid: 5469746612614725706
-      type: {class: SavablePlayerData, ns: Data.Player, asm: Assembly-CSharp}
-      data:
-        PlayerName: Nevsky
-    - rid: 5469746612614725707
-      type: {class: RuntimePlayerData, ns: Data.Player, asm: Assembly-CSharp}
-      data:
-        Hp: 0
-    - rid: 6360630918503989321
-      type: {class: DialogueVarData, ns: Data, asm: Assembly-CSharp}
-      data:
-        Variables:
-        - Type: 1
-          Name: sex
-          Value: false
-        - Type: 2
-          Name: badSmell
-          Value: 9
---- !u!4 &2007960628
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2007960626}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1204636205}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2041552979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2214,7 +2143,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2050093930}
   - component: {fileID: 2050093929}
-  - component: {fileID: 2050093932}
+  - component: {fileID: 2050093931}
   m_Layer: 0
   m_Name: SceneContext
   m_TagString: Untagged
@@ -2236,7 +2165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Zenject::Zenject.SceneContext
   _scriptableObjectInstallers: []
   _monoInstallers:
-  - {fileID: 2050093932}
+  - {fileID: 2050093931}
   _installerPrefabs: []
   _autoRun: 1
   OnPreInstall:
@@ -2269,7 +2198,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1204636205}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2050093932
+--- !u!114 &2050093931
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2280,8 +2209,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b40edae541a84e818eb7af08f59d2442, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Entities.Core.GlobalInstaller
-  _globalData: {fileID: 2007960627}
+  m_EditorClassIdentifier: Assembly-CSharp::Entities.Core.NormalSceneInstaller
   _dialogueVisuals: {fileID: 952794403}
   _player: {fileID: 642883201}
   _playerInput: {fileID: 642883203}

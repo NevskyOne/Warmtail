@@ -53,7 +53,7 @@ namespace Entities.UI
         
         private DiContainer _diContainer;
         private DialogueSystem _system;
-        private GlobalDataSystem _globalData;
+        private GlobalData _globalData;
         private PlayerInput _input;
         
         private Transform _playerTransform;
@@ -62,7 +62,7 @@ namespace Entities.UI
         public IPrintEffect Effect => _effect;
 
         [Inject]
-        private void Construct(DiContainer container, PlayerInput input, DialogueSystem dialogueSystem, GlobalDataSystem globalData, Player player)
+        private void Construct(DiContainer container, PlayerInput input, DialogueSystem dialogueSystem, GlobalData globalData, Player player)
         {
             _diContainer = container;
             _input = input;

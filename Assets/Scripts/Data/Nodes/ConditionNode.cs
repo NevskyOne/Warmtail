@@ -13,7 +13,7 @@ public class ConditionNode : BaseNode
     [Output, SerializeField] private int _exit;
     public List<ConditionStruct> Conditions = new();
 
-    [Inject] private GlobalDataSystem _globalData;
+    [Inject] private GlobalData _globalData;
     [Inject] private DialogueSystem _dialogueSystem;
     
     public override void Activate()

@@ -2,7 +2,6 @@ using Cysharp.Threading.Tasks;
 using TriInspector;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 namespace Entities.Core
 {
@@ -19,14 +18,14 @@ namespace Entities.Core
             DontDestroyOnLoad(this);
         }
         
-        public async void StartSceneProcess(int sceneInd)
+        public async void StartSceneProcess(string sceneInd)
         {
             var animator = Instantiate(_animPrefab);
             DontDestroyOnLoad(animator);
             
             await UniTask.Delay(_animDuration);
             _asyncLoad = SceneManager.LoadSceneAsync(sceneInd);
-            await _asyncLoad;
+            await UniTask.WhenAll(_asyncLoad.ToUniTask(), UniTask.WaitUntil(() => _asyncLoad.allowSceneActivation));
             
             animator.SetTrigger(EndTransition);
             await UniTask.Delay(_animDuration);
