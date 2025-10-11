@@ -1,6 +1,10 @@
+using System;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using Data;
 using Data.Player;
+using EasyTextEffects;
+using EasyTextEffects.Effects;
 using Entities.PlayerScripts;
 using Interfaces;
 using Systems;
@@ -8,6 +12,7 @@ using Systems.DataSystems;
 using TMPro;
 using TriInspector;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using Zenject;
@@ -22,7 +27,8 @@ namespace Entities.UI
     {
         [Title("Settings")] 
         [SerializeReference] private CharacterHolder _holder;
-        [SerializeReference] private IPrintEffect _effect;
+        [SerializeReference] private AudioSource _audioSource;
+        [SerializeReference] private Effect_Composite _effect;
         [SerializeReference] private FrameType _frameType;
         
         [GroupNext("BoxFrame")]
@@ -56,10 +62,14 @@ namespace Entities.UI
         private GlobalData _globalData;
         private PlayerInput _input;
         
+        private TextEffect BoxNameEffect => _boxName.GetComponent<TextEffect>();
+        private TextEffect BubbleNameEffect => _bubbleName.GetComponent<TextEffect>();
+        private TextEffect BoxTextEffect => _boxText.GetComponent<TextEffect>();
+        private TextEffect BubbleTextEffect => _bubbleText.GetComponent<TextEffect>();
+        
         private Transform _playerTransform;
         public Transform NpcTransform { get; set; }
         public bool IsComplete { get; set; }
-        public IPrintEffect Effect => _effect;
 
         [Inject]
         private void Construct(DiContainer container, PlayerInput input, DialogueSystem dialogueSystem, GlobalData globalData, Player player)
@@ -69,6 +79,9 @@ namespace Entities.UI
             _system = dialogueSystem;
             _globalData = globalData;
             _playerTransform = player.transform;
+
+            BoxTextEffect.globalEffects[0].onEffectCompleted.AddListener(() => IsComplete = true);
+            BubbleTextEffect.globalEffects[0].onEffectCompleted.AddListener(() => IsComplete = true);
         }
 
         public void ShowDialogue()
@@ -97,9 +110,16 @@ namespace Entities.UI
             }
         }
         
-        public async void RequestNewLine(TextNode node)
+        public void RequestNewLine(TextNode node)
         {
             IsComplete = false;
+            var character = _holder.Characters.Find(x => x.Character == node.Character);
+            if (_audioSource != null)
+            {
+                _audioSource.clip = character.Sound;
+                _audioSource.Play();
+            }
+
             var displayName = node.DisplayName == "" ? node.Character.ToString() : node.DisplayName;
             if (displayName == "Player")
             {
@@ -114,19 +134,20 @@ namespace Entities.UI
             {
                 case FrameType.Box:
                     _boxName!.text = displayName;
-                    var character = _holder.Characters.Find(x => x.Character == node.Character);
+                    BoxNameEffect.Refresh();
                     _boxImage!.sprite = character.EmotionSprites[node.Emotion];
-                    
-                    _boxText.alpha = 0f;
                     _boxText.text = node.Text;
-                    IsComplete = await _effect.StartEffect(_boxText);
+                    BoxTextEffect.globalEffects[0].effect = _effect;
+                    BoxTextEffect.Refresh();
+                    BoxTextEffect.StartOnStartEffects();
                     break;
                 case FrameType.Bubble:
                     _bubbleName!.text = displayName;
-                    
-                    _bubbleText.alpha = 0f;
+                    BubbleNameEffect.Refresh();
                     _bubbleText.text = node.Text;
-                    IsComplete = await _effect.StartEffect(_bubbleText);
+                    BubbleTextEffect.globalEffects[0].effect = _effect;
+                    BubbleTextEffect.Refresh();
+                    BubbleTextEffect.StartOnStartEffects();
                     break;
             }
             
@@ -142,11 +163,15 @@ namespace Entities.UI
                     case FrameType.Box:
                         var boxObj = await InstantiateAsync(_boxOptionsPrefab, _boxOptionsGroup);
                         boxObj[0].text = choiceStr;
+                        boxObj[0].GetComponent<TextEffect>().globalEffects[0].effect = _effect;
+                        boxObj[0].GetComponent<TextEffect>().Refresh();
                         _diContainer.Inject(boxObj[0].gameObject.GetComponent<DialogueOptionUI>());
                         break;
                     case FrameType.Bubble:
                         var bubbleObj = await InstantiateAsync(_bubbleOptionsPrefab, _bubbleOptionsGroup);
                         bubbleObj[0].text = choiceStr;
+                        bubbleObj[0].GetComponent<TextEffect>().globalEffects[0].effect = _effect;
+                        bubbleObj[0].GetComponent<TextEffect>().Refresh();
                         _diContainer.Inject(bubbleObj[0].gameObject.GetComponent<DialogueOptionUI>());
                         break;
                 }
@@ -195,6 +220,26 @@ namespace Entities.UI
             }
             _system.SetNewNode(i.ToString());
             _system.ActivateNewNode();
+        }
+
+        public void ChangeEffectSpeed()
+        {
+            switch (_frameType)
+            {
+                case FrameType.Box:
+                    BoxTextEffect.StopOnStartEffects();
+                    break;
+                case FrameType.Bubble:
+                    BubbleTextEffect.StopOnStartEffects();
+                    break;
+            }
+
+            IsComplete = true;
+        }
+
+        public void OnDisable()
+        {
+            ChangeEffectSpeed();
         }
     }
 }

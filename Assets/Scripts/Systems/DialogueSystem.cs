@@ -1,3 +1,4 @@
+using System;
 using Data.Nodes;
 using Entities.UI;
 using UnityEngine;
@@ -15,6 +16,7 @@ namespace Systems
         private PlayerInput _input;
 
         private string _prevActionMap;
+        
 
         [Inject]
         private void Construct(DiContainer container, PlayerInput input, DialogueVisuals dialogueVisuals)
@@ -29,9 +31,10 @@ namespace Systems
         {
             if (!_visuals.IsComplete)
             {
-                _visuals.Effect.SpeedUpEffect();
+                _visuals.ChangeEffectSpeed();
                 return;
             }
+
             if (_dialogueGraph != null && _dialogueGraph.Current != null)
             {
                 ActivateNewNode();
@@ -61,7 +64,7 @@ namespace Systems
             _diContainer.Inject(_dialogueGraph.Current);
             _dialogueGraph.Current.Activate();
         }
-
+        
         public void EndDialogue()
         {
             _dialogueGraph = null;

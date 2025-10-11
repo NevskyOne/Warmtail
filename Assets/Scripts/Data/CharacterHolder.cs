@@ -18,6 +18,7 @@ namespace Data
     public struct CharacterConfig
     {
         public Characters Character;
+        public AudioClip Sound;
         public SerializedDictionary<CharactersEmotions, Sprite> EmotionSprites;
     }
 }
