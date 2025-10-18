@@ -5,17 +5,17 @@ using UnityEngine.UI;
 
 public class Cell : MonoBehaviour
 {
-    public Image BackgroudImage;
+    public Image mOutlineImage;
 
-    public Vector2 BoardPosition = Vector2Int.zero;
-    public Board Board = null;
-    public RectTransform RectTransform = null;
+    public Vector2 mBoardPosition = Vector2Int.zero;
+    public Board mBoard = null;
+    public RectTransform mRectTransform = null;
     
     public void Setup(Vector2Int newBoardPos, Board newBoard)
     {
-        BoardPosition = newBoardPos;    
-        Board = newBoard;
-        RectTransform = GetComponent<RectTransform>();
+        mBoardPosition = newBoardPos;    
+        mBoard = newBoard;
+        mRectTransform = GetComponent<RectTransform>();
     }
 
 }
