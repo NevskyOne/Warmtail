@@ -12,7 +12,7 @@ public class PieceManager : MonoBehaviour
 
     private string[] mPieceOrder = new string[16]
     {
-        "P", "P", "p", "p", "p", "p", "p", "p",
+        "P", "P", "P", "P", "P", "P", "P", "P",
         "R", "KN", "B", "K", "Q", "B", "KN", "R"
     };
 
