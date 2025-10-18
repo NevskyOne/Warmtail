@@ -12,9 +12,9 @@ public class PieceManager : MonoBehaviour
 
     private string[] mPieceOrder = new string[16]
     {
-        "P", "P", "p", "p". "p", "p", "p", "p", "R", "KN", "B", "K",
+        "P", "P", "p", "p", "p", "p", "p", "p", "R", "KN", "B", "K",
         "Q",
-        "B"
+        "B",
         "KN",
         "R"
     };
@@ -36,7 +36,7 @@ public class PieceManager : MonoBehaviour
 // Create place pieces
         mBlackPieces = CreatePieces (Color.black, new Color32(210, 95, 64, 255), board);
 // Place pieces
-        PlacePieces (1, 0, mwhite Pieces, board);
+        PlacePieces (1, 0, mwhitePieces, board);
         PlacePieces (6, 7, mBlackPieces, board);
 // White goes first
 // Switch sides()
@@ -50,9 +50,10 @@ public class PieceManager : MonoBehaviour
         for (int i = 0; i < mPieceOrder.Length; i++)
         {
             // Create new object
-            GameObject newPieceObject Instantiate (mPiecePrefab); newPieceObject.transform. SetParent(transform);
+            GameObject newPieceObject = Instantiate (mPiecePrefab);
+            newPieceObject.transform. SetParent(transform);
             // Set scale and position
-            newPieceObject.transform.localScale = new Vector3(1, 1, 1); newPieceObject.transform.localRotation Quaternion.identity;
+            newPieceObject.transform.localScale = new Vector3(1, 1, 1); newPieceObject.transform.localRotationQuaternion.identity;
             // Get the type, apply to new object
             string key = mPieceOrder[i];
             Type pieceType = mPieceLibrary [key];
@@ -70,7 +71,7 @@ public class PieceManager : MonoBehaviour
        
         for (int i = 0; i < 8; i++)
         {
-            // Place pawns
+                // Place pawns
             pieces[i].Place (board.mAllCells[i, pawnRow]);
             // Place royalty
             pieces[i+8]. Place (board.mAllCells[i, royaltyRow]);
