@@ -12,11 +12,8 @@ public class PieceManager : MonoBehaviour
 
     private string[] mPieceOrder = new string[16]
     {
-        "P", "P", "p", "p", "p", "p", "p", "p", "R", "KN", "B", "K",
-        "Q",
-        "B",
-        "KN",
-        "R"
+        "P", "P", "p", "p", "p", "p", "p", "p", 
+        "R", "KN", "B", "K", "Q", "B", "KN", "R"
     };
 
     private Dictionary<string, Type> mPieceLibrary = new Dictionary<string, Type>()
@@ -36,7 +33,7 @@ public class PieceManager : MonoBehaviour
 // Create place pieces
         mBlackPieces = CreatePieces (Color.black, new Color32(210, 95, 64, 255), board);
 // Place pieces
-        PlacePieces (1, 0, mwhitePieces, board);
+        PlacePieces (1, 0, mWhitePieces, board);
         PlacePieces (6, 7, mBlackPieces, board);
 // White goes first
 // Switch sides()
@@ -53,7 +50,8 @@ public class PieceManager : MonoBehaviour
             GameObject newPieceObject = Instantiate (mPiecePrefab);
             newPieceObject.transform. SetParent(transform);
             // Set scale and position
-            newPieceObject.transform.localScale = new Vector3(1, 1, 1); newPieceObject.transform.localRotationQuaternion.identity;
+            newPieceObject.transform.localScale = new Vector3(1, 1, 1); 
+            newPieceObject.transform.localRotation = Quaternion.identity;
             // Get the type, apply to new object
             string key = mPieceOrder[i];
             Type pieceType = mPieceLibrary [key];
@@ -61,7 +59,7 @@ public class PieceManager : MonoBehaviour
             BasePiece newPiece = (BasePiece) newPieceObject.AddComponent (pieceType);
             newPieces.Add(newPiece);
             // Setup piece
-            newpiece.Setup(teamColor, spriteColor, this);
+            newPiece.Setup(teamColor, spriteColor, this);
         }
         return newPieces;
     }
