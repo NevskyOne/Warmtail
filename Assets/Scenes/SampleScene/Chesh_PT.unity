@@ -688,6 +688,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PR_Board
       objectReference: {fileID: 0}
+    - target: {fileID: 5417197985890990226, guid: 8f1905e297b0d3245827da9c7a71a5eb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6760567906233825760, guid: 8f1905e297b0d3245827da9c7a71a5eb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
