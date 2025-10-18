@@ -17,6 +17,8 @@ public class Board : MonoBehaviour
                 GameObject newCell = Instantiate(mCellPrefab, transform);
                 RectTransform rectTrans = newCell.GetComponent<RectTransform>();
 
+                rectTrans.anchoredPosition = new Vector2(x * 100f, y * 100f);
+
                 mAllCells[x, y] = newCell.GetComponent<Cell>();
                 mAllCells[x, y].Setup(new Vector2Int(x, y), this);
             }
