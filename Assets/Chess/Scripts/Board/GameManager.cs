@@ -10,6 +10,6 @@ public class GameManager : MonoBehaviour
     {
         mBoard.Create();
 
-        mPieceManager.Setup(mBoard);
+        //mPieceManager.Setup(mBoard);
     }
 }
