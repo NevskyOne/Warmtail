@@ -7,8 +7,11 @@ public class Cell : MonoBehaviour
 {
     public Image mOutlineImage;
 
+    [HideInInspector]
     public Vector2 mBoardPosition = Vector2Int.zero;
+    [HideInInspector]
     public Board mBoard = null;
+    [HideInInspector]
     public RectTransform mRectTransform = null;
     
     public void Setup(Vector2Int newBoardPos, Board newBoard)
