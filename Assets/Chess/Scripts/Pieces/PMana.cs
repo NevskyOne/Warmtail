@@ -71,7 +71,7 @@ public class PieceManager : MonoBehaviour
        
         for (int i = 0; i < 8; i++)
         {
-                // Place pawns
+            // Place pawns
             pieces[i].Place (board.mAllCells[i, pawnRow]);
             // Place royalty
             pieces[i+8]. Place (board.mAllCells[i, royaltyRow]);
