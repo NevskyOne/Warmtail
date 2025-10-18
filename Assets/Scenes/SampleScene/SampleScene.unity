@@ -398,62 +398,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 10311284}
   m_CullTransparentMesh: 1
---- !u!114 &39910570
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2676ef4f29b4d6891f834d4489f54da, type: 3}
-  m_Name: ScaleOne(Clone)
-  m_EditorClassIdentifier: EasyTextEffects::EasyTextEffects.Effects.Effect_Scale
-  effectTag: 
-  startCharIndex: 0
-  charLength: 0
-  animationType: 3
-  fixedDuration: 1
-  durationPerChar: 0.5
-  timeBetweenChars: 0.06
-  noDelayForChars: 0
-  reverseCharOrder: 0
-  easingCurve:
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - time: 1
-      value: 1
-      inSlope: -0.5384616
-      outSlope: -0.5384616
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.21666664
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  clampBetween0And1: 0
-  timeType: 0
-  startTime: 18.077518
-  started: 1
-  isComplete: 0
-  currentEntry:
-    triggerWhen: 0
-    effect: {fileID: 1012903543}
-    onEffectCompleted:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  startScale: 0
-  endScale: 1
 --- !u!1 &51827738
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,118 +473,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 51827738}
   m_CullTransparentMesh: 1
---- !u!114 &60606967
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f8a5a04a3b145299afb77db9d03c233, type: 3}
-  m_Name: MoveOne(Clone)
-  m_EditorClassIdentifier: EasyTextEffects::EasyTextEffects.Effects.Effect_Move
-  effectTag: 
-  startCharIndex: 0
-  charLength: 0
-  animationType: 3
-  fixedDuration: 0
-  durationPerChar: 0.5
-  timeBetweenChars: 0.06
-  noDelayForChars: 0
-  reverseCharOrder: 0
-  easingCurve:
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  clampBetween0And1: 0
-  timeType: 0
-  startTime: 18.077589
-  started: 1
-  isComplete: 0
-  currentEntry:
-    triggerWhen: 0
-    effect: {fileID: 173682947}
-    onEffectCompleted:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  startOffset: {x: 0, y: -10}
-  endOffset: {x: 0, y: 0}
---- !u!114 &87674547
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f8a5a04a3b145299afb77db9d03c233, type: 3}
-  m_Name: Move(Clone)
-  m_EditorClassIdentifier: EasyTextEffects::EasyTextEffects.Effects.Effect_Move
-  effectTag: 
-  startCharIndex: 0
-  charLength: 0
-  animationType: 2
-  fixedDuration: 0
-  durationPerChar: 0.9
-  timeBetweenChars: 0.25
-  noDelayForChars: 1
-  reverseCharOrder: 0
-  easingCurve:
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 0
-    m_PostInfinity: 0
-    m_RotationOrder: 4
-  clampBetween0And1: 0
-  timeType: 0
-  startTime: 18.077368
-  started: 1
-  isComplete: 0
-  currentEntry:
-    triggerWhen: 0
-    effect: {fileID: 87674547}
-    onEffectCompleted:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  startOffset: {x: 0, y: -5}
-  endOffset: {x: 0, y: 0}
 --- !u!1 &88475860
 GameObject:
   m_ObjectHideFlags: 0
@@ -761,7 +593,6 @@ MonoBehaviour:
   _crossFadeTime: 1
   _canvasGroups:
     _serializedList: []
-  _currentState: 0
 --- !u!114 &116097134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -811,63 +642,6 @@ Transform:
   - {fileID: 896295618}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &173682947
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e66ffc343c5f4ecaa9115a4c0e055e81, type: 3}
-  m_Name: UpAndScale(Clone)
-  m_EditorClassIdentifier: EasyTextEffects::EasyTextEffects.Effects.Effect_Composite
-  effectTag: 
-  startCharIndex: 0
-  charLength: 0
-  animationType: 2
-  fixedDuration: 0
-  durationPerChar: 0.5
-  timeBetweenChars: 0.05
-  noDelayForChars: 0
-  reverseCharOrder: 0
-  easingCurve:
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 1
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 0
-    m_RotationOrder: 4
-  clampBetween0And1: 0
-  timeType: 0
-  startTime: 18.077589
-  started: 1
-  isComplete: 0
-  currentEntry:
-    triggerWhen: 0
-    effect: {fileID: 173682947}
-    onEffectCompleted:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  effects:
-  - {fileID: 2130654249}
-  - {fileID: 60606967}
 --- !u!1 &266287986
 GameObject:
   m_ObjectHideFlags: 0
@@ -1681,7 +1455,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a88e66bb36cf47be9a8c4540bc9beceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entities.Player.Player
-  _globalData: {fileID: 0}
 --- !u!4 &642883202
 Transform:
   m_ObjectHideFlags: 0
@@ -1741,62 +1514,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.InputActionReference
   m_Asset: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_ActionId: 3c7022bf-7922-4f7c-a998-c437916075ad
---- !u!114 &677205990
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f8a5a04a3b145299afb77db9d03c233, type: 3}
-  m_Name: Move(Clone)
-  m_EditorClassIdentifier: EasyTextEffects::EasyTextEffects.Effects.Effect_Move
-  effectTag: 
-  startCharIndex: 0
-  charLength: 0
-  animationType: 2
-  fixedDuration: 0
-  durationPerChar: 0.9
-  timeBetweenChars: 0.25
-  noDelayForChars: 1
-  reverseCharOrder: 0
-  easingCurve:
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 0
-    m_PostInfinity: 0
-    m_RotationOrder: 4
-  clampBetween0And1: 0
-  timeType: 0
-  startTime: 18.077427
-  started: 1
-  isComplete: 0
-  currentEntry:
-    triggerWhen: 0
-    effect: {fileID: 677205990}
-    onEffectCompleted:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  startOffset: {x: 0, y: -5}
-  endOffset: {x: 0, y: 0}
 --- !u!1 &720813216
 GameObject:
   m_ObjectHideFlags: 0
@@ -2031,23 +1748,8 @@ MonoBehaviour:
     onEffectCompleted:
       m_PersistentCalls:
         m_Calls: []
-      m_CallsDirty: 1
     overrideTagEffects: 0
   updatesPerSecond: 30
-  allTagEffects_: []
-  onStartTagEffects_: []
-  manualTagEffects_: []
-  onStartEffects_:
-  - triggerWhen: 0
-    effect: {fileID: 87674547}
-    onEffectCompleted:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-    overrideTagEffects: 0
-  manualEffects_: []
-  entryEffectsCopied_: []
-  nextUpdateTime_: 0
 --- !u!1 &743838728
 GameObject:
   m_ObjectHideFlags: 0
@@ -2282,23 +1984,8 @@ MonoBehaviour:
     onEffectCompleted:
       m_PersistentCalls:
         m_Calls: []
-      m_CallsDirty: 1
     overrideTagEffects: 0
   updatesPerSecond: 30
-  allTagEffects_: []
-  onStartTagEffects_: []
-  manualTagEffects_: []
-  onStartEffects_:
-  - triggerWhen: 0
-    effect: {fileID: 677205990}
-    onEffectCompleted:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-    overrideTagEffects: 0
-  manualEffects_: []
-  entryEffectsCopied_: []
-  nextUpdateTime_: 0
 --- !u!1 &896295617
 GameObject:
   m_ObjectHideFlags: 0
@@ -2349,14 +2036,6 @@ MonoBehaviour:
   _sfxSlider: {fileID: 1157589812}
   _graphicsDropdown: {fileID: 9964577}
   _fullScreenToggle: {fileID: 1681449240}
-  _globalData: {fileID: 0}
-  _localData:
-    MainSoundVolume: 0
-    MusicVolume: 0
-    SfxVolume: 0
-    QualityLevel: 0
-    FullscreenMode: 0
-  _isSaving: 0
 --- !u!1 &909424606
 GameObject:
   m_ObjectHideFlags: 0
@@ -2553,11 +2232,6 @@ MonoBehaviour:
   _bubbleName: {fileID: 729107003}
   _bubbleOptionsGroup: {fileID: 1704319837}
   _bubbleOptionsPrefab: {fileID: 1559555167114870407, guid: afd4d824101b37f418a37766d6c74302, type: 3}
-  _globalData: {fileID: 0}
-  _input: {fileID: 0}
-  _playerTransform: {fileID: 0}
-  <NpcTransform>k__BackingField: {fileID: 0}
-  <IsComplete>k__BackingField: 0
 --- !u!1 &987535511
 GameObject:
   m_ObjectHideFlags: 0
@@ -2666,63 +2340,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 987535511}
   m_CullTransparentMesh: 1
---- !u!114 &1012903543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e66ffc343c5f4ecaa9115a4c0e055e81, type: 3}
-  m_Name: UpAndScale(Clone)
-  m_EditorClassIdentifier: EasyTextEffects::EasyTextEffects.Effects.Effect_Composite
-  effectTag: 
-  startCharIndex: 0
-  charLength: 0
-  animationType: 2
-  fixedDuration: 0
-  durationPerChar: 0.5
-  timeBetweenChars: 0.05
-  noDelayForChars: 0
-  reverseCharOrder: 0
-  easingCurve:
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 1
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 0
-    m_RotationOrder: 4
-  clampBetween0And1: 0
-  timeType: 0
-  startTime: 18.077518
-  started: 1
-  isComplete: 0
-  currentEntry:
-    triggerWhen: 0
-    effect: {fileID: 1012903543}
-    onEffectCompleted:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  effects:
-  - {fileID: 39910570}
-  - {fileID: 1742095062}
 --- !u!1 &1117548742
 GameObject:
   m_ObjectHideFlags: 0
@@ -3613,23 +3230,8 @@ MonoBehaviour:
     onEffectCompleted:
       m_PersistentCalls:
         m_Calls: []
-      m_CallsDirty: 1
     overrideTagEffects: 0
   updatesPerSecond: 30
-  allTagEffects_: []
-  onStartTagEffects_: []
-  manualTagEffects_: []
-  onStartEffects_:
-  - triggerWhen: 0
-    effect: {fileID: 1012903543}
-    onEffectCompleted:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-    overrideTagEffects: 0
-  manualEffects_: []
-  entryEffectsCopied_: []
-  nextUpdateTime_: 0
 --- !u!1 &1484534056
 GameObject:
   m_ObjectHideFlags: 0
@@ -3972,23 +3574,8 @@ MonoBehaviour:
     onEffectCompleted:
       m_PersistentCalls:
         m_Calls: []
-      m_CallsDirty: 1
     overrideTagEffects: 0
   updatesPerSecond: 30
-  allTagEffects_: []
-  onStartTagEffects_: []
-  manualTagEffects_: []
-  onStartEffects_:
-  - triggerWhen: 0
-    effect: {fileID: 173682947}
-    onEffectCompleted:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-    overrideTagEffects: 0
-  manualEffects_: []
-  entryEffectsCopied_: []
-  nextUpdateTime_: 0
 --- !u!1 &1672468042
 GameObject:
   m_ObjectHideFlags: 0
@@ -4309,62 +3896,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1742095062
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f8a5a04a3b145299afb77db9d03c233, type: 3}
-  m_Name: MoveOne(Clone)
-  m_EditorClassIdentifier: EasyTextEffects::EasyTextEffects.Effects.Effect_Move
-  effectTag: 
-  startCharIndex: 0
-  charLength: 0
-  animationType: 3
-  fixedDuration: 0
-  durationPerChar: 0.5
-  timeBetweenChars: 0.06
-  noDelayForChars: 0
-  reverseCharOrder: 0
-  easingCurve:
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  clampBetween0And1: 0
-  timeType: 0
-  startTime: 18.077518
-  started: 1
-  isComplete: 0
-  currentEntry:
-    triggerWhen: 0
-    effect: {fileID: 1012903543}
-    onEffectCompleted:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  startOffset: {x: 0, y: -10}
-  endOffset: {x: 0, y: 0}
 --- !u!1 &1785838161
 GameObject:
   m_ObjectHideFlags: 0
@@ -5805,62 +5336,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2105043590}
   m_CullTransparentMesh: 1
---- !u!114 &2130654249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2676ef4f29b4d6891f834d4489f54da, type: 3}
-  m_Name: ScaleOne(Clone)
-  m_EditorClassIdentifier: EasyTextEffects::EasyTextEffects.Effects.Effect_Scale
-  effectTag: 
-  startCharIndex: 0
-  charLength: 0
-  animationType: 3
-  fixedDuration: 1
-  durationPerChar: 0.5
-  timeBetweenChars: 0.06
-  noDelayForChars: 0
-  reverseCharOrder: 0
-  easingCurve:
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - time: 1
-      value: 1
-      inSlope: -0.5384616
-      outSlope: -0.5384616
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.21666664
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  clampBetween0And1: 0
-  timeType: 0
-  startTime: 18.077589
-  started: 1
-  isComplete: 0
-  currentEntry:
-    triggerWhen: 0
-    effect: {fileID: 173682947}
-    onEffectCompleted:
-      m_PersistentCalls:
-        m_Calls: []
-      m_CallsDirty: 1
-  startScale: 0
-  endScale: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

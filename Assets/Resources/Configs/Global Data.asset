@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5231938e41fd4accbacfa45424a23590, type: 3}
+  m_Name: Global Data
+  m_EditorClassIdentifier: Assembly-CSharp::Data.GlobalData
+  _savableData:
+  - rid: 6360631019312513100
+  - rid: 6360631019312513101
+  - rid: 6360631019312513102
+  _runtimeData:
+  - rid: 6360631019312513099
+  references:
+    version: 2
+    RefIds:
+    - rid: 6360631019312513099
+      type: {class: RuntimePlayerData, ns: Data.Player, asm: Assembly-CSharp}
+      data:
+        Hp: 3
+    - rid: 6360631019312513100
+      type: {class: SavablePlayerData, ns: Data.Player, asm: Assembly-CSharp}
+      data:
+        PlayerName: Player
+    - rid: 6360631019312513101
+      type: {class: DialogueVarData, ns: Data, asm: Assembly-CSharp}
+      data:
+        Variables:
+        - Type: 1
+          Name: sex
+          Value: false
+        - Type: 2
+          Name: badSmell
+          Value: 9
+    - rid: 6360631019312513102
+      type: {class: SettingsData, ns: Data, asm: Assembly-CSharp}
+      data:
+        MainSoundVolume: 0.5
+        MusicVolume: 1
+        SfxVolume: 1
+        QualityLevel: 1
