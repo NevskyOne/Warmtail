@@ -1,5 +1,6 @@
-using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,8 +14,9 @@ public abstract class BasePiece : EventTrigger
     protected RectTransform mRectTransform = null;
     protected PieceManager mPieceManager;
 
+    protected Vector3Int mMovement = Vector3Int.one;
     protected Cell mTargetCell = null;
-    protected List<Cell> mHighkighedCells = new List<Cell>();
+    protected List<Cell> mHighlighedCells = new List<Cell>();
 
     public bool mIsFirstMove = true;
 
@@ -47,13 +49,68 @@ public abstract class BasePiece : EventTrigger
         mTargetCell = null;
     }
 
+    private void CreateCellPath(int xDirection, int yDirection, int movement)
+    {
+        int currentX = (int)mCurrentCell.mBoardPosition.x;
+        int currentY = (int)mCurrentCell.mBoardPosition.y;
+
+        for (int i = 1; i <= movement; i++)
+        {
+            currentX += xDirection;
+            currentY += yDirection;
+
+            if (currentX < 0 || currentX >= mCurrentCell.mBoard.mAllCells.GetLength(0) ||
+                currentY < 0 || currentY >= mCurrentCell.mBoard.mAllCells.GetLength(1))
+            {
+                break;
+            }
+
+            mHighlighedCells.Add(mCurrentCell.mBoard.mAllCells[currentX, currentY]);
+        }
+    }
+
+    public virtual void CheckPathing()
+    {
+        CreateCellPath(1, 0, mMovement.x);
+        CreateCellPath(-1, 0, mMovement.x);
+
+        CreateCellPath(0, 1, mMovement.y);
+        CreateCellPath(0, -1, mMovement.y);
+
+        CreateCellPath(1, 1, mMovement.z);
+        CreateCellPath(-1, 1, mMovement.z);
+
+        CreateCellPath(-1, -1, mMovement.z);
+        CreateCellPath(1, -1, mMovement.z);
+    }
+    protected void ShowCells()
+    {
+        foreach(Cell cell in mHighlighedCells)
+            cell.mOutlineImage.enabled = true;
+    }
+
+    protected void ClearCells()
+    {
+        foreach (Cell cell in mHighlighedCells)
+            cell.mOutlineImage.enabled = true;
+
+        mHighlighedCells.Clear();
+    }
+
+    public override void OnBeginDrag(PointerEventData eventData)
+    {
+        base.OnBeginDrag(eventData);
+        CheckPathing();
+        ShowCells();
+    }
     public override void OnDrag(PointerEventData eventData)
     {
         base.OnDrag(eventData);
         transform.position += (Vector3)eventData.delta;
-        foreach (Cell cell in mHighkighedCells)
+
+        foreach (Cell cell in mHighlighedCells)
         {
-            if (RectTransformUtility.RectangleContainsScreenPoint(cell.mRectTransform, Input.mousePosition))
+            if (RectTransformUtility.RectangleContainsScreenPoint(cell.mRectTransform, Mouse.current.position.ReadValue()))
             {
                 mTargetCell = cell;
                 break;

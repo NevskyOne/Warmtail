@@ -28,7 +28,7 @@ public class Cell : MonoBehaviour
     {
         if  (mCurrentPiece != null)
         {
-            mCurrentPiece.kill();
+            mCurrentPiece.kill_piece();
         }
     }
 
