@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Queen : MonoBehaviour
+public class Queen : BasePiece
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
