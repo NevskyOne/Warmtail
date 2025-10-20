@@ -5,8 +5,11 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
+    
 public abstract class BasePiece : EventTrigger
 {
+   
+    
     [HideInInspector]
     public Color mColor = Color.clear;
     protected Cell mOriginalCell = null;
@@ -64,21 +67,19 @@ public abstract class BasePiece : EventTrigger
 
             // Added
             // Get the state of the target cell
-            CellState cellState = cellState.None;
+            CellState cellState = CellState.None;
             cellState = mCurrentCell.mBoard.ValidateCell(currentX, currentY, this);
 
             // If enemy, add to list, break
-            if (cellState == cellState.Enemy)
+            if (cellState == CellState.Enemy)
             {
                 mHighlighedCells.Add(mCurrentCell.mBoard.mAllCells[currentX, currentY]);
                 break;
             }
 
             // If the cell is not free, break
-            if (cellState != cellState.Free)
-            {
+            if (cellState != CellState.Free)
                 break;
-            }
 
             // Add to list
             mHighlighedCells.Add(mCurrentCell.mBoard.mAllCells[currentX, currentY]);
@@ -165,5 +166,6 @@ public abstract class BasePiece : EventTrigger
 
         transform.position = newCell.transform.position;
         gameObject.SetActive(true);
+        mCurrentCell.mCurrentPiece = this;
     }
 }

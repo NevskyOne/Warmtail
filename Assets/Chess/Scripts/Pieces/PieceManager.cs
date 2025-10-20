@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class PieceManager : MonoBehaviour
 {
+    [HideInInspector]
     public bool mIsKingAlive = true;
     public GameObject mPiecePrefab;
     private List<BasePiece> mWhitePieces = null;
@@ -99,9 +100,11 @@ public class PieceManager : MonoBehaviour
     public void ResetPieces()
     {
         // Reset white
-        foreach (BasePiece piece in mWhitePieces) piece.Reset();
+        foreach (BasePiece piece in mWhitePieces) 
+            piece.Reset();
 // Reset black
-        foreach (BasePiece piece in mBlackPieces) piece.Reset();
+        foreach (BasePiece piece in mBlackPieces) 
+            piece.Reset();
     }
 
 }
