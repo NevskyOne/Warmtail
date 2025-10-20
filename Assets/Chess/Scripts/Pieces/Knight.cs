@@ -1,12 +1,16 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Knight : BasePiece
 {
-    public override void Setup(Color newTeamColor, Color newSpriteColor, PieceManager newPieceManager)
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
     {
-        base.Setup(newTeamColor, newSpriteColor, newPieceManager);
+        
+    }
 
-        GetComponent<Image>().sprite = Resources.Load<Sprite>("T_Knight");
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 }

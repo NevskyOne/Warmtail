@@ -136,6 +136,7 @@ public abstract class BasePiece : EventTrigger
             mTargetCell = null;
         }
     }
+
     public override void OnEndDrag(PointerEventData eventData)
     {
         base.OnEndDrag(eventData);
