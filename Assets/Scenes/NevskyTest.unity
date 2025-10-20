@@ -541,8 +541,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entities.UI.DialogueVisuals
   _holder: {fileID: 11400000, guid: 8b9ecf24c1771bd429d80c16b58068a4, type: 2}
-  _effect:
-    rid: 6360630913873215567
+  _audioSource: {fileID: 0}
+  _effect: {fileID: 0}
   _frameType: 0
   _boxObject: {fileID: 1635746605}
   _boxText: {fileID: 137941491}
@@ -555,15 +555,6 @@ MonoBehaviour:
   _bubbleName: {fileID: 1772991003}
   _bubbleOptionsGroup: {fileID: 1234484997}
   _bubbleOptionsPrefab: {fileID: 1559555167114870407, guid: afd4d824101b37f418a37766d6c74302, type: 3}
-  references:
-    version: 2
-    RefIds:
-    - rid: 6360630913873215567
-      type: {class: FadePrintEffect, ns: Systems.Effects, asm: Assembly-CSharp}
-      data:
-        _speed: 1.5
-        _gradientWidth: 0.2
-        _fastMultiplier: 4
 --- !u!1 &400389651
 GameObject:
   m_ObjectHideFlags: 0
@@ -1689,6 +1680,54 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!1 &1250276733
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1250276735}
+  - component: {fileID: 1250276734}
+  m_Layer: 0
+  m_Name: Tutot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1250276734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1250276733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2348d4ba6b8c3c14ea0bab21d4d5c312, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Systems.TutorialSystem
+  _steps: []
+  references:
+    version: 2
+    RefIds: []
+--- !u!4 &1250276735
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1250276733}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1323595037
 GameObject:
   m_ObjectHideFlags: 0
@@ -2498,76 +2537,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.InputActionReference
   m_Asset: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_ActionId: dad70c86-b58c-4b17-88ad-f5e53adf419e
---- !u!1 &2007960626
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2007960628}
-  - component: {fileID: 2007960627}
-  m_Layer: 0
-  m_Name: GlobalData
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2007960627
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2007960626}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5231938e41fd4accbacfa45424a23590, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Systems.DataSystems.GlobalDataSystem
-  _savableData:
-  - rid: 5469746612614725706
-  - rid: 6360630886348357704
-  _runtimeData:
-  - rid: 5469746612614725707
-  references:
-    version: 2
-    RefIds:
-    - rid: 5469746612614725706
-      type: {class: SavablePlayerData, ns: Data.Player, asm: Assembly-CSharp}
-      data:
-        PlayerName: Nevsky
-    - rid: 5469746612614725707
-      type: {class: RuntimePlayerData, ns: Data.Player, asm: Assembly-CSharp}
-      data:
-        Hp: 0
-    - rid: 6360630886348357704
-      type: {class: DialogueVarData, ns: Data, asm: Assembly-CSharp}
-      data:
-        Variables:
-        - Type: 1
-          Name: sex
-          Value: false
-        - Type: 2
-          Name: badSmell
-          Value: 9
---- !u!4 &2007960628
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2007960626}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 910.75183, y: 280.1276, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2050093928
 GameObject:
   m_ObjectHideFlags: 0
@@ -2645,7 +2614,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b40edae541a84e818eb7af08f59d2442, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entities.Core.GlobalInstaller
-  _globalData: {fileID: 2007960627}
   _dialogueVisuals: {fileID: 317742021}
   _player: {fileID: 642883201}
   _playerInput: {fileID: 642883203}
@@ -2677,5 +2645,5 @@ SceneRoots:
   - {fileID: 1836109678}
   - {fileID: 1484534058}
   - {fileID: 317742020}
-  - {fileID: 2007960628}
   - {fileID: 590105466}
+  - {fileID: 1250276735}

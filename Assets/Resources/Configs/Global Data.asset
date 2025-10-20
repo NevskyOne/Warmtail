@@ -33,12 +33,9 @@ MonoBehaviour:
       type: {class: DialogueVarData, ns: Data, asm: Assembly-CSharp}
       data:
         Variables:
-        - Type: 1
-          Name: sex
-          Value: false
         - Type: 2
-          Name: badSmell
-          Value: 9
+          Name: money
+          Value: 10
     - rid: 6360631019312513102
       type: {class: SettingsData, ns: Data, asm: Assembly-CSharp}
       data:
@@ -46,3 +43,4 @@ MonoBehaviour:
         MusicVolume: 1
         SfxVolume: 1
         QualityLevel: 1
+        FullscreenMode: 0

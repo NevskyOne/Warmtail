@@ -135,7 +135,7 @@ namespace Entities.UI
                 case FrameType.Box:
                     _boxName!.text = displayName;
                     BoxNameEffect.Refresh();
-                    _boxImage!.sprite = character.EmotionSprites[node.Emotion];
+                    _boxImage!.sprite = character.EmotionSprites![node.Emotion];
                     _boxText.text = node.Text;
                     BoxTextEffect.globalEffects[0].effect = _effect;
                     BoxTextEffect.Refresh();

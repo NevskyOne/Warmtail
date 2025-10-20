@@ -43,15 +43,15 @@ namespace Systems
         
         public void StartDialogue(DialogueGraph graph, Transform npcTransform)
         {
+            _prevActionMap = "Player";
+            _input.SwitchCurrentActionMap("Dialogue");
+            
             _dialogueGraph = graph;
             _dialogueGraph.Current = _dialogueGraph.StartNode;
             _visuals.NpcTransform = npcTransform;
             SetNewNode();
             ActivateNewNode();
             _visuals.ShowDialogue();
-            
-            _prevActionMap = _input.currentActionMap.name;
-            _input.SwitchCurrentActionMap("Dialogue");
         }
 
         public void SetNewNode(string portName = "_exit")

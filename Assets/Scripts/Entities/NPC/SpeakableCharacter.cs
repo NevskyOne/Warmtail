@@ -1,3 +1,4 @@
+using System;
 using Data.Nodes;
 using Interfaces;
 using Systems;
@@ -11,14 +12,25 @@ namespace Entities.NPC
     {
         [SerializeField] private DialogueGraph _graph;
         private DialogueSystem _dialogueSystem;
+        private PlayerInput _input;
         
         [Inject]
         private void Construct(DialogueSystem dialogueSystem, PlayerInput input)
         {
             _dialogueSystem = dialogueSystem;
-            input.actions.FindAction("E").performed += _ => Interact();
+            _input = input;
         }
-        
+
+        private void OnEnable()
+        {
+            _input.actions.FindAction("E").performed += _ => Interact();
+        }
+
+        private void OnDisable()
+        {
+             _input.actions.FindAction("E").performed -= _ => Interact();
+        }
+
         public void Interact()
         {
             _dialogueSystem.StartDialogue(_graph, transform);
