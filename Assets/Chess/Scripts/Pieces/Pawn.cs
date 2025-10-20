@@ -25,13 +25,13 @@ public class Pawn : BasePiece
         CellState cellState = CellState.None;
         if (cellState == targetState)
         {
-            mHighlightedCells.Add(mCurrentCell.mBoard.mAllCells[targetX, targetY]);
+            mHighlighedCells.Add(mCurrentCell.mBoard.mAllCells[targetX, targetY]);
             return true;
         }
         return false;
     }
 
-    protected override void CheckPathing()
+    protected void CheckPathing()
     {
         int currentX = (int)mCurrentCell.mBoardPosition.x;
         int currentY = (int)mCurrentCell.mBoardPosition.y;
