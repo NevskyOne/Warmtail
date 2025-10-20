@@ -1,4 +1,4 @@
-using UnityEngine.InputSystem;
+    using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
 using UnityEngine;
 using UnityEngine.UI;
@@ -20,6 +20,7 @@ public abstract class BasePiece : EventTrigger
 
     public bool mIsFirstMove = true;
 
+    
     public virtual void Setup(Color newTeamColor, Color newSpriteColor, PieceManager newPieceManager)
     {
         mPieceManager = newPieceManager;
@@ -51,23 +52,39 @@ public abstract class BasePiece : EventTrigger
 
     private void CreateCellPath(int xDirection, int yDirection, int movement)
     {
+        // Target position
         int currentX = (int)mCurrentCell.mBoardPosition.x;
         int currentY = (int)mCurrentCell.mBoardPosition.y;
 
+        // Check each cell
         for (int i = 1; i <= movement; i++)
         {
             currentX += xDirection;
             currentY += yDirection;
 
-            if (currentX < 0 || currentX >= mCurrentCell.mBoard.mAllCells.GetLength(0) ||
-                currentY < 0 || currentY >= mCurrentCell.mBoard.mAllCells.GetLength(1))
+            // Added
+            // Get the state of the target cell
+            CellState cellState = cellState.None;
+            cellState = mCurrentCell.mBoard.ValidateCell(currentX, currentY, this);
+
+            // If enemy, add to list, break
+            if (cellState == cellState.Enemy)
+            {
+                mHighlighedCells.Add(mCurrentCell.mBoard.mAllCells[currentX, currentY]);
+                break;
+            }
+
+            // If the cell is not free, break
+            if (cellState != cellState.Free)
             {
                 break;
             }
 
+            // Add to list
             mHighlighedCells.Add(mCurrentCell.mBoard.mAllCells[currentX, currentY]);
         }
     }
+
 
     public virtual void CheckPathing()
     {
@@ -122,15 +139,23 @@ public abstract class BasePiece : EventTrigger
     public override void OnEndDrag(PointerEventData eventData)
     {
         base.OnEndDrag(eventData);
+
+        // Hide
         ClearCells();
 
+        // Return to original position
         if (!mTargetCell)
         {
             transform.position = mCurrentCell.gameObject.transform.position;
             return;
         }
 
+        // Move to new cell
         Move();
+
+        // Added
+        // End turn
+        mPieceManager.SwitchSides(mColor);
     }
 
     public void Place(Cell newCell)
