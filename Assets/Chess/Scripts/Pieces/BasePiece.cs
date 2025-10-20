@@ -86,7 +86,7 @@ public abstract class BasePiece : EventTrigger
     protected void ShowCells()
     {
         foreach(Cell cell in mHighlighedCells)
-            cell.mOutlineImage.enabled = true;
+            cell.mOutlineImage.enabled = false;
     }
 
     protected void ClearCells()
