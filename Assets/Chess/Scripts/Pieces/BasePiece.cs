@@ -120,6 +120,7 @@ public abstract class BasePiece : EventTrigger
         base.OnBeginDrag(eventData);
         CheckPathing();
         ShowCells();
+        print("11111111111111111111111");
     }
     public override void OnDrag(PointerEventData eventData)
     {
@@ -135,6 +136,7 @@ public abstract class BasePiece : EventTrigger
             }
             mTargetCell = null;
         }
+        print("2222222222222222222222222222");
     }
 
     public override void OnEndDrag(PointerEventData eventData)
@@ -157,6 +159,7 @@ public abstract class BasePiece : EventTrigger
         // Added
         // End turn
         mPieceManager.SwitchSides(mColor);
+        print("33333333333333333333333333333");
     }
 
     public void Place(Cell newCell)
