@@ -1,16 +1,19 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class King : BasePiece
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override void Setup(Color newTeamColor, Color newSpriteColor, PieceManager newPieceManager)
     {
-        
+        base.Setup(newTeamColor, newSpriteColor, newPieceManager);
+
+        mMovement = new Vector3Int(1, 1, 1);
+        GetComponent<Image>().sprite = Resources.Load<Sprite>("T_King");
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void kill_piece()
     {
-        
+        base.kill_piece();
+        // mPieceManager.mIsKingAlive = false;
     }
 }

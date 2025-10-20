@@ -1,16 +1,13 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Bishop : BasePiece
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override void Setup(Color newTeamColor, Color newSpriteColor, PieceManager newPieceManager)
     {
-        
-    }
+        base.Setup(newTeamColor, newSpriteColor, newPieceManager);
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        mMovement = new Vector3Int(0, 0, 7);
+        GetComponent<Image>().sprite = Resources.Load<Sprite>("T_Bishop");
     }
 }
