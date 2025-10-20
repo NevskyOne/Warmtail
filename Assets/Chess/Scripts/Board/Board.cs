@@ -6,6 +6,14 @@ public class Board : MonoBehaviour
 {
     public GameObject mCellPrefab;
 
+    public enum CellState
+    {
+        None,
+        Friendly,
+        Enemy,
+        Free,
+        OutOfBounds
+    }
     public Cell[,] mAllCells = new Cell[8 , 8];
 
     public void Create()
@@ -35,5 +43,28 @@ public class Board : MonoBehaviour
                 mAllCells[finalX, y].GetComponent<Image>().color = new Color32(17, 96, 98, 255);
             }
         }
+    }
+
+    public CellState ValidateCell(int targetX, int targetY, BasePiece checkingPiece)
+    {
+        
+        if (targetX < 0 ||  targetX > 7) 
+            return CellState.OutOfBounds;
+            
+        if (targetY < 0 || targetY > 7) 
+            return CellState.OutOfBounds;
+
+        Cell targetCell = mAllCells[targetX, targetY];
+
+        if (targetCell.mCurrentPiece != null)
+        {
+            if (checkingPiece.mColor == targetCell.mCurrentPiece.mColor)
+                return CellState.Friendly;
+
+            if (checkingPiece.mColor != targetCell.mCurrentPiece.mColor)
+            return CellState.Enemy;
+        }
+        
+        return CellState.Free;
     }
 }
