@@ -45,7 +45,7 @@ namespace Entities.Sound
             sourceToCross.clip = clip;
             sourceToCross.volume = 0;
             sourceToCross.Play();
-            await foreach (var (a, b) in CrossfadeSystem.CrossfadeTwins(_crossFadeTime))
+            await foreach (var (a, b) in CrossfadeEffect.CrossfadeTwins(_crossFadeTime))
             {
                 sourceFromCross.volume = a;
                 sourceToCross.volume = b;

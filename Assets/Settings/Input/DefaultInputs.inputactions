@@ -16,15 +16,6 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "MoveMouse",
-                    "type": "Value",
-                    "id": "0b647284-b4ae-4580-ad7a-7b5d0c81782c",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
                     "name": "LeftMouse",
                     "type": "Button",
                     "id": "a95a3bd7-5cdd-4156-871a-b55797c40010",
@@ -89,17 +80,6 @@
                 }
             ],
             "bindings": [
-                {
-                    "name": "",
-                    "id": "0f92e001-ef61-417a-a2bd-315a4370ebb5",
-                    "path": "<Mouse>/position",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "MoveMouse",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
                 {
                     "name": "",
                     "id": "5856845e-de59-45c5-a293-40c6bef3ab2e",

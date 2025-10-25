@@ -23,15 +23,17 @@ namespace Entities.NPC
 
         private void OnEnable()
         {
-            _input.actions.FindAction("E").performed += _ => Interact();
+            _input.actions.FindAction("E").performed += Interact;
         }
 
         private void OnDisable()
         {
-             _input.actions.FindAction("E").performed -= _ => Interact();
+             _input.actions.FindAction("E").performed -= Interact;
         }
 
-        public void Interact()
+        public void Interact() { }
+        
+        public void Interact(InputAction.CallbackContext ctx)
         {
             _dialogueSystem.StartDialogue(_graph, transform);
         }

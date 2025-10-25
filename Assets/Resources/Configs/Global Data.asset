@@ -14,13 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Data.GlobalData
   _savableData:
   - rid: 6360631019312513100
-  - rid: 6360631019312513101
+  - rid: 5483686178784280668
   - rid: 6360631019312513102
   _runtimeData:
   - rid: 6360631019312513099
   references:
     version: 2
     RefIds:
+    - rid: 5483686178784280668
+      type: {class: DialogueVarData, ns: Data, asm: Assembly-CSharp}
+      data:
+        Variables:
+        - Type: 2
+          Name: money
+          Value: 20
     - rid: 6360631019312513099
       type: {class: RuntimePlayerData, ns: Data.Player, asm: Assembly-CSharp}
       data:
@@ -29,13 +36,6 @@ MonoBehaviour:
       type: {class: SavablePlayerData, ns: Data.Player, asm: Assembly-CSharp}
       data:
         PlayerName: Player
-    - rid: 6360631019312513101
-      type: {class: DialogueVarData, ns: Data, asm: Assembly-CSharp}
-      data:
-        Variables:
-        - Type: 2
-          Name: money
-          Value: 10
     - rid: 6360631019312513102
       type: {class: SettingsData, ns: Data, asm: Assembly-CSharp}
       data:

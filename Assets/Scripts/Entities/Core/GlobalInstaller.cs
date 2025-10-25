@@ -13,7 +13,7 @@ namespace Entities.Core
         public override void InstallBindings()
         {
             Container.Bind<SaveSystem>().FromNew().AsSingle();
-            Container.Bind<CrossfadeSystem>().FromNew().AsSingle();
+            Container.Bind<CrossfadeEffect>().FromNew().AsSingle();
             Container.Inject(_globalData);
             Container.Bind<GlobalData>().FromInstance(_globalData).AsSingle();
         }

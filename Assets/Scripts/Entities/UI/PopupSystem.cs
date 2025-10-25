@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using AYellowpaper.SerializedCollections;
+﻿using AYellowpaper.SerializedCollections;
 using Data;
 using TriInspector;
 using UnityEngine;
@@ -8,14 +7,27 @@ namespace Entities.UI
 {
     public class PopupSystem : MonoBehaviour
     {
-        [SerializeField, TableList(Draggable = false)] private List<PopupBase> _normalPopupObjects;
+        [SerializeField] private NotificationPopup _normalNotificationPopup;
         [SerializeField, SerializedDictionary] private SerializedDictionary<PopupType, Transform> _popupHolders;
+
+        private PopupBase _currentPopup;
         
         public void ShowPopup(PopupBase data)
         {
-            var normalData = _normalPopupObjects.Find(x => x.Type == data.Type);
+            PopupBase normalData = null;
+            switch (data.Type)
+            {
+                case PopupType.Notification:
+                    normalData = _normalNotificationPopup;
+                    break;
+            }
             data.Setup(normalData, _popupHolders[data.Type]);
-            
+            _currentPopup = data;
+        }
+        
+        public void ClosePopup(PopupBase data)
+        {
+            _currentPopup.ClosePopup();
         }
     }
 }
