@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using UnityEditor;
 using XNodeEditor;
 
@@ -37,3 +38,4 @@ namespace EditorOnly.NodesEditors
         }
     }
 }
+#endif

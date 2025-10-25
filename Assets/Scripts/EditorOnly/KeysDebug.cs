@@ -7,7 +7,7 @@ namespace EditorOnly
 {
     public class KeysDebug
     {
-        #if UNITY_EDITOR
+        //#if UNITY_EDITOR
         [Inject]
         private void Construct(PlayerInput input, PopupSystem popupSystem, UIStateSystem _uiState)
         {
@@ -27,6 +27,6 @@ namespace EditorOnly
                 }
             }
         }
-        #endif
+        //#endif
     }
 }

@@ -38,21 +38,35 @@ namespace Entities.Sound
             StopAllCoroutines();
             var sourceFromCross = _source1.clip ? _source1 : _source2;
             var sourceToCross = _source1.clip ? _source2 : _source1;
-            var clip = _clips[state][Random.Range(0, _clips[state].Count)];
-
-            _currentState = state;
-            
-            sourceToCross.clip = clip;
-            sourceToCross.volume = 0;
-            sourceToCross.Play();
-            await foreach (var (a, b) in CrossfadeEffect.CrossfadeTwins(_crossFadeTime))
+            try
             {
-                sourceFromCross.volume = a;
-                sourceToCross.volume = b;
+                var rand = Random.Range(0, _clips[state].Count);
+                if (sourceFromCross.clip == _clips[state][rand])
+                {
+                    if (rand == 0) rand += 1;
+                    else rand -= 1;
+                }
+                var clip = _clips[state][rand];
+            
+                _currentState = state;
+            
+                sourceToCross.clip = clip;
+                sourceToCross.volume = 0;
+                sourceToCross.Play();
+                await foreach (var (a, b) in CrossfadeEffect.CrossfadeTwins(_crossFadeTime))
+                {
+                    sourceFromCross.volume = a;
+                    sourceToCross.volume = b;
+                }
+                sourceFromCross.Stop();
+                sourceFromCross.clip = null;
+                StartCoroutine(LoopNext(sourceToCross));
             }
-            sourceFromCross.Stop();
-            sourceFromCross.clip = null;
-            StartCoroutine(LoopNext(sourceToCross));
+            catch (Exception e)
+            {
+                sourceFromCross.volume = 1;
+                sourceToCross.volume = 1;
+            }
         }
 
         private IEnumerator LoopNext(AudioSource source)

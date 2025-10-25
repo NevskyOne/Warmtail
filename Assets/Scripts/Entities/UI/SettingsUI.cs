@@ -2,7 +2,6 @@ using Cysharp.Threading.Tasks;
 using Data;
 using TMPro;
 using TriInspector;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
@@ -38,7 +37,7 @@ namespace Entities.UI
         {
             _globalData = globalData;
             _localData = _globalData.Get<SettingsData>();
-            PlayerSettings.fullScreenMode = _localData.FullscreenMode ? 
+            Screen.fullScreenMode = _localData.FullscreenMode ? 
                 FullScreenMode.FullScreenWindow : FullScreenMode.MaximizedWindow;
             QualitySettings.SetQualityLevel(_localData.QualityLevel);
             ChangeVolume("MainVolume", _localData.MainSoundVolume);
@@ -60,7 +59,7 @@ namespace Entities.UI
         
         public void ChangeFullScreenState(bool value)
         {
-            PlayerSettings.fullScreenMode = value ? FullScreenMode.FullScreenWindow : FullScreenMode.MaximizedWindow;
+            Screen.fullScreenMode = value ? FullScreenMode.FullScreenWindow : FullScreenMode.MaximizedWindow;
             _localData.FullscreenMode = value;
             SaveData();
         }

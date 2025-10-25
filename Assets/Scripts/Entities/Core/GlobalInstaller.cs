@@ -14,7 +14,9 @@ namespace Entities.Core
         {
             Container.Bind<SaveSystem>().FromNew().AsSingle();
             Container.Bind<CrossfadeEffect>().FromNew().AsSingle();
+            #if UNITY_EDITOR
             Container.Inject(_globalData);
+            #endif
             Container.Bind<GlobalData>().FromInstance(_globalData).AsSingle();
         }
     }

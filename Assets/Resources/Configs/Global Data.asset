@@ -14,20 +14,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Data.GlobalData
   _savableData:
   - rid: 6360631019312513100
-  - rid: 5483686178784280668
-  - rid: 6360631019312513102
+  - rid: 5483686185117417560
+  - rid: 5483686185117417561
   _runtimeData:
   - rid: 6360631019312513099
   references:
     version: 2
     RefIds:
-    - rid: 5483686178784280668
+    - rid: 5483686185117417560
       type: {class: DialogueVarData, ns: Data, asm: Assembly-CSharp}
       data:
         Variables:
         - Type: 2
           Name: money
           Value: 20
+    - rid: 5483686185117417561
+      type: {class: SettingsData, ns: Data, asm: Assembly-CSharp}
+      data:
+        MainSoundVolume: 0.5
+        MusicVolume: 1
+        SfxVolume: 1
+        QualityLevel: 1
+        FullscreenMode: 1
     - rid: 6360631019312513099
       type: {class: RuntimePlayerData, ns: Data.Player, asm: Assembly-CSharp}
       data:
@@ -36,11 +44,3 @@ MonoBehaviour:
       type: {class: SavablePlayerData, ns: Data.Player, asm: Assembly-CSharp}
       data:
         PlayerName: Player
-    - rid: 6360631019312513102
-      type: {class: SettingsData, ns: Data, asm: Assembly-CSharp}
-      data:
-        MainSoundVolume: 0.5
-        MusicVolume: 1
-        SfxVolume: 1
-        QualityLevel: 1
-        FullscreenMode: 0
