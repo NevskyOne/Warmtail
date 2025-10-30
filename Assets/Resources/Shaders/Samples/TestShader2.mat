@@ -92,18 +92,23 @@ Material:
     m_Ints: []
     m_Floats:
     - _Distortion: 0
-    - _DistortionScale: 10
-    - _DistortionStrength: 0.016
+    - _DistortionScale: 5.5
+    - _DistortionStrength: 0.008
+    - _Emission: 0
+    - _EmissionMultiplier: 20
+    - _HitBlend: 1
+    - _HitEffect: 0
     - _NoiseScale: 50
     - _Outline: 1
-    - _OutlineWidth: 0.28
-    - _PixelSize: 61.49
+    - _OutlineWidth: 0.0057
+    - _PixelSize: 100
     - _Pixelation: 0
     - _PositionOffset: 0.1
     - _Speed: 3
     - _Use8Directions: 1
     m_Colors:
-    - _DistortionScrollDir: {r: 1.25, g: 0.54, b: 0, a: 0}
-    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
+    - _DistortionScrollDir: {r: 0.76, g: 0.54, b: 0, a: 0}
+    - _HitColor: {r: 116.07625, g: 0, b: 0, a: 1}
+    - _OutlineColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
