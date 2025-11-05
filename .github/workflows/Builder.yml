@@ -6,7 +6,7 @@ on:
 
 jobs:
   test:
-    name: Test my project 🧪
+    name: Test game 🧙‍♂️
     runs-on: ubuntu-latest
     steps:
       # Checkout
@@ -31,7 +31,7 @@ jobs:
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          githubtoken: ${{ secrets.GITHUB_TOKEN }}
 
   build:
     name: Build my project ✨
@@ -46,13 +46,14 @@ jobs:
       # Cache
       - uses: actions/cache@v3
         with:
-          path: Library
-          key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
-          restore-keys: |
+         path: Library
+         key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+         restore-keys: |
             Library-
 
       # Build
       - name: Build project
+        id: build
         uses: game-ci/unity-builder@v4
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
@@ -68,3 +69,29 @@ jobs:
         with:
           name: Build
           path: build
+      - run: echo ${{steps.build.outputs.buildVersion}}
+      - name: Archive game content
+        uses: thedoctor0/zip-release@master
+        with:
+           filename: game.zip
+  release:
+    name: Creating release 🎮
+    runs-on: ubuntu-latest
+    steps:
+     - name: Create release
+       id: create-release
+       uses: actions/create-release@v1
+       env:
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+       with:
+         tag_name: 'alpha-release'
+         release_name: $ {{steps.build.outputs.buildVersion}}
+         name: Upload release asset
+     - name: Update release asset 
+       uses: actions/upload-release-asset@v1
+       env:
+         GITHUB TOHEN: ${{secrets.GITHUB TOKEN }}
+       with:
+         upload_url: ${{ steps.create-release.outputs.upload_url))
+         asset path: /game.zip
+         asset name: game-v${{ steps.build.outputs.buildVersion}}.zip
