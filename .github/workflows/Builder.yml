@@ -92,6 +92,6 @@ jobs:
        env:
          GITHUB TOKEN: ${{secrets.USER_TOKEN }}
        with:
-         upload_url: ${{ steps.create-release.outputs.upload_url)) }}
+         upload_url: ${{ steps.create-release.outputs.upload_url }}
          asset path: /game.zip
          asset name: win-v${{ steps.build.outputs.buildVersion}}.zip
