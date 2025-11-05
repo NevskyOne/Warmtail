@@ -41,26 +41,3 @@ jobs:
           name: Build
           path: build
       - run: echo ${{steps.build.outputs.buildVersion}}
-  release:
-    permissions: write-all
-    name: Creating release 🎮
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-     - name: Create release
-       id: create-release
-       uses: actions/create-release@v1
-       env:
-         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-       with:
-         tag_name: 'windows-release'
-         release_name: ${{steps.build.outputs.buildVersion}}
-     - name: Update release asset 
-       uses: actions/upload-release-asset@v1
-       env:
-         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN }}
-       with:
-         upload_url: ${{ steps.create-release.outputs.upload_url }}
-         asset_path: ./Build.zip
-         asset_name: win-v${{ steps.build.outputs.buildVersion }}.zip
-         asset_content_type: application/zip
