@@ -36,3 +36,4 @@ jobs:
        with:
          upload_url: ${{ steps.create-release.outputs.upload_url }}
          asset_path: path/to/artifact/world.txt
+         asset_name: win-vmeow.zip
