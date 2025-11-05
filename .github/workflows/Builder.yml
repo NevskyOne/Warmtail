@@ -86,7 +86,6 @@ jobs:
        with:
          tag_name: 'windows-release'
          release_name: $ {{steps.build.outputs.buildVersion}}
-         name: Upload release asset
      - name: Update release asset 
        uses: actions/upload-release-asset@v1
        env:
