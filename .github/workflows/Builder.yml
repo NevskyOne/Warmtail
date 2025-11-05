@@ -31,7 +31,7 @@ jobs:
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
-          githubtoken: ${{ secrets.GITHUB_TOKEN }}
+          githubtoken: ${{ secrets.USER_TOKEN }}
 
   build:
     name: Build my project ✨
@@ -82,16 +82,16 @@ jobs:
        id: create-release
        uses: actions/create-release@v1
        env:
-         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+         GITHUB_TOKEN: ${{ secrets.USER_TOKEN }}
        with:
-         tag_name: 'alpha-release'
+         tag_name: 'windows-release'
          release_name: $ {{steps.build.outputs.buildVersion}}
          name: Upload release asset
      - name: Update release asset 
        uses: actions/upload-release-asset@v1
        env:
-         GITHUB TOHEN: ${{secrets.GITHUB TOKEN }}
+         GITHUB TOKEN: ${{secrets.USER_TOKEN }}
        with:
          upload_url: ${{ steps.create-release.outputs.upload_url))
          asset path: /game.zip
-         asset name: game-v${{ steps.build.outputs.buildVersion}}.zip
+         asset name: win-v${{ steps.build.outputs.buildVersion}}.zip
