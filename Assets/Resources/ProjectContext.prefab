@@ -74,4 +74,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a550a539c5321c4f876ba552d9b4b6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entities.Core.GlobalInstaller
-  _globalData: {fileID: 11400000, guid: fbad75884e2d65a45aa46fe3531817e9, type: 2}
+  _globalDataPrefab: {fileID: 3792936660450461611, guid: 8493955ac919f2846917c2007878a1dd, type: 3}

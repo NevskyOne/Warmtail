@@ -10,15 +10,14 @@ namespace Data
 {
     public delegate void DataEventFunc();
     
-    [CreateAssetMenu(fileName = "Global Data", menuName = "Configs/Global Data")]
-    public class GlobalData : ScriptableObject, IDisposable
+    public class GlobalData : MonoBehaviour, IDisposable
     {
         [Title("Data")]
         [SerializeReference] private List<ISavableData> _savableData = new();
         [SerializeReference] private List<IRuntimeData> _runtimeData = new();
         
         private readonly Dictionary<IData, List<DataEventFunc>> _subs = new();
-
+        
         private SaveSystem _saveSystem;
 
         [Button("Delete Save Data"), GUIColor("red")]

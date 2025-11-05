@@ -8,12 +8,6 @@ namespace Entities.Core
     public class BootInstaller : MonoInstaller
     {
         [SerializeField] private MusicStateSystem _musicSystem;
-
-        [Inject]
-        private void Construct(GlobalData globalData)
-        {
-            Container.Inject(globalData);
-        }
         
         public override void InstallBindings()
         {

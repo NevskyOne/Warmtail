@@ -1020,7 +1020,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.56136155
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1117,7 +1117,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.43863845
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1376,7 +1376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e42af38eee04befad35b05ffe43da0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entities.Core.BootInstaller
-  _musicSystem: {fileID: 0}
+  _musicSystem: {fileID: 1662352157}
 --- !u!1 &2062651858
 GameObject:
   m_ObjectHideFlags: 0
