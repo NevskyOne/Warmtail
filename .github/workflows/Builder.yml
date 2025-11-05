@@ -1,6 +1,8 @@
 name: Builder
 
-on: push
+on: 
+   push:
+      branches: ['main']
 
 jobs:
   test:
@@ -59,6 +61,7 @@ jobs:
         with:
           targetPlatform: StandaloneWindows64
           allowDirtyBuild: true
+          versioning: Semantic
 
       # Output
       - uses: actions/upload-artifact@v4
