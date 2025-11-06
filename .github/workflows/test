@@ -1,0 +1,40 @@
+name: test
+
+on: push
+
+jobs:
+  build:
+    permissions: write-all
+    name: build
+    runs-on: ubuntu-latest
+    steps:
+      - run: mkdir -p path/to/artifact
+      - run: echo hello > path/to/artifact/world.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Build
+          path: ./build
+
+  release:
+    permissions: write-all
+    name: Creating release 🎮
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+     - name: Create release
+       id: create-release
+       uses: actions/create-release@v1
+       env:
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+       with:
+         tag_name: meow
+         release_name: meow
+     - name: Update release asset 
+       uses: actions/upload-release-asset@v1
+       env:
+         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN }}
+       with:
+         upload_url: ${{ steps.create-release.outputs.upload_url }}
+         asset_path: ./build/Build.txt
+         asset_name: win-vmeow.zip
+         asset_content_type: text/plain
