@@ -34,7 +34,6 @@ jobs:
         with:
           allowDirtyBuild: true
           versioning: Semantic
-          customImage: ${{vars.ICON_PATH}}
           buildName: ${{vars.GAME_NAME}}
           targetPlatform: StandaloneWindows64
 
