@@ -33,11 +33,39 @@ jobs:
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
           allowDirtyBuild: true
+          versioning: semantics
           targetPlatform: StandaloneWindows64
 
       # Output
       - uses: actions/upload-artifact@v4
         with:
-          name: Build
-          path: build
+          name: build
+          path: ./
       - run: echo ${{steps.build.outputs.buildVersion}}
+      - name: Read Artefact
+        uses: actions/download-artifact@v4
+        with:
+          name: build
+          path: ./
+      - name: Create zip
+        uses: ihiroky/archive-action@v1
+        with:
+          root_dir: .
+          file_path: ../build.zip
+      - name: Create release
+        id: create-release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{steps.build.outputs.buildVersion}}
+          release_name: New Release ${{steps.build.outputs.buildVersion}}
+      - name: Update release asset 
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create-release.outputs.upload_url }}
+          asset_path: ../build.zip
+          asset_name: win-v.zip
+          asset_content_type: application/zip
