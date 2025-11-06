@@ -33,7 +33,7 @@ jobs:
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
           allowDirtyBuild: true
-          versioning: semantics
+          versioning: Semantic
           targetPlatform: StandaloneWindows64
 
       # Output
