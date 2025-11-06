@@ -10,24 +10,22 @@ jobs:
     name: Build my project ✨
     runs-on: ubuntu-latest
     steps:
-      # Checkout — нужно подтянуть всю историю и теги
-      - name: Checkout repository
+      - name: Checkout repository 😶‍🌫️
         uses: actions/checkout@v4
         with:
           lfs: true
-          fetch-depth: 0          # <- обязательно: чтобы builder видел теги и подсчитал patch
-
-      # Cache
-      - uses: actions/cache@v3
+          fetch-depth: 0
+          
+      - name: Cashing... 👾
+        uses: actions/cache@v3
         with:
           path: Library
           key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
           restore-keys: |
             Library-
 
-      # Build — ОБЯЗАТЕЛЬНО задать id, чтобы потом получить outputs
-      - name: Build project
-        id: unity_build                # <- добавлено! теперь можно брать outputs
+      - name: Building project... 💪
+        id: unity_build               
         uses: game-ci/unity-builder@v4
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
@@ -38,8 +36,8 @@ jobs:
           versioning: Semantic
           targetPlatform: StandaloneWindows64
 
-      # Debug — вывести версию в лог, чтобы убедиться, что она не пустая
-      - name: Show generated version
+    
+      - name: Heres new version 🧙‍♂️
         run: |
           echo "buildVersion from builder: '${{ steps.unity_build.outputs.buildVersion }}'"
           # option: fail if empty (накладывайте по желанию)
@@ -48,13 +46,13 @@ jobs:
             exit 1
           fi
 
-      - name: Create zip
+      - name: Creating zip-file... 🔥
         uses: ihiroky/archive-action@v1
         with:
           root_dir: build
           file_path: ../build.zip
 
-      - name: Create release
+      - name: Create release 🥞
         id: create-release
         uses: actions/create-release@v1
         with:
@@ -66,12 +64,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Update release asset
+      - name: Adding build to release 🥳
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create-release.outputs.upload_url }}
           asset_path: ../build.zip
-          asset_name: win-v.zip
+          asset_name: win-v${{ steps.unity_build.outputs.buildVersion }}.zip
           asset_content_type: application/zip
