@@ -36,21 +36,10 @@ jobs:
           versioning: Semantic
           targetPlatform: StandaloneWindows64
 
-      # Output
-      - uses: actions/upload-artifact@v4
-        with:
-          name: build
-          path: build
-      - run: echo ${{steps.build.outputs.buildVersion}}
-      - name: Read Artefact
-        uses: actions/download-artifact@v4
-        with:
-          name: build
-          path: build
       - name: Create zip
         uses: ihiroky/archive-action@v1
         with:
-          root_dir: .
+          root_dir: build
           file_path: ../build.zip
       - name: Create release
         id: create-release
