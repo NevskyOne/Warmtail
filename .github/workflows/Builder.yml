@@ -34,13 +34,14 @@ jobs:
         with:
           allowDirtyBuild: true
           versioning: Semantic
+          customImage: ${{vars.ICON_PATH}}
+          buildName: ${{vars.GAME_NAME}}
           targetPlatform: StandaloneWindows64
 
     
       - name: Heres new version 🧙‍♂️
         run: |
           echo "buildVersion from builder: '${{ steps.unity_build.outputs.buildVersion }}'"
-          # option: fail if empty (накладывайте по желанию)
           if [ -z "${{ steps.unity_build.outputs.buildVersion }}" ]; then
             echo "ERROR: buildVersion is empty!"
             exit 1
@@ -71,5 +72,5 @@ jobs:
         with:
           upload_url: ${{ steps.create-release.outputs.upload_url }}
           asset_path: ../build.zip
-          asset_name: win-v${{ steps.unity_build.outputs.buildVersion }}.zip
+          asset_name: ${{vars.GAME_NAME}}-win-v${{ steps.unity_build.outputs.buildVersion }}.zip
           asset_content_type: application/zip
