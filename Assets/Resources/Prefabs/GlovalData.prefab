@@ -69,7 +69,7 @@ MonoBehaviour:
       data:
         MainSoundVolume: 0.5
         MusicVolume: 1
-        SfxVolume: 1
+        SfxVolume: 0.491
         QualityLevel: 1
         FullscreenMode: 1
     - rid: 1601399230582489401

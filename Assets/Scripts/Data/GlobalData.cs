@@ -10,10 +10,13 @@ namespace Data
 {
     public delegate void DataEventFunc();
     
-    public class GlobalData : MonoBehaviour, IDisposable
+    public class GlobalData : MonoBehaviour
     {
         [Title("Data")]
         [SerializeReference] private List<ISavableData> _savableData = new();
+
+        public List<ISavableData> SavableData => _savableData;
+
         [SerializeReference] private List<IRuntimeData> _runtimeData = new();
         
         private readonly Dictionary<IData, List<DataEventFunc>> _subs = new();
@@ -23,7 +26,7 @@ namespace Data
         [Button("Delete Save Data"), GUIColor("red")]
         public void DeleteSaveData()
         {
-            PlayerPrefs.DeleteAll();
+            _saveSystem.DeleteSaves();
             Debug.Log("Data deleted!");
         }
         
@@ -36,7 +39,7 @@ namespace Data
             var allDataList = _savableData.Concat<IData>(_runtimeData).ToList();
             foreach (var data in allDataList)
             {
-                _subs[data] = new List<DataEventFunc>();
+                _subs.Add(data, new List<DataEventFunc>());
             }
         }
         
@@ -71,7 +74,7 @@ namespace Data
                 sub.Invoke();
             }
             if (typeof(ISavableData).IsAssignableFrom(typeof(T)))
-                _saveSystem.Save((ISavableData)foundKey);
+                _saveSystem.UpdateData((ISavableData)foundKey);
             Debug.Log($"Updated {typeof(T).Name}");
         }
         
@@ -81,14 +84,55 @@ namespace Data
             NotifySubscribers<T>(); 
         }
 
+        public void UpdateAllData(List<ISavableData> newList)
+        {
+            if (newList == null) return;
+
+            for (int i = 0; i < newList.Count; i++)
+            {
+                var newItem = newList[i];
+                if (newItem == null) continue;
+                
+                IData oldKey = _subs.Keys.FirstOrDefault(k => k.GetType() == newItem.GetType());
+
+                List<DataEventFunc> subscribers;
+                if (oldKey != null && _subs.TryGetValue(oldKey, out subscribers))
+                {
+                    _subs.Remove(oldKey);
+                }
+                else
+                {
+                    subscribers = new List<DataEventFunc>();
+                }
+                
+                _subs[newItem] = subscribers;
+
+                int index = _savableData.FindIndex(x => x != null && x.GetType() == newItem.GetType());
+                if (index >= 0)
+                {
+                    _savableData[index] = newItem;
+                }
+                else
+                {
+                    _savableData.Add(newItem);
+                }
+                
+                foreach (var sub in subscribers)
+                {
+                    try { sub.Invoke(); } catch (Exception ex) { Debug.LogError($"Subscriber threw: {ex}"); }
+                }
+            }
+        }
+
         public T Get<T>() where T : class, IData
         {
             return (T)_subs.Keys.First(data => typeof(T) == data.GetType());
         }
 
-        public void Dispose()
+        public void OnDisable()
         {
             _subs.Clear();
+            _saveSystem.SaveAllToDisk();
         }
     }
 }

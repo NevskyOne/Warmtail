@@ -36,6 +36,19 @@ namespace Entities.UI
         private void Construct(GlobalData globalData)
         {
             _globalData = globalData;
+            ChangeAllGraphics();
+            
+            _fullScreenToggle.onValueChanged.AddListener(ChangeFullScreenState);
+            _graphicsDropdown.onValueChanged.AddListener(ChangeQuality);
+            _mainSoundSlider.onValueChanged.AddListener(ChangeMainVolume);
+            _musicSlider.onValueChanged.AddListener(ChangeMusicVolume);
+            _sfxSlider.onValueChanged.AddListener(ChangeSfxVolume);
+            
+            _globalData.SubscribeTo<SettingsData>(ChangeAllGraphics);
+        }
+        
+        private void ChangeAllGraphics()
+        {
             _localData = _globalData.Get<SettingsData>();
             Screen.fullScreenMode = _localData.FullscreenMode ? 
                 FullScreenMode.FullScreenWindow : FullScreenMode.MaximizedWindow;
@@ -49,12 +62,6 @@ namespace Entities.UI
             _mainSoundSlider.value = _localData.MainSoundVolume;
             _musicSlider.value = _localData.MusicVolume;
             _sfxSlider.value = _localData.SfxVolume;
-            
-            _fullScreenToggle.onValueChanged.AddListener(ChangeFullScreenState);
-            _graphicsDropdown.onValueChanged.AddListener(ChangeQuality);
-            _mainSoundSlider.onValueChanged.AddListener(ChangeMainVolume);
-            _musicSlider.onValueChanged.AddListener(ChangeMusicVolume);
-            _sfxSlider.onValueChanged.AddListener(ChangeSfxVolume);
         }
         
         public void ChangeFullScreenState(bool value)
