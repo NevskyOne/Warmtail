@@ -16,6 +16,7 @@ namespace Entities.Core
         public override void InstallBindings()
         {
             Container.Bind<SaveSystem>().FromNew().AsSingle();
+            Container.Bind<ManualSaveSystem>().FromNew().AsSingle();
             Container.Bind<CrossfadeEffect>().FromNew().AsSingle();
             _globalData = Instantiate(_globalDataPrefab, transform);
             Container.Inject(_globalData);

@@ -131,7 +131,7 @@ namespace Entities.UI
                     _boxName!.text = displayName;
                     BoxNameEffect.Refresh();
                     _boxImage!.sprite = character.EmotionSprites![node.Emotion];
-                    _boxText.text = node.Text;
+                    _boxText.text = node.Text.GetLocalizedString();
                     BoxTextEffect.globalEffects[0].effect = _effect;
                     BoxTextEffect.Refresh();
                     BoxTextEffect.StartOnStartEffects();
@@ -139,7 +139,7 @@ namespace Entities.UI
                 case FrameType.Bubble:
                     _bubbleName!.text = displayName;
                     BubbleNameEffect.Refresh();
-                    _bubbleText.text = node.Text;
+                    _bubbleText.text = node.Text.GetLocalizedString();
                     BubbleTextEffect.globalEffects[0].effect = _effect;
                     BubbleTextEffect.Refresh();
                     BubbleTextEffect.StartOnStartEffects();
