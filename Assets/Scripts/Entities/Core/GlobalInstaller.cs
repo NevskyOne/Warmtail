@@ -1,5 +1,6 @@
 using System;
 using Data;
+using Entities.Localization;
 using Systems.DataSystems;
 using Systems.Effects;
 using UnityEngine;
