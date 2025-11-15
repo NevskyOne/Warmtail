@@ -1,5 +1,7 @@
 using System;
 using Data;
+using Data.Player;
+using Interfaces;
 using Systems.DataSystems;
 using Systems.Effects;
 using UnityEngine;
@@ -21,6 +23,7 @@ namespace Entities.Core
             _globalData = Instantiate(_globalDataPrefab, transform);
             Container.Inject(_globalData);
             Container.Bind<GlobalData>().FromInstance(_globalData).AsSingle();
+           
         }
     }
 }

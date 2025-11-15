@@ -1,50 +1,55 @@
+using Interfaces;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Zenject;
 
-[RequireComponent(typeof(Rigidbody2D))]
-public class PlayerMovement : MonoBehaviour
+namespace Entities.PlayerScripts
 {
-    [Header("Movement Settings")]
-    [SerializeField] private float moveSpeed = 5f;
-    [SerializeField] private float acceleration = 10f;
-    [SerializeField] private float deceleration = 10f;
-    
-    private Rigidbody2D rb;
-    private Vector2 moveInput;
-    private Vector2 currentVelocity;
-    
-    private void Awake()
+    public class PlayerMovement : IAbility
     {
-        rb = GetComponent<Rigidbody2D>();
-        rb.gravityScale = 0;
-        rb.linearDamping = 0;
-    }
+        [Header("Movement Settings")]
+        [SerializeField] private float _moveSpeed = 5f;
+        [SerializeField] private float _acceleration = 10f;
+        [SerializeField] private float _deceleration = 10f;
     
-    public void OnMove(InputAction.CallbackContext context)
-    {
-        moveInput = context.ReadValue<Vector2>();
-    }
+        private Rigidbody2D _rb;
+        private Vector2 _moveInput;
+        private Vector2 _currentVelocity = new Vector2();
+        public bool Enabled { get; set; }
     
-    private void FixedUpdate()
-    {
-        // Плавное ускорение и замедление
-        if (moveInput.magnitude > 0.1f)
+        [Inject]
+        public void Construct(Player player, PlayerInput playerInput)
         {
-            currentVelocity = Vector2.MoveTowards(
-                currentVelocity, 
-                moveInput.normalized * moveSpeed, 
-                acceleration * Time.fixedDeltaTime
-            );
+            _rb = player.Rigidbody;
+            playerInput.actions["Move"].performed += OnMove;
         }
-        else
+    
+        private void OnMove(InputAction.CallbackContext context)
         {
-            currentVelocity = Vector2.MoveTowards(
-                currentVelocity, 
-                Vector2.zero, 
-                deceleration * Time.fixedDeltaTime
-            );
+            if(Enabled)
+                _moveInput = context.ReadValue<Vector2>();
         }
+    
+        public void FixedTick()
+        {
+            if (_moveInput.magnitude > 0.1f)
+            {
+                _currentVelocity = Vector2.MoveTowards(
+                    _currentVelocity, 
+                    _moveInput.normalized * _moveSpeed, 
+                    _acceleration * Time.fixedDeltaTime
+                );
+            }
+            else
+            {
+                _currentVelocity = Vector2.MoveTowards(
+                    _currentVelocity, 
+                    Vector2.zero, 
+                    _deceleration * Time.fixedDeltaTime
+                );
+            }
         
-        rb.linearVelocity = currentVelocity;
+            _rb.linearVelocity = _currentVelocity;
+        }
     }
 }

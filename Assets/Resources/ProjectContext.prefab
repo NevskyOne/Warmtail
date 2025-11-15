@@ -75,3 +75,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entities.Core.GlobalInstaller
   _globalDataPrefab: {fileID: 3792936660450461611, guid: 8493955ac919f2846917c2007878a1dd, type: 3}
+  _playerConfig: {fileID: 11400000, guid: a7bbb2e1e9a601347a5aaf0c0486dfdd, type: 2}
