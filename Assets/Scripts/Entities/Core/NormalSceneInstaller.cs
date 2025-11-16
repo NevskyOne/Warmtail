@@ -7,6 +7,7 @@ using Systems;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Zenject;
+using Data; 
 
 namespace Entities.Core
 {
@@ -18,6 +19,8 @@ namespace Entities.Core
         [SerializeField] private PlayerConfig _playerConfig;
         [SerializeField] private PopupSystem _popupSystem;
         [SerializeField] private UIStateSystem _uiStateSystem;
+        [SerializeField] private GlobalData _globalData;
+        
         
         public override void InstallBindings()
         {
@@ -27,8 +30,10 @@ namespace Entities.Core
             Container.Bind<DialogueVisuals>().FromInstance(_dialogueVisuals).AsSingle();
             Container.Bind<PopupSystem>().FromInstance(_popupSystem).AsSingle();
             Container.Bind<UIStateSystem>().FromInstance(_uiStateSystem).AsSingle();
+           
             Container.Inject(new KeysDebug());
             Container.Bind<PlayerConfig>().FromInstance(_playerConfig).AsSingle();
+            Container.Bind<GlobalData>().FromInstance(_globalData).AsSingle();
             foreach (var ability in _playerConfig.Abilities)
             {
                 Container.Inject(ability);

@@ -123,7 +123,6 @@ namespace Data
                 }
             }
         }
-
         public T Get<T>() where T : class, IData
         {
             return (T)_subs.Keys.First(data => typeof(T) == data.GetType());

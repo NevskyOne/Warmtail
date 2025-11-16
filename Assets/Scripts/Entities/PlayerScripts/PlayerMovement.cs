@@ -22,6 +22,7 @@ namespace Entities.PlayerScripts
         {
             _rb = player.Rigidbody;
             playerInput.actions["Move"].performed += OnMove;
+            playerInput.actions["Move"].canceled += OnMove;
         }
     
         private void OnMove(InputAction.CallbackContext context)
