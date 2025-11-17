@@ -8,7 +8,7 @@ public class TextNode : BaseNode
 {
     [Input, SerializeField] private int _entry;
     [Output, SerializeField] private int _exit;
-    [SerializeField, TextArea(3,10)] private string _text;
+    [SerializeField] private string _text;
     [SerializeField] private Characters _character;
     [SerializeField] private CharactersEmotions _emotion;
     [SerializeField] private string _displayName;

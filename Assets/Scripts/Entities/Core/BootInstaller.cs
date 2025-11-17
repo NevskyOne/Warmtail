@@ -14,6 +14,7 @@ namespace Entities.Core
         public override void InstallBindings()
         {
             Container.Bind<MusicStateSystem>().FromInstance(_musicSystem).AsSingle();
+            DontDestroyOnLoad(_localizationManager);
             Container.Bind<LocalizationManager>().FromInstance(_localizationManager).AsSingle();
         }
     }

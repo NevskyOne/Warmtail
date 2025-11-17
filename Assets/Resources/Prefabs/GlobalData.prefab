@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7678490302908538622}
   - component: {fileID: 3792936660450461611}
   m_Layer: 0
-  m_Name: GlovalData
+  m_Name: GlobalData
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61,9 +61,9 @@ MonoBehaviour:
       type: {class: DialogueVarData, ns: Data, asm: Assembly-CSharp}
       data:
         Variables:
-        - Type: 2
-          Name: money
-          Value: 20
+        - Type: 0
+          Name: playerName
+          Value: player
     - rid: 1601399230582489400
       type: {class: SettingsData, ns: Data, asm: Assembly-CSharp}
       data:
