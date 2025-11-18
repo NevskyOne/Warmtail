@@ -1,4 +1,5 @@
 using Data;
+using Entities.Localization;
 using Entities.Sound;
 using UnityEngine;
 using Zenject;

@@ -1,5 +1,6 @@
 using System;
 using Data;
+using Entities.Localization;
 using Systems.DataSystems;
 using Systems.Effects;
 using UnityEngine;
@@ -10,16 +11,15 @@ namespace Entities.Core
 {
     public class GlobalInstaller : MonoInstaller
     {
-        [SerializeField] private GlobalData _globalDataPrefab;
-        private GlobalData _globalData;
+        [SerializeField] private GlobalData _globalData;
+        [SerializeField] private LocalizationManager _localizationManager;
 
         public override void InstallBindings()
         {
             Container.Bind<SaveSystem>().FromNew().AsSingle();
             Container.Bind<ManualSaveSystem>().FromNew().AsSingle();
             Container.Bind<CrossfadeEffect>().FromNew().AsSingle();
-            _globalData = Instantiate(_globalDataPrefab, transform);
-            Container.Inject(_globalData);
+            Container.Bind<LocalizationManager>().FromInstance(_localizationManager).AsSingle();
             Container.Bind<GlobalData>().FromInstance(_globalData).AsSingle();
         }
     }

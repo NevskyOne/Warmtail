@@ -45,21 +45,10 @@ MonoBehaviour:
       _dynamic: 0
   _entry: 0
   _exit: 0
-  _text:
-    m_TableReference:
-      m_TableCollectionName: GUID:eb1875f277a6f9e419fe3de5d78bc25e
-    m_TableEntryReference:
-      m_KeyId: 1241093824512
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
+  _textId: 0
   _character: 2
   _emotion: 0
   _displayName: 
-  references:
-    version: 2
-    RefIds: []
 --- !u!114 &-3663177957271770509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,21 +94,10 @@ MonoBehaviour:
       _dynamic: 0
   _entry: 0
   _exit: 0
-  _text:
-    m_TableReference:
-      m_TableCollectionName: GUID:eb1875f277a6f9e419fe3de5d78bc25e
-    m_TableEntryReference:
-      m_KeyId: 1241093824512
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
+  _textId: 0
   _character: 2
   _emotion: 0
   _displayName: 
-  references:
-    version: 2
-    RefIds: []
 --- !u!114 &-2239683797766378082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,21 +206,10 @@ MonoBehaviour:
       _dynamic: 0
   _entry: 0
   _exit: 0
-  _text:
-    m_TableReference:
-      m_TableCollectionName: 
-    m_TableEntryReference:
-      m_KeyId: 0
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
+  _textId: 0
   _character: 2
   _emotion: 0
   _displayName: 
-  references:
-    version: 2
-    RefIds: []
 --- !u!114 &-540551890740898464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288,21 +255,10 @@ MonoBehaviour:
       _dynamic: 0
   _entry: 0
   _exit: 0
-  _text:
-    m_TableReference:
-      m_TableCollectionName: 
-    m_TableEntryReference:
-      m_KeyId: 0
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
+  _textId: 0
   _character: 2
   _emotion: 0
   _displayName: 
-  references:
-    version: 2
-    RefIds: []
 --- !u!114 &-312239305339209527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -356,6 +312,7 @@ MonoBehaviour:
   - {fileID: -540551890740898464}
   - {fileID: -1578883992932801547}
   _startNode: {fileID: -312239305339209527}
+  _dialogueId: 0
 --- !u!114 &1965869452142960006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -401,21 +358,10 @@ MonoBehaviour:
       _dynamic: 0
   _entry: 0
   _exit: 0
-  _text:
-    m_TableReference:
-      m_TableCollectionName: GUID:eb1875f277a6f9e419fe3de5d78bc25e
-    m_TableEntryReference:
-      m_KeyId: 1241093824512
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
-  _character: 2
+  _textId: 0
+  _character: 0
   _emotion: 0
   _displayName: 
-  references:
-    version: 2
-    RefIds: []
 --- !u!114 &2089280792118713591
 MonoBehaviour:
   m_ObjectHideFlags: 0
