@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.IO;
 using R3;
 using TMPro;
 using TriInspector;
@@ -21,9 +22,9 @@ namespace Entities.Localization
             _localization.CurrentLanguage.Subscribe(_ => UpdateString());
         }
 
+        [Button("UpdateString")]
         private void UpdateString()
         {
-            print("UPD");
             Text.text = _localization.GetStringFromKey(_key);
         }
         
@@ -32,8 +33,8 @@ namespace Entities.Localization
             TriDropdownList<string> list = new();
             foreach (var tableName in LocalizationManager.NameToGid.Keys)
             {
-                var table = Resources.Load<TextAsset>($"Localization/{tableName}");
-                string[] lines = table.text.Split('\n');
+                var table = File.ReadAllText(Path.Combine(Application.streamingAssetsPath, "Localization", $"{tableName}.tsv"));
+                string[] lines = table.Split('\n');
                 for (int i = 1; i < lines.Length; i++)
                 {
                     var key = lines[i].Split("\t")[0];

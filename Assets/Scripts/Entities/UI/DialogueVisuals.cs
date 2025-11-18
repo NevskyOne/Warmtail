@@ -3,6 +3,7 @@ using Data;
 using Data.Player;
 using EasyTextEffects;
 using EasyTextEffects.Effects;
+using Entities.Localization;
 using Entities.PlayerScripts;
 using Systems;
 using TMPro;
@@ -63,17 +64,20 @@ namespace Entities.UI
         private TextEffect BubbleTextEffect => _bubbleText.GetComponent<TextEffect>();
         
         private Transform _playerTransform;
+        private LocalizationManager _localizationManager;
         public Transform NpcTransform { get; set; }
         public bool IsComplete { get; set; }
 
         [Inject]
-        private void Construct(DiContainer container, PlayerInput input, DialogueSystem dialogueSystem, GlobalData globalData, Player player)
+        private void Construct(DiContainer container, PlayerInput input, LocalizationManager localization,
+            DialogueSystem dialogueSystem, GlobalData globalData, Player player)
         {
             _diContainer = container;
             _input = input;
             _system = dialogueSystem;
             _globalData = globalData;
             _playerTransform = player.transform;
+            _localizationManager = localization;
 
             BoxTextEffect.globalEffects[0].onEffectCompleted.AddListener(() => IsComplete = true);
             BubbleTextEffect.globalEffects[0].onEffectCompleted.AddListener(() => IsComplete = true);
@@ -109,13 +113,18 @@ namespace Entities.UI
         {
             IsComplete = false;
             var character = _holder.Characters.Find(x => x.Character == node.Character);
+
+            var text = _localizationManager.GetStringFromKey(
+                character.Character + "_" + _system.DialogueGraph.DialogueId + "_" + node.TextId);
+            
             if (_audioSource != null)
             {
                 _audioSource.clip = character.Sound;
                 _audioSource.Play();
             }
 
-            var displayName = node.DisplayName == "" ? node.Character.ToString() : node.DisplayName;
+            var displayName = node.DisplayName == "" ? 
+                _localizationManager.GetStringFromKey(node.Character.ToString()) : node.DisplayName;
             if (displayName == "Player")
             {
                 displayName = _globalData.Get<SavablePlayerData>().PlayerName;
@@ -130,8 +139,9 @@ namespace Entities.UI
                 case FrameType.Box:
                     _boxName!.text = displayName;
                     BoxNameEffect.Refresh();
-                    _boxImage!.sprite = character.EmotionSprites![node.Emotion];
-                    _boxText.text = node.Text;
+                    if(character.EmotionSprites.ContainsKey(node.Emotion))
+                        _boxImage.sprite = character.EmotionSprites[node.Emotion];
+                    _boxText.text = text;
                     BoxTextEffect.globalEffects[0].effect = _effect;
                     BoxTextEffect.Refresh();
                     BoxTextEffect.StartOnStartEffects();
@@ -139,7 +149,7 @@ namespace Entities.UI
                 case FrameType.Bubble:
                     _bubbleName!.text = displayName;
                     BubbleNameEffect.Refresh();
-                    _bubbleText.text = node.Text;
+                    _bubbleText.text = text;
                     BubbleTextEffect.globalEffects[0].effect = _effect;
                     BubbleTextEffect.Refresh();
                     BubbleTextEffect.StartOnStartEffects();
@@ -148,23 +158,25 @@ namespace Entities.UI
             
         }
         
-        public async void ShowOptions(List<string> choices)
+        public async void ShowOptions(List<int> choices)
         {
             _input.SwitchCurrentActionMap("UI");
-            foreach (var choiceStr in choices)
+            foreach (var choiceInd in choices)
             {
+                var text = _localizationManager.GetStringFromKey(
+                    "player_" + _system.DialogueGraph.DialogueId + "_" + choiceInd);
                 switch (_frameType)
                 {
                     case FrameType.Box:
                         var boxObj = await InstantiateAsync(_boxOptionsPrefab, _boxOptionsGroup);
-                        boxObj[0].text = choiceStr;
+                        boxObj[0].text = text;
                         boxObj[0].GetComponent<TextEffect>().globalEffects[0].effect = _effect;
                         boxObj[0].GetComponent<TextEffect>().Refresh();
                         _diContainer.Inject(boxObj[0].gameObject.GetComponent<DialogueOptionUI>());
                         break;
                     case FrameType.Bubble:
                         var bubbleObj = await InstantiateAsync(_bubbleOptionsPrefab, _bubbleOptionsGroup);
-                        bubbleObj[0].text = choiceStr;
+                        bubbleObj[0].text = text;
                         bubbleObj[0].GetComponent<TextEffect>().globalEffects[0].effect = _effect;
                         bubbleObj[0].GetComponent<TextEffect>().Refresh();
                         _diContainer.Inject(bubbleObj[0].gameObject.GetComponent<DialogueOptionUI>());

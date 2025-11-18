@@ -9,13 +9,10 @@ namespace Entities.Core
     public class BootInstaller : MonoInstaller
     {
         [SerializeField] private MusicStateSystem _musicSystem;
-        [SerializeField] private LocalizationManager _localizationManager;
         
         public override void InstallBindings()
         {
             Container.Bind<MusicStateSystem>().FromInstance(_musicSystem).AsSingle();
-            DontDestroyOnLoad(_localizationManager);
-            Container.Bind<LocalizationManager>().FromInstance(_localizationManager).AsSingle();
         }
     }
 }

@@ -7,7 +7,7 @@ using Zenject;
 public class ChoiceNode : BaseNode
 {
     [Input, SerializeField] private int _entry;
-    public List<string> Choices = new();
+    public List<int> Choices = new();
     
     [Inject] private DialogueVisuals _dialogueVisuals;
     

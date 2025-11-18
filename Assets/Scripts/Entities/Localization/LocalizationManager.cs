@@ -20,18 +20,22 @@ namespace Entities.Localization
         public static readonly Dictionary<string, string> NameToGid = new ()
         {
             {"UI", "1087436388"},
-            {"Player", "1556233291"}
+            {"Player", "1556233291"},
+            {"Tertilus", "2008482062"},
+            {"Finix", "1520681221"},
+            {"Octoboss", "324218113"},
+            {"Skyper", "1314801844"},
+            {"Jelica", "739200791"},
+            {"Cutscenes", "317498044"},
         };
 
-        public ReactiveProperty<Language> CurrentLanguage { get; private set; } = new(Language.ru);
+        public ReactiveProperty<Language> CurrentLanguage { get; } = new(Language.ru);
 
         [Inject] private GlobalData _globalData;
         
         private void Start()
         {
             SetValuesForTextsId();
-            CurrentLanguage.Value = Language.ru;
-            CurrentLanguage.ForceNotify();
         }
 
         [Button("Pull Table")]
@@ -49,16 +53,12 @@ namespace Entities.Localization
                 {
                     if (loaded.Contains(tableName)) return;
                     loaded.Add(tableName);
-                    var path = Path.Combine(Application.dataPath, "Resources/Localization", tableName);
+                    var path = Path.Combine(Application.streamingAssetsPath, "Localization", tableName);
                     if(File.Exists(path + ".tsv"))
                         File.Delete(path + ".tsv");
-                    if(File.Exists(path + ".txt"))
-                        File.Delete(path + ".txt");
                     var txt = req.downloadHandler.data;
                     using var tab = File.Create(path + ".tsv");
-                    using var tabTxt = File.Create(path + ".txt");
                     tab.Write(txt);
-                    tabTxt.Write(txt);
                     AssetDatabase.Refresh();
                     print("Loaded " + tableName);
                 };
@@ -69,14 +69,9 @@ namespace Entities.Localization
         {
             foreach (var tableName in NameToGid.Keys)
             {
-                var table = Resources.Load<TextAsset>($"Localization/{tableName}");
-                if (!table)
-                {
-                    Debug.LogError("No language table located! Make sure to load table!");
-                    return;
-                }
-
-                string[] lines = table.text.Split('\n');
+                var table = File.ReadAllText(Path.Combine(Application.streamingAssetsPath, "Localization", $"{tableName}.tsv"));
+                
+                string[] lines = table.Split('\n');
                 _headers = lines[0].Split("\t");
                 for (int i = 1; i < lines.Length; i++)
                 {
@@ -84,6 +79,7 @@ namespace Entities.Localization
                     string keyId = translations[0];
                     _localizedText[keyId] = translations;
                 }
+                print("Loaded " + tableName);
             }
         }
         
