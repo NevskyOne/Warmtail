@@ -7,8 +7,10 @@ public class InteractionSystem : IAbility
 {
     public bool Enabled { get; set; }
     
+    [SerializeField] private float _interactionRadius = 2f;
+    [SerializeField] private Vector3 _interactionOffset = Vector3.zero;
+    
     private MonoBehaviour _player;
-    private float _interactionRadius = 2f;
     
     [Inject]
     public void Construct( PlayerInput playerInput)
@@ -22,7 +24,7 @@ public class InteractionSystem : IAbility
         if (!context.performed) return;
         
         Collider[] colliders = Physics.OverlapSphere(
-            _player.transform.position, 
+            _player.transform.position + _interactionOffset, 
             _interactionRadius
         );
         

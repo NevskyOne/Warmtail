@@ -6,6 +6,7 @@ namespace Data.Player
     public class SavablePlayerData : ISavableData {
         public string PlayerName;
         public float MaxHeat;
+        public float CurrentHeat;
     }
     
     [Serializable]

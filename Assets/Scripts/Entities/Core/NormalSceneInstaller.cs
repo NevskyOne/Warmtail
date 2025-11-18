@@ -25,6 +25,7 @@ namespace Entities.Core
         public override void InstallBindings()
         {
             Container.Bind<DialogueSystem>().FromNew().AsSingle();
+            Container.Bind<WarmthSystem>().FromNew().AsSingle();
             Container.Bind<Player>().FromInstance(_player).AsSingle();
             Container.Bind<PlayerInput>().FromInstance(_playerInput).AsSingle();
             Container.Bind<DialogueVisuals>().FromInstance(_dialogueVisuals).AsSingle();
