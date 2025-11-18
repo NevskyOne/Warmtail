@@ -1,3 +1,5 @@
+using System;
+using Entities.PlayerScripts;
 using Interfaces;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -10,28 +12,23 @@ public class InteractionSystem : IAbility
     [SerializeField] private float _interactionRadius = 2f;
     [SerializeField] private Vector3 _interactionOffset = Vector3.zero;
     
-    private MonoBehaviour _player;
+    private Player _player;
     
     [Inject]
-    public void Construct( PlayerInput playerInput)
+    public void Construct(Player player, PlayerInput playerInput)
     {
-      
-        playerInput.actions["Interact"].performed += Interact;
+        _player = player;
+        playerInput.actions["LeftMouse"].performed += Interact;
     }
     
     public void Interact(InputAction.CallbackContext context)
     {
-        if (!context.performed) return;
-        
-        Collider[] colliders = Physics.OverlapSphere(
-            _player.transform.position + _interactionOffset, 
-            _interactionRadius
-        );
+        if (!Enabled) return;
+        var colliders = Physics2D.OverlapCircleAll(_player.transform.position + _interactionOffset, _interactionRadius);
         
         foreach (var collider in colliders)
         {
-            IInteractable interactable = collider.GetComponent<IInteractable>();
-            if (interactable != null)
+            if (collider.TryGetComponent<IInteractable>(out var interactable))
             {
                 interactable.Interact();
                 break;

@@ -107,6 +107,8 @@ MonoBehaviour:
   - rid: 1601399230582489398
   - rid: 1601399230582489399
   - rid: 1601399230582489400
+  - rid: 1601399524581179754
+  - rid: 1601399524581179755
   _runtimeData:
   - rid: 1601399230582489401
   references:
@@ -116,6 +118,8 @@ MonoBehaviour:
       type: {class: SavablePlayerData, ns: Data.Player, asm: Assembly-CSharp}
       data:
         PlayerName: Player
+        Stars: 0
+        Shells: 0
     - rid: 1601399230582489399
       type: {class: DialogueVarData, ns: Data, asm: Assembly-CSharp}
       data:
@@ -135,4 +139,14 @@ MonoBehaviour:
     - rid: 1601399230582489401
       type: {class: RuntimePlayerData, ns: Data.Player, asm: Assembly-CSharp}
       data:
-        Hp: 3
+        Freeze: 0
+        CurrentWarmth: 0
+    - rid: 1601399524581179754
+      type: {class: HomeData, ns: Data, asm: Assembly-CSharp}
+      data:
+        ObjectsId: 
+    - rid: 1601399524581179755
+      type: {class: NPCData, ns: Data, asm: Assembly-CSharp}
+      data:
+        Levels:
+          _serializedList: []

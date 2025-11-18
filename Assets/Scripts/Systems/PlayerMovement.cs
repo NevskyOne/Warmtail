@@ -1,10 +1,13 @@
+using System;
+using Entities.PlayerScripts;
 using Interfaces;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Zenject;
 
-namespace Entities.PlayerScripts
+namespace Systems
 {
+    [Serializable]
     public class PlayerMovement : IAbility
     {
         [Header("Movement Settings")]
@@ -14,7 +17,7 @@ namespace Entities.PlayerScripts
     
         private Rigidbody2D _rb;
         private Vector2 _moveInput;
-        private Vector2 _currentVelocity = new Vector2();
+        private Vector2 _currentVelocity;
         public bool Enabled { get; set; }
     
         [Inject]

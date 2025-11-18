@@ -2,7 +2,7 @@
 
 namespace Interfaces
 {
-    public interface IAbility : IFixedTickable
+    public interface IAbility
     {
         public bool Enabled { get; set; }
     }

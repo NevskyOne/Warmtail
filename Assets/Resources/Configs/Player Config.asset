@@ -14,12 +14,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Data.Player.PlayerConfig
   <Abilities>k__BackingField:
   - rid: 1601399450479624274
+  - rid: 1601399524581179738
+  - rid: 1601399524581179756
   references:
     version: 2
     RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
     - rid: 1601399450479624274
       type: {class: PlayerMovement, ns: Entities.PlayerScripts, asm: Assembly-CSharp}
       data:
         _moveSpeed: 5
         _acceleration: 10
         _deceleration: 10
+        _rb: {fileID: 0}
+        _moveInput: {x: 0, y: 0}
+        _currentVelocity: {x: 0, y: 0}
+        <Enabled>k__BackingField: 1
+    - rid: 1601399524581179738
+      type: {class: InteractionSystem, ns: , asm: Assembly-CSharp}
+      data:
+        <Enabled>k__BackingField: 1
+        _interactionRadius: 2
+        _interactionOffset: {x: 0, y: 0, z: 0}
+        _player: {fileID: 0}
+    - rid: 1601399524581179756
+      type: {class: Warming, ns: Systems.WarmAbilities, asm: Assembly-CSharp}
+      data:
+        _warmDecrease: 1
+        _warmDelta: 500
+        _warmingRadius: 2
+        _warmingOffset: {x: 0, y: 0, z: 0}
+        <Enabled>k__BackingField: 1
+        _player: {fileID: 0}
+        _isWarming: 0

@@ -12,7 +12,6 @@ namespace Entities.UI
     {
         [Title("UI Elements")]
         [SerializeField, LabelText("Heat Fill Bar")] private Image _heatFillBar;
-        [SerializeField, LabelText("Heat Text")] private TMP_Text _heatText;
 
         private GlobalData _globalData;
 
@@ -20,26 +19,22 @@ namespace Entities.UI
         private void Construct(GlobalData globalData)
         {
             _globalData = globalData;
-            _globalData.SubscribeTo<SavablePlayerData>(UpdateVisual);
+            _globalData.SubscribeTo<RuntimePlayerData>(UpdateVisual);
             UpdateVisual();
         }
 
         private void UpdateVisual()
         {
             var data = _globalData.Get<SavablePlayerData>();
+            var runtimeData = _globalData.Get<RuntimePlayerData>();
             
             if (data == null) return;
 
             if (_heatFillBar != null)
             {
-                _heatFillBar.fillAmount = data.MaxHeat > 0 
-                    ? data.CurrentHeat / data.MaxHeat 
+                _heatFillBar.fillAmount = data.Stars * 10 > 0 
+                    ? (float)runtimeData.CurrentWarmth / data.Stars * 10
                     : 0f;
-            }
-
-            if (_heatText != null)
-            {
-                _heatText.text = $"{data.CurrentHeat:F1} / {data.MaxHeat:F1}";
             }
         }
     }

@@ -19,8 +19,6 @@ namespace Entities.Core
         [SerializeField] private PlayerConfig _playerConfig;
         [SerializeField] private PopupSystem _popupSystem;
         [SerializeField] private UIStateSystem _uiStateSystem;
-        [SerializeField] private GlobalData _globalData;
-        
         
         public override void InstallBindings()
         {
@@ -33,12 +31,12 @@ namespace Entities.Core
             Container.Bind<UIStateSystem>().FromInstance(_uiStateSystem).AsSingle();
            
             Container.Inject(new KeysDebug());
+            Container.Inject(new WarmthSystem());
             Container.Bind<PlayerConfig>().FromInstance(_playerConfig).AsSingle();
-            Container.Bind<GlobalData>().FromInstance(_globalData).AsSingle();
             foreach (var ability in _playerConfig.Abilities)
             {
                 Container.Inject(ability);
-                Container.BindInterfacesAndSelfTo<IAbility>().FromInstance(ability).AsSingle();
+                Container.BindInterfacesAndSelfTo<IAbility>().FromInstance(ability).AsTransient();
             }
         }
     }

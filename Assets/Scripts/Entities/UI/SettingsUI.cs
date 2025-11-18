@@ -52,15 +52,15 @@ namespace Entities.UI
             ChangeVolume("SfxVolume", _localData.SfxVolume);
             //UpdateUI
             _fullScreenToggle.isOn = _localData.FullscreenMode;
-            _graphicsSwitcher.CurrentValue = _localData.QualityLevel;
-            _languageSwitcher.CurrentValue = _localData.Language;
+            //_graphicsSwitcher.CurrentValue = _localData.QualityLevel;
+            //_languageSwitcher.CurrentValue = _localData.Language;
             _mainSoundSlider.value = _localData.MainSoundVolume;
             _musicSlider.value = _localData.MusicVolume;
             _sfxSlider.value = _localData.SfxVolume;
             //Add Listeners
             _fullScreenToggle.onValueChanged.AddListener(ChangeFullScreenState);
-            _graphicsSwitcher.Event.AddListener(ChangeQuality);
-            _languageSwitcher.Event.AddListener(ChangeLanguage);
+            //_graphicsSwitcher.Event.AddListener(ChangeQuality);
+            //_languageSwitcher.Event.AddListener(ChangeLanguage);
             _mainSoundSlider.onValueChanged.AddListener(ChangeMainVolume);
             _musicSlider.onValueChanged.AddListener(ChangeMusicVolume);
             _sfxSlider.onValueChanged.AddListener(ChangeSfxVolume);

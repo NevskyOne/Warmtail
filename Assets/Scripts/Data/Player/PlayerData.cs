@@ -5,13 +5,14 @@ namespace Data.Player
     [Serializable]
     public class SavablePlayerData : ISavableData {
         public string PlayerName;
-        public float MaxHeat;
-        public float CurrentHeat;
+        public int Stars;
+        public int Shells;
     }
     
     [Serializable]
     public class RuntimePlayerData : IRuntimeData
     {
-        public int Hp;
+        public int Freeze;
+        public int CurrentWarmth;
     }
 }
