@@ -11,7 +11,7 @@ using Zenject;
 namespace Entities.UI
 {
     [DeclareFoldoutGroup("Sliders")]
-    [DeclareFoldoutGroup("Dropdowns")]
+    [DeclareFoldoutGroup("Switchers")]
     [DeclareFoldoutGroup("Toggles")]
     public class SettingsUI : MonoBehaviour
     {
@@ -23,9 +23,9 @@ namespace Entities.UI
         [SerializeField] private Slider _musicSlider;
         [SerializeField] private Slider _sfxSlider;
 
-        [GroupNext("Dropdowns")] 
-        [SerializeField] private TMP_Dropdown _graphicsDropdown;
-        [SerializeField] private TMP_Dropdown _languageDropdown;
+        [GroupNext("Switchers")] 
+        [SerializeField] private Switcher _graphicsSwitcher;
+        [SerializeField] private Switcher _languageSwitcher;
         
         [GroupNext("Toggles")] 
         [SerializeField] private Toggle _fullScreenToggle;
@@ -46,22 +46,21 @@ namespace Entities.UI
             Screen.fullScreenMode = _localData.FullscreenMode ? 
                 FullScreenMode.FullScreenWindow : FullScreenMode.MaximizedWindow;
             _localizationManager.CurrentLanguage.Value = (Language)_localData.Language;
-            _localizationManager.CurrentLanguage.ForceNotify();
             QualitySettings.SetQualityLevel(_localData.QualityLevel);
             ChangeVolume("MainVolume", _localData.MainSoundVolume);
             ChangeVolume("MusicVolume", _localData.MusicVolume);
             ChangeVolume("SfxVolume", _localData.SfxVolume);
             //UpdateUI
             _fullScreenToggle.isOn = _localData.FullscreenMode;
-            _graphicsDropdown.value = _localData.QualityLevel;
-            _languageDropdown.value = _localData.Language;
+            _graphicsSwitcher.CurrentValue = _localData.QualityLevel;
+            _languageSwitcher.CurrentValue = _localData.Language;
             _mainSoundSlider.value = _localData.MainSoundVolume;
             _musicSlider.value = _localData.MusicVolume;
             _sfxSlider.value = _localData.SfxVolume;
             //Add Listeners
             _fullScreenToggle.onValueChanged.AddListener(ChangeFullScreenState);
-            _graphicsDropdown.onValueChanged.AddListener(ChangeQuality);
-            _languageDropdown.onValueChanged.AddListener(ChangeLanguage);
+            _graphicsSwitcher.Event.AddListener(ChangeQuality);
+            _languageSwitcher.Event.AddListener(ChangeLanguage);
             _mainSoundSlider.onValueChanged.AddListener(ChangeMainVolume);
             _musicSlider.onValueChanged.AddListener(ChangeMusicVolume);
             _sfxSlider.onValueChanged.AddListener(ChangeSfxVolume);
@@ -84,7 +83,6 @@ namespace Entities.UI
         public void ChangeLanguage(int value)
         {
             _localizationManager.CurrentLanguage.Value = (Language)value;
-            _localizationManager.CurrentLanguage.ForceNotify();
             _localData.Language = value;
             SaveData();
         }

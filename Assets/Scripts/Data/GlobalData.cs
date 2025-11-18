@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using Systems.DataSystems;
 using TriInspector;
@@ -26,8 +27,18 @@ namespace Data
         [Button("Delete Save Data"), GUIColor("red")]
         public void DeleteSaveData()
         {
-            _saveSystem.DeleteSaves();
-            Debug.Log("Data deleted!");
+            try
+            {
+                var filePath = Path.Combine(Application.persistentDataPath, "saves.json");
+                var manualSavesPath = Path.Combine(Application.persistentDataPath, "manual_saves");
+                if (File.Exists(filePath)) File.Delete(filePath);
+                if(Directory.Exists(manualSavesPath)) Directory.Delete(manualSavesPath, true);
+                Debug.Log("Data deleted!");
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"DeleteSaves error: {e.Message}");
+            }
         }
         
         [Inject]

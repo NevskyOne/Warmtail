@@ -27,6 +27,12 @@ namespace Entities.Localization
         {
             Text.text = _localization.GetStringFromKey(_key);
         }
+
+        public void SetNewKey(string key)
+        {
+            _key = key;
+            UpdateString();
+        }
         
         public static IEnumerable<TriDropdownItem<string>> GetDropdownStrings()
         {

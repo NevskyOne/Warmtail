@@ -86,7 +86,8 @@ namespace Entities.Localization
         public string GetStringFromKey(string key)
         {
             if (_localizedText[key] == null) return "Language haven`t loaded yet!";
-            return ParseVars(_localizedText[key][Array.IndexOf(_headers, CurrentLanguage.ToString())]);
+            print(key+CurrentLanguage);
+            return ParseVars(_localizedText[key][((int)CurrentLanguage.Value)+1]);
         }
         
         private string ParseVars(string input)
