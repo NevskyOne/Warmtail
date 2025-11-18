@@ -1,7 +1,6 @@
 using Entities.UI;
 using Systems;
 using UnityEngine;
-using UnityEngine.Localization;
 using Zenject;
 
 [NodeWidth(330)]
@@ -9,7 +8,7 @@ public class TextNode : BaseNode
 {
     [Input, SerializeField] private int _entry;
     [Output, SerializeField] private int _exit;
-    [SerializeField] private LocalizedString _text;
+    [SerializeField] private int _textId;
     [SerializeField] private Characters _character;
     [SerializeField] private CharactersEmotions _emotion;
     [SerializeField] private string _displayName;
@@ -18,7 +17,7 @@ public class TextNode : BaseNode
 
     public int Exit => _exit;
 
-    public LocalizedString Text => _text;
+    public int TextId => _textId;
 
     public Characters Character => _character;
 

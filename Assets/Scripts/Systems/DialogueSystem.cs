@@ -16,7 +16,7 @@ namespace Systems
         private PlayerInput _input;
 
         private string _prevActionMap;
-        
+        public DialogueGraph DialogueGraph => _dialogueGraph;
 
         [Inject]
         private void Construct(DiContainer container, PlayerInput input, DialogueVisuals dialogueVisuals)

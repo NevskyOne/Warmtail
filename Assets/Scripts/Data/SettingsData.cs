@@ -11,5 +11,6 @@ namespace Data
         [Range(0.001f,1)] public float SfxVolume;
         public int QualityLevel;
         public bool FullscreenMode;
+        public int Language;
     }
 }

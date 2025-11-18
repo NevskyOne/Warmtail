@@ -20,7 +20,7 @@ namespace EditorOnly.NodesEditors
             
             NodeEditorGUILayout.PropertyField(serializedObject.FindProperty("_entry"));
             NodeEditorGUILayout.PropertyField(serializedObject.FindProperty("_exit"));
-            NodeEditorGUILayout.PropertyField(serializedObject.FindProperty("_text"));
+            NodeEditorGUILayout.PropertyField(serializedObject.FindProperty("_textId"));
             NodeEditorGUILayout.PropertyField(serializedObject.FindProperty("_character"));
             NodeEditorGUILayout.PropertyField(serializedObject.FindProperty("_emotion"));
 

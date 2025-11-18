@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 5743970325561219995}
   - component: {fileID: 3276397055055426381}
   - component: {fileID: -651912226031858323}
+  - component: {fileID: 4321709442683020220}
+  - component: {fileID: 6645744535049247407}
   m_Layer: 0
   m_Name: ProjectContext
   m_TagString: Untagged
@@ -74,5 +76,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a550a539c5321c4f876ba552d9b4b6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entities.Core.GlobalInstaller
-  _globalDataPrefab: {fileID: 3792936660450461611, guid: 8493955ac919f2846917c2007878a1dd, type: 3}
-  _playerConfig: {fileID: 11400000, guid: a7bbb2e1e9a601347a5aaf0c0486dfdd, type: 2}
+  _globalData: {fileID: 6645744535049247407}
+  _localizationManager: {fileID: 4321709442683020220}
+--- !u!114 &4321709442683020220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3391393660208340252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36340a6fd50c1e1469ff32c985fe25e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Entities.Localization.LocalizationManager
+  _tableId: 1PEswgSetu71j068EhzqhuEPMUwGHdLbFa2sXZ9EeWAg
+--- !u!114 &6645744535049247407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3391393660208340252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5231938e41fd4accbacfa45424a23590, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Data.GlobalData
+  _savableData:
+  - rid: 1601399230582489398
+  - rid: 1601399230582489399
+  - rid: 1601399230582489400
+  _runtimeData:
+  - rid: 1601399230582489401
+  references:
+    version: 2
+    RefIds:
+    - rid: 1601399230582489398
+      type: {class: SavablePlayerData, ns: Data.Player, asm: Assembly-CSharp}
+      data:
+        PlayerName: Player
+    - rid: 1601399230582489399
+      type: {class: DialogueVarData, ns: Data, asm: Assembly-CSharp}
+      data:
+        Variables:
+        - Type: 0
+          Name: playerName
+          Value: player
+    - rid: 1601399230582489400
+      type: {class: SettingsData, ns: Data, asm: Assembly-CSharp}
+      data:
+        MainSoundVolume: 0.5
+        MusicVolume: 1
+        SfxVolume: 1
+        QualityLevel: 1
+        FullscreenMode: 1
+        Language: 0
+    - rid: 1601399230582489401
+      type: {class: RuntimePlayerData, ns: Data.Player, asm: Assembly-CSharp}
+      data:
+        Hp: 3

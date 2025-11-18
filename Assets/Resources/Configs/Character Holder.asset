@@ -16,24 +16,24 @@ MonoBehaviour:
   - Character: 0
     Sound: {fileID: 0}
     EmotionSprites:
-      _serializedList:
-      - Key: 0
-        Value: {fileID: 21300000, guid: 36004fc597fe0034f85b1bc4e37e8e6d, type: 3}
-      - Key: 1
-        Value: {fileID: 21300000, guid: 36004fc597fe0034f85b1bc4e37e8e6d, type: 3}
+      _serializedList: []
   - Character: 1
     Sound: {fileID: 0}
     EmotionSprites:
-      _serializedList:
-      - Key: 0
-        Value: {fileID: -2278566297644842510, guid: 66d5996eb1dcbcd4da3a47054fd79939, type: 3}
-      - Key: 1
-        Value: {fileID: -2278566297644842510, guid: 66d5996eb1dcbcd4da3a47054fd79939, type: 3}
+      _serializedList: []
   - Character: 2
     Sound: {fileID: 0}
     EmotionSprites:
-      _serializedList:
-      - Key: 0
-        Value: {fileID: -2278566297644842510, guid: 66d5996eb1dcbcd4da3a47054fd79939, type: 3}
-      - Key: 1
-        Value: {fileID: -2278566297644842510, guid: 66d5996eb1dcbcd4da3a47054fd79939, type: 3}
+      _serializedList: []
+  - Character: 3
+    Sound: {fileID: 0}
+    EmotionSprites:
+      _serializedList: []
+  - Character: 4
+    Sound: {fileID: 0}
+    EmotionSprites:
+      _serializedList: []
+  - Character: 5
+    Sound: {fileID: 0}
+    EmotionSprites:
+      _serializedList: []

@@ -125,18 +125,5 @@ namespace Systems.DataSystems
                 Debug.LogError($"WriteContainerToDisk error: {e.Message}");
             }
         }
-
-        public void DeleteSaves()
-        {
-            try
-            {
-                if (File.Exists(FilePath)) File.Delete(FilePath);
-                _container = new SaveContainer();
-            }
-            catch (Exception e)
-            {
-                Debug.LogError($"DeleteSaves error: {e.Message}");
-            }
-        }
     }
 }

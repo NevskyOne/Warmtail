@@ -1,9 +1,9 @@
 public enum Characters
 {
-    Player, Ashly, Bob
+    player, tertilus, finix, octoboss, skyper, jelica
 }
 
 public enum CharactersEmotions
 {
-    Happy, Sad
+    Happy, Sad, Surprised, Scared
 }

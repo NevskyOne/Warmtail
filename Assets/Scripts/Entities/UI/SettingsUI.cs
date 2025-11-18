@@ -1,5 +1,6 @@
 using Cysharp.Threading.Tasks;
 using Data;
+using Entities.Localization;
 using TMPro;
 using TriInspector;
 using UnityEngine;
@@ -10,7 +11,7 @@ using Zenject;
 namespace Entities.UI
 {
     [DeclareFoldoutGroup("Sliders")]
-    [DeclareFoldoutGroup("Dropdowns")]
+    [DeclareFoldoutGroup("Switchers")]
     [DeclareFoldoutGroup("Toggles")]
     public class SettingsUI : MonoBehaviour
     {
@@ -22,46 +23,47 @@ namespace Entities.UI
         [SerializeField] private Slider _musicSlider;
         [SerializeField] private Slider _sfxSlider;
 
-        [GroupNext("Dropdowns")] 
-        [SerializeField] private TMP_Dropdown _graphicsDropdown;
+        [GroupNext("Switchers")] 
+        [SerializeField] private Switcher _graphicsSwitcher;
+        [SerializeField] private Switcher _languageSwitcher;
         
         [GroupNext("Toggles")] 
         [SerializeField] private Toggle _fullScreenToggle;
 
         private GlobalData _globalData;
         private SettingsData _localData;
+        private LocalizationManager _localizationManager;
         private bool _isSaving;
         
         [Inject]
-        private void Construct(GlobalData globalData)
+        private void Construct(GlobalData globalData, LocalizationManager localization)
         {
             _globalData = globalData;
-            ChangeAllGraphics();
-            
-            _fullScreenToggle.onValueChanged.AddListener(ChangeFullScreenState);
-            _graphicsDropdown.onValueChanged.AddListener(ChangeQuality);
-            _mainSoundSlider.onValueChanged.AddListener(ChangeMainVolume);
-            _musicSlider.onValueChanged.AddListener(ChangeMusicVolume);
-            _sfxSlider.onValueChanged.AddListener(ChangeSfxVolume);
-            
-            _globalData.SubscribeTo<SettingsData>(ChangeAllGraphics);
-        }
-        
-        private void ChangeAllGraphics()
-        {
+            _localizationManager = localization;
+            //Load Data
             _localData = _globalData.Get<SettingsData>();
+            //Apply Data
             Screen.fullScreenMode = _localData.FullscreenMode ? 
                 FullScreenMode.FullScreenWindow : FullScreenMode.MaximizedWindow;
+            _localizationManager.CurrentLanguage.Value = (Language)_localData.Language;
             QualitySettings.SetQualityLevel(_localData.QualityLevel);
             ChangeVolume("MainVolume", _localData.MainSoundVolume);
             ChangeVolume("MusicVolume", _localData.MusicVolume);
             ChangeVolume("SfxVolume", _localData.SfxVolume);
-
+            //UpdateUI
             _fullScreenToggle.isOn = _localData.FullscreenMode;
-            _graphicsDropdown.value = _localData.QualityLevel;
+            _graphicsSwitcher.CurrentValue = _localData.QualityLevel;
+            _languageSwitcher.CurrentValue = _localData.Language;
             _mainSoundSlider.value = _localData.MainSoundVolume;
             _musicSlider.value = _localData.MusicVolume;
             _sfxSlider.value = _localData.SfxVolume;
+            //Add Listeners
+            _fullScreenToggle.onValueChanged.AddListener(ChangeFullScreenState);
+            _graphicsSwitcher.Event.AddListener(ChangeQuality);
+            _languageSwitcher.Event.AddListener(ChangeLanguage);
+            _mainSoundSlider.onValueChanged.AddListener(ChangeMainVolume);
+            _musicSlider.onValueChanged.AddListener(ChangeMusicVolume);
+            _sfxSlider.onValueChanged.AddListener(ChangeSfxVolume);
         }
         
         public void ChangeFullScreenState(bool value)
@@ -75,6 +77,13 @@ namespace Entities.UI
         {
             QualitySettings.SetQualityLevel(value);
             _localData.QualityLevel = value;
+            SaveData();
+        }
+        
+        public void ChangeLanguage(int value)
+        {
+            _localizationManager.CurrentLanguage.Value = (Language)value;
+            _localData.Language = value;
             SaveData();
         }
         
