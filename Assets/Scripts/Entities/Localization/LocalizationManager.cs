@@ -49,17 +49,24 @@ namespace Entities.Localization
                 {
                     if (loaded.Contains(tableName)) return;
                     loaded.Add(tableName);
-                    var path = Path.Combine(Application.streamingAssetsPath, "Localization", tableName);
-                    if(File.Exists(path + ".tsv"))
-                        File.Delete(path + ".tsv");
-                    var txt = req.downloadHandler.data;
-                    using var tab = File.Create(path + ".tsv");
-                    tab.Write(txt);
-                    AssetDatabase.Refresh();
-                    print("Loaded " + tableName);
+
+                    var folder = Path.Combine(Application.streamingAssetsPath, "Localization");
+                    if (!Directory.Exists(folder)) Directory.CreateDirectory(folder);
+
+                    var path = Path.Combine(folder, tableName + ".tsv");
+
+                    var data = req.downloadHandler.data;
+                    File.WriteAllBytes(path, data);
+
+#if UNITY_EDITOR
+                    UnityEditor.AssetDatabase.Refresh();
+#endif
+
+                    Debug.Log("Loaded " + tableName + " -> " + path);
                 };
             }
         }
+
     
         public void SetValuesForTextsId()
         {
