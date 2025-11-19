@@ -11,13 +11,7 @@ namespace EditorOnly
         [Inject]
         private void Construct(PlayerInput input, PopupSystem popupSystem, UIStateSystem _uiState)
         {
-            input.actions["Escape"].performed += _ =>
-            {
-                if (_uiState.CurrentState == UIState.Normal)
-                    _uiState.SwitchCurrentState(UIState.Settings);
-                else if (_uiState.CurrentState == UIState.Settings)
-                    _uiState.SwitchCurrentState(UIState.Normal);
-            };
+            
             foreach (var action in input.actions)
             {
                 if (action.actionMap.name == "Player")

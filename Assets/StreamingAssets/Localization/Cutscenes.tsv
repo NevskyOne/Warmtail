@@ -1,2 +1,6 @@
 key	ru	en
-cutscene_0_0	Привет, {playerName}	Hi, {playerName}
+cutscene_0_0	Проснись, дитя.	Wake up, child.
+cutscene_0_1	Ты помнишь своё имя?	Do you remember your name?
+cutscene_0_2	Ничего, всё бывает, просто придумай его.	It's okay, anything can happen, just make it up.
+cutscene_0_3	Я прослежу, чтобы с тобой ничего не случилось.	I'll make sure nothing happens to you.
+cutscene_0_4	Меня зовут	My name is

@@ -41,7 +41,7 @@ namespace Entities.UI
             Switch(CurrentValue - 1);
         }
         
-        public void Switch(int value)
+        public virtual void Switch(int value)
         {
             _images[CurrentValue].sprite = _deActiveSprite;
             CurrentValue = value;

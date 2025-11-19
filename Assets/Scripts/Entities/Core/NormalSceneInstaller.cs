@@ -38,6 +38,7 @@ namespace Entities.Core
                 Container.Inject(ability);
                 Container.BindInterfacesAndSelfTo<IAbility>().FromInstance(ability).AsTransient();
             }
+            Container.Bind<SceneLoader>().FromComponentInHierarchy().AsSingle();
         }
     }
 }
