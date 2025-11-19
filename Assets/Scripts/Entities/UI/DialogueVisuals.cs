@@ -57,6 +57,7 @@ namespace Entities.UI
         private DialogueSystem _system;
         private GlobalData _globalData;
         private PlayerInput _input;
+        private UIStateSystem _uiStateSystem;
         
         private TextEffect BoxNameEffect => _boxName.GetComponent<TextEffect>();
         private TextEffect BubbleNameEffect => _bubbleName.GetComponent<TextEffect>();
@@ -70,7 +71,7 @@ namespace Entities.UI
 
         [Inject]
         private void Construct(DiContainer container, PlayerInput input, LocalizationManager localization,
-            DialogueSystem dialogueSystem, GlobalData globalData, Player player)
+            DialogueSystem dialogueSystem, GlobalData globalData, Player player, UIStateSystem uiStateSystem)
         {
             _diContainer = container;
             _input = input;
@@ -78,6 +79,7 @@ namespace Entities.UI
             _globalData = globalData;
             _playerTransform = player.transform;
             _localizationManager = localization;
+            _uiStateSystem = uiStateSystem;
 
             BoxTextEffect.globalEffects[0].onEffectCompleted.AddListener(() => IsComplete = true);
             BubbleTextEffect.globalEffects[0].onEffectCompleted.AddListener(() => IsComplete = true);
@@ -94,6 +96,7 @@ namespace Entities.UI
                     _bubbleObject.SetActive(true);
                     break;
             }
+            _uiStateSystem.SwitchCurrentStateAsync(UIState.Dialogue);
         }
         
         public void HideDialogue()
@@ -107,6 +110,7 @@ namespace Entities.UI
                     _bubbleObject.SetActive(false);
                     break;
             }
+            _uiStateSystem.SwitchCurrentStateAsync(UIState.Normal);
         }
         
         public void RequestNewLine(TextNode node)

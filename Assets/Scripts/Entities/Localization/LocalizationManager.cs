@@ -33,10 +33,6 @@ namespace Entities.Localization
 
         [Inject] private GlobalData _globalData;
         
-        private void Start()
-        {
-            SetValuesForTextsId();
-        }
 
         [Button("Pull Table")]
         private void LoadLocalizationTable()
@@ -65,7 +61,7 @@ namespace Entities.Localization
             }
         }
     
-        private void SetValuesForTextsId()
+        public void SetValuesForTextsId()
         {
             foreach (var tableName in NameToGid.Keys)
             {

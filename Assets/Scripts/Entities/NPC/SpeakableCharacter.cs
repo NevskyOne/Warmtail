@@ -12,28 +12,14 @@ namespace Entities.NPC
     {
         [SerializeField] private DialogueGraph _graph;
         private DialogueSystem _dialogueSystem;
-        private PlayerInput _input;
         
         [Inject]
-        private void Construct(DialogueSystem dialogueSystem, PlayerInput input)
+        private void Construct(DialogueSystem dialogueSystem)
         {
             _dialogueSystem = dialogueSystem;
-            _input = input;
         }
-
-        private void OnEnable()
-        {
-            _input.actions.FindAction("E").performed += Interact;
-        }
-
-        private void OnDisable()
-        {
-             _input.actions.FindAction("E").performed -= Interact;
-        }
-
-        public void Interact() { }
         
-        public void Interact(InputAction.CallbackContext ctx)
+        public void Interact()
         {
             _dialogueSystem.StartDialogue(_graph, transform);
         }

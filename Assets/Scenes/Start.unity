@@ -1217,17 +1217,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 530856778}
   m_CullTransparentMesh: 1
---- !u!114 &618039686 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4087986644399624721, guid: a357cc27806ce8b43974a4e27332f6a2, type: 3}
-  m_PrefabInstance: {fileID: 2006202557}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74d0904ea3a9470d97e416b8b19fc401, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Entities.UI.SectionsSwitcher
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -3176,18 +3165,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4631479373495576662, guid: a357cc27806ce8b43974a4e27332f6a2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 618039686}
-    - target: {fileID: 4631479373495576662, guid: a357cc27806ce8b43974a4e27332f6a2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SwitchPrev
-      objectReference: {fileID: 0}
-    - target: {fileID: 4631479373495576662, guid: a357cc27806ce8b43974a4e27332f6a2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Entities.UI.SectionsSwitcher, Assembly-CSharp
-      objectReference: {fileID: 0}
     - target: {fileID: 5171729383868751225, guid: a357cc27806ce8b43974a4e27332f6a2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -3195,18 +3172,6 @@ PrefabInstance:
     - target: {fileID: 5171729383868751225, guid: a357cc27806ce8b43974a4e27332f6a2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: BackToNormal
-      objectReference: {fileID: 0}
-    - target: {fileID: 5488163764684803606, guid: a357cc27806ce8b43974a4e27332f6a2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 618039686}
-    - target: {fileID: 5488163764684803606, guid: a357cc27806ce8b43974a4e27332f6a2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SwitchNext
-      objectReference: {fileID: 0}
-    - target: {fileID: 5488163764684803606, guid: a357cc27806ce8b43974a4e27332f6a2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Entities.UI.SectionsSwitcher, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5954684468398431727, guid: a357cc27806ce8b43974a4e27332f6a2, type: 3}
       propertyPath: m_Alpha

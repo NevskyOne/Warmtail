@@ -22,7 +22,10 @@ namespace Systems
             {
                 data.CurrentWarmth = _globalData.Get<SavablePlayerData>().Stars * 10;
             });
-            _globalData.SubscribeTo<SavablePlayerData>(IncreaseWarmth);
+            _globalData.SubscribeTo<SavablePlayerData>(() => _globalData.Edit<RuntimePlayerData>(data =>
+            {
+                data.CurrentWarmth = _globalData.Get<SavablePlayerData>().Stars * 10;
+            }));
         }
 
         public void DecreaseWarmth(int value)

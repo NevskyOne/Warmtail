@@ -19,6 +19,7 @@ namespace Entities.Core
             Container.Bind<CrossfadeEffect>().FromNew().AsSingle();
             Container.Bind<LocalizationManager>().FromInstance(_localizationManager).AsSingle();
             Container.Bind<GlobalData>().FromInstance(_globalData).AsSingle();
+            _localizationManager.SetValuesForTextsId();
         }
     }
 }

@@ -21,8 +21,8 @@ namespace Systems.Tutorial
                 }
                 step.Trigger.Event += IterateNewStep;
             }
-            
-            _steps[_currentIndex].Trigger.Activate();
+            if(_steps.Count > 0)
+                _steps[_currentIndex].Trigger.Activate();
         }
 
         private void IterateNewStep()

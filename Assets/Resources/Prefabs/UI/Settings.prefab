@@ -847,8 +847,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Entities.UI.Switcher, Assembly-CSharp
+      - m_Target: {fileID: 4087986644399624721}
+        m_TargetAssemblyTypeName: Entities.UI.SectionsSwitcher, Assembly-CSharp
         m_MethodName: SwitchNext
         m_Mode: 1
         m_Arguments:
@@ -3948,8 +3948,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Entities.UI.Switcher, Assembly-CSharp
+      - m_Target: {fileID: 4087986644399624721}
+        m_TargetAssemblyTypeName: Entities.UI.SectionsSwitcher, Assembly-CSharp
         m_MethodName: SwitchPrev
         m_Mode: 1
         m_Arguments:
@@ -4472,7 +4472,7 @@ CanvasGroup:
   m_Enabled: 1
   m_Alpha: 0
   m_Interactable: 0
-  m_BlocksRaycasts: 1
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!114 &3557568956706588365
 MonoBehaviour:
