@@ -86,7 +86,7 @@ namespace Data
             }
             if (typeof(ISavableData).IsAssignableFrom(typeof(T)))
                 _saveSystem.UpdateData((ISavableData)foundKey);
-            Debug.Log($"Updated {typeof(T).Name}");
+            //Debug.Log($"Updated {typeof(T).Name}");
         }
         
         public void Edit<T>(Action<T> mutator) where T : class, IData {

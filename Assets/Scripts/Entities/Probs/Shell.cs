@@ -2,6 +2,7 @@
 using Data;
 using Data.Player;
 using Interfaces;
+using Systems;
 using UnityEngine;
 using Zenject;
 
@@ -13,11 +14,13 @@ namespace Entities.Probs
         [SerializeField] private int _shellsAmount;
         private GlobalData _globalData;
         private int _currentProgress;
+        private ResettableTimer _timer;
     
         [Inject]
         public void Construct(GlobalData globalData)
         {
             _globalData = globalData;
+            Reset();
         }
         
         public void Warm()
@@ -26,6 +29,13 @@ namespace Entities.Probs
             if (_currentProgress == 0)
             {
                 Collect();
+            }
+            else
+            {
+                if (_timer != null)
+                    _timer.Reset(3);
+                else
+                    _timer = new ResettableTimer(3, Reset);
             }
         }
 
@@ -40,6 +50,7 @@ namespace Entities.Probs
             {
                 playerData.Shells += _shellsAmount;
             });
+            _timer.Stop();
             Destroy(gameObject);
         }
     }

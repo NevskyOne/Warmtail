@@ -32,8 +32,8 @@ namespace Entities.UI
 
             if (_heatFillBar != null)
             {
-                _heatFillBar.fillAmount = data.Stars * 10 > 0 
-                    ? (float)runtimeData.CurrentWarmth / data.Stars * 10
+                _heatFillBar.fillAmount = data.Stars > 0 
+                    ? (float)runtimeData.CurrentWarmth / (data.Stars * 10)
                     : 0f;
             }
         }
