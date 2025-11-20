@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1372521547121892939}
   - component: {fileID: 410458382715465917}
   - component: {fileID: 1611086530974427474}
-  - component: {fileID: 2788997821702112782}
+  - component: {fileID: 3191451031980071461}
   m_Layer: 5
   m_Name: BuildingItemUI
   m_TagString: Untagged
@@ -95,8 +95,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 2788997821702112782}
-          m_TargetAssemblyTypeName: Entities.House.DraggableObject, Assembly-CSharp
+        - m_Target: {fileID: 3191451031980071461}
+          m_TargetAssemblyTypeName: Entities.House.DraggableObjectUI, Assembly-CSharp
           m_MethodName: HoldItem
           m_Mode: 1
           m_Arguments:
@@ -111,8 +111,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 2788997821702112782}
-          m_TargetAssemblyTypeName: Entities.House.DraggableObject, Assembly-CSharp
+        - m_Target: {fileID: 3191451031980071461}
+          m_TargetAssemblyTypeName: Entities.House.DraggableObjectUI, Assembly-CSharp
           m_MethodName: PointerDownItem
           m_Mode: 1
           m_Arguments:
@@ -127,8 +127,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 2788997821702112782}
-          m_TargetAssemblyTypeName: Entities.House.DraggableObject, Assembly-CSharp
+        - m_Target: {fileID: 3191451031980071461}
+          m_TargetAssemblyTypeName: Entities.House.DraggableObjectUI, Assembly-CSharp
           m_MethodName: PointerUpItem
           m_Mode: 1
           m_Arguments:
@@ -139,7 +139,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &2788997821702112782
+--- !u!114 &3191451031980071461
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -148,9 +148,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 462866518544987628}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1ecc68e4e8479d4ab54de466c061089, type: 3}
+  m_Script: {fileID: 11500000, guid: b3e39aaa849664f43b17d7232bc70592, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Entities.House.DraggableObject
+  m_EditorClassIdentifier: Assembly-CSharp::Entities.House.DraggableObjectUI
+  _itemCopyingObjectPref: {fileID: 1808789399308577536, guid: cf2ec8e259d88e24bbccedbcc0381aff, type: 3}
+  _sprite: {fileID: -3252780586428284253, guid: 4741e0d82db681349aa97421bed5666c, type: 3}
 --- !u!1 &6732557622906840963
 GameObject:
   m_ObjectHideFlags: 0
