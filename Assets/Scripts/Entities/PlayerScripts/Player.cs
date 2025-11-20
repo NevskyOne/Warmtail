@@ -1,6 +1,8 @@
 using System;
+using System.Collections.Generic;
 using Data;
 using Data.Player;
+using Interfaces;
 using Systems;
 using Systems.DataSystems;
 using UnityEngine;
@@ -14,6 +16,7 @@ namespace Entities.PlayerScripts
         private GlobalData _globalData;
         private PlayerConfig _config;
         private PlayerMovement _movement;
+        private List<IAbility> _disabledAbilities = new();
         
         [Inject]
         private void Construct(GlobalData globalData, PlayerConfig config)
@@ -31,6 +34,27 @@ namespace Entities.PlayerScripts
         private void FixedUpdate()
         {
             _movement.FixedTick();
+        }
+
+        public void DisableAllAbilities()
+        {
+            foreach (var ability in _config.Abilities)
+            {
+                if (ability.Enabled)
+                {
+                    _disabledAbilities.Add(ability);
+                    ability.Enabled = false;
+                }
+            }
+        }
+        
+        public void EnableLastAbilities()
+        {
+            foreach (var ability in _disabledAbilities)
+            {
+                ability.Enabled = true;
+            }
+            _disabledAbilities.Clear();
         }
     }
 }

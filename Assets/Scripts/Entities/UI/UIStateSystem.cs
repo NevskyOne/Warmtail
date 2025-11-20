@@ -1,11 +1,13 @@
 using System;
 using System.Collections.Generic;
 using AYellowpaper.SerializedCollections;
+using Entities.PlayerScripts;
 using Systems;
 using Systems.Effects;
 using TriInspector;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using Zenject;
 
 namespace Entities.UI
@@ -14,26 +16,47 @@ namespace Entities.UI
     {
         [SerializeReference, Range(0.5f, 5f)] private float _crossFadeTime;
         [SerializeField] private SerializedDictionary<UIState, CanvasGroup> _canvasGroups = new();
+        [SerializeField] private SerializedDictionary<UIState, UIState> _escapeTransitions = new();
 
+        [SerializeField] private Player _player;
+        [SerializeField] private PlayerInput _playerInput;
         public UIState CurrentState { get; private set; }
 
         [Inject]
         private void Construct(PlayerInput input)
         {
-            input.actions["Escape"].performed += _ =>
-            {
-                if (CurrentState == UIState.Normal)
-                    SwitchCurrentStateAsync(UIState.Pause);
-                else if (CurrentState == UIState.Pause)
-                    SwitchCurrentStateAsync(UIState.Normal);
-            };
+            _playerInput = input;
+            _playerInput.actions["Escape"].performed += EscapeTransition;
+        }
+
+        private void OnDisable()
+        {
+            _playerInput.actions["Escape"].performed -= EscapeTransition;
+        }
+
+        private void EscapeTransition(InputAction.CallbackContext ctx)
+        {
+            if(_escapeTransitions.ContainsKey(CurrentState))
+                SwitchCurrentStateAsync(_escapeTransitions[CurrentState]);
         }
         
-        public void BackToNormal() => SwitchCurrentStateAsync(UIState.Normal);
-        public void ToSettings() => SwitchCurrentStateAsync(UIState.Settings);
-        public void ToSaves() => SwitchCurrentStateAsync(UIState.Saves);
+        public void SwitchCurrentState(int id) => SwitchCurrentStateAsync((UIState)id);
+        
         public async void SwitchCurrentStateAsync(UIState state)
         {
+            if (SceneManager.GetActiveScene().name != "Start")
+            {
+                switch (state)
+                {
+                    case UIState.Normal:
+                        _player.EnableLastAbilities();
+                        break;
+                    case UIState.Pause:
+                        _player.DisableAllAbilities();
+                        break;
+                }
+            }
+
             var currentCanvas = _canvasGroups[CurrentState];
             var targetCanvas = _canvasGroups[state];
             if (currentCanvas)

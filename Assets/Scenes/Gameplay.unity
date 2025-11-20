@@ -253,6 +253,17 @@ MonoBehaviour:
       Value: {fileID: 3308837136273252075}
     - Key: 2
       Value: {fileID: 1106936078}
+  _escapeTransitions:
+    _serializedList:
+    - Key: 1
+      Value: 2
+    - Key: 3
+      Value: 2
+    - Key: 2
+      Value: 0
+    - Key: 0
+      Value: 2
+  _player: {fileID: 642883201}
 --- !u!114 &116097134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -847,12 +858,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 88475865}
         m_TargetAssemblyTypeName: Entities.UI.UIStateSystem, Assembly-CSharp
-        m_MethodName: ToSaves
-        m_Mode: 1
+        m_MethodName: SwitchCurrentState
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1313,6 +1324,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Start
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 472168495}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+        m_MethodName: set_interactable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &472168496
@@ -5059,8 +5082,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 88475865}
         m_TargetAssemblyTypeName: Entities.UI.UIStateSystem, Assembly-CSharp
-        m_MethodName: BackToNormal
-        m_Mode: 1
+        m_MethodName: SwitchCurrentState
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7195,12 +7218,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 88475865}
         m_TargetAssemblyTypeName: Entities.UI.UIStateSystem, Assembly-CSharp
-        m_MethodName: ToSettings
-        m_Mode: 1
+        m_MethodName: SwitchCurrentState
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -8518,6 +8541,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5171729383868751225, guid: a357cc27806ce8b43974a4e27332f6a2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5171729383868751225, guid: a357cc27806ce8b43974a4e27332f6a2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
       objectReference: {fileID: 0}
@@ -8531,15 +8558,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5171729383868751225, guid: a357cc27806ce8b43974a4e27332f6a2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BackToNormal
+      value: SwitchCurrentState
       objectReference: {fileID: 0}
     - target: {fileID: 5171729383868751225, guid: a357cc27806ce8b43974a4e27332f6a2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: Entities.UI.UIStateSystem, Assembly-CSharp
       objectReference: {fileID: 0}
-    - target: {fileID: 5954684468398431727, guid: a357cc27806ce8b43974a4e27332f6a2, type: 3}
-      propertyPath: m_BlocksRaycasts
-      value: 0
+    - target: {fileID: 5171729383868751225, guid: a357cc27806ce8b43974a4e27332f6a2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7782249942324444539, guid: a357cc27806ce8b43974a4e27332f6a2, type: 3}
       propertyPath: m_AnchorMax.y
@@ -8678,13 +8705,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2045674526032176510, guid: f4daa986b08a5854cbac23fa7ed3addc, type: 3}
-      propertyPath: m_BlocksRaycasts
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5021421450971537281, guid: f4daa986b08a5854cbac23fa7ed3addc, type: 3}
       propertyPath: m_Name
       value: Saves
+      objectReference: {fileID: 0}
+    - target: {fileID: 8774216297540572731, guid: f4daa986b08a5854cbac23fa7ed3addc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8774216297540572731, guid: f4daa986b08a5854cbac23fa7ed3addc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -8692,7 +8719,11 @@ PrefabInstance:
       objectReference: {fileID: 88475865}
     - target: {fileID: 8774216297540572731, guid: f4daa986b08a5854cbac23fa7ed3addc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BackToNormal
+      value: SwitchCurrentState
+      objectReference: {fileID: 0}
+    - target: {fileID: 8774216297540572731, guid: f4daa986b08a5854cbac23fa7ed3addc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -14,5 +14,6 @@ namespace Data.Player
     {
         public int Freeze;
         public int CurrentWarmth;
+        public bool WasInGame;
     }
 }

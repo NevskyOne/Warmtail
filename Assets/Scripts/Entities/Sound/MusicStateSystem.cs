@@ -3,10 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using AYellowpaper.SerializedCollections;
 using Cysharp.Threading.Tasks;
+using Entities.Core;
 using Systems.Effects;
 using TriInspector;
 using UnityEngine;
 using UnityEngine.Audio;
+using Zenject;
 using Random = UnityEngine.Random;
 
 namespace Entities.Sound
@@ -20,6 +22,7 @@ namespace Entities.Sound
         [SerializeField, ShowInInspector, SerializedDictionary("Music State", "Audio Clips")]
         private SerializedDictionary<MusicState, List<AudioClip>> _clips = new();
 
+        [Inject] private SceneLoader _sceneLoader;
         private MusicState _currentState;
 
         private void Start()
@@ -29,6 +32,21 @@ namespace Entities.Sound
              
              _source1.clip = clip;
              _source1.Play();
+             StartCoroutine(LoopNext(_source1));
+             _sceneLoader.SceneStartLoading += () => ChangeMusicStateAsync(MusicState.None);
+             _sceneLoader.SceneLoaded += id =>
+             {
+                 print(id);
+                 switch (id)
+                 {
+                     case "Gameplay":
+                         ChangeMusicStateAsync(MusicState.Normal);
+                         break;
+                     case "Start":
+                         ChangeMusicStateAsync(MusicState.Start);
+                         break;
+                 }
+             };
         }
         
         public void ChangeMusicState(int state) => ChangeMusicStateAsync((MusicState)state);
@@ -41,7 +59,7 @@ namespace Entities.Sound
             try
             {
                 var rand = Random.Range(0, _clips[state].Count);
-                if (sourceFromCross.clip == _clips[state][rand])
+                if (sourceFromCross.clip == _clips[state][rand] && _clips.Count > 1)
                 {
                     if (rand == 0) rand += 1;
                     else rand -= 1;
@@ -80,6 +98,6 @@ namespace Entities.Sound
     [Serializable]
     public enum MusicState
     {
-        Start, Normal
+        Start, Normal, Home, None
     }
 }

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -651912226031858323}
   - component: {fileID: 4321709442683020220}
   - component: {fileID: 6645744535049247407}
+  - component: {fileID: 5226292807223728779}
   m_Layer: 0
   m_Name: ProjectContext
   m_TagString: Untagged
@@ -78,6 +79,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Entities.Core.GlobalInstaller
   _globalData: {fileID: 6645744535049247407}
   _localizationManager: {fileID: 4321709442683020220}
+  _musicSystem: {fileID: 3265676614564998243, guid: dc3f1f71b55a16044a7d47fc70f3d092, type: 3}
+  _sceneLoader: {fileID: 5226292807223728779}
 --- !u!114 &4321709442683020220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,6 +144,7 @@ MonoBehaviour:
       data:
         Freeze: 0
         CurrentWarmth: 0
+        WasInGame: 0
     - rid: 1601399524581179754
       type: {class: HomeData, ns: Data, asm: Assembly-CSharp}
       data:
@@ -150,3 +154,17 @@ MonoBehaviour:
       data:
         Levels:
           _serializedList: []
+--- !u!114 &5226292807223728779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3391393660208340252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9effd8c019b4c9da68ef7b7de78c6d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Entities.Core.SceneLoader
+  _animPrefab: {fileID: 1389301614466911318, guid: 33dcf99385c79f942b20e84bf70d52f7, type: 3}
+  _animDuration: 1500

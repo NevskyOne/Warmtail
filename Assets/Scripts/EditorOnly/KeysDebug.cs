@@ -12,14 +12,14 @@ namespace EditorOnly
         private void Construct(PlayerInput input, PopupSystem popupSystem, UIStateSystem _uiState)
         {
             
-            foreach (var action in input.actions)
-            {
-                if (action.actionMap.name == "Player")
-                {
-                    action.performed += _ => popupSystem.ShowPopup(
-                        new NotificationPopup("Action performed", $"Pressed key: {action.name}", 2000));
-                }
-            }
+            // foreach (var action in input.actions)
+            // {
+            //     if (action.actionMap.name == "Player")
+            //     {
+            //         action.performed += _ => popupSystem.ShowPopup(
+            //             new NotificationPopup("Action performed", $"Pressed key: {action.name}", 2000));
+            //     }
+            // }
         }
         #endif
     }

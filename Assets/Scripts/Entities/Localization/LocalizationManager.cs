@@ -82,14 +82,12 @@ namespace Entities.Localization
                     string keyId = translations[0];
                     _localizedText[keyId] = translations;
                 }
-                print("Loaded " + tableName);
             }
         }
         
         public string GetStringFromKey(string key)
         {
             if (_localizedText[key] == null) return "Language haven`t loaded yet!";
-            print(key+CurrentLanguage);
             return ParseVars(_localizedText[key][((int)CurrentLanguage.Value)+1]);
         }
         

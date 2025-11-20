@@ -24,7 +24,8 @@ namespace Entities.UI
 			_manualSaveSystem = manualSaveSystem;
 			_saveSystem = saveSystem;
 			_globalData = globalData;
-			_newSaveButton.onClick.AddListener(CreateNewSave);
+			if(_newSaveButton)
+				_newSaveButton.onClick.AddListener(CreateNewSave);
 
 			foreach (var meta in _manualSaveSystem.ListManualSaves())
 			{

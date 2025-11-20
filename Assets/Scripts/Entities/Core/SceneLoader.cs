@@ -1,3 +1,4 @@
+using System;
 using Cysharp.Threading.Tasks;
 using TriInspector;
 using UnityEngine;
@@ -10,7 +11,8 @@ namespace Entities.Core
         private static readonly int EndTransition = Animator.StringToHash("EndTransition");
         [SerializeField] private Animator _animPrefab;
         [SerializeField, Unit("Milliseconds")] private int _animDuration;
-
+        public Action SceneStartLoading;
+        public Action<string> SceneLoaded;
         private AsyncOperation _asyncLoad;
 
         private void Start()
@@ -23,6 +25,8 @@ namespace Entities.Core
             var animator = Instantiate(_animPrefab);
             DontDestroyOnLoad(animator);
             
+            SceneStartLoading?.Invoke();
+            
             await UniTask.Delay(_animDuration);
             _asyncLoad = SceneManager.LoadSceneAsync(sceneInd);
             await UniTask.WhenAll(_asyncLoad.ToUniTask(), UniTask.WaitUntil(() => _asyncLoad.allowSceneActivation));
@@ -30,6 +34,8 @@ namespace Entities.Core
             animator.SetTrigger(EndTransition);
             await UniTask.Delay(_animDuration);
             Destroy(animator);
+            
+            SceneLoaded?.Invoke(sceneInd);
         }
     }
 }
