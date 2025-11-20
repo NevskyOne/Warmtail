@@ -129,15 +129,6 @@ namespace Entities.UI
 
             var displayName = node.DisplayName == "" ? 
                 _localizationManager.GetStringFromKey(node.Character.ToString()) : node.DisplayName;
-            if (displayName == "Player")
-            {
-                displayName = _globalData.Get<SavablePlayerData>().PlayerName;
-                _bubbleObject.transform.position = Camera.main!.WorldToScreenPoint(_playerTransform.position);
-            }
-            else
-            {
-                _bubbleObject.transform.position = Camera.main!.WorldToScreenPoint(NpcTransform.position);
-            }
             switch (_frameType)
             {
                 case FrameType.Box:

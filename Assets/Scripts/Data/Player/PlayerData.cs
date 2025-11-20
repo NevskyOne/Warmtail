@@ -4,9 +4,9 @@ namespace Data.Player
 {
     [Serializable]
     public class SavablePlayerData : ISavableData {
-        public string PlayerName;
         public int Stars;
         public int Shells;
+        public int ActiveLayers; 
     }
     
     [Serializable]
@@ -15,5 +15,6 @@ namespace Data.Player
         public int Freeze;
         public int CurrentWarmth;
         public bool WasInGame;
+        public int Speed;
     }
 }

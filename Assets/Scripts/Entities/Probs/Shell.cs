@@ -39,6 +39,11 @@ namespace Entities.Probs
             }
         }
 
+        public void WarmExplosion()
+        {
+            Collect();
+        }
+
         public void Reset()
         {
             _currentProgress = _warmCapacity;

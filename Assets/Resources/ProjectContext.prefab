@@ -120,7 +120,6 @@ MonoBehaviour:
     - rid: 1601399230582489398
       type: {class: SavablePlayerData, ns: Data.Player, asm: Assembly-CSharp}
       data:
-        PlayerName: Player
         Stars: 0
         Shells: 0
     - rid: 1601399230582489399
@@ -145,6 +144,7 @@ MonoBehaviour:
         Freeze: 0
         CurrentWarmth: 0
         WasInGame: 0
+        Speed: 5
     - rid: 1601399524581179754
       type: {class: HomeData, ns: Data, asm: Assembly-CSharp}
       data:

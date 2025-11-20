@@ -8,6 +8,9 @@ using Zenject;
 public class InteractionSystem : IAbility
 {
     public bool Enabled { get; set; }
+    public Action StartAbility { get; set; }
+    public Action UsingAbility { get; set; }
+    public Action EndAbility { get; set; }
     
     [SerializeField] private float _interactionRadius = 2f;
     [SerializeField] private Vector3 _interactionOffset = Vector3.zero;
@@ -18,7 +21,9 @@ public class InteractionSystem : IAbility
     public void Construct(Player player, PlayerInput playerInput)
     {
         _player = player;
+        playerInput.actions["LeftMouse"].started += _ => StartAbility?.Invoke();
         playerInput.actions["LeftMouse"].performed += Interact;
+        playerInput.actions["LeftMouse"].canceled += _ => EndAbility?.Invoke();
     }
     
     public void Interact(InputAction.CallbackContext context)
@@ -31,6 +36,7 @@ public class InteractionSystem : IAbility
             if (collider.TryGetComponent<IInteractable>(out var interactable))
             {
                 interactable.Interact();
+                UsingAbility?.Invoke();
                 break;
             }
         }

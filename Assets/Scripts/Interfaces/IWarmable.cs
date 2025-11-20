@@ -3,6 +3,7 @@
     public interface IWarmable
     {
         public void Warm();
+        public void WarmExplosion();
         public void Reset();
     }
 }

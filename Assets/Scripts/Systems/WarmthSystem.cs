@@ -1,3 +1,4 @@
+using System;
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using Data;
@@ -7,13 +8,19 @@ using Zenject;
 
 namespace Systems
 {
+
     public class WarmthSystem
     {
         private const int WarmthIncreaseRate = 1;
+        private const float IncreaseIntervalSeconds = 1f;
+        private const float CooldownSeconds = 3f;
+
         private GlobalData _globalData;
-        private WarmingState _state;
-        private ResettableTimer _timer;
-        
+
+        private ResettableTimer _cooldownTimer;
+        private CancellationTokenSource _increaseCts;
+        private bool _isIncreasing;
+
         [Inject]
         private void Construct(GlobalData globalData)
         {
@@ -22,10 +29,7 @@ namespace Systems
             {
                 data.CurrentWarmth = _globalData.Get<SavablePlayerData>().Stars * 10;
             });
-            _globalData.SubscribeTo<SavablePlayerData>(() => _globalData.Edit<RuntimePlayerData>(data =>
-            {
-                data.CurrentWarmth = _globalData.Get<SavablePlayerData>().Stars * 10;
-            }));
+            _globalData.SubscribeTo<SavablePlayerData>(StartIncreaseIfNotRunning);
         }
 
         public void DecreaseWarmth(int value)
@@ -34,39 +38,67 @@ namespace Systems
             {
                 data.CurrentWarmth = Mathf.Max(data.CurrentWarmth - value, 0);
             });
-            _state = WarmingState.Cooling;
-            if (_timer != null)
-                _timer.Start();
-            else
-                _timer = new ResettableTimer(3, IncreaseWarmth);
-        }
-        
-        private async void IncreaseWarmth()
-        {
-            if (_state == WarmingState.Warming)
+
+            if (_increaseCts != null)
             {
-                return;
-            }
-            
-            _state = WarmingState.Warming;
-            
-            var max = _globalData.Get<SavablePlayerData>().Stars * 10;
-            var current = _globalData.Get<RuntimePlayerData>().CurrentWarmth;
-            while(current < max && _state == WarmingState.Warming){
-                _globalData.Edit<RuntimePlayerData>(data =>
-                {
-                    current = Mathf.Min(current + WarmthIncreaseRate, max);
-                    data.CurrentWarmth = current;
-                });
-                await UniTask.Delay(1000);
+                _increaseCts.Cancel();
+                _increaseCts.Dispose();
+                _increaseCts = null;
+                _isIncreasing = false;
             }
 
-            _state = WarmingState.None;
+            if (_cooldownTimer == null)
+            {
+                _cooldownTimer = new ResettableTimer(CooldownSeconds, StartIncreaseIfNotRunning);
+                _cooldownTimer.Start();
+            }
+            else
+            {
+                _cooldownTimer.Reset(CooldownSeconds);
+            }
         }
-    }
 
-    public enum WarmingState
-    {
-        None, Cooling, Warming
+        private void StartIncreaseIfNotRunning()
+        {
+            if (_isIncreasing) return;
+            _isIncreasing = true;
+            _increaseCts?.Dispose();
+            _increaseCts = new CancellationTokenSource();
+            RunIncreaseAsync(_increaseCts.Token).Forget();
+        }
+
+        private async UniTaskVoid RunIncreaseAsync(System.Threading.CancellationToken token)
+        {
+            try
+            {
+                while (true)
+                {
+                    token.ThrowIfCancellationRequested();
+
+                    var max = _globalData.Get<SavablePlayerData>().Stars * 10;
+                    var current = _globalData.Get<RuntimePlayerData>().CurrentWarmth;
+
+                    if (current >= max) break;
+
+                    _globalData.Edit<RuntimePlayerData>(data =>
+                    {
+                        var newVal = Mathf.Min(data.CurrentWarmth + WarmthIncreaseRate, max);
+                        data.CurrentWarmth = newVal;
+                    });
+
+                    await UniTask.Delay(TimeSpan.FromSeconds(IncreaseIntervalSeconds), cancellationToken: token);
+                }
+            }
+            catch (OperationCanceledException) { }
+            finally
+            {
+                _isIncreasing = false;
+                if (_increaseCts != null)
+                {
+                    _increaseCts.Dispose();
+                    _increaseCts = null;
+                }
+            }
+        }
     }
 }
