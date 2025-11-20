@@ -122,6 +122,7 @@ MonoBehaviour:
       data:
         Stars: 0
         Shells: 0
+        ActiveLayers: 0
     - rid: 1601399230582489399
       type: {class: DialogueVarData, ns: Data, asm: Assembly-CSharp}
       data:
@@ -144,7 +145,7 @@ MonoBehaviour:
         Freeze: 0
         CurrentWarmth: 0
         WasInGame: 0
-        Speed: 5
+        Speed: 10
     - rid: 1601399524581179754
       type: {class: HomeData, ns: Data, asm: Assembly-CSharp}
       data:

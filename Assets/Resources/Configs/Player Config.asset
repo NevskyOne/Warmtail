@@ -34,6 +34,5 @@ MonoBehaviour:
     - rid: 1601399544975982592
       type: {class: PlayerMovement, ns: Systems, asm: Assembly-CSharp}
       data:
-        _moveSpeed: 8
-        _acceleration: 10
-        _deceleration: 6
+        _acceleration: 15
+        _deceleration: 10
