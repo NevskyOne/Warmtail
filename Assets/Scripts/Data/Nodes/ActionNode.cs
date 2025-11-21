@@ -8,13 +8,13 @@ public class ActionNode : BaseNode
 {
     [Input, SerializeField] private int _entry;
     [Output, SerializeField] private int _exit;
-    [SerializeField] private UnityEvent _event;
+    [SerializeField] private int _eventId;
 
     [Inject] private DialogueSystem _dialogueSystem;
     
     public override void Activate()
     {
-        _event.Invoke();
+        _dialogueSystem.Character.InvokeAction(_eventId);
         
         _dialogueSystem.SetNewNode();
         _dialogueSystem.ActivateNewNode();

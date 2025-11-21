@@ -83,6 +83,6 @@ namespace Entities.UI
     [Serializable]
     public enum UIState
     {
-        Normal, Settings, Pause, Saves, Dialogue
+        Normal, Settings, Pause, Saves, Dialogue, Monologue
     }
 }

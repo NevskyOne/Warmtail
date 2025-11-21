@@ -7,7 +7,8 @@ using Systems;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Zenject;
-using Data; 
+using Data;
+using Unity.Cinemachine;
 
 namespace Entities.Core
 {
@@ -19,6 +20,7 @@ namespace Entities.Core
         [SerializeField] private PlayerConfig _playerConfig;
         [SerializeField] private PopupSystem _popupSystem;
         [SerializeField] private UIStateSystem _uiStateSystem;
+        [SerializeField] private CinemachineCamera _cam;
         
         public override void InstallBindings()
         {
@@ -29,6 +31,7 @@ namespace Entities.Core
             Container.Bind<DialogueVisuals>().FromInstance(_dialogueVisuals).AsSingle();
             Container.Bind<PopupSystem>().FromInstance(_popupSystem).AsSingle();
             Container.Bind<UIStateSystem>().FromInstance(_uiStateSystem).AsSingle();
+            Container.Bind<CinemachineCamera>().FromInstance(_cam).AsSingle();
            
             Container.Inject(new KeysDebug());
             Container.Inject(new WarmthSystem());

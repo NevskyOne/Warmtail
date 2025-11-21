@@ -129,7 +129,7 @@ MonoBehaviour:
         Variables:
         - Type: 0
           Name: playerName
-          Value: player
+          Value: "\u041D\u0435\u0432\u0441\u043A\u0438\u0439"
     - rid: 1601399230582489400
       type: {class: SettingsData, ns: Data, asm: Assembly-CSharp}
       data:

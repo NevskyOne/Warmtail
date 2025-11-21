@@ -51,6 +51,9 @@ namespace Systems
                 _moveInput = context.ReadValue<Vector2>();
                 UsingAbility?.Invoke();
             }
+            else{
+                _moveInput = Vector2.zero;
+            }
         }
     
         public void FixedTick()

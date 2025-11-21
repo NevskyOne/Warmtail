@@ -1,10 +1,9 @@
 using System.Collections.Generic;
 using Data;
-using Data.Player;
 using EasyTextEffects;
 using EasyTextEffects.Effects;
 using Entities.Localization;
-using Entities.PlayerScripts;
+using Interfaces;
 using Systems;
 using TMPro;
 using TriInspector;
@@ -18,40 +17,26 @@ namespace Entities.UI
     public enum FrameType{Box, Bubble}
     
     [DeclareBoxGroup("BoxFrame")]
-    [DeclareBoxGroup("BubbleFrame")]
-    public class DialogueVisuals : MonoBehaviour
+    public class DialogueVisuals : MonoBehaviour, ITextVisual
     {
         [Title("Settings")] 
         [SerializeReference] private CharacterHolder _holder;
         [SerializeReference] private AudioSource _audioSource;
         [SerializeReference] private Effect_Composite _effect;
-        [SerializeReference] private FrameType _frameType;
         
         [GroupNext("BoxFrame")]
-        [SerializeField, ShowIf(nameof(_frameType), FrameType.Box), LabelText("Object")] 
+        [SerializeField, LabelText("Object")] 
         private GameObject _boxObject;
-        [SerializeField, ShowIf(nameof(_frameType), FrameType.Box), LabelText("Text")] 
+        [SerializeField, LabelText("Text")] 
         private TMP_Text _boxText;
-        [SerializeField, ShowIf(nameof(_frameType), FrameType.Box), LabelText("Name")] 
+        [SerializeField, LabelText("Name")] 
         private TMP_Text _boxName;
-        [SerializeField, ShowIf(nameof(_frameType), FrameType.Box), LabelText("Character Image")] 
+        [SerializeField, LabelText("Character Image")] 
         private Image _boxImage;
-        [SerializeField, ShowIf(nameof(_frameType), FrameType.Box), LabelText("Options Group")]
+        [SerializeField, LabelText("Options Group")]
         private Transform _boxOptionsGroup;
-        [SerializeField, ShowIf(nameof(_frameType), FrameType.Box), LabelText("Option Prefab")]
+        [SerializeField, LabelText("Option Prefab")]
         private TMP_Text _boxOptionsPrefab;
-        
-        [GroupNext("BubbleFrame")]
-        [SerializeField, ShowIf(nameof(_frameType), FrameType.Bubble), LabelText("Object")] 
-        private GameObject _bubbleObject;
-        [SerializeField, ShowIf(nameof(_frameType), FrameType.Bubble), LabelText("Text")] 
-        private TMP_Text _bubbleText;
-        [SerializeField, ShowIf(nameof(_frameType), FrameType.Bubble), LabelText("Name")] 
-        private TMP_Text _bubbleName;
-        [SerializeField, ShowIf(nameof(_frameType), FrameType.Bubble), LabelText("Options Group")]
-        private Transform _bubbleOptionsGroup;
-        [SerializeField, ShowIf(nameof(_frameType), FrameType.Bubble), LabelText("Option Prefab")]
-        private TMP_Text _bubbleOptionsPrefab;
         
         private DiContainer _diContainer;
         private DialogueSystem _system;
@@ -60,56 +45,45 @@ namespace Entities.UI
         private UIStateSystem _uiStateSystem;
         
         private TextEffect BoxNameEffect => _boxName.GetComponent<TextEffect>();
-        private TextEffect BubbleNameEffect => _bubbleName.GetComponent<TextEffect>();
         private TextEffect BoxTextEffect => _boxText.GetComponent<TextEffect>();
-        private TextEffect BubbleTextEffect => _bubbleText.GetComponent<TextEffect>();
         
-        private Transform _playerTransform;
         private LocalizationManager _localizationManager;
-        public Transform NpcTransform { get; set; }
         public bool IsComplete { get; set; }
 
         [Inject]
         private void Construct(DiContainer container, PlayerInput input, LocalizationManager localization,
-            DialogueSystem dialogueSystem, GlobalData globalData, Player player, UIStateSystem uiStateSystem)
+            DialogueSystem dialogueSystem, GlobalData globalData, UIStateSystem uiStateSystem)
         {
             _diContainer = container;
             _input = input;
             _system = dialogueSystem;
             _globalData = globalData;
-            _playerTransform = player.transform;
             _localizationManager = localization;
             _uiStateSystem = uiStateSystem;
 
+            _input.actions.FindAction("Space").performed += RequestNewNode;
             BoxTextEffect.globalEffects[0].onEffectCompleted.AddListener(() => IsComplete = true);
-            BubbleTextEffect.globalEffects[0].onEffectCompleted.AddListener(() => IsComplete = true);
+        }
+        
+        private void RequestNewNode(InputAction.CallbackContext _)
+        {
+            if (IsComplete)
+            {
+                ChangeEffectSpeed();
+                return;
+            }
+            _system.RequestNewNode();
         }
 
-        public void ShowDialogue()
+        public void ShowVisuals()
         {
-            switch (_frameType)
-            {
-                case FrameType.Box:
-                    _boxObject.SetActive(true);
-                    break;
-                case FrameType.Bubble:
-                    _bubbleObject.SetActive(true);
-                    break;
-            }
+            _boxObject.SetActive(true);
             _uiStateSystem.SwitchCurrentStateAsync(UIState.Dialogue);
         }
         
-        public void HideDialogue()
+        public void HideVisuals()
         {
-            switch (_frameType)
-            {
-                case FrameType.Box:
-                    _boxObject.SetActive(false);
-                    break;
-                case FrameType.Bubble:
-                    _bubbleObject.SetActive(false);
-                    break;
-            }
+            _boxObject.SetActive(false);
             _uiStateSystem.SwitchCurrentStateAsync(UIState.Normal);
         }
         
@@ -129,28 +103,18 @@ namespace Entities.UI
 
             var displayName = node.DisplayName == "" ? 
                 _localizationManager.GetStringFromKey(node.Character.ToString()) : node.DisplayName;
-            switch (_frameType)
+            if(displayName == "player")
             {
-                case FrameType.Box:
-                    _boxName!.text = displayName;
-                    BoxNameEffect.Refresh();
-                    if(character.EmotionSprites.ContainsKey(node.Emotion))
-                        _boxImage.sprite = character.EmotionSprites[node.Emotion];
-                    _boxText.text = text;
-                    BoxTextEffect.globalEffects[0].effect = _effect;
-                    BoxTextEffect.Refresh();
-                    BoxTextEffect.StartOnStartEffects();
-                    break;
-                case FrameType.Bubble:
-                    _bubbleName!.text = displayName;
-                    BubbleNameEffect.Refresh();
-                    _bubbleText.text = text;
-                    BubbleTextEffect.globalEffects[0].effect = _effect;
-                    BubbleTextEffect.Refresh();
-                    BubbleTextEffect.StartOnStartEffects();
-                    break;
+                displayName = _globalData.Get<DialogueVarData>().Variables.Find(var => var.Name == "playerName").Value;
             }
-            
+            _boxName!.text = displayName;
+            BoxNameEffect.Refresh();
+            if(character.EmotionSprites.ContainsKey(node.Emotion))
+                _boxImage.sprite = character.EmotionSprites[node.Emotion];
+            _boxText.text = text;
+            BoxTextEffect.globalEffects[0].effect = _effect;
+            BoxTextEffect.Refresh();
+            BoxTextEffect.StartOnStartEffects();
         }
         
         public async void ShowOptions(List<int> choices)
@@ -160,82 +124,38 @@ namespace Entities.UI
             {
                 var text = _localizationManager.GetStringFromKey(
                     "player_" + _system.DialogueGraph.DialogueId + "_" + choiceInd);
-                switch (_frameType)
-                {
-                    case FrameType.Box:
-                        var boxObj = await InstantiateAsync(_boxOptionsPrefab, _boxOptionsGroup);
-                        boxObj[0].text = text;
-                        boxObj[0].GetComponent<TextEffect>().globalEffects[0].effect = _effect;
-                        boxObj[0].GetComponent<TextEffect>().Refresh();
-                        _diContainer.Inject(boxObj[0].gameObject.GetComponent<DialogueOptionUI>());
-                        break;
-                    case FrameType.Bubble:
-                        var bubbleObj = await InstantiateAsync(_bubbleOptionsPrefab, _bubbleOptionsGroup);
-                        bubbleObj[0].text = text;
-                        bubbleObj[0].GetComponent<TextEffect>().globalEffects[0].effect = _effect;
-                        bubbleObj[0].GetComponent<TextEffect>().Refresh();
-                        _diContainer.Inject(bubbleObj[0].gameObject.GetComponent<DialogueOptionUI>());
-                        break;
-                }
+                var boxObj = await InstantiateAsync(_boxOptionsPrefab, _boxOptionsGroup);
+                boxObj[0].text = text;
+                boxObj[0].GetComponent<TextEffect>().globalEffects[0].effect = _effect;
+                boxObj[0].GetComponent<TextEffect>().Refresh();
+                _diContainer.Inject(boxObj[0].gameObject.GetComponent<DialogueOptionUI>());
             }
-            switch (_frameType)
-            {
-                case FrameType.Box:
-                    _boxText.gameObject.SetActive(false);
-                    _boxName.gameObject.SetActive(false);
-                    _boxImage.gameObject.SetActive(false);
-                    _boxOptionsGroup.gameObject.SetActive(true);
-                    break;
-                case FrameType.Bubble:
-                    _bubbleObject.transform.position = Camera.main!.WorldToScreenPoint(_playerTransform.position);
-                    _bubbleText.gameObject.SetActive(false);
-                    _bubbleName.gameObject.SetActive(false);
-                    _bubbleOptionsGroup.gameObject.SetActive(true);
-                    break;
-            }
+            _boxText.gameObject.SetActive(false);
+            _boxName.gameObject.SetActive(false);
+            _boxImage.gameObject.SetActive(false);
+            
+            _boxOptionsGroup.gameObject.SetActive(true);
         }
 
         public void ChooseOption(int i)
         {
             _input.SwitchCurrentActionMap("Dialogue");
-            switch (_frameType)
+            for (int j = _boxOptionsGroup.childCount - 1; j >= 0; j--)
             {
-                case FrameType.Box:
-                    for (int j = _boxOptionsGroup.childCount - 1; j >= 0; j--)
-                    {
-                        Destroy(_boxOptionsGroup.GetChild(j).gameObject);
-                    }
-                    _boxText.gameObject.SetActive(true);
-                    _boxName.gameObject.SetActive(true);
-                    _boxImage.gameObject.SetActive(true);
-                    _boxOptionsGroup.gameObject.SetActive(false);
-                    break;
-                case FrameType.Bubble:
-                    for (int j = _bubbleOptionsGroup.childCount - 1; j >= 0; j--)
-                    {
-                        Destroy(_bubbleOptionsGroup.GetChild(j).gameObject);
-                    }
-                    _bubbleText.gameObject.SetActive(true);
-                    _bubbleName.gameObject.SetActive(true);
-                    _bubbleOptionsGroup.gameObject.SetActive(false);
-                    break;
+                Destroy(_boxOptionsGroup.GetChild(j).gameObject);
             }
+            _boxText.gameObject.SetActive(true);
+            _boxName.gameObject.SetActive(true);
+            _boxImage.gameObject.SetActive(true);
+            _boxOptionsGroup.gameObject.SetActive(false);
+            
             _system.SetNewNode(i.ToString());
             _system.ActivateNewNode();
         }
 
         public void ChangeEffectSpeed()
         {
-            switch (_frameType)
-            {
-                case FrameType.Box:
-                    BoxTextEffect.StopOnStartEffects();
-                    break;
-                case FrameType.Bubble:
-                    BubbleTextEffect.StopOnStartEffects();
-                    break;
-            }
-
+            BoxTextEffect.StopOnStartEffects();
             IsComplete = true;
         }
 

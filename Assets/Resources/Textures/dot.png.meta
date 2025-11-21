@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: fc9a0e32297a1f04db2313c91ed0747d
+guid: 2d45b34be5f3eea4ea86bfbba1c90ed9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1924207864277490671
-    second: Voronoi2_0
+      213: -7632292786504573332
+    second: dot_0
+  - first:
+      213: 3660323220654348738
+    second: dot_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,12 +40,12 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
-    wrapW: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -75,7 +78,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Voronoi2_0
+      name: dot_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 2048
-        height: 2048
+        x: 22
+        y: 8
+        width: 615
+        height: 669
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +118,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: febd5409bd824ba10800000000000000
-      internalID: 1924207864277490671
+      spriteID: c6e5e96f526a41690800000000000000
+      internalID: -7632292786504573332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dot_1
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 260
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c9573273941cc230800000000000000
+      internalID: 3660323220654348738
       vertices: []
       indices: 
       edges: []
@@ -135,7 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Voronoi2_0: 1924207864277490671
+      dot_0: -7632292786504573332
+      dot_1: 3660323220654348738
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

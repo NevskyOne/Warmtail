@@ -42,7 +42,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _FoamTex:
-        m_Texture: {fileID: 2800000, guid: 91180d840e095f94e9a579f49ee80316, type: 3}
+        m_Texture: {fileID: 2800000, guid: b4c1e58ba0a69634ca3d11c927878af2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -68,20 +68,22 @@ Material:
     m_Ints: []
     m_Floats:
     - _CellsScale: 10.87
-    - _Choppiness: 0
-    - _FlowSpeed: 66.6
-    - _FlowStrength: 9.36
-    - _FoamDistance: 1.26
+    - _Choppiness: 0.01
+    - _FlowSpeed: 0.06
+    - _FlowStrength: 0.005
+    - _FoamDistance: 130.46
+    - _MiddleOpacity: 0
     - _NoiseScale: 141.18
-    - _Opacity: 1
+    - _Opacity: 0
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Size: 32.77
+    - _Size: 30.2
     - _Step: 0.87
     - _TimeScale: 0.2
     m_Colors:
     - _BaseColor: {r: 0.10849059, g: 0.59276724, b: 1, a: 1}
-    - _DarkFoamColor: {r: 0.19339623, g: 0.5131594, b: 0.7735849, a: 1}
+    - _DarkFoamColor: {r: 0.19744569, g: 0.5427927, b: 0.8207547, a: 1}
+    - _DarkFoamColor_1: {r: 0.6313726, g: 0.8133991, b: 1, a: 1}
     - _LightFoamColor: {r: 1, g: 1, b: 1, a: 1}
     - _WaterColor: {r: 0.20784307, g: 0.6431373, b: 1, a: 1}
     - _WavesColor: {r: 1.7319887, g: 6.9279547, b: 4.8060417, a: 1}

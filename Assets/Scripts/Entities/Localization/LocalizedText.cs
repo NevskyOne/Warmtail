@@ -34,7 +34,7 @@ namespace Entities.Localization
             UpdateString();
         }
         
-        public static IEnumerable<TriDropdownItem<string>> GetDropdownStrings()
+        private IEnumerable<TriDropdownItem<string>> GetDropdownStrings()
         {
             TriDropdownList<string> list = new();
             foreach (var tableName in LocalizationManager.NameToGid.Keys)

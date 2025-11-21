@@ -26,7 +26,9 @@ namespace Entities.Localization
             {"Octoboss", "324218113"},
             {"Skyper", "1314801844"},
             {"Jelica", "739200791"},
-            {"Cutscenes", "317498044"},
+            {"Star", "317498044"},
+            {"Fragments", "1106492096"},
+            {"Quests", "2071454227"}
         };
 
         public ReactiveProperty<Language> CurrentLanguage { get; } = new(Language.ru);
