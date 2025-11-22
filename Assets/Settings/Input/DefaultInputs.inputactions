@@ -708,7 +708,7 @@
             "id": "6ac3c4c3-756b-4f45-b9f0-77b2b6505a2b",
             "actions": [
                 {
-                    "name": "LeftMouse",
+                    "name": "HouseLeftMouse",
                     "type": "Button",
                     "id": "15d054de-5591-4949-96e4-9c769de3edae",
                     "expectedControlType": "",
@@ -725,7 +725,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "LeftMouse",
+                    "action": "HouseLeftMouse",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -7,8 +7,6 @@ namespace Entities.House
     public class DraggableObjectUI : MonoBehaviour
     {
         [SerializeField] private DraggableObject _itemCopyingObjectPref;
-        [SerializeField] private Sprite _sprite;
-        [SerializeField] private Vector2 _itemCopyingScale = new Vector2(1, 1);
         private DraggableObject _itemCopyingObject;
         private Vector2 _startClickPosition;
         
@@ -31,7 +29,7 @@ namespace Entities.House
                 if (!_itemCopyingObject)
                 {
                     _itemCopyingObject = Instantiate(_itemCopyingObjectPref);
-                    _itemCopyingObject.Initialize(_sprite, _itemCopyingScale);
+                    _itemCopyingObject.Initialize(false);
                 }
                 Vector2 pos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
                 _itemCopyingObject.transform.position = pos;
