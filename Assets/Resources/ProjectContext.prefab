@@ -145,7 +145,7 @@ MonoBehaviour:
         Freeze: 0
         CurrentWarmth: 0
         WasInGame: 0
-        Speed: 10
+        Speed: 0
     - rid: 1601399524581179754
       type: {class: HomeData, ns: Data, asm: Assembly-CSharp}
       data:
