@@ -52,9 +52,6 @@
     ],
     "m_Nodes": [
         {
-            "m_Id": "03a87fe70b775d8a8c7e9fdf708a2307"
-        },
-        {
             "m_Id": "d810d5fe7f881e8ca823be2b69579f9a"
         },
         {
@@ -254,6 +251,9 @@
         },
         {
             "m_Id": "d90a41854b6f40958c4dca2380438b7d"
+        },
+        {
+            "m_Id": "259fdd59acfb415d9c15e1833ffe2f8d"
         }
     ],
     "m_GroupDatas": [
@@ -281,20 +281,6 @@
     ],
     "m_StickyNoteDatas": [],
     "m_Edges": [
-        {
-            "m_OutputSlot": {
-                "m_Node": {
-                    "m_Id": "03a87fe70b775d8a8c7e9fdf708a2307"
-                },
-                "m_SlotId": 0
-            },
-            "m_InputSlot": {
-                "m_Node": {
-                    "m_Id": "d810d5fe7f881e8ca823be2b69579f9a"
-                },
-                "m_SlotId": 0
-            }
-        },
         {
             "m_OutputSlot": {
                 "m_Node": {
@@ -447,6 +433,20 @@
                     "m_Id": "444c4d0ee5a8ad8488e45d103e49c51e"
                 },
                 "m_SlotId": 0
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "259fdd59acfb415d9c15e1833ffe2f8d"
+                },
+                "m_SlotId": 0
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "aa05a2f877d5138b8fd6d0099795b4f7"
+                },
+                "m_SlotId": 1
             }
         },
         {
@@ -1068,20 +1068,6 @@
         {
             "m_OutputSlot": {
                 "m_Node": {
-                    "m_Id": "d810d5fe7f881e8ca823be2b69579f9a"
-                },
-                "m_SlotId": 2
-            },
-            "m_InputSlot": {
-                "m_Node": {
-                    "m_Id": "aa05a2f877d5138b8fd6d0099795b4f7"
-                },
-                "m_SlotId": 1
-            }
-        },
-        {
-            "m_OutputSlot": {
-                "m_Node": {
                     "m_Id": "d90a41854b6f40958c4dca2380438b7d"
                 },
                 "m_SlotId": 0
@@ -1368,42 +1354,6 @@
 
 {
     "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
-    "m_ObjectId": "03a87fe70b775d8a8c7e9fdf708a2307",
-    "m_Group": {
-        "m_Id": "64806a364f484af0b4a99852adea92a8"
-    },
-    "m_Name": "Property",
-    "m_DrawState": {
-        "m_Expanded": true,
-        "m_Position": {
-            "serializedVersion": "2",
-            "x": -2196.0,
-            "y": 832.0,
-            "width": 144.0,
-            "height": 34.0
-        }
-    },
-    "m_Slots": [
-        {
-            "m_Id": "3845f49fad87c38f82653f5a374100a7"
-        }
-    ],
-    "synonyms": [],
-    "m_Precision": 0,
-    "m_PreviewExpanded": true,
-    "m_DismissedVersion": 0,
-    "m_PreviewMode": 0,
-    "m_CustomColors": {
-        "m_SerializableColors": []
-    },
-    "m_Property": {
-        "m_Id": "809569383f38f380be2eb07007438ca1"
-    }
-}
-
-{
-    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.DynamicVectorMaterialSlot",
     "m_ObjectId": "0592df57ee7fcc85bf09d901eafaa32d",
     "m_Id": 3,
@@ -1432,8 +1382,8 @@
     "m_ObjectId": "08405084f83f484aa5b998842bbb276f",
     "m_Title": "Dark Foam Voronoi Sample",
     "m_Position": {
-        "x": -276.0,
-        "y": -1583.0
+        "x": -276.0000915527344,
+        "y": -1582.9998779296875
     }
 }
 
@@ -1642,10 +1592,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -565.9999389648438,
-            "y": -70.9999771118164,
-            "width": 135.0,
-            "height": 118.00000762939453
+            "x": -652.9999389648438,
+            "y": -26.99999237060547,
+            "width": 207.99993896484376,
+            "height": 301.99993896484377
         }
     },
     "m_Slots": [
@@ -1684,7 +1634,7 @@
     "m_ShaderOutputName": "A",
     "m_StageCapability": 3,
     "m_Value": {
-        "x": 0.0,
+        "x": 10.0,
         "y": 0.0,
         "z": 0.0,
         "w": 0.0
@@ -1786,10 +1736,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -736.9998779296875,
-            "y": -70.9999771118164,
-            "width": 135.0,
-            "height": 118.00000762939453
+            "x": -847.9999389648438,
+            "y": -55.9999885559082,
+            "width": 130.00006103515626,
+            "height": 117.99995422363281
         }
     },
     "m_Slots": [
@@ -2274,6 +2224,42 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
+    "m_ObjectId": "259fdd59acfb415d9c15e1833ffe2f8d",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "Property",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": -2081.0,
+            "y": 839.0,
+            "width": 0.0,
+            "height": 0.0
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "3d14b3cf18564392b1f3ff18ee28dcf3"
+        }
+    ],
+    "synonyms": [],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_DismissedVersion": 0,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_Property": {
+        "m_Id": "809569383f38f380be2eb07007438ca1"
+    }
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.NormalMaterialSlot",
     "m_ObjectId": "25f32324959a45c2a4dd3f77d9a62c93",
     "m_Id": 0,
@@ -2440,8 +2426,8 @@
     "m_ObjectId": "2ec852b2d8634206bcf4dd3deedc19e7",
     "m_Title": "Middle Foam Voronoi Sample",
     "m_Position": {
-        "x": -280.0,
-        "y": -930.0000610351563
+        "x": -279.999755859375,
+        "y": -930.0
     }
 }
 
@@ -2542,23 +2528,6 @@
 {
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
-    "m_ObjectId": "3845f49fad87c38f82653f5a374100a7",
-    "m_Id": 0,
-    "m_DisplayName": "Flow Speed",
-    "m_SlotType": 1,
-    "m_Hidden": false,
-    "m_ShaderOutputName": "Out",
-    "m_StageCapability": 3,
-    "m_Value": 0.0,
-    "m_DefaultValue": 0.0,
-    "m_Labels": [
-        "X"
-    ]
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "3af6eb5fbee47a849ff0862c765dc460",
     "m_Id": 3,
     "m_DisplayName": "B",
@@ -2628,6 +2597,21 @@
         "Y"
     ],
     "m_Channel": 0
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
+    "m_ObjectId": "3d14b3cf18564392b1f3ff18ee28dcf3",
+    "m_Id": 0,
+    "m_DisplayName": "Flow Speed",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Out",
+    "m_StageCapability": 3,
+    "m_Value": 0.0,
+    "m_DefaultValue": 0.0,
+    "m_Labels": []
 }
 
 {
@@ -3910,8 +3894,8 @@
     "m_ObjectId": "64806a364f484af0b4a99852adea92a8",
     "m_Title": "Distort UVs based on Flow Map",
     "m_Position": {
-        "x": -2221.0,
-        "y": 411.0
+        "x": -2218.0,
+        "y": 410.9999694824219
     }
 }
 
@@ -5744,8 +5728,8 @@
     "m_ObjectId": "9b42bc91bd584e43a5d8219c20e553be",
     "m_Title": "Main Foam Voronoi Sample",
     "m_Position": {
-        "x": -944.0,
-        "y": -228.0
+        "x": -1113.9998779296875,
+        "y": -227.99990844726563
     }
 }
 
@@ -7423,7 +7407,7 @@
     "m_ObjectId": "d35914d01900410bb858ec70e0f3cff7",
     "m_Title": "Vertex Bobbing",
     "m_Position": {
-        "x": 777.0,
+        "x": 776.9999389648438,
         "y": -673.0
     }
 }
@@ -7621,8 +7605,8 @@
     "m_ObjectId": "d894022d1b9b49f384d37a10622e2844",
     "m_Title": "Water Depth Color",
     "m_Position": {
-        "x": -100.0,
-        "y": 364.0
+        "x": -100.00004577636719,
+        "y": 363.9999694824219
     }
 }
 
@@ -7921,10 +7905,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -918.9999389648438,
-            "y": -70.9999771118164,
+            "x": -1089.0,
+            "y": -55.99999237060547,
             "width": 145.0,
-            "height": 128.0
+            "height": 128.0000457763672
         }
     },
     "m_Slots": [
@@ -8320,8 +8304,8 @@
     "m_ObjectId": "f26afaf880b84ad682ab60ee3370dcdb",
     "m_Title": "Combining texture and intersection foam",
     "m_Position": {
-        "x": 461.0,
-        "y": -148.0
+        "x": 460.9999694824219,
+        "y": -147.99996948242188
     }
 }
 
@@ -8586,10 +8570,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -709.9999389648438,
-            "y": 59.00006103515625,
-            "width": 103.0,
-            "height": 34.0
+            "x": -796.0,
+            "y": 89.99998474121094,
+            "width": 97.00006103515625,
+            "height": 34.000022888183597
         }
     },
     "m_Slots": [

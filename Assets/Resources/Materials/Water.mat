@@ -68,16 +68,16 @@ Material:
     m_Ints: []
     m_Floats:
     - _CellsScale: 10.87
-    - _Choppiness: 0.01
-    - _FlowSpeed: 0.06
-    - _FlowStrength: 0.005
-    - _FoamDistance: 130.46
-    - _MiddleOpacity: 0
+    - _Choppiness: 0.1
+    - _FlowSpeed: 0.05
+    - _FlowStrength: 0.01
+    - _FoamDistance: 117.9
+    - _MiddleOpacity: 1
     - _NoiseScale: 141.18
     - _Opacity: 0
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Size: 30.2
+    - _Size: 1
     - _Step: 0.87
     - _TimeScale: 0.2
     m_Colors:
