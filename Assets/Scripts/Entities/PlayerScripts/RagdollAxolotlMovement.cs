@@ -66,7 +66,6 @@ namespace Entities.PlayerScripts
                     return;
                 }
             }
-            _mainRigidbody.linearDamping = _drag;
             _mainRigidbody.angularDamping = _drag;
             
             SetupLegs();
