@@ -1,5 +1,38 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &613746628794646036
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6143388716425524358}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6143388716425524358
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 613746628794646036}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2112469714656280066}
+  - {fileID: 4924373246226344336}
+  m_Father: {fileID: 5859638581176523642}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &651751476985688184
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,7 +128,7 @@ RectTransform:
   m_Children:
   - {fileID: 6364266229576272569}
   - {fileID: 6846000367227891325}
-  m_Father: {fileID: 5859638581176523642}
+  m_Father: {fileID: 6143388716425524358}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -196,8 +229,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2112469714656280066}
-  - {fileID: 4924373246226344336}
+  - {fileID: 6143388716425524358}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &922807377315119029
@@ -214,6 +246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Entities.House.DraggableObject
   _buttonsForConfirmed: {fileID: 8049958374433027412}
   _buttonsForEditing: {fileID: 651751476985688184}
+  _child: {fileID: 613746628794646036}
   _houseItemData: {fileID: 0}
 --- !u!65 &7661251998520739028
 BoxCollider:
@@ -376,8 +409,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 922807377315119029}
-          m_TargetAssemblyTypeName: DraggableObject, Assembly-CSharp
-          m_MethodName: CancelPlacement
+          m_TargetAssemblyTypeName: Entities.House.DraggableObject, Assembly-CSharp
+          m_MethodName: CancelEdited
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -836,8 +869,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 922807377315119029}
-          m_TargetAssemblyTypeName: DraggableObject, Assembly-CSharp
-          m_MethodName: ApplyPlacement
+          m_TargetAssemblyTypeName: Entities.House.DraggableObject, Assembly-CSharp
+          m_MethodName: ApplyEditing
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -987,12 +1020,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8890495559630347172}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5859638581176523642}
+  m_Father: {fileID: 6143388716425524358}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4356480875976509338
 SpriteRenderer:

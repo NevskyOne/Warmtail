@@ -1,6 +1,8 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Zenject;
+using System;
+using Systems;
 
 namespace Entities.House
 {
@@ -10,13 +12,12 @@ namespace Entities.House
         private DraggableObject _itemCopyingObject;
         private Vector2 _startClickPosition;
         
+        [Inject] private PlacementSystem _placementSystem;
+
         public void PointerDownItem()
         {
             _itemCopyingObject = null;
             _startClickPosition = Mouse.current.position.ReadValue();
-        }
-        public void PointerUpItem()
-        {
         }
         public void HoldItem()
         {
@@ -28,8 +29,7 @@ namespace Entities.House
             {
                 if (!_itemCopyingObject)
                 {
-                    _itemCopyingObject = Instantiate(_itemCopyingObjectPref);
-                    _itemCopyingObject.Initialize(false);
+                    _itemCopyingObject = _placementSystem.InstantiateDraggableObject(_itemCopyingObjectPref, false);
                 }
                 Vector2 pos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
                 _itemCopyingObject.transform.position = pos;

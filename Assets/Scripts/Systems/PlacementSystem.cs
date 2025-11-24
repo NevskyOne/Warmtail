@@ -1,56 +1,72 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections.Generic;
+using System;
 using Zenject;
+using Data;
+using Data.House;
+using Entities.House;
 
-// namespace Systems
-// {
-    public class PlacementSystem : MonoBehaviour
+namespace Systems
+{
+    public class PlacementSystem
     {
-        [SerializeField] private InputActionAsset _inputActions;
-        [SerializeField] private DraggableObject _itemObjectPref;
-        private List<KeyValuePair<HouseItemData, Vector2>> _houseItemsInfo = new();
-        private List<KeyValuePair<HouseItemData, Vector2>> _houseItemsEditingInfo = new();
+        private List<PairForHouseItem> _houseItemsEditingInfo = new();
         public static Action OnApplyedAll = delegate {};
         public static Action OnCanceledAll = delegate {};
-        private HouseData _houseData;
+        private GlobalData _globalData;
         public int CountItemOnTheScene;
 
+        [Inject] private DiContainer _diContainer;
         [Inject]
-        private void Construct(HouseData houseData)
-        {
-            _houseData = houseData;
-        }
-        public void AddEditingItem(HouseItemData houseItemData, Vector2 pos)
-        {
-            _houseItemsEditingInfo.Add(new KeyValuePair<HouseItemData, Vector2>(houseItemData, pos));
-        }
-        void Awake()
-        {
-            _inputActions.FindActionMap("House").Enable();
-            foreach (var obj in _houseData.ObjectsInfo)
+        private void Construct(GlobalData globalData, InputActionAsset inputActions)
+        {            
+            inputActions.FindActionMap("House").Enable();
+            _globalData = globalData;
+            
+            var houseItems = _globalData.Get<HouseData>().PlacedHouseItems;
+            foreach (PairForHouseItem item in houseItems)
             {
-                // DraggableObject gm = Instantiate(_itemObjectPref, obj.Position, Quaternion.identity);
-                // gm.Initialize(obj.Sprite, obj.Scale, false);
+                DraggableObject gm = InstantiateDraggableObject(item.HouseItemData.ItemPref, true);
+                gm.transform.position = item.Position;
             }
         }
-        void OnDestroy()
+        public DraggableObject InstantiateDraggableObject(DraggableObject draggableObject, bool isItemConfirmed)
         {
-            _inputActions.FindActionMap("House").Disable();
+            DraggableObject obj = _diContainer.InstantiatePrefab(draggableObject).GetComponent<DraggableObject>();
+            obj.Initialize(isItemConfirmed);
+            return obj;
         }
-        public void ApplyAll()
+
+        public void AddEditingItem(HouseItemData data, Vector2 currentPos)
+        {
+            _globalData.Edit<HouseData>(houseData =>
+            {
+                houseData.PlacedHouseItems.Add(new (data, currentPos));
+            });
+        }
+        public void ReplaceEditingItem(HouseItemData data, Vector2 posOnConfirmedState, Vector2 currentPos)
+        {
+            _globalData.Edit<HouseData>(houseData =>
+            {
+                int ind = houseData.PlacedHouseItems.IndexOf(new PairForHouseItem(data, posOnConfirmedState));
+                houseData.PlacedHouseItems[ind] = new PairForHouseItem(data, currentPos);
+            });
+        }
+        public void RemoveEditingItem(HouseItemData data, Vector2 posOnConfirmedState)
+        {
+            _globalData.Edit<HouseData>(houseData =>
+            {
+                houseData.PlacedHouseItems.Remove(new PairForHouseItem(data, posOnConfirmedState));
+            });
+        }
+        public void ApplyAllEditing()
         {
             OnApplyedAll?.Invoke();
         }
         public void CancelAll()
         {
-            foreach (var item in _houseItemsEditingInfo)
-            {
-                _houseItemsInfo.Add(item);
-            }
-            _houseItemsEditingInfo.Clear();
             OnCanceledAll?.Invoke();
         }
     }
-//}
+}

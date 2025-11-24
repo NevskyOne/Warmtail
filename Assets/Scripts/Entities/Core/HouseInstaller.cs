@@ -1,17 +1,18 @@
 using UnityEngine;
-using System;
+using UnityEngine.InputSystem;
 using Zenject;
+using Systems;
 
 namespace Entities.Core
 {
     public class HouseInstaller : MonoInstaller
     {
-        [SerializeField] private PlacementSystem _placementSystem;
+        [SerializeField] private InputActionAsset _inputActions;
 
         public override void InstallBindings()
         {
-            Container.Bind<PlacementSystem>().FromInstance(_placementSystem).AsSingle();
-            Container.Bind<HouseData>().FromNew().AsSingle();
+            Container.Bind<InputActionAsset>().FromInstance(_inputActions).AsSingle();
+            Container.Bind<PlacementSystem>().FromNew().AsSingle();
         }
     }
 }

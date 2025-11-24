@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 922807377315119029, guid: 604e1eb257b6a2c498c4135f46aa3c80, type: 3}
+      propertyPath: _houseItemData
+      value: 
+      objectReference: {fileID: 11400000, guid: 4a28d45cd07aec04594b5e25fc1c9d23, type: 2}
     - target: {fileID: 1548766097917159745, guid: 604e1eb257b6a2c498c4135f46aa3c80, type: 3}
       propertyPath: m_Name
       value: RingBuildingItem

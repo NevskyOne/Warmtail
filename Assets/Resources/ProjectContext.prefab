@@ -107,6 +107,7 @@ MonoBehaviour:
   - rid: 1601399230582489398
   - rid: 1601399230582489399
   - rid: 1601399230582489400
+  - rid: 2385452518462980451
   _runtimeData:
   - rid: 1601399230582489401
   references:
@@ -136,3 +137,7 @@ MonoBehaviour:
       type: {class: RuntimePlayerData, ns: Data.Player, asm: Assembly-CSharp}
       data:
         Hp: 3
+    - rid: 2385452518462980451
+      type: {class: HouseData, ns: Data.House, asm: Assembly-CSharp}
+      data:
+        PlacedHouseItems: []
