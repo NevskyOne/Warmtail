@@ -30,7 +30,7 @@ namespace Entities.House
         {
             PlacementSystem.OnApplyedAll += ApplyEditing;
             PlacementSystem.OnCanceledAll += CancelEdited;
-            _leftClickAction = InputSystem.actions.FindAction("HouseLeftMouse");
+            
             _boxCollider = GetComponent<BoxCollider>();
         }
         void OnDestroy()
@@ -39,8 +39,9 @@ namespace Entities.House
             PlacementSystem.OnCanceledAll -= CancelEdited;
         }
         [Inject]
-        private void Construct(PlacementSystem placementSystem)
+        private void Construct(PlacementSystem placementSystem, PlayerInput input)
         {
+            _leftClickAction = input.actions.FindAction("LeftMouse");
             _placementSystem = placementSystem;
             _thisItemId = placementSystem.CountItemOnTheScene;
             placementSystem.CountItemOnTheScene ++;

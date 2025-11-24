@@ -19,13 +19,14 @@ namespace Entities.PlayerScripts
         private List<IAbility> _disabledAbilities = new();
         
         [Inject]
-        private void Construct(GlobalData globalData, PlayerConfig config)
+        private void Construct(GlobalData globalData, PlayerConfig config, DiContainer container)
         {
             _globalData = globalData;
             _config = config;
             foreach (var ability in _config.Abilities)
             {
                 ability.Enabled = true;
+                container.Inject(ability);
             }
 
             _movement = (PlayerMovement)_config.Abilities[0];

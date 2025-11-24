@@ -16,17 +16,17 @@ namespace Entities.NPC
         [SerializeField] private RectTransform _questPrefab;
         [SerializeField] private RectTransform _questParent;
         private readonly Dictionary<QuestData, List<RectTransform>> _createdMarks = new();
-        private readonly Dictionary<QuestData, GameObject> _createdQuest = new();
+        private readonly Dictionary<QuestData, GameObject> _createdQuests = new();
         
         [Inject] private LocalizationManager _localization;
         
         public void StartQuest(QuestData data)
         {
-            if (_createdQuest.ContainsKey(data)) return;
+            if (_createdQuests.ContainsKey(data)) return;
             var newQuest = Instantiate(_questPrefab, _questParent);
             newQuest.GetChild(0).GetComponent<TMP_Text>().text = _localization.GetStringFromKey(data.Header);
             newQuest.GetChild(1).GetComponent<TMP_Text>().text = _localization.GetStringFromKey(data.Description);
-            _createdQuest.Add(data, newQuest.gameObject);
+            _createdQuests.Add(data, newQuest.gameObject);
 
             _createdMarks.Add(data, new());
             foreach (var target in data.Targets)
@@ -39,14 +39,14 @@ namespace Entities.NPC
         
         public void EndQuest(QuestData data)
         {
-            if (!_createdQuest.ContainsKey(data)) return;
+            if (!_createdQuests.ContainsKey(data)) return;
             foreach (var mark in _createdMarks[data])
             {
                 Destroy(mark.gameObject);
             }
-            Destroy(_createdQuest[data]);
+            Destroy(_createdQuests[data]);
             _createdMarks.Remove(data);
-            _createdQuest.Remove(data);
+            _createdQuests.Remove(data);
         }
 
         public void Update()

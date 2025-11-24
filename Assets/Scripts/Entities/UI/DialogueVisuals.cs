@@ -67,7 +67,7 @@ namespace Entities.UI
         
         private void RequestNewNode(InputAction.CallbackContext _)
         {
-            if (IsComplete)
+            if (!IsComplete)
             {
                 ChangeEffectSpeed();
                 return;

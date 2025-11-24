@@ -15,6 +15,7 @@ namespace EditorOnly.NodesEditors
             if (_textNode == null)
             {
                 _textNode = target as TextNode;
+                _showDisplayName = _textNode?.DisplayName != "";
             }
             serializedObject.Update();
             

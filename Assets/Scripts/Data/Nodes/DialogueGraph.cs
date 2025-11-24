@@ -1,8 +1,10 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using XNode;
 
 namespace Data.Nodes
 {
+	[Serializable]
 	[CreateAssetMenu]
 	public class DialogueGraph : NodeGraph
 	{

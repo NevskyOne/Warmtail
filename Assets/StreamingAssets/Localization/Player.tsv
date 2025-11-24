@@ -1,2 +1,34 @@
 key	ru	en
-player_0_0	Привет, {playerName}	Hi, {playerName}
+player_0_0	Я {playerName}…	I am {playerName}…
+player_0_1	В-вроде.	I-I think so.
+player_0_2	А как вас зовут?	What is your name?
+player_1_0	Да не за что.	You're welcome.
+player_1_1	Хорошо, уже иду!	Okay, I'm on my way!
+player_2_0	Не стоит благодарностей, хех.	No need to thank me, heh.
+player_2_1	Мне было не сложно совсем.	It wasn't difficult for me at all.
+player_2_2	Я не помню…	I don't remember…
+player_2_3	Думаю, что нет…	I don't think so...
+player_2_4	О, иду!	Oh, here I come!
+player_3_0	Что?!	What?!
+player_3_1	Нет, я не могу принять его…	No, I can't accept it...
+player_3_2	Мы же только пару минут назад с вами познакомились.	We just met each other a couple of minutes ago.
+player_3_3	Спасибо большое, мне правда негде было бы переночевать.	Thank you very much, I really would have nowhere to spend the night.
+player_4_0	Кхм, я… я не знаю, если честно.	Um, I… I don’t know, to be honest.
+player_4_1	Проснувшись тут недавно и встретив Тертилуса, он попросил меня о помощи.	Having woken up here recently and met Tertilus, he asked me for help.
+player_4_2	Затем в благодарность он показал мне место для ночлега.	Then, in gratitude, he showed me a place to stay for the night.
+player_4_3	Ты знакома с ним?	Do you know him?
+player_4_4	А…	A…
+player_4_5	Так вот почему он смог приютить меня.	So that's why he was able to take me in.
+player_4_6	Оу, это звучит очень… грустно.	Oh, that sounds very... sad.
+player_4_7	Может быть я всё же как-то смогу помочь.	Maybe I can still help somehow.
+player_4_8	Обнять	Hug
+player_4_9	Мне приятно дарить тепло другим.	I enjoy giving warmth to others.
+player_4_10	Хех.	Heh.
+player_5_0	А что за кристаллы?	What kind of crystals are these?
+player_5_1	Ага.	Yeah.
+player_5_2	Я попробую.	I will try.
+player_5_3	Думаю не с проста я тут…	I don’t think I’m here for nothing…
+player_5_4	Спасибо!	Thank you!
+player_6_0	Ты права.	You are right.
+player_7_0	Хорошо, давай.	Okay, let's go.
+player_7_1	Хех.	Heh.

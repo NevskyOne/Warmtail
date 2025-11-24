@@ -110,8 +110,9 @@ MonoBehaviour:
   - rid: 1601399230582489398
   - rid: 1601399230582489399
   - rid: 1601399230582489400
-  - rid: 1601399524581179754
+  - rid: 1601399661704249615
   - rid: 1601399524581179755
+  - rid: 1601399661704249621
   _runtimeData:
   - rid: 1601399230582489401
   references:
@@ -123,6 +124,7 @@ MonoBehaviour:
         Stars: 0
         Shells: 0
         ActiveLayers: 0
+        SeenReplicas: 
     - rid: 1601399230582489399
       type: {class: DialogueVarData, ns: Data, asm: Assembly-CSharp}
       data:
@@ -145,16 +147,20 @@ MonoBehaviour:
         Freeze: 0
         CurrentWarmth: 0
         WasInGame: 0
-        Speed: 0
-    - rid: 1601399524581179754
-      type: {class: HomeData, ns: Data, asm: Assembly-CSharp}
-      data:
-        ObjectsId: 
+        Speed: 8
     - rid: 1601399524581179755
       type: {class: NPCData, ns: Data, asm: Assembly-CSharp}
       data:
         Levels:
           _serializedList: []
+    - rid: 1601399661704249615
+      type: {class: HouseData, ns: Data.House, asm: Assembly-CSharp}
+      data:
+        PlacedHouseItems: []
+    - rid: 1601399661704249621
+      type: {class: WorldData, ns: Data, asm: Assembly-CSharp}
+      data:
+        DeletedObjects: 
 --- !u!114 &5226292807223728779
 MonoBehaviour:
   m_ObjectHideFlags: 0

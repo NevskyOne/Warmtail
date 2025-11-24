@@ -19,9 +19,8 @@ namespace Systems
 
         [Inject] private DiContainer _diContainer;
         [Inject]
-        private void Construct(GlobalData globalData, InputActionAsset inputActions)
+        private void Construct(GlobalData globalData)
         {            
-            inputActions.FindActionMap("House").Enable();
             _globalData = globalData;
             
             var houseItems = _globalData.Get<HouseData>().PlacedHouseItems;

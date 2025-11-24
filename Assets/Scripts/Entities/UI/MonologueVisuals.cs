@@ -51,14 +51,12 @@ namespace Entities.UI
             _isEnded = false;
             _currentText = Instantiate(_textPrefab, _textBounds).GetComponent<RectTransform>();
             _currentText.anchoredPosition = ChooseRandomPosition();
-            _uiStateSystem.SwitchCurrentStateAsync(UIState.Monologue);
         }
 
         public void HideVisuals()
         {
             _isEnded = true;
             Destroy(_currentText);
-            _uiStateSystem.SwitchCurrentStateAsync(UIState.Normal);
         }
 
         public void RequestNewLine(TextNode node)
@@ -66,6 +64,16 @@ namespace Entities.UI
             _currentText.anchoredPosition = ChooseRandomPosition();
             _currentText.GetComponent<TMP_Text>().text = 
                 _localizationManager.GetStringFromKey("cutscene_"+ _dialogueSystem.DialogueGraph.DialogueId+ "_" + node.TextId);
+        }
+        
+        public async void RequestSingleLine(int id)
+        {
+            _currentText = Instantiate(_textPrefab, _textBounds).GetComponent<RectTransform>();
+            _currentText.anchoredPosition = ChooseRandomPosition();
+            _currentText.GetComponent<TMP_Text>().text = 
+                _localizationManager.GetStringFromKey("fragment_" + id);
+            await UniTask.Delay(TimeSpan.FromSeconds(_textFadeSpeed));
+            Destroy(_currentText);
         }
 
 

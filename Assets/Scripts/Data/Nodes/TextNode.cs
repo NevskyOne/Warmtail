@@ -1,4 +1,5 @@
 using Entities.UI;
+using Interfaces;
 using Systems;
 using UnityEngine;
 using Zenject;
@@ -24,13 +25,12 @@ public class TextNode : BaseNode
     public CharactersEmotions Emotion => _emotion;
 
     public string DisplayName => _displayName;
-
+    
     [Inject] private DialogueSystem _dialogueSystem;
-    [Inject] private DialogueVisuals _dialogueVisuals;
 
     public override void Activate()
     {
-        _dialogueVisuals.RequestNewLine(this);
+        _dialogueSystem.Visuals.RequestNewLine(this);
         _dialogueSystem.SetNewNode();
     }
 }

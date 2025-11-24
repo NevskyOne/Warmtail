@@ -13,6 +13,9 @@ namespace Systems
         private DialogueGraph _dialogueGraph;
         private DiContainer _diContainer;
         private ITextVisual _visuals;
+
+        public ITextVisual Visuals => _visuals;
+
         private PlayerInput _input;
 
         private string _prevActionMap;
@@ -36,16 +39,16 @@ namespace Systems
         
         public void StartDialogue(DialogueGraph graph, ITextVisual visual, SpeakableCharacter character = null)
         {
+            _visuals = visual;
+            _visuals.ShowVisuals();
             Character = character;
             _prevActionMap = "Player";
             _input.SwitchCurrentActionMap("Dialogue");
-            
             _dialogueGraph = graph;
             _dialogueGraph.Current = _dialogueGraph.StartNode;
             SetNewNode();
             ActivateNewNode();
-            _visuals = visual;
-            _visuals.ShowVisuals();
+            
         }
 
         public void SetNewNode(string portName = "_exit")

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace Data.Player
 {
@@ -6,7 +7,8 @@ namespace Data.Player
     public class SavablePlayerData : ISavableData {
         public int Stars;
         public int Shells;
-        public int ActiveLayers; 
+        public int ActiveLayers;
+        public List<int> SeenReplicas;
     }
     
     [Serializable]
