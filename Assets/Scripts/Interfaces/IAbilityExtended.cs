@@ -1,8 +1,8 @@
-﻿using System;
+﻿using System;using Interfaces;
 
 namespace Interfaces
 {
-    public interface IAbilityExtended
+    public interface IAbilityExtended : IAbility
     {
         Type AbilityType { get; }
         bool IsComboActive { get; set; }
