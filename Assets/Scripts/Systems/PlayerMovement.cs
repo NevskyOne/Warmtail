@@ -13,37 +13,41 @@ namespace Systems
     public class PlayerMovement : IAbility
     {
         [Header("Movement Settings")]
-        [SerializeField] private float _acceleration = 10f;
-        [SerializeField] private float _deceleration = 10f;
-    
-        private float _moveSpeed = 5f;
-        private Rigidbody2D _rb;
+        [SerializeField] private float _moveForce = 100f;
+
+        [SerializeField] private float _moreForge = 100f;
+        [SerializeField] private float _maxSpeed = 5f;
+        [SerializeField] private float _drag = 5f;
+
+        private Rigidbody2D _mainRigidbody;
         private Vector2 _moveInput;
-        private Vector2 _currentVelocity;
         private GlobalData _globalData;
+
         public bool Enabled { get; set; }
         public Action StartAbility { get; set; }
         public Action UsingAbility { get; set; }
         public Action EndAbility { get; set; }
 
-
+        // Zenject Inject
         [Inject]
         public void Construct(Player player, PlayerInput playerInput, GlobalData data)
         {
-            _rb = player.Rigidbody;
             _globalData = data;
-            GetNewSpeed();
-            _globalData.SubscribeTo<RuntimePlayerData>(GetNewSpeed);
-            playerInput.actions["Move"].started += _ => StartAbility?.Invoke();
-            playerInput.actions["Move"].performed += OnMove;
-            playerInput.actions["Move"].canceled += OnMove;
+
+            _mainRigidbody = player.Rigidbody;
+
+            _mainRigidbody.angularDamping = _drag;
+            _mainRigidbody.linearDamping = _drag;
+
+            if (playerInput != null && playerInput.actions != null && playerInput.actions["Move"] != null)
+            {
+                var moveAction = playerInput.actions["Move"];
+                moveAction.started += _ => StartAbility?.Invoke();
+                moveAction.performed += OnMove;
+                moveAction.canceled += OnMoveCanceled;
+            }
         }
 
-        private void GetNewSpeed()
-        {
-            _moveSpeed = _globalData.Get<RuntimePlayerData>().Speed;
-        }
-    
         private void OnMove(InputAction.CallbackContext context)
         {
             if (Enabled)
@@ -51,31 +55,27 @@ namespace Systems
                 _moveInput = context.ReadValue<Vector2>();
                 UsingAbility?.Invoke();
             }
-            else{
-                _moveInput = Vector2.zero;
-            }
         }
-    
+
+        private void OnMoveCanceled(InputAction.CallbackContext context)
+        {
+            _moveInput = Vector2.zero;
+        }
+
         public void FixedTick()
         {
+            if (_mainRigidbody == null || !Enabled) return;
+            
+            
             if (_moveInput.magnitude > 0.1f)
             {
-                _currentVelocity = Vector2.MoveTowards(
-                    _currentVelocity, 
-                    _moveInput.normalized * _moveSpeed, 
-                    _acceleration * Time.fixedDeltaTime
-                );
+                Vector2 force = _moveInput.normalized * _moveForce;
+                _mainRigidbody.AddForce(force * _moreForge, ForceMode2D.Force);
+                
+                float targetAngle = Mathf.Atan2(_moveInput.y, _moveInput.x) * Mathf.Rad2Deg;
+                float newAngle = Mathf.LerpAngle(_mainRigidbody.rotation, targetAngle, 1.5f * Time.fixedDeltaTime);
+                _mainRigidbody.MoveRotation(newAngle);
             }
-            else
-            {
-                _currentVelocity = Vector2.MoveTowards(
-                    _currentVelocity, 
-                    Vector2.zero, 
-                    _deceleration * Time.fixedDeltaTime
-                );
-            }
-        
-            _rb.linearVelocity = _currentVelocity;
         }
     }
 }
