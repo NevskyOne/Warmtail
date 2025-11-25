@@ -24,8 +24,8 @@ namespace Entities.NPC
         {
             if (_createdQuests.ContainsKey(data)) return;
             var newQuest = Instantiate(_questPrefab, _questParent);
-            newQuest.GetChild(0).GetComponent<TMP_Text>().text = _localization.GetStringFromKey(data.Header);
-            newQuest.GetChild(1).GetComponent<TMP_Text>().text = _localization.GetStringFromKey(data.Description);
+            newQuest.GetChild(0).GetComponent<TMP_Text>().text = _localization.GetStringFromKey("quest_header_" + data.Id);
+            newQuest.GetChild(1).GetComponent<TMP_Text>().text = _localization.GetStringFromKey("quest_desc_" + data.Id);
             _createdQuests.Add(data, newQuest.gameObject);
 
             _createdMarks.Add(data, new());
@@ -82,6 +82,11 @@ namespace Entities.NPC
                 
                 marks[i].anchoredPosition = screenPos;
             }
+        }
+
+        public void CloseMark(int index)
+        {
+            
         }
     }
 }

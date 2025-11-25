@@ -29,7 +29,7 @@ public class InteractionSystem : IAbility
     public void Interact(InputAction.CallbackContext context)
     {
         if (!Enabled) return;
-        var colliders = Physics2D.OverlapCircleAll(_player.transform.position + _interactionOffset, _interactionRadius);
+        var colliders = Physics2D.OverlapCircleAll(_player.Rigidbody.transform.position + _interactionOffset, _interactionRadius);
         
         foreach (var collider in colliders)
         {

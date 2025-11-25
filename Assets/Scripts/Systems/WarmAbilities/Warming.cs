@@ -49,7 +49,7 @@ namespace Systems.WarmAbilities
                 await UniTask.Delay(_warmDelta);
                 if (!_isWarming) return;
                 var colliders = Physics2D.OverlapCircleAll(
-                    _player.transform.position + _warmingOffset, _warmingRadius);
+                    _player.Rigidbody.transform.position + _warmingOffset, _warmingRadius);
 
                 bool found = false;
                 foreach (var collider in colliders)

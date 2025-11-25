@@ -121,7 +121,7 @@ MonoBehaviour:
     - rid: 1601399230582489398
       type: {class: SavablePlayerData, ns: Data.Player, asm: Assembly-CSharp}
       data:
-        Stars: 0
+        Stars: 1
         Shells: 0
         ActiveLayers: 0
         SeenReplicas: 
@@ -145,7 +145,7 @@ MonoBehaviour:
       type: {class: RuntimePlayerData, ns: Data.Player, asm: Assembly-CSharp}
       data:
         Freeze: 0
-        CurrentWarmth: 0
+        CurrentWarmth: 10
         WasInGame: 0
         Speed: 8
     - rid: 1601399524581179755

@@ -51,7 +51,7 @@ namespace Entities.Triggers
             await UniTask.Delay(TimeSpan.FromSeconds(_stunTime));
             
             _player.EnableLastAbilities();
-            _camera.Target.TrackingTarget = _player.transform;
+            _camera.Target.TrackingTarget = _player.Rigidbody.transform;
             _camera.Lens.Lerp(new LensSettings
             {
                 OrthographicSize = _lastZoom,
@@ -60,9 +60,14 @@ namespace Entities.Triggers
             }, 500);
             if (_destroyAfter)
             {
-                ((IDeletable)this).Delete(_data, gameObject.GetEntityId());
-                Destroy(this);
+                Destroy();
             }
+        }
+        
+        public void Destroy()
+        {
+            ((IDeletable)this).Delete(_data, gameObject.GetEntityId());
+            Destroy(gameObject);
         }
     }
 }

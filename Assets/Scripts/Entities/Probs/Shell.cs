@@ -13,7 +13,7 @@ namespace Entities.Probs
         [SerializeField] private int _warmCapacity;
         [SerializeField] private int _shellsAmount;
         private GlobalData _globalData;
-        private int _currentProgress;
+        private int _warm;
         private ResettableTimer _timer;
     
         [Inject]
@@ -25,10 +25,10 @@ namespace Entities.Probs
         
         public void Warm()
         {
-            _currentProgress -= 1;
-            if (_currentProgress == 0)
+            _warm -= 1;
+            if (_warm == 0)
             {
-                Collect();
+                WarmExplosion();
             }
             else
             {
@@ -41,22 +41,17 @@ namespace Entities.Probs
 
         public void WarmExplosion()
         {
-            Collect();
-        }
-
-        public void Reset()
-        {
-            _currentProgress = _warmCapacity;
-        }
-
-        private void Collect()
-        {
             _globalData.Edit<SavablePlayerData>((playerData) =>
             {
                 playerData.Shells += _shellsAmount;
             });
             _timer.Stop();
             Destroy(gameObject);
+        }
+
+        public void Reset()
+        {
+            _warm = _warmCapacity;
         }
     }
 }
