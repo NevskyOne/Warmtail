@@ -1,12 +1,14 @@
 using UnityEngine;
 using Zenject;
 using Systems;
+using Data.House;
 
 namespace Entities.House
 {
     public class HouseManager : MonoBehaviour
     {
-        [Inject] private PlacementSystem _placementSystem;
+        public HouseItemData[] IdsForHouseItemsData;
+        [Inject] private PlacementSystem _placementSystem; 
 
         public void ApplyAllEditing()
         {

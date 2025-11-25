@@ -108,15 +108,15 @@ namespace Entities.House
             if (_isConfirmed) return;
             if (!_boxCollider.enabled) 
             {
+                _placementSystem.RemoveEditingItem(_houseItemData.Id, _posObjectOnConfirmedState);
                 Destroy(gameObject);
-                _placementSystem.RemoveEditingItem(_houseItemData, _posObjectOnConfirmedState);
             }
             else
             {
                 if (_posObjectOnConfirmedState.x == Vector2.positiveInfinity.x)
-                    _placementSystem.AddEditingItem(_houseItemData, transform.position);
+                    _placementSystem.AddEditingItem(_houseItemData.Id, transform.position);
                 else
-                    _placementSystem.ReplaceEditingItem(_houseItemData, _posObjectOnConfirmedState, transform.position);
+                    _placementSystem.ReplaceEditingItem(_houseItemData.Id, _posObjectOnConfirmedState, transform.position);
                 _posObjectOnConfirmedState = transform.position;
                 _isConfirmed = true;
             }

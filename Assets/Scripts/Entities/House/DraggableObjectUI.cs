@@ -29,7 +29,7 @@ namespace Entities.House
             {
                 if (!_itemCopyingObject)
                 {
-                    _itemCopyingObject = _placementSystem.InstantiateDraggableObject(_itemCopyingObjectPref, false);
+                    _itemCopyingObject = _placementSystem.InstantiateDraggableObject(_itemCopyingObjectPref, Vector2.positiveInfinity, false);
                 }
                 Vector2 pos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
                 _itemCopyingObject.transform.position = pos;
