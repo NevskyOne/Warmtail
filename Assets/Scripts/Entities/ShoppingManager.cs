@@ -19,10 +19,9 @@ namespace Entities.NPC
         [SerializeField] private Transform _firstFriendshipLevelIcon;
         [SerializeField] private RectTransform _content;
 
-        private Vector2 _levelsOffset = new (0f, 220f);
-        private Vector2 _itemsOffset = new (-200f, 60f);
-        private float _parentSizeY = 793f;
-        private Transform[] _friendshipLevels;
+        private Vector2 _levelsOffset;
+        private Vector2 _itemsOffset;
+        private float _parentSizeY;
 
         private UIStateSystem _uiStateSystem;
         private GlobalData _globalData;
@@ -32,6 +31,7 @@ namespace Entities.NPC
         {
             _uiStateSystem = uiStateSystem;
             _globalData = globalData;
+            SetOffsets();
         }
 
         public void OpenNPCShop_int(int num) => OpenNPCShop((Characters)num);
@@ -75,6 +75,19 @@ namespace Entities.NPC
             }
 
             _uiStateSystem.SwitchCurrentStateAsync(UIState.Shop);
+        }
+
+        private void SetOffsets()
+        {
+            RectTransform lineR = _linePref.GetComponent<RectTransform>();
+            RectTransform lvlR = _friendshipLevelIconPref.GetComponent<RectTransform>();
+            RectTransform curveR = _curvePref.GetComponent<RectTransform>();
+            RectTransform itemR = _friendshipLevelIconPref.GetComponent<RectTransform>();
+
+            _levelsOffset = new (0, lineR.sizeDelta.y + lvlR.sizeDelta.y);
+            _itemsOffset = new (-curveR.sizeDelta.x - lvlR.sizeDelta.x/2 - itemR.sizeDelta.x/2, 
+                curveR.sizeDelta.y/2+curveR.sizeDelta.y/10);
+            _parentSizeY = _content.parent.GetComponent<RectTransform>().sizeDelta.y;
         }
 
         private void ClearUiContent()
