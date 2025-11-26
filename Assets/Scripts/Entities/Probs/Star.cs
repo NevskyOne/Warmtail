@@ -5,21 +5,18 @@ using Data.Player;
 using EasyTextEffects.Editor.MyBoxCopy.Extensions;
 using Entities.UI;
 using Interfaces;
-using UnityEngine;
 using Zenject;
 
 namespace Entities.Probs
 {
-    public class Star : MonoBehaviour, IInteractable, IDeletable
+    public class Star : SavableStateObject, IInteractable
     {
-        private GlobalData _globalData;
         private MonologueVisuals _monologueVisuals;
         private List<int> _ids = new();
         
         [Inject]
-        public void Construct(GlobalData globalData, MonologueVisuals monologueVisuals)
+        public void Construct(MonologueVisuals monologueVisuals)
         {
-            _globalData = globalData;
             _monologueVisuals = monologueVisuals;
             for (int i = 0; i < 30; i++)
             {
@@ -37,8 +34,7 @@ namespace Entities.Probs
                 playerData.Stars += 1;
                 playerData.SeenReplicas.Add(newId);
             });
-            ((IDeletable)this).Delete(_globalData, gameObject.GetEntityId());
-            Destroy(gameObject);
+            ChangeState(false);
         }
     }
 }

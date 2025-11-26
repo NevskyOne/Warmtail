@@ -1,5 +1,5 @@
 ﻿using Data;
-using Interfaces;
+using Entities.Probs;
 using UnityEngine;
 using UnityEngine.Events;
 using Zenject;
@@ -7,7 +7,7 @@ using Zenject;
 namespace Entities.Triggers
 {
     [RequireComponent(typeof(Collider2D))]
-    public class UnityEventTrigger : MonoBehaviour, IDeletable
+    public class UnityEventTrigger : SavableStateObject
     {
         [SerializeField] private bool _destroyAfter;
         [SerializeField] private UnityEvent _event;
@@ -20,8 +20,7 @@ namespace Entities.Triggers
                 _event.Invoke();
                 if (_destroyAfter)
                 {
-                    ((IDeletable)this).Delete(_data, gameObject.GetEntityId());
-                    Destroy(gameObject);
+                    ChangeState(false);
                 }
             }
         }

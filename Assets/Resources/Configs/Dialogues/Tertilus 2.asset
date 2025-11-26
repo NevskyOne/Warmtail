@@ -467,7 +467,7 @@ MonoBehaviour:
       _dynamic: 0
   _entry: 0
   _exit: 0
-  _eventId: 1
+  _eventId: 2
 --- !u!114 &975157714283602370
 MonoBehaviour:
   m_ObjectHideFlags: 0

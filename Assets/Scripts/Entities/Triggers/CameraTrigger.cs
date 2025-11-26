@@ -2,6 +2,7 @@
 using Cysharp.Threading.Tasks;
 using Data;
 using Entities.PlayerScripts;
+using Entities.Probs;
 using Interfaces;
 using Unity.Cinemachine;
 using UnityEngine;
@@ -10,7 +11,7 @@ using Zenject;
 namespace Entities.Triggers
 {
     [RequireComponent(typeof(Collider2D))]
-    public class CameraTrigger : MonoBehaviour, IDeletable
+    public class CameraTrigger : SavableStateObject
     {
         [SerializeField] private bool _destroyAfter;
         [SerializeField] private float _stunTime;
@@ -60,14 +61,8 @@ namespace Entities.Triggers
             }, 500);
             if (_destroyAfter)
             {
-                Destroy();
+                ChangeState(false);
             }
-        }
-        
-        public void Destroy()
-        {
-            ((IDeletable)this).Delete(_data, gameObject.GetEntityId());
-            Destroy(gameObject);
         }
     }
 }

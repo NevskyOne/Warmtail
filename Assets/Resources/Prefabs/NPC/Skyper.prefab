@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 358481429861404722}
   - component: {fileID: 8499531372379064396}
   m_Layer: 0
-  m_Name: TerilusQuest2
+  m_Name: Skyper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,9 +27,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1538068796962420400}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -18.71, y: 13.6, z: 0}
-  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
+  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -46,8 +46,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 820f06f3e9014cf78d5f95c118eb3dd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entities.NPC.SpeakableCharacter
-  _graph: {fileID: 11400000, guid: d1c7adabc88957f46bcd55e663781e0d, type: 2}
-  _actions: []
+  <Graph>k__BackingField: {fileID: 11400000, guid: fe8cddfdeb7d0d24fa647fe847f1dfa7, type: 2}
+  <Actions>k__BackingField: []
+  _maxWarmPercent: 0
+  _warmAction:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!212 &358481429861404722
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -94,8 +98,8 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 3668405681327497058, guid: cf5b4b9f21d8b1449b570a5b46b6bc93, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 9136087763526894247, guid: 9541082fbb539a54d824a73bf0407e1b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -144,7 +148,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.05, y: 4.98}
+    oldSize: {x: 1.79, y: 3.27}
     newSize: {x: 10.67, y: 8.61}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
