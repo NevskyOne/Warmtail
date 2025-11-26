@@ -16,13 +16,13 @@ namespace Systems.Abilities.Concrete
         [SerializeField] private Vector3 _spawnOffset;
         
         private SwarmController _activeSwarm;
-        private CinemachineVirtualCamera _vCam;
+        private CinemachineCamera _vCam;
         private Transform _playerTransform;
         private WarmthSystem _warmthSystem;
         private Vector2 _input;
 
         [Inject]
-        public void Construct(Player player, CinemachineVirtualCamera vCam, WarmthSystem warmth, PlayerInput input, DiContainer container)
+        public void Construct(Player player, CinemachineCamera vCam, WarmthSystem warmth, PlayerInput input, DiContainer container)
         {
             _playerTransform = player.transform;
             _vCam = vCam;

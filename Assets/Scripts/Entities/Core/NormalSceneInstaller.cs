@@ -8,6 +8,9 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using Zenject;
 using Data;
+using Systems.Abilities.Concrete;
+using Systems.Environment;
+using Systems.Swarm;
 using Unity.Cinemachine;
 using UnityEditor;
 
@@ -23,9 +26,13 @@ namespace Entities.Core
         [SerializeField] private PopupSystem _popupSystem;
         [SerializeField] private UIStateSystem _uiStateSystem;
         [SerializeField] private CinemachineCamera _cam;
+        [SerializeField] private SurfacingSystem _surfacingSystem;
+        [SerializeField] private SwarmController _swarmController;
         
         public override void InstallBindings()
         {
+            Container.Bind<SwarmController>().FromInstance(_swarmController).AsSingle();
+            Container.Bind<SurfacingSystem>().FromInstance(_surfacingSystem).AsSingle();
             Container.Bind<DialogueSystem>().FromNew().AsSingle();
             Container.Bind<WarmthSystem>().FromNew().AsSingle();
             Container.Bind<PlayerConfig>().FromInstance(_playerConfig).AsSingle();

@@ -16,9 +16,15 @@ MonoBehaviour:
   - rid: 1601399544975982592
   - rid: 1601399524581179738
   - rid: 1601399524581179756
+  - rid: 2564828074214424677
+  - rid: 2564828074214424678
+  - rid: 2564828074214424679
+  - rid: -2
   references:
     version: 2
     RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
     - rid: 1601399524581179738
       type: {class: InteractionSystem, ns: , asm: Assembly-CSharp}
       data:
@@ -34,7 +40,26 @@ MonoBehaviour:
     - rid: 1601399544975982592
       type: {class: PlayerMovement, ns: Systems, asm: Assembly-CSharp}
       data:
-        _moveForce: 40
+        _moveForce: 280.8
         _moreForge: 60
         _maxSpeed: 5
         _drag: 5
+    - rid: 2564828074214424677
+      type: {class: DashAbility, ns: Systems.Abilities.Concrete, asm: Assembly-CSharp}
+      data:
+        _dashForce: 25
+        _dashCost: 15
+        _destroyRadius: 1.5
+    - rid: 2564828074214424678
+      type: {class: MetabolismAbility, ns: Systems.Abilities.Concrete, asm: Assembly-CSharp}
+      data:
+        _heatDrainPerSecond: 10
+        _speedMultiplier: 2
+    - rid: 2564828074214424679
+      type: {class: WarmingAbility, ns: Systems.Abilities.Concrete, asm: Assembly-CSharp}
+      data:
+        _radius: 3
+        _cost: 5
+        _explosionMaxRadius: 10
+        _explosionDuration: 0.5
+        _explosionCost: 50
