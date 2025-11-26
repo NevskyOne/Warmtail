@@ -44,10 +44,10 @@ namespace Systems.Abilities
             input.actions["Scroll"].performed += ctx => CycleSelection(ctx.ReadValue<float>());
             
             // Выбор цифрами (1-4)
-            input.actions["SelectAbility1"].performed += _ => TrySelectOrCombo(0);
-            input.actions["SelectAbility2"].performed += _ => TrySelectOrCombo(1);
-            input.actions["SelectAbility3"].performed += _ => TrySelectOrCombo(2);
-            input.actions["SelectAbility4"].performed += _ => TrySelectOrCombo(3);
+            input.actions["1"].performed += _ => TrySelectOrCombo(0);
+            input.actions["2"].performed += _ => TrySelectOrCombo(1);
+            input.actions["3"].performed += _ => TrySelectOrCombo(2);
+            input.actions["4"].performed += _ => TrySelectOrCombo(3);
 
             // Активация (ПКМ)
             input.actions["RightMouse"].started += _ => StartCasting();

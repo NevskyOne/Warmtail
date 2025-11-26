@@ -19,25 +19,39 @@ namespace Systems.Environment
         [Inject]
         public void Construct(GlobalData globalData)
         {
+            Debug.Log("вызов SurfacingSystem");
             _globalData = globalData;
             UpdateLevelVisibility();
         }
 
-        public bool TryChangeLayer(int direction) // -1 Down (Q), +1 Up (E)
+        public bool TryChangeLayer(int direction)
         {
+            Debug.Log($"вызов , direction = {direction}");
+
             var newIndex = _currentLayerIndex + direction;
             var maxLayers = _globalData.Get<SavablePlayerData>().ActiveLayers;
 
-            if (newIndex < 0 || newIndex > maxLayers || newIndex >= _levelRoots.Count)
-                return false;
+            Debug.Log($"текущий слой: {_currentLayerIndex}, новый слой: {newIndex}, максимальный: {maxLayers}");
 
-            // Проверка физической возможности (триггеры/препятствия)
-            if (!CanTransition(direction)) return false;
+            if (newIndex < 0 || newIndex > maxLayers || newIndex >= _levelRoots.Count)
+            {
+                Debug.Log("TryChangeLayer неудачно: вне диапазона");
+                return false;
+            }
+
+            if (!CanTransition(direction))
+            {
+                Debug.Log("TryChangeLayer неудачно: CanTransition вернул false");
+                return false;
+            }
 
             _currentLayerIndex = newIndex;
             UpdateLevelVisibility();
+
+            Debug.Log($"Слой изменен на {_currentLayerIndex}");
             return true;
         }
+
 
         private bool CanTransition(int direction)
         {
