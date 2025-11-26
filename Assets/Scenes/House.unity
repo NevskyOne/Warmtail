@@ -1121,6 +1121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b68c521163474748989beb58b6214e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entities.House.HouseManager
+  _itemsHouseIdConf: {fileID: 11400000, guid: 834733c1263e2bf4392ab5c2e6d7b2b8, type: 2}
   IdsForHouseItemsData:
   - {fileID: 11400000, guid: f365905d69a81864b9bc74a033a621c9, type: 2}
   - {fileID: 11400000, guid: 4a28d45cd07aec04594b5e25fc1c9d23, type: 2}

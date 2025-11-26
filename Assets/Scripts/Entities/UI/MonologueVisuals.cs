@@ -56,7 +56,7 @@ namespace Entities.UI
         public void HideVisuals()
         {
             _isEnded = true;
-            Destroy(_currentText);
+            Destroy(_currentText.gameObject);
         }
 
         public void RequestNewLine(TextNode node)
@@ -73,7 +73,7 @@ namespace Entities.UI
             _currentText.GetComponent<TMP_Text>().text = 
                 _localizationManager.GetStringFromKey("fragment_" + id);
             await UniTask.Delay(TimeSpan.FromSeconds(_textFadeSpeed));
-            Destroy(_currentText);
+            Destroy(_currentText.gameObject);
         }
 
 

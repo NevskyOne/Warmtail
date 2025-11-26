@@ -757,34 +757,6 @@
                     "isPartOfComposite": false
                 }
             ]
-        },
-        {
-            "name": "House",
-            "id": "6ac3c4c3-756b-4f45-b9f0-77b2b6505a2b",
-            "actions": [
-                {
-                    "name": "HouseLeftMouse",
-                    "type": "Button",
-                    "id": "15d054de-5591-4949-96e4-9c769de3edae",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                }
-            ],
-            "bindings": [
-                {
-                    "name": "",
-                    "id": "3c189acf-64f7-4473-a81e-2ce47881f0ab",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "HouseLeftMouse",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                }
-            ]
         }
     ],
     "controlSchemes": [
