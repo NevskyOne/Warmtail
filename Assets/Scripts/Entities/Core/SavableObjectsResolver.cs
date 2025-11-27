@@ -15,8 +15,11 @@ namespace Entities.Core
 
             foreach (var obj in FindObjectsOfType<SavableStateObject>())
             {
+                print(obj.Id);
                 if (changed.ContainsKey(obj.Id))
+                {
                     obj.gameObject.SetActive(changed[obj.Id]);
+                }
             }
         }
     }

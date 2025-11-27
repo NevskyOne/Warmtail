@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Data;
 using Data.Nodes;
+using Entities.Probs;
 using Entities.UI;
 using Interfaces;
 using Systems;
@@ -10,7 +11,7 @@ using Zenject;
 
 namespace Entities.NPC
 {
-    public class SpeakableCharacter : MonoBehaviour, IInteractable, IWarmable, IEventInvoker
+    public class SpeakableCharacter : SavableStateObject, IInteractable, IWarmable, IEventInvoker
     {
         [field: SerializeField] public DialogueGraph Graph { get; set; }
         [field: SerializeField] public List<UnityEvent> Actions { get; set; }

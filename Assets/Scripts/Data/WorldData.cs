@@ -4,6 +4,6 @@ namespace Data
 {
     public class WorldData : ISavableData
     {
-        public readonly Dictionary<int, bool> SavableObjects = new();
+        public readonly Dictionary<string, bool> SavableObjects = new();
     }
 }

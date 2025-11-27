@@ -46,6 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 820f06f3e9014cf78d5f95c118eb3dd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entities.NPC.SpeakableCharacter
+  _id:
+    Value: 
   <Graph>k__BackingField: {fileID: 11400000, guid: fe8cddfdeb7d0d24fa647fe847f1dfa7, type: 2}
   <Actions>k__BackingField: []
   _maxWarmPercent: 0
@@ -99,7 +101,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 9136087763526894247, guid: 9541082fbb539a54d824a73bf0407e1b, type: 3}
+  m_Sprite: {fileID: 5673288020646499964, guid: c13391e12b29b4b42b1772cdd7f01a02, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -148,7 +150,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.79, y: 3.27}
+    oldSize: {x: 7.36, y: 7.5}
     newSize: {x: 10.67, y: 8.61}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
