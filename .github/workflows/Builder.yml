@@ -15,7 +15,9 @@ jobs:
         with:
           lfs: true
           fetch-depth: 0
-          
+      - name: Clean Docker
+        run: |
+          docker system prune --all --force    
       - name: Cashing... 👾
         uses: actions/cache@v3
         with:
