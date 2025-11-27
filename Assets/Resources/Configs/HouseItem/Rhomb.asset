@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HousesItemConfig
   Id: 0
   ItemPref: {fileID: 1808789399308577536, guid: 6b78e946906ae5346bf0d79b6247cdd5, type: 3}
+  Sprite: {fileID: 5484143084638742860, guid: 97e2d922575f8a54f97dcb0ff954e2a2, type: 3}
   Price: 10

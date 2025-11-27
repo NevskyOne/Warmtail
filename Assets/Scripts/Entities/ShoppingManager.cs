@@ -1,3 +1,4 @@
+using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
 using Zenject;
@@ -19,6 +20,8 @@ namespace Entities.NPC
         [SerializeField] private Transform _firstFriendshipLevelIcon;
         [SerializeField] private RectTransform _content;
 
+        [SerializeField] private Color _lineColorAchieved;
+
         private Vector2 _levelsOffset;
         private Vector2 _itemsOffset;
         private float _parentSizeY;
@@ -26,6 +29,7 @@ namespace Entities.NPC
         private UIStateSystem _uiStateSystem;
         private GlobalData _globalData;
 
+        [Inject] private DiContainer _diContainer;
         [Inject]
         private void Construct(UIStateSystem uiStateSystem, GlobalData globalData)
         {
@@ -34,9 +38,17 @@ namespace Entities.NPC
             SetOffsets();
         }
 
+        public void RaiseFriendship_int(int num) => RaiseFriendship((Characters)num);
+        public void RaiseFriendship(Characters character)
+        {
+            CheckNpcData(character);
+            _globalData.Edit<NPCData>(data =>{data.Levels[character] ++;});
+        }
+
         public void OpenNPCShop_int(int num) => OpenNPCShop((Characters)num);
         public void OpenNPCShop(Characters character)
         {
+            CheckNpcData(character);
             ClearUiContent();
 
             NPCInfoForShop npcInfoForShop = allNpcInfo[(int)character];
@@ -55,26 +67,51 @@ namespace Entities.NPC
 
                 Vector2 linePos = _firstLevelIconPos + _levelsOffset * i;
                 linePos.y -= _levelsOffset.y/2;
-                Instantiate(_linePref, linePos, Quaternion.identity, _content);
+                GameObject l = Instantiate(_linePref, linePos, Quaternion.identity, _content);
+
+                if ((i == levelCount &&  i  <= _globalData.Get<NPCData>().Levels[character]) || 
+                    i + 1 <= _globalData.Get<NPCData>().Levels[character])
+                        l.GetComponent<Image>().color = _lineColorAchieved;
             }
             foreach (ShopItem item in npcInfoForShop.ShopItemList)
             {
                 Vector2 position;
+                bool unlocked = true;
                 if (item.IsLast) 
                 {
                     position = new(_firstLevelIconPos.x, _firstLevelIconPos.y + levelCount * _levelsOffset.y);
                     _content.offsetMax = new (_content.offsetMax.x, position.y - _parentSizeY);
+                    if (item.NeedLevel > _globalData.Get<NPCData>().Levels[character])
+                        unlocked = false;
                 }
                 else 
                 {
                     position = _firstLevelIconPos + _itemsOffset + _levelsOffset * (item.NeedLevel-1);
-                    Instantiate(_curvePref, position-(_itemsOffset/2), Quaternion.identity, _content);
+                    GameObject l = Instantiate(_curvePref, position-(_itemsOffset/2), Quaternion.identity, _content);
+                    if (item.NeedLevel <= _globalData.Get<NPCData>().Levels[character])
+                        l.GetComponent<Image>().color = _lineColorAchieved;
+                    else unlocked = false;
                 }
 
-                Instantiate(_uiItemPref, position, Quaternion.identity, _content);
+                _diContainer.InstantiatePrefab(_uiItemPref, position, Quaternion.identity, _content).GetComponent<BuyButton>().Initialize(item, character, unlocked);
             }
 
             _uiStateSystem.SwitchCurrentStateAsync(UIState.Shop);
+        }
+
+        private void CheckNpcData(Characters character)
+        {
+            if (_globalData.Get<NPCData>().Levels == null)
+                _globalData.Edit<NPCData>(data =>{data.Levels = new();});
+
+            if (!_globalData.Get<NPCData>().Levels.ContainsKey(character))
+                _globalData.Edit<NPCData>(data =>{data.Levels[character] = 1;});
+
+            if (_globalData.Get<NPCData>().BoughtLastItem == null)
+                _globalData.Edit<NPCData>(data =>{data.BoughtLastItem = new();});
+            
+            if (!_globalData.Get<NPCData>().BoughtLastItem.ContainsKey(character))
+                _globalData.Edit<NPCData>(data =>{data.BoughtLastItem[character] = false;});
         }
 
         private void SetOffsets()
@@ -89,7 +126,6 @@ namespace Entities.NPC
                 curveR.sizeDelta.y/2+curveR.sizeDelta.y/10);
             _parentSizeY = _content.parent.GetComponent<RectTransform>().sizeDelta.y;
         }
-
         private void ClearUiContent()
         {
             foreach (Transform child in _content) {

@@ -1109,7 +1109,7 @@ MonoBehaviour:
   m_Content: {fileID: 844024864}
   m_Horizontal: 0
   m_Vertical: 1
-  m_MovementType: 1
+  m_MovementType: 2
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
@@ -1827,6 +1827,7 @@ MonoBehaviour:
   _curvePref: {fileID: 1577841238330323290, guid: 5643c17e3d775c84ca23b43fe4649830, type: 3}
   _firstFriendshipLevelIcon: {fileID: 1024561444}
   _content: {fileID: 844024864}
+  _lineColorAchieved: {r: 0.63529414, g: 0.96862745, b: 1, a: 1}
 --- !u!4 &266619532
 Transform:
   m_ObjectHideFlags: 0

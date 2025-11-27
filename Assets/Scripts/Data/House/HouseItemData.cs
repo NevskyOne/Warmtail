@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using Entities.House;
 
 namespace Data.House
@@ -8,6 +9,7 @@ namespace Data.House
     {
         public int Id;
         public DraggableObject ItemPref;
+        public Sprite Sprite;
         public int Price;
     }
 }
