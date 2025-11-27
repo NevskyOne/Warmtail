@@ -4,21 +4,15 @@ cutscene_0_1	Ты знаешь как тебя зовут?	Do you know your name
 cutscene_0_2	...	...
 cutscene_0_3	Ничего, всё бывает, просто придумай новое имя.	It's okay, anything can happen, just come up with a new name.
 cutscene_0_4	Я прослежу, чтобы с тобой ничего не случилось.	I'll make sure nothing happens to you.
-cutscene_1_1	Ты можешь плавать.	You can swim.
-cutscene_1_2	Ты можешь согревать.	You can warm up.
-cutscene_1_3	Ты можешь призывать рыбок.	You can summon fish.
-cutscene_1_4	Ты можешь всплывать и нырять.	You can surface and dive.
-cutscene_1_5	Ты можешь замедлять свой метаболзим.	You can slow down your metabolize.
-cutscene_1_6	Ты можешь делать рывок.	You can make a dash.
-cutscene_2_0	Иногда нам приходится жертвовать чем-то ради других.	Sometimes we have to sacrifice something for others.
-cutscene_2_1	Но...	But...
-cutscene_2_2	Я не хочу видеть то, как мое дитя навсегда исчезнет…	I don't want to see my child disappear forever...
-cutscene_2_3	Прости, я не могу больше быть с тобой рядом.	I'm sorry, I can't be with you anymore.
-cutscene_3_0	Ты не помнишь меня.	You don't remember me.
-cutscene_3_1	Но ты был частью меня.	But you were a part of me.
-cutscene_3_2	Но я храню память в каждом своём осколке.	But I keep the memory in every fragment of me.
-cutscene_3_3	Я рада, что ты принес частичку моего тепла обитателям этой холодной планеты.	I'm glad that you brought a piece of my warmth to the inhabitants of this cold planet.
-cutscene_3_4	Ты заслужил лучшего!	You deserve better!
-cutscene_3_5	Не стоит беспокоиться обо мне.	There is no need to worry about me.
-cutscene_3_6	Ты должен жить ради них.	You must live for them.
-cutscene_3_7	Прощай…	Goodbye…
+cutscene_1_0	Иногда нам приходится жертвовать чем-то ради других.	Sometimes we have to sacrifice something for others.
+cutscene_1_1	Но...	But...
+cutscene_1_2	Я не хочу видеть то, как мое дитя навсегда исчезнет…	I don't want to see my child disappear forever...
+cutscene_1_3	Прости, я не могу больше быть с тобой рядом.	I'm sorry, I can't be with you anymore.
+cutscene_2_0	Ты не помнишь меня.	You don't remember me.
+cutscene_2_1	Но ты был частью меня.	But you were a part of me.
+cutscene_2_2	Но я храню память в каждом своём осколке.	But I keep the memory in every fragment of me.
+cutscene_2_3	Я рада, что ты принес частичку моего тепла обитателям этой холодной планеты.	I'm glad that you brought a piece of my warmth to the inhabitants of this cold planet.
+cutscene_2_4	Ты заслужил лучшего!	You deserve better!
+cutscene_2_5	Не стоит беспокоиться обо мне.	There is no need to worry about me.
+cutscene_2_6	Ты должен жить ради них.	You must live for them.
+cutscene_2_7	Прощай…	Goodbye…

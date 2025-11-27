@@ -10,10 +10,10 @@ using Zenject;
 
 namespace Entities.NPC
 {
-    public class SpeakableCharacter : MonoBehaviour, IInteractable, IWarmable
+    public class SpeakableCharacter : MonoBehaviour, IInteractable, IWarmable, IEventInvoker
     {
         [field: SerializeField] public DialogueGraph Graph { get; set; }
-        [SerializeField] private List<UnityEvent> _actions = new();
+        [field: SerializeField] public List<UnityEvent> Actions { get; set; }
         [SerializeField, Range(0,1f)] private float _maxWarmPercent;
         [SerializeField] private UnityEvent _warmAction = new();
         private DialogueSystem _dialogueSystem;
@@ -32,8 +32,7 @@ namespace Entities.NPC
         {
             _dialogueSystem.StartDialogue(Graph, _visuals, this);
         }
-
-        public void InvokeAction(int ind) => _actions[ind].Invoke();
+        
         public void Warm()
         {
             _warmPercent -= 0.1f;

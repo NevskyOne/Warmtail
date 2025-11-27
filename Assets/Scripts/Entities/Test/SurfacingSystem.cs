@@ -1,7 +1,9 @@
 using System.Collections.Generic;
 using Data;
 using Data.Player;
+using Entities.PlayerScripts;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using Zenject;
 
 namespace Systems.Environment
@@ -14,24 +16,26 @@ namespace Systems.Environment
         [SerializeField] private LayerMask _obstacleLayer;
 
         private GlobalData _globalData;
-        private int _currentLayerIndex = 0;
+        private Player _player;
+        private int _currentLayerIndex;
 
         [Inject]
-        public void Construct(GlobalData globalData)
+        public void Construct(GlobalData globalData, PlayerInput input, Player player)
         {
-            Debug.Log("вызов SurfacingSystem");
             _globalData = globalData;
+            _player = player;
             UpdateLevelVisibility();
+            input.actions["Surfacing"].started += ctx =>
+            {
+                var direction = (int)ctx.ReadValue<float>();
+                TryChangeLayer(direction);
+            };
         }
 
         public bool TryChangeLayer(int direction)
         {
-            Debug.Log($"вызов , direction = {direction}");
-
-            var newIndex = _currentLayerIndex + direction;
+            var newIndex = _currentLayerIndex + (int)direction;
             var maxLayers = _globalData.Get<SavablePlayerData>().ActiveLayers;
-
-            Debug.Log($"текущий слой: {_currentLayerIndex}, новый слой: {newIndex}, максимальный: {maxLayers}");
 
             if (newIndex < 0 || newIndex > maxLayers || newIndex >= _levelRoots.Count)
             {
@@ -47,23 +51,20 @@ namespace Systems.Environment
 
             _currentLayerIndex = newIndex;
             UpdateLevelVisibility();
-
-            Debug.Log($"Слой изменен на {_currentLayerIndex}");
             return true;
         }
 
 
-        private bool CanTransition(int direction)
+        private bool CanTransition(float direction)
         {
-            // Если всплываем (E), проверяем, нет ли льда сверху и находимся ли в зоне
             if (direction > 0)
             {
-                var pos = transform.position;
+                var pos = _player.Rigidbody.transform.position;
                 bool inZone = Physics2D.OverlapCircle(pos, _layerCheckRadius, _surfaceTriggerLayer);
                 bool blocked = Physics2D.Raycast(pos, Vector2.up, 3f, _obstacleLayer);
                 return inZone && !blocked;
             }
-            return true; // Вниз обычно можно всегда (по геймдизайну)
+            return true;
         }
 
         private void UpdateLevelVisibility()

@@ -22,6 +22,7 @@ namespace Entities.Triggers
         public void WarmExplosion()
         {
             _warmAction.Invoke();
+            Destroy(gameObject);
         }
 
         public void Reset()

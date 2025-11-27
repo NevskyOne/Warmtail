@@ -98,6 +98,52 @@ MonoBehaviour:
   _character: 1
   _emotion: 0
   _displayName: ???
+--- !u!114 &-7155904909750206728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e2a0b535eba425db78d90c5e2997e35, type: 3}
+  m_Name: Action
+  m_EditorClassIdentifier: Assembly-CSharp::ActionNode
+  graph: {fileID: 11400000}
+  position: {x: 1445.9668, y: -192.8882}
+  ports:
+    keys:
+    - _entry
+    - _exit
+    values:
+    - _fieldName: _entry
+      _node: {fileID: -7155904909750206728}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: _exit
+        node: {fileID: 5987237200435019550}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: _exit
+      _node: {fileID: -7155904909750206728}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: _entry
+        node: {fileID: 8615754908400859318}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  _entry: 0
+  _exit: 0
+  _eventId: 0
 --- !u!114 &-5442869629052294271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,6 +366,7 @@ MonoBehaviour:
   - {fileID: 539836334986172119}
   - {fileID: -5442869629052294271}
   - {fileID: 5987237200435019550}
+  - {fileID: -7155904909750206728}
   _startNode: {fileID: 1835004827090630800}
   _dialogueId: 0
 --- !u!114 &539836334986172119
@@ -488,7 +535,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: _entry
-        node: {fileID: 8615754908400859318}
+        node: {fileID: -7155904909750206728}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -622,7 +669,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: _exit
-        node: {fileID: 5987237200435019550}
+        node: {fileID: -7155904909750206728}
         reroutePoints: []
       _direction: 0
       _connectionType: 0

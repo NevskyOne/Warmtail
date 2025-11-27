@@ -1,10 +1,9 @@
 ﻿using System.Collections.Generic;
-using Interfaces;
 
 namespace Data
 {
     public class WorldData : ISavableData
     {
-        public List<int> DeletedObjects = new();
+        public readonly Dictionary<int, bool> SavableObjects = new();
     }
 }

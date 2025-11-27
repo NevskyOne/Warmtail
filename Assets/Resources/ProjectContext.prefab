@@ -123,7 +123,7 @@ MonoBehaviour:
       data:
         Stars: 1
         Shells: 0
-        ActiveLayers: 0
+        ActiveLayers: 2
         SeenReplicas: 
     - rid: 1601399230582489399
       type: {class: DialogueVarData, ns: Data, asm: Assembly-CSharp}
@@ -131,7 +131,7 @@ MonoBehaviour:
         Variables:
         - Type: 0
           Name: playerName
-          Value: "\u041D\u0435\u0432\u0441\u043A\u0438\u0439"
+          Value: '###'
     - rid: 1601399230582489400
       type: {class: SettingsData, ns: Data, asm: Assembly-CSharp}
       data:
@@ -159,8 +159,7 @@ MonoBehaviour:
         PlacedHouseItems: []
     - rid: 1601399661704249621
       type: {class: WorldData, ns: Data, asm: Assembly-CSharp}
-      data:
-        DeletedObjects: 
+      data: 
 --- !u!114 &5226292807223728779
 MonoBehaviour:
   m_ObjectHideFlags: 0

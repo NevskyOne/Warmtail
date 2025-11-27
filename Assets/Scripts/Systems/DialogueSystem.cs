@@ -20,7 +20,7 @@ namespace Systems
 
         private string _prevActionMap;
         public DialogueGraph DialogueGraph => _dialogueGraph;
-        public SpeakableCharacter Character { get; private set; }
+        public IEventInvoker Character { get; private set; }
 
         [Inject]
         private void Construct(DiContainer container, PlayerInput input)
@@ -37,7 +37,7 @@ namespace Systems
             }
         }
         
-        public void StartDialogue(DialogueGraph graph, ITextVisual visual, SpeakableCharacter character = null)
+        public void StartDialogue(DialogueGraph graph, ITextVisual visual, IEventInvoker character = null)
         {
             _visuals = visual;
             _visuals.ShowVisuals();

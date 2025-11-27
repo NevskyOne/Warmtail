@@ -14,7 +14,7 @@ public class ActionNode : BaseNode
     
     public override void Activate()
     {
-        _dialogueSystem.Character.InvokeAction(_eventId);
+        _dialogueSystem.Character.InvokeEvent(_eventId);
         
         _dialogueSystem.SetNewNode();
         _dialogueSystem.ActivateNewNode();

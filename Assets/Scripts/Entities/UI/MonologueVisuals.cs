@@ -1,5 +1,6 @@
 ﻿using System;
 using Cysharp.Threading.Tasks;
+using Data;
 using Data.Nodes;
 using Entities.Localization;
 using Interfaces;
@@ -16,21 +17,26 @@ namespace Entities.UI
         [SerializeField] private float _textFadeSpeed;
         [SerializeField] private TMP_Text _textPrefab;
         [SerializeField] private RectTransform _textBounds;
+        [SerializeField] private GameObject _startPrefab;
         private RectTransform _currentText;
         private LocalizationManager _localizationManager;
         private DialogueSystem _dialogueSystem;
         private bool _isEnded;
 
         [Inject]
-        private void Construct(LocalizationManager localizationManager, DialogueSystem dialogueSystem)
+        private void Construct(LocalizationManager localizationManager, DialogueSystem dialogueSystem, GlobalData data)
         {
             _localizationManager = localizationManager;
             _dialogueSystem = dialogueSystem;
+            if (data.Get<DialogueVarData>().Variables.Find(x => x.Name == "playerName").Value == "###")
+            {
+                _startPrefab.SetActive(true);
+            } 
         }
 
-        public void StartMonologue(DialogueGraph graph)
+        public void StartMonologue(DialogueGraph graph, IEventInvoker invoker)
         {
-            _dialogueSystem.StartDialogue(graph, this);
+            _dialogueSystem.StartDialogue(graph, this, invoker);
             ProcessDialogue();
         }
         
@@ -77,8 +83,8 @@ namespace Entities.UI
 
         private Vector2 ChooseRandomPosition()
         {
-            return new Vector2(Random.Range(_textBounds.rect.x, _textBounds.rect.width),
-                Random.Range(_textBounds.rect.y, _textBounds.rect.height));
+            return new Vector2(Random.Range(_textBounds.rect.xMin, _textBounds.rect.xMax),
+                Random.Range(_textBounds.rect.yMin, _textBounds.rect.yMax));
         }
         
     }

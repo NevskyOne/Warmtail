@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Data;
 using Entities.Localization;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using Zenject;
 
 namespace Entities.NPC
@@ -17,6 +19,7 @@ namespace Entities.NPC
         [SerializeField] private RectTransform _questParent;
         private readonly Dictionary<QuestData, List<RectTransform>> _createdMarks = new();
         private readonly Dictionary<QuestData, GameObject> _createdQuests = new();
+        private readonly Dictionary<QuestData, UnityEvent> _createdEvents = new();
         
         [Inject] private LocalizationManager _localization;
         
@@ -34,7 +37,6 @@ namespace Entities.NPC
                 var newMark = Instantiate(_markPrefab, _markHud);
                 _createdMarks[data].Add(newMark);
             }
-            
         }
         
         public void EndQuest(QuestData data)
@@ -44,9 +46,13 @@ namespace Entities.NPC
             {
                 Destroy(mark.gameObject);
             }
+
+            if(_createdEvents.TryGetValue(data, out var @event))
+                @event.Invoke();
             Destroy(_createdQuests[data]);
             _createdMarks.Remove(data);
             _createdQuests.Remove(data);
+            _createdEvents.Remove(data);
         }
 
         public void Update()
@@ -84,9 +90,22 @@ namespace Entities.NPC
             }
         }
 
-        public void CloseMark(int index)
+        public void AddEvent(QuestData data, UnityEvent unityEvent)
         {
-            
+            _createdEvents.Add(data, unityEvent);
+        }
+
+        public void CloseMark(string data)
+        {
+            var (questId, index) = (data.Split("_")[0], int.Parse(data.Split("_")[1]));
+            var quest = _createdMarks.Keys.First(x => x.Id.ToString() == questId);
+            var mark = _createdMarks[quest][index];
+            Destroy(mark.gameObject);
+            _createdMarks[quest].RemoveAt(index);
+            if (_createdMarks[quest].Count == 0)
+            {
+                EndQuest(quest);
+            }
         }
     }
 }
