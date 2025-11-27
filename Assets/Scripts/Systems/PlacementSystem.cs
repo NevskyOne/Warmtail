@@ -1,29 +1,36 @@
-using UnityEngine;
-using UnityEngine.InputSystem;
 using System.Collections.Generic;
+using UnityEngine.InputSystem;
+using UnityEngine;
 using System;
 using Zenject;
 using Data;
 using Data.House;
+using Data.Player;
 using Entities.House;
 
 namespace Systems
 {
     public class PlacementSystem
     {
+        public Dictionary<int, int> InventoryCurrent;
         private List<PairForHouseItem> _houseItemsEditingInfo = new();
         public static Action OnApplyedAll = delegate {};
         public static Action OnCanceledAll = delegate {};
+        public static Action OnUIDraggableUpdated = delegate {};
         private GlobalData _globalData;
         private HouseManager _houseManager;
-        public int CountItemOnTheScene;
 
         [Inject] private DiContainer _diContainer;
+#region base
         [Inject]
         private void Construct(GlobalData globalData, HouseManager houseManager)
         {
             _houseManager = houseManager;
             _globalData = globalData;
+
+            if (_globalData.Get<SavablePlayerData>().Inventory == null)
+                _globalData.Edit<SavablePlayerData>(data => data.Inventory = new());
+            InventoryCurrent = new(_globalData.Get<SavablePlayerData>().Inventory);
             
             var houseItems = _globalData.Get<HouseData>().PlacedHouseItems;
             foreach (PairForHouseItem item in houseItems)
@@ -39,6 +46,29 @@ namespace Systems
             obj.Initialize(isItemConfirmed);
             return obj;
         }
+#endregion
+#region inventory
+        public void AddItemToInventory(int itemId)
+        {
+            if (!InventoryCurrent.ContainsKey(itemId)) InventoryCurrent[itemId] = 0;
+            InventoryCurrent[itemId] --;
+            OnUIDraggableUpdated?.Invoke();
+        }
+        public void RemoveItemFromInventory(int itemId)
+        {
+            InventoryCurrent[itemId] ++;
+            OnUIDraggableUpdated?.Invoke();
+        }
+        public void ApplyItemInventory(int itemId, int how)
+        {
+            _globalData.Edit<SavablePlayerData>(data => 
+            {
+                if (!data.Inventory.ContainsKey(itemId)) data.Inventory[itemId] = 0;
+                data.Inventory[itemId] += how;
+            });
+        }
+#endregion
+#region apply and cancel
 
         public void AddEditingItem(int idInArray, Vector2 currentPos)
         {
@@ -47,7 +77,7 @@ namespace Systems
                 houseData.PlacedHouseItems.Add(new (idInArray, currentPos.x, currentPos.y));
             });
         }
-        public void ReplaceEditingItem(int idInArray, Vector2 posOnConfirmedState, Vector2 currentPos)
+        public void ReplacePositionEditingItem(int idInArray, Vector2 posOnConfirmedState, Vector2 currentPos)
         {
             _globalData.Edit<HouseData>(houseData =>
             {
@@ -79,5 +109,6 @@ namespace Systems
         {
             OnCanceledAll?.Invoke();
         }
+#endregion
     }
 }

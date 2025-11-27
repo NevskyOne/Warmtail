@@ -5,6 +5,7 @@ using Zenject;
 using Data;
 using Data.NPCShop;
 using Entities.UI;
+using Systems;
 
 namespace Entities.NPC
 {
@@ -19,7 +20,6 @@ namespace Entities.NPC
 
         [SerializeField] private Transform _firstFriendshipLevelIcon;
         [SerializeField] private RectTransform _content;
-
         [SerializeField] private Color _lineColorAchieved;
 
         private Vector2 _levelsOffset;
@@ -28,27 +28,46 @@ namespace Entities.NPC
 
         private UIStateSystem _uiStateSystem;
         private GlobalData _globalData;
+        private NPCMethods _npcMethods;
 
         [Inject] private DiContainer _diContainer;
         [Inject]
-        private void Construct(UIStateSystem uiStateSystem, GlobalData globalData)
+        private void Construct(UIStateSystem uiStateSystem, GlobalData globalData, NPCMethods npcMethods)
         {
             _uiStateSystem = uiStateSystem;
             _globalData = globalData;
+            _npcMethods = npcMethods;
             SetOffsets();
         }
 
-        public void RaiseFriendship_int(int num) => RaiseFriendship((Characters)num);
-        public void RaiseFriendship(Characters character)
+        //TEST
+        public void RaiseFriendship(int num) => _npcMethods.RaiseFriendship((Characters)num);
+
+        private void SetOffsets()
         {
-            CheckNpcData(character);
-            _globalData.Edit<NPCData>(data =>{data.Levels[character] ++;});
+            RectTransform lineR = _linePref.GetComponent<RectTransform>();
+            RectTransform lvlR = _friendshipLevelIconPref.GetComponent<RectTransform>();
+            RectTransform curveR = _curvePref.GetComponent<RectTransform>();
+            RectTransform itemR = _friendshipLevelIconPref.GetComponent<RectTransform>();
+
+            _levelsOffset = new (0, lineR.sizeDelta.y + lvlR.sizeDelta.y);
+            _itemsOffset = new (-curveR.sizeDelta.x - lvlR.sizeDelta.x/2 - itemR.sizeDelta.x/2, 
+                curveR.sizeDelta.y/2+curveR.sizeDelta.y/10);
+            _parentSizeY = _content.parent.GetComponent<RectTransform>().sizeDelta.y;
         }
 
-        public void OpenNPCShop_int(int num) => OpenNPCShop((Characters)num);
+        private void ClearUiContent()
+        {
+            foreach (Transform child in _content) {
+                if (child != _firstFriendshipLevelIcon) 
+                    Destroy(child.gameObject);
+            }
+        }
+
+        public void OpenNPCShop(int num) => OpenNPCShop((Characters)num);
         public void OpenNPCShop(Characters character)
         {
-            CheckNpcData(character);
+            _npcMethods.CheckNpcData(character);
             ClearUiContent();
 
             NPCInfoForShop npcInfoForShop = allNpcInfo[(int)character];
@@ -97,41 +116,6 @@ namespace Entities.NPC
             }
 
             _uiStateSystem.SwitchCurrentStateAsync(UIState.Shop);
-        }
-
-        private void CheckNpcData(Characters character)
-        {
-            if (_globalData.Get<NPCData>().Levels == null)
-                _globalData.Edit<NPCData>(data =>{data.Levels = new();});
-
-            if (!_globalData.Get<NPCData>().Levels.ContainsKey(character))
-                _globalData.Edit<NPCData>(data =>{data.Levels[character] = 1;});
-
-            if (_globalData.Get<NPCData>().BoughtLastItem == null)
-                _globalData.Edit<NPCData>(data =>{data.BoughtLastItem = new();});
-            
-            if (!_globalData.Get<NPCData>().BoughtLastItem.ContainsKey(character))
-                _globalData.Edit<NPCData>(data =>{data.BoughtLastItem[character] = false;});
-        }
-
-        private void SetOffsets()
-        {
-            RectTransform lineR = _linePref.GetComponent<RectTransform>();
-            RectTransform lvlR = _friendshipLevelIconPref.GetComponent<RectTransform>();
-            RectTransform curveR = _curvePref.GetComponent<RectTransform>();
-            RectTransform itemR = _friendshipLevelIconPref.GetComponent<RectTransform>();
-
-            _levelsOffset = new (0, lineR.sizeDelta.y + lvlR.sizeDelta.y);
-            _itemsOffset = new (-curveR.sizeDelta.x - lvlR.sizeDelta.x/2 - itemR.sizeDelta.x/2, 
-                curveR.sizeDelta.y/2+curveR.sizeDelta.y/10);
-            _parentSizeY = _content.parent.GetComponent<RectTransform>().sizeDelta.y;
-        }
-        private void ClearUiContent()
-        {
-            foreach (Transform child in _content) {
-                if (child != _firstFriendshipLevelIcon) 
-                    Destroy(child.gameObject);
-            }
         }
     }
 }

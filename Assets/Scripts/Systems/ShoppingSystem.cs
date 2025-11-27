@@ -20,6 +20,13 @@ namespace Systems
                 _globalData.Edit<SavablePlayerData>(data => {data.Shells -= item.Price;});
                 Debug.Log("ракушек теперь " + _globalData.Get<SavablePlayerData>().Shells);
                 if (isLast) PurchaseLastItem (character);
+
+                _globalData.Edit<SavablePlayerData>(data =>
+                {
+                    if (data.Inventory == null) data.Inventory = new();
+                    if (!data.Inventory.ContainsKey(item.Id)) data.Inventory[item.Id] = 0;
+                    data.Inventory[item.Id]++;
+                });
             }
         }
         private void PurchaseLastItem(Characters character)
