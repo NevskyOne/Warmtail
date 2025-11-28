@@ -70,6 +70,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "4",
+                    "type": "Button",
+                    "id": "7cf184c6-44d8-44e5-bad7-e7bb6281be27",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Move",
                     "type": "Value",
                     "id": "337e0d11-33e2-4e6e-9f25-d2de25de8541",
@@ -86,6 +95,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Scroll",
+                    "type": "Button",
+                    "id": "ae83bc78-b66c-4372-8f8e-b07e15528e84",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -163,6 +181,17 @@
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "49e10231-b479-4e79-b0d7-f6b61edba6cf",
+                    "path": "<Keyboard>/4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "4",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -253,6 +282,17 @@
                     "action": "Surfacing",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "7a5e5df1-fa9c-4ddf-8c29-6f8d2e4c7a77",
+                    "path": "<Mouse>/middleButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Scroll",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },

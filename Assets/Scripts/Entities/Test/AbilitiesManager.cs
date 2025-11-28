@@ -10,22 +10,23 @@ using Zenject;
 
 namespace Systems.Abilities
 {
+    [Serializable]
     public class AbilitiesManager : ITickable
     {
-        public event Action<int> OnAbilitySelected;
+       public event Action<int> OnAbilitySelected;
         public event Action<Type, Type> OnComboUpdated; // Primary, Secondary
 
-        private readonly List<IAbilityExtended> _abilities;
-        private readonly WarmthSystem _warmthSystem;
-        private readonly GlobalData _globalData;
+        private  List<IAbilityExtended> _abilities;
+        private  WarmthSystem _warmthSystem;
+        private  GlobalData _globalData;
         
-        private int _selectedIndex;
-        private IAbilityExtended _activeAbility;
-        private IAbilityExtended _comboAbility; // Вторичная способность (пассивная часть комбо)
-        private bool _isCasting;
+        [SerializeField] private int _selectedIndex;
+        [SerializeField] private IAbilityExtended _activeAbility;
+        [SerializeField] private IAbilityExtended _comboAbility; // Вторичная способность (пассивная часть комбо)
+        [SerializeField] private bool _isCasting;
 
         [Inject]
-        public AbilitiesManager(
+        public void Construct( 
             [Inject(Id = "PlayerAbilities")] List<IAbilityExtended> abilities, 
             WarmthSystem warmthSystem,
             GlobalData globalData,
@@ -73,6 +74,7 @@ namespace Systems.Abilities
 
         private void TrySelectOrCombo(int index)
         {
+            Debug.Log("Try selecting " + index);
             if (index < 0 || index >= _abilities.Count) return;
 
             if (_isCasting)
