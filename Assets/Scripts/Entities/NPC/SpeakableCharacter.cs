@@ -20,6 +20,8 @@ namespace Entities.NPC
         private DialogueSystem _dialogueSystem;
         private DialogueVisuals _visuals;
         private float _warmPercent;
+
+        [field: SerializeField] public bool CanWarm { get; set; } = true;
         
         [Inject]
         private void Construct(DialogueSystem dialogueSystem, DialogueVisuals visuals)
@@ -31,11 +33,14 @@ namespace Entities.NPC
         
         public void Interact()
         {
+            if (!Graph) return;
             _dialogueSystem.StartDialogue(Graph, _visuals, this);
+            Graph = null;
         }
         
         public void Warm()
         {
+            if (!CanWarm) return;
             _warmPercent -= 0.1f;
             if (_warmPercent <= 0)
                 WarmExplosion();

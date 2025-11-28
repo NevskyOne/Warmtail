@@ -14,16 +14,17 @@ namespace Entities.UI
         [SerializeField] private Button _newSaveButton;
         [SerializeField] private GameObject _savePrefab;
         [SerializeField] private Transform _saveParent;
+        [SerializeField] private GlobalData _globalData;
         private ManualSaveSystem _manualSaveSystem;
         private SaveSystem _saveSystem;
-        private GlobalData _globalData;
+        private DiContainer _container;
 
         [Inject]
-		private void Construct(ManualSaveSystem manualSaveSystem, SaveSystem saveSystem, GlobalData globalData)
+		private void Construct(ManualSaveSystem manualSaveSystem, SaveSystem saveSystem, DiContainer container)
         {
 			_manualSaveSystem = manualSaveSystem;
 			_saveSystem = saveSystem;
-			_globalData = globalData;
+			_container = container;
 			if(_newSaveButton)
 				_newSaveButton.onClick.AddListener(CreateNewSave);
 
@@ -33,15 +34,29 @@ namespace Entities.UI
 			}
         }
 
+        private async void CreateCurrentSave()
+        {
+	        var meta = await _manualSaveSystem.CreateManualSaveAsync(_saveNameInput.text,_saveSystem.AutoContainer);
+			SpawnNewPrefab(meta);
+        }
+        
         private async void CreateNewSave()
         {
-	        var meta = await _manualSaveSystem.CreateManualSaveAsync(_saveNameInput.text,_saveSystem.Container);
-			SpawnNewPrefab(meta);
+	        var dataList = _globalData.SavableData;
+	        var container = new SaveContainer();
+	        foreach (var d in dataList)
+	        {
+		        if (d == null) continue;
+		        var key = d.GetType().Name;
+		        container.Blocks[key] = d;
+	        }
+	        var meta = await _manualSaveSystem.CreateManualSaveAsync(_saveNameInput.text,container);
+	        SpawnNewPrefab(meta);
         }
 
         private void SpawnNewPrefab(ManualSaveMeta meta)
         {
-	        var newObj = Instantiate(_savePrefab, _saveParent).transform;
+	        var newObj = _container.InstantiatePrefab(_savePrefab, _saveParent).transform;
 	        
 	        byte[] bytes = File.ReadAllBytes(meta.ThumbnailPath);
 	        Texture2D tex = new Texture2D(2, 2);

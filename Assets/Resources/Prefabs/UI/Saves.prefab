@@ -1047,6 +1047,7 @@ MonoBehaviour:
   _newSaveButton: {fileID: 4632744898882992318}
   _savePrefab: {fileID: 303016832174792484, guid: 5a4b43d2cfd7a3c4bab52495bbf17e10, type: 3}
   _saveParent: {fileID: 5652228926769971000}
+  _globalData: {fileID: 6645744535049247407, guid: a43cab36c9db6d44b8511f36d251fc2d, type: 3}
 --- !u!1 &5109493843938682346
 GameObject:
   m_ObjectHideFlags: 0

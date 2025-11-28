@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using Data;
+using Entities.Core;
 using TriInspector;
 using UnityEngine;
 using Zenject;
@@ -12,7 +13,7 @@ namespace Entities.Probs
         [SerializeField, ReadOnly]
         private UniqueID _id;
         [Inject] protected GlobalData _globalData;
-
+        
         public string Id => _id.Value;
 
         [ContextMenu("Force reset ID")]
@@ -50,6 +51,11 @@ namespace Entities.Probs
         {
             _globalData.Edit<WorldData>(worldData => { worldData.SavableObjects[_id.Value] = active; });
             gameObject.SetActive(active);
+        }
+
+        public void ChangeStateOnLoad(bool active)
+        {
+            _globalData.Edit<WorldData>(worldData => { worldData.SavableObjects[_id.Value] = active; });
         }
     }
 }
