@@ -9,7 +9,7 @@ using Zenject;
 namespace Systems.Abilities.Concrete
 {
     [Serializable]
-    public class WarmingAbility : BaseAbility
+    public class WarmingAbility : BaseAbility, IDisposable
     {
         [Header("Normal Warm")]
         [SerializeField] private float _radius = 3f;
@@ -22,6 +22,7 @@ namespace Systems.Abilities.Concrete
 
         private Transform _playerTransform;
         private WarmthSystem _warmthSystem;
+        private PlayerInput _playerInput;
         private bool _isRunning;
         private bool _canActivate;
 
@@ -30,21 +31,26 @@ namespace Systems.Abilities.Concrete
         {
             _playerTransform = player.Rigidbody.transform;
             _warmthSystem = warmth;
+            _playerInput = playerInput;
             StartAbility += () => ActiveRoutine().Forget();
             EndAbility += () => _isRunning = false;
-            playerInput.actions["RightMouse"].started += _ =>
-            {
-                StartAbility?.Invoke();
-                _canActivate = false;
-            };
-            playerInput.actions["RightMouse"].canceled += async _ =>
-            {
-                EndAbility?.Invoke();
-                await UniTask.Delay(1000);
-                _canActivate = true;
-            };
+            _playerInput.actions["RightMouse"].started += StartWarm;
+            _playerInput.actions["RightMouse"].canceled += StopWarm;
         }
 
+        private void StartWarm(InputAction.CallbackContext callbackContext)
+        {
+            StartAbility?.Invoke();
+            _canActivate = false;
+        }
+        
+        private async void StopWarm(InputAction.CallbackContext callbackContext)
+        {
+            EndAbility?.Invoke();
+            await UniTask.Delay(1000);
+            _canActivate = true;
+        }
+        
         private async UniTaskVoid ActiveRoutine()
         {
             if (!_canActivate) return;
@@ -97,6 +103,12 @@ namespace Systems.Abilities.Concrete
                 }
             }
             if (success) _warmthSystem.DecreaseWarmth(_cost);
+        }
+
+        public void Dispose()
+        {
+            _playerInput.actions["RightMouse"].started -= StartWarm;
+            _playerInput.actions["RightMouse"].canceled -= StopWarm;
         }
     }
 }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using JetBrains.Annotations;
 using Newtonsoft.Json;
 using UnityEngine;
 
@@ -14,10 +15,13 @@ namespace Systems.DataSystems
 
     public class SaveSystem
     {
-        private readonly string _fileName = "saves.json";
-        private SaveContainer _container;
+        private readonly string _autoFileName = "auto_save.json";
+        private readonly string _settingsFileName = "settings.json";
+        private SaveContainer _autoContainer;
+        private SaveContainer _settingsContainer;
 
-        public SaveContainer Container => _container;
+        public SaveContainer SettingsContainer => _settingsContainer;
+        public SaveContainer AutoContainer => _autoContainer;
 
         private readonly JsonSerializerSettings _settings = new JsonSerializerSettings
         {
@@ -26,29 +30,30 @@ namespace Systems.DataSystems
             NullValueHandling = NullValueHandling.Ignore
         };
 
-        private string FilePath => Path.Combine(Application.persistentDataPath, _fileName);
-
+        private string AutoFilePath => Path.Combine(Application.persistentDataPath, _autoFileName);
+        public string SettingsFilePath => Path.Combine(Application.persistentDataPath, _settingsFileName);
+        
         public void Load(ref List<ISavableData> dataList)
         {
             if (dataList == null) return;
 
-            var diskContainer = LoadContainerFromDisk();
-            var fileExists = diskContainer != null && diskContainer.Blocks != null && diskContainer.Blocks.Count > 0;
+            var autoContainer = LoadContainerFromDisk(AutoFilePath);
+            var fileExists = autoContainer is { Blocks: { Count: > 0 } };
 
             if (!fileExists)
             {
-                _container = new SaveContainer();
+                _autoContainer = new SaveContainer();
                 foreach (var d in dataList)
                 {
                     if (d == null) continue;
                     var key = d.GetType().Name;
-                    _container.Blocks[key] = d;
+                    _autoContainer.Blocks[key] = d;
                 }
-                WriteContainerToDisk(_container);
+                WriteContainerToDisk(_autoContainer, AutoFilePath);
             }
             else
             {
-                _container = diskContainer;
+                _autoContainer = autoContainer;
             }
 
             for (int i = 0; i < dataList.Count; i++)
@@ -56,7 +61,7 @@ namespace Systems.DataSystems
                 var proto = dataList[i];
                 if (proto == null) continue;
                 var key = proto.GetType().Name;
-                if (_container.Blocks.TryGetValue(key, out var stored))
+                if (_autoContainer.Blocks.TryGetValue(key, out var stored))
                 {
                     var intermediateJson = JsonConvert.SerializeObject(stored, _settings);
                     var loaded = (ISavableData)JsonConvert.DeserializeObject(intermediateJson, proto.GetType(), _settings);
@@ -64,42 +69,53 @@ namespace Systems.DataSystems
                 }
                 else
                 {
-                    _container.Blocks[key] = proto;
+                    _autoContainer.Blocks[key] = proto;
                 }
             }
         }
 
-        public void UpdateData(ISavableData data)
+        public void UpdateData(ISavableData data, SaveContainer container)
         {
             if (data == null) return;
-            if (_container == null) _container = new SaveContainer();
+            if (container == null) container = new SaveContainer();
             var key = data.GetType().Name;
-            _container.Blocks[key] = data;
+            container.Blocks[key] = data;
         }
 
         public void SaveAllToDisk()
         {
-            if (_container == null) return;
-            WriteContainerToDisk(_container);
+            if (_autoContainer == null || _settingsContainer == null) return;
+            WriteContainerToDisk(_autoContainer, AutoFilePath);
+            WriteContainerToDisk(_settingsContainer, SettingsFilePath);
         }
-
-        public ISavableData Load(ISavableData prototype)
+        
+        public T Load<T>(T data) where T : ISavableData 
         {
-            if (prototype == null) return null;
-            if (_container == null) _container = LoadContainerFromDisk() ?? new SaveContainer();
-            var key = prototype.GetType().Name;
-            if (!_container.Blocks.TryGetValue(key, out var stored)) return prototype;
-            var json = JsonConvert.SerializeObject(stored, _settings);
-            var loaded = (ISavableData)JsonConvert.DeserializeObject(json, prototype.GetType(), _settings);
-            return loaded ?? prototype;
+            var container = LoadContainerFromDisk(SettingsFilePath);
+            var fileExists = container is { Blocks: { Count: > 0 } };
+            var key = typeof(T).Name;
+            if (!fileExists)
+            {
+                _settingsContainer = new SaveContainer();
+                _settingsContainer.Blocks[key] = data;
+                WriteContainerToDisk(_settingsContainer, SettingsFilePath);
+            }
+            else
+            {
+                _settingsContainer = container;
+            }
+            if (!container.Blocks.TryGetValue(key, out var stored)) return data;
+            var intermediateJson = JsonConvert.SerializeObject(stored, _settings);
+            var loaded = (T)JsonConvert.DeserializeObject(intermediateJson, typeof(T), _settings);
+            return loaded ?? data;
         }
 
-        private SaveContainer LoadContainerFromDisk()
+        private SaveContainer LoadContainerFromDisk(string filePath)
         {
             try
             {
-                if (!File.Exists(FilePath)) return null;
-                var txt = File.ReadAllText(FilePath);
+                if (!File.Exists(filePath)) return null;
+                var txt = File.ReadAllText(filePath);
                 if (string.IsNullOrWhiteSpace(txt)) return null;
                 var container = JsonConvert.DeserializeObject<SaveContainer>(txt, _settings);
                 return container ?? null;
@@ -111,14 +127,14 @@ namespace Systems.DataSystems
             }
         }
 
-        private void WriteContainerToDisk(SaveContainer container)
+        private void WriteContainerToDisk(SaveContainer container, string filePath)
         {
             try
             {
-                var dir = Path.GetDirectoryName(FilePath);
+                var dir = Path.GetDirectoryName(filePath);
                 if (!Directory.Exists(dir)) Directory.CreateDirectory(dir);
                 var json = JsonConvert.SerializeObject(container, _settings);
-                File.WriteAllText(FilePath, json);
+                File.WriteAllText(filePath, json);
             }
             catch (Exception e)
             {

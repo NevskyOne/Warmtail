@@ -72,20 +72,15 @@ namespace Systems.DataSystems
 
             var jsonPath = SlotJsonPath(slotId);
             var thumbPath = SlotThumbPath(slotId);
-
-            // Сохраняем json слота (полный контейнер)
+            
             File.WriteAllText(jsonPath, JsonConvert.SerializeObject(container, _settings));
-
-            // Захват скриншота и сохранение миниатюры
+            
             try
             {
                 var png = cam == null ? await CaptureScreenPngAsync(_thumbWidth, _thumbHeight, token) : await CaptureCameraPngAsync(cam, _thumbWidth, _thumbHeight, token);
                 File.WriteAllBytes(thumbPath, png);
             }
-            catch (OperationCanceledException)
-            {
-                // отменено — продолжаем без скрина
-            }
+            catch (OperationCanceledException) { }
             catch (Exception e)
             {
                 Debug.LogWarning($"ManualSave: cannot capture thumbnail: {e.Message}");

@@ -109,12 +109,13 @@ MonoBehaviour:
   _savableData:
   - rid: 1601399230582489398
   - rid: 1601399230582489399
-  - rid: 1601399230582489400
   - rid: 1601399661704249615
   - rid: 1601399524581179755
   - rid: 1601399661704249621
   _runtimeData:
   - rid: 1601399230582489401
+  _settingsData:
+    rid: 1601399754601005135
   references:
     version: 2
     RefIds:
@@ -132,15 +133,6 @@ MonoBehaviour:
         - Type: 0
           Name: playerName
           Value: '###'
-    - rid: 1601399230582489400
-      type: {class: SettingsData, ns: Data, asm: Assembly-CSharp}
-      data:
-        MainSoundVolume: 0.5
-        MusicVolume: 1
-        SfxVolume: 1
-        QualityLevel: 1
-        FullscreenMode: 1
-        Language: 0
     - rid: 1601399230582489401
       type: {class: RuntimePlayerData, ns: Data.Player, asm: Assembly-CSharp}
       data:
@@ -160,6 +152,15 @@ MonoBehaviour:
     - rid: 1601399661704249621
       type: {class: WorldData, ns: Data, asm: Assembly-CSharp}
       data: 
+    - rid: 1601399754601005135
+      type: {class: SettingsData, ns: Data, asm: Assembly-CSharp}
+      data:
+        MainSoundVolume: 0.5
+        MusicVolume: 1
+        SfxVolume: 1
+        QualityLevel: 1
+        FullscreenMode: 1
+        Language: 0
 --- !u!114 &5226292807223728779
 MonoBehaviour:
   m_ObjectHideFlags: 0

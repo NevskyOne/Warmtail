@@ -1127,8 +1127,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1490,30 +1490,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Saves
       objectReference: {fileID: 0}
-    - target: {fileID: 6228935844956080533, guid: f4daa986b08a5854cbac23fa7ed3addc, type: 3}
-      propertyPath: _newSaveButton
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6228935844956080533, guid: f4daa986b08a5854cbac23fa7ed3addc, type: 3}
-      propertyPath: _saveNameInput
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8774216297540572731, guid: f4daa986b08a5854cbac23fa7ed3addc, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8774216297540572731, guid: f4daa986b08a5854cbac23fa7ed3addc, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 88475865}
-    - target: {fileID: 8774216297540572731, guid: f4daa986b08a5854cbac23fa7ed3addc, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SwitchCurrentState
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 5281924390959708753, guid: f4daa986b08a5854cbac23fa7ed3addc, type: 3}
-    - {fileID: 5109493843938682346, guid: f4daa986b08a5854cbac23fa7ed3addc, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4daa986b08a5854cbac23fa7ed3addc, type: 3}

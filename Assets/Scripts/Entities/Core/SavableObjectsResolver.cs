@@ -13,7 +13,7 @@ namespace Entities.Core
         {
             var changed = _data.Get<WorldData>().SavableObjects;
 
-            foreach (var obj in FindObjectsOfType<SavableStateObject>())
+            foreach (var obj in FindObjectsByType<SavableStateObject>(FindObjectsInactive.Include,FindObjectsSortMode.None))
             {
                 print(obj.Id);
                 if (changed.ContainsKey(obj.Id))

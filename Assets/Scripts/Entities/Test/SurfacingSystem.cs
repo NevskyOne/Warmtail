@@ -57,14 +57,14 @@ namespace Systems.Environment
 
         private bool CanTransition(float direction)
         {
-            if (direction > 0)
+            if (direction != 0)
             {
                 var pos = _player.Rigidbody.transform.position;
                 bool inZone = Physics2D.OverlapCircle(pos, _layerCheckRadius, _surfaceTriggerLayer);
                 bool blocked = Physics2D.Raycast(pos, Vector2.up, 3f, _obstacleLayer);
                 return inZone && !blocked;
             }
-            return true;
+            return false;
         }
 
         private void UpdateLevelVisibility()

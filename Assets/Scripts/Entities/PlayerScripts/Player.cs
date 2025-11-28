@@ -17,6 +17,7 @@ namespace Entities.PlayerScripts
         private PlayerConfig _config;
         private PlayerMovement _movement;
         private List<IAbility> _disabledAbilities = new();
+        private List<IDisposable> _disposables = new();
         
         [Inject]
         private void Construct(GlobalData globalData, PlayerConfig config, DiContainer container)
@@ -27,6 +28,8 @@ namespace Entities.PlayerScripts
             {
                 ability.Enabled = true;
                 container.Inject(ability);
+                if(ability is IDisposable disposable)
+                    _disposables.Add(disposable);
             }
 
             _movement = (PlayerMovement)_config.Abilities[0];
@@ -56,6 +59,14 @@ namespace Entities.PlayerScripts
                 ability.Enabled = true;
             }
             _disabledAbilities.Clear();
+        }
+
+        private void OnDestroy()
+        {
+            foreach (var disposable in _disposables)
+            {
+                disposable.Dispose();
+            }
         }
     }
 }
