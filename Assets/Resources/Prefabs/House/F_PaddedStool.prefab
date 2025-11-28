@@ -11,10 +11,10 @@ PrefabInstance:
     - target: {fileID: 922807377315119029, guid: 604e1eb257b6a2c498c4135f46aa3c80, type: 3}
       propertyPath: _houseItemData
       value: 
-      objectReference: {fileID: 11400000, guid: 2bb9622e024d03946be4a4577c26df9e, type: 2}
+      objectReference: {fileID: 11400000, guid: 731517709532b5d45adb2908de86cfc2, type: 2}
     - target: {fileID: 1548766097917159745, guid: 604e1eb257b6a2c498c4135f46aa3c80, type: 3}
       propertyPath: m_Name
-      value: TriangleBuildingItem
+      value: F_PaddedStool
       objectReference: {fileID: 0}
     - target: {fileID: 4356480875976509338, guid: 604e1eb257b6a2c498c4135f46aa3c80, type: 3}
       propertyPath: m_Sprite
@@ -22,7 +22,7 @@ PrefabInstance:
       objectReference: {fileID: -3252780586428284253, guid: 4741e0d82db681349aa97421bed5666c, type: 3}
     - target: {fileID: 4356480875976509338, guid: 604e1eb257b6a2c498c4135f46aa3c80, type: 3}
       propertyPath: m_WasSpriteAssigned
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5859638581176523642, guid: 604e1eb257b6a2c498c4135f46aa3c80, type: 3}
       propertyPath: m_LocalPosition.x

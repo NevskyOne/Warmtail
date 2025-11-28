@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 97e2d922575f8a54f97dcb0ff954e2a2
+guid: c27908ef3b8cf9344a48ad6293aa4193
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5484143084638742860
-    second: TestItem-Rhomb_0
+      213: 3082677097215905262
+    second: F_Lava Lamp_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TestItem-Rhomb_0
+      name: F_Lava Lamp_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c49ae4944179b1c40800000000000000
-      internalID: 5484143084638742860
+      spriteID: eed49c8bc7ed7ca20800000000000000
+      internalID: 3082677097215905262
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      TestItem-Rhomb_0: 5484143084638742860
+      F_Lava Lamp_0: 3082677097215905262
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

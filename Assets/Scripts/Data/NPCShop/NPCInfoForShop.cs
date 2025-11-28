@@ -9,7 +9,6 @@ namespace Data.NPCShop
     public class NPCInfoForShop : ScriptableObject
     {
         public int LevelCount;
-        public bool IsBoughtLastItemInShop;
         public List<ShopItem> ShopItemList;
     }
     [Serializable]
