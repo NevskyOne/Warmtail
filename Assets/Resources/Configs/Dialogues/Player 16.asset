@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Action
   m_EditorClassIdentifier: Assembly-CSharp::ActionNode
   graph: {fileID: 11400000}
-  position: {x: 2232, y: -392}
+  position: {x: 1000, y: -312}
   ports:
     keys:
     - _entry
@@ -25,7 +25,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: _exit
-        node: {fileID: 6823443900390111356}
+        node: {fileID: 8505687143317846246}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -37,7 +37,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: _entry
-        node: {fileID: 2625565088836413387}
+        node: {fileID: 907348468454081012}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -45,7 +45,7 @@ MonoBehaviour:
       _dynamic: 0
   _entry: 0
   _exit: 0
-  _eventId: 1
+  _eventId: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65,7 +65,6 @@ MonoBehaviour:
   - {fileID: 3118666123735138752}
   - {fileID: 8505687143317846246}
   - {fileID: 907348468454081012}
-  - {fileID: 6823443900390111356}
   _startNode: {fileID: 2443595686749601486}
   _dialogueId: 16
 --- !u!114 &907348468454081012
@@ -81,7 +80,7 @@ MonoBehaviour:
   m_Name: Text
   m_EditorClassIdentifier: Assembly-CSharp::TextNode
   graph: {fileID: 11400000}
-  position: {x: 600, y: -440}
+  position: {x: 1656, y: -424}
   ports:
     keys:
     - _entry
@@ -93,7 +92,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: _exit
-        node: {fileID: 8505687143317846246}
+        node: {fileID: -5128785568499259060}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -105,7 +104,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: _entry
-        node: {fileID: 6823443900390111356}
+        node: {fileID: 2625565088836413387}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -172,7 +171,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: _exit
-        node: {fileID: -5128785568499259060}
+        node: {fileID: 907348468454081012}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -228,55 +227,6 @@ MonoBehaviour:
   _character: 0
   _emotion: 0
   _displayName: 
---- !u!114 &6823443900390111356
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b9d74a14bb242a1b74546a7e2e9399e, type: 3}
-  m_Name: Text
-  m_EditorClassIdentifier: Assembly-CSharp::TextNode
-  graph: {fileID: 11400000}
-  position: {x: 1016, y: -440}
-  ports:
-    keys:
-    - _entry
-    - _exit
-    values:
-    - _fieldName: _entry
-      _node: {fileID: 6823443900390111356}
-      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: _exit
-        node: {fileID: 907348468454081012}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: _exit
-      _node: {fileID: 6823443900390111356}
-      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: _entry
-        node: {fileID: -5128785568499259060}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-  _entry: 0
-  _exit: 0
-  _textId: 3
-  _character: 0
-  _emotion: 0
-  _displayName: 
 --- !u!114 &8505687143317846246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -314,7 +264,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: _entry
-        node: {fileID: 907348468454081012}
+        node: {fileID: -5128785568499259060}
         reroutePoints: []
       _direction: 1
       _connectionType: 0

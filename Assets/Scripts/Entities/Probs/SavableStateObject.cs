@@ -1,4 +1,7 @@
-﻿using Data;
+﻿using System;
+using System.Linq;
+using Data;
+using TriInspector;
 using UnityEngine;
 using Zenject;
 
@@ -6,20 +9,46 @@ namespace Entities.Probs
 {
     public class SavableStateObject : MonoBehaviour
     {
-        private int _id;
-        private static int _lastId = 1;
+        [SerializeField, ReadOnly]
+        private UniqueID _id;
         [Inject] protected GlobalData _globalData;
-        
-        public int Id => _id;
 
-        private void Awake()
+        public string Id => _id.Value;
+
+        [ContextMenu("Force reset ID")]
+        private void ResetId()
         {
-            _id = _lastId++;
+            _id.Value = Guid.NewGuid().ToString();
         }
         
-        protected void ChangeState(bool active)
+        public static bool IsUnique(string id)
         {
-            _globalData.Edit<WorldData>(worldData => worldData.SavableObjects.Add(_id, active));
+            return Resources.FindObjectsOfTypeAll<SavableStateObject>().Count(x => x.Id == id) == 1;
+        }
+
+        protected void OnValidate()
+        {
+            if (!gameObject.scene.IsValid())
+            {
+                _id.Value = string.Empty;
+                return;
+            }
+
+            if (string.IsNullOrEmpty(Id) || !IsUnique(Id))
+            {
+                ResetId();
+            }
+        }
+
+        [Serializable]
+        private struct UniqueID
+        {
+            public string Value;
+        }
+        
+        public void ChangeState(bool active)
+        {
+            _globalData.Edit<WorldData>(worldData => { worldData.SavableObjects[_id.Value] = active; });
             gameObject.SetActive(active);
         }
     }

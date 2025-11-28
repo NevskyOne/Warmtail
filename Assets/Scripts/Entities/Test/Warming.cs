@@ -2,8 +2,8 @@ using System;
 using Cysharp.Threading.Tasks;
 using Entities.PlayerScripts;
 using Interfaces;
-using Systems.Abilities;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using Zenject;
 
 namespace Systems.Abilities.Concrete
@@ -22,17 +22,33 @@ namespace Systems.Abilities.Concrete
 
         private Transform _playerTransform;
         private WarmthSystem _warmthSystem;
+        private bool _isRunning;
+        private bool _canActivate;
 
         [Inject]
-        public void Construct(Player player, WarmthSystem warmth)
+        public void Construct(Player player, PlayerInput playerInput, WarmthSystem warmth)
         {
-            _playerTransform = player.transform;
+            _playerTransform = player.Rigidbody.transform;
             _warmthSystem = warmth;
             StartAbility += () => ActiveRoutine().Forget();
+            EndAbility += () => _isRunning = false;
+            playerInput.actions["RightMouse"].started += _ =>
+            {
+                StartAbility?.Invoke();
+                _canActivate = false;
+            };
+            playerInput.actions["RightMouse"].canceled += async _ =>
+            {
+                EndAbility?.Invoke();
+                await UniTask.Delay(1000);
+                _canActivate = true;
+            };
         }
 
         private async UniTaskVoid ActiveRoutine()
         {
+            if (!_canActivate) return;
+            _isRunning = true;
             if (IsComboActive && _secondaryComboType == typeof(MetabolismAbility))
             {
                 await PerformExplosion();
@@ -40,7 +56,7 @@ namespace Systems.Abilities.Concrete
             }
             else
             {
-                while (Enabled)
+                while (Enabled && _isRunning)
                 {
                     PerformTick();
                     await UniTask.Delay(500);

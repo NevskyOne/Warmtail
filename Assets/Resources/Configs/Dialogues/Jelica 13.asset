@@ -73,8 +73,8 @@ MonoBehaviour:
       _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
-      - fieldName: 0
-        node: {fileID: -5945821820555331968}
+      - fieldName: _exit
+        node: {fileID: 5148515976395654964}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -331,7 +331,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: _entry
-        node: {fileID: -8202409885287408218}
+        node: {fileID: 5148515976395654964}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -482,7 +482,7 @@ MonoBehaviour:
       _dynamic: 0
   _entry: 0
   _exit: 0
-  _eventId: 0
+  _eventId: 1
 --- !u!114 &-5060437412646867429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -765,6 +765,7 @@ MonoBehaviour:
   - {fileID: -5679941979414037267}
   - {fileID: -4051475622706069414}
   - {fileID: -5128785568499259060}
+  - {fileID: 5148515976395654964}
   _startNode: {fileID: 2443595686749601486}
   _dialogueId: 13
 --- !u!114 &1084776630268266941
@@ -1025,6 +1026,52 @@ MonoBehaviour:
   _character: 5
   _emotion: 0
   _displayName: ???
+--- !u!114 &5148515976395654964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e2a0b535eba425db78d90c5e2997e35, type: 3}
+  m_Name: Action
+  m_EditorClassIdentifier: Assembly-CSharp::ActionNode
+  graph: {fileID: 11400000}
+  position: {x: 4514.794, y: -597.3113}
+  ports:
+    keys:
+    - _entry
+    - _exit
+    values:
+    - _fieldName: _entry
+      _node: {fileID: 5148515976395654964}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: 0
+        node: {fileID: -5945821820555331968}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: _exit
+      _node: {fileID: 5148515976395654964}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: _entry
+        node: {fileID: -8202409885287408218}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  _entry: 0
+  _exit: 0
+  _eventId: 0
 --- !u!114 &5674865540110520004
 MonoBehaviour:
   m_ObjectHideFlags: 0

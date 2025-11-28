@@ -75,5 +75,12 @@ namespace Systems.Environment
                     _levelRoots[i].SetActive(i == _currentLayerIndex);
             }
         }
+
+        public void AddMaxLevels()
+        {
+            if(_globalData.Get<SavablePlayerData>().ActiveLayers < 2)
+                _globalData.Edit<SavablePlayerData>(data =>
+                    data.ActiveLayers += 1);
+        }
     }
 }

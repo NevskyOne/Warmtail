@@ -33,7 +33,7 @@ namespace Entities.Probs
             else
             {
                 if (_timer != null)
-                    _timer.Reset(3);
+                    _timer.Start();
                 else
                     _timer = new ResettableTimer(3, Reset);
             }

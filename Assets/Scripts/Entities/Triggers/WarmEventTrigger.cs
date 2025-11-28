@@ -1,10 +1,11 @@
-﻿using Interfaces;
+﻿using Entities.Probs;
+using Interfaces;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace Entities.Triggers
 {
-    public class WarmEventTrigger : MonoBehaviour, IWarmable
+    public class WarmEventTrigger : SavableStateObject, IWarmable
     {
         [SerializeField] private int _warmCapacity;
         [SerializeField] private UnityEvent _warmAction = new();
@@ -22,7 +23,7 @@ namespace Entities.Triggers
         public void WarmExplosion()
         {
             _warmAction.Invoke();
-            Destroy(gameObject);
+            ChangeState(false);
         }
 
         public void Reset()

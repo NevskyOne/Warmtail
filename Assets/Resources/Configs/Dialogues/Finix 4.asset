@@ -482,7 +482,7 @@ MonoBehaviour:
       _dynamic: 0
   _entry: 0
   _exit: 0
-  _textId: 12
+  _textId: 13
   _character: 2
   _emotion: 0
   _displayName: 
@@ -767,7 +767,7 @@ MonoBehaviour:
       _dynamic: 0
   _entry: 0
   _exit: 0
-  _textId: 11
+  _textId: 12
   _character: 2
   _emotion: 0
   _displayName: 

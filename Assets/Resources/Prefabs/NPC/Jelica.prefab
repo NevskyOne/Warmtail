@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 820f06f3e9014cf78d5f95c118eb3dd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entities.NPC.SpeakableCharacter
-  <Graph>k__BackingField: {fileID: 11400000, guid: f7ba7247dae779745b1f81d87a19ab66, type: 2}
+  <Graph>k__BackingField: {fileID: 11400000, guid: 41872ed484cc51146b5d53d3152bc9cc, type: 2}
   <Actions>k__BackingField: []
   _maxWarmPercent: 0
   _warmAction:

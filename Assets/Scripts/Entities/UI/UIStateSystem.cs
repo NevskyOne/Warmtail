@@ -23,10 +23,9 @@ namespace Entities.UI
         public UIState CurrentState { get; private set; }
 
         [Inject]
-        private void Construct(PlayerInput input, Player player)
+        private void Construct(PlayerInput input)
         {
             _playerInput = input;
-            _player = player;
             _playerInput.actions["Escape"].performed += EscapeTransition;
         }
 
