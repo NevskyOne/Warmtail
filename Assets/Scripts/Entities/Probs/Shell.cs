@@ -21,6 +21,14 @@ namespace Entities.Probs
         {
             _globalData = globalData;
             Reset();
+            DailySystem.OnLodedRecources += LoadShell;
+            DailySystem.OnDiscardedRecources += DiscardShell;
+        }
+
+        private void OnDestroy()
+        {
+            DailySystem.OnLodedRecources -= LoadShell;
+            DailySystem.OnDiscardedRecources -= DiscardShell;
         }
         
         public void Warm()
@@ -57,6 +65,29 @@ namespace Entities.Probs
             });
             _timer.Stop();
             Destroy(gameObject);
+        }
+
+        private void LoadShell()
+        {
+            float x = transform.position.x;
+            float y = transform.position.y;
+            CheckShellData(x, y);
+            if (!_globalData.Get<ShellsData>().ShellsActive[new (x, y)])
+                Destroy(gameObject);
+        }
+
+        private void DiscardShell()
+        {
+            float x = transform.position.x;
+            float y = transform.position.y;
+            CheckShellData(x, y);
+            _globalData.Edit<ShellsData>(data => data.ShellsActive[new (x, y)] = true);
+        }
+
+        private void CheckShellData(float x, float y)
+        {
+            if (!_globalData.Get<ShellsData>().ShellsActive.ContainsKey(new (x, y)))
+                _globalData.Edit<ShellsData>(data => data.ShellsActive[new (x, y)] = true);
         }
     }
 }
