@@ -20,5 +20,6 @@ namespace Data.Player
         public int CurrentWarmth;
         public bool WasInGame;
         public int Speed;
+        public string TimeLastGame;
     }
 }
