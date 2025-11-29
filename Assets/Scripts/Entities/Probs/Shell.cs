@@ -53,6 +53,9 @@ namespace Entities.Probs
             {
                 playerData.Shells += _shellsAmount;
             });
+            _globalData.Edit<ShellsData>(data => {
+                data.ShellsActive[ConvertFloatsToString (transform.position.x, transform.position.y)] = false;
+            });
             _timer.Stop();
             Destroy(gameObject);
         }
@@ -67,7 +70,7 @@ namespace Entities.Probs
             float x = transform.position.x;
             float y = transform.position.y;
             CheckShellData(x, y);
-            if (!_globalData.Get<ShellsData>().ShellsActive[new (x, y)])
+            if (!_globalData.Get<ShellsData>().ShellsActive[ConvertFloatsToString(x, y)])
                 Destroy(gameObject);
         }
 
@@ -76,13 +79,18 @@ namespace Entities.Probs
             float x = transform.position.x;
             float y = transform.position.y;
             CheckShellData(x, y);
-            _globalData.Edit<ShellsData>(data => data.ShellsActive[new (x, y)] = true);
+            _globalData.Edit<ShellsData>(data => data.ShellsActive[ConvertFloatsToString(x, y)] = true);
         }
 
         private void CheckShellData(float x, float y)
         {
-            if (!_globalData.Get<ShellsData>().ShellsActive.ContainsKey(new (x, y)))
-                _globalData.Edit<ShellsData>(data => data.ShellsActive[new (x, y)] = true);
+            if (!_globalData.Get<ShellsData>().ShellsActive.ContainsKey(ConvertFloatsToString(x, y)))
+                _globalData.Edit<ShellsData>(data => data.ShellsActive[ConvertFloatsToString(x, y)] = true);
+        }
+
+        private string ConvertFloatsToString(float x, float y)
+        {
+            return (x + " : " + y);
         }
     }
 }

@@ -143,7 +143,7 @@ MonoBehaviour:
         CurrentWarmth: 10
         WasInGame: 0
         Speed: 8
-        TimeLastGame: 28.11.2025 23:00:00
+        TimeLastGame: 29.11.2025 15:00:00
     - rid: 1601399661704249615
       type: {class: HouseData, ns: Data.House, asm: Assembly-CSharp}
       data:
@@ -154,7 +154,12 @@ MonoBehaviour:
     - rid: 1601399754601005135
       type: {class: SettingsData, ns: Data, asm: Assembly-CSharp}
       data:
-        DeletedObjects: 
+        MainSoundVolume: 0
+        MusicVolume: 0
+        SfxVolume: 0
+        QualityLevel: 0
+        FullscreenMode: 0
+        Language: 0
     - rid: 2385452619237949708
       type: {class: NPCData, ns: Data.NPCShop, asm: Assembly-CSharp}
       data:
@@ -167,12 +172,6 @@ MonoBehaviour:
       data:
         ShellsActive:
           _serializedList: []
-        MainSoundVolume: 0.5
-        MusicVolume: 1
-        SfxVolume: 1
-        QualityLevel: 1
-        FullscreenMode: 1
-        Language: 0
 --- !u!114 &5226292807223728779
 MonoBehaviour:
   m_ObjectHideFlags: 0
