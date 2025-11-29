@@ -1,7 +1,9 @@
 using System.Collections.Generic;
 using Data;
 using Data.Player;
+using Entities.PlayerScripts;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using Zenject;
 
 namespace Systems.Environment
@@ -14,42 +16,55 @@ namespace Systems.Environment
         [SerializeField] private LayerMask _obstacleLayer;
 
         private GlobalData _globalData;
-        private int _currentLayerIndex = 0;
+        private Player _player;
+        private int _currentLayerIndex;
 
         [Inject]
-        public void Construct(GlobalData globalData)
+        public void Construct(GlobalData globalData, PlayerInput input, Player player)
         {
             _globalData = globalData;
+            _player = player;
             UpdateLevelVisibility();
+            input.actions["Surfacing"].started += ctx =>
+            {
+                var direction = (int)ctx.ReadValue<float>();
+                TryChangeLayer(direction);
+            };
         }
 
-        public bool TryChangeLayer(int direction) // -1 Down (Q), +1 Up (E)
+        public bool TryChangeLayer(int direction)
         {
-            var newIndex = _currentLayerIndex + direction;
+            var newIndex = _currentLayerIndex + (int)direction;
             var maxLayers = _globalData.Get<SavablePlayerData>().ActiveLayers;
 
             if (newIndex < 0 || newIndex > maxLayers || newIndex >= _levelRoots.Count)
+            {
+                Debug.Log("TryChangeLayer неудачно: вне диапазона");
                 return false;
+            }
 
-            // Проверка физической возможности (триггеры/препятствия)
-            if (!CanTransition(direction)) return false;
+            if (!CanTransition(direction))
+            {
+                Debug.Log("TryChangeLayer неудачно: CanTransition вернул false");
+                return false;
+            }
 
             _currentLayerIndex = newIndex;
             UpdateLevelVisibility();
             return true;
         }
 
-        private bool CanTransition(int direction)
+
+        private bool CanTransition(float direction)
         {
-            // Если всплываем (E), проверяем, нет ли льда сверху и находимся ли в зоне
-            if (direction > 0)
+            if (direction != 0)
             {
-                var pos = transform.position;
+                var pos = _player.Rigidbody.transform.position;
                 bool inZone = Physics2D.OverlapCircle(pos, _layerCheckRadius, _surfaceTriggerLayer);
                 bool blocked = Physics2D.Raycast(pos, Vector2.up, 3f, _obstacleLayer);
                 return inZone && !blocked;
             }
-            return true; // Вниз обычно можно всегда (по геймдизайну)
+            return false;
         }
 
         private void UpdateLevelVisibility()
@@ -59,6 +74,13 @@ namespace Systems.Environment
                 if (_levelRoots[i] != null)
                     _levelRoots[i].SetActive(i == _currentLayerIndex);
             }
+        }
+
+        public void AddMaxLevels()
+        {
+            if(_globalData.Get<SavablePlayerData>().ActiveLayers < 2)
+                _globalData.Edit<SavablePlayerData>(data =>
+                    data.ActiveLayers += 1);
         }
     }
 }

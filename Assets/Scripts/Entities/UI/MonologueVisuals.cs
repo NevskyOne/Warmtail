@@ -1,5 +1,6 @@
 ﻿using System;
 using Cysharp.Threading.Tasks;
+using Data;
 using Data.Nodes;
 using Entities.Localization;
 using Interfaces;
@@ -16,23 +17,26 @@ namespace Entities.UI
         [SerializeField] private float _textFadeSpeed;
         [SerializeField] private TMP_Text _textPrefab;
         [SerializeField] private RectTransform _textBounds;
+        [SerializeField] private GameObject _startPrefab;
         private RectTransform _currentText;
         private LocalizationManager _localizationManager;
         private DialogueSystem _dialogueSystem;
-        private UIStateSystem _uiStateSystem;
         private bool _isEnded;
 
         [Inject]
-        private void Construct(LocalizationManager localizationManager, DialogueSystem dialogueSystem, UIStateSystem uiStateSystem)
+        private void Construct(LocalizationManager localizationManager, DialogueSystem dialogueSystem, GlobalData data)
         {
             _localizationManager = localizationManager;
             _dialogueSystem = dialogueSystem;
-            _uiStateSystem = uiStateSystem;
+            if (data.Get<DialogueVarData>().Variables.Find(x => x.Name == "playerName").Value == "###")
+            {
+                _startPrefab.SetActive(true);
+            } 
         }
 
-        public void StartMonologue(DialogueGraph graph)
+        public void StartMonologue(DialogueGraph graph, IEventInvoker invoker)
         {
-            _dialogueSystem.StartDialogue(graph, this);
+            _dialogueSystem.StartDialogue(graph, this, invoker);
             ProcessDialogue();
         }
         
@@ -50,7 +54,7 @@ namespace Entities.UI
         {
             _isEnded = false;
             _currentText = Instantiate(_textPrefab, _textBounds).GetComponent<RectTransform>();
-            _currentText.anchoredPosition = ChooseRandomPosition();
+            _currentText.localPosition = ChooseRandomPosition();
         }
 
         public void HideVisuals()
@@ -61,7 +65,7 @@ namespace Entities.UI
 
         public void RequestNewLine(TextNode node)
         {
-            _currentText.anchoredPosition = ChooseRandomPosition();
+            _currentText.localPosition = ChooseRandomPosition();
             _currentText.GetComponent<TMP_Text>().text = 
                 _localizationManager.GetStringFromKey("cutscene_"+ _dialogueSystem.DialogueGraph.DialogueId+ "_" + node.TextId);
         }
@@ -69,7 +73,7 @@ namespace Entities.UI
         public async void RequestSingleLine(int id)
         {
             _currentText = Instantiate(_textPrefab, _textBounds).GetComponent<RectTransform>();
-            _currentText.anchoredPosition = ChooseRandomPosition();
+            _currentText.localPosition = ChooseRandomPosition();
             _currentText.GetComponent<TMP_Text>().text = 
                 _localizationManager.GetStringFromKey("fragment_" + id);
             await UniTask.Delay(TimeSpan.FromSeconds(_textFadeSpeed));
@@ -79,8 +83,8 @@ namespace Entities.UI
 
         private Vector2 ChooseRandomPosition()
         {
-            return new Vector2(Random.Range(_textBounds.anchorMin.x, _textBounds.anchorMax.x),
-                Random.Range(_textBounds.anchorMin.y, _textBounds.anchorMax.y));
+            return new Vector2(Random.Range(_textBounds.rect.xMin, _textBounds.rect.xMax),
+                Random.Range(_textBounds.rect.yMin, _textBounds.rect.yMax));
         }
         
     }

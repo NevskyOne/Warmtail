@@ -23,10 +23,9 @@ namespace Entities.UI
         public UIState CurrentState { get; private set; }
 
         [Inject]
-        private void Construct(PlayerInput input, Player player)
+        private void Construct(PlayerInput input)
         {
             _playerInput = input;
-            _player = player;
             _playerInput.actions["Escape"].performed += EscapeTransition;
         }
 
@@ -84,6 +83,6 @@ namespace Entities.UI
     [Serializable]
     public enum UIState
     {
-        Normal, Settings, Pause, Saves, Dialogue, Monologue, Shop
+        Normal, Settings, Pause, Saves, Dialogue, Building, Shop
     }
 }

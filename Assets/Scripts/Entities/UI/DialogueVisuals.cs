@@ -126,8 +126,6 @@ namespace Entities.UI
                     "player_" + _system.DialogueGraph.DialogueId + "_" + choiceInd);
                 var boxObj = await InstantiateAsync(_boxOptionsPrefab, _boxOptionsGroup);
                 boxObj[0].text = text;
-                boxObj[0].GetComponent<TextEffect>().globalEffects[0].effect = _effect;
-                boxObj[0].GetComponent<TextEffect>().Refresh();
                 _diContainer.Inject(boxObj[0].gameObject.GetComponent<DialogueOptionUI>());
             }
             _boxText.gameObject.SetActive(false);

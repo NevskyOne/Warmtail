@@ -22,13 +22,72 @@ player_4_5	Так вот почему он смог приютить меня.	S
 player_4_6	Оу, это звучит очень… грустно.	Oh, that sounds very... sad.
 player_4_7	Может быть я всё же как-то смогу помочь.	Maybe I can still help somehow.
 player_4_8	Обнять	Hug
-player_4_9	Мне приятно дарить тепло другим.	I enjoy giving warmth to others.
+player_4_9	А меня {playerName}, будем знакомы.	And I'm {playerName}, let's get acquainted.
 player_4_10	Хех.	Heh.
+player_4_11	Сейчас попробую.	I'll try now.
 player_5_0	А что за кристаллы?	What kind of crystals are these?
 player_5_1	Ага.	Yeah.
 player_5_2	Я попробую.	I will try.
-player_5_3	Думаю не с проста я тут…	I don’t think I’m here for nothing…
+player_5_3	Думаю неспроста я тут…	I think it’s not for nothing that I’m here…
 player_5_4	Спасибо!	Thank you!
 player_6_0	Ты права.	You are right.
-player_7_0	Хорошо, давай.	Okay, let's go.
+player_7_0	Хорошо, давай.	Okay, go ahead.
 player_7_1	Хех.	Heh.
+player_8_0	Здравствуйте, хм, не встречал.	Hello, hmm, I haven't met him.
+player_8_1	Я думаю, я смогу помочь вам найти его.	I think I can help you find him.
+player_9_0	Не стоит благодарностей.	No need to thank me.
+player_9_1	Обнять	Hug
+player_9_2	Подождите, могу я вас попросить об одолжении?	Wait, can I ask you a favor?
+player_9_3	Нам с Финикс нужна помощь для того, чтобы обогреть призму.	Phoenix and I need help heating the prism.
+player_9_4	Не могли бы вы попытаться вместе согреть её?	Could you try to warm her up together?
+player_9_5	Спасибо!	Thank you!
+player_10_0	Ну, да…	Well, yes…
+player_10_1	Я {playerName}.	I am {playerName}.
+player_10_2	Почему?	Why?
+player_10_3	Ну ладно…	OK…
+player_10_4	Стой, куда?!	Wait, where to?!
+player_10_5	М-да…	Hmm...
+player_11_0	Я их уже 3 раза до этого видел…	I've seen them 3 times before...
+player_11_1	Эй, ты куда?	Hey, where are you going?
+player_11_2	Окей, окей, я разрушу сейчас кристалл, только отойди подальше.	Okay, okay, I'll destroy the crystal now, just move away.
+player_11_3	Я не хочу, чтобы ты замерз досмерти!	I don't want you to freeze to death!
+player_12_0	Вот и всё, тут нет ничего сверхъестественного.	That's all, there's nothing supernatural here.
+player_12_1	Обычное тепло.	Normal warmth.
+player_12_2	На самом деле не бывает бесполезных существ.	In fact, there are no useless creatures.
+player_12_3	Мы все несём какую-то функцию, Скайпер.	We all have a function, Skyper.
+player_12_4	Да, я умею согревать лучше, чем остальные, но и ты можешь это делать!	Yes, I can warm you up better than others, but you can do it too!
+player_12_5	Например через…	For example, through…
+player_12_6	… объятия.	… hugs.
+player_12_7	А ещё, ты можешь помочь сейчас другим согреть призму внизу!	And you can also help others warm the prism below now!
+player_12_8	Я уверен, все оценят твой поступок и будут благодарны.	I'm sure everyone will appreciate your actions and be grateful.
+player_12_9	Я тоже!	Me too!
+player_13_0	Здраствуйте, мадам.	Hello, madam.
+player_13_1	Я в порядке, а вот вы выглядите…	I'm fine, but you look...
+player_13_2	… потерянной.	… lost.
+player_13_3	С вашими детьми всё будет хорошо, не переживайте.	Your children will be fine, don't worry.
+player_13_4	Обнять	Hug
+player_13_5	{playerName}, мадам.	{playerName}, madam.
+player_13_6	Не стоит, вы чего!	It's not worth it, what are you saying!
+player_13_7	Оставьте себе, я думаю, вам тяжело воспитывать их в одиночку.	Keep them for yourself, I think it’s hard for you to raise them alone.
+player_14_0	Не вините себя, вы не виноваты.	Don't blame yourself, it's not your fault.
+player_14_1	Вы не знали, что будет такой сильный мороз, вы старались ради них внизу.	You didn't know it would be so cold, you were trying for them down there.
+player_14_2	Хех, да не преувеличивайте.	Heh, don't exaggerate.
+player_14_3	Я бы хотел вас попросить об одном одолжении.	I would like to ask you for one favor.
+player_14_4	Вы моежет спуститься с детьми на более безопасный нижний уровень?	Can you take the children down to a safer lower level?
+player_14_5	И когда вы спуститесь, можете помочь Финикс?	And when you get down, can you help Phoenix?
+player_14_6	Она сейчас пытается разогреть призму, чтобы стало теплее, но ей нужна ваша помощь.	She is now trying to heat up the prism to make it warmer, but she needs your help.
+player_14_7	Да что вы, не стоит!	Oh, come on, it's not worth it!
+player_14_8	До свидания вам.	Goodbye to you.
+player_15_0	Хм, свет все ещё не достаёт до дна.	Hmm, the light still doesn't reach the bottom.
+player_15_1	Неужели придется плыть наверх…	Do I really have to swim up there?
+player_15_2	Там же везде будет лёд…	There will be ice everywhere there...
+player_15_3	Но если я это не сделаю, то все погибнут.	But if I don't do this, everyone will die.
+player_15_4	Хоть я и знаю их всего ничего, но они тоже живые, у них есть свои родные…	Even though I know them only for a little while, they are also alive, they have their own relatives...
+player_15_5	Плыть наверх	Swim to the top
+player_16_0	Он слишком большой!	He's too big!
+player_16_1	Думай, думай!	Think, think!
+player_16_2	Хм, может попробовать растопить те небольшие для начала...	Hmm, maybe try melting those small ones first...
+player_17_0	Тут слишком холодно!	It's too cold here!
+player_17_1	Проклятая метель.	Damn blizzard.
+player_17_2	Но я должен это сделать, это последний осколок!	But I have to do it, this is the last fragment!
+player_17_3	Я должен это сделать ради них!!!	I have to do this for them!!!

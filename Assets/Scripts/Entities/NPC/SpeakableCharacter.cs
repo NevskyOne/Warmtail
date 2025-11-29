@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Data;
 using Data.Nodes;
+using Entities.Probs;
 using Entities.UI;
 using Interfaces;
 using Systems;
@@ -10,26 +11,50 @@ using Zenject;
 
 namespace Entities.NPC
 {
-    public class SpeakableCharacter : MonoBehaviour, IInteractable
+    public class SpeakableCharacter : SavableStateObject, IInteractable, IWarmable, IEventInvoker
     {
-        [SerializeField] private DialogueGraph _graph;
-        [SerializeField] private List<UnityEvent> _actions = new();
+        [field: SerializeField] public DialogueGraph Graph { get; set; }
+        [field: SerializeField] public List<UnityEvent> Actions { get; set; }
+        [SerializeField, Range(0,1f)] private float _maxWarmPercent;
+        [SerializeField] private UnityEvent _warmAction = new();
         private DialogueSystem _dialogueSystem;
         private DialogueVisuals _visuals;
+        private float _warmPercent;
+
+        [field: SerializeField] public bool CanWarm { get; set; } = true;
         
         [Inject]
         private void Construct(DialogueSystem dialogueSystem, DialogueVisuals visuals)
         {
             _dialogueSystem = dialogueSystem;
             _visuals = visuals;
+            Reset();
         }
         
         public void Interact()
         {
-            _dialogueSystem.StartDialogue(_graph, _visuals, this);
+            if (!Graph) return;
+            _dialogueSystem.StartDialogue(Graph, _visuals, this);
+            Graph = null;
+        }
+        
+        public void Warm()
+        {
+            if (!CanWarm) return;
+            _warmPercent -= 0.1f;
+            if (_warmPercent <= 0)
+                WarmExplosion();
         }
 
-        public void InvokeAction(int ind) => _actions[ind].Invoke();
+        public void WarmExplosion()
+        {
+            _warmAction.Invoke();
+        }
+
+        public void Reset()
+        {
+            _warmPercent = _maxWarmPercent;
+        }
     }
     
 }

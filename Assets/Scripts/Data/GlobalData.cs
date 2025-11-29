@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Entities.Core;
 using Systems.DataSystems;
 using TriInspector;
 using UnityEngine;
@@ -15,12 +16,10 @@ namespace Data
     {
         [Title("Data")]
         [SerializeReference] private List<ISavableData> _savableData = new();
-
-        public List<ISavableData> SavableData => _savableData;
-
         [SerializeReference] private List<IRuntimeData> _runtimeData = new();
-        
+        [SerializeReference] private SettingsData _settingsData;
         private readonly Dictionary<IData, List<DataEventFunc>> _subs = new();
+        public List<ISavableData> SavableData => _savableData;
         
         private SaveSystem _saveSystem;
 
@@ -29,9 +28,11 @@ namespace Data
         {
             try
             {
-                var filePath = Path.Combine(Application.persistentDataPath, "saves.json");
+                var filePath = Path.Combine(Application.persistentDataPath, "auto_save.json");
+                var settingsfilePath = Path.Combine(Application.persistentDataPath, "settings.json");
                 var manualSavesPath = Path.Combine(Application.persistentDataPath, "manual_saves");
                 if (File.Exists(filePath)) File.Delete(filePath);
+                if (File.Exists(settingsfilePath)) File.Delete(settingsfilePath);
                 if(Directory.Exists(manualSavesPath)) Directory.Delete(manualSavesPath, true);
                 Debug.Log("Data deleted!");
             }
@@ -46,8 +47,9 @@ namespace Data
         {
             _saveSystem = saveSystem;
             _saveSystem.Load(ref _savableData);
+            _settingsData = _saveSystem.Load(_settingsData);
 
-            var allDataList = _savableData.Concat<IData>(_runtimeData).ToList();
+            var allDataList = _savableData.Concat<IData>(_runtimeData).Concat(new List<IData>{_settingsData}).ToList();
             foreach (var data in allDataList)
             {
                 _subs.Add(data, new List<DataEventFunc>());
@@ -85,8 +87,7 @@ namespace Data
                 sub.Invoke();
             }
             if (typeof(ISavableData).IsAssignableFrom(typeof(T)))
-                _saveSystem.UpdateData((ISavableData)foundKey);
-            //Debug.Log($"Updated {typeof(T).Name}");
+                _saveSystem.UpdateData((ISavableData)foundKey, foundKey is not SettingsData? _saveSystem.AutoContainer : _saveSystem.SettingsContainer);
         }
         
         public void Edit<T>(Action<T> mutator) where T : class, IData {

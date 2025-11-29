@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af1ba54e94444033972c0a11bab94bec, type: 3}
+  m_Name: HomePlayerConfig
+  m_EditorClassIdentifier: Assembly-CSharp::Data.Player.PlayerConfig
+  <Abilities>k__BackingField:
+  - rid: 1601399544975982592
+  - rid: 1601399524581179738
+  references:
+    version: 2
+    RefIds:
+    - rid: 1601399524581179738
+      type: {class: InteractionSystem, ns: , asm: Assembly-CSharp}
+      data:
+        _interactionRadius: 2
+        _interactionOffset: {x: 0, y: 0, z: 0}
+    - rid: 1601399544975982592
+      type: {class: PlayerMovement, ns: Systems, asm: Assembly-CSharp}
+      data:
+        _moveForce: 60
+        _moreForge: 60
+        _maxSpeed: 5
+        _drag: 5

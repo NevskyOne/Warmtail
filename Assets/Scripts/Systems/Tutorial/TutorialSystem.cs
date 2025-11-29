@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Interfaces;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Systems.Tutorial
 {
@@ -17,7 +18,7 @@ namespace Systems.Tutorial
             {
                 foreach (var stepEvent in step.Events)
                 {
-                    step.Trigger.Event += stepEvent.Activate;
+                    step.Trigger.Event += stepEvent.Invoke;
                 }
                 step.Trigger.Event += IterateNewStep;
             }
@@ -27,13 +28,6 @@ namespace Systems.Tutorial
 
         private void IterateNewStep()
         {
-            if (_currentIndex > 0)
-            {
-                foreach (var stepEvent in _steps[_currentIndex-1].Events)
-                {
-                    stepEvent.Deactivate();
-                }
-            }
             
             _steps[_currentIndex].Trigger.Deactivate();
             if (_currentIndex < _steps.Count - 1)
@@ -50,6 +44,6 @@ namespace Systems.Tutorial
     public struct TutorStep
     { 
         [SerializeReference] public ITutorTrigger Trigger;
-        [SerializeReference] public List<ITutorEvent> Events; 
+        [SerializeField] public List<UnityEvent> Events; 
     }
 }

@@ -2,6 +2,7 @@
 using Cysharp.Threading.Tasks;
 using Data;
 using Entities.PlayerScripts;
+using Entities.Probs;
 using Interfaces;
 using Unity.Cinemachine;
 using UnityEngine;
@@ -10,7 +11,7 @@ using Zenject;
 namespace Entities.Triggers
 {
     [RequireComponent(typeof(Collider2D))]
-    public class CameraTrigger : MonoBehaviour, IDeletable
+    public class CameraTrigger : SavableStateObject
     {
         [SerializeField] private bool _destroyAfter;
         [SerializeField] private float _stunTime;
@@ -51,7 +52,7 @@ namespace Entities.Triggers
             await UniTask.Delay(TimeSpan.FromSeconds(_stunTime));
             
             _player.EnableLastAbilities();
-            _camera.Target.TrackingTarget = _player.transform;
+            _camera.Target.TrackingTarget = _player.Rigidbody.transform;
             _camera.Lens.Lerp(new LensSettings
             {
                 OrthographicSize = _lastZoom,
@@ -60,8 +61,7 @@ namespace Entities.Triggers
             }, 500);
             if (_destroyAfter)
             {
-                ((IDeletable)this).Delete(_data, gameObject.GetEntityId());
-                Destroy(this);
+                ChangeState(false);
             }
         }
     }

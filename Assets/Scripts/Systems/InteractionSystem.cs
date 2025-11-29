@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using Zenject;
 
-public class InteractionSystem : IAbility
+public class InteractionSystem : IAbility, IDisposable
 {
     public bool Enabled { get; set; }
     public Action StartAbility { get; set; }
@@ -16,20 +16,22 @@ public class InteractionSystem : IAbility
     [SerializeField] private Vector3 _interactionOffset = Vector3.zero;
     
     private Player _player;
+    private PlayerInput _playerInput;
     
     [Inject]
     public void Construct(Player player, PlayerInput playerInput)
     {
         _player = player;
-        playerInput.actions["LeftMouse"].started += _ => StartAbility?.Invoke();
-        playerInput.actions["LeftMouse"].performed += Interact;
-        playerInput.actions["LeftMouse"].canceled += _ => EndAbility?.Invoke();
+        _playerInput = playerInput;
+        _playerInput.actions["LeftMouse"].started += _ => StartAbility?.Invoke();
+        _playerInput.actions["LeftMouse"].performed += Interact;
+        _playerInput.actions["LeftMouse"].canceled += _ => EndAbility?.Invoke();
     }
     
     public void Interact(InputAction.CallbackContext context)
     {
         if (!Enabled) return;
-        var colliders = Physics2D.OverlapCircleAll(_player.transform.position + _interactionOffset, _interactionRadius);
+        var colliders = Physics2D.OverlapCircleAll(_player.Rigidbody.transform.position + _interactionOffset, _interactionRadius);
         
         foreach (var collider in colliders)
         {
@@ -42,8 +44,8 @@ public class InteractionSystem : IAbility
         }
     }
     
-    public void FixedTick()
+    public void Dispose()
     {
-        
+        _playerInput.actions["LeftMouse"].performed -= Interact;
     }
 }

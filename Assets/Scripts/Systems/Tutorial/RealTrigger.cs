@@ -14,7 +14,13 @@ namespace Systems.Tutorial
         
         public void Activate()
         {
-            _target.OnTriggerEnter2DAsObservable().Subscribe(_ => ((ITutorTrigger)this).Trigger()).AddTo(_target.gameObject);
+            _target.OnTriggerEnter2DAsObservable().Subscribe(ctx =>
+            {
+                if (ctx.CompareTag("Player"))
+                {
+                    ((ITutorTrigger)this).Trigger();
+                }
+            }).AddTo(_target.gameObject);
         }
 
         public void Deactivate()
