@@ -21,14 +21,14 @@ namespace Entities.Probs
         {
             _globalData = globalData;
             Reset();
-            DailySystem.OnLodedRecources += LoadShell;
-            DailySystem.OnDiscardedRecources += DiscardShell;
+            Daily.OnLodedRecources += LoadShell;
+            Daily.OnDiscardedRecources += DiscardShell;
         }
 
         private void OnDestroy()
         {
-            DailySystem.OnLodedRecources -= LoadShell;
-            DailySystem.OnDiscardedRecources -= DiscardShell;
+            Daily.OnLodedRecources -= LoadShell;
+            Daily.OnDiscardedRecources -= DiscardShell;
         }
         
         public void Warm()

@@ -11,6 +11,7 @@ namespace Data.Player
         public int ActiveLayers;
         public List<int> SeenReplicas;
         public SerializedDictionary<int, int> Inventory; // [id] = count
+        public string TimeLastGame;
     }
     
     [Serializable]
@@ -20,6 +21,5 @@ namespace Data.Player
         public int CurrentWarmth;
         public bool WasInGame;
         public int Speed;
-        public string TimeLastGame;
     }
 }
