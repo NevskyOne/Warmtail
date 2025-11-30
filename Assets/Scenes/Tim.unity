@@ -962,12 +962,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 820f06f3e9014cf78d5f95c118eb3dd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entities.NPC.SpeakableCharacter
+  _id:
+    Value: dbb2b7eb-3416-41ee-ab64-b44c823a46b3
   <Graph>k__BackingField: {fileID: 0}
   <Actions>k__BackingField: []
   _maxWarmPercent: 0
   _warmAction:
     m_PersistentCalls:
       m_Calls: []
+  <CanWarm>k__BackingField: 1
 --- !u!4 &130524575
 Transform:
   m_ObjectHideFlags: 0
@@ -1453,6 +1456,7 @@ MonoBehaviour:
   _newSaveButton: {fileID: 59681079}
   _savePrefab: {fileID: 303016832174792484, guid: 5a4b43d2cfd7a3c4bab52495bbf17e10, type: 3}
   _saveParent: {fileID: 742353914}
+  _globalData: {fileID: 0}
 --- !u!1 &282297972
 GameObject:
   m_ObjectHideFlags: 0
@@ -3077,8 +3081,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -20
-    m_UpperAngle: 20
+    m_LowerAngle: -10
+    m_UpperAngle: 10
 --- !u!50 &738219047
 Rigidbody2D:
   serializedVersion: 5
@@ -3324,8 +3328,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -40
-    m_UpperAngle: 10
+    m_LowerAngle: -15
+    m_UpperAngle: 15
 --- !u!50 &829097092
 Rigidbody2D:
   serializedVersion: 5
@@ -4580,7 +4584,7 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: 50
+    m_LowerAngle: -20
     m_UpperAngle: -60
 --- !u!50 &1118234064
 Rigidbody2D:
@@ -5321,8 +5325,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -20
-    m_UpperAngle: 20
+    m_LowerAngle: -10
+    m_UpperAngle: 10
 --- !u!50 &1310833919
 Rigidbody2D:
   serializedVersion: 5
@@ -5622,8 +5626,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -40
-    m_UpperAngle: 10
+    m_LowerAngle: -15
+    m_UpperAngle: 15
 --- !u!50 &1414972081
 Rigidbody2D:
   serializedVersion: 5
@@ -5806,7 +5810,7 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -50
+    m_LowerAngle: 20
     m_UpperAngle: 60
 --- !u!50 &1462880794
 Rigidbody2D:
@@ -6706,8 +6710,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -20
-    m_UpperAngle: 20
+    m_LowerAngle: -5
+    m_UpperAngle: 5
 --- !u!50 &1559539635
 Rigidbody2D:
   serializedVersion: 5
@@ -7559,12 +7563,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 820f06f3e9014cf78d5f95c118eb3dd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entities.NPC.SpeakableCharacter
+  _id:
+    Value: 085a15b5-5b22-4446-a7a0-dec15d7b0205
   <Graph>k__BackingField: {fileID: 0}
   <Actions>k__BackingField: []
   _maxWarmPercent: 0
   _warmAction:
     m_PersistentCalls:
       m_Calls: []
+  <CanWarm>k__BackingField: 1
 --- !u!4 &1824459168
 Transform:
   m_ObjectHideFlags: 0
@@ -9194,12 +9201,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 820f06f3e9014cf78d5f95c118eb3dd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entities.NPC.SpeakableCharacter
+  _id:
+    Value: 827162c4-a5ba-41bd-beb5-250cbd58a370
   <Graph>k__BackingField: {fileID: 0}
   <Actions>k__BackingField: []
   _maxWarmPercent: 0
   _warmAction:
     m_PersistentCalls:
       m_Calls: []
+  <CanWarm>k__BackingField: 1
 --- !u!4 &2053861125
 Transform:
   m_ObjectHideFlags: 0
@@ -9648,6 +9658,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8dcf5c2d8c28f344b7bd60f06b243f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Star
+  _id:
+    Value: af4bcbf0-5961-4430-a939-e18bad6b3e1b
 --- !u!1 &2105043590
 GameObject:
   m_ObjectHideFlags: 0
