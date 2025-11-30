@@ -68,10 +68,10 @@ Material:
     m_Ints: []
     m_Floats:
     - _CellsScale: 10.87
-    - _Choppiness: 0.01
+    - _Choppiness: 0.1
     - _FlowSpeed: 0.02
     - _FlowStrength: 0.007
-    - _FoamDistance: 117.9
+    - _FoamDistance: 0.1
     - _MiddleOpacity: 1
     - _NoiseScale: 141.18
     - _Opacity: 0

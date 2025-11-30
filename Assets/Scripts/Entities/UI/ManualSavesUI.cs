@@ -69,7 +69,7 @@ namespace Entities.UI
 	        newObj.GetChild(1).GetComponent<TMP_Text>().text = meta.CreatedAt.ToShortDateString() + "\n" + meta.CreatedAt.ToLongTimeString();
 	        newObj.GetChild(2).GetComponent<Image>().sprite = sprite;
 	        newObj.GetChild(3).GetComponent<Button>().onClick.AddListener(() => DeleteSave(meta.Id, newObj.gameObject));
-	        newObj.GetChild(4).GetComponent<Button>().onClick.AddListener(() =>
+	        newObj.GetChild(2).GetChild(0).GetComponent<Button>().onClick.AddListener(() =>
 		        _globalData.UpdateAllData(_manualSaveSystem.LoadManualSave(meta.Id, _globalData.SavableData)));
         }
 

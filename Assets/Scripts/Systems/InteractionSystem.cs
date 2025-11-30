@@ -11,7 +11,7 @@ public class InteractionSystem : IAbility, IDisposable
     public Action StartAbility { get; set; }
     public Action UsingAbility { get; set; }
     public Action EndAbility { get; set; }
-    
+    [field: SerializeReference] public IAbilityVisual Visual { get; set; }
     [SerializeField] private float _interactionRadius = 2f;
     [SerializeField] private Vector3 _interactionOffset = Vector3.zero;
     

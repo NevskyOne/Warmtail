@@ -12,6 +12,12 @@ namespace Systems
     [Serializable]
     public class PlayerMovement : IAbility
     {
+        public bool Enabled { get; set; }
+        public Action StartAbility { get; set; }
+        public Action UsingAbility { get; set; }
+        public Action EndAbility { get; set; }
+        [field: SerializeReference] public IAbilityVisual Visual { get; set; }
+        
         [Header("Movement Settings")]
         [SerializeField] private float _moveForce = 100f;
 
@@ -22,13 +28,7 @@ namespace Systems
         private Rigidbody2D _mainRigidbody;
         private Vector2 _moveInput;
         private GlobalData _globalData;
-
-        public bool Enabled { get; set; }
-        public Action StartAbility { get; set; }
-        public Action UsingAbility { get; set; }
-        public Action EndAbility { get; set; }
-
-        // Zenject Inject
+        
         [Inject]
         public void Construct(Player player, PlayerInput playerInput, GlobalData data)
         {
@@ -53,22 +53,22 @@ namespace Systems
             if (Enabled)
             {
                 _moveInput = context.ReadValue<Vector2>();
-                UsingAbility?.Invoke();
             }
         }
 
         private void OnMoveCanceled(InputAction.CallbackContext context)
         {
             _moveInput = Vector2.zero;
+            EndAbility?.Invoke();
         }
 
         public void FixedTick()
         {
             if (_mainRigidbody == null || !Enabled) return;
             
-            
             if (_moveInput.magnitude > 0.1f)
             {
+                UsingAbility?.Invoke();
                 Vector2 force = _moveInput.normalized * _moveForce;
                 _mainRigidbody.AddForce(force * _moreForge, ForceMode2D.Force);
                 

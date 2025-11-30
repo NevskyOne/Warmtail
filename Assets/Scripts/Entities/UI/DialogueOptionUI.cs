@@ -8,7 +8,6 @@ namespace Entities.UI
 {
     public class DialogueOptionUI : MonoBehaviour
     {
-        [SerializeField] private Image _optionDot;
         [Inject] private DialogueVisuals _dialogueVisuals;
         
         public void ChooseOption()
@@ -22,12 +21,5 @@ namespace Entities.UI
                 }
             }
         }
-
-        // public void HighlightOption(bool value)
-        // {
-        //     var color = _optionDot.color;
-        //     color.a = value ? 1 : 0.5f;
-        //     _optionDot.color = color;
-        // }
     }
 }

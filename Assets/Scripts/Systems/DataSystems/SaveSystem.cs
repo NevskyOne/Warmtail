@@ -104,7 +104,7 @@ namespace Systems.DataSystems
             {
                 _settingsContainer = container;
             }
-            if (!container.Blocks.TryGetValue(key, out var stored)) return data;
+            if (!_settingsContainer.Blocks.TryGetValue(key, out var stored)) return data;
             var intermediateJson = JsonConvert.SerializeObject(stored, _settings);
             var loaded = (T)JsonConvert.DeserializeObject(intermediateJson, typeof(T), _settings);
             return loaded ?? data;

@@ -1,12 +1,15 @@
+using System.Threading.Tasks;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 namespace Systems
 {
     public class ObjectSpawnSystem
     {
-        public static void Spawn(GameObject obj, Vector3 position = new())
+        public static async Task<Component> Spawn(Component obj, Vector3 position = new(), Transform parent = null, int delay = 0)
         {
-            Object.Instantiate(obj, position, Quaternion.identity);
+            await UniTask.Delay(delay);
+            return Object.Instantiate(obj, position, Quaternion.identity, parent);
         }
     }
 }

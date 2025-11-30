@@ -1,0 +1,1104 @@
+fileFormatVersion: 2
+guid: 10fdda4874498ff4292c99851bc4ae7d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7957499891351911088
+    second: ui warmtail_0
+  - first:
+      213: -2223812642962761714
+    second: ui warmtail_1
+  - first:
+      213: 9104797039839909059
+    second: ui warmtail_2
+  - first:
+      213: 8308585694560290287
+    second: ui warmtail_3
+  - first:
+      213: -6027029430637251411
+    second: ui warmtail_4
+  - first:
+      213: -4542598995147029677
+    second: ui warmtail_5
+  - first:
+      213: 5235503577689409103
+    second: ui warmtail_6
+  - first:
+      213: -2100185410578635831
+    second: ui warmtail_7
+  - first:
+      213: -2427881596067162897
+    second: ui warmtail_8
+  - first:
+      213: -3422382358654288852
+    second: ui warmtail_9
+  - first:
+      213: -5083435326283217134
+    second: ui warmtail_10
+  - first:
+      213: -4341461232066044364
+    second: ui warmtail_11
+  - first:
+      213: -7158450114780802050
+    second: ui warmtail_12
+  - first:
+      213: -2891818822067206690
+    second: ui warmtail_13
+  - first:
+      213: -5603429577665851956
+    second: ui warmtail_14
+  - first:
+      213: -6081340959675597293
+    second: ui warmtail_15
+  - first:
+      213: -5494072864418754581
+    second: ui warmtail_16
+  - first:
+      213: -7738729461754461498
+    second: ui warmtail_17
+  - first:
+      213: -6592425180748583881
+    second: ui warmtail_18
+  - first:
+      213: 8736660045820376382
+    second: ui warmtail_19
+  - first:
+      213: -7445193931813930056
+    second: ui warmtail_20
+  - first:
+      213: 5320054955424783743
+    second: ui warmtail_21
+  - first:
+      213: -5214183216297019944
+    second: ui warmtail_22
+  - first:
+      213: -2421762516624018479
+    second: ui warmtail_23
+  - first:
+      213: -2655232823935870210
+    second: ui warmtail_24
+  - first:
+      213: 8812459827855385524
+    second: ui warmtail_25
+  - first:
+      213: 6677390635995599051
+    second: ui warmtail_26
+  - first:
+      213: 5984097219026120801
+    second: ui warmtail_27
+  - first:
+      213: 6933754525855657224
+    second: ui warmtail_28
+  - first:
+      213: -1362092865135779956
+    second: ui warmtail_29
+  - first:
+      213: -5418467899516200139
+    second: ui warmtail_30
+  - first:
+      213: -4026155099428552384
+    second: ui warmtail_31
+  - first:
+      213: 3770219121548958121
+    second: ui warmtail_32
+  - first:
+      213: -7820781238884011467
+    second: ui warmtail_33
+  - first:
+      213: 3713528059167604036
+    second: ui warmtail_34
+  - first:
+      213: -2574858763452442479
+    second: ui warmtail_35
+  - first:
+      213: 6585114429451045594
+    second: ui warmtail_36
+  - first:
+      213: 1272383006672752983
+    second: ui warmtail_37
+  - first:
+      213: 2250612992464863655
+    second: ui warmtail_38
+  - first:
+      213: -3807663469253794963
+    second: ui warmtail_39
+  - first:
+      213: 1697634642176326065
+    second: ui warmtail_40
+  - first:
+      213: -4904304068825801779
+    second: ui warmtail_41
+  - first:
+      213: -3205485346215242923
+    second: ui warmtail_42
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 200
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ui warmtail_0
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 4001
+        width: 188
+        height: 183
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ba7d349df7be6e60800000000000000
+      internalID: 7957499891351911088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui warmtail_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2606
+        width: 1167
+        height: 1392
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 87, y: 92, z: 92, w: 112}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e089e29fe2e6321e0800000000000000
+      internalID: -2223812642962761714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui warmtail_2
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 3218
+        width: 171
+        height: 173
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c49faf1bacba5e70800000000000000
+      internalID: 9104797039839909059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui warmtail_3
+      rect:
+        serializedVersion: 2
+        x: 1363
+        y: 2606
+        width: 1160
+        height: 1392
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe5882e1ba60e4370800000000000000
+      internalID: 8308585694560290287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui warmtail_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1185
+        width: 1153
+        height: 1383
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da4ba085aa0bb5ca0800000000000000
+      internalID: -6027029430637251411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui warmtail_5
+      rect:
+        serializedVersion: 2
+        x: 1394
+        y: 2228
+        width: 581
+        height: 340
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3530739184275f0c0800000000000000
+      internalID: -4542598995147029677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui warmtail_6
+      rect:
+        serializedVersion: 2
+        x: 2123
+        y: 2452
+        width: 211
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 40, y: 29, z: 41, w: 29}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f46c678d3ce38a840800000000000000
+      internalID: 5235503577689409103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui warmtail_7
+      rect:
+        serializedVersion: 2
+        x: 2372
+        y: 2495
+        width: 77
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c3a0001f74aad2e0800000000000000
+      internalID: -2100185410578635831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui warmtail_8
+      rect:
+        serializedVersion: 2
+        x: 2487
+        y: 2428
+        width: 551
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 33, y: 34, z: 43, w: 38}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe455b54d8e6e4ed0800000000000000
+      internalID: -2427881596067162897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui warmtail_9
+      rect:
+        serializedVersion: 2
+        x: 1984
+        y: 2345
+        width: 101
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2cf8da90614180d0800000000000000
+      internalID: -3422382358654288852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui warmtail_10
+      rect:
+        serializedVersion: 2
+        x: 3083
+        y: 2280
+        width: 472
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 73, y: 52, z: 68, w: 57}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 217873201820479b0800000000000000
+      internalID: -5083435326283217134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui warmtail_11
+      rect:
+        serializedVersion: 2
+        x: 1185
+        y: 1794
+        width: 171
+        height: 173
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43ed290f20800c3c0800000000000000
+      internalID: -4341461232066044364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui warmtail_12
+      rect:
+        serializedVersion: 2
+        x: 1397
+        y: 1842
+        width: 2249
+        height: 388
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 92, y: 76, z: 91, w: 64}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef3d2263c8318ac90800000000000000
+      internalID: -7158450114780802050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui warmtail_13
+      rect:
+        serializedVersion: 2
+        x: 1397
+        y: 1613
+        width: 236
+        height: 229
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed545e35a123ed7d0800000000000000
+      internalID: -2891818822067206690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui warmtail_14
+      rect:
+        serializedVersion: 2
+        x: 1675
+        y: 1638
+        width: 907
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 91, y: 32, z: 77, w: 32}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccd4f43cc7e9c32b0800000000000000
+      internalID: -5603429577665851956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui warmtail_15
+      rect:
+        serializedVersion: 2
+        x: 3181
+        y: 1545
+        width: 276
+        height: 273
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31eb0841e9cba9ba0800000000000000
+      internalID: -6081340959675597293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui warmtail_16
+      rect:
+        serializedVersion: 2
+        x: 1394
+        y: 1187
+        width: 798
+        height: 410
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bef0532b6d121c3b0800000000000000
+      internalID: -5494072864418754581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui warmtail_17
+      rect:
+        serializedVersion: 2
+        x: 2249
+        y: 1269
+        width: 283
+        height: 278
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c2864b5e828a9490800000000000000
+      internalID: -7738729461754461498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui warmtail_18
+      rect:
+        serializedVersion: 2
+        x: 2619
+        y: 1316
+        width: 201
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73ce32de9300384a0800000000000000
+      internalID: -6592425180748583881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui warmtail_19
+      rect:
+        serializedVersion: 2
+        x: 2818
+        y: 1514
+        width: 90
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e35b87ad50ade3970800000000000000
+      internalID: 8736660045820376382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui warmtail_20
+      rect:
+        serializedVersion: 2
+        x: 2868
+        y: 1336
+        width: 145
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bb365ab09b5da890800000000000000
+      internalID: -7445193931813930056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui warmtail_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1057
+        width: 101
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7d96ab8bc1a4d940800000000000000
+      internalID: 5320054955424783743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui warmtail_22
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1062
+        width: 78
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d5ffce9dff73a7b0800000000000000
+      internalID: -5214183216297019944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui warmtail_23
+      rect:
+        serializedVersion: 2
+        x: 633
+        y: 1061
+        width: 88
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d3f44a72db246ed0800000000000000
+      internalID: -2421762516624018479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui warmtail_24
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 1060
+        width: 92
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efa585d80d7b62bd0800000000000000
+      internalID: -2655232823935870210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui warmtail_25
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 1091
+        width: 58
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b368b4e5852c4a70800000000000000
+      internalID: 8812459827855385524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui warmtail_26
+      rect:
+        serializedVersion: 2
+        x: 1319
+        y: 1087
+        width: 80
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc09905b76bdaac50800000000000000
+      internalID: 6677390635995599051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui warmtail_27
+      rect:
+        serializedVersion: 2
+        x: 1484
+        y: 761
+        width: 798
+        height: 410
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 160747137b8cb0350800000000000000
+      internalID: 5984097219026120801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui warmtail_28
+      rect:
+        serializedVersion: 2
+        x: 2447
+        y: 845
+        width: 611
+        height: 344
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80d22613105a93060800000000000000
+      internalID: 6933754525855657224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui warmtail_33
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 270
+        width: 275
+        height: 269
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 532774646e0077390800000000000000
+      internalID: -7820781238884011467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui warmtail_35
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 446
+        width: 930
+        height: 92
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1989d99c893444cd0800000000000000
+      internalID: -2574858763452442479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui warmtail_37
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 486
+        width: 967
+        height: 234
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75119fa6a9968a110800000000000000
+      internalID: 1272383006672752983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui warmtail_38
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 0
+        width: 796
+        height: 409
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a14fb6a798cb3f10800000000000000
+      internalID: 2250612992464863655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui warmtail_39
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 178
+        width: 224
+        height: 231
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6365e2af36782bc0800000000000000
+      internalID: -3807663469253794963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui warmtail_40
+      rect:
+        serializedVersion: 2
+        x: 1458
+        y: 175
+        width: 238
+        height: 234
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b9315d66b53f8710800000000000000
+      internalID: 1697634642176326065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui warmtail_41
+      rect:
+        serializedVersion: 2
+        x: 1734
+        y: 150
+        width: 244
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcb922bfe6960fbb0800000000000000
+      internalID: -4904304068825801779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui warmtail_42
+      rect:
+        serializedVersion: 2
+        x: 2016
+        y: 150
+        width: 257
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 553de1e9f04d383d0800000000000000
+      internalID: -3205485346215242923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 42b8842eb23b9de448f11afd60a5ae61
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      ui warmtail_0: 7957499891351911088
+      ui warmtail_1: -2223812642962761714
+      ui warmtail_10: -5083435326283217134
+      ui warmtail_11: -4341461232066044364
+      ui warmtail_12: -7158450114780802050
+      ui warmtail_13: -2891818822067206690
+      ui warmtail_14: -5603429577665851956
+      ui warmtail_15: -6081340959675597293
+      ui warmtail_16: -5494072864418754581
+      ui warmtail_17: -7738729461754461498
+      ui warmtail_18: -6592425180748583881
+      ui warmtail_19: 8736660045820376382
+      ui warmtail_2: 9104797039839909059
+      ui warmtail_20: -7445193931813930056
+      ui warmtail_21: 5320054955424783743
+      ui warmtail_22: -5214183216297019944
+      ui warmtail_23: -2421762516624018479
+      ui warmtail_24: -2655232823935870210
+      ui warmtail_25: 8812459827855385524
+      ui warmtail_26: 6677390635995599051
+      ui warmtail_27: 5984097219026120801
+      ui warmtail_28: 6933754525855657224
+      ui warmtail_29: -1362092865135779956
+      ui warmtail_3: 8308585694560290287
+      ui warmtail_30: -5418467899516200139
+      ui warmtail_31: -4026155099428552384
+      ui warmtail_32: 3770219121548958121
+      ui warmtail_33: -7820781238884011467
+      ui warmtail_34: 3713528059167604036
+      ui warmtail_35: -2574858763452442479
+      ui warmtail_36: 6585114429451045594
+      ui warmtail_37: 1272383006672752983
+      ui warmtail_38: 2250612992464863655
+      ui warmtail_39: -3807663469253794963
+      ui warmtail_4: -6027029430637251411
+      ui warmtail_40: 1697634642176326065
+      ui warmtail_41: -4904304068825801779
+      ui warmtail_42: -3205485346215242923
+      ui warmtail_43: -466592185
+      ui warmtail_5: -4542598995147029677
+      ui warmtail_6: 5235503577689409103
+      ui warmtail_7: -2100185410578635831
+      ui warmtail_8: -2427881596067162897
+      ui warmtail_9: -3422382358654288852
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

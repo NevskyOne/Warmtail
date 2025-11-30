@@ -36,7 +36,7 @@ namespace Entities.UI
         [SerializeField, LabelText("Options Group")]
         private Transform _boxOptionsGroup;
         [SerializeField, LabelText("Option Prefab")]
-        private TMP_Text _boxOptionsPrefab;
+        private DialogueOptionUI _boxOptionsPrefab;
         
         private DiContainer _diContainer;
         private DialogueSystem _system;
@@ -77,13 +77,11 @@ namespace Entities.UI
 
         public void ShowVisuals()
         {
-            _boxObject.SetActive(true);
             _uiStateSystem.SwitchCurrentStateAsync(UIState.Dialogue);
         }
         
         public void HideVisuals()
         {
-            _boxObject.SetActive(false);
             _uiStateSystem.SwitchCurrentStateAsync(UIState.Normal);
         }
         
@@ -125,8 +123,8 @@ namespace Entities.UI
                 var text = _localizationManager.GetStringFromKey(
                     "player_" + _system.DialogueGraph.DialogueId + "_" + choiceInd);
                 var boxObj = await InstantiateAsync(_boxOptionsPrefab, _boxOptionsGroup);
-                boxObj[0].text = text;
-                _diContainer.Inject(boxObj[0].gameObject.GetComponent<DialogueOptionUI>());
+                boxObj[0].GetComponentInChildren<TMP_Text>().text = text;
+                _diContainer.Inject(boxObj[0]);
             }
             _boxText.gameObject.SetActive(false);
             _boxName.gameObject.SetActive(false);

@@ -1,0 +1,197 @@
+{
+  "m_SGVersion": 4,
+  "m_Type": "UnityEditor.ShaderGraph.GraphData",
+  "m_ObjectId": "GraphData",
+  "m_Properties": [
+    {
+      "m_Id": "prop_maintex"
+    },
+    {
+      "m_Id": "prop_threshold"
+    },
+    {
+      "m_Id": "prop_outlinewidth"
+    },
+    {
+      "m_Id": "prop_outlinesharp"
+    }
+  ],
+  "m_Keywords": [],
+  "m_Dropdowns": [],
+  "m_CategoryData": [
+    {
+      "m_Id": "cat_main"
+    }
+  ],
+  "m_Nodes": [
+    {
+      "m_Id": "node_sample_sprite"
+    },
+    {
+      "m_Id": "node_uv"
+    },
+    {
+      "m_Id": "node_screenpos"
+    },
+    {
+      "m_Id": "node_split_screen"
+    },
+    {
+      "m_Id": "node_split_w"
+    },
+    {
+      "m_Id": "node_divide_uv"
+    },
+    {
+      "m_Id": "node_screenparams"
+    },
+    {
+      "m_Id": "node_reciprocal"
+    },
+    {
+      "m_Id": "node_outline_width"
+    },
+    {
+      "m_Id": "node_pixel_offset"
+    },
+    {
+      "m_Id": "node_scene_center"
+    },
+    {
+      "m_Id": "node_luma_center"
+    },
+    {
+      "m_Id": "node_threshold"
+    },
+    {
+      "m_Id": "node_is_behind_center"
+    },
+    {
+      "m_Id": "node_offset_x"
+    },
+    {
+      "m_Id": "node_offset_y"
+    },
+    {
+      "m_Id": "node_left_uv"
+    },
+    {
+      "m_Id": "node_right_uv"
+    },
+    {
+      "m_Id": "node_up_uv"
+    },
+    {
+      "m_Id": "node_down_uv"
+    },
+    {
+      "m_Id": "node_scene_left"
+    },
+    {
+      "m_Id": "node_scene_right"
+    },
+    {
+      "m_Id": "node_scene_up"
+    },
+    {
+      "m_Id": "node_scene_down"
+    },
+    {
+      "m_Id": "node_luma_l"
+    },
+    {
+      "m_Id": "node_luma_r"
+    },
+    {
+      "m_Id": "node_luma_u"
+    },
+    {
+      "m_Id": "node_luma_d"
+    },
+    {
+      "m_Id": "node_step_l"
+    },
+    {
+      "m_Id": "node_step_r"
+    },
+    {
+      "m_Id": "node_step_u"
+    },
+    {
+      "m_Id": "node_step_d"
+    },
+    {
+      "m_Id": "node_sum1"
+    },
+    {
+      "m_Id": "node_sum2"
+    },
+    {
+      "m_Id": "node_total_sum"
+    },
+    {
+      "m_Id": "node_avg_neighbor"
+    },
+    {
+      "m_Id": "node_diff"
+    },
+    {
+      "m_Id": "node_abs"
+    },
+    {
+      "m_Id": "node_outline_sharp"
+    },
+    {
+      "m_Id": "node_is_outline"
+    },
+    {
+      "m_Id": "node_one_minus"
+    },
+    {
+      "m_Id": "node_final_mask"
+    },
+    {
+      "m_Id": "node_saturate"
+    },
+    {
+      "m_Id": "node_white"
+    },
+    {
+      "m_Id": "node_final_color"
+    },
+    {
+      "m_Id": "node_sprite_alpha"
+    }
+  ],
+  "m_GroupDatas": [],
+  "m_StickyNoteDatas": [],
+  "m_Edges": [
+    ["node_sample_sprite",0,"node_final_color",0],
+    ["node_sprite_alpha",0,"block_alpha",0],
+    ["node_final_color",0,"block_basecolor",0],
+    ["node_final_color",0,"block_emission",0]
+  ],
+  "m_VertexContext": {
+    "m_Position": { "x": -1000, "y": 0 },
+    "m_Blocks": []
+  },
+  "m_FragmentContext": {
+    "m_Position": { "x": -800, "y": 0 },
+    "m_Blocks": [
+      { "m_Id": "block_basecolor" },
+      { "m_Id": "block_alpha" },
+      { "m_Id": "block_emission" }
+    ]
+  },
+  "m_PreviewData": {
+    "serializedMesh": { "m_SerializedMesh": "{\"mesh\":{\"instanceID\":0}}", "m_Guid": "" },
+    "preventRotation": false
+  },
+  "m_Path": "Shader Graphs",
+  "m_GraphPrecision": 1,
+  "m_PreviewMode": 2,
+  "m_OutputNode": { "m_Id": "" },
+  "m_ActiveTargets": [
+    { "m_Id": "target_urp" }
+  ]
+}
