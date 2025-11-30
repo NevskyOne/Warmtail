@@ -963,7 +963,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entities.NPC.SpeakableCharacter
   <Graph>k__BackingField: {fileID: 0}
-  _actions: []
+  <Actions>k__BackingField: []
   _maxWarmPercent: 0
   _warmAction:
     m_PersistentCalls:
@@ -1019,6 +1019,7 @@ Transform:
   - {fileID: 1032083276}
   - {fileID: 278058311}
   - {fileID: 610199109}
+  - {fileID: 419998683}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &183290943
@@ -1314,61 +1315,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &244841410
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 244841411}
-  - component: {fileID: 244841412}
-  m_Layer: 0
-  m_Name: SwarmSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &244841411
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 244841410}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1204636205}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &244841412
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 244841410}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f1624ecd05a7a541bf9f354cb23ed25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Systems.Swarm.SwarmController
-  _rb: {fileID: 0}
-  _speed: 8
-  _rotationSpeed: 10
-  _boidPrefab: {fileID: 0}
-  _count: 15
-  _spawnRadius: 2
-  CohesionWeight: 1
-  AlignmentWeight: 1
-  SeparationWeight: 1.5
-  TargetWeight: 2
-  NeighborRadius: 3
 --- !u!1 &266287986
 GameObject:
   m_ObjectHideFlags: 0
@@ -1983,6 +1929,54 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.InputActionReference
   m_Asset: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_ActionId: dad70c86-b58c-4b17-88ad-f5e53adf419e
+--- !u!1 &419998682
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 419998683}
+  - component: {fileID: 419998684}
+  m_Layer: 0
+  m_Name: Mono
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &419998683
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419998682}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 136286261}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &419998684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419998682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 192ec55c21c44be38e673e34c56a3ea8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Entities.UI.MonologueVisuals
+  _textFadeSpeed: 0
+  _textPrefab: {fileID: 0}
+  _textBounds: {fileID: 0}
+  _startPrefab: {fileID: 0}
 --- !u!1 &424214784
 GameObject:
   m_ObjectHideFlags: 0
@@ -4166,15 +4160,18 @@ MonoBehaviour:
   - Trigger:
       rid: 5483686088236597324
     Events:
-    - rid: 5483686088236597327
+    - m_PersistentCalls:
+        m_Calls: []
   - Trigger:
       rid: 5483686088236597325
     Events:
-    - rid: 5483686088236597328
+    - m_PersistentCalls:
+        m_Calls: []
   - Trigger:
       rid: 5483686088236597326
     Events:
-    - rid: 5483686088236597329
+    - m_PersistentCalls:
+        m_Calls: []
   references:
     version: 2
     RefIds:
@@ -4190,18 +4187,6 @@ MonoBehaviour:
       type: {class: KeyBindTrigger, ns: Systems.Tutorial, asm: Assembly-CSharp}
       data:
         _actionRef: {fileID: 1150856381960421449, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
-    - rid: 5483686088236597327
-      type: {class: ActivateObjEvent, ns: Systems.Tutorial, asm: Assembly-CSharp}
-      data:
-        _object: {fileID: 1824459166}
-    - rid: 5483686088236597328
-      type: {class: ActivateObjEvent, ns: Systems.Tutorial, asm: Assembly-CSharp}
-      data:
-        _object: {fileID: 130524573}
-    - rid: 5483686088236597329
-      type: {class: ActivateObjEvent, ns: Systems.Tutorial, asm: Assembly-CSharp}
-      data:
-        _object: {fileID: 2053861123}
 --- !u!1 &1032083275
 GameObject:
   m_ObjectHideFlags: 0
@@ -5101,7 +5086,6 @@ Transform:
   - {fileID: 1836109678}
   - {fileID: 952794402}
   - {fileID: 1015346615}
-  - {fileID: 244841411}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1236217073
@@ -7576,7 +7560,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entities.NPC.SpeakableCharacter
   <Graph>k__BackingField: {fileID: 0}
-  _actions: []
+  <Actions>k__BackingField: []
   _maxWarmPercent: 0
   _warmAction:
     m_PersistentCalls:
@@ -9172,7 +9156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entities.Core.NormalSceneInstaller
   _dialogueVisuals: {fileID: 952794403}
-  _monologueVisuals: {fileID: 0}
+  _monologueVisuals: {fileID: 419998684}
   _player: {fileID: 1178510860}
   _playerInput: {fileID: 1178510861}
   _playerConfig: {fileID: 11400000, guid: a7bbb2e1e9a601347a5aaf0c0486dfdd, type: 2}
@@ -9180,7 +9164,7 @@ MonoBehaviour:
   _uiStateSystem: {fileID: 88475865}
   _cam: {fileID: 400389652}
   _surfacingSystem: {fileID: 1178510863}
-  _swarmController: {fileID: 244841412}
+  _swarmController: {fileID: 5216369137602421686, guid: 7fc97b894b8de4f41ad24e0be0020e7e, type: 3}
 --- !u!1 &2053861123
 GameObject:
   m_ObjectHideFlags: 0
@@ -9211,7 +9195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entities.NPC.SpeakableCharacter
   <Graph>k__BackingField: {fileID: 0}
-  _actions: []
+  <Actions>k__BackingField: []
   _maxWarmPercent: 0
   _warmAction:
     m_PersistentCalls:
