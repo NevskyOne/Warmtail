@@ -12,7 +12,7 @@ namespace Systems
         public static Action OnDiscardedRecources = delegate {};
         public static Action OnLodedRecources = delegate {};
 
-        void Awake()
+        void Start()
         {
             CheckTime();
         }

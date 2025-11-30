@@ -15,4 +15,4 @@ MonoBehaviour:
   Id: 7
   ItemPref: {fileID: 1808789399308577536, guid: 9487aab9a6b3f944281c2cdb0a626478, type: 3}
   Sprite: {fileID: 21300000, guid: f2bb2c25c41a4874eadd5b8f21510c57, type: 3}
-  Price: 10
+  Price: 100
