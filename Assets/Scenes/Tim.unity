@@ -502,8 +502,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 20
+    m_LowerAngle: -5
+    m_UpperAngle: 40
 --- !u!50 &56990177
 Rigidbody2D:
   serializedVersion: 5
@@ -516,7 +516,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.5
+  m_Mass: 0.25
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 0
@@ -531,6 +531,43 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!70 &56990179
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 56990174}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 6, y: 0}
+  m_Size: {x: 10, y: 2}
+  m_Direction: 1
 --- !u!1 &59681078
 GameObject:
   m_ObjectHideFlags: 0
@@ -962,12 +999,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 820f06f3e9014cf78d5f95c118eb3dd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entities.NPC.SpeakableCharacter
+  _id:
+    Value: dbb2b7eb-3416-41ee-ab64-b44c823a46b3
   <Graph>k__BackingField: {fileID: 0}
   <Actions>k__BackingField: []
   _maxWarmPercent: 0
   _warmAction:
     m_PersistentCalls:
       m_Calls: []
+  <CanWarm>k__BackingField: 1
 --- !u!4 &130524575
 Transform:
   m_ObjectHideFlags: 0
@@ -1453,6 +1493,7 @@ MonoBehaviour:
   _newSaveButton: {fileID: 59681079}
   _savePrefab: {fileID: 303016832174792484, guid: 5a4b43d2cfd7a3c4bab52495bbf17e10, type: 3}
   _saveParent: {fileID: 742353914}
+  _globalData: {fileID: 0}
 --- !u!1 &282297972
 GameObject:
   m_ObjectHideFlags: 0
@@ -2177,8 +2218,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -20
-    m_UpperAngle: 30
+    m_LowerAngle: -60
+    m_UpperAngle: -10
 --- !u!50 &499574521
 Rigidbody2D:
   serializedVersion: 5
@@ -2191,7 +2232,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.5
+  m_Mass: 0.25
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 0
@@ -2206,6 +2247,43 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!70 &499574523
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 499574518}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 4, y: 0}
+  m_Size: {x: 7, y: 2.5}
+  m_Direction: 1
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -2405,8 +2483,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 20
+    m_LowerAngle: 10
+    m_UpperAngle: 60
 --- !u!50 &556273066
 Rigidbody2D:
   serializedVersion: 5
@@ -2419,7 +2497,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.5
+  m_Mass: 0.25
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 0
@@ -2434,6 +2512,43 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!70 &556273068
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 556273063}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 4, y: 0}
+  m_Size: {x: 7, y: 2.5}
+  m_Direction: 1
 --- !u!1 &556516299 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -817428608987978690, guid: 90ede23b5da17ce41b470366bfe5a90c, type: 3}
@@ -3077,8 +3192,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -20
-    m_UpperAngle: 20
+    m_LowerAngle: -10
+    m_UpperAngle: 10
 --- !u!50 &738219047
 Rigidbody2D:
   serializedVersion: 5
@@ -3324,8 +3439,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -40
-    m_UpperAngle: 10
+    m_LowerAngle: -15
+    m_UpperAngle: 15
 --- !u!50 &829097092
 Rigidbody2D:
   serializedVersion: 5
@@ -3543,8 +3658,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -20
-    m_UpperAngle: 30
+    m_LowerAngle: -50
+    m_UpperAngle: 5
 --- !u!50 &843198988
 Rigidbody2D:
   serializedVersion: 5
@@ -3557,7 +3672,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.5
+  m_Mass: 0.25
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 0
@@ -3572,6 +3687,43 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!70 &843198990
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843198985}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 8, y: 0}
+  m_Size: {x: 10, y: 2}
+  m_Direction: 1
 --- !u!1 &894625699 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7191506935049338494, guid: 90ede23b5da17ce41b470366bfe5a90c, type: 3}
@@ -4580,7 +4732,7 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: 50
+    m_LowerAngle: -20
     m_UpperAngle: -60
 --- !u!50 &1118234064
 Rigidbody2D:
@@ -5321,8 +5473,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -20
-    m_UpperAngle: 20
+    m_LowerAngle: -10
+    m_UpperAngle: 10
 --- !u!50 &1310833919
 Rigidbody2D:
   serializedVersion: 5
@@ -5416,8 +5568,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 20
+    m_LowerAngle: -5
+    m_UpperAngle: 50
 --- !u!50 &1319284795
 Rigidbody2D:
   serializedVersion: 5
@@ -5430,7 +5582,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.5
+  m_Mass: 0.25
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 0
@@ -5445,6 +5597,43 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!70 &1319284797
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1319284792}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 8, y: 0}
+  m_Size: {x: 10, y: 2}
+  m_Direction: 1
 --- !u!114 &1352239477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5564,8 +5753,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -20
-    m_UpperAngle: 30
+    m_LowerAngle: -40
+    m_UpperAngle: 5
 --- !u!50 &1399216378
 Rigidbody2D:
   serializedVersion: 5
@@ -5578,7 +5767,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.5
+  m_Mass: 0.25
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 0
@@ -5593,6 +5782,43 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!70 &1399216380
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399216375}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 6, y: 0}
+  m_Size: {x: 10, y: 2}
+  m_Direction: 1
 --- !u!1 &1414972078 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 549015216635684306, guid: 90ede23b5da17ce41b470366bfe5a90c, type: 3}
@@ -5622,8 +5848,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -40
-    m_UpperAngle: 10
+    m_LowerAngle: -15
+    m_UpperAngle: 15
 --- !u!50 &1414972081
 Rigidbody2D:
   serializedVersion: 5
@@ -5806,7 +6032,7 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -50
+    m_LowerAngle: 20
     m_UpperAngle: 60
 --- !u!50 &1462880794
 Rigidbody2D:
@@ -6706,8 +6932,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -20
-    m_UpperAngle: 20
+    m_LowerAngle: -5
+    m_UpperAngle: 5
 --- !u!50 &1559539635
 Rigidbody2D:
   serializedVersion: 5
@@ -7559,12 +7785,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 820f06f3e9014cf78d5f95c118eb3dd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entities.NPC.SpeakableCharacter
+  _id:
+    Value: 085a15b5-5b22-4446-a7a0-dec15d7b0205
   <Graph>k__BackingField: {fileID: 0}
   <Actions>k__BackingField: []
   _maxWarmPercent: 0
   _warmAction:
     m_PersistentCalls:
       m_Calls: []
+  <CanWarm>k__BackingField: 1
 --- !u!4 &1824459168
 Transform:
   m_ObjectHideFlags: 0
@@ -7913,19 +8142,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7221020487405985688, guid: 90ede23b5da17ce41b470366bfe5a90c, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.8660254
+      value: 0.8678405
+      objectReference: {fileID: 0}
+    - target: {fileID: -7221020487405985688, guid: 90ede23b5da17ce41b470366bfe5a90c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -7221020487405985688, guid: 90ede23b5da17ce41b470366bfe5a90c, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -7221020487405985688, guid: 90ede23b5da17ce41b470366bfe5a90c, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.5
+      value: 0.49684298
       objectReference: {fileID: 0}
     - target: {fileID: -7221020487405985688, guid: 90ede23b5da17ce41b470366bfe5a90c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 60
+      value: 59.583
       objectReference: {fileID: 0}
     - target: {fileID: -7198327726075184368, guid: 90ede23b5da17ce41b470366bfe5a90c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7969,19 +8202,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2978984936461578496, guid: 90ede23b5da17ce41b470366bfe5a90c, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.49999994
+      value: 0.49948204
+      objectReference: {fileID: 0}
+    - target: {fileID: -2978984936461578496, guid: 90ede23b5da17ce41b470366bfe5a90c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -2978984936461578496, guid: 90ede23b5da17ce41b470366bfe5a90c, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -2978984936461578496, guid: 90ede23b5da17ce41b470366bfe5a90c, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.86602545
+      value: -0.8663243
       objectReference: {fileID: 0}
     - target: {fileID: -2978984936461578496, guid: 90ede23b5da17ce41b470366bfe5a90c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -120
+      value: -120.069
       objectReference: {fileID: 0}
     - target: {fileID: 1770433945857213737, guid: 90ede23b5da17ce41b470366bfe5a90c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8065,27 +8302,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6736957807164001479, guid: 90ede23b5da17ce41b470366bfe5a90c, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 0.704246
+      objectReference: {fileID: 0}
+    - target: {fileID: 6736957807164001479, guid: 90ede23b5da17ce41b470366bfe5a90c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6736957807164001479, guid: 90ede23b5da17ce41b470366bfe5a90c, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6736957807164001479, guid: 90ede23b5da17ce41b470366bfe5a90c, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.7071068
+      value: -0.7099561
       objectReference: {fileID: 0}
     - target: {fileID: 6736957807164001479, guid: 90ede23b5da17ce41b470366bfe5a90c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -90
+      value: -90.463
       objectReference: {fileID: 0}
     - target: {fileID: 8648882755762834919, guid: 90ede23b5da17ce41b470366bfe5a90c, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 0.70710677
+      objectReference: {fileID: 0}
+    - target: {fileID: 8648882755762834919, guid: 90ede23b5da17ce41b470366bfe5a90c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8648882755762834919, guid: 90ede23b5da17ce41b470366bfe5a90c, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8648882755762834919, guid: 90ede23b5da17ce41b470366bfe5a90c, type: 3}
       propertyPath: m_LocalRotation.z
@@ -8123,36 +8368,54 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3297364353584691495, guid: 90ede23b5da17ce41b470366bfe5a90c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 499574520}
+    - targetCorrespondingSourceObject: {fileID: 3297364353584691495, guid: 90ede23b5da17ce41b470366bfe5a90c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 499574523}
     - targetCorrespondingSourceObject: {fileID: 6181300385887193387, guid: 90ede23b5da17ce41b470366bfe5a90c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 843198988}
     - targetCorrespondingSourceObject: {fileID: 6181300385887193387, guid: 90ede23b5da17ce41b470366bfe5a90c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 843198987}
+    - targetCorrespondingSourceObject: {fileID: 6181300385887193387, guid: 90ede23b5da17ce41b470366bfe5a90c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 843198990}
     - targetCorrespondingSourceObject: {fileID: -2023297525037426117, guid: 90ede23b5da17ce41b470366bfe5a90c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1399216378}
     - targetCorrespondingSourceObject: {fileID: -2023297525037426117, guid: 90ede23b5da17ce41b470366bfe5a90c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1399216377}
+    - targetCorrespondingSourceObject: {fileID: -2023297525037426117, guid: 90ede23b5da17ce41b470366bfe5a90c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1399216380}
     - targetCorrespondingSourceObject: {fileID: -616466575251373095, guid: 90ede23b5da17ce41b470366bfe5a90c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1319284795}
     - targetCorrespondingSourceObject: {fileID: -616466575251373095, guid: 90ede23b5da17ce41b470366bfe5a90c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1319284794}
+    - targetCorrespondingSourceObject: {fileID: -616466575251373095, guid: 90ede23b5da17ce41b470366bfe5a90c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1319284797}
     - targetCorrespondingSourceObject: {fileID: 59259804675962326, guid: 90ede23b5da17ce41b470366bfe5a90c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 56990177}
     - targetCorrespondingSourceObject: {fileID: 59259804675962326, guid: 90ede23b5da17ce41b470366bfe5a90c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 56990176}
+    - targetCorrespondingSourceObject: {fileID: 59259804675962326, guid: 90ede23b5da17ce41b470366bfe5a90c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 56990179}
     - targetCorrespondingSourceObject: {fileID: -3346276223636773435, guid: 90ede23b5da17ce41b470366bfe5a90c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 556273066}
     - targetCorrespondingSourceObject: {fileID: -3346276223636773435, guid: 90ede23b5da17ce41b470366bfe5a90c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 556273065}
+    - targetCorrespondingSourceObject: {fileID: -3346276223636773435, guid: 90ede23b5da17ce41b470366bfe5a90c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 556273068}
     - targetCorrespondingSourceObject: {fileID: 3517970586878736033, guid: 90ede23b5da17ce41b470366bfe5a90c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1482207286}
@@ -9194,12 +9457,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 820f06f3e9014cf78d5f95c118eb3dd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entities.NPC.SpeakableCharacter
+  _id:
+    Value: 827162c4-a5ba-41bd-beb5-250cbd58a370
   <Graph>k__BackingField: {fileID: 0}
   <Actions>k__BackingField: []
   _maxWarmPercent: 0
   _warmAction:
     m_PersistentCalls:
       m_Calls: []
+  <CanWarm>k__BackingField: 1
 --- !u!4 &2053861125
 Transform:
   m_ObjectHideFlags: 0
@@ -9648,6 +9914,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8dcf5c2d8c28f344b7bd60f06b243f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Star
+  _id:
+    Value: af4bcbf0-5961-4430-a939-e18bad6b3e1b
 --- !u!1 &2105043590
 GameObject:
   m_ObjectHideFlags: 0
