@@ -47,6 +47,9 @@ namespace Entities.Core
             Container.Bind<UIStateSystem>().FromInstance(_uiStateSystem).AsSingle();
             Container.Bind<CinemachineCamera>().FromInstance(_cam).AsSingle();
             
+            Container.Inject(new KeysDebug()); 
+            Container.Inject(new WarmthSystem());
+            
             Container.Bind<List<IAbility>>()
                 .FromInstance(_playerConfig.Abilities)
                 .AsSingle();
@@ -54,7 +57,7 @@ namespace Entities.Core
             var extendedAbilities = _playerConfig.Abilities
                 .OfType<IAbilityExtended>()
                 .ToList();
-
+            
             Container.Bind<List<IAbilityExtended>>()
                 .WithId("PlayerAbilities")
                 .FromInstance(extendedAbilities)

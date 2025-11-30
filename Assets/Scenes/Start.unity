@@ -1486,6 +1486,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4716983360389861342, guid: f4daa986b08a5854cbac23fa7ed3addc, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 22.93695
+      objectReference: {fileID: 0}
     - target: {fileID: 5021421450971537281, guid: f4daa986b08a5854cbac23fa7ed3addc, type: 3}
       propertyPath: m_Name
       value: Saves
@@ -2670,7 +2674,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5c02ba9aed5ea7e42a7abc8e9b8d9573, type: 2}
+  - {fileID: 2100000, guid: dfa7fedbfa71d044da8f7372a0eef6f9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2692,11 +2696,11 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: -5830527214089153635, guid: f6802a40c74296c4ab14d0c502a3c7d0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 2
+  m_DrawMode: 0
   m_Size: {x: 2, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
@@ -2712,8 +2716,8 @@ Transform:
   m_GameObject: {fileID: 1773977401}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.44059, y: -5.76082, z: 0}
-  m_LocalScale: {x: 20, y: 20, z: 20}
+  m_LocalPosition: {x: 113.5, y: -24.8, z: 0}
+  m_LocalScale: {x: 40, y: 40, z: 20}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
