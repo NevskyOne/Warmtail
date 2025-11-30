@@ -12,9 +12,9 @@ namespace Entities.NPC
 {
     public class NpcSpawnerManager : MonoBehaviour
     {
-        public SerializedDictionary<List<GameObject>, List<Vector2>> NpcSpawner;
+        public SerializedDictionary<List<GameObject>, List<Vector3>> NpcSpawner;
         [Inject] private GlobalData _globalData;
-        [SerializeField] private Transform parentNpc;
+        [SerializeField] private Transform[] parentNpc;
 
         private void Awake()
         {
@@ -32,8 +32,10 @@ namespace Entities.NPC
         {
             foreach (var auto in _globalData.Get<NpcSpawnData>().NpcSpawnerData)
             {
-                Vector2 pos = NpcSpawner.ElementAt(auto.Key).Value[auto.Value[1]];
-                Instantiate(NpcSpawner.ElementAt(auto.Key).Key[auto.Value[0]], pos, Quaternion.identity, parentNpc);
+                Vector3 pos = NpcSpawner.ElementAt(auto.Key).Value[auto.Value[1]];
+                int posZ = (int)Math.Round(pos.z);
+                pos.z = 0;
+                Instantiate(NpcSpawner.ElementAt(auto.Key).Key[auto.Value[0]], pos, Quaternion.identity, parentNpc[posZ]);
             }
         }
         private void DiscardNpc()
@@ -45,10 +47,12 @@ namespace Entities.NPC
                 {
                     int prefId = Rng.Range(0, NpcSpawner.ElementAt(i).Key.Count);
                     int posId = Rng.Range(0, NpcSpawner.ElementAt(i).Value.Count);
-                    Vector2 pos = NpcSpawner.ElementAt(i).Value[posId];
+                    Vector3 pos = NpcSpawner.ElementAt(i).Value[posId];
+                    int posZ = (int)Math.Round(pos.z);
+                    pos.z = 0;
 
                     data.NpcSpawnerData[i] = new(){prefId, posId};
-                    Instantiate(NpcSpawner.ElementAt(i).Key[prefId], pos, Quaternion.identity, parentNpc);
+                    Instantiate(NpcSpawner.ElementAt(i).Key[prefId], pos, Quaternion.identity, parentNpc[posZ]);
                 }
             });
         }
