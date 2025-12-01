@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using Data.Player;
 using EditorOnly;
 using Entities.PlayerScripts;
@@ -9,6 +11,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using Zenject;
 using Data;
+using Systems.Abilities;
 using Systems.Abilities.Concrete;
 using Systems.Environment;
 using Systems.Swarm;
@@ -30,7 +33,7 @@ namespace Entities.Core
         [SerializeField] private ShoppingManager _shoppingManager;
         [SerializeField] private SurfacingSystem _surfacingSystem;
         [SerializeField] private SwarmController _swarmController;
-        
+       
         public override void InstallBindings()
         {
             Container.Bind<SwarmController>().FromInstance(_swarmController).AsSingle();
@@ -52,13 +55,22 @@ namespace Entities.Core
             Container.Inject(new KeysDebug());
             Container.Inject(new WarmthSystem());
             
-            foreach (var ability in _playerConfig.Abilities)
-            {
-                Container.BindInterfacesAndSelfTo<IAbility>().FromInstance(ability).AsTransient();
-            }
+            Container.Bind<List<IAbility>>()
+                .FromInstance(_playerConfig.Abilities)
+                .AsSingle();
+            
+            var extendedAbilities = _playerConfig.Abilities
+                .OfType<IAbilityExtended>()
+                .ToList();
+            
+            Container.Bind<List<IAbilityExtended>>()
+                .WithId("PlayerAbilities")
+                .FromInstance(extendedAbilities)
+                .AsSingle();
+            
+            Container.BindInterfacesAndSelfTo<AbilitiesManager>().AsSingle();
+            
             Container.Bind<SceneLoader>().FromComponentInHierarchy().AsSingle();
         }
-
-        
     }
 }

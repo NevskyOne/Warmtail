@@ -1,5 +1,6 @@
 using System;
 using Interfaces;
+using UnityEngine;
 
 namespace Systems.Abilities
 {
@@ -9,6 +10,7 @@ namespace Systems.Abilities
         public Action StartAbility { get; set; }
         public Action UsingAbility { get; set; }
         public Action EndAbility { get; set; }
+        [field: SerializeReference] public IAbilityVisual Visual { get; set; }
         
         public Type AbilityType => this.GetType();
         public bool IsComboActive { get; set; }

@@ -38,24 +38,14 @@ namespace Systems
             {
                 data.CurrentWarmth = Mathf.Max(data.CurrentWarmth - value, 0);
             });
-
-            if (_increaseCts != null)
-            {
-                _increaseCts.Cancel();
-                _increaseCts.Dispose();
-                _increaseCts = null;
-                _isIncreasing = false;
-            }
-
-            if (_cooldownTimer == null)
-            {
-                _cooldownTimer = new ResettableTimer(CooldownSeconds, StartIncreaseIfNotRunning);
-                _cooldownTimer.Start();
-            }
-            else
-            {
-                _cooldownTimer.Reset(CooldownSeconds);
-            }
+            
+            _increaseCts?.Cancel();
+            _increaseCts?.Dispose();
+            _increaseCts = null;
+            _isIncreasing = false;
+            Debug.Log("decrease");
+            _cooldownTimer ??= new ResettableTimer(CooldownSeconds, StartIncreaseIfNotRunning);
+            _cooldownTimer.Start();
         }
 
         private void StartIncreaseIfNotRunning()
@@ -67,7 +57,7 @@ namespace Systems
             RunIncreaseAsync(_increaseCts.Token).Forget();
         }
 
-        private async UniTaskVoid RunIncreaseAsync(System.Threading.CancellationToken token)
+        private async UniTaskVoid RunIncreaseAsync(CancellationToken token)
         {
             try
             {
@@ -85,7 +75,7 @@ namespace Systems
                         var newVal = Mathf.Min(data.CurrentWarmth + WarmthIncreaseRate, max);
                         data.CurrentWarmth = newVal;
                     });
-
+                    Debug.Log("increase");
                     await UniTask.Delay(TimeSpan.FromSeconds(IncreaseIntervalSeconds), cancellationToken: token);
                 }
             }
@@ -99,6 +89,12 @@ namespace Systems
                     _increaseCts = null;
                 }
             }
+        }
+
+        public bool CheckWarmCost(int cost)
+        {
+            var current = _globalData.Get<RuntimePlayerData>().CurrentWarmth;
+            return current >= cost;
         }
     }
 }

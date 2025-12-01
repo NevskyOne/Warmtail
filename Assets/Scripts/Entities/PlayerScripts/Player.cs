@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Data;
 using Data.Player;
+using Entities.Sound;
 using Interfaces;
 using Systems;
 using Systems.DataSystems;
@@ -13,6 +14,7 @@ namespace Entities.PlayerScripts
     public class Player : MonoBehaviour
     {
         [field: SerializeReference] public Rigidbody2D Rigidbody { get; private set;}
+        [field: SerializeReference] public ObjectSfx ObjectSfx { get; private set;}
         private GlobalData _globalData;
         private PlayerConfig _config;
         private PlayerMovement _movement;
@@ -30,6 +32,13 @@ namespace Entities.PlayerScripts
                 container.Inject(ability);
                 if(ability is IDisposable disposable)
                     _disposables.Add(disposable);
+                
+                if (ability.Visual != null)
+                {
+                    container.Inject(ability.Visual);
+                    if (ability.Visual is IDisposable disposableVisual)
+                        _disposables.Add(disposableVisual);
+                }
             }
 
             _movement = (PlayerMovement)_config.Abilities[0];
@@ -65,6 +74,7 @@ namespace Entities.PlayerScripts
         {
             foreach (var disposable in _disposables)
             {
+                disposable.Dispose();
                 disposable.Dispose();
             }
         }

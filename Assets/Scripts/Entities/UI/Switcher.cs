@@ -11,8 +11,8 @@ namespace Entities.UI
     {
         [SerializeField] private LocalizedText _localizedText;
         [SerializeField] private List<string> _id = new();
-        [SerializeField] private Sprite _activeSprite;
-        [SerializeField] private Sprite _deActiveSprite;
+        [SerializeField] private Color _activeColor;
+        [SerializeField] private Color _deActiveColor;
         [SerializeField] private Transform _switchesParent;
         public UnityEvent<int> Event { get; set; } = new();
         public int CurrentValue { get; set; }
@@ -43,9 +43,9 @@ namespace Entities.UI
         
         public virtual void Switch(int value)
         {
-            _images[CurrentValue].sprite = _deActiveSprite;
+            _images[CurrentValue].color = _deActiveColor;
             CurrentValue = value;
-            _images[CurrentValue].sprite = _activeSprite;
+            _images[CurrentValue].color = _activeColor;
             _localizedText.SetNewKey(_id[value]);
         }
     }

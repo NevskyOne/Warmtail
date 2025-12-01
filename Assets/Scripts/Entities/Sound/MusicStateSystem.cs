@@ -89,6 +89,7 @@ namespace Entities.Sound
 
         private IEnumerator LoopNext(AudioSource source)
         {
+            if (!source.clip) yield break;
             yield return new WaitForSeconds(source.clip.length - source.time - _crossFadeTime);
             ChangeMusicStateAsync(_currentState);
         }

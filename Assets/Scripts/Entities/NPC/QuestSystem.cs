@@ -24,13 +24,14 @@ namespace Entities.NPC
         private readonly Dictionary<QuestData, int> _createdRequests = new();
         
         [Inject] private LocalizationManager _localization;
+        [Inject] private DiContainer _diContainer;
         
         public void StartQuest(QuestData data)
         {
             if (_createdQuests.ContainsKey(data)) return;
-            var newQuest = Instantiate(_questPrefab, _questParent);
-            newQuest.GetChild(0).GetComponent<TMP_Text>().text = _localization.GetStringFromKey("quest_header_" + data.Id);
-            newQuest.GetChild(1).GetComponent<TMP_Text>().text = _localization.GetStringFromKey("quest_desc_" + data.Id);
+            var newQuest = _diContainer.InstantiatePrefab(_questPrefab, _questParent).transform;
+            newQuest.GetChild(0).GetComponent<LocalizedText>().SetNewKey("quest_header_" + data.Id);
+            newQuest.GetChild(1).GetComponent<LocalizedText>().SetNewKey("quest_desc_" + data.Id);
             _createdQuests.Add(data, newQuest.gameObject);
 
             _createdMarks.Add(data, new());
@@ -78,6 +79,7 @@ namespace Entities.NPC
             {
                 if (_createdMarksInd[data].Contains(i)) continue;
                 var screenPos = _cam.WorldToScreenPoint(data.Targets[i]);
+                marks[i].LookAt(screenPos, Vector3.down);
                 if (screenPos.x > Screen.width - _offset.x)
                 {
                     screenPos.x = Screen.width - _offset.x;

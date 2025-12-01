@@ -151,7 +151,9 @@ MonoBehaviour:
         PlacedHouseItems: []
     - rid: 1601399661704249621
       type: {class: WorldData, ns: Data, asm: Assembly-CSharp}
-      data: 
+      data:
+        SavableObjects:
+          _serializedList: []
     - rid: 1601399754601005135
       type: {class: SettingsData, ns: Data, asm: Assembly-CSharp}
       data:

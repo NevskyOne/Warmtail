@@ -53,18 +53,16 @@ MonoBehaviour:
     _serializedList:
     - Key: 0
       Value:
-      - {fileID: 8300000, guid: b7004645c70c93e48a44a1200ecd8f3d, type: 3}
+      - {fileID: 0}
     - Key: 1
       Value:
-      - {fileID: 8300000, guid: 86e04dd9a7e49f849a9024c955f8d166, type: 3}
-      - {fileID: 8300000, guid: 1d09bc3fbde2a9644abc93af072b36cf, type: 3}
+      - {fileID: 0}
     - Key: 2
       Value:
       - {fileID: 0}
     - Key: 3
       Value:
       - {fileID: 0}
-  _sceneLoader: {fileID: 0}
 --- !u!82 &2170097528615066845
 AudioSource:
   m_ObjectHideFlags: 0

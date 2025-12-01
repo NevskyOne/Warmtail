@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: TestShader
-  m_Shader: {fileID: -6465566751694194690, guid: 5df8c1dafe83bcb419ce445e35b23f10, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 18c957b4a03550943a35eded13da500d, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -46,7 +46,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 22f5f36a07b67e244b5d5781ab50cbc7, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_8fc937b4c16d431e8bab3076da513d23_Texture_1_Texture2D:
@@ -68,14 +68,19 @@ Material:
     m_Ints: []
     m_Floats:
     - _BlurAmount: 0.0047
-    - _NoiseScale: 15.2
+    - _Edge: 0.488
+    - _NoiseScale: 1.5
+    - _NormalizeFactor: 1.44
+    - _PositionOffset: 0.1
     - _ShockWaveStrength: -0.2
     - _Size: 0.08
     - _Speed: 0.001
     - _WaveDistance: 0.589
     - _XSizeRatio: 1.7777778
     m_Colors:
+    - _BaseColor: {r: 1, g: 0, b: 0, a: 1}
     - _Color: {r: 0, g: 0, b: 0, a: 1}
+    - _ReplacableColor: {r: 0, g: 0.9308512, b: 1, a: 1}
     - _RingSpawnPosition: {r: 0.5, g: 0.5, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
