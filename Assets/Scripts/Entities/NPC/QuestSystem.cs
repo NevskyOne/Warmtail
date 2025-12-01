@@ -79,26 +79,33 @@ namespace Entities.NPC
             {
                 if (_createdMarksInd[data].Contains(i)) continue;
                 var screenPos = _cam.WorldToScreenPoint(data.Targets[i]);
-                marks[i].LookAt(screenPos, Vector3.down);
-                if (screenPos.x > Screen.width - _offset.x)
+                var rectParent = marks[i].parent as RectTransform;
+                RectTransformUtility.ScreenPointToWorldPointInRectangle(rectParent, screenPos,
+                    _cam, out var rectPos);
+
+                Vector2 newScreenPos = Vector2.zero;
+                if (screenPos.x > Screen.width - Screen.width * _offset.x)
                 {
-                    screenPos.x = Screen.width - _offset.x;
+                    newScreenPos.x = Screen.width - Screen.width * _offset.x;
                 }
-                else if (screenPos.x < _offset.x)
+                else if (screenPos.x < Screen.width * _offset.x)
                 {
-                    screenPos.x = _offset.x;
-                }
-                
-                if (screenPos.y > Screen.height - _offset.y)
-                {
-                    screenPos.y = Screen.height - _offset.y;
-                }
-                else if (screenPos.y < _offset.z)
-                {
-                    screenPos.y = _offset.z;
+                    newScreenPos.x = Screen.width * _offset.x;
                 }
                 
-                marks[i].anchoredPosition = screenPos;
+                if (screenPos.y > Screen.height - Screen.height * _offset.y)
+                {
+                    newScreenPos.y = Screen.height - Screen.height * _offset.y;
+                }
+                else if (screenPos.y < Screen.height * _offset.z)
+                {
+                    newScreenPos.y = Screen.height * _offset.z;
+                }
+                Vector2 direction = new Vector2(screenPos.x, screenPos.y) - newScreenPos;
+                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                marks[i].rotation = Quaternion.Euler(0, 0, angle - 90);
+                print(rectPos + " " + direction);
+                marks[i].position = newScreenPos;
             }
         }
 

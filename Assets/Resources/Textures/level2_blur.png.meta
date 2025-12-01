@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 96369fb45a8c2ff468d84b7573539865
+guid: e9c6bdc7a0df18b4ba815733ec718090
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5930561584558202025
-    second: level1_gaussian_0
+      213: 7973636649070788470
+    second: level2_blur_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: level1_gaussian_0
+      name: level2_blur_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 747
-        height: 559
+        width: 694
+        height: 694
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9ac5b26f6569d4250800000000000000
-      internalID: 5930561584558202025
+      spriteID: 67f76e3494c08ae60800000000000000
+      internalID: 7973636649070788470
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      level1_gaussian_0: 5930561584558202025
+      level2_blur_0: 7973636649070788470
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

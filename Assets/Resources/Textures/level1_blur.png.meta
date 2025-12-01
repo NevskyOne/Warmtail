@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: dc4f452f668105949aa38af5d1f1e0c5
+guid: b6e7138dda4d6c94d8d7052c0d15ec2f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1476246882929348614
-    second: level1_blur_0
+      213: -6759935263502337672
+    second: level1_blur 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: level1_blur_0
+      name: level1_blur 1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 747
-        height: 559
+        width: 830
+        height: 830
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: affe73e0841538be0800000000000000
-      internalID: -1476246882929348614
+      spriteID: 8797e4a81b2ef22a0800000000000000
+      internalID: -6759935263502337672
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      level1_blur_0: -1476246882929348614
+      level1_blur 1_0: -6759935263502337672
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

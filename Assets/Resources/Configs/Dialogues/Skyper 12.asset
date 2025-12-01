@@ -143,7 +143,7 @@ MonoBehaviour:
       _dynamic: 0
   _entry: 0
   _exit: 0
-  _eventId: 2
+  _eventId: 3
 --- !u!114 &-3434669230952897680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,7 +189,7 @@ MonoBehaviour:
       _dynamic: 0
   _entry: 0
   _exit: 0
-  _eventId: 1
+  _eventId: 2
 --- !u!114 &-3099777999318922870
 MonoBehaviour:
   m_ObjectHideFlags: 0

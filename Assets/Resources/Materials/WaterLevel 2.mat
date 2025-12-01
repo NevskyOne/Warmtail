@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Water2
+  m_Name: WaterLevel 2
   m_Shader: {fileID: -6465566751694194690, guid: 26ed94ba186d3b742a475c6c457ea41e, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -42,7 +42,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _FoamMap:
-        m_Texture: {fileID: 2800000, guid: 96369fb45a8c2ff468d84b7573539865, type: 3}
+        m_Texture: {fileID: 2800000, guid: 840c23532221a3f499ba041351bad34f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _FoamTex:
@@ -54,7 +54,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _HeightMap:
-        m_Texture: {fileID: 2800000, guid: dc4f452f668105949aa38af5d1f1e0c5, type: 3}
+        m_Texture: {fileID: 2800000, guid: e9c6bdc7a0df18b4ba815733ec718090, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Intersection_Foam_Texture:
@@ -98,7 +98,7 @@ Material:
     - _FlowSpeed: 0.01
     - _FlowStrength: 0.01
     - _FoamDistance: 3.61
-    - _FoamScale: 15
+    - _FoamScale: 12.37
     - _Horizon_Distance: 40
     - _IntersectionPower: 3.78
     - _IntersectionSlider: 0.118
@@ -125,7 +125,7 @@ Material:
     - _Refraction_Scale: 0.01
     - _Refraction_Speed: 0
     - _Refraction_Strength: 0
-    - _Rotation: 314.21442
+    - _Rotation: -904.8355
     - _Scale: 2
     - _ShoreEdge: 0.03
     - _Size: 2
@@ -143,14 +143,14 @@ Material:
     - _DarkFoamColor: {r: 0, g: 0.54593706, b: 0.990566, a: 1}
     - _DarkFoamColor_1: {r: 0.35933596, g: 0.49144083, b: 0.8018868, a: 1}
     - _Deep_Color: {r: 0.028034886, g: 0.09856229, b: 0.28301886, a: 0.70980394}
-    - _DepthColor: {r: 0.26312736, g: 0.29214498, b: 0.6886792, a: 1}
-    - _FoamColor: {r: 0, g: 1.0687767, b: 2.670157, a: 1}
+    - _DepthColor: {r: 0.2891153, g: 0.39964455, b: 0.6886792, a: 1}
+    - _FoamColor: {r: 0, g: 2.1375537, b: 5.3403144, a: 1}
     - _Horizon_Color: {r: 1, g: 1, b: 1, a: 0.38431373}
     - _Intersection_Foam_Color: {r: 1, g: 1, b: 1, a: 0}
-    - _LightColor: {r: 0.35377356, g: 0.9875981, b: 1, a: 1}
+    - _LightColor: {r: 0.35294116, g: 1, b: 0.8297504, a: 1}
     - _LightFoamColor: {r: 1, g: 1, b: 1, a: 1}
     - _PlayerScale: {r: 0.01, g: 0.03, b: 0, a: 0}
-    - _Position: {r: -21.813427, g: 6.1914215, b: 0, a: 0}
+    - _Position: {r: -21.943838, g: 96.03855, b: 0, a: 0}
     - _Shallow_Color: {r: 0.48627448, g: 0.536001, b: 1, a: 0.7176471}
     - _ShoreColor: {r: 0.12595077, g: 1.2666398, b: 5.3403134, a: 1}
     - _Specular_Color: {r: 0, g: 0, b: 0, a: 0}
