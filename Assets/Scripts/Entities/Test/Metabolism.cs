@@ -29,7 +29,8 @@ namespace Systems.Abilities.Concrete
         }
 
         private void OnStart()
-        {
+        { 
+            Debug.Log("1dddd");
             _baseSpeed = _globalData.Get<RuntimePlayerData>().Speed;
             _globalData.Edit<RuntimePlayerData>(d => d.Speed = Mathf.RoundToInt(_baseSpeed * _speedMultiplier));
             DrainRoutine().Forget();
@@ -37,6 +38,7 @@ namespace Systems.Abilities.Concrete
 
         private async UniTaskVoid DrainRoutine()
         {
+            Debug.Log("2dddd");
             while (Enabled)
             {
                 _warmthSystem.DecreaseWarmth(_heatDrainPerSecond);
@@ -46,6 +48,7 @@ namespace Systems.Abilities.Concrete
 
         private void OnEnd()
         {
+            Debug.Log("3dddd");
             _globalData.Edit<RuntimePlayerData>(d => d.Speed = _baseSpeed);
         }
     }

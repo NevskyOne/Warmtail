@@ -10,7 +10,7 @@ using Zenject;
 namespace Systems.Abilities.Concrete
 {
     [Serializable]
-    public class DashAbility : BaseAbility
+    public class DashAbility : BaseAbility , ITickable
     {
         [SerializeField] private float _dashForce = 25f;
         [SerializeField] private int _dashCost = 15;
@@ -24,12 +24,7 @@ namespace Systems.Abilities.Concrete
         private float _layerInput; // -1, 0, 1
 
         [Inject]
-        public void Construct(
-            Player player,
-            WarmthSystem warmth,
-            SurfacingSystem surfacing,
-            PlayerInput input,
-            DiContainer container)
+        public void Construct(Player player, WarmthSystem warmth, SurfacingSystem surfacing, PlayerInput input, DiContainer container)
         {
             _playerRb = player.Rigidbody;
             _surfacingSystem = surfacing;
@@ -40,12 +35,13 @@ namespace Systems.Abilities.Concrete
             input.actions["Surfacing"].performed += ctx => _layerInput = ctx.ReadValue<float>();
             input.actions["Surfacing"].canceled += _ => _layerInput = 0;
 
-            UsingAbility += OnTick;
+       
         }
 
 
-        private void OnTick()
+        public void Tick()
         {
+            Debug.Log("dddd1");
             if (!Enabled) return;
 
             bool isFree = IsComboActive && _secondaryComboType == typeof(MetabolismAbility);
@@ -64,8 +60,9 @@ namespace Systems.Abilities.Concrete
                 }
             }
             // Логика рывка
-            else if (_moveInput.magnitude > 0.1f)
+            else if (_moveInput.magnitude > 1f)
             {
+                Debug.Log("dddd2");
                 _playerRb.AddForce(_moveInput * _dashForce, ForceMode2D.Force);
                 if (!isFree) _warmthSystem.DecreaseWarmth(_dashCost);
             }
@@ -73,6 +70,7 @@ namespace Systems.Abilities.Concrete
 
         private void HandleObstacleDestruction()
         {
+            Debug.Log("dddd3");
             var hits = Physics2D.OverlapCircleAll(_playerRb.position, _destroyRadius);
             foreach (var hit in hits)
             {
