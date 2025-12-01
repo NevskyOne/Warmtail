@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 using Zenject;
 using Systems;
 using Entities.House;
+using Entities.NPC;
 
 namespace Entities.Core
 {
@@ -17,6 +18,7 @@ namespace Entities.Core
         [SerializeField] private HouseManager _houseManager;
         [SerializeField] private PlayerConfig _playerConfig;
         [SerializeField] private UIStateSystem _uiStateSystem;
+        [SerializeField] private ShoppingManager _shoppingManager;
 
         public override void InstallBindings()
         {
@@ -25,14 +27,17 @@ namespace Entities.Core
             Container.Bind<HouseManager>().FromInstance(_houseManager).AsSingle();
             Container.Bind<PlayerConfig>().FromInstance(_playerConfig).AsSingle();
             Container.Bind<UIStateSystem>().FromInstance(_uiStateSystem).AsSingle();
+            Container.Bind<ShoppingManager>().FromInstance(_shoppingManager).AsSingle();
             
+            Container.Bind<NPCMethods>().FromNew().AsSingle();
+            Container.Bind<ShoppingSystem>().FromNew().AsSingle();
             Container.Bind<PlacementSystem>().FromNew().AsSingle();
             Container.Bind<DialogueSystem>().FromNew().AsSingle();
             
-            foreach (var ability in _playerConfig.Abilities)
-            {
-                Container.BindInterfacesAndSelfTo<IAbility>().FromInstance(ability).AsTransient();
-            }
+            // foreach (var ability in _playerConfig.Abilities)
+            // {
+            //     Container.BindInterfacesAndSelfTo<IAbility>().FromInstance(ability).AsTransient();
+            // }
         }
     }
 }

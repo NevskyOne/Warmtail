@@ -1,5 +1,6 @@
 using UnityEngine;
 using Zenject;
+using Entities.NPC;
 using Data.House;
 using Data.Player;
 using Data.NPCShop;
@@ -10,6 +11,7 @@ namespace Systems
     public class ShoppingSystem
     {
         [Inject] private GlobalData _globalData;
+        [Inject] private ShoppingManager _shoppingManager;
         
         public void BuyItem(HouseItemData item, Characters character, bool isLast)
         {
@@ -32,6 +34,7 @@ namespace Systems
         private void PurchaseLastItem(Characters character)
         {
             _globalData.Edit<NPCData>(data => {data.BoughtLastItem[character] = true;});
+            _shoppingManager.OpenNPCShop(character);
         }
     }
 }
