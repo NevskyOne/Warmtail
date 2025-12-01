@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using AYellowpaper.SerializedCollections;
 
 namespace Data.Player
 {
@@ -9,6 +10,8 @@ namespace Data.Player
         public int Shells;
         public int ActiveLayers;
         public List<int> SeenReplicas;
+        public SerializedDictionary<int, int> Inventory; // [id] = count
+        public string TimeLastGame;
     }
     
     [Serializable]

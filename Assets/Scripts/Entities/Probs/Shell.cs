@@ -32,6 +32,14 @@ namespace Entities.Probs
             _propertyBlock = new();
             _renderer = GetComponent<SpriteRenderer>();
             Reset();
+            Daily.OnLodedRecources += LoadShell;
+            Daily.OnDiscardedRecources += DiscardShell;
+        }
+
+        private void OnDestroy()
+        {
+            Daily.OnLodedRecources -= LoadShell;
+            Daily.OnDiscardedRecources -= DiscardShell;
         }
         
         public void Warm()
@@ -58,16 +66,47 @@ namespace Entities.Probs
             {
                 playerData.Shells += _shellsAmount;
             });
+            _globalData.Edit<ShellsData>(data => {
+                data.ShellsActive[ConvertFloatsToString (transform.position.x, transform.position.y)] = false;
+            });
             _timer.Stop();
             Destroy(gameObject);
         }
-
+        
         public void Reset()
         {
             UpdateRenderer((_warmCapacity - _warm) * 1.0f / _warmCapacity, 0);
             _warm = _warmCapacity;
         }
 
+        private void LoadShell()
+        {
+            float x = transform.position.x;
+            float y = transform.position.y;
+            CheckShellData(x, y);
+            if (!_globalData.Get<ShellsData>().ShellsActive[ConvertFloatsToString(x, y)])
+                Destroy(gameObject);
+        }
+
+        private void DiscardShell()
+        {
+            float x = transform.position.x;
+            float y = transform.position.y;
+            CheckShellData(x, y);
+            _globalData.Edit<ShellsData>(data => data.ShellsActive[ConvertFloatsToString(x, y)] = true);
+        }
+
+        private void CheckShellData(float x, float y)
+        {
+            if (!_globalData.Get<ShellsData>().ShellsActive.ContainsKey(ConvertFloatsToString(x, y)))
+                _globalData.Edit<ShellsData>(data => data.ShellsActive[ConvertFloatsToString(x, y)] = true);
+        }
+
+        private string ConvertFloatsToString(float x, float y)
+        {
+            return (x + " : " + y);
+        }
+        
         private async void UpdateRenderer(float lastAmount, float newAmount)
         {
             if (!_renderer) return;

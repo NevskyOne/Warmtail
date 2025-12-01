@@ -15,12 +15,14 @@ namespace Data.House
     [Serializable]
     public class PairForHouseItem
     {
-        public HouseItemData HouseItemData;
-        public Vector2 Position;
-        public PairForHouseItem(HouseItemData houseItemData, Vector2 position)
+        public int HouseItemDataId;
+        public float PositionX;
+        public float PositionY;
+        public PairForHouseItem(int houseItemDataId, float positionX, float positionY)
         {
-            HouseItemData = houseItemData;
-            Position = position;
+            HouseItemDataId = houseItemDataId;
+            PositionX = positionX;
+            PositionY = positionY;
         }
     }
 }

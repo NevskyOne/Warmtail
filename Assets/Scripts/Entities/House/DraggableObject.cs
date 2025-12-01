@@ -10,6 +10,7 @@ namespace Entities.House
 {
     public class DraggableObject : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
+#region base
         [SerializeField] private GameObject _buttonsForConfirmed;
         [SerializeField] private GameObject _buttonsForEditing;
         [SerializeField] private GameObject _child;
@@ -24,7 +25,7 @@ namespace Entities.House
         private bool _isPlacementing;
         private bool _isMenuEnabled;
         private bool _isConfirmed = true;
-        private int _thisItemId;
+        private bool _isVisible = true;
 
         void Awake()
         {
@@ -38,25 +39,25 @@ namespace Entities.House
             PlacementSystem.OnApplyedAll -= ApplyEditing;
             PlacementSystem.OnCanceledAll -= CancelEdited;
         }
+
         [Inject]
         private void Construct(PlacementSystem placementSystem, PlayerInput input)
         {
             _leftClickAction = input.actions.FindAction("LeftMouse");
             _placementSystem = placementSystem;
-            _thisItemId = placementSystem.CountItemOnTheScene;
-            placementSystem.CountItemOnTheScene ++;
         }
         public void Initialize(bool isConfirmed)
         {
             _posObjectOnConfirmedState = (isConfirmed ? transform.position : Vector2.positiveInfinity);
             _isConfirmed = isConfirmed;
         }
+#endregion
+#region interaction
         private void Update()
         {
             if (_leftClickAction.WasReleasedThisFrame())
             {
-                if (!_isClickedNow)
-                    DisableMenu();
+                if (!_isClickedNow) DisableMenu();
                 _isClickedNow = false;
             }
             if (_isPlacementing)
@@ -71,7 +72,6 @@ namespace Entities.House
             _isPlacementing = true;
             _posMouseOnPointerDown = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
             _posObjectOnPointerDown = transform.position;
-
             _isClickedNow = true; 
             EnableMenu();
         }
@@ -97,26 +97,29 @@ namespace Entities.House
         {
             if (_isMenuEnabled) return;
             _isMenuEnabled = true;
-            if (_isConfirmed)
-                _buttonsForConfirmed.SetActive(true);
-            else
-                _buttonsForEditing.SetActive(true);
+            if (_isConfirmed) _buttonsForConfirmed.SetActive(true);
+            else _buttonsForEditing.SetActive(true);
         }
+#endregion
+#region buttons methods
 
         public void ApplyEditing()
         {
             if (_isConfirmed) return;
-            if (!_boxCollider.enabled) 
+            if (!_isVisible) 
             {
+                ApplyInventory(1);
+                _placementSystem.RemoveEditingItem(_houseItemData.Id, _posObjectOnConfirmedState);
                 Destroy(gameObject);
-                _placementSystem.RemoveEditingItem(_houseItemData, _posObjectOnConfirmedState);
             }
             else
             {
                 if (_posObjectOnConfirmedState.x == Vector2.positiveInfinity.x)
-                    _placementSystem.AddEditingItem(_houseItemData, transform.position);
-                else
-                    _placementSystem.ReplaceEditingItem(_houseItemData, _posObjectOnConfirmedState, transform.position);
+                {
+                    ApplyInventory(-1);
+                    _placementSystem.AddEditingItem(_houseItemData.Id, transform.position);
+                }
+                else _placementSystem.ReplacePositionEditingItem(_houseItemData.Id, _posObjectOnConfirmedState, transform.position);
                 _posObjectOnConfirmedState = transform.position;
                 _isConfirmed = true;
             }
@@ -124,12 +127,18 @@ namespace Entities.House
         public void CancelEdited()
         {
             if (_isConfirmed) return;
-            if (_posObjectOnConfirmedState.x == Vector2.positiveInfinity.x) Destroy(gameObject);
+            if (_posObjectOnConfirmedState.x == Vector2.positiveInfinity.x) 
+            {
+                RemoveFromInventory();
+                Destroy(gameObject);
+            }
             else {
+                if (!_isVisible) AddToInventory();
                 _isConfirmed = true;
                 transform.position = _posObjectOnConfirmedState;
                 _child.SetActive(true);
                 _boxCollider.enabled = true;
+                _isVisible = true;
             }
         }
         public void RemoveObject()
@@ -137,6 +146,13 @@ namespace Entities.House
             _isConfirmed = false;
             _child.SetActive(false);
             _boxCollider.enabled = false;
+            _isVisible = false;
+            RemoveFromInventory();
         }
+
+        private void ApplyInventory(int how) => _placementSystem.ApplyItemInventory(_houseItemData.Id, how);
+        public void AddToInventory() => _placementSystem.AddItemToInventory(_houseItemData.Id);
+        public void RemoveFromInventory() => _placementSystem.RemoveItemFromInventory(_houseItemData.Id);
     }
+#endregion
 }

@@ -110,8 +110,10 @@ MonoBehaviour:
   - rid: 1601399230582489398
   - rid: 1601399230582489399
   - rid: 1601399661704249615
-  - rid: 1601399524581179755
+  - rid: 2385452619237949708
   - rid: 1601399661704249621
+  - rid: 2385452714274848866
+  - rid: 2385452714274849014
   _runtimeData:
   - rid: 1601399230582489401
   _settingsData:
@@ -126,6 +128,9 @@ MonoBehaviour:
         Shells: 0
         ActiveLayers: 0
         SeenReplicas: 
+        Inventory:
+          _serializedList: []
+        TimeLastGame: 
     - rid: 1601399230582489399
       type: {class: DialogueVarData, ns: Data, asm: Assembly-CSharp}
       data:
@@ -140,11 +145,6 @@ MonoBehaviour:
         CurrentWarmth: 10
         WasInGame: 0
         Speed: 8
-    - rid: 1601399524581179755
-      type: {class: NPCData, ns: Data, asm: Assembly-CSharp}
-      data:
-        Levels:
-          _serializedList: []
     - rid: 1601399661704249615
       type: {class: HouseData, ns: Data.House, asm: Assembly-CSharp}
       data:
@@ -157,12 +157,29 @@ MonoBehaviour:
     - rid: 1601399754601005135
       type: {class: SettingsData, ns: Data, asm: Assembly-CSharp}
       data:
-        MainSoundVolume: 0.5
-        MusicVolume: 1
-        SfxVolume: 1
-        QualityLevel: 1
-        FullscreenMode: 1
+        MainSoundVolume: 0
+        MusicVolume: 0
+        SfxVolume: 0
+        QualityLevel: 0
+        FullscreenMode: 0
         Language: 0
+    - rid: 2385452619237949708
+      type: {class: NPCData, ns: Data.NPCShop, asm: Assembly-CSharp}
+      data:
+        Levels:
+          _serializedList: []
+        BoughtLastItem:
+          _serializedList: []
+    - rid: 2385452714274848866
+      type: {class: ShellsData, ns: Data, asm: Assembly-CSharp}
+      data:
+        ShellsActive:
+          _serializedList: []
+    - rid: 2385452714274849014
+      type: {class: NpcSpawnData, ns: Data, asm: Assembly-CSharp}
+      data:
+        NpcSpawnerData:
+          _serializedList: []
 --- !u!114 &5226292807223728779
 MonoBehaviour:
   m_ObjectHideFlags: 0
