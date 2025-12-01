@@ -24,11 +24,12 @@ namespace Entities.NPC
         private readonly Dictionary<QuestData, int> _createdRequests = new();
         
         [Inject] private LocalizationManager _localization;
+        [Inject] private DiContainer _diContainer;
         
         public void StartQuest(QuestData data)
         {
             if (_createdQuests.ContainsKey(data)) return;
-            var newQuest = Instantiate(_questPrefab, _questParent);
+            var newQuest = _diContainer.InstantiatePrefab(_questPrefab, _questParent).transform;
             newQuest.GetChild(0).GetComponent<LocalizedText>().SetNewKey("quest_header_" + data.Id);
             newQuest.GetChild(1).GetComponent<LocalizedText>().SetNewKey("quest_desc_" + data.Id);
             _createdQuests.Add(data, newQuest.gameObject);

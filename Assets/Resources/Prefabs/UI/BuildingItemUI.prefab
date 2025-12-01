@@ -38,7 +38,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 118, y: 114.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1372521547121892939
 CanvasRenderer:
@@ -68,7 +68,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -2891818822067206690, guid: 10fdda4874498ff4292c99851bc4ae7d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -126,19 +126,7 @@ MonoBehaviour:
   - eventID: 3
     callback:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 3191451031980071461}
-          m_TargetAssemblyTypeName: Entities.House.DraggableObjectUI, Assembly-CSharp
-          m_MethodName: PointerUpItem
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
 --- !u!114 &3191451031980071461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,7 +140,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entities.House.DraggableObjectUI
   _itemCopyingObjectPref: {fileID: 1808789399308577536, guid: cf2ec8e259d88e24bbccedbcc0381aff, type: 3}
-  _sprite: {fileID: -3252780586428284253, guid: 4741e0d82db681349aa97421bed5666c, type: 3}
 --- !u!1 &6732557622906840963
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,7 +175,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -10, y: -10}
+  m_SizeDelta: {x: -40, y: -40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4484206831423126497
 CanvasRenderer:

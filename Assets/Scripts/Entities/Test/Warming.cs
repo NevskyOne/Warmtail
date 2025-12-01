@@ -58,7 +58,6 @@ namespace Systems.Abilities.Concrete
             if (IsComboActive && _secondaryComboType == typeof(MetabolismAbility))
             {
                 await PerformExplosion();
-                EndAbility?.Invoke(); // Авто-завершение после взрыва
             }
             else
             {
@@ -72,6 +71,11 @@ namespace Systems.Abilities.Concrete
 
         private async UniTask PerformExplosion()
         {
+            if (!_warmthSystem.CheckWarmCost(_explosionCost))
+            { 
+                StopWarm(new());
+                return;
+            }
             _warmthSystem.DecreaseWarmth(_explosionCost);
             float timer = 0;
             
@@ -88,10 +92,17 @@ namespace Systems.Abilities.Concrete
                 }
                 await UniTask.Yield();
             }
+
+            StopWarm(new());
         }
 
         private void PerformTick()
         {
+            if (!_warmthSystem.CheckWarmCost(_cost))
+            {
+                StopWarm(new());
+                return;
+            }
             var hits = Physics2D.OverlapCircleAll(_playerTransform.position, _radius);
             bool success = false;
             foreach (var hit in hits)

@@ -42,7 +42,7 @@ namespace Systems
             if (playerInput != null && playerInput.actions != null && playerInput.actions["Move"] != null)
             {
                 var moveAction = playerInput.actions["Move"];
-                moveAction.started += _ => StartAbility?.Invoke();
+                moveAction.started += _ => { if (Enabled) StartAbility?.Invoke(); };
                 moveAction.performed += OnMove;
                 moveAction.canceled += OnMoveCanceled;
             }

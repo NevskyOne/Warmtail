@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2677430010170927980}
   - component: {fileID: 5503290816783287035}
   - component: {fileID: 8243539184266544157}
+  - component: {fileID: 4572740542372889714}
   m_Layer: 0
   m_Name: Finix
   m_TagString: Untagged
@@ -82,6 +83,7 @@ MonoBehaviour:
   _warmAction:
     m_PersistentCalls:
       m_Calls: []
+  <CanWarm>k__BackingField: 1
 --- !u!212 &5503290816783287035
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -174,7 +176,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0678637, y: -0.101789355}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -184,5 +186,34 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 9.81, y: 8.68}
+  m_Size: {x: 5.466723, y: 5.354681}
   m_EdgeRadius: 0
+--- !u!114 &4572740542372889714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6263624876928639049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbd1593d100a4a72842abe252e009cd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Entities.Triggers.AddEventToQuest
+  _system: {fileID: 0}
+  _quest: {fileID: 11400000, guid: a9e9c62c3d64ab84c976824ede64ab0c, type: 2}
+  _event:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2677430010170927980}
+        m_TargetAssemblyTypeName: Entities.NPC.SpeakableCharacter, Assembly-CSharp
+        m_MethodName: set_Graph
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: f6ce9fc218d9c4d408f93ce1f98f4283, type: 2}
+          m_ObjectArgumentAssemblyTypeName: Data.Nodes.DialogueGraph, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

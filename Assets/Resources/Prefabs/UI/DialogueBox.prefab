@@ -198,7 +198,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: -35, y: 35.92}
-  m_SizeDelta: {x: 250, y: 250.00002}
+  m_SizeDelta: {x: 230, y: 230}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &493929678798682599
 CanvasRenderer:
@@ -472,7 +472,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 250, y: 250}
+  m_SizeDelta: {x: 230, y: 230}
   m_Pivot: {x: 0.5, y: 0.49999997}
 --- !u!222 &8350796289250591264
 CanvasRenderer:
@@ -626,7 +626,7 @@ RectTransform:
   m_Father: {fileID: 6779099768172184599}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.0820011, y: 1}
-  m_AnchorMax: {x: 0.42171, y: 1}
+  m_AnchorMax: {x: 0.62731147, y: 1}
   m_AnchoredPosition: {x: 0, y: 44.28058}
   m_SizeDelta: {x: 0, y: 88.2406}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -658,10 +658,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Name
+  m_text: Vasya Slashyavy
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 68d9785f6dbea7e49ae81997e80883ae, type: 2}
-  m_sharedMaterial: {fileID: 1168332384871489589, guid: 68d9785f6dbea7e49ae81997e80883ae, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 5f9487d5b14d6d449852048222e98725, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using Data.Player;
 using Entities.PlayerScripts;
 using Interfaces;
@@ -40,6 +41,8 @@ namespace Systems.AbilitiesVisual
             _ability.StartAbility += StartAbility;
             _ability.UsingAbility += UsingAbility;
             _ability.EndAbility += EndAbility;
+            
+            _lastSettings = _camera.Lens;
             UpdatePlayerStats();
         }
 
@@ -53,12 +56,11 @@ namespace Systems.AbilitiesVisual
             
             UpdatePlayerStats();
             
-            _lastSettings = _camera.Lens;
             Tween.Custom(_camera.Lens.OrthographicSize,9,new TweenSettings(1), x =>
             {
                 _camera.Lens.OrthographicSize = x;
             });
-            var loopVfxObj = (await ObjectSpawnSystem.Spawn(_loopVfx, _player.Rigidbody.position, _player.Rigidbody.transform,500)).gameObject;
+            var loopVfxObj = (await ObjectSpawnSystem.Spawn(_loopVfx, _player.Rigidbody.position, _player.Rigidbody.transform,200)).gameObject;
             loopVfxObj.transform.localRotation = Quaternion.Euler(new Vector3(0,0,160));
             loopVfxObj.transform.localPosition += _vfxOffset;
             _loopVfxObjs.Add(loopVfxObj);
@@ -77,6 +79,7 @@ namespace Systems.AbilitiesVisual
             {
                 _camera.Lens.OrthographicSize = x;
             });
+            await UniTask.Delay(200);
             foreach (var obj in _loopVfxObjs)
             {
                 Object.Destroy(obj);
