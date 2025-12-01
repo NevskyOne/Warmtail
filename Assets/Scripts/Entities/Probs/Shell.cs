@@ -105,6 +105,8 @@ namespace Entities.Probs
         private string ConvertFloatsToString(float x, float y)
         {
             return (x + " : " + y);
+        }
+        
         private async void UpdateRenderer(float lastAmount, float newAmount)
         {
             if (!_renderer) return;
