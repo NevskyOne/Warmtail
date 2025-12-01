@@ -18,15 +18,31 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
     - rid: 1601399524581179738
       type: {class: InteractionSystem, ns: , asm: Assembly-CSharp}
       data:
+        <Visual>k__BackingField:
+          rid: -2
         _interactionRadius: 2
         _interactionOffset: {x: 0, y: 0, z: 0}
     - rid: 1601399544975982592
       type: {class: PlayerMovement, ns: Systems, asm: Assembly-CSharp}
       data:
+        <Visual>k__BackingField:
+          rid: 4204128976498851933
         _moveForce: 60
         _moreForge: 60
         _maxSpeed: 5
         _drag: 5
+    - rid: 4204128976498851933
+      type: {class: MovementVisuals, ns: Systems.AbilitiesVisual, asm: Assembly-CSharp}
+      data:
+        _water: {fileID: 0}
+        _startVfx: {fileID: 0}
+        _loopVfx: {fileID: 0}
+        _startSfx: {fileID: 8300000, guid: 0f057e302baea5c47b0ad7980f779296, type: 3}
+        _loopSfx: {fileID: 8300000, guid: 0f057e302baea5c47b0ad7980f779296, type: 3}
+        _abilityIndex: 0
+        _vfxOffset: {x: 0, y: 0, z: 0}

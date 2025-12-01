@@ -107,13 +107,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Data.GlobalData
   _savableData:
-  - rid: 1601399230582489398
-  - rid: 1601399230582489399
-  - rid: 1601399661704249615
-  - rid: 2385452619237949708
-  - rid: 1601399661704249621
-  - rid: 2385452714274848866
-  - rid: 2385452714274849014
+  - rid: 4204128976498852011
+  - rid: 4204128976498852012
+  - rid: 4204128976498852013
+  - rid: 4204128976498852014
+  - rid: 4204128976498852015
+  - rid: 4204128976498852016
+  - rid: 4204128976498852017
   _runtimeData:
   - rid: 1601399230582489401
   _settingsData:
@@ -121,23 +121,6 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 1601399230582489398
-      type: {class: SavablePlayerData, ns: Data.Player, asm: Assembly-CSharp}
-      data:
-        Stars: 1
-        Shells: 0
-        ActiveLayers: 0
-        SeenReplicas: 
-        Inventory:
-          _serializedList: []
-        TimeLastGame: 
-    - rid: 1601399230582489399
-      type: {class: DialogueVarData, ns: Data, asm: Assembly-CSharp}
-      data:
-        Variables:
-        - Type: 0
-          Name: playerName
-          Value: '###'
     - rid: 1601399230582489401
       type: {class: RuntimePlayerData, ns: Data.Player, asm: Assembly-CSharp}
       data:
@@ -145,15 +128,6 @@ MonoBehaviour:
         CurrentWarmth: 10
         WasInGame: 0
         Speed: 8
-    - rid: 1601399661704249615
-      type: {class: HouseData, ns: Data.House, asm: Assembly-CSharp}
-      data:
-        PlacedHouseItems: []
-    - rid: 1601399661704249621
-      type: {class: WorldData, ns: Data, asm: Assembly-CSharp}
-      data:
-        SavableObjects:
-          _serializedList: []
     - rid: 1601399754601005135
       type: {class: SettingsData, ns: Data, asm: Assembly-CSharp}
       data:
@@ -163,22 +137,48 @@ MonoBehaviour:
         QualityLevel: 0
         FullscreenMode: 0
         Language: 0
-    - rid: 2385452619237949708
+    - rid: 4204128976498852011
+      type: {class: SavablePlayerData, ns: Data.Player, asm: Assembly-CSharp}
+      data:
+        Stars: 1
+        Shells: 0
+        ActiveLayers: 0
+        SeenReplicas: 
+        Inventory:
+          _serializedList: []
+        TimeLastGame: 
+    - rid: 4204128976498852012
+      type: {class: DialogueVarData, ns: Data, asm: Assembly-CSharp}
+      data:
+        Variables:
+        - Type: 0
+          Name: playerName
+          Value: '###'
+    - rid: 4204128976498852013
+      type: {class: ShellsData, ns: Data, asm: Assembly-CSharp}
+      data:
+        ShellsActive:
+          _serializedList: []
+    - rid: 4204128976498852014
+      type: {class: NpcSpawnData, ns: Data, asm: Assembly-CSharp}
+      data:
+        NpcSpawnerData:
+          _serializedList: []
+    - rid: 4204128976498852015
       type: {class: NPCData, ns: Data.NPCShop, asm: Assembly-CSharp}
       data:
         Levels:
           _serializedList: []
         BoughtLastItem:
           _serializedList: []
-    - rid: 2385452714274848866
-      type: {class: ShellsData, ns: Data, asm: Assembly-CSharp}
+    - rid: 4204128976498852016
+      type: {class: HouseData, ns: Data.House, asm: Assembly-CSharp}
       data:
-        ShellsActive:
-          _serializedList: []
-    - rid: 2385452714274849014
-      type: {class: NpcSpawnData, ns: Data, asm: Assembly-CSharp}
+        PlacedHouseItems: []
+    - rid: 4204128976498852017
+      type: {class: WorldData, ns: Data, asm: Assembly-CSharp}
       data:
-        NpcSpawnerData:
+        SavableObjects:
           _serializedList: []
 --- !u!114 &5226292807223728779
 MonoBehaviour:

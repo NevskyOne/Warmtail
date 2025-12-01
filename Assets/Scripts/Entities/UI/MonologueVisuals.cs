@@ -2,6 +2,7 @@
 using Cysharp.Threading.Tasks;
 using Data;
 using Data.Nodes;
+using EasyTextEffects;
 using Entities.Localization;
 using Interfaces;
 using Systems;
@@ -17,7 +18,6 @@ namespace Entities.UI
         [SerializeField] private float _textFadeSpeed;
         [SerializeField] private TMP_Text _textPrefab;
         [SerializeField] private RectTransform _textBounds;
-        [SerializeField] private GameObject _startPrefab;
         private RectTransform _currentText;
         private LocalizationManager _localizationManager;
         private DialogueSystem _dialogueSystem;
@@ -28,10 +28,6 @@ namespace Entities.UI
         {
             _localizationManager = localizationManager;
             _dialogueSystem = dialogueSystem;
-            if (data.Get<DialogueVarData>().Variables.Find(x => x.Name == "playerName").Value == "###")
-            {
-                _startPrefab.SetActive(true);
-            } 
         }
 
         public void StartMonologue(DialogueGraph graph, IEventInvoker invoker)
@@ -68,6 +64,7 @@ namespace Entities.UI
             _currentText.localPosition = ChooseRandomPosition();
             _currentText.GetComponent<TMP_Text>().text = 
                 _localizationManager.GetStringFromKey("cutscene_"+ _dialogueSystem.DialogueGraph.DialogueId+ "_" + node.TextId);
+            _currentText.GetComponent<TextEffect>().Refresh();
         }
         
         public async void RequestSingleLine(int id)
@@ -76,6 +73,7 @@ namespace Entities.UI
             _currentText.localPosition = ChooseRandomPosition();
             _currentText.GetComponent<TMP_Text>().text = 
                 _localizationManager.GetStringFromKey("fragment_" + id);
+            _currentText.GetComponent<TextEffect>().Refresh();
             await UniTask.Delay(TimeSpan.FromSeconds(_textFadeSpeed));
             Destroy(_currentText.gameObject);
         }

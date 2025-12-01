@@ -99,39 +99,13 @@ namespace Data
         public void UpdateAllData(List<ISavableData> newList)
         {
             if (newList == null) return;
-
-            for (int i = 0; i < newList.Count; i++)
+            foreach (var t in newList)
             {
-                var newItem = newList[i];
-                if (newItem == null) continue;
-                
-                IData oldKey = _subs.Keys.FirstOrDefault(k => k.GetType() == newItem.GetType());
-
-                List<DataEventFunc> subscribers;
-                if (oldKey != null && _subs.TryGetValue(oldKey, out subscribers))
+                var foundKey = _subs.Keys.First(data => t.GetType() == data.GetType());
+                foundKey = t;
+                foreach (var sub in _subs[foundKey])
                 {
-                    _subs.Remove(oldKey);
-                }
-                else
-                {
-                    subscribers = new List<DataEventFunc>();
-                }
-                
-                _subs[newItem] = subscribers;
-
-                int index = _savableData.FindIndex(x => x != null && x.GetType() == newItem.GetType());
-                if (index >= 0)
-                {
-                    _savableData[index] = newItem;
-                }
-                else
-                {
-                    _savableData.Add(newItem);
-                }
-                
-                foreach (var sub in subscribers)
-                {
-                    try { sub.Invoke(); } catch (Exception ex) { Debug.LogError($"Subscriber threw: {ex}"); }
+                    sub.Invoke();
                 }
             }
         }

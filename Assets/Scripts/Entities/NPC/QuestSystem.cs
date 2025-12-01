@@ -79,11 +79,8 @@ namespace Entities.NPC
             {
                 if (_createdMarksInd[data].Contains(i)) continue;
                 var screenPos = _cam.WorldToScreenPoint(data.Targets[i]);
-                var rectParent = marks[i].parent as RectTransform;
-                RectTransformUtility.ScreenPointToWorldPointInRectangle(rectParent, screenPos,
-                    _cam, out var rectPos);
 
-                Vector2 newScreenPos = Vector2.zero;
+                Vector2 newScreenPos = new Vector2(screenPos.x, screenPos.y);
                 if (screenPos.x > Screen.width - Screen.width * _offset.x)
                 {
                     newScreenPos.x = Screen.width - Screen.width * _offset.x;
@@ -101,10 +98,14 @@ namespace Entities.NPC
                 {
                     newScreenPos.y = Screen.height * _offset.z;
                 }
-                Vector2 direction = new Vector2(screenPos.x, screenPos.y) - newScreenPos;
-                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-                marks[i].rotation = Quaternion.Euler(0, 0, angle - 90);
-                print(rectPos + " " + direction);
+                Vector2 toTarget = (Vector2)screenPos - newScreenPos;
+                if (toTarget.sqrMagnitude > 0.0001f)
+                {
+                    float angle = Mathf.Atan2(toTarget.y, toTarget.x) * Mathf.Rad2Deg;
+                    marks[i].localRotation = Quaternion.Euler(0f, 0f, angle + 90);
+                }
+                //newScreenPos.x = newScreenPos.x * Screen.width / 1920;
+                //newScreenPos.y = newScreenPos.y * Screen.height / 1080;
                 marks[i].position = newScreenPos;
             }
         }
