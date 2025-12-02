@@ -1,6 +1,6 @@
 namespace Interfaces
 {
-    public class IPuzzle
+    public interface IPuzzle
     {
         public void Start();
         public void Reset();
