@@ -31,6 +31,7 @@ namespace Entities.Core
         [SerializeField] private CinemachineCamera _cam;
         [SerializeField] private SurfacingSystem _surfacingSystem;
         [SerializeField] private SwarmController _swarmController;
+        
        
         public override void InstallBindings()
         {

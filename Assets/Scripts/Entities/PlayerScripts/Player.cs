@@ -5,6 +5,7 @@ using Data.Player;
 using Entities.Sound;
 using Interfaces;
 using Systems;
+using Systems.Abilities.Concrete;
 using Systems.DataSystems;
 using UnityEngine;
 using Zenject;
@@ -17,6 +18,7 @@ namespace Entities.PlayerScripts
         [field: SerializeReference] public ObjectSfx ObjectSfx { get; private set;}
         private GlobalData _globalData;
         private PlayerConfig _config;
+        private DashAbility  _dashAbility;
         private PlayerMovement _movement;
         private List<IAbility> _disabledAbilities = new();
         private List<IDisposable> _disposables = new();
@@ -42,11 +44,15 @@ namespace Entities.PlayerScripts
             }
 
             _movement = (PlayerMovement)_config.Abilities[0];
+            _dashAbility = (DashAbility)_config.Abilities[2];
         }
 
         private void FixedUpdate()
         {
             _movement.FixedTick();
+           
+                _dashAbility.Tick();
+            
         }
 
         public void DisableAllAbilities()

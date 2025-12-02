@@ -15,7 +15,6 @@ MonoBehaviour:
   <Abilities>k__BackingField:
   - rid: 1601399544975982592
   - rid: 1601399524581179738
-  - rid: 1601399524581179756
   - rid: 2564828074214424677
   - rid: 2564828074214424678
   - rid: 2564828074214424679
@@ -23,21 +22,20 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
     - rid: 1601399524581179738
       type: {class: InteractionSystem, ns: , asm: Assembly-CSharp}
       data:
+        <Visual>k__BackingField:
+          rid: -2
         _interactionRadius: 2
         _interactionOffset: {x: 0, y: 0, z: 0}
-    - rid: 1601399524581179756
-      type: {class: Warming, ns: Systems.WarmAbilities, asm: Assembly-CSharp}
-      data:
-        _warmDecrease: 1
-        _warmDelta: 500
-        _warmingRadius: 2
-        _warmingOffset: {x: 0, y: 0, z: 0}
     - rid: 1601399544975982592
       type: {class: PlayerMovement, ns: Systems, asm: Assembly-CSharp}
       data:
+        <Visual>k__BackingField:
+          rid: -2
         _moveForce: 280.8
         _moreForge: 60
         _maxSpeed: 5
@@ -45,17 +43,23 @@ MonoBehaviour:
     - rid: 2564828074214424677
       type: {class: DashAbility, ns: Systems.Abilities.Concrete, asm: Assembly-CSharp}
       data:
-        _dashForce: 25
+        <Visual>k__BackingField:
+          rid: -2
+        _dashForce: 10000
         _dashCost: 15
-        _destroyRadius: 1.5
+        _destroyRadius: 3
     - rid: 2564828074214424678
       type: {class: MetabolismAbility, ns: Systems.Abilities.Concrete, asm: Assembly-CSharp}
       data:
+        <Visual>k__BackingField:
+          rid: -2
         _heatDrainPerSecond: 10
         _speedMultiplier: 2
     - rid: 2564828074214424679
       type: {class: WarmingAbility, ns: Systems.Abilities.Concrete, asm: Assembly-CSharp}
       data:
+        <Visual>k__BackingField:
+          rid: -2
         _radius: 3
         _cost: 5
         _explosionMaxRadius: 10
@@ -64,5 +68,7 @@ MonoBehaviour:
     - rid: 2564828106599432273
       type: {class: ResonanceAbility, ns: Systems.Abilities.Concrete, asm: Assembly-CSharp}
       data:
+        <Visual>k__BackingField:
+          rid: -2
         _swarmPrefab: {fileID: 5216369137602421686, guid: 7fc97b894b8de4f41ad24e0be0020e7e, type: 3}
         _spawnOffset: {x: 1, y: 1, z: 1}

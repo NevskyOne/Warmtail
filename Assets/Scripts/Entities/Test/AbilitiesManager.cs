@@ -13,7 +13,6 @@ namespace Systems.Abilities
     [Serializable]
     public class AbilitiesManager : ITickable
     {
-       public event Action<int> OnAbilitySelected;
         public event Action<Type, Type> OnComboUpdated; // Primary, Secondary
 
         private  List<IAbilityExtended> _abilities;
@@ -69,7 +68,6 @@ namespace Systems.Abilities
             if (index >= _abilities.Count) index = 0;
 
             _selectedIndex = index;
-            OnAbilitySelected?.Invoke(_selectedIndex);
         }
 
         private void TrySelectOrCombo(int index)
@@ -94,11 +92,12 @@ namespace Systems.Abilities
 
         private void StartCasting()
         {
+            
             if (_activeAbility != null) return;
             
             // Проверка теплоты перед стартом (базовая)
             if (_globalData.Get<RuntimePlayerData>().CurrentWarmth <= 0) return;
-
+            Debug.Log("SetupInput");
             _activeAbility = _abilities[_selectedIndex];
             _activeAbility.Enabled = true;
             _activeAbility.ResetCombo(); // Сброс состояний
@@ -108,6 +107,7 @@ namespace Systems.Abilities
 
         private void ActivateCombo(IAbilityExtended secondary)
         {
+            Debug.Log("SetupInput1");
             if (_comboAbility != null) return; // Уже есть комбо
 
             _comboAbility = secondary;
@@ -119,6 +119,7 @@ namespace Systems.Abilities
 
         private void StopCasting()
         {
+            Debug.Log("SetupInput2");
             if (_activeAbility == null) return;
 
             _activeAbility.EndAbility?.Invoke();
@@ -133,9 +134,11 @@ namespace Systems.Abilities
 
         public void Tick()
         {
+        
             // Глобальная проверка ресурсов
             if (_isCasting && _globalData.Get<RuntimePlayerData>().CurrentWarmth <= 0)
             {
+                Debug.Log("SetupInput22222");
                 StopCasting();
             }
         }
