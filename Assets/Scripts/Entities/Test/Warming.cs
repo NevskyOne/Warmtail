@@ -9,7 +9,7 @@ using Zenject;
 namespace Systems.Abilities.Concrete
 {
     [Serializable]
-    public class WarmingAbility : BaseAbility, IDisposable
+    public class WarmingAbility : BaseAbility
     {
         [Header("Normal Warm")]
         [SerializeField] private float _radius = 3f;
@@ -32,21 +32,20 @@ namespace Systems.Abilities.Concrete
             _playerTransform = player.Rigidbody.transform;
             _warmthSystem = warmth;
             _playerInput = playerInput;
-            StartAbility += () => ActiveRoutine().Forget();
-            EndAbility += () => _isRunning = false;
-            _playerInput.actions["RightMouse"].started += StartWarm;
-            _playerInput.actions["RightMouse"].canceled += StopWarm;
+
+            StartAbility += StartWarm;
+            EndAbility += StopWarm;
         }
 
-        private void StartWarm(InputAction.CallbackContext callbackContext)
+        private void StartWarm()
         {
-            StartAbility?.Invoke();
+            ActiveRoutine().Forget();
             _canActivate = false;
         }
         
-        private async void StopWarm(InputAction.CallbackContext callbackContext)
+        private async void StopWarm()
         {
-            EndAbility?.Invoke();
+            _isRunning = false;
             await UniTask.Delay(1000);
             _canActivate = true;
         }
@@ -61,6 +60,7 @@ namespace Systems.Abilities.Concrete
             }
             else
             {
+                Debug.Log("warm");
                 while (Enabled && _isRunning)
                 {
                     PerformTick();
@@ -73,7 +73,7 @@ namespace Systems.Abilities.Concrete
         {
             if (!_warmthSystem.CheckWarmCost(_explosionCost))
             { 
-                StopWarm(new());
+                StopWarm();
                 return;
             }
             _warmthSystem.DecreaseWarmth(_explosionCost);
@@ -93,14 +93,14 @@ namespace Systems.Abilities.Concrete
                 await UniTask.Yield();
             }
 
-            StopWarm(new());
+            StopWarm();
         }
 
         private void PerformTick()
         {
             if (!_warmthSystem.CheckWarmCost(_cost))
             {
-                StopWarm(new());
+                StopWarm();
                 return;
             }
             var hits = Physics2D.OverlapCircleAll(_playerTransform.position, _radius);
@@ -115,12 +115,6 @@ namespace Systems.Abilities.Concrete
             }
             if (success) _warmthSystem.DecreaseWarmth(_cost);
          
-        }
-
-        public void Dispose()
-        {
-            _playerInput.actions["RightMouse"].started -= StartWarm;
-            _playerInput.actions["RightMouse"].canceled -= StopWarm;
         }
     }
 }

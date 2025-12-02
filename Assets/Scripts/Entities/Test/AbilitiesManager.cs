@@ -13,15 +13,13 @@ namespace Systems.Abilities
     [Serializable]
     public class AbilitiesManager : ITickable
     {
-        public event Action<Type, Type> OnComboUpdated; // Primary, Secondary
 
         private  List<IAbilityExtended> _abilities;
-        private  WarmthSystem _warmthSystem;
         private  GlobalData _globalData;
         
         [SerializeField] private int _selectedIndex;
         [SerializeField] private IAbilityExtended _activeAbility;
-        [SerializeField] private IAbilityExtended _comboAbility; // Вторичная способность (пассивная часть комбо)
+        [SerializeField] private IAbilityExtended _comboAbility;
         [SerializeField] private bool _isCasting;
 
         [Inject]
@@ -32,7 +30,6 @@ namespace Systems.Abilities
             PlayerInput input)
         {
             _abilities = abilities;
-            _warmthSystem = warmthSystem;
             _globalData = globalData;
             SetupInput(input);
             SelectAbility(0);
@@ -40,23 +37,20 @@ namespace Systems.Abilities
 
         private void SetupInput(PlayerInput input)
         {
-            // Скролл
             input.actions["Scroll"].performed += ctx => CycleSelection(ctx.ReadValue<float>());
-            
-            // Выбор цифрами (1-4)
+
             input.actions["1"].performed += _ => TrySelectOrCombo(0);
             input.actions["2"].performed += _ => TrySelectOrCombo(1);
             input.actions["3"].performed += _ => TrySelectOrCombo(2);
             input.actions["4"].performed += _ => TrySelectOrCombo(3);
 
-            // Активация (ПКМ)
             input.actions["RightMouse"].started += _ => StartCasting();
             input.actions["RightMouse"].canceled += _ => StopCasting();
         }
 
         private void CycleSelection(float scrollValue)
         {
-            if (_isCasting) return; // Нельзя менять основную способность во время каста
+            if (_isCasting) return;
             
             if (scrollValue > 0) SelectAbility(_selectedIndex + 1);
             else if (scrollValue < 0) SelectAbility(_selectedIndex - 1);
@@ -77,7 +71,6 @@ namespace Systems.Abilities
 
             if (_isCasting)
             {
-                // Логика КОМБО: если уже кастуем, то нажатие другой цифры включает комбо
                 var candidate = _abilities[index];
                 if (candidate != _activeAbility)
                 {
@@ -95,50 +88,37 @@ namespace Systems.Abilities
             
             if (_activeAbility != null) return;
             
-            // Проверка теплоты перед стартом (базовая)
             if (_globalData.Get<RuntimePlayerData>().CurrentWarmth <= 0) return;
-            Debug.Log("SetupInput");
             _activeAbility = _abilities[_selectedIndex];
             _activeAbility.Enabled = true;
-            _activeAbility.ResetCombo(); // Сброс состояний
+            _activeAbility.ResetCombo();
             _activeAbility.StartAbility?.Invoke();
             _isCasting = true;
         }
 
         private void ActivateCombo(IAbilityExtended secondary)
         {
-            Debug.Log("SetupInput1");
-            if (_comboAbility != null) return; // Уже есть комбо
+            if (_comboAbility != null) return;
 
             _comboAbility = secondary;
-            // Уведомляем активную способность, что она теперь в режиме комбо с типом вторичной
             _activeAbility.SetComboContext(_comboAbility.AbilityType);
-            
-            OnComboUpdated?.Invoke(_activeAbility.AbilityType, _comboAbility.AbilityType);
         }
 
         private void StopCasting()
         {
-            Debug.Log("SetupInput2");
             if (_activeAbility == null) return;
-
-            _activeAbility.EndAbility?.Invoke();
             _activeAbility.ResetCombo();
             _activeAbility.Enabled = false;
+            _activeAbility.EndAbility?.Invoke();
             _activeAbility = null;
             _comboAbility = null;
             _isCasting = false;
-            
-            OnComboUpdated?.Invoke(null, null);
         }
 
         public void Tick()
         {
-        
-            // Глобальная проверка ресурсов
             if (_isCasting && _globalData.Get<RuntimePlayerData>().CurrentWarmth <= 0)
             {
-                Debug.Log("SetupInput22222");
                 StopCasting();
             }
         }

@@ -15,9 +15,10 @@ MonoBehaviour:
   <Abilities>k__BackingField:
   - rid: 1601399544975982592
   - rid: 1601399524581179738
+  - rid: 2564828074214424679
+  - rid: 4204128997775507718
   - rid: 2564828074214424677
   - rid: 2564828074214424678
-  - rid: 2564828074214424679
   references:
     version: 2
     RefIds:
@@ -26,6 +27,7 @@ MonoBehaviour:
     - rid: 1601399524581179738
       type: {class: InteractionSystem, ns: , asm: Assembly-CSharp}
       data:
+        <Enabled>k__BackingField: 1
         <Visual>k__BackingField:
           rid: -2
         _interactionRadius: 2
@@ -33,6 +35,7 @@ MonoBehaviour:
     - rid: 1601399544975982592
       type: {class: PlayerMovement, ns: Systems, asm: Assembly-CSharp}
       data:
+        <Enabled>k__BackingField: 1
         <Visual>k__BackingField:
           rid: 1601399779124052047
         _moveForce: 60
@@ -54,8 +57,8 @@ MonoBehaviour:
       data:
         <Visual>k__BackingField:
           rid: -2
-        _dashForce: 25
-        _dashCost: 15
+        _dashForce: 60
+        _dashCost: 1
         _destroyRadius: 1.5
     - rid: 2564828074214424678
       type: {class: MetabolismAbility, ns: Systems.Abilities.Concrete, asm: Assembly-CSharp}
@@ -74,3 +77,10 @@ MonoBehaviour:
         _explosionMaxRadius: 10
         _explosionDuration: 0.5
         _explosionCost: 50
+    - rid: 4204128997775507718
+      type: {class: ResonanceAbility, ns: Systems.Abilities.Concrete, asm: Assembly-CSharp}
+      data:
+        <Visual>k__BackingField:
+          rid: -2
+        _swarmPrefab: {fileID: 5216369137602421686, guid: 7fc97b894b8de4f41ad24e0be0020e7e, type: 3}
+        _spawnOffset: {x: 1, y: 1, z: 1}

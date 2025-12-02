@@ -21,7 +21,7 @@ namespace Systems.Abilities.Concrete
         private WarmthSystem _warmthSystem;
         
         private Vector2 _moveInput;
-        private float _layerInput; // -1, 0, 1
+        private float _layerInput;
 
         [Inject]
         public void Construct(Player player, WarmthSystem warmth, SurfacingSystem surfacing, PlayerInput input, DiContainer container)
@@ -34,36 +34,29 @@ namespace Systems.Abilities.Concrete
 
             input.actions["Surfacing"].performed += ctx => _layerInput = ctx.ReadValue<float>();
             input.actions["Surfacing"].canceled += _ => _layerInput = 0;
-
-       
+            
+            UsingAbility += Tick;
         }
 
 
         public void Tick()
         {
-            Debug.Log("dddd1");
             if (!Enabled) return;
-
             bool isFree = IsComboActive && _secondaryComboType == typeof(MetabolismAbility);
-
-            // Логика смены слоя (всплытие/погружение)
+            
             if (Mathf.Abs(_layerInput) > 0.1f)
             {
                 int dir = (int)Mathf.Sign(_layerInput);
                 if (_surfacingSystem.TryChangeLayer(dir))
                 {
-                   
                     if (!isFree) _warmthSystem.DecreaseWarmth(_dashCost);
-                    
-                    // Сбрасываем инпут, чтобы не пролетать слои мгновенно
                     _layerInput = 0; 
                 }
             }
-            // Логика рывка
+
             else if (_moveInput.magnitude > 1f )
             {
                 HandleObstacleDestruction();
-                Debug.Log("dddd2");
                 _playerRb.AddForce(_moveInput * _dashForce, ForceMode2D.Force);
                 if (!isFree) _warmthSystem.DecreaseWarmth(_dashCost);
             }
@@ -71,13 +64,11 @@ namespace Systems.Abilities.Concrete
 
         private void HandleObstacleDestruction()
         {
-            Debug.Log("dddd3");
             var hits = Physics2D.OverlapCircleAll(_playerRb.position, _destroyRadius);
             foreach (var hit in hits)
             {
                 if (hit.TryGetComponent<IDestroyable>(out var dest))
                     dest.DestroyObject();
-                Debug.Log("dEEEEEEEEEEEEEEEEEEEEEE");
             }
         }
     }

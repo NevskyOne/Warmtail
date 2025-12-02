@@ -30,7 +30,6 @@ namespace Entities.PlayerScripts
             _config = config;
             foreach (var ability in _config.Abilities)
             {
-                ability.Enabled = true;
                 container.Inject(ability);
                 if(ability is IDisposable disposable)
                     _disposables.Add(disposable);
@@ -44,15 +43,13 @@ namespace Entities.PlayerScripts
             }
 
             _movement = (PlayerMovement)_config.Abilities[0];
-            _dashAbility = (DashAbility)_config.Abilities[2];
+            _dashAbility = (DashAbility)_config.Abilities[4];
         }
 
         private void FixedUpdate()
         {
             _movement.FixedTick();
-           
-                _dashAbility.Tick();
-            
+            _dashAbility.Tick();
         }
 
         public void DisableAllAbilities()

@@ -1,5 +1,5 @@
 key	ru	en
-tertilus_0_0	Ох-ох-о, кто к нам пожаловал!	Oh-oh-oh, who has come to visit us!
+tertilus_0_0	Ох-хо-хо, кто к нам пожаловал!	Oh-ho-ho, who has come to visit us!
 tertilus_0_1	Кто ты, путник?	Who are you, traveler?
 tertilus_0_2	Необычное имя, не встречал таких раньше.	An unusual name, I haven't come across one like it before.
 tertilus_0_3	Ты с нашей планеты?	Are you from our planet?
@@ -26,3 +26,51 @@ tertilus_3_1	Он конечно не самый роскошный, но, чт�
 tertilus_3_2	Да не переживай так, это никем незанятый дом, можешь жить сколько вздумается.	Don't worry so much, this is an unoccupied house, you can live there as long as you like.
 tertilus_3_3	Не стоит благодарностей.	No need to thank me.
 tertilus_3_4	До скорых встреч, молодёжь!	See you soon, youth!
+tertilus_100_0	Хо-хо, о чём хочешь поговорить, {playerName}?	Ho-ho, what do you want to talk about, {playerName}?
+tertilus_100_1	Точно, было дело!	That's right, it happened!
+tertilus_100_2	Он наверняка там замерз уже.	He's probably frozen there already.
+tertilus_100_3	А я забочусь о жителях, надо проверять их самочувствие.	And I care about the residents; I need to check their well-being.
+tertilus_100_4	Правильно соображаешь, юнец!	You're thinking correctly, young man!
+tertilus_100_5	Это было давно, очень давно, воспоминания стираются.	It was a long time ago, a very long time ago, memories are fading.
+tertilus_100_6	Но я помню одно — я был счастлив тогда.	But I remember one thing - I was happy then.
+tertilus_100_7	И я счастлив сейчас!	And I'm happy now!
+tertilus_100_8	О-хо-хо, да ты посмотри на меня!	Oh-ho-ho, look at me!
+tertilus_100_9	Был бы благодарен тебе, {playerName}!	I would be grateful to you, {playerName}!
+tertilus_100_10	Да, он должен жить там.	Yes, he should live there.
+tertilus_100_11	Удачной охоты на осьминогов, хо-хо-хо.	Happy octopus hunting, ho-ho-ho.
+tertilus_100_12	Ой, да видишь ли, я пытался собрать редкие ракушки.	Oh, you see, I was trying to collect rare shells.
+tertilus_100_13	Их обычно вымывает на поверхность.	They are usually washed to the surface.
+tertilus_100_14	Но они так примерзли за это время, что их уже не отдерёшь просто так!	But they have frozen so much during this time that you can’t just tear them off!
+tertilus_100_15	Вот не знаю, не знаю, малец.	I don't know, I don't know, kid.
+tertilus_100_16	Но можешь всегда попробовать!	But you can always try!
+tertilus_100_17	Даже если не получится, не переживай.	Even if it doesn't work out, don't worry.
+tertilus_100_18	Иногда есть вещи, не зависящие от нас.	Sometimes there are things beyond our control.
+tertilus_100_19	Да, конечно, смотри, что у меня есть!	Yes, of course, look what I have!
+tertilus_101_0	Октобо-о-о-о-ос!	Octobo-o-o-o-oss!
+tertilus_101_1	Выходи-и-и-и-и!!	Come o-o-o-out!!
+tertilus_101_2	Эх, не докричаться до него.	Eh, I can't get through to him.
+tertilus_101_3	{playerName}, здорово!	{playerName}, great!
+tertilus_101_4	Ох, замерз я, замерз старый.	Oh, I'm frozen, I'm frozen old man.
+tertilus_101_5	Хорошо, поплыли к тебе, а то мне добираться долго до дома.	Okay, let's swim to you, otherwise it will take me a long time to get home.
+tertilus_101_6	Заодно посмотрю как ты там обустроился.	At the same time, I'll see how you've settled in there.
+tertilus_102_0	А-а-а, так вот куда он делся, проныра.	Ah-ah-ah, so that's where he went, the sneak.
+tertilus_102_1	Ну ладно, раз на корпоративе, значит всё хорошо.	Well, okay, since it’s a corporate party, then everything’s fine.
+tertilus_102_2	В общем, спасибо тебе, {playerName}.	Anyway, thank you, {playerName}.
+tertilus_102_3	Хотя бы буду знать, что с ним всё в порядке.	At least I'll know he's okay.
+tertilus_103_0	И тебе не хворать, {playerName}!	And may you stay healthy, {playerName}!
+tertilus_103_1	Какими судьбами тут?	What brings you here?
+tertilus_103_2	Время то позднее, хо-хо.	It's late, ho-ho.
+tertilus_103_3	Ну раз так, думаю можно и в гости сходить!	Well, if that's the case, I think we can go visit!
+tertilus_103_4	Пошли, юнец.	Let's go, young man.
+tertilus_104_0	Приятно удивлён, спасибо!	Pleasantly surprised, thank you!
+tertilus_104_1	Эти ракушки такие красивые…	These shells are so beautiful...
+tertilus_104_2	У меня аж дух захватывает!	It takes my breath away!
+tertilus_104_3	Сохраню их на память.	I'll keep them as a keepsake.
+tertilus_104_4	Подарил бы жене, да жены то уже и нет, хо-хо-хо.	I would give it to my wife, but my wife is no longer here, ho-ho-ho.
+tertilus_104_5	К сожалению, она не дожила до моей старости.	Unfortunately, she did not live to see my old age.
+tertilus_104_6	Болезнь, болезнь…	Illness, illness…
+tertilus_104_7	Даже и не помню какая.	I don't even remember which one.
+tertilus_104_8	Это уже в прошлом, {playerName}.	That's in the past now, {playerName}.
+tertilus_104_9	Тут уже ничего не поделать.	There's nothing that can be done about it now.
+tertilus_104_10	Всё когда-то подходит к концу.	Everything comes to an end someday.
+tertilus_104_11	Поэтому не стоит жалеть о прошлом, дитя.	So don't regret the past, child.

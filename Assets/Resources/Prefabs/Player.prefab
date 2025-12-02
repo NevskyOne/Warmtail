@@ -738,7 +738,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!233 &1272670293728208958
 HingeJoint2D:
@@ -753,7 +753,7 @@ HingeJoint2D:
   m_ConnectedRigidBody: {fileID: 8399839914739372418}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_BreakAction: 3
+  m_BreakAction: 0
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 4.4960175, y: 6.0956507}
@@ -1173,7 +1173,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!233 &8209511936743020063
 HingeJoint2D:
@@ -1188,7 +1188,7 @@ HingeJoint2D:
   m_ConnectedRigidBody: {fileID: 8399839914739372418}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_BreakAction: 3
+  m_BreakAction: 0
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 2.9578376, y: -5.402877}
@@ -1657,7 +1657,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!233 &7407519825299671173
 HingeJoint2D:
@@ -1672,7 +1672,7 @@ HingeJoint2D:
   m_ConnectedRigidBody: {fileID: 8399839914739372418}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_BreakAction: 3
+  m_BreakAction: 0
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 2.867915, y: 5.6251674}
@@ -1868,7 +1868,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!233 &6467519906658058998
 HingeJoint2D:
@@ -1883,7 +1883,7 @@ HingeJoint2D:
   m_ConnectedRigidBody: {fileID: 8399839914739372418}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_BreakAction: 3
+  m_BreakAction: 0
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 4.1691556, y: -5.7435203}
@@ -2116,7 +2116,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!233 &7098918753803298975
 HingeJoint2D:
@@ -2131,7 +2131,7 @@ HingeJoint2D:
   m_ConnectedRigidBody: {fileID: 8399839914739372418}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_BreakAction: 3
+  m_BreakAction: 0
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 4.7439313, y: -5.9201884}
@@ -2269,7 +2269,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!233 &2732859459066220683
 HingeJoint2D:
@@ -2284,7 +2284,7 @@ HingeJoint2D:
   m_ConnectedRigidBody: {fileID: 8399839914739372418}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_BreakAction: 3
+  m_BreakAction: 0
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 3.6279624, y: 6.0012355}

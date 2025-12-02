@@ -24,11 +24,10 @@ namespace Systems.Abilities.Concrete
         [Inject]
         public void Construct(Player player, CinemachineCamera vCam, WarmthSystem warmth, PlayerInput input, DiContainer container)
         {
-            _playerTransform = player.transform;
+            _playerTransform = player.Rigidbody.transform;
             _vCam = vCam;
             _warmthSystem = warmth;
             
-            // Инстанциируем через Zenject, чтобы зависимости прокинулись в Boids
             _activeSwarm = container.InstantiatePrefabForComponent<SwarmController>(_swarmPrefab);
             _activeSwarm.Initialize();
 
@@ -43,6 +42,7 @@ namespace Systems.Abilities.Concrete
         {
             _activeSwarm.Activate(_playerTransform.position + _spawnOffset);
             _vCam.Follow = _activeSwarm.transform;
+            Debug.Log("resonance");
         }
 
         private void OnTick()
