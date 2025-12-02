@@ -17,11 +17,14 @@ namespace Entities.UI
         [SerializeField] private GameObject _savePrefab;
         [SerializeField] private Transform _saveParent;
         [SerializeField] private UnityEvent _saveButtonEvent;
+        [SerializeField] private GlobalData _persistentGlobalData;
         private GlobalData _globalData;
         private ManualSaveSystem _manualSaveSystem;
         private SaveSystem _saveSystem;
         private DiContainer _container;
         private SceneLoader _sceneLoader;
+
+        private SaveContainer _emptyContainer;
 
         [Inject]
 		private void Construct(ManualSaveSystem manualSaveSystem, SaveSystem saveSystem,
@@ -39,6 +42,8 @@ namespace Entities.UI
 			{
 				SpawnNewPrefab(meta);
 			}
+
+			CheckIfCanAdd();
         }
 
         public async void CreateCurrentSave()
@@ -49,15 +54,21 @@ namespace Entities.UI
         
         public async void CreateNewSave()
         {
-	        var dataList = _globalData.SavableData;
-	        var container = new SaveContainer();
-	        foreach (var d in dataList)
+	        if (_emptyContainer == null)
 	        {
-		        if (d == null) continue;
-		        var key = d.GetType().Name;
-		        container.Blocks[key] = d;
+		        var dataList = _persistentGlobalData.SavableData;
+		        var emptyContainer = new SaveContainer();
+		        foreach (var d in dataList)
+		        {
+			        if (d == null) continue;
+			        var key = d.GetType().Name;
+			        emptyContainer.Blocks[key] = d;
+		        }
+
+		        _emptyContainer = emptyContainer;
 	        }
-	        var meta = await _manualSaveSystem.CreateManualSaveAsync(_saveNameInput.text,container);
+
+	        var meta = await _manualSaveSystem.CreateManualSaveAsync(_saveNameInput.text,_emptyContainer);
 	        SpawnNewPrefab(meta);
         }
 
@@ -81,12 +92,19 @@ namespace Entities.UI
 		        _globalData.UpdateAllData(_manualSaveSystem.LoadManualSave(meta.Id, _globalData.SavableData));
 		        _sceneLoader.StartSceneProcess("Gameplay");
 	        });
+	        CheckIfCanAdd();
         }
 
         private void DeleteSave(string id, GameObject uiSave)
         {
 			_manualSaveSystem.DeleteManualSave(id);
 			Destroy(uiSave);
+			CheckIfCanAdd();
+        }
+
+        private void CheckIfCanAdd()
+        {
+	        _newSaveButton.interactable = _saveParent.childCount < 3;
         }
     }
 }

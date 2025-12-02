@@ -31,7 +31,8 @@ namespace Entities.UI
 
         private void OnDisable()
         {
-            _playerInput.actions["Escape"].performed -= EscapeTransition;
+            if(_playerInput)
+                _playerInput.actions["Escape"].performed -= EscapeTransition;
         }
 
         private void EscapeTransition(InputAction.CallbackContext ctx)

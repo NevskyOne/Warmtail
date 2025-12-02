@@ -267,7 +267,7 @@ MonoBehaviour:
     - Key: 3
       Value: 0
   _player: {fileID: 0}
-  _playerInput: {fileID: 0}
+  _playerInput: {fileID: 1822543843}
 --- !u!1 &135727767
 GameObject:
   m_ObjectHideFlags: 0

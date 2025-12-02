@@ -1063,6 +1063,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _persistentGlobalData: {fileID: 6645744535049247407, guid: a43cab36c9db6d44b8511f36d251fc2d, type: 3}
 --- !u!114 &2566067387720239715
 MonoBehaviour:
   m_ObjectHideFlags: 0
