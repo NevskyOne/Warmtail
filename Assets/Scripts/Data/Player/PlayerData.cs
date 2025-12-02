@@ -10,8 +10,9 @@ namespace Data.Player
         public int Shells;
         public int ActiveLayers;
         public List<int> SeenReplicas;
-        public SerializedDictionary<int, int> Inventory; // [id] = count
+        public SerializedDictionary<int, int> Inventory;
         public string TimeLastGame;
+        public int TutorState;
     }
     
     [Serializable]

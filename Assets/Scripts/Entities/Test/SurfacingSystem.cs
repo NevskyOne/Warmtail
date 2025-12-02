@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Data;
 using Data.Player;
 using Entities.PlayerScripts;
+using Systems.AbilitiesVisual;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Zenject;
@@ -11,19 +12,22 @@ namespace Systems.Environment
     public class SurfacingSystem : MonoBehaviour
     {
         [SerializeField] private List<GameObject> _levelRoots;
+        [SerializeField] private List<Material> _waterMaterials;
         [SerializeField] private float _layerCheckRadius = 1f;
         [SerializeField] private LayerMask _surfaceTriggerLayer;
         [SerializeField] private LayerMask _obstacleLayer;
 
         private GlobalData _globalData;
         private Player _player;
+        private PlayerConfig _config;
         private int _currentLayerIndex;
 
         [Inject]
-        public void Construct(GlobalData globalData, PlayerInput input, Player player)
+        public void Construct(GlobalData globalData, PlayerInput input, Player player, PlayerConfig config)
         {
             _globalData = globalData;
             _player = player;
+            _config = config;
             UpdateLevelVisibility();
             input.actions["Surfacing"].started += ctx =>
             {
@@ -69,10 +73,13 @@ namespace Systems.Environment
 
         private void UpdateLevelVisibility()
         {
+            ((MovementVisuals)_config.Abilities[0].Visual).Water = _waterMaterials[_currentLayerIndex];
             for (int i = 0; i < _levelRoots.Count; i++)
             {
                 if (_levelRoots[i] != null)
+                {
                     _levelRoots[i].SetActive(i == _currentLayerIndex);
+                }
             }
         }
 

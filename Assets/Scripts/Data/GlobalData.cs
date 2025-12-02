@@ -6,6 +6,7 @@ using Entities.Core;
 using Systems.DataSystems;
 using TriInspector;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Zenject;
 
 namespace Data
@@ -46,14 +47,19 @@ namespace Data
         private void Construct(SaveSystem saveSystem)
         {
             _saveSystem = saveSystem;
-            _saveSystem.Load(ref _savableData);
             _settingsData = _saveSystem.Load(_settingsData);
-
-            var allDataList = _savableData.Concat<IData>(_runtimeData).Concat(new List<IData>{_settingsData}).ToList();
+            
+            var allDataList = _runtimeData.Concat(new List<IData>{_settingsData}).ToList();
             foreach (var data in allDataList)
             {
                 _subs.Add(data, new List<DataEventFunc>());
             }
+#if UNITY_EDITOR
+            if (SceneManager.GetActiveScene().name != "Start")
+            {
+                LoadAutoSave();
+            } 
+#endif
         }
         
         public void SubscribeTo<T>(DataEventFunc selector) where T : class, IData
@@ -96,14 +102,27 @@ namespace Data
             NotifySubscribers<T>(); 
         }
 
+        public void LoadAutoSave()
+        {
+            _saveSystem.Load(ref _savableData);
+            UpdateAllData(_savableData);
+        }
+        
         public void UpdateAllData(List<ISavableData> newList)
         {
             if (newList == null) return;
-            foreach (var t in newList)
+            foreach (var data in newList)
             {
-                var foundKey = _subs.Keys.First(data => t.GetType() == data.GetType());
-                foundKey = t;
-                foreach (var sub in _subs[foundKey])
+                List<DataEventFunc> subs = new();
+                if (_subs.Keys.FirstOrDefault(x => x.GetType() == data.GetType()) != null)
+                {
+                    var key = _subs.Keys.First(x => x.GetType() == data.GetType());
+                    subs = _subs[key];
+                    _subs.Remove(key);
+                }
+                print(data.GetType().FullName + " " + subs.Count);
+                _subs.TryAdd(data, subs);
+                foreach (var sub in _subs[data])
                 {
                     sub.Invoke();
                 }

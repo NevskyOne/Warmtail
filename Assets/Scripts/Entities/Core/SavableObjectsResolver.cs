@@ -15,7 +15,6 @@ namespace Entities.Core
 
             foreach (var obj in FindObjectsByType<SavableStateObject>(FindObjectsInactive.Include,FindObjectsSortMode.None))
             {
-                print(obj.Id);
                 if (changed.ContainsKey(obj.Id))
                 {
                     obj.gameObject.SetActive(changed[obj.Id]);

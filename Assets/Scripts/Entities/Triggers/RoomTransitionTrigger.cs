@@ -12,7 +12,6 @@ namespace Entities.Triggers
         [SerializeField] private Collider2D[] _hideCollider;
         [SerializeField] private SpriteShapeRenderer[] _normalSprites;
         [SerializeField] private SpriteShapeRenderer[] _hiddenSprites;
-        private bool _isHidden;
 
         private void Start()
         {
@@ -25,13 +24,12 @@ namespace Entities.Triggers
         
         private void TriggerEnter2D(Collider2D other)
         {
-            if (other.CompareTag("Player") && !_isHidden)
+            if (other.CompareTag("Player"))
             {
                 for (int i = 0; i < _hiddenSprites.Length; i++)
                 {
                     Fade(_normalSprites[i], _hiddenSprites[i]);
                 }
-                _isHidden = true;
                 for (int i = 0; i < _showCollider.Length; i++)
                 {
                     _showCollider[i].gameObject.SetActive(false);
@@ -42,14 +40,12 @@ namespace Entities.Triggers
 
         private void HiddenTriggerEnter2D(Collider2D other)
         {
-            if (other.CompareTag("Player") && _isHidden)
+            if (other.CompareTag("Player"))
             {
                 for (int i = 0; i < _hiddenSprites.Length; i++)
                 {
                     Fade(_hiddenSprites[i], _normalSprites[i]);
                 }
-
-                _isHidden = false;
                 for (int i = 0; i < _showCollider.Length; i++)
                 {
                     _showCollider[i].gameObject.SetActive(true);

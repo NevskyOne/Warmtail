@@ -119,53 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &2122344
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2122345}
-  - component: {fileID: 2122346}
-  m_Layer: 0
-  m_Name: MonologueVisuals
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2122345
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2122344}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1204636205}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2122346
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2122344}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 192ec55c21c44be38e673e34c56a3ea8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Entities.UI.MonologueVisuals
-  _textFadeSpeed: 2
-  _textPrefab: {fileID: 5700160359218468073, guid: 02ae61c3311126c4c97196c354bac1c2, type: 3}
-  _textBounds: {fileID: 2039595035}
 --- !u!224 &77971765 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7590966013885990623, guid: 57aa94e25aecc6f43a51b1e798b4bea4, type: 3}
@@ -2150,7 +2103,6 @@ Transform:
   - {fileID: 424214787}
   - {fileID: 1836109678}
   - {fileID: 952794402}
-  - {fileID: 2122345}
   - {fileID: 1692990483}
   - {fileID: 865195739}
   - {fileID: 1897004855}
@@ -2456,6 +2408,10 @@ PrefabInstance:
     - target: {fileID: 2571283366115454144, guid: ede706f52f746df4d9a8290dc90b22c5, type: 3}
       propertyPath: m_ConnectedAnchor.y
       value: 0.000011021843
+      objectReference: {fileID: 0}
+    - target: {fileID: 3338078019211752958, guid: ede706f52f746df4d9a8290dc90b22c5, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 3546695306457158439, guid: ede706f52f746df4d9a8290dc90b22c5, type: 3}
       propertyPath: m_TagString
@@ -3453,6 +3409,7 @@ MonoBehaviour:
   _playerConfig: {fileID: 11400000, guid: 653a16e41f82cd34ba2a8797b1b5149f, type: 2}
   _uiStateSystem: {fileID: 88475865}
   _shoppingManager: {fileID: 1897004854}
+  _cam: {fileID: 120628539}
 --- !u!1 &2062651858
 GameObject:
   m_ObjectHideFlags: 0

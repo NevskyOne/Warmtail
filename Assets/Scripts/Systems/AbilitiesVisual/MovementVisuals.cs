@@ -18,7 +18,7 @@ namespace Systems.AbilitiesVisual
         private static readonly int Rotation = Shader.PropertyToID("_Rotation");
         private static readonly int Position = Shader.PropertyToID("_Position");
         
-        [SerializeField] private Material _water;
+        [field: SerializeReference] public Material Water {get; set;}
         [SerializeField] private ParticleSystem _startVfx;
         [SerializeField] private ParticleSystem _loopVfx;
         [SerializeField] private AudioClip _startSfx;
@@ -30,7 +30,7 @@ namespace Systems.AbilitiesVisual
         private IAbility _ability;
         private CinemachineCamera _camera;
         private LensSettings _lastSettings;
-        private List<GameObject> _loopVfxObjs;
+        private List<GameObject> _loopVfxObjs = new();
         
         [Inject]
         private void Construct(Player player, PlayerConfig config, CinemachineCamera camera)
@@ -77,7 +77,7 @@ namespace Systems.AbilitiesVisual
             _player.ObjectSfx.StopLoopSfx();
             await Tween.Custom(_camera.Lens.OrthographicSize,_lastSettings.OrthographicSize,new TweenSettings(1), x =>
             {
-                _camera.Lens.OrthographicSize = x;
+                if(_ability.Enabled) _camera.Lens.OrthographicSize = x;
             });
             await UniTask.Delay(200);
             foreach (var obj in _loopVfxObjs)
@@ -88,9 +88,9 @@ namespace Systems.AbilitiesVisual
 
         private void UpdatePlayerStats()
         {
-            _water.SetVector(Position, 
+            Water.SetVector(Position, 
                 new Vector4(_player.Rigidbody.position.x, _player.Rigidbody.position.y));
-            _water.SetFloat(Rotation, _player.Rigidbody.rotation - 90);
+            Water.SetFloat(Rotation, _player.Rigidbody.rotation - 90);
         }
 
         public void Dispose()

@@ -1,8 +1,10 @@
 ﻿using System.IO;
 using Data;
+using Entities.Core;
 using Systems.DataSystems;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using Zenject;
 
@@ -14,19 +16,24 @@ namespace Entities.UI
         [SerializeField] private Button _newSaveButton;
         [SerializeField] private GameObject _savePrefab;
         [SerializeField] private Transform _saveParent;
-        [SerializeField] private GlobalData _globalData;
+        [SerializeField] private UnityEvent _saveButtonEvent;
+        private GlobalData _globalData;
         private ManualSaveSystem _manualSaveSystem;
         private SaveSystem _saveSystem;
         private DiContainer _container;
+        private SceneLoader _sceneLoader;
 
         [Inject]
-		private void Construct(ManualSaveSystem manualSaveSystem, SaveSystem saveSystem, DiContainer container)
+		private void Construct(ManualSaveSystem manualSaveSystem, SaveSystem saveSystem,
+			DiContainer container, GlobalData globalData, SceneLoader sceneLoader)
         {
 			_manualSaveSystem = manualSaveSystem;
 			_saveSystem = saveSystem;
 			_container = container;
+			_globalData = globalData;
+			_sceneLoader = sceneLoader;
 			if(_newSaveButton)
-				_newSaveButton.onClick.AddListener(CreateNewSave);
+				_newSaveButton.onClick.AddListener(_saveButtonEvent.Invoke);
 
 			foreach (var meta in _manualSaveSystem.ListManualSaves())
 			{
@@ -34,13 +41,13 @@ namespace Entities.UI
 			}
         }
 
-        private async void CreateCurrentSave()
+        public async void CreateCurrentSave()
         {
 	        var meta = await _manualSaveSystem.CreateManualSaveAsync(_saveNameInput.text,_saveSystem.AutoContainer);
 			SpawnNewPrefab(meta);
         }
         
-        private async void CreateNewSave()
+        public async void CreateNewSave()
         {
 	        var dataList = _globalData.SavableData;
 	        var container = new SaveContainer();
@@ -70,7 +77,10 @@ namespace Entities.UI
 	        newObj.GetChild(2).GetComponent<Image>().sprite = sprite;
 	        newObj.GetChild(3).GetComponent<Button>().onClick.AddListener(() => DeleteSave(meta.Id, newObj.gameObject));
 	        newObj.GetChild(2).GetChild(0).GetComponent<Button>().onClick.AddListener(() =>
-		        _globalData.UpdateAllData(_manualSaveSystem.LoadManualSave(meta.Id, _globalData.SavableData)));
+	        {
+		        _globalData.UpdateAllData(_manualSaveSystem.LoadManualSave(meta.Id, _globalData.SavableData));
+		        _sceneLoader.StartSceneProcess("Gameplay");
+	        });
         }
 
         private void DeleteSave(string id, GameObject uiSave)

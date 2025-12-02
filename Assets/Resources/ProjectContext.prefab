@@ -107,13 +107,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Data.GlobalData
   _savableData:
-  - rid: 4204128976498852011
-  - rid: 4204128976498852012
-  - rid: 4204128976498852013
-  - rid: 4204128976498852014
-  - rid: 4204128976498852015
-  - rid: 4204128976498852016
-  - rid: 4204128976498852017
+  - rid: 4204128997775507583
+  - rid: 4204128997775507584
+  - rid: 4204128997775507585
+  - rid: 4204128997775507586
+  - rid: 4204128997775507587
+  - rid: 4204128997775507588
+  - rid: 4204128997775507589
   _runtimeData:
   - rid: 1601399230582489401
   _settingsData:
@@ -131,13 +131,13 @@ MonoBehaviour:
     - rid: 1601399754601005135
       type: {class: SettingsData, ns: Data, asm: Assembly-CSharp}
       data:
-        MainSoundVolume: 0
-        MusicVolume: 0
-        SfxVolume: 0
+        MainSoundVolume: 0.5
+        MusicVolume: 1
+        SfxVolume: 1
         QualityLevel: 0
         FullscreenMode: 0
         Language: 0
-    - rid: 4204128976498852011
+    - rid: 4204128997775507583
       type: {class: SavablePlayerData, ns: Data.Player, asm: Assembly-CSharp}
       data:
         Stars: 1
@@ -147,35 +147,36 @@ MonoBehaviour:
         Inventory:
           _serializedList: []
         TimeLastGame: 
-    - rid: 4204128976498852012
+        TutorState: 0
+    - rid: 4204128997775507584
       type: {class: DialogueVarData, ns: Data, asm: Assembly-CSharp}
       data:
         Variables:
         - Type: 0
           Name: playerName
           Value: '###'
-    - rid: 4204128976498852013
+    - rid: 4204128997775507585
       type: {class: ShellsData, ns: Data, asm: Assembly-CSharp}
       data:
         ShellsActive:
           _serializedList: []
-    - rid: 4204128976498852014
+    - rid: 4204128997775507586
       type: {class: NpcSpawnData, ns: Data, asm: Assembly-CSharp}
       data:
         NpcSpawnerData:
           _serializedList: []
-    - rid: 4204128976498852015
+    - rid: 4204128997775507587
       type: {class: NPCData, ns: Data.NPCShop, asm: Assembly-CSharp}
       data:
         Levels:
           _serializedList: []
         BoughtLastItem:
           _serializedList: []
-    - rid: 4204128976498852016
+    - rid: 4204128997775507588
       type: {class: HouseData, ns: Data.House, asm: Assembly-CSharp}
       data:
         PlacedHouseItems: []
-    - rid: 4204128976498852017
+    - rid: 4204128997775507589
       type: {class: WorldData, ns: Data, asm: Assembly-CSharp}
       data:
         SavableObjects:

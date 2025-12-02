@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Data.Player;
 using Entities.PlayerScripts;
 using Entities.UI;
@@ -8,6 +9,7 @@ using Zenject;
 using Systems;
 using Entities.House;
 using Entities.NPC;
+using Unity.Cinemachine;
 
 namespace Entities.Core
 {
@@ -19,6 +21,7 @@ namespace Entities.Core
         [SerializeField] private PlayerConfig _playerConfig;
         [SerializeField] private UIStateSystem _uiStateSystem;
         [SerializeField] private ShoppingManager _shoppingManager;
+        [SerializeField] private CinemachineCamera _cam;
 
         public override void InstallBindings()
         {
@@ -28,16 +31,15 @@ namespace Entities.Core
             Container.Bind<PlayerConfig>().FromInstance(_playerConfig).AsSingle();
             Container.Bind<UIStateSystem>().FromInstance(_uiStateSystem).AsSingle();
             Container.Bind<ShoppingManager>().FromInstance(_shoppingManager).AsSingle();
-            
+            Container.Bind<CinemachineCamera>().FromInstance(_cam).AsSingle();
             Container.Bind<NPCMethods>().FromNew().AsSingle();
             Container.Bind<ShoppingSystem>().FromNew().AsSingle();
             Container.Bind<PlacementSystem>().FromNew().AsSingle();
             Container.Bind<DialogueSystem>().FromNew().AsSingle();
             
-            // foreach (var ability in _playerConfig.Abilities)
-            // {
-            //     Container.BindInterfacesAndSelfTo<IAbility>().FromInstance(ability).AsTransient();
-            // }
+            Container.Bind<List<IAbility>>()
+                .FromInstance(_playerConfig.Abilities)
+                .AsSingle();
         }
     }
 }

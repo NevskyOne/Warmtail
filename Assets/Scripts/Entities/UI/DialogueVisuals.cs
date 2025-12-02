@@ -44,8 +44,8 @@ namespace Entities.UI
         private PlayerInput _input;
         private UIStateSystem _uiStateSystem;
         
-        private TextEffect BoxNameEffect => _boxName.GetComponent<TextEffect>();
-        private TextEffect BoxTextEffect => _boxText.GetComponent<TextEffect>();
+        private TextEffect _boxNameEffect;
+        private TextEffect _boxTextEffect;
         
         private LocalizationManager _localizationManager;
         public bool IsComplete { get; set; }
@@ -62,7 +62,9 @@ namespace Entities.UI
             _uiStateSystem = uiStateSystem;
 
             _input.actions.FindAction("Space").performed += RequestNewNode;
-            BoxTextEffect.globalEffects[0].onEffectCompleted.AddListener(() => IsComplete = true);
+            _boxNameEffect = _boxName.GetComponent<TextEffect>();
+            _boxTextEffect = _boxText.GetComponent<TextEffect>();
+            _boxTextEffect.globalEffects[0].onEffectCompleted.AddListener(() => IsComplete = true);
         }
         
         private void RequestNewNode(InputAction.CallbackContext _)
@@ -106,13 +108,13 @@ namespace Entities.UI
                 displayName = _globalData.Get<DialogueVarData>().Variables.Find(var => var.Name == "playerName").Value;
             }
             _boxName!.text = displayName;
-            BoxNameEffect.Refresh();
+            _boxNameEffect.Refresh();
             if(character.EmotionSprites.ContainsKey(node.Emotion))
                 _boxImage.sprite = character.EmotionSprites[node.Emotion];
             _boxText.text = text;
-            BoxTextEffect.globalEffects[0].effect = _effect;
-            BoxTextEffect.Refresh();
-            BoxTextEffect.StartOnStartEffects();
+            _boxTextEffect.globalEffects[0].effect = _effect;
+            _boxTextEffect.Refresh();
+            _boxTextEffect.StartOnStartEffects();
         }
         
         public async void ShowOptions(List<int> choices)
@@ -151,7 +153,7 @@ namespace Entities.UI
 
         public void ChangeEffectSpeed()
         {
-            BoxTextEffect.StopOnStartEffects();
+            _boxTextEffect.StopOnStartEffects();
             IsComplete = true;
         }
 
