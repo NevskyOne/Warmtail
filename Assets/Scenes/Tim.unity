@@ -1115,6 +1115,7 @@ GameObject:
   - component: {fileID: 183632137}
   - component: {fileID: 183632136}
   - component: {fileID: 183632135}
+  - component: {fileID: 183632139}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -1170,8 +1171,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 498fa19ce0b5d394b9226cc5143ac993, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BreakableObject
-  _destroyEffect: {fileID: 0}
-  _disableInsteadOfDestroy: 0
 --- !u!212 &183632137
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1245,6 +1244,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &183632139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183632134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e42fcc4e0e08b7744a2627adf1ab8c49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Systems.Destructible.DestructibleObject
+  _destroyDelay: 0
 --- !u!1 &206700737
 GameObject:
   m_ObjectHideFlags: 0

@@ -47,7 +47,7 @@ MonoBehaviour:
           rid: -2
         _dashForce: 10000
         _dashCost: 15
-        _destroyRadius: 1.5
+        _destroyRadius: 3
     - rid: 2564828074214424678
       type: {class: MetabolismAbility, ns: Systems.Abilities.Concrete, asm: Assembly-CSharp}
       data:

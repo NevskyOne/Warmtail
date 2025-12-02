@@ -50,7 +50,9 @@ namespace Entities.PlayerScripts
         private void FixedUpdate()
         {
             _movement.FixedTick();
-            _dashAbility.Tick();
+           
+                _dashAbility.Tick();
+            
         }
 
         public void DisableAllAbilities()

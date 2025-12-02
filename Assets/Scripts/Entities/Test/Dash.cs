@@ -52,7 +52,7 @@ namespace Systems.Abilities.Concrete
                 int dir = (int)Mathf.Sign(_layerInput);
                 if (_surfacingSystem.TryChangeLayer(dir))
                 {
-                    HandleObstacleDestruction();
+                   
                     if (!isFree) _warmthSystem.DecreaseWarmth(_dashCost);
                     
                     // Сбрасываем инпут, чтобы не пролетать слои мгновенно
@@ -60,8 +60,9 @@ namespace Systems.Abilities.Concrete
                 }
             }
             // Логика рывка
-            else if (_moveInput.magnitude > 1f)
+            else if (_moveInput.magnitude > 1f )
             {
+                HandleObstacleDestruction();
                 Debug.Log("dddd2");
                 _playerRb.AddForce(_moveInput * _dashForce, ForceMode2D.Force);
                 if (!isFree) _warmthSystem.DecreaseWarmth(_dashCost);
@@ -76,6 +77,7 @@ namespace Systems.Abilities.Concrete
             {
                 if (hit.TryGetComponent<IDestroyable>(out var dest))
                     dest.DestroyObject();
+                Debug.Log("dEEEEEEEEEEEEEEEEEEEEEE");
             }
         }
     }
