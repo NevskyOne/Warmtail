@@ -98,12 +98,12 @@
                 },
                 {
                     "name": "Scroll",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "ae83bc78-b66c-4372-8f8e-b07e15528e84",
-                    "expectedControlType": "",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -285,8 +285,8 @@
                 },
                 {
                     "name": "",
-                    "id": "7a5e5df1-fa9c-4ddf-8c29-6f8d2e4c7a77",
-                    "path": "<Mouse>/middleButton",
+                    "id": "f5e55efe-17d3-4f16-9806-5d3cb8588ba8",
+                    "path": "<Mouse>/scroll",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",

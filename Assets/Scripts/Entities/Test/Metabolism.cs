@@ -11,7 +11,7 @@ namespace Systems.Abilities.Concrete
     [Serializable]
     public class MetabolismAbility : BaseAbility
     {
-        [SerializeField] private int _heatDrainPerSecond = 10;
+        [SerializeField] private int _heatDrainPerSecond = 8;
         [SerializeField] private float _speedMultiplier = 2f;
 
         private GlobalData _globalData;
@@ -30,6 +30,7 @@ namespace Systems.Abilities.Concrete
 
         private void OnStart()
         { 
+            Debug.Log("MetabolismAbility.OnStart()");
             _baseSpeed = _globalData.Get<RuntimePlayerData>().Speed;
             _globalData.Edit<RuntimePlayerData>(d => d.Speed = Mathf.RoundToInt(_baseSpeed * _speedMultiplier));
             DrainRoutine().Forget();
@@ -37,8 +38,10 @@ namespace Systems.Abilities.Concrete
 
         private async UniTaskVoid DrainRoutine()
         {
+            Debug.Log("MetabolismAbility.DrainRoutine()");
             while (Enabled)
             {
+                Debug.Log("MetabolismAbility.DrainRoutine(DDDD)");
                 _warmthSystem.DecreaseWarmth(_heatDrainPerSecond);
                 await UniTask.Delay(1000);
             }
