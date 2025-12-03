@@ -53,6 +53,7 @@ tertilus_101_3	{playerName}, здорово!	{playerName}, great!
 tertilus_101_4	Ох, замерз я, замерз старый.	Oh, I'm frozen, I'm frozen old man.
 tertilus_101_5	Хорошо, поплыли к тебе, а то мне добираться долго до дома.	Okay, let's swim to you, otherwise it will take me a long time to get home.
 tertilus_101_6	Заодно посмотрю как ты там обустроился.	At the same time, I'll see how you've settled in there.
+tertilus_101_7	Эх, ладно, видимо придётся.	
 tertilus_102_0	А-а-а, так вот куда он делся, проныра.	Ah-ah-ah, so that's where he went, the sneak.
 tertilus_102_1	Ну ладно, раз на корпоративе, значит всё хорошо.	Well, okay, since it’s a corporate party, then everything’s fine.
 tertilus_102_2	В общем, спасибо тебе, {playerName}.	Anyway, thank you, {playerName}.
@@ -62,15 +63,21 @@ tertilus_103_1	Какими судьбами тут?	What brings you here?
 tertilus_103_2	Время то позднее, хо-хо.	It's late, ho-ho.
 tertilus_103_3	Ну раз так, думаю можно и в гости сходить!	Well, if that's the case, I think we can go visit!
 tertilus_103_4	Пошли, юнец.	Let's go, young man.
-tertilus_104_0	Приятно удивлён, спасибо!	Pleasantly surprised, thank you!
-tertilus_104_1	Эти ракушки такие красивые…	These shells are so beautiful...
-tertilus_104_2	У меня аж дух захватывает!	It takes my breath away!
-tertilus_104_3	Сохраню их на память.	I'll keep them as a keepsake.
-tertilus_104_4	Подарил бы жене, да жены то уже и нет, хо-хо-хо.	I would give it to my wife, but my wife is no longer here, ho-ho-ho.
-tertilus_104_5	К сожалению, она не дожила до моей старости.	Unfortunately, she did not live to see my old age.
-tertilus_104_6	Болезнь, болезнь…	Illness, illness…
-tertilus_104_7	Даже и не помню какая.	I don't even remember which one.
-tertilus_104_8	Это уже в прошлом, {playerName}.	That's in the past now, {playerName}.
-tertilus_104_9	Тут уже ничего не поделать.	There's nothing that can be done about it now.
-tertilus_104_10	Всё когда-то подходит к концу.	Everything comes to an end someday.
-tertilus_104_11	Поэтому не стоит жалеть о прошлом, дитя.	So don't regret the past, child.
+tertilus_104_0	И тебе не хворать, {playerName}!	And may you stay healthy, {playerName}!
+tertilus_104_1	Какими судьбами тут?	What brings you here?
+tertilus_104_2	Время то позднее, хо-хо.	It's late, ho-ho.
+tertilus_104_3	Ну раз так, думаю можно и в гости сходить!	Well, if that's the case, I think we can go visit!
+tertilus_104_4	Пошли, юнец.	Let's go, young man.
+tertilus_104_5	Бывай!	Bye!
+tertilus_105_0	Приятно удивлён, спасибо!	Pleasantly surprised, thank you!
+tertilus_105_1	Эти ракушки такие красивые…	These shells are so beautiful...
+tertilus_105_2	У меня аж дух захватывает!	It takes my breath away!
+tertilus_105_3	Сохраню их на память.	I'll keep them as a keepsake.
+tertilus_105_4	Подарил бы жене, да жены то уже и нет, хо-хо-хо.	I would give it to my wife, but my wife is no longer here, ho-ho-ho.
+tertilus_105_5	К сожалению, она не дожила до моей старости.	Unfortunately, she did not live to see my old age.
+tertilus_105_6	Болезнь, болезнь…	Illness, illness…
+tertilus_105_7	Даже и не помню какая.	I don't even remember which one.
+tertilus_105_8	Это уже в прошлом, {playerName}.	That's in the past now, {playerName}.
+tertilus_105_9	Тут уже ничего не поделать.	There's nothing that can be done about it now.
+tertilus_105_10	Всё когда-то подходит к концу.	Everything comes to an end someday.
+tertilus_105_11	Поэтому не стоит жалеть о прошлом, дитя.	So don't regret the past, child.

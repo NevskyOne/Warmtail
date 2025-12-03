@@ -1,9 +1,12 @@
-﻿using AYellowpaper.SerializedCollections;
+﻿using System.Numerics;
+using AYellowpaper.SerializedCollections;
 
 namespace Data
 {
     public class WorldData : ISavableData
     {
         public SerializedDictionary<string, bool> SavableObjects = new();
+        public SerializedDictionary<string, int> SavableNpcState = new();
     }
+
 }

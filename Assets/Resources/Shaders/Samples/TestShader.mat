@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: TestShader
-  m_Shader: {fileID: -6465566751694194690, guid: 18c957b4a03550943a35eded13da500d, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 6a0c037741563bf43998aff10ea19354, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -46,7 +46,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 756d6724924f2448ab273c1be1db34c8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_8fc937b4c16d431e8bab3076da513d23_Texture_1_Texture2D:
@@ -72,10 +72,10 @@ Material:
     - _NoiseScale: 1.5
     - _NormalizeFactor: 1.44
     - _PositionOffset: 0.1
-    - _ShockWaveStrength: -0.2
-    - _Size: 0.08
+    - _ShockWaveStrength: -0.3
+    - _Size: 0.05
     - _Speed: 0.001
-    - _WaveDistance: 0.589
+    - _WaveDistance: -0.1
     - _XSizeRatio: 1.7777778
     m_Colors:
     - _BaseColor: {r: 1, g: 0, b: 0, a: 1}

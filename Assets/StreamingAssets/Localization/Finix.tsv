@@ -36,54 +36,56 @@ finix_7_2	Некоторые остались ещё, давай поможем 
 finix_7_3	И еще…	And one more thing…
 finix_7_4	Спасибо большое за то объятие.	Thank you so much for that hug.
 finix_7_5	Всё, я молчу…	That's it, I'm keeping quiet...
-finix_106_0	Хочешь поговорить?	
-finix_106_1	Это было ещё в детстве.	
-finix_106_2	Я тогда с родителями приходила сюда, мы играли.	
-finix_106_3	Это было очень весело, ха-ха-ха!	
-finix_106_4	Не переживай ты так.	
-finix_106_5	Посмотри лучше как всё поменялось вокруг благодаря тебе!	
-finix_106_6	Если бы не ты, мы бы давно тут замёрзли.	
-finix_106_7	Хех, правда.	
-finix_106_8	Взаимопомощь у нас очень ценится!	
-finix_106_9	Да-а-а, я обожала их раньше.	
-finix_106_10	Они такие милые.	
-finix_106_11	А тебе нравятся они?	
-finix_106_12	Так и знала!	
-finix_106_13	Не зря ты же ими управляешь	
-finix_106_14	Оу, а почему?	
-finix_106_15	Поняла, ну ничего.	
-finix_106_16	Да, конечно можешь!	
-finix_107_0	{playerName}!	
-finix_107_1	Не ожидала тебя здесь увидеть.	
-finix_107_2	Пытаюсь вот перебраться через этот лёд!	
-finix_107_3	Не выходит ничего.	
-finix_107_4	Хорошо, я только за!	
-finix_108_0	Хе-хе, да-а.	
-finix_108_1	А ещё, смотри, тут есть место для гонок?	
-finix_108_2	Ага!	
-finix_108_3	Глянуь туда, это же идеальное место.	
-finix_108_4	А давай!	
-finix_108_5	Вставай на старт и мы начнём.	
-finix_109_0	Фу-у-у-ух, это было тяжело!	
-finix_109_1	Но я тебя обошла.	
-finix_109_2	Хе-хе.	
-finix_109_3	Да ладно-ладно, не дуйся.	
-finix_109_4	Это всего лишь игра.	
-finix_109_5	В следующий раз будешь шустрее и обязательно выиграешь.	
-finix_109_6	Да ну тебя-я-я-я!	
-finix_109_7	Ладно, я честно проиграла.	
-finix_109_8	Согласна, очень холодно стало.	
-finix_109_9	Слушай, тебя же Тертилус недавно приютил, не покажешь домик?	
-finix_109_10	Заодно согреемся.	
-finix_110_0	Ух ты, кто пожаловал!	
-finix_110_1	Неужели это {playerName}, ха-ха.	
-finix_110_2	Да так, рыбок ловлю.	
-finix_110_3	Коллекционирую.	
-finix_110_4	Они такие интересные на самом деле.	
-finix_110_5	И очень умные!	
-finix_110_6	Только... забывчивые.	
-finix_110_7	О! Было бы славно.	
-finix_110_8	Собери пару десятков и возвращайся тогда.	
-finix_110_9	Я тогда сразу туда пойду погреться, если не против.	
-finix_111_0	Ну и много ты наловил!	
-finix_111_1	Спасибо большое, теперь у меня будет целая коллекция.	
+finix_106_0	Хочешь поговорить?	Do you want to talk?
+finix_106_1	Это было ещё в детстве.	This was back in childhood.
+finix_106_2	Я тогда с родителями приходила сюда, мы играли.	I used to come here with my parents and we used to play.
+finix_106_3	Это было очень весело, ха-ха-ха!	It was a lot of fun, hahaha!
+finix_106_4	Не переживай ты так.	Don't worry so much.
+finix_106_5	Посмотри лучше как всё поменялось вокруг благодаря тебе!	Take a better look at how everything around has changed thanks to you!
+finix_106_6	Если бы не ты, мы бы давно тут замёрзли.	If it weren't for you, we would have frozen here long ago.
+finix_106_7	Хех, правда.	Heh, true.
+finix_106_8	Взаимопомощь у нас очень ценится!	Mutual assistance is highly valued among us!
+finix_106_9	Да-а-а, я обожала их раньше.	Yeah, I used to love them.
+finix_106_10	Они такие милые.	They are so cute.
+finix_106_11	А тебе нравятся они?	Do you like them?
+finix_106_12	Так и знала!	I knew it!
+finix_106_13	Не зря ты же ими управляешь	It's not for nothing that you control them.
+finix_106_14	Оу, а почему?	Oh, why?
+finix_106_15	Поняла, ну ничего.	Got it, oh well.
+finix_106_16	Да, конечно можешь!	Yes, of course you can!
+finix_107_0	{playerName}!	{playerName}!
+finix_107_1	Не ожидала тебя здесь увидеть.	I didn't expect to see you here.
+finix_107_2	Пытаюсь вот перебраться через этот лёд!	I'm trying to get across this ice!
+finix_107_3	Не выходит ничего.	Nothing works.
+finix_107_4	Хорошо, я только за!	Okay, I'm all for it!
+finix_107_5	Окей, как-нибудь потом соберёмся.	Okay, we'll get together sometime later.
+finix_108_0	Хе-хе, да-а.	Heh-heh, yeah-ah.
+finix_108_1	А ещё, смотри, тут есть место для гонок?	And look, is there a place for racing here?
+finix_108_2	Ага!	Yeah!
+finix_108_3	Глянуь туда, это же идеальное место.	Look over there, it's the perfect place.
+finix_108_4	А давай!	Come on!
+finix_108_5	Вставай на старт и мы начнём.	Get on the start line and we'll begin.
+finix_109_0	Фу-у-у-ух, это было тяжело!	Phew, that was tough!
+finix_109_1	Но я тебя обошла.	But I got ahead of you.
+finix_109_2	Хе-хе.	He-he.
+finix_109_3	Да ладно-ладно, не дуйся.	Oh, okay, okay, don't sulk.
+finix_109_4	Это всего лишь игра.	It's just a game.
+finix_109_5	В следующий раз будешь шустрее и обязательно выиграешь.	Next time you'll be quicker and you'll definitely win.
+finix_109_6	Да ну тебя-я-я-я!	Oh, come on!
+finix_109_7	Ладно, я честно проиграла.	Okay, I lost fair and square.
+finix_109_8	Согласна, очень холодно стало.	I agree, it has become very cold.
+finix_109_9	Слушай, тебя же Тертилус недавно приютил, не покажешь домик?	Listen, Tertilus recently took you in, could you show him the house?
+finix_109_10	Заодно согреемся.	We'll warm up at the same time.
+finix_110_0	Ух ты, кто пожаловал!	Wow, who's here!
+finix_110_1	Неужели это {playerName}, ха-ха.	Is that really {playerName}, haha.
+finix_110_2	Да так, рыбок ловлю.	Oh well, I'm just catching fish.
+finix_110_3	Коллекционирую.	I collect.
+finix_110_4	Они такие интересные на самом деле.	They are so interesting actually.
+finix_110_5	И очень умные!	And very smart!
+finix_110_6	Только... забывчивые.	Only... forgetful.
+finix_110_7	О! Было бы славно.	Oh! That would be nice.
+finix_110_8	Собери пару десятков и возвращайся тогда.	Collect a couple dozen and then come back.
+finix_110_9	Я тогда сразу туда пойду погреться, если не против.	I'll go there straight away to warm up then, if you don't mind.
+finix_110_10	Хорошо!	Fine!
+finix_111_0	Ну и много ты наловил!	Well, you caught a lot!
+finix_111_1	Спасибо большое, теперь у меня будет целая коллекция.	Thank you very much, now I will have a whole collection.

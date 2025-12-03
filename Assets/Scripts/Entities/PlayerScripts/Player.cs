@@ -1,7 +1,10 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using Cysharp.Threading.Tasks;
 using Data;
 using Data.Player;
+using EasyTextEffects.Editor.MyBoxCopy.Extensions;
 using Entities.Sound;
 using Interfaces;
 using Systems;
@@ -22,6 +25,7 @@ namespace Entities.PlayerScripts
         private PlayerMovement _movement;
         private List<IAbility> _disabledAbilities = new();
         private List<IDisposable> _disposables = new();
+        private List<Rigidbody2D> _rbs = new();
         
         [Inject]
         private void Construct(GlobalData globalData, PlayerConfig config, DiContainer container)
@@ -44,6 +48,8 @@ namespace Entities.PlayerScripts
 
             _movement = (PlayerMovement)_config.Abilities[0];
             _dashAbility = (DashAbility)_config.Abilities[4];
+
+            _rbs = GetComponentsInChildren<Rigidbody2D>().ToList();
         }
 
         private void FixedUpdate()
@@ -80,6 +86,22 @@ namespace Entities.PlayerScripts
                 disposable.Dispose();
                 disposable.Dispose();
             }
+        }
+
+        public async void Die()
+        {
+            var pos = new List<Vector2>();
+            var systemPos = _globalData.Get<SavablePlayerData>().RespawnPositions;
+            foreach (var p in systemPos)
+            {
+                pos.Add(p.ToUnity());
+            }
+
+            _rbs.ForEach(x => x.Sleep());
+            await UniTask.Delay(300);
+            Rigidbody.position = pos.GetRandom();
+            await UniTask.Delay(300);
+            _rbs.ForEach(x => x.WakeUp());
         }
     }
 }

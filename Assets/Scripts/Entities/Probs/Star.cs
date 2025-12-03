@@ -1,10 +1,11 @@
 using System.Collections.Generic;
 using System.Linq;
-using Data;
 using Data.Player;
 using EasyTextEffects.Editor.MyBoxCopy.Extensions;
 using Entities.UI;
 using Interfaces;
+using Systems;
+using UnityEngine;
 using Zenject;
 
 namespace Entities.Probs
@@ -33,6 +34,8 @@ namespace Entities.Probs
             {
                 playerData.Stars += 1;
                 playerData.SeenReplicas.Add(newId);
+                var v = new Vector2(transform.position.x, transform.position.y);
+                playerData.RespawnPositions.Add(v.ToNumerics());
             });
             ChangeState(false);
         }

@@ -104,18 +104,21 @@ player_100_9	Не зря же я плаваю с этими способност
 player_100_10	А можно купить у вас что-нибудь?	Can I buy something from you?
 player_101_0	Здравствуйте, Тертилус!	Hello, Tertilus!
 player_101_1	Не хотите зайти, согреться?	Would you like to come in and warm up?
+player_101_2	Ох, возвращайтесь домой скорее!	Oh, come home soon!
+player_101_3	Завтра продолжите поиски.	Continue your search tomorrow.
 player_102_0	Хм, ну его определнно тут нету.	Hmm, well he's definitely not here.
 player_102_1	Но зато есть каледарь.	But at least there is a calendar.
-player_102_2	Сегодня-я-я… а, вот!	Today-e-e... ah, here it is!
-player_102_3	У него корпоратив…	He has a corporate party...
-player_102_4	Ладно, пойду вернусь к Тертилусу.	Okay, I'll go back to Tertilus.
-player_103_0	А я с новостями вернулся!	And I'm back with news!
-player_103_1	Октобосса там не было, но зато был календарь на столе.	Octoboss wasn't there, but there was a calendar on the table.
-player_103_2	На нём было написано, что у босса сегодня корпоратив…	It said that the boss had a corporate party today...
-player_103_3	Не за что!	My pleasure!
+player_102_4	Сегодня-я-я… а, вот!	Today-e-e... ah, here it is!
+player_102_5	У него корпоратив…	He has a corporate party...
+player_102_6	Ладно, пойду вернусь к Тертилусу.	Okay, I'll go back to Tertilus.
+player_103_2	А я с новостями вернулся!	And I'm back with news!
+player_103_3	Октобосса там не было, но зато был календарь на столе.	Octoboss wasn't there, but there was a calendar on the table.
+player_103_4	На нём было написано, что у босса сегодня корпоратив…	It said that the boss had a corporate party today...
+player_103_5	Не за что!	My pleasure!
 player_104_0	Здравствуйте!	Hello!
 player_104_1	Абсолютная случайность, хах.	Total coincidence, haha.
 player_104_2	Не хотите зайти на чай?	Would you like to come in for tea?
+player_104_3	Ой и правда, думаю мне пора идти!	Oh really, I think I should go!
 player_105_0	Я собрал ракушки, у меня получилось!	I collected the shells, I succeeded!
 player_105_1	А что с ней случилось?	What happened to her?
 player_105_2	Ох…	Oh…
@@ -134,8 +137,9 @@ player_106_9	Не нравятся.	I don't like them.
 player_106_10	Ну, они слишком быстрые порой.	Well, they are too fast sometimes.
 player_106_11	Иногда не слушаются.	Sometimes they don't listen.
 player_106_12	Могу ли я прикупить у тебя вещей?	Can I buy things from you?
-player_107_0	Привет, Финикс!	Hi, Finix!
-player_107_1	Хм, давай попробуем вместе растопить его.	Hmm, let's try to melt it together.
+player_107_0	Привет, Финикс!	Hello, Phoenix!
+player_107_1	Давай попробуем вместе растопить его.	Hi, Finix!
+player_107_2	Может в следующий раз попытаемся его растопить?	Maybe next time we should try to melt it?
 player_108_0	Действительно уютное место!	A really cozy place!
 player_108_1	Неожиданно.	Suddenly.
 player_108_2	Гонок…?	Racing…?
@@ -156,5 +160,6 @@ player_110_4	Может мне присоединиться?	Maybe I should join
 player_110_5	Тем более я могу призывать их теплом.	Moreover, I can call upon them with warmth.
 player_110_6	Тогда встретимся у дома, когда соберём всё?	Then let's meet at the house when we collect everything?
 player_110_7	Да, без проблем.	Yes, no problem.
+player_110_8	Удачи тебе!	Good luck!
 player_111_0	Пришёл с уловом, хе-хе.	Came back with a catch, heh-heh.
 player_111_1	Приятно слышать!	Nice to hear!

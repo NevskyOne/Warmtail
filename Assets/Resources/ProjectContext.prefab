@@ -148,6 +148,7 @@ MonoBehaviour:
           _serializedList: []
         TimeLastGame: 
         TutorState: 0
+        QuestIds: 
     - rid: 4204128997775507584
       type: {class: DialogueVarData, ns: Data, asm: Assembly-CSharp}
       data:
@@ -155,6 +156,18 @@ MonoBehaviour:
         - Type: 0
           Name: playerName
           Value: '###'
+        - Type: 2
+          Name: tertilusLevel
+          Value: 0
+        - Type: 2
+          Name: finixLevel
+          Value: 0
+        - Type: 2
+          Name: skyperLevel
+          Value: 0
+        - Type: 2
+          Name: jelicaLevel
+          Value: 0
     - rid: 4204128997775507585
       type: {class: ShellsData, ns: Data, asm: Assembly-CSharp}
       data:

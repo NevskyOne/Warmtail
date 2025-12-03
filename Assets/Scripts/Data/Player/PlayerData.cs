@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Numerics;
 using AYellowpaper.SerializedCollections;
 
 namespace Data.Player
@@ -10,9 +11,11 @@ namespace Data.Player
         public int Shells;
         public int ActiveLayers;
         public List<int> SeenReplicas;
+        public List<Vector2> RespawnPositions = new(){new Vector2(24,-10)};
         public SerializedDictionary<int, int> Inventory;
         public string TimeLastGame;
         public int TutorState;
+        public List<int> QuestIds;
     }
     
     [Serializable]

@@ -2,9 +2,11 @@
 using System.Linq;
 using Data;
 using Entities.Core;
+using Interfaces;
 using TriInspector;
 using UnityEngine;
 using Zenject;
+using Vector2 = System.Numerics.Vector2;
 
 namespace Entities.Probs
 {
@@ -49,13 +51,21 @@ namespace Entities.Probs
         
         public void ChangeState(bool active)
         {
-            _globalData.Edit<WorldData>(worldData => { worldData.SavableObjects[_id.Value] = active; });
+            _globalData.Edit<WorldData>(worldData => 
+                { worldData.SavableObjects[_id.Value] = active; });
             gameObject.SetActive(active);
         }
 
         public void ChangeStateOnLoad(bool active)
         {
-            _globalData.Edit<WorldData>(worldData => { worldData.SavableObjects[_id.Value] = active; });
+            _globalData.Edit<WorldData>(worldData => 
+                { worldData.SavableObjects[_id.Value] = active; });
+        }
+        
+        public void SaveNpcState(int state)
+        {
+            _globalData.Edit<WorldData>(worldData =>
+                worldData.SavableNpcState[_id.Value] = state );
         }
     }
 }

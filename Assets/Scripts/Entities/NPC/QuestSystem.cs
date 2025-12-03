@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Data;
+using Data.Player;
 using Entities.Localization;
 using TMPro;
+using TriInspector;
 using UnityEngine;
 using UnityEngine.Events;
 using Zenject;
@@ -11,8 +13,11 @@ namespace Entities.NPC
 {
     public class QuestSystem : MonoBehaviour
     {
+        [Title("Settings")]
+        [SerializeField] private List<QuestData> _allQuests;
         [SerializeField, Tooltip("x: horizontal\ny: top\nz:bottom")] private Vector3 _offset;
         [SerializeField] private Camera _cam;
+        [Title("UI")]
         [SerializeField] private RectTransform _markPrefab;
         [SerializeField] private RectTransform _markHud;
         [SerializeField] private RectTransform _questPrefab;
@@ -25,10 +30,22 @@ namespace Entities.NPC
         
         [Inject] private LocalizationManager _localization;
         [Inject] private DiContainer _diContainer;
+        [Inject] private GlobalData _globalData;
+
+        private void Start()
+        {
+            foreach (var id in _globalData.Get<SavablePlayerData>().QuestIds)
+            {
+                StartQuest(_allQuests.Find(x => x.Id == id));
+            }
+        }
         
         public void StartQuest(QuestData data)
         {
             if (_createdQuests.ContainsKey(data)) return;
+            if(!_globalData.Get<SavablePlayerData>().QuestIds.Contains(data.Id))
+                _globalData.Edit<SavablePlayerData>(playerData=> playerData.QuestIds.Add(data.Id));
+            
             var newQuest = _diContainer.InstantiatePrefab(_questPrefab, _questParent).transform;
             newQuest.GetChild(0).GetComponent<LocalizedText>().SetNewKey("quest_header_" + data.Id);
             newQuest.GetChild(1).GetComponent<LocalizedText>().SetNewKey("quest_desc_" + data.Id);
@@ -48,6 +65,9 @@ namespace Entities.NPC
         public void EndQuest(QuestData data)
         {
             if (!_createdQuests.ContainsKey(data)) return;
+            if(_globalData.Get<SavablePlayerData>().QuestIds.Contains(data.Id))
+                _globalData.Edit<SavablePlayerData>(playerData=> playerData.QuestIds.Remove(data.Id));
+            
             _createdRequests[data] += 1;
             if (_createdRequests[data] < data.RequestsToDeactivate) return;
             foreach (var mark in _createdMarks[data])
@@ -104,8 +124,6 @@ namespace Entities.NPC
                     float angle = Mathf.Atan2(toTarget.y, toTarget.x) * Mathf.Rad2Deg;
                     marks[i].localRotation = Quaternion.Euler(0f, 0f, angle + 90);
                 }
-                //newScreenPos.x = newScreenPos.x * Screen.width / 1920;
-                //newScreenPos.y = newScreenPos.y * Screen.height / 1080;
                 marks[i].position = newScreenPos;
             }
         }

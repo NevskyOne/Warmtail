@@ -16,12 +16,13 @@ namespace Entities.NPC
         [field: SerializeField] public DialogueGraph Graph { get; set; }
         [field: SerializeField] public List<UnityEvent> Actions { get; set; }
         [SerializeField, Range(0,1f)] private float _maxWarmPercent;
+        [field: SerializeField] public bool CanWarm { get; set; } = true;
         [SerializeField] private UnityEvent _warmAction = new();
+        [field: SerializeField] public List<UnityEvent> SavableState { get; private set; }
         private DialogueSystem _dialogueSystem;
         private DialogueVisuals _visuals;
         private float _warmPercent;
-
-        [field: SerializeField] public bool CanWarm { get; set; } = true;
+        
         
         [Inject]
         private void Construct(DialogueSystem dialogueSystem, DialogueVisuals visuals)
@@ -54,6 +55,11 @@ namespace Entities.NPC
         public void Reset()
         {
             _warmPercent = _maxWarmPercent;
+        }
+
+        public void SetPosition(string pos)
+        {
+            transform.position = new Vector2(float.Parse(pos.Split()[0]),float.Parse(pos.Split()[1]));
         }
     }
     
