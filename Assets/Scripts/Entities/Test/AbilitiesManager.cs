@@ -37,7 +37,7 @@ namespace Systems.Abilities
 
         private void SetupInput(PlayerInput input)
         {
-            input.actions["Scroll"].performed += ctx => CycleSelection(ctx.ReadValue<float>());
+            input.actions["Scroll"].performed += ctx => CycleSelection(ctx.ReadValue<Vector2>().y);
 
             input.actions["1"].performed += _ => TrySelectOrCombo(0);
             input.actions["2"].performed += _ => TrySelectOrCombo(1);
@@ -58,6 +58,7 @@ namespace Systems.Abilities
 
         private void SelectAbility(int index)
         {
+            Debug.Log("Select Ability: " + index);
             if (index < 0) index = _abilities.Count - 1;
             if (index >= _abilities.Count) index = 0;
 

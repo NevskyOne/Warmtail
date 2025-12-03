@@ -19,10 +19,10 @@ namespace Systems
         [field: SerializeReference] public IAbilityVisual Visual { get; set; }
         
         [Header("Movement Settings")]
-        [SerializeField] private float _moveForce = 100f;
+        public float MoveForce = 100f;
+       
 
         [SerializeField] private float _moreForge = 100f;
-        [SerializeField] private float _maxSpeed = 5f;
         [SerializeField] private float _drag = 5f;
 
         private Rigidbody2D _mainRigidbody;
@@ -69,7 +69,7 @@ namespace Systems
             if (_moveInput.magnitude > 0.1f)
             {
                 UsingAbility?.Invoke();
-                Vector2 force = _moveInput.normalized * _moveForce;
+                Vector2 force = _moveInput.normalized * MoveForce;
                 _mainRigidbody.AddForce(force * _moreForge, ForceMode2D.Force);
                 
                 float targetAngle = Mathf.Atan2(_moveInput.y, _moveInput.x) * Mathf.Rad2Deg;

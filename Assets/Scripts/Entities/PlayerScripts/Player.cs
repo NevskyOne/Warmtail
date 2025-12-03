@@ -47,7 +47,7 @@ namespace Entities.PlayerScripts
             }
 
             _movement = (PlayerMovement)_config.Abilities[0];
-            _dashAbility = (DashAbility)_config.Abilities[4];
+            _dashAbility = (DashAbility)_config.Abilities[5];
 
             _rbs = GetComponentsInChildren<Rigidbody2D>().ToList();
         }

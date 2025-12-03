@@ -17,8 +17,8 @@ MonoBehaviour:
   - rid: 1601399524581179738
   - rid: 2564828074214424679
   - rid: 4204128997775507718
-  - rid: 2564828074214424677
   - rid: 2564828074214424678
+  - rid: 2564828074214424677
   references:
     version: 2
     RefIds:
@@ -38,9 +38,8 @@ MonoBehaviour:
         <Enabled>k__BackingField: 1
         <Visual>k__BackingField:
           rid: 1601399779124052047
-        _moveForce: 60
+        MoveForce: 100
         _moreForge: 60
-        _maxSpeed: 5
         _drag: 5
     - rid: 1601399779124052047
       type: {class: MovementVisuals, ns: Systems.AbilitiesVisual, asm: Assembly-CSharp}
@@ -57,15 +56,15 @@ MonoBehaviour:
       data:
         <Visual>k__BackingField:
           rid: -2
-        _dashForce: 60
         _dashCost: 1
         _destroyRadius: 1.5
+        dashCooldownDuration: 1
     - rid: 2564828074214424678
       type: {class: MetabolismAbility, ns: Systems.Abilities.Concrete, asm: Assembly-CSharp}
       data:
         <Visual>k__BackingField:
           rid: -2
-        _heatDrainPerSecond: 10
+        _heatDrainPerSecond: 1
         _speedMultiplier: 2
     - rid: 2564828074214424679
       type: {class: WarmingAbility, ns: Systems.Abilities.Concrete, asm: Assembly-CSharp}
