@@ -92,14 +92,14 @@ namespace Systems.Abilities.Concrete
                 }
                 
                 _dashLoopRunning = false;
-                ((PlayerMovement)_playerConfig.Abilities[0]).MoveForce = 100;
+                ((PlayerMovement)_playerConfig.Abilities[0]).MoveForce = 60;
             }
 
 
              void Dash()
             {
                 HandleObstacleDestruction();
-                ((PlayerMovement)_playerConfig.Abilities[0]).MoveForce = 200;
+                ((PlayerMovement)_playerConfig.Abilities[0]).MoveForce = 100;
 
                 bool isFree = IsComboActive && _secondaryComboType == typeof(MetabolismAbility);
 
