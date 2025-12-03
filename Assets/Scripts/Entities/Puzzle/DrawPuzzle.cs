@@ -27,7 +27,6 @@ namespace Entities.Puzzle
 
         public void Reset()
         {
-            Debug.Log("draw reset");
             _currentTrigger = -1;
             if (_isComplete) return;
             if (_timer != null) _timer.Stop();

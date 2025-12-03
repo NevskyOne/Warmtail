@@ -30,8 +30,11 @@ namespace Entities.Puzzle
             if (_warm <= 0) return;
             _warm -= 1;
             if (_warm <= 0) WarmExplosion();
-            else if (_timerWarm != null) _timerWarm.Start();
-            else _timerWarm = new ResettableTimer(_during, TurnOff);
+            else 
+            {
+                if (_timerWarm == null) _timerWarm = new ResettableTimer(_during, TurnOff);
+                _timerWarm.Start();
+            }
         }
 
         public void WarmExplosion()
@@ -49,6 +52,7 @@ namespace Entities.Puzzle
         public void TurnOff()
         {
             Reset();
+            Debug.Log("lever off " + transform.name);
             OnTurnedoff.Invoke();
         }
     }

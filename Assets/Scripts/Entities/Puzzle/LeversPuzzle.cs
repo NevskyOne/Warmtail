@@ -11,7 +11,7 @@ namespace Entities.Puzzle
         [SerializeField] private GameObject _leverPref;
         [SerializeField] private Transform[] _leversPositions;
         [SerializeField] private int _leverCount;
-        private int _leverActive;
+        [SerializeField] private int _leverActive;
 
         public UnityEvent OnSolved = new();
 
@@ -24,6 +24,7 @@ namespace Entities.Puzzle
         private void DecreaseLevers()
         {
             _leverActive--;
+            if (_leverActive < 0) _leverActive = 0;
         }
         private void AddLevers()
         {
