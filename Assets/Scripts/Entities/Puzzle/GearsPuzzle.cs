@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Rng = UnityEngine.Random;
+using UnityEngine.Events;
 using UnityEngine;
 using Interfaces;
 
@@ -11,14 +12,21 @@ namespace Entities.Puzzle
         [SerializeField] private Transform[] _levelsPositions;
         [SerializeField] private int _gearCount;
 
-        [SerializeField] private Gear[] _warmTriggers;
-        private List<Gear> _gearsActivated;
+        private int _activated;
 
-        public void TurnOnGear(Gear gear)
+        public static UnityEvent OnReseted = new();
+        public UnityEvent OnSolved = new();
+
+        void Awake()
         {
-            _gearsActivated.Add(gear);
-            int ind = _gearsActivated.IndexOf(gear);
-            if (_warmTriggers.Length <= ind || gear != _warmTriggers[ind]) Reset();
+            Gear.OnTwisted.AddListener(TwistGear);
+        }
+
+        public void TwistGear(int id)
+        {
+            _activated ++;
+            if (id+1 != _activated) Invoke("Reset", 0.5f);
+            else if (id+1 == _gearCount) Solve();
         }
 
         public void Start()
@@ -27,17 +35,27 @@ namespace Entities.Puzzle
             for (int i = 0; i < _gearCount; i ++)
             {
                 int j = Rng.Range(0, levelsPositions.Count);
-                Instantiate (_gearPref, levelsPositions[j].position, Quaternion.identity, transform);
+                Instantiate (_gearPref, levelsPositions[j].position, Quaternion.identity, transform).GetComponent<Gear>().Initialize(i);
                 levelsPositions.RemoveAt(j);
             }
         }
+
         public void Reset()
         {
-            _gearsActivated = new();
+            _activated = 0;
+            OnReseted.Invoke();
         }
+
         public void Solve()
         {
-            
+            OnSolved.Invoke();
+            Debug.Log("GearsPuzzle выполнено");
+            Invoke("DestroyPuzzle", 0.5f);
+        }
+
+        private void DestroyPuzzle()
+        {
+            Destroy(gameObject);
         }
     }
 }

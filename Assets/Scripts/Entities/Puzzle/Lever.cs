@@ -1,5 +1,6 @@
-using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
+using UnityEngine;
 using Interfaces;
 using Systems;
 
@@ -15,33 +16,40 @@ namespace Entities.Puzzle
 
         private int _warm;
         private ResettableTimer _timerWarm;
-        private ResettableTimer _timerRest;
+
+        public static UnityEvent OnTurnedon = new();
+        public static UnityEvent OnTurnedoff = new();
+
+        private void Start()
+        {
+            Reset();
+        }
 
         public void Warm()
         {
+            if (_warm <= 0) return;
             _warm -= 1;
             if (_warm <= 0) WarmExplosion();
             else if (_timerWarm != null) _timerWarm.Start();
-            else _timerWarm = new ResettableTimer(3, Reset);
+            else _timerWarm = new ResettableTimer(_during, TurnOff);
         }
 
-        public void WarmExplosion() //Enable lever
+        public void WarmExplosion()
         {
+            OnTurnedon.Invoke();
             _spriteRenderer.sprite = _enableSprite;
-            if (_timerRest != null) _timerRest.Start();
-            else _timerRest = new ResettableTimer(_during, Disable);
         }
 
         public void Reset()
         {
             _warm = _warmCapacity;
-        }
-
-        private void Disable()
-        {
             _spriteRenderer.sprite = _disableSprite;
-            Reset();
         }
 
+        public void TurnOff()
+        {
+            Reset();
+            OnTurnedoff.Invoke();
+        }
     }
 }

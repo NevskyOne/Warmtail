@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Rng = UnityEngine.Random;
+using UnityEngine.Events;
 using UnityEngine;
 using Interfaces;
 
@@ -12,13 +13,22 @@ namespace Entities.Puzzle
         [SerializeField] private int _leverCount;
         private int _leverActive;
 
-        public void TurnOffLever() ///////// Надо вызывать turn on/off lever из созданных рычагов
+        public UnityEvent OnSolved = new();
+
+        void Awake()
+        {
+            Lever.OnTurnedon.AddListener(AddLevers);
+            Lever.OnTurnedoff.AddListener(DecreaseLevers);
+        }
+
+        private void DecreaseLevers()
         {
             _leverActive--;
         }
-        public void TurnOnLever()
+        private void AddLevers()
         {
             _leverActive++;
+            if (_leverActive == _leverCount) Solve();
         }
 
         public void Start()
@@ -33,11 +43,17 @@ namespace Entities.Puzzle
         }
         public void Reset()
         {
-
         }
         public void Solve()
         {
-            
+            OnSolved.Invoke();
+            Debug.Log("LevesPuzzle выполнено");
+            Invoke("DestroyPuzzle", 0.5f);
+        }
+
+        private void DestroyPuzzle()
+        {
+            Destroy(gameObject);
         }
     }
 }
