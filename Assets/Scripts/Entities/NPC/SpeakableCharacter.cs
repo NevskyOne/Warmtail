@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Globalization;
 using Data;
 using Data.Nodes;
 using Entities.Probs;
@@ -59,7 +61,9 @@ namespace Entities.NPC
 
         public void SetPosition(string pos)
         {
-            transform.position = new Vector2(float.Parse(pos.Split()[0]),float.Parse(pos.Split()[1]));
+            var (x, y) = (float.Parse(pos.Split(' ')[0], CultureInfo.InvariantCulture),
+                float.Parse(pos.Split(' ')[1], CultureInfo.InvariantCulture));
+            transform.position = new Vector2(x,y);
         }
     }
     

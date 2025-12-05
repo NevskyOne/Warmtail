@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System.Collections;
+using System.Threading;
 using Cysharp.Threading.Tasks;
 using Entities.PlayerScripts;
 using UnityEngine;
@@ -16,19 +17,17 @@ namespace Entities.UI
         private bool _isFreezing;
         [Inject] private Player _player;
         
-        public async UniTaskVoid StartDrain()
+        public IEnumerator StartDrain()
         {
-            if(_isFreezing) return;
+            if(_isFreezing) yield break;
             _isFreezing = true;
             _currentFreeze = 0;
             _freezeMaterial.SetFloat(DissolveAmount, 1);
             var counter = 0f;
             
-            _token?.Dispose();
-            _token = new CancellationTokenSource();
             while (_currentFreeze < 1)
             {
-                await UniTask.Delay(200, cancellationToken: _token.Token);
+                yield return new WaitForSeconds(0.2f);
                 _currentFreeze = Mathf.Pow(10,counter)/10;
                 _freezeMaterial.SetFloat(DissolveAmount, 1 - _currentFreeze);
                 
@@ -40,21 +39,26 @@ namespace Entities.UI
             _player.Die();
         }
         
-        public async UniTaskVoid StopDrain()
+        public IEnumerator StopDrain()
         {
             _isFreezing = false;
-            _token?.Dispose();
-            _token = new CancellationTokenSource();
             Debug.Log("Stop Drain");
             while (_currentFreeze > 0)
             {
-                await UniTask.Delay(200, cancellationToken: _token.Token);
+                yield return new WaitForSeconds(0.2f);
                 _currentFreeze -= _freezeRate;
                 _freezeMaterial.SetFloat(DissolveAmount, 1 - _currentFreeze);
             }
+
             _currentFreeze = 0;
             _freezeMaterial.SetFloat(DissolveAmount, 1 - _currentFreeze);
             Debug.Log("Freeze = 0");
+        }
+        
+        private void OnDisable()
+        {
+            _currentFreeze = 0;
+            _freezeMaterial.SetFloat(DissolveAmount, 1);
         }
     }
 }

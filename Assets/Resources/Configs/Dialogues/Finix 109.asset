@@ -1,0 +1,1110 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9182039838533033052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9d74a14bb242a1b74546a7e2e9399e, type: 3}
+  m_Name: Text
+  m_EditorClassIdentifier: Assembly-CSharp::TextNode
+  graph: {fileID: 11400000}
+  position: {x: -2632, y: -552}
+  ports:
+    keys:
+    - _entry
+    - _exit
+    values:
+    - _fieldName: _entry
+      _node: {fileID: -9182039838533033052}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: 0
+        node: {fileID: 4634216913449920729}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: _exit
+      _node: {fileID: -9182039838533033052}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: _entry
+        node: {fileID: -883625915272621946}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  _entry: 0
+  _exit: 0
+  _textId: 0
+  _character: 2
+  _emotion: 0
+  _displayName: 
+--- !u!114 &-8612775117151090776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9d74a14bb242a1b74546a7e2e9399e, type: 3}
+  m_Name: Text
+  m_EditorClassIdentifier: Assembly-CSharp::TextNode
+  graph: {fileID: 11400000}
+  position: {x: 1096, y: -328}
+  ports:
+    keys:
+    - _entry
+    - _exit
+    values:
+    - _fieldName: _entry
+      _node: {fileID: -8612775117151090776}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: _exit
+        node: {fileID: 4061201882926162112}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: _exit
+      _node: {fileID: -8612775117151090776}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: _entry
+        node: {fileID: -2388810479384575859}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  _entry: 0
+  _exit: 0
+  _textId: 8
+  _character: 2
+  _emotion: 0
+  _displayName: 
+--- !u!114 &-8045886233820522329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9d74a14bb242a1b74546a7e2e9399e, type: 3}
+  m_Name: Text
+  m_EditorClassIdentifier: Assembly-CSharp::TextNode
+  graph: {fileID: 11400000}
+  position: {x: -13.898682, y: -523.87915}
+  ports:
+    keys:
+    - _entry
+    - _exit
+    values:
+    - _fieldName: _entry
+      _node: {fileID: -8045886233820522329}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: _exit
+        node: {fileID: -1554790382202062687}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: _exit
+      _node: {fileID: -8045886233820522329}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: _entry
+        node: {fileID: -5020997858277567742}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  _entry: 0
+  _exit: 0
+  _textId: 5
+  _character: 2
+  _emotion: 0
+  _displayName: 
+--- !u!114 &-5782043239687245926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9d74a14bb242a1b74546a7e2e9399e, type: 3}
+  m_Name: Text
+  m_EditorClassIdentifier: Assembly-CSharp::TextNode
+  graph: {fileID: 11400000}
+  position: {x: -1528, y: -216}
+  ports:
+    keys:
+    - _entry
+    - _exit
+    values:
+    - _fieldName: _entry
+      _node: {fileID: -5782043239687245926}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: _exit
+        node: {fileID: 8289864249383750265}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: _exit
+      _node: {fileID: -5782043239687245926}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: _entry
+        node: {fileID: 4061201882926162112}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  _entry: 0
+  _exit: 0
+  _textId: 4
+  _character: 0
+  _emotion: 0
+  _displayName: 
+--- !u!114 &-5220493876699400702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9d74a14bb242a1b74546a7e2e9399e, type: 3}
+  m_Name: Text
+  m_EditorClassIdentifier: Assembly-CSharp::TextNode
+  graph: {fileID: 11400000}
+  position: {x: -1496, y: -536}
+  ports:
+    keys:
+    - _entry
+    - _exit
+    values:
+    - _fieldName: _entry
+      _node: {fileID: -5220493876699400702}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: _exit
+        node: {fileID: 2603298887225883340}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: _exit
+      _node: {fileID: -5220493876699400702}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: _entry
+        node: {fileID: 749979972466587846}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  _entry: 0
+  _exit: 0
+  _textId: 0
+  _character: 0
+  _emotion: 0
+  _displayName: 
+--- !u!114 &-5020997858277567742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9d74a14bb242a1b74546a7e2e9399e, type: 3}
+  m_Name: Text
+  m_EditorClassIdentifier: Assembly-CSharp::TextNode
+  graph: {fileID: 11400000}
+  position: {x: 344, y: -520}
+  ports:
+    keys:
+    - _entry
+    - _exit
+    values:
+    - _fieldName: _entry
+      _node: {fileID: -5020997858277567742}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: _exit
+        node: {fileID: -8045886233820522329}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: _exit
+      _node: {fileID: -5020997858277567742}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: _entry
+        node: {fileID: 4061201882926162112}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  _entry: 0
+  _exit: 0
+  _textId: 2
+  _character: 0
+  _emotion: 0
+  _displayName: 
+--- !u!114 &-3893770943195403616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9d74a14bb242a1b74546a7e2e9399e, type: 3}
+  m_Name: Text
+  m_EditorClassIdentifier: Assembly-CSharp::TextNode
+  graph: {fileID: 11400000}
+  position: {x: 1844.3394, y: -322.0249}
+  ports:
+    keys:
+    - _entry
+    - _exit
+    values:
+    - _fieldName: _entry
+      _node: {fileID: -3893770943195403616}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: _exit
+        node: {fileID: -2388810479384575859}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: _exit
+      _node: {fileID: -3893770943195403616}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: _entry
+        node: {fileID: 1802157898700094936}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  _entry: 0
+  _exit: 0
+  _textId: 10
+  _character: 2
+  _emotion: 0
+  _displayName: 
+--- !u!114 &-2388810479384575859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9d74a14bb242a1b74546a7e2e9399e, type: 3}
+  m_Name: Text
+  m_EditorClassIdentifier: Assembly-CSharp::TextNode
+  graph: {fileID: 11400000}
+  position: {x: 1469.8721, y: -324.4804}
+  ports:
+    keys:
+    - _entry
+    - _exit
+    values:
+    - _fieldName: _entry
+      _node: {fileID: -2388810479384575859}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: _exit
+        node: {fileID: -8612775117151090776}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: _exit
+      _node: {fileID: -2388810479384575859}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: _entry
+        node: {fileID: -3893770943195403616}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  _entry: 0
+  _exit: 0
+  _textId: 9
+  _character: 2
+  _emotion: 0
+  _displayName: 
+--- !u!114 &-1554790382202062687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9d74a14bb242a1b74546a7e2e9399e, type: 3}
+  m_Name: Text
+  m_EditorClassIdentifier: Assembly-CSharp::TextNode
+  graph: {fileID: 11400000}
+  position: {x: -408, y: -536}
+  ports:
+    keys:
+    - _entry
+    - _exit
+    values:
+    - _fieldName: _entry
+      _node: {fileID: -1554790382202062687}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: _exit
+        node: {fileID: -1242922361642026838}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: _exit
+      _node: {fileID: -1554790382202062687}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: _entry
+        node: {fileID: -8045886233820522329}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  _entry: 0
+  _exit: 0
+  _textId: 4
+  _character: 2
+  _emotion: 0
+  _displayName: 
+--- !u!114 &-1268393755974399455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9d74a14bb242a1b74546a7e2e9399e, type: 3}
+  m_Name: Text
+  m_EditorClassIdentifier: Assembly-CSharp::TextNode
+  graph: {fileID: 11400000}
+  position: {x: -2632, y: -232}
+  ports:
+    keys:
+    - _entry
+    - _exit
+    values:
+    - _fieldName: _entry
+      _node: {fileID: -1268393755974399455}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: 1
+        node: {fileID: 4634216913449920729}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: _exit
+      _node: {fileID: -1268393755974399455}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: _entry
+        node: {fileID: -384801185300940702}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  _entry: 0
+  _exit: 0
+  _textId: 3
+  _character: 0
+  _emotion: 0
+  _displayName: 
+--- !u!114 &-1242922361642026838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9d74a14bb242a1b74546a7e2e9399e, type: 3}
+  m_Name: Text
+  m_EditorClassIdentifier: Assembly-CSharp::TextNode
+  graph: {fileID: 11400000}
+  position: {x: -792, y: -536}
+  ports:
+    keys:
+    - _entry
+    - _exit
+    values:
+    - _fieldName: _entry
+      _node: {fileID: -1242922361642026838}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: _exit
+        node: {fileID: 749979972466587846}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: _exit
+      _node: {fileID: -1242922361642026838}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: _entry
+        node: {fileID: -1554790382202062687}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  _entry: 0
+  _exit: 0
+  _textId: 3
+  _character: 2
+  _emotion: 0
+  _displayName: 
+--- !u!114 &-883625915272621946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9d74a14bb242a1b74546a7e2e9399e, type: 3}
+  m_Name: Text
+  m_EditorClassIdentifier: Assembly-CSharp::TextNode
+  graph: {fileID: 11400000}
+  position: {x: -2224.9482, y: -538.6119}
+  ports:
+    keys:
+    - _entry
+    - _exit
+    values:
+    - _fieldName: _entry
+      _node: {fileID: -883625915272621946}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: _exit
+        node: {fileID: -9182039838533033052}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: _exit
+      _node: {fileID: -883625915272621946}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: _entry
+        node: {fileID: 2603298887225883340}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  _entry: 0
+  _exit: 0
+  _textId: 1
+  _character: 2
+  _emotion: 0
+  _displayName: 
+--- !u!114 &-384801185300940702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9d74a14bb242a1b74546a7e2e9399e, type: 3}
+  m_Name: Text
+  m_EditorClassIdentifier: Assembly-CSharp::TextNode
+  graph: {fileID: 11400000}
+  position: {x: -2274.814, y: -217.8906}
+  ports:
+    keys:
+    - _entry
+    - _exit
+    values:
+    - _fieldName: _entry
+      _node: {fileID: -384801185300940702}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: _exit
+        node: {fileID: -1268393755974399455}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: _exit
+      _node: {fileID: -384801185300940702}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: _entry
+        node: {fileID: 8289864249383750265}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  _entry: 0
+  _exit: 0
+  _textId: 6
+  _character: 2
+  _emotion: 0
+  _displayName: 
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f47a5103b9b9a1409a6e2dd02402d9d, type: 3}
+  m_Name: Finix 109
+  m_EditorClassIdentifier: Assembly-CSharp::Data.Nodes.DialogueGraph
+  nodes:
+  - {fileID: 1835004827090630800}
+  - {fileID: 7591189263263228832}
+  - {fileID: 4634216913449920729}
+  - {fileID: -9182039838533033052}
+  - {fileID: -883625915272621946}
+  - {fileID: 2603298887225883340}
+  - {fileID: -5220493876699400702}
+  - {fileID: 749979972466587846}
+  - {fileID: -1242922361642026838}
+  - {fileID: -1554790382202062687}
+  - {fileID: -8045886233820522329}
+  - {fileID: -5020997858277567742}
+  - {fileID: -1268393755974399455}
+  - {fileID: -384801185300940702}
+  - {fileID: 8289864249383750265}
+  - {fileID: -5782043239687245926}
+  - {fileID: 4061201882926162112}
+  - {fileID: -8612775117151090776}
+  - {fileID: -2388810479384575859}
+  - {fileID: -3893770943195403616}
+  - {fileID: 1802157898700094936}
+  - {fileID: 1034494840897495412}
+  _startNode: {fileID: 1835004827090630800}
+  _dialogueId: 109
+--- !u!114 &749979972466587846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9d74a14bb242a1b74546a7e2e9399e, type: 3}
+  m_Name: Text
+  m_EditorClassIdentifier: Assembly-CSharp::TextNode
+  graph: {fileID: 11400000}
+  position: {x: -1160, y: -536}
+  ports:
+    keys:
+    - _entry
+    - _exit
+    values:
+    - _fieldName: _entry
+      _node: {fileID: 749979972466587846}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: _exit
+        node: {fileID: -5220493876699400702}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: _exit
+      _node: {fileID: 749979972466587846}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: _entry
+        node: {fileID: -1242922361642026838}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  _entry: 0
+  _exit: 0
+  _textId: 1
+  _character: 0
+  _emotion: 0
+  _displayName: 
+--- !u!114 &1034494840897495412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9d74a14bb242a1b74546a7e2e9399e, type: 3}
+  m_Name: Text
+  m_EditorClassIdentifier: Assembly-CSharp::TextNode
+  graph: {fileID: 11400000}
+  position: {x: 2614.1455, y: -303.60852}
+  ports:
+    keys:
+    - _entry
+    - _exit
+    values:
+    - _fieldName: _entry
+      _node: {fileID: 1034494840897495412}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: _exit
+        node: {fileID: 1802157898700094936}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: _exit
+      _node: {fileID: 1034494840897495412}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: _entry
+        node: {fileID: 7591189263263228832}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  _entry: 0
+  _exit: 0
+  _textId: 7
+  _character: 0
+  _emotion: 0
+  _displayName: 
+--- !u!114 &1802157898700094936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9d74a14bb242a1b74546a7e2e9399e, type: 3}
+  m_Name: Text
+  m_EditorClassIdentifier: Assembly-CSharp::TextNode
+  graph: {fileID: 11400000}
+  position: {x: 2229.8564, y: -318.34164}
+  ports:
+    keys:
+    - _entry
+    - _exit
+    values:
+    - _fieldName: _entry
+      _node: {fileID: 1802157898700094936}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: _exit
+        node: {fileID: -3893770943195403616}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: _exit
+      _node: {fileID: 1802157898700094936}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: _entry
+        node: {fileID: 1034494840897495412}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  _entry: 0
+  _exit: 0
+  _textId: 6
+  _character: 0
+  _emotion: 0
+  _displayName: 
+--- !u!114 &1835004827090630800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb29119bf1c54fecadcb4ffe49174d39, type: 3}
+  m_Name: Start
+  m_EditorClassIdentifier: Assembly-CSharp::StartNode
+  graph: {fileID: 11400000}
+  position: {x: -3304, y: -472}
+  ports:
+    keys:
+    - _exit
+    values:
+    - _fieldName: _exit
+      _node: {fileID: 1835004827090630800}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: _entry
+        node: {fileID: 4634216913449920729}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  _exit: 0
+--- !u!114 &2603298887225883340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9d74a14bb242a1b74546a7e2e9399e, type: 3}
+  m_Name: Text
+  m_EditorClassIdentifier: Assembly-CSharp::TextNode
+  graph: {fileID: 11400000}
+  position: {x: -1848, y: -536}
+  ports:
+    keys:
+    - _entry
+    - _exit
+    values:
+    - _fieldName: _entry
+      _node: {fileID: 2603298887225883340}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: _exit
+        node: {fileID: -883625915272621946}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: _exit
+      _node: {fileID: 2603298887225883340}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: _entry
+        node: {fileID: -5220493876699400702}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  _entry: 0
+  _exit: 0
+  _textId: 2
+  _character: 2
+  _emotion: 0
+  _displayName: 
+--- !u!114 &4061201882926162112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9d74a14bb242a1b74546a7e2e9399e, type: 3}
+  m_Name: Text
+  m_EditorClassIdentifier: Assembly-CSharp::TextNode
+  graph: {fileID: 11400000}
+  position: {x: 728, y: -328}
+  ports:
+    keys:
+    - _entry
+    - _exit
+    values:
+    - _fieldName: _entry
+      _node: {fileID: 4061201882926162112}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: _exit
+        node: {fileID: -5782043239687245926}
+        reroutePoints: []
+      - fieldName: _exit
+        node: {fileID: -5020997858277567742}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: _exit
+      _node: {fileID: 4061201882926162112}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: _entry
+        node: {fileID: -8612775117151090776}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  _entry: 0
+  _exit: 0
+  _textId: 5
+  _character: 0
+  _emotion: 0
+  _displayName: 
+--- !u!114 &4634216913449920729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd0d702fab064bb7ac867e8c7b6677d5, type: 3}
+  m_Name: Condition
+  m_EditorClassIdentifier: Assembly-CSharp::ConditionNode
+  graph: {fileID: 11400000}
+  position: {x: -3048, y: -600}
+  ports:
+    keys:
+    - _entry
+    - _exit
+    - 1
+    - 0
+    values:
+    - _fieldName: _entry
+      _node: {fileID: 4634216913449920729}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: _exit
+        node: {fileID: 1835004827090630800}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: _exit
+      _node: {fileID: 4634216913449920729}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: 1
+      _node: {fileID: 4634216913449920729}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: _entry
+        node: {fileID: -1268393755974399455}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: 0
+      _node: {fileID: 4634216913449920729}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: _entry
+        node: {fileID: -9182039838533033052}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  _entry: 0
+  _exit: 0
+  Conditions:
+  - VarName: wonFinixRace
+    Operation: 0
+    Value: false
+  - VarName: wonFinixRace
+    Operation: 0
+    Value: true
+--- !u!114 &7591189263263228832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ef51500d43e49d49422cb07b122f7f2, type: 3}
+  m_Name: End
+  m_EditorClassIdentifier: Assembly-CSharp::EndNode
+  graph: {fileID: 11400000}
+  position: {x: 3144, y: -312}
+  ports:
+    keys:
+    - _entry
+    values:
+    - _fieldName: _entry
+      _node: {fileID: 7591189263263228832}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: _exit
+        node: {fileID: 1034494840897495412}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  _entry: 0
+--- !u!114 &8289864249383750265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9d74a14bb242a1b74546a7e2e9399e, type: 3}
+  m_Name: Text
+  m_EditorClassIdentifier: Assembly-CSharp::TextNode
+  graph: {fileID: 11400000}
+  position: {x: -1907.628, y: -219.02386}
+  ports:
+    keys:
+    - _entry
+    - _exit
+    values:
+    - _fieldName: _entry
+      _node: {fileID: 8289864249383750265}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: _exit
+        node: {fileID: -384801185300940702}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: _exit
+      _node: {fileID: 8289864249383750265}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: _entry
+        node: {fileID: -5782043239687245926}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  _entry: 0
+  _exit: 0
+  _textId: 7
+  _character: 2
+  _emotion: 0
+  _displayName: 

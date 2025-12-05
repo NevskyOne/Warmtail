@@ -1,6 +1,4 @@
 using AYellowpaper.SerializedCollections;
-using System.Collections.Generic;
-using UnityEngine;
 using System;
 
 namespace Data
@@ -8,6 +6,7 @@ namespace Data
     [Serializable]
     public class NpcSpawnData : ISavableData
     {
-        public SerializedDictionary<int, List<int>> NpcSpawnerData; //[character] = {idPrefab, idPosition}
+        public SerializedDictionary<int, int> NpcSpawnerData; //[character] = [idPrefab]
+        public Characters CurrentHomeNpc;
     }
 }

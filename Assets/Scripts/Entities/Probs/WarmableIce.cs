@@ -2,13 +2,14 @@
 using PrimeTween;
 using Systems;
 using UnityEngine;
+using UnityEngine.U2D;
 
 namespace Entities.Probs
 {
     public class WarmableIce : MonoBehaviour, IWarmable
     {
         private static readonly int DissolveAmount = Shader.PropertyToID("_DissolveAmount");
-        [SerializeField] private SpriteRenderer _renderer;
+        [SerializeField] private SpriteShapeRenderer _renderer;
         [SerializeField] private int _warmCapacity;
         private int _warm;
         private ResettableTimer _timer;
@@ -17,6 +18,7 @@ namespace Entities.Probs
 
         private void Start()
         {
+            _propertyBlock = new();
             Reset();
         }
         
@@ -61,6 +63,7 @@ namespace Entities.Probs
                     _tween?.Stop();
                     return;
                 }
+                print(x);
                 _propertyBlock.SetFloat(DissolveAmount, x);
                 _renderer.SetPropertyBlock(_propertyBlock);
             });

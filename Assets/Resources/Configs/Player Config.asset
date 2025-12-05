@@ -38,7 +38,7 @@ MonoBehaviour:
         <Enabled>k__BackingField: 1
         <Visual>k__BackingField:
           rid: 1601399779124052047
-        MoveForce: 100
+        MoveForce: 60
         _moreForge: 60
         _drag: 5
     - rid: 1601399779124052047

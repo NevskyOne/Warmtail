@@ -15,7 +15,7 @@ MonoBehaviour:
   effectTag: 
   startCharIndex: 0
   charLength: 0
-  animationType: 2
+  animationType: 3
   fixedDuration: 0
   durationPerChar: 1.9
   timeBetweenChars: 0.05

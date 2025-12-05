@@ -11,14 +11,20 @@ namespace Entities.Probs
         [Inject] private FreezeVisuals _freeze;
         public void OnTriggerEnter2D(Collider2D other)
         {
-            if(other.CompareTag("Player"))
-                _freeze.StartDrain().Forget();
+            if (other.CompareTag("Player"))
+            {
+                _freeze.StopAllCoroutines();
+                _freeze.StartCoroutine(_freeze.StartDrain());
+            }
         }
         
         public void OnTriggerExit2D(Collider2D other)
         {
-            if(other.CompareTag("Player"))
-                _freeze.StopDrain().Forget();
+            if (other.CompareTag("Player"))
+            {
+                _freeze.StopAllCoroutines();
+                _freeze.StartCoroutine(_freeze.StopDrain());
+            }
         }
     }
 }

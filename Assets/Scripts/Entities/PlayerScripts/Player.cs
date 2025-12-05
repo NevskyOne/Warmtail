@@ -90,18 +90,15 @@ namespace Entities.PlayerScripts
 
         public async void Die()
         {
-            var pos = new List<Vector2>();
+            var pos = new List<Vector3>();
             var systemPos = _globalData.Get<SavablePlayerData>().RespawnPositions;
             foreach (var p in systemPos)
             {
                 pos.Add(p.ToUnity());
             }
 
-            _rbs.ForEach(x => x.Sleep());
-            await UniTask.Delay(300);
-            Rigidbody.position = pos.GetRandom();
-            await UniTask.Delay(300);
-            _rbs.ForEach(x => x.WakeUp());
+            var rbParent = Rigidbody.transform.parent;
+            rbParent.position = pos.GetRandom() - Rigidbody.transform.localPosition;
         }
     }
 }
