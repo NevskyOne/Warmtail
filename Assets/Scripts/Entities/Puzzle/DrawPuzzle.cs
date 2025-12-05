@@ -61,6 +61,7 @@ namespace Entities.Puzzle
             {
                 _activeTrigger ++;
                 _currentTrigger ++;
+                if (_currentTrigger >= _triggers.Length) _currentTrigger = 0;
                 _timer.Start();
                 if (_activeTrigger == _triggers.Length) Solve();
                 return true;
@@ -69,6 +70,7 @@ namespace Entities.Puzzle
             {
                 _activeTrigger ++;
                 _currentTrigger --;
+                if (_currentTrigger < 0) _currentTrigger = _triggers.Length - 1;
                 _timer.Start();
                 if (_activeTrigger == _triggers.Length) Solve();
                 return true;
