@@ -174,7 +174,7 @@
                 "m_Node": {
                     "m_Id": "0464a146512249ec846f0afc0e6514d5"
                 },
-                "m_SlotId": 1043016304
+                "m_SlotId": -921212125
             }
         },
         {
@@ -280,6 +280,27 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector2MaterialSlot",
+    "m_ObjectId": "0254786d95ae467281c97e61ec6240cc",
+    "m_Id": -921212125,
+    "m_DisplayName": "UV",
+    "m_SlotType": 0,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "_UV",
+    "m_StageCapability": 3,
+    "m_Value": {
+        "x": 0.0,
+        "y": 0.0
+    },
+    "m_DefaultValue": {
+        "x": 0.0,
+        "y": 0.0
+    },
+    "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.SubGraphNode",
     "m_ObjectId": "0464a146512249ec846f0afc0e6514d5",
     "m_Group": {
@@ -298,7 +319,7 @@
     },
     "m_Slots": [
         {
-            "m_Id": "6d2cbc42e29b4794a659c44576892367"
+            "m_Id": "0254786d95ae467281c97e61ec6240cc"
         },
         {
             "m_Id": "762fe143875f4dea86cbf4a8af4e8b8e"
@@ -331,7 +352,8 @@
         "b97c7321-36b9-4840-9edd-c9ead38d058b",
         "847203d6-6e49-4018-b392-306d253f8c04",
         "00ed2451-2691-4414-8e78-5180e56b40e9",
-        "ffe096a9-9d8a-4b9b-8fee-240adccf7480"
+        "ffe096a9-9d8a-4b9b-8fee-240adccf7480",
+        "7c6fcac3-c9d8-4759-9e01-f215a669d3e7"
     ],
     "m_PropertyIds": [
         -135755040,
@@ -339,7 +361,8 @@
         -1863313963,
         -1378435063,
         770183595,
-        1043016304
+        1043016304,
+        -921212125
     ],
     "m_Dropdowns": [],
     "m_DropdownSelectedEntries": []
@@ -1029,31 +1052,6 @@
     "m_Property": {
         "m_Id": "177c06660c644859ac24c11b34727562"
     }
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.Vector4MaterialSlot",
-    "m_ObjectId": "6d2cbc42e29b4794a659c44576892367",
-    "m_Id": 1043016304,
-    "m_DisplayName": "UV",
-    "m_SlotType": 0,
-    "m_Hidden": false,
-    "m_ShaderOutputName": "_UV",
-    "m_StageCapability": 3,
-    "m_Value": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": 0.0,
-        "w": 0.0
-    },
-    "m_DefaultValue": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": 0.0,
-        "w": 0.0
-    },
-    "m_Labels": []
 }
 
 {

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using AYellowpaper.SerializedCollections;
 using Cysharp.Threading.Tasks;
+using PrimeTween;
 using TriInspector;
 using UnityEngine;
 
@@ -28,9 +29,11 @@ namespace Entities.Sound
             _source.Play();
         }
         
-        public void StopLoopSfx()
+        public async void StopLoopSfx()
         {
+            await Tween.AudioVolume(_source, 0f, 0.2f);
             _source.Stop();
+            _source.volume = 1;
             _source.clip = null;
         }
     }
