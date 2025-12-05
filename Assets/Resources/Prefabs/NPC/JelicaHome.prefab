@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1538068796962420400, guid: 924faf1edbcaa984ea1c24440256a8f3, type: 3}
       propertyPath: m_Name
-      value: Jelica
+      value: JelicaHome
       objectReference: {fileID: 0}
     - target: {fileID: 5032323433821919817, guid: 924faf1edbcaa984ea1c24440256a8f3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8993835040725342029, guid: 924faf1edbcaa984ea1c24440256a8f3, type: 3}
+      propertyPath: <Graph>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: 74972f6b8a4a6fe49bb624c8378c0975, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

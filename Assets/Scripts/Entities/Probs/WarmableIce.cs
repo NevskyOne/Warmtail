@@ -56,7 +56,7 @@ namespace Entities.Probs
         {
             if (!_renderer) return;
             _tween?.Stop();
-            _tween = Tween.Custom(lastAmount, newAmount, 0.5f, x =>
+            _tween = Tween.Custom(lastAmount, newAmount, 0.3f, x =>
             {
                 if (!_renderer)
                 {

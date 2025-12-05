@@ -113,7 +113,12 @@ namespace Systems.Abilities.Concrete
                     success = true;
                 }
             }
-            if (success) _warmthSystem.DecreaseWarmth(_cost);
+
+            if (success)
+            {
+                _warmthSystem.DecreaseWarmth(_cost);
+                UsingAbility?.Invoke();
+            }
          
         }
     }

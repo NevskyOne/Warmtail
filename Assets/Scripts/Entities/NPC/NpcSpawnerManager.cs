@@ -5,6 +5,7 @@ using UnityEngine;
 using Zenject;
 using Systems;
 using Data;
+using EasyTextEffects.Editor.MyBoxCopy.Extensions;
 
 namespace Entities.NPC
 {
@@ -40,7 +41,7 @@ namespace Entities.NPC
                 data.NpcSpawnerData = new();
                 for (int i = 0; i < NpcSpawner.Count; i ++)
                 {
-                    int prefId = Rng.Range(0, NpcSpawner.Keys.Count);
+                    int prefId = (int)NpcSpawner.Keys.GetRandom();
                     int posId = Rng.Range(0, NpcSpawner[(Characters)prefId].Count);
                     data.NpcSpawnerData[prefId] = posId;
                 }

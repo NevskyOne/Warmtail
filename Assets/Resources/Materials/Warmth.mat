@@ -68,12 +68,16 @@ Material:
     m_Floats:
     - _EnableExternalAlpha: 0
     - _NoiseScale: 0
-    - _Opacity: 1
+    - _Opacity: 0
+    - _OpacityMax: 1
+    - _Speed: 0
     - _StepLength: 0.4
     - _ZWrite: 0
     m_Colors:
-    - _BaseColor: {r: 1, g: 0.6712627, b: 0.28773582, a: 1}
+    - _BaseColor: {r: 0.990566, g: 0.72099984, b: 0.40650588, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _OpacityMax: {r: 0.5, g: 1, b: 0, a: 0}
+    - _OpacityMinMax: {r: 0.5, g: 1, b: 0, a: 0}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
     - _Size: {r: 0.3, g: 0.3, b: 0, a: 0}
   m_BuildTextureStacks: []

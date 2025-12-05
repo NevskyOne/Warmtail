@@ -9,7 +9,7 @@ using Zenject;
 
 namespace Entities.UI
 {
-    public class WarmthVisual : MonoBehaviour
+    public class WarmthVisualUI : MonoBehaviour
     {
         [Title("UI Elements")]
         [SerializeField, LabelText("Heat Fill Bar")] private Image _heatFillBar;

@@ -18,12 +18,12 @@ namespace Systems.AbilitiesVisual
         private static readonly int Rotation = Shader.PropertyToID("_Rotation");
         private static readonly int Position = Shader.PropertyToID("_Position");
         
+        [field: SerializeReference] public int AbilityIndex {get; set;}
         [field: SerializeReference] public Material Water {get; set;}
         [SerializeField] private ParticleSystem _startVfx;
         [SerializeField] private ParticleSystem _loopVfx;
         [SerializeField] private AudioClip _startSfx;
         [SerializeField] private AudioClip _loopSfx;
-        [SerializeField] private int _abilityIndex;
         [SerializeField] private Vector3 _vfxOffset;
         
         private Player _player;
@@ -36,7 +36,7 @@ namespace Systems.AbilitiesVisual
         private void Construct(Player player, PlayerConfig config, CinemachineCamera camera)
         {
             _player = player;
-            _ability = config.Abilities[_abilityIndex];
+            _ability = config.Abilities[AbilityIndex];
             _camera = camera;
             _ability.StartAbility += StartAbility;
             _ability.UsingAbility += UsingAbility;

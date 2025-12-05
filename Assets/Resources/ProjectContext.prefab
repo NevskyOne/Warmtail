@@ -124,7 +124,6 @@ MonoBehaviour:
     - rid: 1601399230582489401
       type: {class: RuntimePlayerData, ns: Data.Player, asm: Assembly-CSharp}
       data:
-        Freeze: 0
         CurrentWarmth: 10
         WasInGame: 0
         Speed: 8
@@ -148,6 +147,7 @@ MonoBehaviour:
           _serializedList: []
         TimeLastGame: 
         TutorState: 0
+        HasBeatenGame: 0
         QuestIds: 
     - rid: 4204128997775507584
       type: {class: DialogueVarData, ns: Data, asm: Assembly-CSharp}
@@ -168,6 +168,9 @@ MonoBehaviour:
         - Type: 2
           Name: jelicaLevel
           Value: 0
+        - Type: 1
+          Name: wonFinixRace
+          Value: false
     - rid: 4204128997775507585
       type: {class: ShellsData, ns: Data, asm: Assembly-CSharp}
       data:
@@ -178,6 +181,7 @@ MonoBehaviour:
       data:
         NpcSpawnerData:
           _serializedList: []
+        CurrentHomeNpc: 0
     - rid: 4204128997775507587
       type: {class: NPCData, ns: Data.NPCShop, asm: Assembly-CSharp}
       data:

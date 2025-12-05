@@ -21,8 +21,7 @@ namespace Entities.UI
         {
             if(_isFreezing) yield break;
             _isFreezing = true;
-            _currentFreeze = 0;
-            _freezeMaterial.SetFloat(DissolveAmount, 1);
+            _freezeMaterial.SetFloat(DissolveAmount, 1 - _currentFreeze);
             var counter = 0f;
             
             while (_currentFreeze < 1)

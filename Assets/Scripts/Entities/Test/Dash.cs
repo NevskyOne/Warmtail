@@ -17,9 +17,11 @@ namespace Systems.Abilities.Concrete
     {
         [SerializeField] private int _dashCost = 15;
         [SerializeField] private float _destroyRadius = 1.5f;
-        [SerializeField] private float dashCooldownDuration = 1f;
-        private float lastDashTime = -Mathf.Infinity;
-        private bool _dashLoopRunning = false;
+        [SerializeField] private float _dashCooldownDuration = 1f;
+        [SerializeField] private int _normalSpeed = 60;
+        [SerializeField] private int _dashSpeed = 100;
+        private float _lastDashTime = -Mathf.Infinity;
+        private bool _dashLoopRunning;
 
 
         private PlayerConfig _playerConfig;
@@ -52,8 +54,6 @@ namespace Systems.Abilities.Concrete
 
         public async void Tick()
         {
-           
-            Debug.Log("Tick");
             if (!Enabled) return;
             bool isFree = IsComboActive && _secondaryComboType == typeof(MetabolismAbility);
 
@@ -82,43 +82,45 @@ namespace Systems.Abilities.Concrete
             }
 
 
-             async void DashLoop()
-            {
-                while (_dashLoopRunning && _moveInput.magnitude > 0.1f )
-                {
-                    Dash();
-                    
-                    await UniTask.Delay(500);
-                }
-                
-                _dashLoopRunning = false;
-                ((PlayerMovement)_playerConfig.Abilities[0]).MoveForce = 60;
-            }
-
-
-             void Dash()
-            {
-                HandleObstacleDestruction();
-                ((PlayerMovement)_playerConfig.Abilities[0]).MoveForce = 100;
-
-                bool isFree = IsComboActive && _secondaryComboType == typeof(MetabolismAbility);
-
-                if (!isFree)
-                    _warmthSystem.DecreaseWarmth(_dashCost);
-
-                Debug.Log("Dash");
-            }
-
-            void HandleObstacleDestruction()
-            {
-                var hits = Physics2D.OverlapCircleAll(_playerRb.position, _destroyRadius);
-                foreach (var hit in hits)
-                {
-                    if (hit.TryGetComponent<IDestroyable>(out var dest))
-                        dest.DestroyObject();
-                }
-            }
+            
             await UniTask.Delay(500);
+        }
+        
+        private async void DashLoop()
+        {
+            while (_dashLoopRunning && _moveInput.magnitude > 0.1f )
+            {
+                Dash();
+                    
+                await UniTask.Delay(500);
+            }
+                
+            _dashLoopRunning = false;
+            ((PlayerMovement)_playerConfig.Abilities[0]).MoveForce = _normalSpeed;
+        }
+
+
+        private void Dash()
+        {
+            HandleObstacleDestruction();
+            ((PlayerMovement)_playerConfig.Abilities[0]).MoveForce = _dashSpeed;
+
+            bool isFree = IsComboActive && _secondaryComboType == typeof(MetabolismAbility);
+
+            if (!isFree)
+                _warmthSystem.DecreaseWarmth(_dashCost);
+
+            Debug.Log("Dash");
+        }
+
+        private void HandleObstacleDestruction()
+        {
+            var hits = Physics2D.OverlapCircleAll(_playerRb.position, _destroyRadius);
+            foreach (var hit in hits)
+            {
+                if (hit.TryGetComponent<IDestroyable>(out var dest))
+                    dest.DestroyObject();
+            }
         }
     }
     
