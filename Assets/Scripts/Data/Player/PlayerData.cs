@@ -16,6 +16,7 @@ namespace Data.Player
         public string TimeLastGame;
         public int TutorState;
         public bool HasBeatenGame;
+        public string LastScene;
         public List<int> QuestIds;
     }
     

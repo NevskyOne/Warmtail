@@ -3,7 +3,6 @@ using UnityEngine;
 using TMPro;
 using Zenject;
 using Systems;
-using Data.House;
 
 namespace Data.NPCShop
 {

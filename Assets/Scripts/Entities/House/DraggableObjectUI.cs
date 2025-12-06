@@ -5,7 +5,6 @@ using Zenject;
 using System;
 using Systems;
 using Data.House;
-using Data.Player;
 using Data;
 
 namespace Entities.House

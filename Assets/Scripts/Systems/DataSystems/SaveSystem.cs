@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using JetBrains.Annotations;
 using Newtonsoft.Json;
 using UnityEngine;
 
@@ -72,6 +71,12 @@ namespace Systems.DataSystems
                     _autoContainer.Blocks[key] = proto;
                 }
             }
+        }
+
+        public bool CheckAutoSave()
+        {
+            var autoContainer = LoadContainerFromDisk(AutoFilePath);
+            return autoContainer is { Blocks: { Count: > 0 } };
         }
 
         public void UpdateData(ISavableData data, SaveContainer container)

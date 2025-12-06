@@ -9,7 +9,6 @@ using Entities.Sound;
 using Interfaces;
 using Systems;
 using Systems.Abilities.Concrete;
-using Systems.DataSystems;
 using UnityEngine;
 using Zenject;
 
@@ -17,8 +16,11 @@ namespace Entities.PlayerScripts
 {
     public class Player : MonoBehaviour
     {
+        private static readonly int IsSleeping = Animator.StringToHash("IsSleeping");
         [field: SerializeReference] public Rigidbody2D Rigidbody { get; private set;}
         [field: SerializeReference] public ObjectSfx ObjectSfx { get; private set;}
+        [field: SerializeReference] public Animator Animator { get; private set;}
+        [SerializeField] private bool _sleepAwake;
         private GlobalData _globalData;
         private PlayerConfig _config;
         private DashAbility  _dashAbility;
@@ -47,15 +49,18 @@ namespace Entities.PlayerScripts
             }
 
             _movement = (PlayerMovement)_config.Abilities[0];
-            _dashAbility = (DashAbility)_config.Abilities[5];
+            if(_config.Abilities.Count > 4)
+                _dashAbility = (DashAbility)_config.Abilities[5];
 
             _rbs = GetComponentsInChildren<Rigidbody2D>().ToList();
+            if(_sleepAwake) Sleep();
+            else WakeUp();
         }
 
         private void FixedUpdate()
         {
             _movement.FixedTick();
-            _dashAbility.Tick();
+            _dashAbility?.Tick();
         }
 
         public void DisableAllAbilities()
@@ -88,7 +93,28 @@ namespace Entities.PlayerScripts
             }
         }
 
-        public async void Die()
+        public async void WakeUp()
+        {
+            Animator.enabled = false;
+            await UniTask.Delay(50);
+            Animator.enabled = true;
+            Animator.SetBool(IsSleeping, false);
+            _rbs.ForEach(x => x.simulated = false);
+            await UniTask.Delay(3000);
+            Animator.enabled = false;
+            EnableLastAbilities();
+            _rbs.ForEach(x => x.simulated = true);
+        }
+        
+        public void Sleep()
+        {
+            Animator.enabled = true;
+            Animator.SetBool(IsSleeping, true);
+            _rbs.ForEach(x => x.simulated = false);
+            DisableAllAbilities();
+        }
+
+        public void Die()
         {
             var pos = new List<Vector3>();
             var systemPos = _globalData.Get<SavablePlayerData>().RespawnPositions;

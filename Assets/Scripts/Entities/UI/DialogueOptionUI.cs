@@ -1,7 +1,4 @@
-using EasyTextEffects;
-using EasyTextEffects.Effects;
 using UnityEngine;
-using UnityEngine.UI;
 using Zenject;
 
 namespace Entities.UI

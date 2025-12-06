@@ -3,7 +3,6 @@ using Cysharp.Threading.Tasks;
 using Data;
 using Entities.PlayerScripts;
 using Entities.Probs;
-using Interfaces;
 using Unity.Cinemachine;
 using UnityEngine;
 using Zenject;

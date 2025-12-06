@@ -1,5 +1,4 @@
-﻿using System.Numerics;
-using AYellowpaper.SerializedCollections;
+﻿using AYellowpaper.SerializedCollections;
 
 namespace Data
 {

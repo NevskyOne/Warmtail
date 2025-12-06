@@ -1,10 +1,7 @@
 using System;
-using System.Collections.Generic;
 using AYellowpaper.SerializedCollections;
 using Entities.PlayerScripts;
-using Systems;
 using Systems.Effects;
-using TriInspector;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;

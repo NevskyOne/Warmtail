@@ -1,6 +1,4 @@
 using Data.Nodes;
-using Entities.NPC;
-using Entities.UI;
 using Interfaces;
 using UnityEngine.InputSystem;
 using Zenject;
@@ -39,6 +37,7 @@ namespace Systems
         
         public void StartDialogue(DialogueGraph graph, ITextVisual visual, IEventInvoker character = null)
         {
+            if(graph.StartNode == null) return;
             _visuals = visual;
             _visuals.ShowVisuals();
             Character = character;

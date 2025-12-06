@@ -1,6 +1,5 @@
 using UnityEngine.UI;
 using UnityEngine;
-using TMPro;
 using Zenject;
 using Data;
 using Data.NPCShop;

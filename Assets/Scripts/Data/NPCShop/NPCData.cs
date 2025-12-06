@@ -1,7 +1,4 @@
 ﻿using AYellowpaper.SerializedCollections;
-using System.Collections.Generic;
-using UnityEngine;
-using Data.NPCShop;
 
 namespace Data.NPCShop
 {

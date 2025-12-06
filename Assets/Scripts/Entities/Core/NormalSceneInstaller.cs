@@ -9,13 +9,10 @@ using Systems;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Zenject;
-using Data;
 using Systems.Abilities;
-using Systems.Abilities.Concrete;
 using Systems.Environment;
 using Systems.Swarm;
 using Unity.Cinemachine;
-using UnityEditor;
 
 namespace Entities.Core
 {

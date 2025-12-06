@@ -1,5 +1,6 @@
 using Data;
 using Data.Player;
+using Entities.UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Playables;
@@ -11,6 +12,7 @@ namespace Entities.Core
     public class BootInstaller : MonoInstaller
     {
         [SerializeField] private PlayerInput _playerInput;
+        [SerializeField] private UIStateSystem _uiStateSystem;
         [SerializeField] private PlayableDirector _director;
         [SerializeField] private TimelineAsset _longTimeline;
         [SerializeField] private TimelineAsset _shortTimeline;
@@ -18,6 +20,7 @@ namespace Entities.Core
         public override void InstallBindings()
         {
             Container.Bind<PlayerInput>().FromInstance(_playerInput).AsSingle();
+            Container.Bind<UIStateSystem>().FromInstance(_uiStateSystem).AsSingle();
         }
 
         [Inject]

@@ -50,6 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Entities.PlayerScripts.Player
   <Rigidbody>k__BackingField: {fileID: 8399839914739372418}
   <ObjectSfx>k__BackingField: {fileID: 6727050323366090570}
+  <Animator>k__BackingField: {fileID: 4513477223840235920}
 --- !u!114 &15002919680156194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -776,6 +777,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 8951311368336626882}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 90ede23b5da17ce41b470366bfe5a90c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4513477223840235920}
     - targetCorrespondingSourceObject: {fileID: 386791141387813222, guid: 90ede23b5da17ce41b470366bfe5a90c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8399839914739372418}
@@ -1424,7 +1428,7 @@ HingeJoint2D:
   m_BreakAction: 0
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 2.9578376, y: -5.402877}
+  m_ConnectedAnchor: {x: 2.9578378, y: -5.402877}
   m_UseConnectedAnchor: 1
   m_UseMotor: 0
   m_Motor:
@@ -1529,6 +1533,33 @@ HingeJoint2D:
   m_AngleLimits:
     m_LowerAngle: -15
     m_UpperAngle: 15
+--- !u!1 &3236641056221631781 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8653719598885068355, guid: 90ede23b5da17ce41b470366bfe5a90c, type: 3}
+  m_PrefabInstance: {fileID: 3102157964901332120}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &4513477223840235920
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3236641056221631781}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bfcf9994d7687e441ae1b014c3ab39a3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3338078019211752958 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 386791141387813222, guid: 90ede23b5da17ce41b470366bfe5a90c, type: 3}

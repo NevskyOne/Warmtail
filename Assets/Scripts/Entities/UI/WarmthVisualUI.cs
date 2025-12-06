@@ -1,7 +1,6 @@
 using Data;
 using Data.Player;
 using PrimeTween;
-using TMPro;
 using TriInspector;
 using UnityEngine;
 using UnityEngine.UI;

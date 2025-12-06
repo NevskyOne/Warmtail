@@ -3,7 +3,6 @@ using System.Linq;
 using Data;
 using Data.Player;
 using Entities.Localization;
-using TMPro;
 using TriInspector;
 using UnityEngine;
 using UnityEngine.Events;

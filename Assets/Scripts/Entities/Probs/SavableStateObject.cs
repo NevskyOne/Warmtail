@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Linq;
 using Data;
-using Entities.Core;
-using Interfaces;
 using TriInspector;
 using UnityEngine;
 using Zenject;
-using Vector2 = System.Numerics.Vector2;
 
 namespace Entities.Probs
 {

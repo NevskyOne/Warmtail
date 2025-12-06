@@ -33,7 +33,7 @@ namespace Entities.House
 
         private void EnableNpc(Characters? character)
         {
-            if(character != null)
+            if(character != null && _npc.ContainsKey(character.Value))
                 _npc[character.Value].ChangeState(true);
         }
     }

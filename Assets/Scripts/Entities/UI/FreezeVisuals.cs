@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Threading;
-using Cysharp.Threading.Tasks;
 using Entities.PlayerScripts;
 using UnityEngine;
 using Zenject;
@@ -16,10 +15,11 @@ namespace Entities.UI
         private CancellationTokenSource _token;
         private bool _isFreezing;
         [Inject] private Player _player;
+        [Inject] private UIStateSystem _uiStateSystem;
         
         public IEnumerator StartDrain()
         {
-            if(_isFreezing) yield break;
+            if(_isFreezing || _uiStateSystem.CurrentState == UIState.Pause) yield break;
             _isFreezing = true;
             _freezeMaterial.SetFloat(DissolveAmount, 1 - _currentFreeze);
             var counter = 0f;
@@ -27,11 +27,14 @@ namespace Entities.UI
             while (_currentFreeze < 1)
             {
                 yield return new WaitForSeconds(0.2f);
-                _currentFreeze = Mathf.Pow(10,counter)/10;
-                _freezeMaterial.SetFloat(DissolveAmount, 1 - _currentFreeze);
-                
-                counter += _freezeRate;
-                Debug.Log("Drain");
+                if (_uiStateSystem.CurrentState != UIState.Pause)
+                {
+                    _currentFreeze = Mathf.Pow(10, counter) / 10;
+                    _freezeMaterial.SetFloat(DissolveAmount, 1 - _currentFreeze);
+
+                    counter += _freezeRate;
+                    Debug.Log("Drain");
+                }
             }
             _currentFreeze = 0;
             _freezeMaterial.SetFloat(DissolveAmount, 1);

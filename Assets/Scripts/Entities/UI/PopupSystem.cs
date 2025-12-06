@@ -1,6 +1,5 @@
 ﻿using AYellowpaper.SerializedCollections;
 using Data;
-using TriInspector;
 using UnityEngine;
 
 namespace Entities.UI

@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using Entities.Localization;
-using TriInspector;
 using UnityEngine;
 
 namespace Data

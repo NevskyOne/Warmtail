@@ -1,4 +1,3 @@
-using UnityEngine;
 using Entities.NPC;
 using Zenject;
 using Data;

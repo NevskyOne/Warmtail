@@ -1,6 +1,5 @@
 using Systems;
 using UnityEngine;
-using UnityEngine.Events;
 using Zenject;
 
 [NodeWidth(290)]

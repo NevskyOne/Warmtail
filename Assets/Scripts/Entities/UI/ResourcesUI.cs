@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using Data;
+﻿using Data;
 using Data.Player;
 using TMPro;
 using UnityEngine;

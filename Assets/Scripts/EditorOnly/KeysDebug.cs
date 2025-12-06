@@ -1,5 +1,4 @@
-﻿using Data;
-using Entities.UI;
+﻿using Entities.UI;
 using UnityEngine.InputSystem;
 using Zenject;
 

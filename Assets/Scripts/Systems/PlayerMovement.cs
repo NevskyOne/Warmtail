@@ -1,6 +1,5 @@
 using System;
 using Data;
-using Data.Player;
 using Entities.PlayerScripts;
 using Interfaces;
 using UnityEngine;

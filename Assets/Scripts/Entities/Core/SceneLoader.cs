@@ -1,8 +1,13 @@
 using System;
 using Cysharp.Threading.Tasks;
+using Data;
+using Data.Player;
+using Entities.Localization;
+using OdinSerializer.Utilities;
 using TriInspector;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Zenject;
 
 namespace Entities.Core
 {
@@ -14,7 +19,9 @@ namespace Entities.Core
         public Action SceneStartLoading;
         public Action<string> SceneLoaded;
         private AsyncOperation _asyncLoad;
-
+        [Inject] private DiContainer _container;
+        [Inject] private GlobalData _globalData;
+        
         private void Start()
         {
             DontDestroyOnLoad(this);
@@ -24,7 +31,13 @@ namespace Entities.Core
         {
             var animator = Instantiate(_animPrefab);
             DontDestroyOnLoad(animator);
-            
+            var texts = animator.GetComponentsInChildren<LocalizedText>();
+            texts.ForEach(x =>
+            {
+                _container.Inject(x);
+                x.UpdateString();
+            });
+            _globalData.Edit<SavablePlayerData>(data => data.LastScene = sceneInd);
             SceneStartLoading?.Invoke();
             
             await UniTask.Delay(_animDuration);

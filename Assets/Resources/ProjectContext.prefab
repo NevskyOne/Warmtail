@@ -148,6 +148,7 @@ MonoBehaviour:
         TimeLastGame: 
         TutorState: 0
         HasBeatenGame: 0
+        LastScene: Gameplay
         QuestIds: 
     - rid: 4204128997775507584
       type: {class: DialogueVarData, ns: Data, asm: Assembly-CSharp}

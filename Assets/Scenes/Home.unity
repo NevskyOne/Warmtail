@@ -1826,7 +1826,7 @@ SpriteRenderer:
   m_Size: {x: 5.12, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &839376086
@@ -3758,6 +3758,7 @@ MonoBehaviour:
   _playerConfig: {fileID: 11400000, guid: 653a16e41f82cd34ba2a8797b1b5149f, type: 2}
   _uiStateSystem: {fileID: 88475865}
   _shoppingManager: {fileID: 1897004854}
+  _dialogueVisuals: {fileID: 952794403}
   _cam: {fileID: 120628539}
 --- !u!1 &2062651858
 GameObject:

@@ -1,6 +1,4 @@
-﻿using System;
-using Entities.UI;
-using Interfaces;
+﻿using Entities.UI;
 using UnityEngine;
 using Zenject;
 
