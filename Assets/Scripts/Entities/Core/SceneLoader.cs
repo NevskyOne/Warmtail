@@ -37,7 +37,8 @@ namespace Entities.Core
                 _container.Inject(x);
                 x.UpdateString();
             });
-            _globalData.Edit<SavablePlayerData>(data => data.LastScene = sceneInd);
+            if(sceneInd != "Start")
+                _globalData.Edit<SavablePlayerData>(data => data.LastScene = sceneInd);
             SceneStartLoading?.Invoke();
             
             await UniTask.Delay(_animDuration);
