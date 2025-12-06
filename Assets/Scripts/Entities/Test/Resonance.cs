@@ -1,67 +1,185 @@
 using System;
+using Cysharp.Threading.Tasks;
 using Entities.PlayerScripts;
-using Systems.Abilities;
 using Systems.Swarm;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Zenject;
+using System.Reflection;
+using System.Threading;
 
 namespace Systems.Abilities.Concrete
 {
     [Serializable]
     public class ResonanceAbility : BaseAbility
     {
-        [SerializeField] private SwarmController _swarmPrefab;
-        [SerializeField] private Vector3 _spawnOffset;
-        
-        private SwarmController _activeSwarm;
-        private CinemachineCamera _vCam;
-        private Transform _playerTransform;
+        [SerializeField] private float _searchRadius = 12f;
+        [SerializeField] private float _interactRadius = 5f;
+        [SerializeField] private float _warmthDrainPerSecond = 2f;
+        [SerializeField] private float _tickDelay = 0.1f;
+
         private WarmthSystem _warmthSystem;
-        private Vector2 _input;
+        private Transform _playerTransform;
+        private Player _player;
+        private CinemachineCamera _vCam;
+        private PlayerInput _input;
+        private SwarmController _activeSwarm;
+        private Vector2 _moveInput;
+
+        private float _warmthAccumulator;
+        private CancellationTokenSource _tickCts;
 
         [Inject]
-        public void Construct(Player player, CinemachineCamera vCam, WarmthSystem warmth, PlayerInput input, DiContainer container)
+        public void Construct(Player player, WarmthSystem warmth, PlayerInput input, CinemachineCamera cam)
         {
+            _player = player;
             _playerTransform = player.Rigidbody.transform;
-            _vCam = vCam;
             _warmthSystem = warmth;
+            _input = input;
+            _vCam = cam;
             
-            _activeSwarm = container.InstantiatePrefabForComponent<SwarmController>(_swarmPrefab);
-            _activeSwarm.Initialize();
+            var moveAction = _input.actions.FindAction("Move");
+            if (moveAction != null)
+            {
+                moveAction.performed += ctx => _moveInput = ctx.ReadValue<Vector2>();
+                moveAction.canceled += _ => _moveInput = Vector2.zero;
+            }
 
-            input.actions["Move"].performed += ctx => _input = ctx.ReadValue<Vector2>();
-            
             StartAbility += OnStart;
             EndAbility += OnEnd;
-            UsingAbility += OnTick;
         }
 
         private void OnStart()
         {
-            _activeSwarm.Activate(_playerTransform.position + _spawnOffset);
-            _vCam.Follow = _activeSwarm.transform;
-            Debug.Log("resonance");
+            _activeSwarm = FindNearestSwarm();
+            if (_activeSwarm == null)
+            {
+                return;
+            }
+            
+            if (_player != null)
+                _player.StartResonance(_activeSwarm.GetComponent<Rigidbody2D>());
+
+            _activeSwarm.SetControlled(true);
+            
+            if (_vCam != null)
+            {
+                _vCam.Follow = _activeSwarm.transform;
+                _vCam.LookAt = _activeSwarm.transform;
+            }
+
+            _warmthAccumulator = 0f;
+
+            _tickCts?.Cancel();
+            _tickCts = new CancellationTokenSource();
+            TickCycle(_tickCts.Token).Forget();
+
         }
 
-        private void OnTick()
+        private async UniTaskVoid TickCycle(CancellationToken token)
         {
-            if (!Enabled) return;
+            try
+            {
+                while (!token.IsCancellationRequested && Enabled)
+                {
+                    if (_activeSwarm == null)
+                        break;
 
-            bool isHeating = IsComboActive && _secondaryComboType == typeof(WarmingAbility);
-            bool isAggressive = IsComboActive && _secondaryComboType == typeof(DashAbility);
+                    ProcessSwarmInteraction();
+                    await UniTask.Delay(TimeSpan.FromSeconds(_tickDelay), cancellationToken: token);
+                }
+            }
+            catch (OperationCanceledException)
+            {
+            }
+        }
 
-            _activeSwarm.Move(_input);
-            _activeSwarm.SetState(isAggressive, isHeating);
+        private void ProcessSwarmInteraction()
+        {
+            bool anyNear = false;
+            var neighbors = _activeSwarm.GetNeighbors(null);
+            Vector2 playerPos = _playerTransform.position;
+
+            foreach (var boid in neighbors)
+            {
+                float dist = Vector2.Distance(playerPos, boid.transform.position);
+                if (dist <= _interactRadius)
+                {
+                    anyNear = true;
+                    boid.InteractWithPhysicsObjects();
+                }
+            }
+
+            if (!anyNear)
+            {
+                _activeSwarm.SetControlInput(Vector2.zero);
+                return;
+            }
+            _activeSwarm.SetControlInput(_moveInput);
             
-            _warmthSystem.DecreaseWarmth(1);
+            ApplyWarmthDrain();
+        }
+
+        private void ApplyWarmthDrain()
+        {
+            float drain = _warmthDrainPerSecond * _tickDelay;
+            _warmthAccumulator += drain;
+
+            int consumeUnits = Mathf.FloorToInt(_warmthAccumulator);
+            if (consumeUnits <= 0)
+                return;
+
+            if (!_warmthSystem.CheckWarmCost(consumeUnits))
+            {
+                EndAbility?.Invoke();
+                return;
+            }
+
+            _warmthSystem.DecreaseWarmth(consumeUnits);
+            _warmthAccumulator -= consumeUnits;
         }
 
         private void OnEnd()
         {
-            _activeSwarm.Deactivate();
-            _vCam.Follow = _playerTransform;
+            _tickCts?.Cancel();
+
+            if (_activeSwarm != null)
+                _activeSwarm.SetControlled(false);
+
+            if (_player != null)
+                _player.StopResonance();
+
+            if (_vCam != null && _playerTransform != null)
+            {
+                _vCam.Follow = _playerTransform;
+                _vCam.LookAt = _playerTransform;
+            }
+
+            _moveInput = Vector2.zero;
+            _warmthAccumulator = 0f;
+            _activeSwarm = null;
+            
+        }
+
+        private SwarmController FindNearestSwarm()
+        {
+            var swarms = GameObject.FindObjectsOfType<SwarmController>();
+            SwarmController nearest = null;
+
+            float bestDist = float.MaxValue;
+            Vector2 p = _playerTransform.position;
+
+            foreach (var s in swarms)
+            {
+                float d = Vector2.Distance(p, s.transform.position);
+                if (d < bestDist && d <= _searchRadius)
+                {
+                    bestDist = d;
+                    nearest = s;
+                }
+            }
+            return nearest;
         }
     }
 }

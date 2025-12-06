@@ -17,27 +17,26 @@ namespace Systems
         public Action UsingAbility { get; set; }
         public Action EndAbility { get; set; }
         [field: SerializeReference] public IAbilityVisual Visual { get; set; }
-        
+
         [Header("Movement Settings")]
         public float MoveForce = 100f;
-       
 
         [SerializeField] private float _moreForge = 100f;
         [SerializeField] private float _drag = 5f;
 
-        private Rigidbody2D _mainRigidbody;
         private Vector2 _moveInput;
         private GlobalData _globalData;
-        
+        private Player _player;
+
         [Inject]
         public void Construct(Player player, PlayerInput playerInput, GlobalData data)
         {
             _globalData = data;
+            _player = player;
 
-            _mainRigidbody = player.Rigidbody;
-
-            _mainRigidbody.angularDamping = _drag;
-            _mainRigidbody.linearDamping = _drag;
+            var rb = _player.Rigidbody;
+            rb.angularDamping = _drag;
+            rb.linearDamping = _drag;
 
             if (playerInput != null && playerInput.actions != null && playerInput.actions["Move"] != null)
             {
@@ -64,17 +63,18 @@ namespace Systems
 
         public void FixedTick()
         {
-            if (_mainRigidbody == null || !Enabled) return;
-            
+            var rb = _player.Rigidbody;
+            if (rb == null || !Enabled) return;
+
             if (_moveInput.magnitude > 0.1f)
             {
                 UsingAbility?.Invoke();
                 Vector2 force = _moveInput.normalized * MoveForce;
-                _mainRigidbody.AddForce(force * _moreForge, ForceMode2D.Force);
-                
+                rb.AddForce(force * _moreForge, ForceMode2D.Force);
+
                 float targetAngle = Mathf.Atan2(_moveInput.y, _moveInput.x) * Mathf.Rad2Deg;
-                float newAngle = Mathf.LerpAngle(_mainRigidbody.rotation, targetAngle, 1.5f * Time.fixedDeltaTime);
-                _mainRigidbody.MoveRotation(newAngle);
+                float newAngle = Mathf.LerpAngle(rb.rotation, targetAngle, 1.5f * Time.fixedDeltaTime);
+                rb.MoveRotation(newAngle);
             }
         }
     }

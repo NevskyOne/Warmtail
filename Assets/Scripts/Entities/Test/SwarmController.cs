@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace Systems.Swarm
 {
+    [RequireComponent(typeof(Rigidbody2D))]
     public class SwarmController : MonoBehaviour
     {
         [Header("Movement")]
@@ -23,44 +24,52 @@ namespace Systems.Swarm
         public float NeighborRadius = 3f;
 
         private readonly List<BoidAgent> _agents = new();
-        private bool _isAggressive;
-        private bool _isHeating;
+        private bool _isControlled = false;
+        private Vector2 _controlInput = Vector2.zero;
+
+        public bool IsControlled => _isControlled;
+
+        private void Awake()
+        {
+            if (_rb == null) _rb = GetComponent<Rigidbody2D>();
+            Initialize();
+        }
 
         public void Initialize()
         {
+            if (_agents.Count > 0) return;
+
             for (int i = 0; i < _count; i++)
             {
-                var pos = (Vector2)transform.position + Random.insideUnitCircle * _spawnRadius;
+                Vector2 pos = (Vector2)transform.position + Random.insideUnitCircle * _spawnRadius;
                 var boid = Instantiate(_boidPrefab, pos, Quaternion.identity, transform);
                 boid.Initialize(this);
                 _agents.Add(boid);
             }
-            gameObject.SetActive(false);
+        }
+        
+        public void SetControlled(bool controlled)
+        {
+            _isControlled = controlled;
+            if (!controlled)
+                _controlInput = Vector2.zero;
+        }
+        
+        public void SetControlInput(Vector2 input)
+        {
+            _controlInput = input;
         }
 
-        public void Activate(Vector3 position)
+        private void FixedUpdate()
         {
-            transform.position = position;
-            gameObject.SetActive(true);
-            _agents.ForEach(a => {
-                a.transform.position = position + (Vector3)Random.insideUnitCircle;
-                a.gameObject.SetActive(true);
-            });
-        }
+            if (!_isControlled) return;
 
-        public void Deactivate()
-        {
-            gameObject.SetActive(false);
-        }
-
-        public void Move(Vector2 input)
-        {
-            if (input.sqrMagnitude > 0.01f)
+            if (_controlInput.sqrMagnitude > 0.01f)
             {
-                var targetVelocity = input.normalized * _speed;
+                var targetVelocity = _controlInput.normalized * _speed;
                 _rb.linearVelocity = Vector2.Lerp(_rb.linearVelocity, targetVelocity, Time.fixedDeltaTime * 5f);
-                
-                float angle = Mathf.Atan2(input.y, input.x) * Mathf.Rad2Deg;
+
+                float angle = Mathf.Atan2(_controlInput.y, _controlInput.x) * Mathf.Rad2Deg;
                 _rb.rotation = Mathf.LerpAngle(_rb.rotation, angle, Time.fixedDeltaTime * _rotationSpeed);
             }
             else
@@ -68,18 +77,10 @@ namespace Systems.Swarm
                 _rb.linearVelocity = Vector2.Lerp(_rb.linearVelocity, Vector2.zero, Time.fixedDeltaTime * 2f);
             }
         }
-
-        public void SetState(bool aggressive, bool heating)
-        {
-            _isAggressive = aggressive;
-            _isHeating = heating;
-            // Тут можно менять цвет рыбок
-        }
-
-        // Вызывается агентами для получения соседей (оптимизация: можно использовать Spatial Hash Grid)
+        
         public List<BoidAgent> GetNeighbors(BoidAgent agent)
         {
-            return _agents; 
+            return _agents;
         }
     }
 }

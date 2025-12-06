@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Cysharp.Threading.Tasks;
 using Data;
 using Data.Player;
 using EasyTextEffects.Editor.MyBoxCopy.Extensions;
@@ -9,7 +8,6 @@ using Entities.Sound;
 using Interfaces;
 using Systems;
 using Systems.Abilities.Concrete;
-using Systems.DataSystems;
 using UnityEngine;
 using Zenject;
 
@@ -17,27 +15,38 @@ namespace Entities.PlayerScripts
 {
     public class Player : MonoBehaviour
     {
-        [field: SerializeReference] public Rigidbody2D Rigidbody { get; private set;}
-        [field: SerializeReference] public ObjectSfx ObjectSfx { get; private set;}
+        [field: SerializeReference] public Rigidbody2D Rigidbody { get; private set; }
+        [field: SerializeReference] public ObjectSfx ObjectSfx { get; private set; }
+
         private GlobalData _globalData;
         private PlayerConfig _config;
-        private DashAbility  _dashAbility;
+
+        private DashAbility _dashAbility;
         private PlayerMovement _movement;
+
         private List<IAbility> _disabledAbilities = new();
         private List<IDisposable> _disposables = new();
         private List<Rigidbody2D> _rbs = new();
-        
+
+        [SerializeField] private Rigidbody2D _originalPlayerRb;  
+        [SerializeField] private Rigidbody2D _swarmRb;          
+        public bool IsInResonance => _swarmRb != null;
+       
+
+
         [Inject]
         private void Construct(GlobalData globalData, PlayerConfig config, DiContainer container)
         {
             _globalData = globalData;
             _config = config;
+
             foreach (var ability in _config.Abilities)
             {
                 container.Inject(ability);
-                if(ability is IDisposable disposable)
+
+                if (ability is IDisposable disposable)
                     _disposables.Add(disposable);
-                
+
                 if (ability.Visual != null)
                 {
                     container.Inject(ability.Visual);
@@ -50,6 +59,8 @@ namespace Entities.PlayerScripts
             _dashAbility = (DashAbility)_config.Abilities[5];
 
             _rbs = GetComponentsInChildren<Rigidbody2D>().ToList();
+            
+            _originalPlayerRb = Rigidbody;
         }
 
         private void FixedUpdate()
@@ -57,7 +68,26 @@ namespace Entities.PlayerScripts
             _movement.FixedTick();
             _dashAbility.Tick();
         }
+        public void StartResonance(Rigidbody2D swarmRb)
+        {
+            if (swarmRb == null)
+            {
+                return;
+            }
+            
+            _swarmRb = swarmRb;
+            
+            Rigidbody = _swarmRb;
+            
+        }
+        public void StopResonance()
+        {
+            if (_originalPlayerRb != null)
+                Rigidbody = _originalPlayerRb;
 
+            _swarmRb = null;
+            
+        }
         public void DisableAllAbilities()
         {
             foreach (var ability in _config.Abilities)
@@ -69,7 +99,7 @@ namespace Entities.PlayerScripts
                 }
             }
         }
-        
+
         public void EnableLastAbilities()
         {
             foreach (var ability in _disabledAbilities)
@@ -84,7 +114,6 @@ namespace Entities.PlayerScripts
             foreach (var disposable in _disposables)
             {
                 disposable.Dispose();
-                disposable.Dispose();
             }
         }
 
@@ -92,10 +121,9 @@ namespace Entities.PlayerScripts
         {
             var pos = new List<Vector3>();
             var systemPos = _globalData.Get<SavablePlayerData>().RespawnPositions;
+
             foreach (var p in systemPos)
-            {
                 pos.Add(p.ToUnity());
-            }
 
             var rbParent = Rigidbody.transform.parent;
             rbParent.position = pos.GetRandom() - Rigidbody.transform.localPosition;
