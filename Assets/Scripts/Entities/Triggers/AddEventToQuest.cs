@@ -13,7 +13,6 @@ namespace Entities.Triggers
 
         public void Add() 
         {
-            Debug.Log("Ira add");
             _event.Invoke();
             _system.AddEvent(_quest, _event);
         }

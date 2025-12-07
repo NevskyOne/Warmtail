@@ -72,7 +72,6 @@ namespace Entities.NPC
 
         public void AddNpcToHome(int character)
         {
-            Debug.Log("Ira " + character);
             _globalData.Edit<NpcSpawnData>(data => data.CurrentHomeNpc = (Characters)character);
         }
     }
