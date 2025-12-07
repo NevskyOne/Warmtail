@@ -62,11 +62,17 @@ namespace Systems.Swarm
 
             Vector2 controllerPos = (Vector2)_controller.transform.position;
             Vector2 targetDir = (controllerPos - (Vector2)transform.position);
+
             if (targetDir.sqrMagnitude > 0.0001f)
             {
                 float targetFactor = _controller.IsControlled ? 0.3f : 1f;
-                acceleration += targetDir.normalized * _controller.TargetWeight * targetFactor;
+
+                // Лёгкое усиление эффекта центра (1.1 = +10%)
+                float centerBias = 1.1f;
+
+                acceleration += targetDir.normalized * _controller.TargetWeight * targetFactor * centerBias;
             }
+
             
             _rb.linearVelocity += acceleration * Time.fixedDeltaTime * _steerForce;
             _rb.linearVelocity = Vector2.ClampMagnitude(_rb.linearVelocity, _maxSpeed);

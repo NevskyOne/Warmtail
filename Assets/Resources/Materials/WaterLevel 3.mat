@@ -127,6 +127,7 @@ Material:
     - _Refraction_Strength: 0
     - _Rotation: -0.35150146
     - _Scale: 2
+    - _ShockWaveStrength: -0.1
     - _ShoreEdge: 0.03
     - _Size: 2
     - _SpeedFactor: 0.007
@@ -135,6 +136,7 @@ Material:
     - _Surface_Foam_Distortion: 1.35
     - _Surface_Foam_Speed: 0.057
     - _Surface_Foam_Tiling: 10.3
+    - _WaveDistance: 0.5
     - _Wave_Length: 1
     - _Wave_Speed: 0.1
     - _Wave_Steepness: 0
