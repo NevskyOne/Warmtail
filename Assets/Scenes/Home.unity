@@ -2301,6 +2301,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3219043cec5f67544870b2643808b8dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  _graphNext: {fileID: 11400000, guid: 34c17bde135fdf9439e61863e0a5eed8, type: 2}
+  _characterTertilus: {fileID: 910719003}
 --- !u!1 &952794401
 GameObject:
   m_ObjectHideFlags: 0

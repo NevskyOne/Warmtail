@@ -1,12 +1,26 @@
 using UnityEngine;
 using Data;
 using Zenject;
+using Data.Nodes;
+using XNode;
 
 namespace Entities.NPC
 {
     public class StartQuestTertilus : MonoBehaviour
     {
         [Inject] private GlobalData _globalData;
+        [SerializeField] private DialogueGraph _graphNext;
+        [SerializeField] private SpeakableCharacter _characterTertilus;
+        public static bool IsCalendarFound;
+
+        void Start()
+        {
+            if (IsCalendarFound)
+            {
+                _characterTertilus.Graph = _graphNext;
+            }
+        }
+
         public void StartQuest11()
         {
             _globalData.Edit<WorldData>(data => {

@@ -93828,6 +93828,7 @@ GameObject:
   - component: {fileID: 2145191171}
   - component: {fileID: 2145191170}
   - component: {fileID: 2145191172}
+  - component: {fileID: 2145191173}
   m_Layer: 0
   m_Name: TertilusQuest (102)
   m_TagString: Untagged
@@ -93868,6 +93869,18 @@ MonoBehaviour:
   _event:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 2145191173}
+        m_TargetAssemblyTypeName: Entities.NPC.CalendarTrigger, Assembly-CSharp
+        m_MethodName: Take
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1492122600}
         m_TargetAssemblyTypeName: Entities.NPC.SpeakableCharacter, Assembly-CSharp
         m_MethodName: Interact
@@ -93940,6 +93953,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Entities.Probs.SavableStateObject
   _id:
     Value: 05fdc1cf-2c88-45bf-a4d7-71637df9a8f4
+--- !u!114 &2145191173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2145191168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0946bb3d5d5b944e89f7631b7fd5b6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1001 &443975586250114351
 PrefabInstance:
   m_ObjectHideFlags: 0
