@@ -8,6 +8,8 @@ public class AbilitiesUI : MonoBehaviour
     public InputActionAsset inputActions;
 
     private InputAction[] keys;
+    private InputAction rightClick;
+
     private bool[] selected = new bool[4];
     private int pendingSecond = -1;
     private float pendingTime = 0f;
@@ -28,10 +30,16 @@ public class AbilitiesUI : MonoBehaviour
         foreach (var k in keys) k.Enable();
 
         inputActions["Scroll"].performed += ctx => CycleSelection(ctx.ReadValue<Vector2>().y);
+
+        rightClick = inputActions.FindAction("RightMouse");
+        rightClick.Enable();
     }
 
     void Update()
     {
+        if (rightClick.IsPressed())
+            return;
+
         int pressedThisFrame = -1;
 
         for (int i = 0; i < 4; i++)
@@ -54,10 +62,13 @@ public class AbilitiesUI : MonoBehaviour
             else
             {
                 for (int i = 0; i < 4; i++) selected[i] = false;
+
                 selected[pressedThisFrame] = true;
                 pendingSecond = pressedThisFrame;
                 pendingTime = Time.time;
             }
+
+            selectedIndex = pressedThisFrame;
         }
 
         int count = 0;
@@ -66,10 +77,23 @@ public class AbilitiesUI : MonoBehaviour
 
         for (int i = 0; i < 4; i++)
             images[i].rectTransform.localScale = selected[i] ? Vector3.one * scale : Vector3.one;
+
+        for (int i = 0; i < 4; i++)
+        {
+            if (selected[i])
+            {
+                selectedIndex = i;
+                break;
+            }
+        }
     }
+
 
     private void CycleSelection(float scrollValue)
     {
+        if (rightClick.IsPressed())
+            return;
+
         if (scrollValue == 0) return;
 
         int newIndex = selectedIndex + (scrollValue > 0 ? 1 : -1);
