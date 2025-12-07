@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Cysharp.Threading.Tasks;
 using Data;
 using Data.Player;
 using EasyTextEffects.Editor.MyBoxCopy.Extensions;
@@ -15,8 +16,11 @@ namespace Entities.PlayerScripts
 {
     public class Player : MonoBehaviour
     {
-        [field: SerializeReference] public Rigidbody2D Rigidbody { get; private set; }
-        [field: SerializeReference] public ObjectSfx ObjectSfx { get; private set; }
+        private static readonly int IsSleeping = Animator.StringToHash("IsSleeping");
+        [field: SerializeReference] public Rigidbody2D Rigidbody { get; private set;}
+        [field: SerializeReference] public ObjectSfx ObjectSfx { get; private set;}
+        [field: SerializeReference] public Animator Animator { get; private set;}
+        [SerializeField] private bool _sleepAwake;
 
         private GlobalData _globalData;
         private PlayerConfig _config;
@@ -59,7 +63,8 @@ namespace Entities.PlayerScripts
             _dashAbility = (DashAbility)_config.Abilities[5];
 
             _rbs = GetComponentsInChildren<Rigidbody2D>().ToList();
-            
+            if(_sleepAwake) Sleep();
+            else WakeUp();
             _originalPlayerRb = Rigidbody;
         }
 
@@ -115,6 +120,27 @@ namespace Entities.PlayerScripts
             {
                 disposable.Dispose();
             }
+        }
+        
+        public async void WakeUp()
+        {
+            Animator.enabled = false;
+            await UniTask.Delay(50);
+            Animator.enabled = true;
+            Animator.SetBool(IsSleeping, false);
+            _rbs.ForEach(x => x.simulated = false);
+            await UniTask.Delay(3000);
+            Animator.enabled = false;
+            EnableLastAbilities();
+            _rbs.ForEach(x => x.simulated = true);
+        }
+        
+        public void Sleep()
+        {
+            Animator.enabled = true;
+            Animator.SetBool(IsSleeping, true);
+            _rbs.ForEach(x => x.simulated = false);
+            DisableAllAbilities();
         }
 
         public async void Die()
