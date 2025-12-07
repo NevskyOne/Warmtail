@@ -11,6 +11,11 @@ namespace Entities.Triggers
         [SerializeField] private QuestData _quest;
         [SerializeField] private UnityEvent _event;
 
-        public void Add() => _system.AddEvent(_quest, _event);
+        public void Add() 
+        {
+            Debug.Log("Ira add");
+            _event.Invoke();
+            _system.AddEvent(_quest, _event);
+        }
     }
 }

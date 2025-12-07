@@ -54,6 +54,7 @@ namespace Entities.NPC
 
                 _levelButtons[i].interactable = (i < curLvl);
             }
+            Debug.Log("Ira open");
             if (_uiStateSystem.CurrentState != UIState.Shop) _uiStateSystem.SwitchCurrentStateAsync(UIState.Shop);
         }
     }

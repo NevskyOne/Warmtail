@@ -84,7 +84,8 @@ namespace Entities.UI
         
         public void HideVisuals()
         {
-            _uiStateSystem.SwitchCurrentStateAsync(UIState.Normal);
+            if (_uiStateSystem.CurrentState != UIState.Shop)
+                _uiStateSystem.SwitchCurrentStateAsync(UIState.Normal);
         }
         
         public void RequestNewLine(TextNode node)

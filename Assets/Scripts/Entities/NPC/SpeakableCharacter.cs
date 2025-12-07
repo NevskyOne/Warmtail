@@ -5,6 +5,7 @@ using Entities.Probs;
 using Entities.UI;
 using Interfaces;
 using Systems;
+using Data;
 using UnityEngine;
 using UnityEngine.Events;
 using Zenject;
@@ -22,19 +23,23 @@ namespace Entities.NPC
         private DialogueSystem _dialogueSystem;
         private DialogueVisuals _visuals;
         private float _warmPercent;
+        private GlobalData _globalData;
         
         
         [Inject]
-        private void Construct(DialogueSystem dialogueSystem, DialogueVisuals visuals)
+        private void Construct(DialogueSystem dialogueSystem, DialogueVisuals visuals, GlobalData globalData)
         {
             _dialogueSystem = dialogueSystem;
             _visuals = visuals;
+            _globalData = globalData;
             Reset();
         }
         
         public void Interact()
         {
+            Debug.Log("Ira in");
             if (!Graph) return;
+            Debug.Log("Ira in2");
             _dialogueSystem.StartDialogue(Graph, _visuals, this);
             Graph = null;
         }
@@ -62,6 +67,12 @@ namespace Entities.NPC
             var (x, y) = (float.Parse(pos.Split(' ')[0], CultureInfo.InvariantCulture),
                 float.Parse(pos.Split(' ')[1], CultureInfo.InvariantCulture));
             transform.position = new Vector2(x,y);
+        }
+
+        public void AddNpcToHome(int character)
+        {
+            Debug.Log("Ira " + character);
+            _globalData.Edit<NpcSpawnData>(data => data.CurrentHomeNpc = (Characters)character);
         }
     }
     
