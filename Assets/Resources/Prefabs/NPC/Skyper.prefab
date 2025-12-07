@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -18.71, y: 13.6, z: 0}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -51,9 +51,11 @@ MonoBehaviour:
   <Graph>k__BackingField: {fileID: 11400000, guid: fe8cddfdeb7d0d24fa647fe847f1dfa7, type: 2}
   <Actions>k__BackingField: []
   _maxWarmPercent: 0
+  <CanWarm>k__BackingField: 1
   _warmAction:
     m_PersistentCalls:
       m_Calls: []
+  <SavableState>k__BackingField: []
 --- !u!212 &358481429861404722
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -101,7 +103,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 5673288020646499964, guid: c13391e12b29b4b42b1772cdd7f01a02, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1d8f66689444f224380c38dab147d6b3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -150,7 +152,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 7.36, y: 7.5}
+    oldSize: {x: 3, y: 3}
     newSize: {x: 10.67, y: 8.61}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

@@ -1,0 +1,1157 @@
+fileFormatVersion: 2
+guid: e6face83a5aace244a02bf7cf60778d3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1795020427687972173
+    second: old-house-objects_0
+  - first:
+      213: -2087661317618182094
+    second: old-house-objects_1
+  - first:
+      213: -7220767693994670895
+    second: old-house-objects_2
+  - first:
+      213: -5272887874452053589
+    second: old-house-objects_3
+  - first:
+      213: 3337128252640392106
+    second: old-house-objects_4
+  - first:
+      213: -2028206660131721069
+    second: old-house-objects_5
+  - first:
+      213: 9171812012553205219
+    second: old-house-objects_6
+  - first:
+      213: -5243001738897625605
+    second: old-house-objects_7
+  - first:
+      213: -4150631573182278778
+    second: old-house-objects_8
+  - first:
+      213: -588291616456633798
+    second: old-house-objects_9
+  - first:
+      213: 536048654949829732
+    second: old-house-objects_10
+  - first:
+      213: -1151408967967046943
+    second: old-house-objects_11
+  - first:
+      213: -6034537189822449383
+    second: old-house-objects_12
+  - first:
+      213: -7026531735211600352
+    second: old-house-objects_13
+  - first:
+      213: 1514344065816513777
+    second: old-house-objects_14
+  - first:
+      213: -7870932932151560234
+    second: old-house-objects_15
+  - first:
+      213: 4983578437640699479
+    second: old-house-objects_16
+  - first:
+      213: -7418258438253987649
+    second: old-house-objects_17
+  - first:
+      213: 2851663545209037232
+    second: old-house-objects_18
+  - first:
+      213: 150584904985252390
+    second: old-house-objects_19
+  - first:
+      213: 4913753070965818215
+    second: old-house-objects_20
+  - first:
+      213: 6373361130221362617
+    second: old-house-objects_21
+  - first:
+      213: 3555389011703688462
+    second: old-house-objects_22
+  - first:
+      213: 7805621976889067712
+    second: old-house-objects_23
+  - first:
+      213: 6395840307167733646
+    second: old-house-objects_24
+  - first:
+      213: 6692806343338003573
+    second: old-house-objects_25
+  - first:
+      213: -1140885658455882951
+    second: old-house-objects_26
+  - first:
+      213: -2677055217741051946
+    second: old-house-objects_27
+  - first:
+      213: 1250690080653661122
+    second: old-house-objects_28
+  - first:
+      213: 1894281104069630721
+    second: old-house-objects_29
+  - first:
+      213: -534479406915943656
+    second: old-house-objects_30
+  - first:
+      213: -8295176740231209099
+    second: old-house-objects_31
+  - first:
+      213: 3779002536386331531
+    second: old-house-objects_32
+  - first:
+      213: 3582003097340530846
+    second: old-house-objects_33
+  - first:
+      213: 4942288674693342420
+    second: old-house-objects_34
+  - first:
+      213: -6716416602987440563
+    second: old-house-objects_35
+  - first:
+      213: 8016867546844312465
+    second: old-house-objects_36
+  - first:
+      213: 1671123531689854985
+    second: old-house-objects_37
+  - first:
+      213: 6616085133157805784
+    second: old-house-objects_38
+  - first:
+      213: -1002966171649661997
+    second: old-house-objects_39
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: old-house-objects_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1927
+        width: 311
+        height: 496
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b2b6137e6ec617e0800000000000000
+      internalID: -1795020427687972173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: old-house-objects_1
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 1917
+        width: 304
+        height: 506
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2385b00b7132703e0800000000000000
+      internalID: -2087661317618182094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: old-house-objects_2
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 2187
+        width: 190
+        height: 276
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d4c4d12a0eaacb90800000000000000
+      internalID: -7220767693994670895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: old-house-objects_3
+      rect:
+        serializedVersion: 2
+        x: 957
+        y: 2178
+        width: 411
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba122d64a60f2d6b0800000000000000
+      internalID: -5272887874452053589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: old-house-objects_4
+      rect:
+        serializedVersion: 2
+        x: 1396
+        y: 2175
+        width: 154
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa3fc84077cdf4e20800000000000000
+      internalID: 3337128252640392106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: old-house-objects_5
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 2035
+        width: 149
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39074cbd9cc5ad3e0800000000000000
+      internalID: -2028206660131721069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: old-house-objects_6
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 2021
+        width: 153
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e5f4ea5e62d84f70800000000000000
+      internalID: 9171812012553205219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: old-house-objects_7
+      rect:
+        serializedVersion: 2
+        x: 954
+        y: 2030
+        width: 107
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfd604472bd1d37b0800000000000000
+      internalID: -5243001738897625605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: old-house-objects_8
+      rect:
+        serializedVersion: 2
+        x: 1113
+        y: 2052
+        width: 99
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68313fe339ef566c0800000000000000
+      internalID: -4150631573182278778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: old-house-objects_9
+      rect:
+        serializedVersion: 2
+        x: 1275
+        y: 2028
+        width: 84
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3213c844e7f5d7f0800000000000000
+      internalID: -588291616456633798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: old-house-objects_10
+      rect:
+        serializedVersion: 2
+        x: 1396
+        y: 2041
+        width: 153
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46c4c9c596d607700800000000000000
+      internalID: 536048654949829732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: old-house-objects_11
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 1863
+        width: 97
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e20021e4af5500f0800000000000000
+      internalID: -1151408967967046943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: old-house-objects_12
+      rect:
+        serializedVersion: 2
+        x: 805
+        y: 1868
+        width: 95
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 919bfb0f564014ca0800000000000000
+      internalID: -6034537189822449383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: old-house-objects_13
+      rect:
+        serializedVersion: 2
+        x: 935
+        y: 1868
+        width: 146
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02614bf6d9ebc7e90800000000000000
+      internalID: -7026531735211600352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: old-house-objects_14
+      rect:
+        serializedVersion: 2
+        x: 1103
+        y: 1904
+        width: 119
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fcc6be87e7040510800000000000000
+      internalID: 1514344065816513777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: old-house-objects_15
+      rect:
+        serializedVersion: 2
+        x: 1262
+        y: 1908
+        width: 111
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d7be204334d4c290800000000000000
+      internalID: -7870932932151560234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: old-house-objects_16
+      rect:
+        serializedVersion: 2
+        x: 1422
+        y: 1934
+        width: 103
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75ebed55f2a392540800000000000000
+      internalID: 4983578437640699479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: old-house-objects_17
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 1708
+        width: 99
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb8b3d7014d0d0990800000000000000
+      internalID: -7418258438253987649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: old-house-objects_18
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 1708
+        width: 124
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b1ad17b2e4239720800000000000000
+      internalID: 2851663545209037232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: old-house-objects_19
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1708
+        width: 106
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6229e2a5c2cf61200800000000000000
+      internalID: 150584904985252390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: old-house-objects_20
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 1706
+        width: 141
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76307e44268213440800000000000000
+      internalID: 4913753070965818215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: old-house-objects_21
+      rect:
+        serializedVersion: 2
+        x: 935
+        y: 1706
+        width: 146
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bd50203e2ab27850800000000000000
+      internalID: 6373361130221362617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: old-house-objects_22
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 1711
+        width: 149
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0dece80877475130800000000000000
+      internalID: 3555389011703688462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: old-house-objects_23
+      rect:
+        serializedVersion: 2
+        x: 1242
+        y: 1710
+        width: 150
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c8847ff4d3235c60800000000000000
+      internalID: 7805621976889067712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: old-house-objects_24
+      rect:
+        serializedVersion: 2
+        x: 1419
+        y: 1708
+        width: 107
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e87abdc6fd692c850800000000000000
+      internalID: 6395840307167733646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: old-house-objects_25
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 1402
+        width: 579
+        height: 296
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57c8425c8ef91ec50800000000000000
+      internalID: 6692806343338003573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: old-house-objects_26
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 1423
+        width: 300
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 933466ec982ca20f0800000000000000
+      internalID: -1140885658455882951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: old-house-objects_27
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 1423
+        width: 295
+        height: 236
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d7407e867039dad0800000000000000
+      internalID: -2677055217741051946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: old-house-objects_28
+      rect:
+        serializedVersion: 2
+        x: 1278
+        y: 1415
+        width: 242
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c3577d70085b5110800000000000000
+      internalID: 1250690080653661122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: old-house-objects_29
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1086
+        width: 310
+        height: 277
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10b1ec8b0a6d94a10800000000000000
+      internalID: 1894281104069630721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: old-house-objects_30
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 1084
+        width: 157
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 813830bafc52598f0800000000000000
+      internalID: -534479406915943656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: old-house-objects_31
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 618
+        width: 1086
+        height: 728
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57f9f6954bc91ec80800000000000000
+      internalID: -8295176740231209099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: old-house-objects_32
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 776
+        width: 461
+        height: 265
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b838b9ae8c6b17430800000000000000
+      internalID: 3779002536386331531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: old-house-objects_33
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 154
+        width: 155
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e90d459b6d4d5b130800000000000000
+      internalID: 3582003097340530846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: old-house-objects_34
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 631
+        width: 147
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d468804d59869440800000000000000
+      internalID: 4942288674693342420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: old-house-objects_35
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 387
+        width: 455
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d46d5674fae7ac2a0800000000000000
+      internalID: -6716416602987440563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: old-house-objects_36
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 163
+        width: 170
+        height: 295
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19333050f82a14f60800000000000000
+      internalID: 8016867546844312465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: old-house-objects_37
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 160
+        width: 123
+        height: 359
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9088b228ff5013710800000000000000
+      internalID: 1671123531689854985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: old-house-objects_38
+      rect:
+        serializedVersion: 2
+        x: 1084
+        y: 189
+        width: 466
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8de2d95006e01db50800000000000000
+      internalID: 6616085133157805784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: old-house-objects_39
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 0
+        width: 465
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d3a611b49fb412f0800000000000000
+      internalID: -1002966171649661997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      old-house-objects_0: -1795020427687972173
+      old-house-objects_1: -2087661317618182094
+      old-house-objects_10: 536048654949829732
+      old-house-objects_11: -1151408967967046943
+      old-house-objects_12: -6034537189822449383
+      old-house-objects_13: -7026531735211600352
+      old-house-objects_14: 1514344065816513777
+      old-house-objects_15: -7870932932151560234
+      old-house-objects_16: 4983578437640699479
+      old-house-objects_17: -7418258438253987649
+      old-house-objects_18: 2851663545209037232
+      old-house-objects_19: 150584904985252390
+      old-house-objects_2: -7220767693994670895
+      old-house-objects_20: 4913753070965818215
+      old-house-objects_21: 6373361130221362617
+      old-house-objects_22: 3555389011703688462
+      old-house-objects_23: 7805621976889067712
+      old-house-objects_24: 6395840307167733646
+      old-house-objects_25: 6692806343338003573
+      old-house-objects_26: -1140885658455882951
+      old-house-objects_27: -2677055217741051946
+      old-house-objects_28: 1250690080653661122
+      old-house-objects_29: 1894281104069630721
+      old-house-objects_3: -5272887874452053589
+      old-house-objects_30: -534479406915943656
+      old-house-objects_31: -8295176740231209099
+      old-house-objects_32: 3779002536386331531
+      old-house-objects_33: 3582003097340530846
+      old-house-objects_34: 4942288674693342420
+      old-house-objects_35: -6716416602987440563
+      old-house-objects_36: 8016867546844312465
+      old-house-objects_37: 1671123531689854985
+      old-house-objects_38: 6616085133157805784
+      old-house-objects_39: -1002966171649661997
+      old-house-objects_4: 3337128252640392106
+      old-house-objects_5: -2028206660131721069
+      old-house-objects_6: 9171812012553205219
+      old-house-objects_7: -5243001738897625605
+      old-house-objects_8: -4150631573182278778
+      old-house-objects_9: -588291616456633798
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
