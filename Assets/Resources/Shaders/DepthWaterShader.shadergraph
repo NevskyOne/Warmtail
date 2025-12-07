@@ -1026,7 +1026,7 @@
                 "m_Node": {
                     "m_Id": "7544c3a14ac846ba8f01d27cf2c693dd"
                 },
-                "m_SlotId": 1043016304
+                "m_SlotId": -921212125
             }
         },
         {
@@ -2173,31 +2173,6 @@
         "z": 0.0,
         "w": 0.0
     }
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.Vector4MaterialSlot",
-    "m_ObjectId": "2408967db21a49a1897566e92c8c31fb",
-    "m_Id": 1043016304,
-    "m_DisplayName": "UV",
-    "m_SlotType": 0,
-    "m_Hidden": false,
-    "m_ShaderOutputName": "_UV",
-    "m_StageCapability": 3,
-    "m_Value": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": 0.0,
-        "w": 0.0
-    },
-    "m_DefaultValue": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": 0.0,
-        "w": 0.0
-    },
-    "m_Labels": []
 }
 
 {
@@ -3713,6 +3688,27 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector2MaterialSlot",
+    "m_ObjectId": "555c12e3edf24e95a039d13c02419ab2",
+    "m_Id": -921212125,
+    "m_DisplayName": "UV",
+    "m_SlotType": 0,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "_UV",
+    "m_StageCapability": 3,
+    "m_Value": {
+        "x": 0.0,
+        "y": 0.0
+    },
+    "m_DefaultValue": {
+        "x": 0.0,
+        "y": 0.0
+    },
+    "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
     "m_ObjectId": "5585ab4340b04503939eb350af503a1a",
     "m_Group": {
@@ -5024,7 +5020,7 @@
     "m_ObjectId": "74735c24b05147bda3895a46d62ab7d5",
     "m_Title": "Distort UVs based on Flow Map",
     "m_Position": {
-        "x": -1798.9998779296875,
+        "x": -1799.0,
         "y": 1707.0
     }
 }
@@ -5064,7 +5060,7 @@
     },
     "m_Slots": [
         {
-            "m_Id": "2408967db21a49a1897566e92c8c31fb"
+            "m_Id": "555c12e3edf24e95a039d13c02419ab2"
         },
         {
             "m_Id": "59550d2d6a52485a91dce4769d66092f"
@@ -5096,14 +5092,16 @@
         "66fd824e-dfbf-4820-b579-9806a4aeaddf",
         "428c1094-ea40-42c8-8d01-e2ff0a3e839d",
         "b97c7321-36b9-4840-9edd-c9ead38d058b",
-        "847203d6-6e49-4018-b392-306d253f8c04"
+        "847203d6-6e49-4018-b392-306d253f8c04",
+        "7c6fcac3-c9d8-4759-9e01-f215a669d3e7"
     ],
     "m_PropertyIds": [
         1043016304,
         -135755040,
         1646642515,
         -1863313963,
-        -1378435063
+        -1378435063,
+        -921212125
     ],
     "m_Dropdowns": [],
     "m_DropdownSelectedEntries": []

@@ -1,0 +1,6903 @@
+fileFormatVersion: 2
+guid: 80585aa20259c4041a7d53897f50e6cc
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1683174439514810865
+    second: jelica2_0
+  - first:
+      213: 4602186795975721404
+    second: jelica2_1
+  - first:
+      213: -3689329215043736527
+    second: jelica2_2
+  - first:
+      213: 6674578874039381273
+    second: jelica2_3
+  - first:
+      213: -5448396362935867798
+    second: jelica2_4
+  - first:
+      213: 1519776958952442183
+    second: jelica2_5
+  - first:
+      213: 1872428554599162978
+    second: jelica2_6
+  - first:
+      213: 6460131785464617298
+    second: jelica2_7
+  - first:
+      213: -5115275218177156688
+    second: jelica2_8
+  - first:
+      213: -6593358485771939602
+    second: jelica2_9
+  - first:
+      213: 4792517155062666666
+    second: jelica2_10
+  - first:
+      213: 73060717412721524
+    second: jelica2_11
+  - first:
+      213: 3674751109694429183
+    second: jelica2_12
+  - first:
+      213: 562090027744546240
+    second: jelica2_13
+  - first:
+      213: -2908811971209555050
+    second: jelica2_14
+  - first:
+      213: 5814332319064196022
+    second: jelica2_15
+  - first:
+      213: -237753135423091432
+    second: jelica2_16
+  - first:
+      213: -871465452594792221
+    second: jelica2_17
+  - first:
+      213: -2978569469425040374
+    second: jelica2_18
+  - first:
+      213: 6257818973777946344
+    second: jelica2_19
+  - first:
+      213: 3279289777191439774
+    second: jelica2_20
+  - first:
+      213: -2099172620109855299
+    second: jelica2_21
+  - first:
+      213: -3712235280005889658
+    second: jelica2_22
+  - first:
+      213: 8255143217124502923
+    second: jelica2_23
+  - first:
+      213: 7160849138937109921
+    second: jelica2_24
+  - first:
+      213: -5776535408266723697
+    second: jelica2_25
+  - first:
+      213: -2762607538870954568
+    second: jelica2_26
+  - first:
+      213: -1824609060747253653
+    second: jelica2_27
+  - first:
+      213: -9028792564206797803
+    second: jelica2_28
+  - first:
+      213: 853123981083947941
+    second: jelica2_29
+  - first:
+      213: -2864955818961663275
+    second: jelica2_30
+  - first:
+      213: -3561286074557427915
+    second: jelica2_31
+  - first:
+      213: 4038685724673469059
+    second: jelica2_32
+  - first:
+      213: 4965737267745693762
+    second: jelica2_33
+  - first:
+      213: -8229228531731688568
+    second: jelica2_34
+  - first:
+      213: 7532390340061441625
+    second: jelica2_35
+  - first:
+      213: -3308300185946672380
+    second: jelica2_36
+  - first:
+      213: 3191965557916746758
+    second: jelica2_37
+  - first:
+      213: 2649142964909004807
+    second: jelica2_38
+  - first:
+      213: 4011588324019067744
+    second: jelica2_39
+  - first:
+      213: 8168143481582295870
+    second: jelica2_40
+  - first:
+      213: -4022684053497616589
+    second: jelica2_41
+  - first:
+      213: -763752056254069532
+    second: jelica2_42
+  - first:
+      213: 5873577954881716969
+    second: jelica2_43
+  - first:
+      213: -5527038875617167952
+    second: jelica2_44
+  - first:
+      213: 44770765984571557
+    second: jelica2_45
+  - first:
+      213: 417346060123561029
+    second: jelica2_46
+  - first:
+      213: 5501408958067604966
+    second: jelica2_47
+  - first:
+      213: 3431677461704726644
+    second: jelica2_48
+  - first:
+      213: -2203408118159071630
+    second: jelica2_49
+  - first:
+      213: 7202572210263990601
+    second: jelica2_50
+  - first:
+      213: -1935015994218887611
+    second: jelica2_51
+  - first:
+      213: 6707503101357692885
+    second: jelica2_52
+  - first:
+      213: 2566120238015169143
+    second: jelica2_53
+  - first:
+      213: 3121783630761156669
+    second: jelica2_54
+  - first:
+      213: 1904432973596105984
+    second: jelica2_55
+  - first:
+      213: -7654023669157671730
+    second: jelica2_56
+  - first:
+      213: -5236603928263224275
+    second: jelica2_57
+  - first:
+      213: 7989721945867303013
+    second: jelica2_58
+  - first:
+      213: 5632712239100489976
+    second: jelica2_59
+  - first:
+      213: 2729227737964807784
+    second: jelica2_60
+  - first:
+      213: 5437031933486022227
+    second: jelica2_61
+  - first:
+      213: 971810626179910240
+    second: jelica2_62
+  - first:
+      213: -7001052354340672887
+    second: jelica2_63
+  - first:
+      213: -552896919633306710
+    second: jelica2_64
+  - first:
+      213: -1850354082485352074
+    second: jelica2_65
+  - first:
+      213: -4206692909547820833
+    second: jelica2_66
+  - first:
+      213: 5262824351124318741
+    second: jelica2_67
+  - first:
+      213: 7316326205968209800
+    second: jelica2_68
+  - first:
+      213: -529456272434053148
+    second: jelica2_69
+  - first:
+      213: -3725670411269170318
+    second: jelica2_70
+  - first:
+      213: -7849535185399128156
+    second: jelica2_71
+  - first:
+      213: -6544426008537042300
+    second: jelica2_72
+  - first:
+      213: -5179181173679949349
+    second: jelica2_73
+  - first:
+      213: -837878745495673291
+    second: jelica2_74
+  - first:
+      213: 4577270244093673715
+    second: jelica2_75
+  - first:
+      213: -1790323377677812230
+    second: jelica2_76
+  - first:
+      213: 197873499993940107
+    second: jelica2_77
+  - first:
+      213: 4235868232478149484
+    second: jelica2_78
+  - first:
+      213: 3805364146378898157
+    second: jelica2_79
+  - first:
+      213: 2250679581838186978
+    second: jelica2_80
+  - first:
+      213: -6547653419874409962
+    second: jelica2_81
+  - first:
+      213: -8272107030181617537
+    second: jelica2_82
+  - first:
+      213: 7871568468662489847
+    second: jelica2_83
+  - first:
+      213: 6867716626255739678
+    second: jelica2_84
+  - first:
+      213: 4595066965144127436
+    second: jelica2_85
+  - first:
+      213: -4682331071034219704
+    second: jelica2_86
+  - first:
+      213: -9041850778287596329
+    second: jelica2_87
+  - first:
+      213: -4772685566259295975
+    second: jelica2_88
+  - first:
+      213: -4697278052678405499
+    second: jelica2_89
+  - first:
+      213: 5241034893053882464
+    second: jelica2_90
+  - first:
+      213: 2729488643217940798
+    second: jelica2_91
+  - first:
+      213: -5739937703685149547
+    second: jelica2_92
+  - first:
+      213: -3555433904497287478
+    second: jelica2_93
+  - first:
+      213: -7979515976542215866
+    second: jelica2_94
+  - first:
+      213: 2960394841971982731
+    second: jelica2_95
+  - first:
+      213: -8442765226608923242
+    second: jelica2_96
+  - first:
+      213: -8289060607962135366
+    second: jelica2_97
+  - first:
+      213: 7940212238211251605
+    second: jelica2_98
+  - first:
+      213: -4556405029778893553
+    second: jelica2_99
+  - first:
+      213: 5648250752787742870
+    second: jelica2_100
+  - first:
+      213: 2522733438829871701
+    second: jelica2_101
+  - first:
+      213: 7458886999582978506
+    second: jelica2_102
+  - first:
+      213: 5081637288902170373
+    second: jelica2_103
+  - first:
+      213: 6530530293167333953
+    second: jelica2_104
+  - first:
+      213: 2879266973335902188
+    second: jelica2_105
+  - first:
+      213: -6047128708327199705
+    second: jelica2_106
+  - first:
+      213: 7207045959637738155
+    second: jelica2_107
+  - first:
+      213: -1319113006297779403
+    second: jelica2_108
+  - first:
+      213: -6388671638332943005
+    second: jelica2_109
+  - first:
+      213: -5560084337864617291
+    second: jelica2_110
+  - first:
+      213: -6365501252787470121
+    second: jelica2_111
+  - first:
+      213: 923803533863462938
+    second: jelica2_112
+  - first:
+      213: -1456273512849105970
+    second: jelica2_113
+  - first:
+      213: -6005153342304213099
+    second: jelica2_114
+  - first:
+      213: -2498619800601244610
+    second: jelica2_115
+  - first:
+      213: -4978067969059092308
+    second: jelica2_116
+  - first:
+      213: 2287215617465150063
+    second: jelica2_117
+  - first:
+      213: 6236176954035565612
+    second: jelica2_118
+  - first:
+      213: 3525843705020731274
+    second: jelica2_119
+  - first:
+      213: 7218244620870573413
+    second: jelica2_120
+  - first:
+      213: 3593605388781888547
+    second: jelica2_121
+  - first:
+      213: -2206158163886140170
+    second: jelica2_122
+  - first:
+      213: -3117046500150192262
+    second: jelica2_123
+  - first:
+      213: -4586479344722715413
+    second: jelica2_124
+  - first:
+      213: -5284879308834488873
+    second: jelica2_125
+  - first:
+      213: -4118482937178517707
+    second: jelica2_126
+  - first:
+      213: 3855576075083776955
+    second: jelica2_127
+  - first:
+      213: -5627883566584868736
+    second: jelica2_128
+  - first:
+      213: -4156662140490919938
+    second: jelica2_129
+  - first:
+      213: 7739222473794580771
+    second: jelica2_130
+  - first:
+      213: 7711075640553183853
+    second: jelica2_131
+  - first:
+      213: 5177770247528697024
+    second: jelica2_132
+  - first:
+      213: 8148826429471793060
+    second: jelica2_133
+  - first:
+      213: 507306461823059185
+    second: jelica2_134
+  - first:
+      213: 5575904728380005370
+    second: jelica2_135
+  - first:
+      213: -3189686243200211809
+    second: jelica2_136
+  - first:
+      213: 5888564841655187214
+    second: jelica2_137
+  - first:
+      213: 7019184599273232263
+    second: jelica2_138
+  - first:
+      213: -2205674081488186067
+    second: jelica2_139
+  - first:
+      213: 5208803603671453454
+    second: jelica2_140
+  - first:
+      213: 7610528859679513878
+    second: jelica2_141
+  - first:
+      213: 8245606416217377384
+    second: jelica2_142
+  - first:
+      213: -6602687690633925828
+    second: jelica2_143
+  - first:
+      213: 3415170822509891654
+    second: jelica2_144
+  - first:
+      213: -1046789072998239842
+    second: jelica2_145
+  - first:
+      213: -7859298426616510621
+    second: jelica2_146
+  - first:
+      213: 7687459499803422435
+    second: jelica2_147
+  - first:
+      213: 5885468545926179145
+    second: jelica2_148
+  - first:
+      213: 7681454080136101582
+    second: jelica2_149
+  - first:
+      213: 6324280391553896115
+    second: jelica2_150
+  - first:
+      213: 2407564419764322493
+    second: jelica2_151
+  - first:
+      213: -6818937154814458233
+    second: jelica2_152
+  - first:
+      213: -8645628316330421778
+    second: jelica2_153
+  - first:
+      213: 2182602213245750744
+    second: jelica2_154
+  - first:
+      213: -1968379411063799766
+    second: jelica2_155
+  - first:
+      213: 5134828966046216203
+    second: jelica2_156
+  - first:
+      213: 5289629002295589031
+    second: jelica2_157
+  - first:
+      213: -7544989409762853829
+    second: jelica2_158
+  - first:
+      213: -349792750965919326
+    second: jelica2_159
+  - first:
+      213: 2440979517214444131
+    second: jelica2_160
+  - first:
+      213: 901335504566174409
+    second: jelica2_161
+  - first:
+      213: 2840310811129922063
+    second: jelica2_162
+  - first:
+      213: 1265744437362903558
+    second: jelica2_163
+  - first:
+      213: 6435006161780421091
+    second: jelica2_164
+  - first:
+      213: 5622249750005339423
+    second: jelica2_165
+  - first:
+      213: 7407196915558901866
+    second: jelica2_166
+  - first:
+      213: 5716684454665948131
+    second: jelica2_167
+  - first:
+      213: -4089776686304891711
+    second: jelica2_168
+  - first:
+      213: 4822126907072044655
+    second: jelica2_169
+  - first:
+      213: -7799514984588906729
+    second: jelica2_170
+  - first:
+      213: -4189910031289815215
+    second: jelica2_171
+  - first:
+      213: 5942015605898763800
+    second: jelica2_172
+  - first:
+      213: 8358803801381357893
+    second: jelica2_173
+  - first:
+      213: -767171267395481338
+    second: jelica2_174
+  - first:
+      213: 4364089328528148942
+    second: jelica2_175
+  - first:
+      213: 8083877125776152246
+    second: jelica2_176
+  - first:
+      213: 2981033172114146426
+    second: jelica2_177
+  - first:
+      213: -3886665265593205124
+    second: jelica2_178
+  - first:
+      213: -66013333116288866
+    second: jelica2_179
+  - first:
+      213: -7178410159824654886
+    second: jelica2_180
+  - first:
+      213: -8393428808520265000
+    second: jelica2_181
+  - first:
+      213: -201613485481988656
+    second: jelica2_182
+  - first:
+      213: -1895513267355301693
+    second: jelica2_183
+  - first:
+      213: -5853542629828743967
+    second: jelica2_184
+  - first:
+      213: -8919689928198606430
+    second: jelica2_185
+  - first:
+      213: -8956397883323702505
+    second: jelica2_186
+  - first:
+      213: -7719565837620158457
+    second: jelica2_187
+  - first:
+      213: -4784704242136030272
+    second: jelica2_188
+  - first:
+      213: -7468377368557081189
+    second: jelica2_189
+  - first:
+      213: -2322213421452117884
+    second: jelica2_190
+  - first:
+      213: 245076436473641761
+    second: jelica2_191
+  - first:
+      213: 6851992729075018691
+    second: jelica2_192
+  - first:
+      213: -7492280310331536877
+    second: jelica2_193
+  - first:
+      213: -1411769496490934421
+    second: jelica2_194
+  - first:
+      213: -7080011266275038920
+    second: jelica2_195
+  - first:
+      213: -4535270570117275641
+    second: jelica2_196
+  - first:
+      213: -3025764105088513688
+    second: jelica2_197
+  - first:
+      213: -6923349668878722000
+    second: jelica2_198
+  - first:
+      213: 1264711857701185441
+    second: jelica2_199
+  - first:
+      213: -563153124178777100
+    second: jelica2_200
+  - first:
+      213: 7337060601497425263
+    second: jelica2_201
+  - first:
+      213: 4183726033209829163
+    second: jelica2_202
+  - first:
+      213: 2788824478590480544
+    second: jelica2_203
+  - first:
+      213: -891808367777849249
+    second: jelica2_204
+  - first:
+      213: 8509587835654054807
+    second: jelica2_205
+  - first:
+      213: -2328384187226350160
+    second: jelica2_206
+  - first:
+      213: -3286474510491802269
+    second: jelica2_207
+  - first:
+      213: -8302906754500159833
+    second: jelica2_208
+  - first:
+      213: 9162714292761142440
+    second: jelica2_209
+  - first:
+      213: 5736802719561116495
+    second: jelica2_210
+  - first:
+      213: 2283550608378306222
+    second: jelica2_211
+  - first:
+      213: 5055164290087919587
+    second: jelica2_212
+  - first:
+      213: 6437582204842179630
+    second: jelica2_213
+  - first:
+      213: 4856620020829179691
+    second: jelica2_214
+  - first:
+      213: 9133260508472684435
+    second: jelica2_215
+  - first:
+      213: -1729159583560987757
+    second: jelica2_216
+  - first:
+      213: 7752107011376556348
+    second: jelica2_217
+  - first:
+      213: -70815349324105003
+    second: jelica2_218
+  - first:
+      213: 3435546500065829776
+    second: jelica2_219
+  - first:
+      213: 8171189606913616103
+    second: jelica2_220
+  - first:
+      213: -513256781056662276
+    second: jelica2_221
+  - first:
+      213: 3007510807081099061
+    second: jelica2_222
+  - first:
+      213: 5130787429237494811
+    second: jelica2_223
+  - first:
+      213: -5925619123651904864
+    second: jelica2_224
+  - first:
+      213: -8268115810245654931
+    second: jelica2_225
+  - first:
+      213: -7094147913872963280
+    second: jelica2_226
+  - first:
+      213: 8204929440961892296
+    second: jelica2_227
+  - first:
+      213: -835957254593876269
+    second: jelica2_228
+  - first:
+      213: 3627471991862064974
+    second: jelica2_229
+  - first:
+      213: -1878314244771077319
+    second: jelica2_230
+  - first:
+      213: 2785548214651690448
+    second: jelica2_231
+  - first:
+      213: 3425068208359417471
+    second: jelica2_232
+  - first:
+      213: -3904778422556538209
+    second: jelica2_233
+  - first:
+      213: 6821886517735924364
+    second: jelica2_234
+  - first:
+      213: -3930441478166410244
+    second: jelica2_235
+  - first:
+      213: 5808547965995021081
+    second: jelica2_236
+  - first:
+      213: -3415198507234366608
+    second: jelica2_237
+  - first:
+      213: -8676821124483855875
+    second: jelica2_238
+  - first:
+      213: -3772269643259051701
+    second: jelica2_239
+  - first:
+      213: 5820749874491742833
+    second: jelica2_240
+  - first:
+      213: -1467279191373373600
+    second: jelica2_241
+  - first:
+      213: 2811427018949741539
+    second: jelica2_242
+  - first:
+      213: -5322415910075132298
+    second: jelica2_243
+  - first:
+      213: -821106416695172726
+    second: jelica2_244
+  - first:
+      213: -6830641354217236384
+    second: jelica2_245
+  - first:
+      213: 899909607560552807
+    second: jelica2_246
+  - first:
+      213: -3505303461901622286
+    second: jelica2_247
+  - first:
+      213: 8032699443261751828
+    second: jelica2_248
+  - first:
+      213: 1135328754434235270
+    second: jelica2_249
+  - first:
+      213: 4628872774492081237
+    second: jelica2_250
+  - first:
+      213: -7311738125585828423
+    second: jelica2_251
+  - first:
+      213: -6709318356724242633
+    second: jelica2_252
+  - first:
+      213: -8925538026004021036
+    second: jelica2_253
+  - first:
+      213: -1896344722164890590
+    second: jelica2_254
+  - first:
+      213: 3242312935296692353
+    second: jelica2_255
+  - first:
+      213: -1779094348583158300
+    second: jelica2_256
+  - first:
+      213: -4784868513725877018
+    second: jelica2_257
+  - first:
+      213: -2805976934025121015
+    second: jelica2_258
+  - first:
+      213: 7070679744879547033
+    second: jelica2_259
+  - first:
+      213: 4003774906424850177
+    second: jelica2_260
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 1000
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: jelica2_0
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 2419
+        width: 308
+        height: 274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f92c422c36db5710800000000000000
+      internalID: 1683174439514810865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_1
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 2618
+        width: 138
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb1402ce1804edf30800000000000000
+      internalID: 4602186795975721404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_2
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 2686
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13ce8d530aedcccc0800000000000000
+      internalID: -3689329215043736527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_3
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 2690
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91da17c5f1ed0ac50800000000000000
+      internalID: 6674578874039381273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_4
+      rect:
+        serializedVersion: 2
+        x: 2607
+        y: 2531
+        width: 190
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a666dafef586364b0800000000000000
+      internalID: -5448396362935867798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_5
+      rect:
+        serializedVersion: 2
+        x: 2623
+        y: 2690
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7490f209715571510800000000000000
+      internalID: 1519776958952442183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_6
+      rect:
+        serializedVersion: 2
+        x: 2631
+        y: 2691
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2646e2099d33cf910800000000000000
+      internalID: 1872428554599162978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_7
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 2684
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25914d2b1aff6a950800000000000000
+      internalID: 6460131785464617298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_8
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 2648
+        width: 41
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b9113c7a44e209b0800000000000000
+      internalID: -5115275218177156688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_9
+      rect:
+        serializedVersion: 2
+        x: 2489
+        y: 2419
+        width: 239
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee091cae36faf74a0800000000000000
+      internalID: -6593358485771939602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_10
+      rect:
+        serializedVersion: 2
+        x: 2509
+        y: 2648
+        width: 41
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa5d97fe5f0728240800000000000000
+      internalID: 4792517155062666666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_11
+      rect:
+        serializedVersion: 2
+        x: 2624
+        y: 2684
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 473ab6cd550930100800000000000000
+      internalID: 73060717412721524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_12
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 2527
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff71f432aa65ff230800000000000000
+      internalID: 3674751109694429183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_13
+      rect:
+        serializedVersion: 2
+        x: 996
+        y: 2498
+        width: 289
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cdc083f6e1fcc700800000000000000
+      internalID: 562090027744546240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_14
+      rect:
+        serializedVersion: 2
+        x: 1715
+        y: 2498
+        width: 289
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69396a97ce2d1a7d0800000000000000
+      internalID: -2908811971209555050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_15
+      rect:
+        serializedVersion: 2
+        x: 2693
+        y: 2527
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b305e34078a0b050800000000000000
+      internalID: 5814332319064196022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_16
+      rect:
+        serializedVersion: 2
+        x: 1269
+        y: 2515
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81d0fd278c453bcf0800000000000000
+      internalID: -237753135423091432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_17
+      rect:
+        serializedVersion: 2
+        x: 1725
+        y: 2515
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e8ff00c9cee7e3f0800000000000000
+      internalID: -871465452594792221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_18
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 2484
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a04c81449def9a6d0800000000000000
+      internalID: -2978569469425040374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_19
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 2493
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e6ebb8833d38d650800000000000000
+      internalID: 6257818973777946344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_20
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 375
+        width: 2296
+        height: 2126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9dc01d8da0628d20800000000000000
+      internalID: 3279289777191439774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_21
+      rect:
+        serializedVersion: 2
+        x: 1264
+        y: 2498
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db54028bf9d3ed2e0800000000000000
+      internalID: -2099172620109855299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_22
+      rect:
+        serializedVersion: 2
+        x: 1729
+        y: 2498
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 681839c5ead7b7cc0800000000000000
+      internalID: -3712235280005889658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_23
+      rect:
+        serializedVersion: 2
+        x: 2669
+        y: 2493
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8d6ea2b409209270800000000000000
+      internalID: 8255143217124502923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_24
+      rect:
+        serializedVersion: 2
+        x: 2674
+        y: 2484
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ad12802a52706360800000000000000
+      internalID: 7160849138937109921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_25
+      rect:
+        serializedVersion: 2
+        x: 1270
+        y: 2474
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8ebbcdc6af95dfa0800000000000000
+      internalID: -5776535408266723697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_26
+      rect:
+        serializedVersion: 2
+        x: 1283
+        y: 2480
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b5d7cf841f39a9d0800000000000000
+      internalID: -2762607538870954568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_27
+      rect:
+        serializedVersion: 2
+        x: 1710
+        y: 2480
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b686338f9bfada6e0800000000000000
+      internalID: -1824609060747253653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_28
+      rect:
+        serializedVersion: 2
+        x: 1722
+        y: 2474
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51cf3cbdff843b280800000000000000
+      internalID: -9028792564206797803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_29
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 1936
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a330e1adb7e6db00800000000000000
+      internalID: 853123981083947941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_30
+      rect:
+        serializedVersion: 2
+        x: 2300
+        y: 1936
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5da0a91acd1ad38d0800000000000000
+      internalID: -2864955818961663275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_31
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 1923
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53f85760f25c39ec0800000000000000
+      internalID: -3561286074557427915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_32
+      rect:
+        serializedVersion: 2
+        x: 729
+        y: 1926
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38a6a9ac44b4c0830800000000000000
+      internalID: 4038685724673469059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_33
+      rect:
+        serializedVersion: 2
+        x: 2265
+        y: 1926
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 240a6e34cb7d9e440800000000000000
+      internalID: 4965737267745693762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_34
+      rect:
+        serializedVersion: 2
+        x: 2268
+        y: 1923
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8839f9e2048ebcd80800000000000000
+      internalID: -8229228531731688568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_35
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 1807
+        width: 97
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95e22f02b1d688860800000000000000
+      internalID: 7532390340061441625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_36
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 1917
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4033a4e428e8612d0800000000000000
+      internalID: -3308300185946672380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_37
+      rect:
+        serializedVersion: 2
+        x: 2224
+        y: 1807
+        width: 97
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 604c8ee53c32c4c20800000000000000
+      internalID: 3191965557916746758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_38
+      rect:
+        serializedVersion: 2
+        x: 2247
+        y: 1917
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70850a6ad75a3c420800000000000000
+      internalID: 2649142964909004807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_39
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 1737
+        width: 251
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06bd24e83560ca730800000000000000
+      internalID: 4011588324019067744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_40
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 1873
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3b922648331b5170800000000000000
+      internalID: 8168143481582295870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_41
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 1873
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33765ab9a2e8c28c0800000000000000
+      internalID: -4022684053497616589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_42
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 1869
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e480862d8b9665f0800000000000000
+      internalID: -763752056254069532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_43
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 1872
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e24a49c704238150800000000000000
+      internalID: 5873577954881716969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_44
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 1878
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b570171d630c43b0800000000000000
+      internalID: -5527038875617167952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_45
+      rect:
+        serializedVersion: 2
+        x: 2308
+        y: 1878
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a025d246ce0f9000800000000000000
+      internalID: 44770765984571557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_46
+      rect:
+        serializedVersion: 2
+        x: 2318
+        y: 1872
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54cd21ec706bac500800000000000000
+      internalID: 417346060123561029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_47
+      rect:
+        serializedVersion: 2
+        x: 2322
+        y: 1869
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ed75c5bc4ee85c40800000000000000
+      internalID: 5501408958067604966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_48
+      rect:
+        serializedVersion: 2
+        x: 2331
+        y: 1873
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 478df983874cf9f20800000000000000
+      internalID: 3431677461704726644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_49
+      rect:
+        serializedVersion: 2
+        x: 2337
+        y: 1873
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 276aaed9dfbeb61e0800000000000000
+      internalID: -2203408118159071630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_50
+      rect:
+        serializedVersion: 2
+        x: 2368
+        y: 1737
+        width: 251
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 941a2eda34da4f360800000000000000
+      internalID: 7202572210263990601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_51
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 1856
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54642e594317525e0800000000000000
+      internalID: -1935015994218887611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_52
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 1861
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d791466886d51d50800000000000000
+      internalID: 6707503101357692885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_53
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 1863
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 772c5d5b2c0bc9320800000000000000
+      internalID: 2566120238015169143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_54
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 1859
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d30e5291cadc25b20800000000000000
+      internalID: 3121783630761156669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_55
+      rect:
+        serializedVersion: 2
+        x: 2308
+        y: 1859
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00d9cb903b7ed6a10800000000000000
+      internalID: 1904432973596105984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_56
+      rect:
+        serializedVersion: 2
+        x: 2324
+        y: 1863
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecccc61960277c590800000000000000
+      internalID: -7654023669157671730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_57
+      rect:
+        serializedVersion: 2
+        x: 2332
+        y: 1861
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d249472d878d357b0800000000000000
+      internalID: -5236603928263224275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_58
+      rect:
+        serializedVersion: 2
+        x: 2341
+        y: 1856
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 568309547c131ee60800000000000000
+      internalID: 7989721945867303013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_59
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 1853
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f0749520f96b2e40800000000000000
+      internalID: 5632712239100489976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_60
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 1852
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8660988ea2a20e520800000000000000
+      internalID: 2729227737964807784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_61
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 1843
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35eb3e3acb7347b40800000000000000
+      internalID: 5437031933486022227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_62
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 1854
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06a476a9d909c7d00800000000000000
+      internalID: 971810626179910240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_63
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 1848
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98aac951af347de90800000000000000
+      internalID: -7001052354340672887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_64
+      rect:
+        serializedVersion: 2
+        x: 2315
+        y: 1848
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aab59d35e27b358f0800000000000000
+      internalID: -552896919633306710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_65
+      rect:
+        serializedVersion: 2
+        x: 2318
+        y: 1854
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67944ccf3c83256e0800000000000000
+      internalID: -1850354082485352074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_66
+      rect:
+        serializedVersion: 2
+        x: 2326
+        y: 1843
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd86f373613de95c0800000000000000
+      internalID: -4206692909547820833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_67
+      rect:
+        serializedVersion: 2
+        x: 2334
+        y: 1852
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51a6a0c1dde490940800000000000000
+      internalID: 5262824351124318741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_68
+      rect:
+        serializedVersion: 2
+        x: 2338
+        y: 1853
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 887dd97bbefc88560800000000000000
+      internalID: 7316326205968209800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_69
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 1839
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ef377d435ef6a8f0800000000000000
+      internalID: -529456272434053148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_70
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 1833
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27b1e1a1082cb4cc0800000000000000
+      internalID: -3725670411269170318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_71
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 1841
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4afda566659d01390800000000000000
+      internalID: -7849535185399128156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_72
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 1827
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 482725618378d25a0800000000000000
+      internalID: -6544426008537042300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_73
+      rect:
+        serializedVersion: 2
+        x: 2316
+        y: 1827
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd97a6bb92adf18b0800000000000000
+      internalID: -5179181173679949349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_74
+      rect:
+        serializedVersion: 2
+        x: 2320
+        y: 1841
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53661e168b14f54f0800000000000000
+      internalID: -837878745495673291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_75
+      rect:
+        serializedVersion: 2
+        x: 2327
+        y: 1833
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f04b2c190bb58f30800000000000000
+      internalID: 4577270244093673715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_76
+      rect:
+        serializedVersion: 2
+        x: 2359
+        y: 1839
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afdbf60af5e7727e0800000000000000
+      internalID: -1790323377677812230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_77
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 1821
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b802a9d56ecfeb200800000000000000
+      internalID: 197873499993940107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_78
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 1824
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6bc83007b3d8ca30800000000000000
+      internalID: 4235868232478149484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_79
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 1827
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: deafbe9878e5fc430800000000000000
+      internalID: 3805364146378898157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_80
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 1819
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e990b2b7250c3f10800000000000000
+      internalID: 2250679581838186978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_81
+      rect:
+        serializedVersion: 2
+        x: 2319
+        y: 1819
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 612a304d7ef0225a0800000000000000
+      internalID: -6547653419874409962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_82
+      rect:
+        serializedVersion: 2
+        x: 2326
+        y: 1827
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f70630acb72933d80800000000000000
+      internalID: -8272107030181617537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_83
+      rect:
+        serializedVersion: 2
+        x: 2342
+        y: 1824
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f21bcf11dd6d3d60800000000000000
+      internalID: 7871568468662489847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_84
+      rect:
+        serializedVersion: 2
+        x: 2346
+        y: 1821
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1b740682e70f4f50800000000000000
+      internalID: 6867716626255739678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_85
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 1818
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc74c802f05f4cf30800000000000000
+      internalID: 4595066965144127436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_86
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 1816
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8432b3ee2b4050fb0800000000000000
+      internalID: -4682331071034219704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_87
+      rect:
+        serializedVersion: 2
+        x: 2340
+        y: 1816
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7dc14187f94e48280800000000000000
+      internalID: -9041850778287596329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_88
+      rect:
+        serializedVersion: 2
+        x: 2439
+        y: 1818
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9190b76a3c304cdb0800000000000000
+      internalID: -4772685566259295975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_89
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 1803
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5827dd29f7aefceb0800000000000000
+      internalID: -4697278052678405499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_90
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 1808
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06077ef8775ebb840800000000000000
+      internalID: 5241034893053882464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_91
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 1800
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e31e775a57711e520800000000000000
+      internalID: 2729488643217940798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_92
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 1802
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59ca9fae115a750b0800000000000000
+      internalID: -5739937703685149547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_93
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 1799
+        width: 15
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ace1f0c83bf88aec0800000000000000
+      internalID: -3555433904497287478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_94
+      rect:
+        serializedVersion: 2
+        x: 2297
+        y: 1799
+        width: 15
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 641a5a22f70134190800000000000000
+      internalID: -7979515976542215866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_95
+      rect:
+        serializedVersion: 2
+        x: 2317
+        y: 1802
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8183a68c6f651920800000000000000
+      internalID: 2960394841971982731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_96
+      rect:
+        serializedVersion: 2
+        x: 2327
+        y: 1800
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69d64f112c545da80800000000000000
+      internalID: -8442765226608923242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_97
+      rect:
+        serializedVersion: 2
+        x: 2353
+        y: 1808
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab4cbbc5b4757fc80800000000000000
+      internalID: -8289060607962135366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_98
+      rect:
+        serializedVersion: 2
+        x: 2358
+        y: 1803
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59d7acb26fc413e60800000000000000
+      internalID: 7940212238211251605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_99
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 1797
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f05d93b24c564c0c0800000000000000
+      internalID: -4556405029778893553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_100
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 1799
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6900f3a422e926e40800000000000000
+      internalID: 5648250752787742870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_101
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 1785
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 552447452bc820320800000000000000
+      internalID: 2522733438829871701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_102
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 1797
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac13ced053a438760800000000000000
+      internalID: 7458886999582978506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_103
+      rect:
+        serializedVersion: 2
+        x: 2291
+        y: 1797
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 507946ac03a958640800000000000000
+      internalID: 5081637288902170373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_104
+      rect:
+        serializedVersion: 2
+        x: 2306
+        y: 1799
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 142aa2f83ba11aa50800000000000000
+      internalID: 6530530293167333953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_105
+      rect:
+        serializedVersion: 2
+        x: 2306
+        y: 1785
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce75337ae0635f720800000000000000
+      internalID: 2879266973335902188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_106
+      rect:
+        serializedVersion: 2
+        x: 2351
+        y: 1797
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72c27159a78441ca0800000000000000
+      internalID: -6047128708327199705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_107
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 1783
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba22f10ad12940460800000000000000
+      internalID: 7207045959637738155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_108
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 1789
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 533f501b5b191bde0800000000000000
+      internalID: -1319113006297779403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_109
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 1785
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3655d8a5ef0e657a0800000000000000
+      internalID: -6388671638332943005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_110
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 1786
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b2dd58d0cc96d2b0800000000000000
+      internalID: -5560084337864617291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_111
+      rect:
+        serializedVersion: 2
+        x: 2320
+        y: 1786
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d08c42265239a7a0800000000000000
+      internalID: -6365501252787470121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_112
+      rect:
+        serializedVersion: 2
+        x: 2328
+        y: 1785
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a18ae266b6202dc00800000000000000
+      internalID: 923803533863462938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_113
+      rect:
+        serializedVersion: 2
+        x: 2336
+        y: 1789
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecb91daa4f64acbe0800000000000000
+      internalID: -1456273512849105970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_114
+      rect:
+        serializedVersion: 2
+        x: 2355
+        y: 1783
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59725321ad869aca0800000000000000
+      internalID: -6005153342304213099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_115
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 1777
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3cc764978e135dd0800000000000000
+      internalID: -2498619800601244610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_116
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 1782
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca88b7c9e895aeab0800000000000000
+      internalID: -4978067969059092308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_117
+      rect:
+        serializedVersion: 2
+        x: 2321
+        y: 1782
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6a6cb36c72ddbf10800000000000000
+      internalID: 2287215617465150063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_118
+      rect:
+        serializedVersion: 2
+        x: 2399
+        y: 1777
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2474c526e95b8650800000000000000
+      internalID: 6236176954035565612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_119
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 1766
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8fce434b205ee030800000000000000
+      internalID: 3525843705020731274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_120
+      rect:
+        serializedVersion: 2
+        x: 2360
+        y: 1766
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56d5dd02d3b5c2460800000000000000
+      internalID: 7218244620870573413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_121
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 1699
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3242645bf0d0fd130800000000000000
+      internalID: 3593605388781888547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_122
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 1695
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f41d33b6d62261e0800000000000000
+      internalID: -2206158163886140170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_123
+      rect:
+        serializedVersion: 2
+        x: 2260
+        y: 1695
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a775c2219b60eb4d0800000000000000
+      internalID: -3117046500150192262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_124
+      rect:
+        serializedVersion: 2
+        x: 2270
+        y: 1699
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: becd220165d8950c0800000000000000
+      internalID: -4586479344722715413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_125
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 1687
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ddbb14e44658a6b0800000000000000
+      internalID: -5284879308834488873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_126
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 1689
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53f87fbd69538d6c0800000000000000
+      internalID: -4118482937178517707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_127
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 1682
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb30dd73302c18530800000000000000
+      internalID: 3855576075083776955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_128
+      rect:
+        serializedVersion: 2
+        x: 2249
+        y: 1682
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0805378c6bdb5e1b0800000000000000
+      internalID: -5627883566584868736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_129
+      rect:
+        serializedVersion: 2
+        x: 2252
+        y: 1689
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eff49b06ec19056c0800000000000000
+      internalID: -4156662140490919938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_130
+      rect:
+        serializedVersion: 2
+        x: 2257
+        y: 1687
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 321fe34f5dd376b60800000000000000
+      internalID: 7739222473794580771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_131
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 1303
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6a1757a07e330b60800000000000000
+      internalID: 7711075640553183853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_132
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 1309
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ccc88c6b922bd740800000000000000
+      internalID: 5177770247528697024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_133
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 1304
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4af1bf89672761170800000000000000
+      internalID: 8148826429471793060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_134
+      rect:
+        serializedVersion: 2
+        x: 2249
+        y: 1309
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f449390a805a0700800000000000000
+      internalID: 507306461823059185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_135
+      rect:
+        serializedVersion: 2
+        x: 2252
+        y: 1304
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afbd28cdec7916d40800000000000000
+      internalID: 5575904728380005370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_136
+      rect:
+        serializedVersion: 2
+        x: 2257
+        y: 1303
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f94e911f245fbb3d0800000000000000
+      internalID: -3189686243200211809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_137
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 1294
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0736b7468268b150800000000000000
+      internalID: 5888564841655187214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_138
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 1298
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 787d29c2437296160800000000000000
+      internalID: 7019184599273232263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_139
+      rect:
+        serializedVersion: 2
+        x: 2260
+        y: 1298
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d255c9aeb1fd361e0800000000000000
+      internalID: -2205674081488186067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_140
+      rect:
+        serializedVersion: 2
+        x: 2270
+        y: 1294
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0f8c95b743694840800000000000000
+      internalID: 5208803603671453454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_141
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 1228
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61d5e02fca70e9960800000000000000
+      internalID: 7610528859679513878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_142
+      rect:
+        serializedVersion: 2
+        x: 2360
+        y: 1228
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86a815439574e6270800000000000000
+      internalID: 8245606416217377384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_143
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 1131
+        width: 75
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3babe4278a8e54a0800000000000000
+      internalID: -6602687690633925828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_144
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 1215
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6401bfac4cf156f20800000000000000
+      internalID: 3415170822509891654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_145
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 1211
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e91fd2d52ee0971f0800000000000000
+      internalID: -1046789072998239842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_146
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 1207
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3678cb9a8b92ee290800000000000000
+      internalID: -7859298426616510621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_147
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 1212
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ee2cf66fa75faa60800000000000000
+      internalID: 7687459499803422435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_148
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 1200
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9492aa0c5726da150800000000000000
+      internalID: 5885468545926179145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_149
+      rect:
+        serializedVersion: 2
+        x: 2306
+        y: 1200
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecebcfca9c10a9a60800000000000000
+      internalID: 7681454080136101582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_150
+      rect:
+        serializedVersion: 2
+        x: 2321
+        y: 1212
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bec986328b54c750800000000000000
+      internalID: 6324280391553896115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_151
+      rect:
+        serializedVersion: 2
+        x: 2328
+        y: 1207
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db00ced7513696120800000000000000
+      internalID: 2407564419764322493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_152
+      rect:
+        serializedVersion: 2
+        x: 2355
+        y: 1211
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 786429539c44e51a0800000000000000
+      internalID: -6818937154814458233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_153
+      rect:
+        serializedVersion: 2
+        x: 2368
+        y: 1131
+        width: 75
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee111115ade840880800000000000000
+      internalID: -8645628316330421778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_154
+      rect:
+        serializedVersion: 2
+        x: 2399
+        y: 1215
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dd8e7626292a4e10800000000000000
+      internalID: 2182602213245750744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_155
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 1204
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a208954ca59eea4e0800000000000000
+      internalID: -1968379411063799766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_156
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 1205
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0032973db3924740800000000000000
+      internalID: 5134828966046216203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_157
+      rect:
+        serializedVersion: 2
+        x: 2320
+        y: 1205
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a8be6b4d89886940800000000000000
+      internalID: 5289629002295589031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_158
+      rect:
+        serializedVersion: 2
+        x: 2336
+        y: 1204
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3c300d5b10da4790800000000000000
+      internalID: -7544989409762853829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_159
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 1191
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a17ba5a859452bf0800000000000000
+      internalID: -349792750965919326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_160
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 1197
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36a429320f910e120800000000000000
+      internalID: 2440979517214444131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_161
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 1186
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c24d1daddf228c00800000000000000
+      internalID: 901335504566174409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_162
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 1191
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f02c91552afca6720800000000000000
+      internalID: 2840310811129922063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_163
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 1193
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60a417d0cd3d09110800000000000000
+      internalID: 1265744437362903558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_164
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 1192
+        width: 15
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e13f50920cbd4950800000000000000
+      internalID: 6435006161780421091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_165
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 1196
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f15d8931c5e360e40800000000000000
+      internalID: 5622249750005339423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_166
+      rect:
+        serializedVersion: 2
+        x: 2291
+        y: 1196
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a68e1458956abc660800000000000000
+      internalID: 7407196915558901866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_167
+      rect:
+        serializedVersion: 2
+        x: 2297
+        y: 1192
+        width: 15
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3eb8c55293eb55f40800000000000000
+      internalID: 5716684454665948131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_168
+      rect:
+        serializedVersion: 2
+        x: 2306
+        y: 1193
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cc6f1ab5c13e37c0800000000000000
+      internalID: -4089776686304891711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_169
+      rect:
+        serializedVersion: 2
+        x: 2317
+        y: 1191
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6ed1ed8fd2abe240800000000000000
+      internalID: 4822126907072044655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_170
+      rect:
+        serializedVersion: 2
+        x: 2327
+        y: 1186
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71fed33f17e82c390800000000000000
+      internalID: -7799514984588906729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_171
+      rect:
+        serializedVersion: 2
+        x: 2351
+        y: 1197
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15fef1096037ad5c0800000000000000
+      internalID: -4189910031289815215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_172
+      rect:
+        serializedVersion: 2
+        x: 2358
+        y: 1191
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81e5c6f16b7467250800000000000000
+      internalID: 5942015605898763800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_173
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 1186
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 549458045cf600470800000000000000
+      internalID: 8358803801381357893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_174
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 1076
+        width: 97
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60191050cc57a55f0800000000000000
+      internalID: -767171267395481338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_175
+      rect:
+        serializedVersion: 2
+        x: 2224
+        y: 1076
+        width: 97
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec94ef25f1c509c30800000000000000
+      internalID: 4364089328528148942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_176
+      rect:
+        serializedVersion: 2
+        x: 2353
+        y: 1186
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b61bc96a63bf2070800000000000000
+      internalID: 8083877125776152246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_177
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 1176
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a74058730e1ce5920800000000000000
+      internalID: 2981033172114146426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_178
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 1172
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7eb77b888acf0ac0800000000000000
+      internalID: -3886665265593205124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_179
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 1177
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e900a292939751ff0800000000000000
+      internalID: -66013333116288866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_180
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 1172
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adda8931ef9216c90800000000000000
+      internalID: -7178410159824654886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_181
+      rect:
+        serializedVersion: 2
+        x: 2319
+        y: 1172
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d29e9c08fc848b80800000000000000
+      internalID: -8393428808520265000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_182
+      rect:
+        serializedVersion: 2
+        x: 2340
+        y: 1177
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ddeae76a99b33df0800000000000000
+      internalID: -201613485481988656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_183
+      rect:
+        serializedVersion: 2
+        x: 2346
+        y: 1172
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c84f38e9b8c1b5e0800000000000000
+      internalID: -1895513267355301693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_184
+      rect:
+        serializedVersion: 2
+        x: 2439
+        y: 1176
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1eca377ddf904cea0800000000000000
+      internalID: -5853542629828743967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_185
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 1169
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a1b713d445e63480800000000000000
+      internalID: -8919689928198606430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_186
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 1166
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7132e61049b74b380800000000000000
+      internalID: -8956397883323702505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_187
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 1158
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 700e86c45c79ed490800000000000000
+      internalID: -7719565837620158457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_188
+      rect:
+        serializedVersion: 2
+        x: 2316
+        y: 1158
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c36d2c97d0599db0800000000000000
+      internalID: -4784704242136030272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_189
+      rect:
+        serializedVersion: 2
+        x: 2326
+        y: 1166
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9da69a3a5efa5890800000000000000
+      internalID: -7468377368557081189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_190
+      rect:
+        serializedVersion: 2
+        x: 2342
+        y: 1169
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 488b3b16237d5cfd0800000000000000
+      internalID: -2322213421452117884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_191
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 1155
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12b74d278bfa66300800000000000000
+      internalID: 245076436473641761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_192
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 1158
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cb631c651b271f50800000000000000
+      internalID: 6851992729075018691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_193
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 1150
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31a0909e0c2160890800000000000000
+      internalID: -7492280310331536877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_194
+      rect:
+        serializedVersion: 2
+        x: 2320
+        y: 1150
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6ffce07f13686ce0800000000000000
+      internalID: -1411769496490934421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_195
+      rect:
+        serializedVersion: 2
+        x: 2327
+        y: 1158
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 839a9ebc34fbebd90800000000000000
+      internalID: -7080011266275038920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_196
+      rect:
+        serializedVersion: 2
+        x: 2359
+        y: 1155
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70060e3027b7f01c0800000000000000
+      internalID: -4535270570117275641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_197
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 1141
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 869421ed3935206d0800000000000000
+      internalID: -3025764105088513688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_198
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 1139
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03c5aaa58225bef90800000000000000
+      internalID: -6923349668878722000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_199
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 1141
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a7e08ddbb82d8110800000000000000
+      internalID: 1264711857701185441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_200
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 1140
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fb2c2f97374f28f0800000000000000
+      internalID: -563153124178777100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_201
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 1146
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6594cf5eb972d560800000000000000
+      internalID: 7337060601497425263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_202
+      rect:
+        serializedVersion: 2
+        x: 2315
+        y: 1146
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b27a60f29a49f0a30800000000000000
+      internalID: 4183726033209829163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_203
+      rect:
+        serializedVersion: 2
+        x: 2318
+        y: 1140
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a0bc436615e3b620800000000000000
+      internalID: 2788824478590480544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_204
+      rect:
+        serializedVersion: 2
+        x: 2326
+        y: 1141
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5061e6b309af93f0800000000000000
+      internalID: -891808367777849249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_205
+      rect:
+        serializedVersion: 2
+        x: 2334
+        y: 1139
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79325210d01281670800000000000000
+      internalID: 8509587835654054807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_206
+      rect:
+        serializedVersion: 2
+        x: 2338
+        y: 1141
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bd9cb30beaefafd0800000000000000
+      internalID: -2328384187226350160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_207
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 1136
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 365a2ce58d81462d0800000000000000
+      internalID: -3286474510491802269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_208
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 1133
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a693d62c4626cc80800000000000000
+      internalID: -8302906754500159833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_209
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 1131
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a42c666a10882f70800000000000000
+      internalID: 9162714292761142440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_210
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 1132
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4b6fe5bda73d9f40800000000000000
+      internalID: 5736802719561116495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_211
+      rect:
+        serializedVersion: 2
+        x: 2308
+        y: 1132
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eae1407fd2dc0bf10800000000000000
+      internalID: 2283550608378306222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_212
+      rect:
+        serializedVersion: 2
+        x: 2324
+        y: 1131
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ef1eef632d872640800000000000000
+      internalID: 5055164290087919587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_213
+      rect:
+        serializedVersion: 2
+        x: 2332
+        y: 1133
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2c7ef358e2e65950800000000000000
+      internalID: 6437582204842179630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_214
+      rect:
+        serializedVersion: 2
+        x: 2341
+        y: 1136
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2fc29e6d2e266340800000000000000
+      internalID: 4856620020829179691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_215
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 1120
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39f2e98da0cdfbe70800000000000000
+      internalID: 9133260508472684435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_216
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 1118
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39b82ed258ac008e0800000000000000
+      internalID: -1729159583560987757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_217
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 1119
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c392ae12144059b60800000000000000
+      internalID: 7752107011376556348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_218
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 1122
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5da34e2a0d9640ff0800000000000000
+      internalID: -70815349324105003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_219
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 1112
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 093a2c9e6538daf20800000000000000
+      internalID: 3435546500065829776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_220
+      rect:
+        serializedVersion: 2
+        x: 2308
+        y: 1112
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e8237897a5e56170800000000000000
+      internalID: 8171189606913616103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_221
+      rect:
+        serializedVersion: 2
+        x: 2318
+        y: 1122
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf4ae8e4dab80e8f0800000000000000
+      internalID: -513256781056662276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_222
+      rect:
+        serializedVersion: 2
+        x: 2322
+        y: 1119
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53f97320523dcb920800000000000000
+      internalID: 3007510807081099061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_223
+      rect:
+        serializedVersion: 2
+        x: 2331
+        y: 1118
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b149db99bf7343740800000000000000
+      internalID: 5130787429237494811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_224
+      rect:
+        serializedVersion: 2
+        x: 2337
+        y: 1120
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0aa77746dc8f3cda0800000000000000
+      internalID: -5925619123651904864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_225
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 1071
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6644881a70c14d80800000000000000
+      internalID: -8268115810245654931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_226
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 1075
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03906890f068c8d90800000000000000
+      internalID: -7094147913872963280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_227
+      rect:
+        serializedVersion: 2
+        x: 2247
+        y: 1075
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cf8dafdad3cdd170800000000000000
+      internalID: 8204929440961892296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_228
+      rect:
+        serializedVersion: 2
+        x: 2268
+        y: 1071
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3de65885e451664f0800000000000000
+      internalID: -835957254593876269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_229
+      rect:
+        serializedVersion: 2
+        x: 729
+        y: 1067
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e47fd93be8e575230800000000000000
+      internalID: 3627471991862064974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_230
+      rect:
+        serializedVersion: 2
+        x: 2265
+        y: 1067
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9332dd76523eee5e0800000000000000
+      internalID: -1878314244771077319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_231
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 1055
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0dd990fb75148a620800000000000000
+      internalID: 2785548214651690448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_232
+      rect:
+        serializedVersion: 2
+        x: 2300
+        y: 1055
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f762fb28369488f20800000000000000
+      internalID: 3425068208359417471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_233
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 499
+        width: 56
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9a48ec86b07fc9c0800000000000000
+      internalID: -3904778422556538209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_234
+      rect:
+        serializedVersion: 2
+        x: 1270
+        y: 518
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c822dabd4a53cae50800000000000000
+      internalID: 6821886517735924364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_235
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 510
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfb0e6bcc444479c0800000000000000
+      internalID: -3930441478166410244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_236
+      rect:
+        serializedVersion: 2
+        x: 1710
+        y: 510
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91373fd999b1c9050800000000000000
+      internalID: 5808547965995021081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_237
+      rect:
+        serializedVersion: 2
+        x: 1718
+        y: 518
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07be9da5d07ca90d0800000000000000
+      internalID: -3415198507234366608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_238
+      rect:
+        serializedVersion: 2
+        x: 2648
+        y: 499
+        width: 56
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df9c887b82db59780800000000000000
+      internalID: -8676821124483855875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_239
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 283
+        width: 288
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b410e8ceeb436abc0800000000000000
+      internalID: -3772269643259051701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_240
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 501
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17ada73db2577c050800000000000000
+      internalID: 5820749874491742833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_241
+      rect:
+        serializedVersion: 2
+        x: 1264
+        y: 494
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06f1ed3795d23abe0800000000000000
+      internalID: -1467279191373373600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_242
+      rect:
+        serializedVersion: 2
+        x: 1729
+        y: 494
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3eb4f686af1340720800000000000000
+      internalID: 2811427018949741539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_243
+      rect:
+        serializedVersion: 2
+        x: 2509
+        y: 283
+        width: 288
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 676951dddeaf226b0800000000000000
+      internalID: -5322415910075132298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_244
+      rect:
+        serializedVersion: 2
+        x: 2669
+        y: 501
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a81271e7018da94f0800000000000000
+      internalID: -821106416695172726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_245
+      rect:
+        serializedVersion: 2
+        x: 1234
+        y: 492
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 068d9cde0efa431a0800000000000000
+      internalID: -6830641354217236384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_246
+      rect:
+        serializedVersion: 2
+        x: 1759
+        y: 492
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 761ab98250f1d7c00800000000000000
+      internalID: 899909607560552807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_247
+      rect:
+        serializedVersion: 2
+        x: 1269
+        y: 478
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f32863c219aa5fc0800000000000000
+      internalID: -3505303461901622286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_248
+      rect:
+        serializedVersion: 2
+        x: 1725
+        y: 478
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4124817a591e97f60800000000000000
+      internalID: 8032699443261751828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_249
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 467
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68bd657ac7f71cf00800000000000000
+      internalID: 1135328754434235270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_250
+      rect:
+        serializedVersion: 2
+        x: 2693
+        y: 467
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55cc31a734f0d3040800000000000000
+      internalID: 4628872774492081237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_251
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 327
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b5b6cdf9ec778a90800000000000000
+      internalID: -7311738125585828423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_252
+      rect:
+        serializedVersion: 2
+        x: 2542
+        y: 327
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 737a1768086b3e2a0800000000000000
+      internalID: -6709318356724242633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_253
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 305
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d00ac2747e122480800000000000000
+      internalID: -8925538026004021036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_254
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 310
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 224ccafb584dea5e0800000000000000
+      internalID: -1896344722164890590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_255
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 304
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1807307af620ffc20800000000000000
+      internalID: 3242312935296692353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_256
+      rect:
+        serializedVersion: 2
+        x: 2623
+        y: 304
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4edbbc2bd136f47e0800000000000000
+      internalID: -1779094348583158300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_257
+      rect:
+        serializedVersion: 2
+        x: 2624
+        y: 310
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e4fa66207bb89db0800000000000000
+      internalID: -4784868513725877018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_258
+      rect:
+        serializedVersion: 2
+        x: 2642
+        y: 305
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9033e7f58da2f09d0800000000000000
+      internalID: -2805976934025121015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_259
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 299
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 992581214c9102260800000000000000
+      internalID: 7070679744879547033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jelica2_260
+      rect:
+        serializedVersion: 2
+        x: 2630
+        y: 299
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10773128014409730800000000000000
+      internalID: 4003774906424850177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      jelica2_0: 1683174439514810865
+      jelica2_1: 4602186795975721404
+      jelica2_10: 4792517155062666666
+      jelica2_100: 5648250752787742870
+      jelica2_101: 2522733438829871701
+      jelica2_102: 7458886999582978506
+      jelica2_103: 5081637288902170373
+      jelica2_104: 6530530293167333953
+      jelica2_105: 2879266973335902188
+      jelica2_106: -6047128708327199705
+      jelica2_107: 7207045959637738155
+      jelica2_108: -1319113006297779403
+      jelica2_109: -6388671638332943005
+      jelica2_11: 73060717412721524
+      jelica2_110: -5560084337864617291
+      jelica2_111: -6365501252787470121
+      jelica2_112: 923803533863462938
+      jelica2_113: -1456273512849105970
+      jelica2_114: -6005153342304213099
+      jelica2_115: -2498619800601244610
+      jelica2_116: -4978067969059092308
+      jelica2_117: 2287215617465150063
+      jelica2_118: 6236176954035565612
+      jelica2_119: 3525843705020731274
+      jelica2_12: 3674751109694429183
+      jelica2_120: 7218244620870573413
+      jelica2_121: 3593605388781888547
+      jelica2_122: -2206158163886140170
+      jelica2_123: -3117046500150192262
+      jelica2_124: -4586479344722715413
+      jelica2_125: -5284879308834488873
+      jelica2_126: -4118482937178517707
+      jelica2_127: 3855576075083776955
+      jelica2_128: -5627883566584868736
+      jelica2_129: -4156662140490919938
+      jelica2_13: 562090027744546240
+      jelica2_130: 7739222473794580771
+      jelica2_131: 7711075640553183853
+      jelica2_132: 5177770247528697024
+      jelica2_133: 8148826429471793060
+      jelica2_134: 507306461823059185
+      jelica2_135: 5575904728380005370
+      jelica2_136: -3189686243200211809
+      jelica2_137: 5888564841655187214
+      jelica2_138: 7019184599273232263
+      jelica2_139: -2205674081488186067
+      jelica2_14: -2908811971209555050
+      jelica2_140: 5208803603671453454
+      jelica2_141: 7610528859679513878
+      jelica2_142: 8245606416217377384
+      jelica2_143: -6602687690633925828
+      jelica2_144: 3415170822509891654
+      jelica2_145: -1046789072998239842
+      jelica2_146: -7859298426616510621
+      jelica2_147: 7687459499803422435
+      jelica2_148: 5885468545926179145
+      jelica2_149: 7681454080136101582
+      jelica2_15: 5814332319064196022
+      jelica2_150: 6324280391553896115
+      jelica2_151: 2407564419764322493
+      jelica2_152: -6818937154814458233
+      jelica2_153: -8645628316330421778
+      jelica2_154: 2182602213245750744
+      jelica2_155: -1968379411063799766
+      jelica2_156: 5134828966046216203
+      jelica2_157: 5289629002295589031
+      jelica2_158: -7544989409762853829
+      jelica2_159: -349792750965919326
+      jelica2_16: -237753135423091432
+      jelica2_160: 2440979517214444131
+      jelica2_161: 901335504566174409
+      jelica2_162: 2840310811129922063
+      jelica2_163: 1265744437362903558
+      jelica2_164: 6435006161780421091
+      jelica2_165: 5622249750005339423
+      jelica2_166: 7407196915558901866
+      jelica2_167: 5716684454665948131
+      jelica2_168: -4089776686304891711
+      jelica2_169: 4822126907072044655
+      jelica2_17: -871465452594792221
+      jelica2_170: -7799514984588906729
+      jelica2_171: -4189910031289815215
+      jelica2_172: 5942015605898763800
+      jelica2_173: 8358803801381357893
+      jelica2_174: -767171267395481338
+      jelica2_175: 4364089328528148942
+      jelica2_176: 8083877125776152246
+      jelica2_177: 2981033172114146426
+      jelica2_178: -3886665265593205124
+      jelica2_179: -66013333116288866
+      jelica2_18: -2978569469425040374
+      jelica2_180: -7178410159824654886
+      jelica2_181: -8393428808520265000
+      jelica2_182: -201613485481988656
+      jelica2_183: -1895513267355301693
+      jelica2_184: -5853542629828743967
+      jelica2_185: -8919689928198606430
+      jelica2_186: -8956397883323702505
+      jelica2_187: -7719565837620158457
+      jelica2_188: -4784704242136030272
+      jelica2_189: -7468377368557081189
+      jelica2_19: 6257818973777946344
+      jelica2_190: -2322213421452117884
+      jelica2_191: 245076436473641761
+      jelica2_192: 6851992729075018691
+      jelica2_193: -7492280310331536877
+      jelica2_194: -1411769496490934421
+      jelica2_195: -7080011266275038920
+      jelica2_196: -4535270570117275641
+      jelica2_197: -3025764105088513688
+      jelica2_198: -6923349668878722000
+      jelica2_199: 1264711857701185441
+      jelica2_2: -3689329215043736527
+      jelica2_20: 3279289777191439774
+      jelica2_200: -563153124178777100
+      jelica2_201: 7337060601497425263
+      jelica2_202: 4183726033209829163
+      jelica2_203: 2788824478590480544
+      jelica2_204: -891808367777849249
+      jelica2_205: 8509587835654054807
+      jelica2_206: -2328384187226350160
+      jelica2_207: -3286474510491802269
+      jelica2_208: -8302906754500159833
+      jelica2_209: 9162714292761142440
+      jelica2_21: -2099172620109855299
+      jelica2_210: 5736802719561116495
+      jelica2_211: 2283550608378306222
+      jelica2_212: 5055164290087919587
+      jelica2_213: 6437582204842179630
+      jelica2_214: 4856620020829179691
+      jelica2_215: 9133260508472684435
+      jelica2_216: -1729159583560987757
+      jelica2_217: 7752107011376556348
+      jelica2_218: -70815349324105003
+      jelica2_219: 3435546500065829776
+      jelica2_22: -3712235280005889658
+      jelica2_220: 8171189606913616103
+      jelica2_221: -513256781056662276
+      jelica2_222: 3007510807081099061
+      jelica2_223: 5130787429237494811
+      jelica2_224: -5925619123651904864
+      jelica2_225: -8268115810245654931
+      jelica2_226: -7094147913872963280
+      jelica2_227: 8204929440961892296
+      jelica2_228: -835957254593876269
+      jelica2_229: 3627471991862064974
+      jelica2_23: 8255143217124502923
+      jelica2_230: -1878314244771077319
+      jelica2_231: 2785548214651690448
+      jelica2_232: 3425068208359417471
+      jelica2_233: -3904778422556538209
+      jelica2_234: 6821886517735924364
+      jelica2_235: -3930441478166410244
+      jelica2_236: 5808547965995021081
+      jelica2_237: -3415198507234366608
+      jelica2_238: -8676821124483855875
+      jelica2_239: -3772269643259051701
+      jelica2_24: 7160849138937109921
+      jelica2_240: 5820749874491742833
+      jelica2_241: -1467279191373373600
+      jelica2_242: 2811427018949741539
+      jelica2_243: -5322415910075132298
+      jelica2_244: -821106416695172726
+      jelica2_245: -6830641354217236384
+      jelica2_246: 899909607560552807
+      jelica2_247: -3505303461901622286
+      jelica2_248: 8032699443261751828
+      jelica2_249: 1135328754434235270
+      jelica2_25: -5776535408266723697
+      jelica2_250: 4628872774492081237
+      jelica2_251: -7311738125585828423
+      jelica2_252: -6709318356724242633
+      jelica2_253: -8925538026004021036
+      jelica2_254: -1896344722164890590
+      jelica2_255: 3242312935296692353
+      jelica2_256: -1779094348583158300
+      jelica2_257: -4784868513725877018
+      jelica2_258: -2805976934025121015
+      jelica2_259: 7070679744879547033
+      jelica2_26: -2762607538870954568
+      jelica2_260: 4003774906424850177
+      jelica2_27: -1824609060747253653
+      jelica2_28: -9028792564206797803
+      jelica2_29: 853123981083947941
+      jelica2_3: 6674578874039381273
+      jelica2_30: -2864955818961663275
+      jelica2_31: -3561286074557427915
+      jelica2_32: 4038685724673469059
+      jelica2_33: 4965737267745693762
+      jelica2_34: -8229228531731688568
+      jelica2_35: 7532390340061441625
+      jelica2_36: -3308300185946672380
+      jelica2_37: 3191965557916746758
+      jelica2_38: 2649142964909004807
+      jelica2_39: 4011588324019067744
+      jelica2_4: -5448396362935867798
+      jelica2_40: 8168143481582295870
+      jelica2_41: -4022684053497616589
+      jelica2_42: -763752056254069532
+      jelica2_43: 5873577954881716969
+      jelica2_44: -5527038875617167952
+      jelica2_45: 44770765984571557
+      jelica2_46: 417346060123561029
+      jelica2_47: 5501408958067604966
+      jelica2_48: 3431677461704726644
+      jelica2_49: -2203408118159071630
+      jelica2_5: 1519776958952442183
+      jelica2_50: 7202572210263990601
+      jelica2_51: -1935015994218887611
+      jelica2_52: 6707503101357692885
+      jelica2_53: 2566120238015169143
+      jelica2_54: 3121783630761156669
+      jelica2_55: 1904432973596105984
+      jelica2_56: -7654023669157671730
+      jelica2_57: -5236603928263224275
+      jelica2_58: 7989721945867303013
+      jelica2_59: 5632712239100489976
+      jelica2_6: 1872428554599162978
+      jelica2_60: 2729227737964807784
+      jelica2_61: 5437031933486022227
+      jelica2_62: 971810626179910240
+      jelica2_63: -7001052354340672887
+      jelica2_64: -552896919633306710
+      jelica2_65: -1850354082485352074
+      jelica2_66: -4206692909547820833
+      jelica2_67: 5262824351124318741
+      jelica2_68: 7316326205968209800
+      jelica2_69: -529456272434053148
+      jelica2_7: 6460131785464617298
+      jelica2_70: -3725670411269170318
+      jelica2_71: -7849535185399128156
+      jelica2_72: -6544426008537042300
+      jelica2_73: -5179181173679949349
+      jelica2_74: -837878745495673291
+      jelica2_75: 4577270244093673715
+      jelica2_76: -1790323377677812230
+      jelica2_77: 197873499993940107
+      jelica2_78: 4235868232478149484
+      jelica2_79: 3805364146378898157
+      jelica2_8: -5115275218177156688
+      jelica2_80: 2250679581838186978
+      jelica2_81: -6547653419874409962
+      jelica2_82: -8272107030181617537
+      jelica2_83: 7871568468662489847
+      jelica2_84: 6867716626255739678
+      jelica2_85: 4595066965144127436
+      jelica2_86: -4682331071034219704
+      jelica2_87: -9041850778287596329
+      jelica2_88: -4772685566259295975
+      jelica2_89: -4697278052678405499
+      jelica2_9: -6593358485771939602
+      jelica2_90: 5241034893053882464
+      jelica2_91: 2729488643217940798
+      jelica2_92: -5739937703685149547
+      jelica2_93: -3555433904497287478
+      jelica2_94: -7979515976542215866
+      jelica2_95: 2960394841971982731
+      jelica2_96: -8442765226608923242
+      jelica2_97: -8289060607962135366
+      jelica2_98: 7940212238211251605
+      jelica2_99: -4556405029778893553
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
