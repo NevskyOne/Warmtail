@@ -42,7 +42,6 @@ namespace Entities.UI
         
         public async void SwitchCurrentStateAsync(UIState state)
         {
-            Debug.Log("Ira a "+state);
             if (SceneManager.GetActiveScene().name != "Start")
             {
                 switch (state)

@@ -4003,6 +4003,7 @@ MonoBehaviour:
   _warmAction:
     m_PersistentCalls:
       m_Calls: []
+  _isInHome: 0
   <SavableState>k__BackingField: []
 --- !u!1 &104768881
 GameObject:
@@ -6950,12 +6951,14 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 648476693}
+  - {fileID: 2145191169}
   - {fileID: 877077959}
   - {fileID: 1790267875}
   - {fileID: 218002494}
   - {fileID: 1941584834}
   - {fileID: 2088586839}
   - {fileID: 32683688}
+  - {fileID: 688160440}
   m_Father: {fileID: 1662127119}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &218002493
@@ -7764,6 +7767,7 @@ MonoBehaviour:
   _warmAction:
     m_PersistentCalls:
       m_Calls: []
+  _isInHome: 0
   <SavableState>k__BackingField: []
 --- !u!61 &227735203
 BoxCollider2D:
@@ -27744,6 +27748,7 @@ MonoBehaviour:
   _warmAction:
     m_PersistentCalls:
       m_Calls: []
+  _isInHome: 0
   <SavableState>k__BackingField: []
 --- !u!114 &631191973
 MonoBehaviour:
@@ -29781,12 +29786,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 688160439}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.1335612, w: 0.9910405}
+  m_LocalRotation: {x: -0, y: -0, z: -0.13356121, w: 0.9910406}
   m_LocalPosition: {x: 0, y: 88.51, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1662127119}
+  m_Father: {fileID: 216451248}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -15.351}
 --- !u!114 &688160441
 MonoBehaviour:
@@ -72047,7 +72052,6 @@ Transform:
   - {fileID: 1959002006}
   - {fileID: 281163773}
   - {fileID: 1023618394}
-  - {fileID: 688160440}
   - {fileID: 216451248}
   - {fileID: 2138010943}
   - {fileID: 607902557}
@@ -93261,6 +93265,127 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1551218342859599613, guid: 2d052e266c32cc540b879e29713d5184, type: 3}
   m_PrefabInstance: {fileID: 2142943378}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2145191168
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2145191169}
+  - component: {fileID: 2145191171}
+  - component: {fileID: 2145191170}
+  m_Layer: 0
+  m_Name: TertilusQuest (102)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2145191169
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2145191168}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: -0.13960512, w: 0.99020725}
+  m_LocalPosition: {x: -44.52, y: 84.46, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 216451248}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -16.05}
+--- !u!114 &2145191170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2145191168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d24c93469137b0e4fb098ac9491f3eb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Entities.Triggers.UnityEventTrigger
+  _id:
+    Value: 87687026-2670-4bf0-a0f9-42ba999dcd8d
+  _destroyAfter: 1
+  _event:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1396903650}
+        m_TargetAssemblyTypeName: Entities.NPC.SpeakableCharacter, Assembly-CSharp
+        m_MethodName: set_Graph
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 20b58593499c7f744865fc2205dc77d8, type: 2}
+          m_ObjectArgumentAssemblyTypeName: Data.Nodes.DialogueGraph, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 0_0
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1396903650}
+        m_TargetAssemblyTypeName: Entities.NPC.SpeakableCharacter, Assembly-CSharp
+        m_MethodName: Interact
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!61 &2145191171
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2145191168}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 1.216594, y: 0.0724206}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 2.7068772, y: 5.317439}
+  m_EdgeRadius: 0
 --- !u!1001 &443975586250114351
 PrefabInstance:
   m_ObjectHideFlags: 0

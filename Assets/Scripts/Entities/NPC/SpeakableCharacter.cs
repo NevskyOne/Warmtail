@@ -19,29 +19,30 @@ namespace Entities.NPC
         [SerializeField, Range(0,1f)] private float _maxWarmPercent;
         [field: SerializeField] public bool CanWarm { get; set; } = true;
         [SerializeField] private UnityEvent _warmAction = new();
+        [SerializeField] private bool _isInHome = false;
         [field: SerializeField] public List<UnityEvent> SavableState { get; private set; }
         private DialogueSystem _dialogueSystem;
         private DialogueVisuals _visuals;
         private float _warmPercent;
         private GlobalData _globalData;
+        private UIStateSystem _uiStateSystem;
         
         
         [Inject]
-        private void Construct(DialogueSystem dialogueSystem, DialogueVisuals visuals, GlobalData globalData)
+        private void Construct(DialogueSystem dialogueSystem, DialogueVisuals visuals, GlobalData globalData, UIStateSystem uiStateSystem)
         {
             _dialogueSystem = dialogueSystem;
             _visuals = visuals;
             _globalData = globalData;
+            _uiStateSystem = uiStateSystem;
             Reset();
         }
         
         public void Interact()
         {
-            Debug.Log("Ira in");
-            if (!Graph) return;
-            Debug.Log("Ira in2");
+            if (!Graph || (_uiStateSystem && _uiStateSystem.CurrentState == UIState.Shop)) return;
             _dialogueSystem.StartDialogue(Graph, _visuals, this);
-            Graph = null;
+            if (!_isInHome) Graph = null;
         }
         
         public void Warm()
