@@ -130,7 +130,7 @@ Material:
     - _ShockWaveStrength: 0.08
     - _ShoreEdge: 0.03
     - _Size: 0.01
-    - _SpeedFactor: 0.007
+    - _SpeedFactor: 0.004
     - _Surface_Foam_Color_Blend: 0.979
     - _Surface_Foam_Direction: 0.14
     - _Surface_Foam_Distortion: 1.35
