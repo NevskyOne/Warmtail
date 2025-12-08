@@ -1,12 +1,14 @@
 using UnityEngine;
 using Zenject;
 using Data;
+using Entities.Core;
 
 namespace Entities.NPC
 {
     public class TetriliusQuestShells : MonoBehaviour
     {
         [Inject] private GlobalData _globalData;
+        [Inject] private SceneLoader _sceneLoader;
         [SerializeField] private GameObject _teriliusLateGame;
 
         void Start()
@@ -15,6 +17,11 @@ namespace Entities.NPC
             {
                 Destroy(_teriliusLateGame);
             }
+        }
+
+        public void LoadHome()
+        {
+            _sceneLoader.StartSceneProcess("Home");
         }
 
         public void TakeQuest()
