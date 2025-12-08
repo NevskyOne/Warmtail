@@ -195,6 +195,55 @@ MonoBehaviour:
   _character: 1
   _emotion: 0
   _displayName: 
+--- !u!114 &-4696582055578717995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9d74a14bb242a1b74546a7e2e9399e, type: 3}
+  m_Name: Text
+  m_EditorClassIdentifier: Assembly-CSharp::TextNode
+  graph: {fileID: 11400000}
+  position: {x: 3656, y: -520}
+  ports:
+    keys:
+    - _entry
+    - _exit
+    values:
+    - _fieldName: _entry
+      _node: {fileID: -4696582055578717995}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: _exit
+        node: {fileID: 6033108326016759586}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: _exit
+      _node: {fileID: -4696582055578717995}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: _entry
+        node: {fileID: 6329578393488010695}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  _entry: 0
+  _exit: 0
+  _textId: 11
+  _character: 1
+  _emotion: 0
+  _displayName: 
 --- !u!114 &-4043278149379340751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,55 +290,6 @@ MonoBehaviour:
   _entry: 0
   _exit: 0
   _textId: 4
-  _character: 0
-  _emotion: 0
-  _displayName: 
---- !u!114 &-3274599926051616057
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b9d74a14bb242a1b74546a7e2e9399e, type: 3}
-  m_Name: Text
-  m_EditorClassIdentifier: Assembly-CSharp::TextNode
-  graph: {fileID: 11400000}
-  position: {x: 3640, y: -568}
-  ports:
-    keys:
-    - _entry
-    - _exit
-    values:
-    - _fieldName: _entry
-      _node: {fileID: -3274599926051616057}
-      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: _exit
-        node: {fileID: 6033108326016759586}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: _exit
-      _node: {fileID: -3274599926051616057}
-      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: _entry
-        node: {fileID: 6329578393488010695}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-  _entry: 0
-  _exit: 0
-  _textId: 11
   _character: 0
   _emotion: 0
   _displayName: 
@@ -710,7 +710,6 @@ MonoBehaviour:
   - {fileID: 8871731572030492795}
   - {fileID: -4043278149379340751}
   - {fileID: 6033108326016759586}
-  - {fileID: -3274599926051616057}
   - {fileID: 5660078147385732206}
   - {fileID: 8699047472653247920}
   - {fileID: 4255351987431154033}
@@ -725,6 +724,7 @@ MonoBehaviour:
   - {fileID: -2112077992578956910}
   - {fileID: -2859098515186650097}
   - {fileID: 6329578393488010695}
+  - {fileID: -4696582055578717995}
   _startNode: {fileID: 1835004827090630800}
   _dialogueId: 100
 --- !u!114 &375584442334755796
@@ -1487,7 +1487,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: _entry
-        node: {fileID: -3274599926051616057}
+        node: {fileID: -4696582055578717995}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -1573,7 +1573,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: _exit
-        node: {fileID: -3274599926051616057}
+        node: {fileID: -4696582055578717995}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
