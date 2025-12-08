@@ -97,6 +97,10 @@ namespace Systems.Abilities.Concrete
 
         private void ProcessSwarmInteraction()
         {
+            // Новое условие: тепло тратится только если рой выбран
+            if (_activeSwarm == null)
+                return;
+
             bool anyNear = false;
             var neighbors = _activeSwarm.GetNeighbors(null);
             Vector2 playerPos = _playerTransform.position;
@@ -116,10 +120,13 @@ namespace Systems.Abilities.Concrete
                 _activeSwarm.SetControlInput(Vector2.zero);
                 return;
             }
+
             _activeSwarm.SetControlInput(_moveInput);
-            
+
+            // Тепло тратится только если рой выбран → условие уже выполнено выше
             ApplyWarmthDrain();
         }
+
 
         private void ApplyWarmthDrain()
         {
