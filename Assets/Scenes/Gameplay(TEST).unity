@@ -7012,7 +7012,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 648476693}
-  - {fileID: 2145191169}
   - {fileID: 877077959}
   - {fileID: 1790267875}
   - {fileID: 218002494}
@@ -9364,6 +9363,11 @@ SpriteShapeRenderer:
     m_Center: {x: 17.082863, y: 48.653355, z: 0}
     m_Extent: {x: 28.172165, y: 40.050747, z: 0}
   m_SpriteSortPoint: 0
+--- !u!1 &274661011 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7264498844810510675, guid: f2676e094cecb6e4a967ff0b98320bb9, type: 3}
+  m_PrefabInstance: {fileID: 1492122598}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &274983795
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56675,6 +56679,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2145191169}
   - {fileID: 1044981852}
   - {fileID: 1396903646}
   - {fileID: 1492122599}
@@ -67314,7 +67319,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7264498844810510675, guid: f2676e094cecb6e4a967ff0b98320bb9, type: 3}
       propertyPath: m_Name
-      value: TerilusLateGameTrigger
+      value: TerilusLateGame102
       objectReference: {fileID: 0}
     - target: {fileID: 7264498844810510675, guid: f2676e094cecb6e4a967ff0b98320bb9, type: 3}
       propertyPath: m_IsActive
@@ -67326,7 +67331,10 @@ PrefabInstance:
     - {fileID: 323301077784297391, guid: f2676e094cecb6e4a967ff0b98320bb9, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7264498844810510675, guid: f2676e094cecb6e4a967ff0b98320bb9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1492122601}
   m_SourcePrefab: {fileID: 100100000, guid: f2676e094cecb6e4a967ff0b98320bb9, type: 3}
 --- !u!4 &1492122599 stripped
 Transform:
@@ -67338,12 +67346,26 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 961653826237046958, guid: f2676e094cecb6e4a967ff0b98320bb9, type: 3}
   m_PrefabInstance: {fileID: 1492122598}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 274661011}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 820f06f3e9014cf78d5f95c118eb3dd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entities.NPC.SpeakableCharacter
+--- !u!114 &1492122601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 274661011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0946bb3d5d5b944e89f7631b7fd5b6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Entities.NPC.TertiliusCalendar
+  _teriliusLateGame: {fileID: 1396903645}
+  _calendar: {fileID: 0}
 --- !u!1001 &1496388502
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -93827,10 +93849,8 @@ GameObject:
   - component: {fileID: 2145191169}
   - component: {fileID: 2145191171}
   - component: {fileID: 2145191170}
-  - component: {fileID: 2145191172}
-  - component: {fileID: 2145191173}
   m_Layer: 0
-  m_Name: TertilusQuest (102)
+  m_Name: TertilusTrigger (102)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -93844,12 +93864,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2145191168}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.22367534, w: 0.97466373}
+  m_LocalRotation: {x: -0, y: -0, z: -0.22367534, w: 0.97466373}
   m_LocalPosition: {x: -35.55, y: 94.92, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 216451248}
+  m_Father: {fileID: 1318955465}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -25.85}
 --- !u!114 &2145191170
 MonoBehaviour:
@@ -93869,8 +93889,8 @@ MonoBehaviour:
   _event:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2145191173}
-        m_TargetAssemblyTypeName: Entities.NPC.CalendarTrigger, Assembly-CSharp
+      - m_Target: {fileID: 1492122601}
+        m_TargetAssemblyTypeName: Entities.NPC.TertiliusCalendar, Assembly-CSharp
         m_MethodName: Take
         m_Mode: 1
         m_Arguments:
@@ -93939,32 +93959,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 9.462371, y: 10.680664}
   m_EdgeRadius: 0
---- !u!114 &2145191172
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2145191168}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af2f3f295d904a1496486c18c69a4958, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Entities.Probs.SavableStateObject
-  _id:
-    Value: 05fdc1cf-2c88-45bf-a4d7-71637df9a8f4
---- !u!114 &2145191173
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2145191168}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0946bb3d5d5b944e89f7631b7fd5b6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
 --- !u!1001 &443975586250114351
 PrefabInstance:
   m_ObjectHideFlags: 0
