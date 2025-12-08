@@ -26,7 +26,9 @@ MonoBehaviour:
   - Character: 2
     Sound: {fileID: 0}
     EmotionSprites:
-      _serializedList: []
+      _serializedList:
+      - Key: 0
+        Value: {fileID: 21300000, guid: 99c63f25bc879ec429ec903643f6a4e1, type: 3}
   - Character: 3
     Sound: {fileID: 0}
     EmotionSprites:

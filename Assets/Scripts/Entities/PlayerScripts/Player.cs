@@ -71,8 +71,8 @@ namespace Entities.PlayerScripts
 
         private void FixedUpdate()
         {
-            _movement.FixedTick();
-            _dashAbility.Tick();
+            _movement?.FixedTick();
+            _dashAbility?.Tick();
         }
         public void StartResonance(Rigidbody2D swarmRb)
         {
