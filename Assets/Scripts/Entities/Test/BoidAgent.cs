@@ -68,7 +68,7 @@ namespace Systems.Swarm
                 float targetFactor = _controller.IsControlled ? 0.3f : 1f;
 
                 // Лёгкое усиление эффекта центра (1.1 = +10%)
-                float centerBias = 1.1f;
+                float centerBias = 2f;
 
                 acceleration += targetDir.normalized * _controller.TargetWeight * targetFactor * centerBias;
             }

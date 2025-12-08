@@ -50,19 +50,19 @@ namespace Systems.Abilities.Concrete
             EndAbility += OnEnd;
         }
 
+        private CancellationTokenSource _warmthCts;
+
         private void OnStart()
         {
             _activeSwarm = FindNearestSwarm();
             if (_activeSwarm == null)
-            {
                 return;
-            }
-            
+
             if (_player != null)
                 _player.StartResonance(_activeSwarm.GetComponent<Rigidbody2D>());
 
             _activeSwarm.SetControlled(true);
-            
+
             if (_vCam != null)
             {
                 _vCam.Follow = _activeSwarm.transform;
@@ -75,7 +75,44 @@ namespace Systems.Abilities.Concrete
             _tickCts = new CancellationTokenSource();
             TickCycle(_tickCts.Token).Forget();
 
+            // ← Запуск новой корутины, списывающей тепло каждую секунду
+            _warmthCts?.Cancel();
+            _warmthCts = new CancellationTokenSource();
+            WarmthDrainLoop(_warmthCts.Token).Forget();
         }
+        private async UniTaskVoid WarmthDrainLoop(CancellationToken token)
+        {
+            try
+            {
+                while (!token.IsCancellationRequested && Enabled)
+                {
+                    if (_activeSwarm == null)
+                        break;
+
+                   
+                    ApplyWarmthDrainPerSecond();
+
+                    await UniTask.Delay(TimeSpan.FromSeconds(1f), cancellationToken: token);
+                }
+            }
+            catch (OperationCanceledException) {}
+        }
+        private void ApplyWarmthDrainPerSecond()
+        {
+            int cost = Mathf.FloorToInt(_warmthDrainPerSecond);
+
+            if (cost <= 0)
+                return;
+
+            if (!_warmthSystem.CheckWarmCost(cost))
+            {
+                EndAbility?.Invoke();
+                return;
+            }
+
+            _warmthSystem.DecreaseWarmth(cost);
+        }
+
 
         private async UniTaskVoid TickCycle(CancellationToken token)
         {
