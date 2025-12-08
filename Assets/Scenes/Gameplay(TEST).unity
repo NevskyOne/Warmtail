@@ -4131,7 +4131,6 @@ Transform:
   - {fileID: 1662127119}
   - {fileID: 1824459168}
   - {fileID: 328641785}
-  - {fileID: 2145191169}
   - {fileID: 1318955465}
   - {fileID: 1916790532}
   - {fileID: 1256499307}
@@ -4196,14 +4195,14 @@ MonoBehaviour:
   _event:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1396903650}
-        m_TargetAssemblyTypeName: Entities.NPC.SpeakableCharacter, Assembly-CSharp
-        m_MethodName: AddNpcToHome
-        m_Mode: 3
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -49822,6 +49821,10 @@ PrefabInstance:
       value: bc6e8720-a309-429c-802c-9175b1c75d9b
       objectReference: {fileID: 0}
     - target: {fileID: 961653826237046958, guid: f2676e094cecb6e4a967ff0b98320bb9, type: 3}
+      propertyPath: _isInHome
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 961653826237046958, guid: f2676e094cecb6e4a967ff0b98320bb9, type: 3}
       propertyPath: <Actions>k__BackingField.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -49840,7 +49843,7 @@ PrefabInstance:
     - target: {fileID: 961653826237046958, guid: f2676e094cecb6e4a967ff0b98320bb9, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1107841939}
     - target: {fileID: 961653826237046958, guid: f2676e094cecb6e4a967ff0b98320bb9, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[0].m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -49855,7 +49858,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 961653826237046958, guid: f2676e094cecb6e4a967ff0b98320bb9, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
+      value: TakeQuest
       objectReference: {fileID: 0}
     - target: {fileID: 961653826237046958, guid: f2676e094cecb6e4a967ff0b98320bb9, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[0].m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -49863,7 +49866,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 961653826237046958, guid: f2676e094cecb6e4a967ff0b98320bb9, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Entities.Core.SceneLoader, Assembly-CSharp
+      value: Entities.NPC.TetriliusQuestShells, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 961653826237046958, guid: f2676e094cecb6e4a967ff0b98320bb9, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[0].m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -49879,7 +49882,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 961653826237046958, guid: f2676e094cecb6e4a967ff0b98320bb9, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: 
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 961653826237046958, guid: f2676e094cecb6e4a967ff0b98320bb9, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[0].m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -49940,7 +49943,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7264498844810510675, guid: f2676e094cecb6e4a967ff0b98320bb9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1107841939}
   m_SourcePrefab: {fileID: 100100000, guid: f2676e094cecb6e4a967ff0b98320bb9, type: 3}
 --- !u!4 &1107841937 stripped
 Transform:
@@ -49952,6 +49958,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7264498844810510675, guid: f2676e094cecb6e4a967ff0b98320bb9, type: 3}
   m_PrefabInstance: {fileID: 1107841936}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1107841939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1107841938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90f3d36161ed69144ad93db0917fadcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TetriliusQuestShells
+  _teriliusLateGame: {fileID: 1916790531}
 --- !u!1 &1113959459
 GameObject:
   m_ObjectHideFlags: 0
@@ -56590,6 +56609,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2145191169}
   - {fileID: 1044981852}
   - {fileID: 1396903646}
   - {fileID: 1492122599}
@@ -62803,6 +62823,10 @@ PrefabInstance:
       value: 6ac22ed2-b786-45dc-847b-aa6a7faaea6b
       objectReference: {fileID: 0}
     - target: {fileID: 961653826237046958, guid: f2676e094cecb6e4a967ff0b98320bb9, type: 3}
+      propertyPath: _isInHome
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 961653826237046958, guid: f2676e094cecb6e4a967ff0b98320bb9, type: 3}
       propertyPath: <Graph>k__BackingField
       value: 
       objectReference: {fileID: 11400000, guid: 2315c355fd269f644b50a58756f08680, type: 2}
@@ -62824,7 +62848,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 961653826237046958, guid: f2676e094cecb6e4a967ff0b98320bb9, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[0].m_PersistentCalls.m_Calls.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 961653826237046958, guid: f2676e094cecb6e4a967ff0b98320bb9, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[1].m_PersistentCalls.m_Calls.Array.size
@@ -62832,7 +62856,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 961653826237046958, guid: f2676e094cecb6e4a967ff0b98320bb9, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 961653826237046958, guid: f2676e094cecb6e4a967ff0b98320bb9, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[0].m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -62840,7 +62864,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 961653826237046958, guid: f2676e094cecb6e4a967ff0b98320bb9, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[0].m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 961653826237046958, guid: f2676e094cecb6e4a967ff0b98320bb9, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[0].m_PersistentCalls.m_Calls.Array.data[3].m_Mode
@@ -62861,15 +62885,15 @@ PrefabInstance:
     - target: {fileID: 961653826237046958, guid: f2676e094cecb6e4a967ff0b98320bb9, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1692990482}
+      objectReference: {fileID: 1396903647}
     - target: {fileID: 961653826237046958, guid: f2676e094cecb6e4a967ff0b98320bb9, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[0].m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1396903647}
+      objectReference: {fileID: 2095156601}
     - target: {fileID: 961653826237046958, guid: f2676e094cecb6e4a967ff0b98320bb9, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[0].m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 2095156601}
+      objectReference: {fileID: 1396903650}
     - target: {fileID: 961653826237046958, guid: f2676e094cecb6e4a967ff0b98320bb9, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[0].m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
@@ -62916,15 +62940,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 961653826237046958, guid: f2676e094cecb6e4a967ff0b98320bb9, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartQuest
-      objectReference: {fileID: 0}
-    - target: {fileID: 961653826237046958, guid: f2676e094cecb6e4a967ff0b98320bb9, type: 3}
-      propertyPath: <Actions>k__BackingField.Array.data[0].m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: Play
       objectReference: {fileID: 0}
     - target: {fileID: 961653826237046958, guid: f2676e094cecb6e4a967ff0b98320bb9, type: 3}
-      propertyPath: <Actions>k__BackingField.Array.data[0].m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      propertyPath: <Actions>k__BackingField.Array.data[0].m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: Add
+      objectReference: {fileID: 0}
+    - target: {fileID: 961653826237046958, guid: f2676e094cecb6e4a967ff0b98320bb9, type: 3}
+      propertyPath: <Actions>k__BackingField.Array.data[0].m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: AddNpcToHome
       objectReference: {fileID: 0}
     - target: {fileID: 961653826237046958, guid: f2676e094cecb6e4a967ff0b98320bb9, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[0].m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
@@ -62944,15 +62968,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 961653826237046958, guid: f2676e094cecb6e4a967ff0b98320bb9, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Entities.NPC.QuestSystem, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 961653826237046958, guid: f2676e094cecb6e4a967ff0b98320bb9, type: 3}
-      propertyPath: <Actions>k__BackingField.Array.data[0].m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: UnityEngine.Splines.SplineAnimate, Unity.Splines
       objectReference: {fileID: 0}
     - target: {fileID: 961653826237046958, guid: f2676e094cecb6e4a967ff0b98320bb9, type: 3}
-      propertyPath: <Actions>k__BackingField.Array.data[0].m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      propertyPath: <Actions>k__BackingField.Array.data[0].m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: Entities.Triggers.AddEventToQuest, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 961653826237046958, guid: f2676e094cecb6e4a967ff0b98320bb9, type: 3}
+      propertyPath: <Actions>k__BackingField.Array.data[0].m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: Entities.NPC.SpeakableCharacter, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 961653826237046958, guid: f2676e094cecb6e4a967ff0b98320bb9, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[0].m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
@@ -62971,13 +62995,17 @@ PrefabInstance:
       value: Entities.UI.LoadScene, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 961653826237046958, guid: f2676e094cecb6e4a967ff0b98320bb9, type: 3}
+      propertyPath: <Actions>k__BackingField.Array.data[0].m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 961653826237046958, guid: f2676e094cecb6e4a967ff0b98320bb9, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[0].m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_IntArgument
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 961653826237046958, guid: f2676e094cecb6e4a967ff0b98320bb9, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 11400000, guid: 04544068c3afccf45b1444d922e706e3, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 961653826237046958, guid: f2676e094cecb6e4a967ff0b98320bb9, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[0].m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_StringArgument
       value: 
@@ -63000,7 +63028,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 961653826237046958, guid: f2676e094cecb6e4a967ff0b98320bb9, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: Data.QuestData, Assembly-CSharp
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 961653826237046958, guid: f2676e094cecb6e4a967ff0b98320bb9, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[0].m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -67231,8 +67259,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0946bb3d5d5b944e89f7631b7fd5b6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entities.NPC.TertiliusCalendar
-  _teriliusLateGame: {fileID: 1396903645}
-  _calendar: {fileID: 0}
+  _teriliusLateGame: {fileID: 1318955464}
+  _calendar: {fileID: 2145191168}
 --- !u!1001 &1496388502
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -93587,11 +93615,11 @@ Transform:
   m_GameObject: {fileID: 2145191168}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.22367534, w: 0.97466373}
-  m_LocalPosition: {x: -35.55, y: 94.92, z: 0}
+  m_LocalPosition: {x: 18.190002, y: 9.949997, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 112448682}
+  m_Father: {fileID: 1318955465}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -25.85}
 --- !u!114 &2145191170
 MonoBehaviour:

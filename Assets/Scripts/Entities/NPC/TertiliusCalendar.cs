@@ -23,7 +23,9 @@ namespace Entities.NPC
         }
         public void Take()
         {
+            Debug.Log("Ira 3");
             _globalData.Edit<WorldData>(data => data.SavableNpcState["2bb32deb-1b68-477a-b458-2cdec049ce57"] = 3);
+            Debug.Log("Ira 3 d "+ _globalData.Get<WorldData>().SavableNpcState["2bb32deb-1b68-477a-b458-2cdec049ce57"]);
         }
     }
 }
