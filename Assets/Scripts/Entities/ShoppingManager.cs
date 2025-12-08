@@ -14,6 +14,7 @@ namespace Entities.NPC
 
         [SerializeField] private BuyButton[] _itemsButtons;
         [SerializeField] private Button[] _levelButtons;
+        private int _currentLevel;
 
         private UIStateSystem _uiStateSystem;
         private GlobalData _globalData;
@@ -27,8 +28,8 @@ namespace Entities.NPC
             _npcMethods = npcMethods;
         }
 
-        //TEST
-        public void RaiseFriendship(int num) => _npcMethods.RaiseFriendship((Characters)num);
+        public void RaiseFriendshipToLevel(int lvl) => _currentLevel = lvl;
+        public void RaiseFriendship(int num) => _npcMethods.RaiseFriendshipTo((Characters)num, _currentLevel);
 
 
         public void OpenNPCShop(int num) => OpenNPCShop((Characters)num);

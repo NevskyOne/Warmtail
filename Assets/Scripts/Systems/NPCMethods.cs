@@ -18,6 +18,11 @@ namespace Systems
             CheckNpcData(character);
             _globalData.Edit<NPCData>(data =>{data.Levels[character] ++;});
         }
+        public void RaiseFriendshipTo(Characters character, int level)
+        {
+            CheckNpcData(character);
+            _globalData.Edit<NPCData>(data =>{data.Levels[character] = level;});
+        }
 
         public void CheckNpcData(Characters character)
         {
