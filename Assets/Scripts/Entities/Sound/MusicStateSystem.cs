@@ -38,10 +38,13 @@ namespace Entities.Sound
                  switch (id)
                  {
                      case "Gameplay":
-                         ChangeMusicStateAsync(MusicState.Normal);
+                         ChangeMusicStateAsync(MusicState.Bottom);
+                         break;
+                     case "Home":
+                         ChangeMusicStateAsync(MusicState.Home);
                          break;
                      case "Start":
-                         ChangeMusicStateAsync(MusicState.Start);
+                         ChangeMusicStateAsync(MusicState.Menu);
                          break;
                  }
              };
@@ -97,6 +100,6 @@ namespace Entities.Sound
     [Serializable]
     public enum MusicState
     {
-        Start, Normal, Home, None
+        Bottom, Middle, High, Menu, Home, End, None
     }
 }

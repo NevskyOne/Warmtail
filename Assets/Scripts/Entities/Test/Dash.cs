@@ -87,16 +87,22 @@ namespace Systems.Abilities.Concrete
         
         private async void DashLoop()
         {
-            while (_dashLoopRunning && _moveInput.magnitude > 0.1f )
+            try
             {
-                Dash();
-                    
-                await UniTask.Delay(500);
+                while (Enabled && _dashLoopRunning && _moveInput.magnitude > 0.1f)
+                {
+                    Dash();
+                    await UniTask.Delay(500);
+                }
             }
-                
-            _dashLoopRunning = false;
-            ((PlayerMovement)_playerConfig.Abilities[0]).MoveForce = _normalSpeed;
+            finally
+            {
+                // ГАРАНТИРОВАННЫЙ сброс состояния
+                _dashLoopRunning = false;
+                ((PlayerMovement)_playerConfig.Abilities[0]).MoveForce = _normalSpeed;
+            }
         }
+
 
 
         private void Dash()

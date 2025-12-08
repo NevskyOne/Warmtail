@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Lever
   _warmCapacity: 3
-  _during: 8
+  _during: 20
   _spriteRenderer: {fileID: 2557137185594924524}
   _enableSprite: {fileID: -5214183216297019944, guid: 10fdda4874498ff4292c99851bc4ae7d, type: 3}
   _disableSprite: {fileID: -3422382358654288852, guid: 10fdda4874498ff4292c99851bc4ae7d, type: 3}

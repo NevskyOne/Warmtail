@@ -73,8 +73,6 @@ namespace Entities.NPC
         public void AddNpcToHome(int character)
         {
             _globalData.Edit<NpcSpawnData>(data => data.CurrentHomeNpc = (Characters)character);
-            if (character == (int)Characters.tertilus)
-                _globalData.Edit<WorldData>(data => data.SavableNpcState["2bb32deb-1b68-477a-b458-2cdec049ce57"] = 1);
         }
     }
     

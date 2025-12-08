@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Entities.Probs;
 using Rng = UnityEngine.Random;
 using UnityEngine.Events;
 using UnityEngine;
@@ -6,7 +7,7 @@ using Interfaces;
 
 namespace Entities.Puzzle
 {
-    public class LeversPuzzle : MonoBehaviour, IPuzzle
+    public class LeversPuzzle : SavableStateObject, IPuzzle
     {
         [SerializeField] private GameObject _leverPref;
         [SerializeField] private Transform[] _leversPositions;
@@ -54,7 +55,7 @@ namespace Entities.Puzzle
 
         private void DestroyPuzzle()
         {
-            Destroy(gameObject);
+            ChangeState(false);
         }
     }
 }

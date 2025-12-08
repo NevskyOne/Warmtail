@@ -1,10 +1,12 @@
+using Entities.Probs;
+using Interfaces;
 using UnityEngine.Events;
 using UnityEngine;
 using Systems;
 
 namespace Entities.Puzzle
 {
-    public class DrawPuzzle : MonoBehaviour
+    public class DrawPuzzle : SavableStateObject, IPuzzle
     {
         [SerializeField] private float _during;
         [SerializeField] private DrawPuzzleTrigger[] _triggers;
@@ -43,7 +45,7 @@ namespace Entities.Puzzle
 
         private void DestroyPuzzle()
         {
-            Destroy(gameObject);
+           ChangeState(false);
         }
 
         public bool TriggerConform(int id, bool active)

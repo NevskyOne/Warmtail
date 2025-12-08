@@ -58,7 +58,9 @@ MonoBehaviour:
           rid: 4204129077871247441
         _dashCost: 1
         _destroyRadius: 1.5
-        dashCooldownDuration: 1
+        _dashCooldownDuration: 1
+        _normalSpeed: 60
+        _dashSpeed: 100
     - rid: 2564828074214424678
       type: {class: MetabolismAbility, ns: Systems.Abilities.Concrete, asm: Assembly-CSharp}
       data:
@@ -81,8 +83,10 @@ MonoBehaviour:
       data:
         <Visual>k__BackingField:
           rid: -2
-        _swarmPrefab: {fileID: 5216369137602421686, guid: 7fc97b894b8de4f41ad24e0be0020e7e, type: 3}
-        _spawnOffset: {x: 1, y: 1, z: 1}
+        _searchRadius: 12
+        _interactRadius: 5
+        _warmthDrainPerSecond: 2
+        _tickDelay: 0.1
     - rid: 4204129077871247439
       type: {class: WarmingVisual, ns: Systems.AbilitiesVisual, asm: Assembly-CSharp}
       data:
