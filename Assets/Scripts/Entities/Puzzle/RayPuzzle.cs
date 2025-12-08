@@ -1,9 +1,11 @@
+using Entities.Probs;
+using Interfaces;
 using UnityEngine.Events;
 using UnityEngine;
 
 namespace Entities.Puzzle
 {
-    public class RayPuzzle : MonoBehaviour
+    public class RayPuzzle : SavableStateObject, IPuzzle
     {
         public UnityEvent OnSolved = new();
 
@@ -22,7 +24,7 @@ namespace Entities.Puzzle
 
         private void DestroyPuzzle()
         {
-            Destroy(gameObject);
+            ChangeState(false);
         }
     }
 }

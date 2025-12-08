@@ -18,6 +18,7 @@ namespace Systems.AbilitiesVisual
         [SerializeField] private AudioClip _sfx;
         private ObjectSfx _playerSfx;
         private MetabolismVisualSt _struct;
+        private List<Texture2D> _lastTextures = new();
         
         [Inject]
         private void Construct(PlayerConfig config, Player player, MetabolismVisualSt st)
@@ -33,11 +34,11 @@ namespace Systems.AbilitiesVisual
         {
             _playerSfx.PlaySfx(_sfx);
             Tween.Custom(0, 1f, 1f, x => _struct.Volume.weight = x);
-            _struct.HiddenWalls.ForEach(wall =>
+            _lastTextures.Clear();
+            _struct.Walls.ForEach(wall =>
             {
-                var color = wall.color;
-                color.a = 1;
-                wall.color = color;
+                _lastTextures.Add(wall.fillTexture);
+                wall.fillTexture = null;
             });
         }
 
@@ -48,11 +49,9 @@ namespace Systems.AbilitiesVisual
         public void EndAbility()
         {
             Tween.Custom(1f, 0f, 1f, x => _struct.Volume.weight = x);
-            _struct.HiddenWalls.ForEach(wall =>
+            _struct.Walls.ForEach(wall =>
             {
-                var color = wall.color;
-                color.a = 0;
-                wall.color = color;
+                wall.fillTexture = _lastTextures[ _struct.Walls.IndexOf(wall)];
             });
         }
     }
@@ -60,7 +59,7 @@ namespace Systems.AbilitiesVisual
     [Serializable]
     public struct MetabolismVisualSt
     {
-        public List<SpriteShapeRenderer> HiddenWalls;
+        public List<SpriteShape> Walls;
         public Volume Volume;
     }
 }

@@ -9,7 +9,7 @@ namespace Systems.AbilitiesVisual
 {
     public class WarmingVisual : IAbilityVisual
     {
-        private static readonly int OpacityMax = Shader.PropertyToID("OpacityMax");
+        private static readonly int OpacityMax = Shader.PropertyToID("Opacity");
         [field: SerializeReference] public int AbilityIndex {get; set;}
         [SerializeField] private Material _warmthMaterial;
         [SerializeField, Range(0, 1f)] private float _opacityNotUsing;

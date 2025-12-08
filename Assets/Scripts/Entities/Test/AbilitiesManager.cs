@@ -12,7 +12,6 @@ namespace Systems.Abilities
     [Serializable]
     public class AbilitiesManager : ITickable
     {
-
         private  List<IAbilityExtended> _abilities;
         private  GlobalData _globalData;
         
@@ -20,7 +19,9 @@ namespace Systems.Abilities
         [SerializeField] private IAbilityExtended _activeAbility;
         [SerializeField] private IAbilityExtended _comboAbility;
         [SerializeField] private bool _isCasting;
-
+        public IAbilityExtended ActiveAbility => _activeAbility;
+        public IAbilityExtended ComboAbility => _comboAbility;
+        
         [Inject]
         public void Construct( 
             [Inject(Id = "PlayerAbilities")] List<IAbilityExtended> abilities, 

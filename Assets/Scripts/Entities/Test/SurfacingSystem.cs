@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Data;
 using Data.Player;
 using Entities.PlayerScripts;
+using Entities.Sound;
 using Systems.AbilitiesVisual;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -20,11 +21,13 @@ namespace Systems.Environment
         private GlobalData _globalData;
         private Player _player;
         private PlayerConfig _config;
+        private MusicStateSystem _music;
         private int _currentLayerIndex;
 
         [Inject]
-        public void Construct(GlobalData globalData, PlayerInput input, Player player, PlayerConfig config)
+        public void Construct(GlobalData globalData, PlayerInput input, Player player, PlayerConfig config, MusicStateSystem music)
         {
+            _music = music;
             _globalData = globalData;
             _player = player;
             _config = config;
@@ -36,6 +39,12 @@ namespace Systems.Environment
             };
         }
 
+        public void SetNewLevel(int level)
+        {
+            _currentLayerIndex = level;
+            UpdateLevelVisibility();
+        }
+        
         public bool TryChangeLayer(int direction)
         {
             var newIndex = _currentLayerIndex + (int)direction;
@@ -74,6 +83,7 @@ namespace Systems.Environment
         private void UpdateLevelVisibility()
         {
             ((MovementVisuals)_config.Abilities[0].Visual).Water = _waterMaterials[_currentLayerIndex];
+            _music.ChangeMusicState(_currentLayerIndex);
             for (int i = 0; i < _levelRoots.Count; i++)
             {
                 if (_levelRoots[i] != null)
