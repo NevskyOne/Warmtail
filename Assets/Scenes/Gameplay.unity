@@ -109415,11 +109415,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2677430010170927980, guid: dcc5131821300a148aa95c91e81e9540, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[3].m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2677430010170927980, guid: dcc5131821300a148aa95c91e81e9540, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[3].m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2677430010170927980, guid: dcc5131821300a148aa95c91e81e9540, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[3].m_PersistentCalls.m_Calls.Array.data[3].m_Mode
@@ -109492,11 +109492,11 @@ PrefabInstance:
     - target: {fileID: 2677430010170927980, guid: dcc5131821300a148aa95c91e81e9540, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[3].m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1692990482}
+      objectReference: {fileID: 631191973}
     - target: {fileID: 2677430010170927980, guid: dcc5131821300a148aa95c91e81e9540, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[3].m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 631191973}
+      objectReference: {fileID: 1692990482}
     - target: {fileID: 2677430010170927980, guid: dcc5131821300a148aa95c91e81e9540, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[3].m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
@@ -109691,11 +109691,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2677430010170927980, guid: dcc5131821300a148aa95c91e81e9540, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[3].m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: StartQuest
+      value: Add
       objectReference: {fileID: 0}
     - target: {fileID: 2677430010170927980, guid: dcc5131821300a148aa95c91e81e9540, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[3].m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: Add
+      value: StartQuest
       objectReference: {fileID: 0}
     - target: {fileID: 2677430010170927980, guid: dcc5131821300a148aa95c91e81e9540, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[3].m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
@@ -109911,11 +109911,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2677430010170927980, guid: dcc5131821300a148aa95c91e81e9540, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[3].m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: Entities.NPC.QuestSystem, Assembly-CSharp
+      value: Entities.Triggers.AddEventToQuest, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2677430010170927980, guid: dcc5131821300a148aa95c91e81e9540, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[3].m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: Entities.Triggers.AddEventToQuest, Assembly-CSharp
+      value: Entities.NPC.QuestSystem, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2677430010170927980, guid: dcc5131821300a148aa95c91e81e9540, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[3].m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
@@ -110027,6 +110027,10 @@ PrefabInstance:
       objectReference: {fileID: 112448682}
     - target: {fileID: 2677430010170927980, guid: dcc5131821300a148aa95c91e81e9540, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[3].m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2677430010170927980, guid: dcc5131821300a148aa95c91e81e9540, type: 3}
+      propertyPath: <Actions>k__BackingField.Array.data[3].m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 11400000, guid: 78aa2b19327b20d4d808476383c995b6, type: 2}
     - target: {fileID: 2677430010170927980, guid: dcc5131821300a148aa95c91e81e9540, type: 3}
@@ -110231,11 +110235,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2677430010170927980, guid: dcc5131821300a148aa95c91e81e9540, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[3].m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: Data.QuestData, Assembly-CSharp
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2677430010170927980, guid: dcc5131821300a148aa95c91e81e9540, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[3].m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: Data.QuestData, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2677430010170927980, guid: dcc5131821300a148aa95c91e81e9540, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[3].m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
