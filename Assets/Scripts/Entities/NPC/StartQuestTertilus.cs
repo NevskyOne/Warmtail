@@ -2,7 +2,6 @@ using UnityEngine;
 using Data;
 using Zenject;
 using Data.Nodes;
-using XNode;
 
 namespace Entities.NPC
 {

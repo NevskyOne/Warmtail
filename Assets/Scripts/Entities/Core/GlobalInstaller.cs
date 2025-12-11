@@ -24,7 +24,6 @@ namespace Entities.Core
             Container.Bind<SceneLoader>().FromInstance(_sceneLoader).AsSingle();
             Container.Bind<LocalizationManager>().FromInstance(_localizationManager).AsSingle();
             Container.Bind<GlobalData>().FromInstance(_globalData).AsSingle();
-            _localizationManager.SetValuesForTextsId();
             var musicSystemObj = Instantiate(_musicSystem);
             DontDestroyOnLoad(musicSystemObj);
             Container.Inject(musicSystemObj);

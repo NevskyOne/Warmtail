@@ -24,7 +24,7 @@ namespace Entities.NPC
         private DialogueSystem _dialogueSystem;
         private DialogueVisuals _visuals;
         private float _warmPercent;
-        private GlobalData _globalData;
+        private new GlobalData _globalData;
         private UIStateSystem _uiStateSystem;
         
         

@@ -52,11 +52,11 @@ namespace Entities.NPC
 
             _createdMarks.Add(data, new());
 
-            foreach (var target in data.Targets)
-            {
-                var newMark = Instantiate(_markPrefab, _markHud);
-                _createdMarks[data].Add(newMark);
-            }
+            // foreach (var target in data.Targets)
+            // {
+            //     var newMark = Instantiate(_markPrefab, _markHud);
+            //     _createdMarks[data].Add(newMark);
+            // }
             _createdRequests.Add(data,0);
             _createdMarksInd.Add(data, new());
         }
@@ -68,7 +68,7 @@ namespace Entities.NPC
                 _globalData.Edit<SavablePlayerData>(playerData=> playerData.QuestIds.Remove(data.Id));
             
             _createdRequests[data] += 1;
-            if (_createdRequests[data] < data.RequestsToDeactivate) return;
+            //if (_createdRequests[data] < data.RequestsToDeactivate) return;
             foreach (var mark in _createdMarks[data])
             {
                 Destroy(mark.gameObject);
@@ -97,7 +97,8 @@ namespace Entities.NPC
             for (var i = 0; i < marks.Count; i++)
             {
                 if (_createdMarksInd[data].Contains(i)) continue;
-                var screenPos = _cam.WorldToScreenPoint(data.Targets[i]);
+                var screenPos = Vector2.down;
+                 //_cam.WorldToScreenPoint(data.Targets[i]);
 
                 Vector2 newScreenPos = new Vector2(screenPos.x, screenPos.y);
                 if (screenPos.x > Screen.width - Screen.width * _offset.x)

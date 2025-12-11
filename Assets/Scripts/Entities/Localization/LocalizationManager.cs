@@ -12,8 +12,8 @@ namespace Entities.Localization
 {
     public class LocalizationManager : MonoBehaviour
     {
-        private Dictionary<string, string[]> _localizedText = new();
-        private string[] _headers;
+        private static Dictionary<string, string[]> _localizedText = new();
+        private static string[] _headers;
         [SerializeField] private string _tableId = "1PEswgSetu71j068EhzqhuEPMUwGHdLbFa2sXZ9EeWAg";
         public static readonly Dictionary<string, string> NameToGid = new ()
         {
@@ -29,9 +29,9 @@ namespace Entities.Localization
             {"Quests", "2071454227"}
         };
 
-        public ReactiveProperty<Language> CurrentLanguage { get; } = new(Language.ru);
+        public static ReactiveProperty<Language> CurrentLanguage { get; } = new(Language.ru);
 
-        [Inject] private GlobalData _globalData;
+        [Inject] private static GlobalData _globalData;
         
 
         [Button("Pull Table")]
@@ -65,10 +65,17 @@ namespace Entities.Localization
                     Debug.Log("Loaded " + tableName + " -> " + path);
                 };
             }
-        }
 
+            SetValuesForTextsId();
+        }
+#if UNITY_EDITOR        
+        public void OnValidate()
+        {
+            SetValuesForTextsId();
+        }
+#endif
     
-        public void SetValuesForTextsId()
+        public static void SetValuesForTextsId()
         {
             foreach (var tableName in NameToGid.Keys)
             {
@@ -85,13 +92,13 @@ namespace Entities.Localization
             }
         }
         
-        public string GetStringFromKey(string key)
+        public static string GetStringFromKey(string key)
         {
-            if (_localizedText[key] == null) return "Language haven`t loaded yet!";
+            if (_localizedText[key] == null) return "Given key is not in dictionary!";
             return ParseVars(_localizedText[key][((int)CurrentLanguage.Value)+1]);
         }
         
-        private string ParseVars(string input)
+        private static string ParseVars(string input)
         {
             if (string.IsNullOrEmpty(input)) return input;
             StringBuilder result = new StringBuilder(input.Length);
