@@ -10,7 +10,8 @@ namespace Entities.Localization
     [RequireComponent(typeof(TMP_Text))]
     public class LocalizedText : MonoBehaviour
     {
-        [SerializeField, Dropdown(nameof(GetDropdownStrings))] private string _key;
+        [SerializeField, Dropdown(nameof(GetDropdownStrings)), InfoBox("$" + nameof(HeaderPreview))] private string _key;
+        public string HeaderPreview => LocalizationManager.GetStringFromKey(_key);
         private TMP_Text _text;
         
         private void Start()

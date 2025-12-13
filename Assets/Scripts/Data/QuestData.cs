@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using AYellowpaper.SerializedCollections;
 using Entities.Localization;
 using Interfaces;
 using TriInspector;
@@ -22,7 +21,8 @@ namespace Data
 
         [field: Title("Sequence"),SerializeField] public List<QuestElement> Sequence { get; private set; }
         
-        [field: Title("Actions"), SerializeReference] public List<ISequenceAction> OnComplete{ get; private set; }
+        [field: Title("Actions"), SerializeReference] 
+        public List<ISequenceAction> OnComplete{ get; private set; }
         [field: SerializeReference] public List<ISequenceAction> OnFail { get; private set; }
     }
 
@@ -33,6 +33,6 @@ namespace Data
     public struct QuestElement
     {
         [SerializeReference, HideLabel, Group("horizontal/one")] public ISequenceAction Action;
-        [SerializeReference, HideLabel, Group("horizontal/two")] public List<ICondition> Conditions;
+        [SerializeReference, HideLabel, Group("horizontal/two")] public List<ITask> Tasks;
     }
 }

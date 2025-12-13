@@ -841,7 +841,7 @@ PrefabInstance:
     - target: {fileID: 5134695667444349692, guid: fde4ac21e8e61dd4abd0e41c34c48baa, type: 3}
       propertyPath: OnSolved.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1692990482}
+      objectReference: {fileID: 0}
     - target: {fileID: 5134695667444349692, guid: fde4ac21e8e61dd4abd0e41c34c48baa, type: 3}
       propertyPath: OnSolved.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -3640,7 +3640,7 @@ MonoBehaviour:
   _event:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1692990482}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Entities.NPC.QuestSystem, Assembly-CSharp
         m_MethodName: EndQuest
         m_Mode: 2
@@ -6244,11 +6244,6 @@ Transform:
   - {fileID: 547888726}
   m_Father: {fileID: 112448682}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!224 &176545613 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 7901887455616614930, guid: 81db9e2702253ce4f8ef46913b81c238, type: 3}
-  m_PrefabInstance: {fileID: 4157835090695304206}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &180606495
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8159,7 +8154,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1692990482}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Entities.NPC.QuestSystem, Assembly-CSharp
         m_MethodName: EndQuest
         m_Mode: 2
@@ -21836,7 +21831,7 @@ PrefabInstance:
     - target: {fileID: -1373468731653311124, guid: 22c2d26c54bfb2f4db7d5beea00cdbec, type: 3}
       propertyPath: OnSolved.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1692990482}
+      objectReference: {fileID: 0}
     - target: {fileID: -1373468731653311124, guid: 22c2d26c54bfb2f4db7d5beea00cdbec, type: 3}
       propertyPath: OnSolved.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -32030,7 +32025,7 @@ PrefabInstance:
     - target: {fileID: 1255698303182171404, guid: 4dacad94ad2f917478f908092a343a16, type: 3}
       propertyPath: OnSolved.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1692990482}
+      objectReference: {fileID: 0}
     - target: {fileID: 1255698303182171404, guid: 4dacad94ad2f917478f908092a343a16, type: 3}
       propertyPath: OnSolved.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -34060,7 +34055,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1692990482}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Entities.NPC.QuestSystem, Assembly-CSharp
         m_MethodName: EndQuest
         m_Mode: 2
@@ -34091,7 +34086,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbd1593d100a4a72842abe252e009cd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entities.Triggers.AddEventToQuest
-  _system: {fileID: 1692990482}
+  _system: {fileID: 0}
   _quest: {fileID: 11400000, guid: 78aa2b19327b20d4d808476383c995b6, type: 2}
   _event:
     m_PersistentCalls:
@@ -34108,7 +34103,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1692990482}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Entities.NPC.QuestSystem, Assembly-CSharp
         m_MethodName: StartQuest
         m_Mode: 2
@@ -34364,7 +34359,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1692990482}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Entities.NPC.QuestSystem, Assembly-CSharp
         m_MethodName: CloseMark
         m_Mode: 5
@@ -37435,7 +37430,7 @@ PrefabInstance:
     - target: {fileID: 1539591286633304879, guid: 7d006ea03dcf8324a9f0a7eb45f7ab5a, type: 3}
       propertyPath: OnSolved.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1692990482}
+      objectReference: {fileID: 0}
     - target: {fileID: 1539591286633304879, guid: 7d006ea03dcf8324a9f0a7eb45f7ab5a, type: 3}
       propertyPath: OnSolved.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -37955,7 +37950,7 @@ MonoBehaviour:
   _event:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1692990482}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Entities.NPC.QuestSystem, Assembly-CSharp
         m_MethodName: StartQuest
         m_Mode: 2
@@ -42016,7 +42011,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1692990482}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Entities.NPC.QuestSystem, Assembly-CSharp
         m_MethodName: EndQuest
         m_Mode: 2
@@ -42028,7 +42023,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1692990482}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Entities.NPC.QuestSystem, Assembly-CSharp
         m_MethodName: StartQuest
         m_Mode: 2
@@ -42100,7 +42095,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbd1593d100a4a72842abe252e009cd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entities.Triggers.AddEventToQuest
-  _system: {fileID: 1692990482}
+  _system: {fileID: 0}
   _quest: {fileID: 11400000, guid: 3fe2484c1014a8c45a7a34eebb84f64f, type: 2}
   _event:
     m_PersistentCalls:
@@ -45014,7 +45009,7 @@ PrefabInstance:
     - target: {fileID: 8993835040725342029, guid: 924faf1edbcaa984ea1c24440256a8f3, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1692990482}
+      objectReference: {fileID: 0}
     - target: {fileID: 8993835040725342029, guid: 924faf1edbcaa984ea1c24440256a8f3, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[0].m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -45022,7 +45017,7 @@ PrefabInstance:
     - target: {fileID: 8993835040725342029, guid: 924faf1edbcaa984ea1c24440256a8f3, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1692990482}
+      objectReference: {fileID: 0}
     - target: {fileID: 8993835040725342029, guid: 924faf1edbcaa984ea1c24440256a8f3, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[1].m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -45034,7 +45029,7 @@ PrefabInstance:
     - target: {fileID: 8993835040725342029, guid: 924faf1edbcaa984ea1c24440256a8f3, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1692990482}
+      objectReference: {fileID: 0}
     - target: {fileID: 8993835040725342029, guid: 924faf1edbcaa984ea1c24440256a8f3, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[2].m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -45046,7 +45041,7 @@ PrefabInstance:
     - target: {fileID: 8993835040725342029, guid: 924faf1edbcaa984ea1c24440256a8f3, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[3].m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1692990482}
+      objectReference: {fileID: 0}
     - target: {fileID: 8993835040725342029, guid: 924faf1edbcaa984ea1c24440256a8f3, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -56803,7 +56798,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbd1593d100a4a72842abe252e009cd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entities.Triggers.AddEventToQuest
-  _system: {fileID: 1692990482}
+  _system: {fileID: 0}
   _quest: {fileID: 11400000, guid: 94b21be415ce2f04bbab2d67ce80ca55, type: 2}
   _event:
     m_PersistentCalls:
@@ -59124,7 +59119,7 @@ PrefabInstance:
     - target: {fileID: 5134695667444349692, guid: fde4ac21e8e61dd4abd0e41c34c48baa, type: 3}
       propertyPath: OnSolved.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1692990482}
+      objectReference: {fileID: 0}
     - target: {fileID: 5134695667444349692, guid: fde4ac21e8e61dd4abd0e41c34c48baa, type: 3}
       propertyPath: OnSolved.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -61337,7 +61332,7 @@ PrefabInstance:
     - target: {fileID: 8993835040725342029, guid: aa6fba7fadcf9b34ebef17543a865f3f, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1692990482}
+      objectReference: {fileID: 0}
     - target: {fileID: 8993835040725342029, guid: aa6fba7fadcf9b34ebef17543a865f3f, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[0].m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -61377,7 +61372,7 @@ PrefabInstance:
     - target: {fileID: 8993835040725342029, guid: aa6fba7fadcf9b34ebef17543a865f3f, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1692990482}
+      objectReference: {fileID: 0}
     - target: {fileID: 8993835040725342029, guid: aa6fba7fadcf9b34ebef17543a865f3f, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -61629,7 +61624,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbd1593d100a4a72842abe252e009cd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entities.Triggers.AddEventToQuest
-  _system: {fileID: 1692990482}
+  _system: {fileID: 0}
   _quest: {fileID: 11400000, guid: 7f69db8cb1a15ac448d53bbe9c1f9c58, type: 2}
   _event:
     m_PersistentCalls:
@@ -61818,7 +61813,7 @@ MonoBehaviour:
   _event:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1692990482}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Entities.NPC.QuestSystem, Assembly-CSharp
         m_MethodName: StartQuest
         m_Mode: 2
@@ -78404,7 +78399,7 @@ PrefabInstance:
     - target: {fileID: 5134695667444349692, guid: fde4ac21e8e61dd4abd0e41c34c48baa, type: 3}
       propertyPath: OnSolved.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1692990482}
+      objectReference: {fileID: 0}
     - target: {fileID: 5134695667444349692, guid: fde4ac21e8e61dd4abd0e41c34c48baa, type: 3}
       propertyPath: OnSolved.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -80744,7 +80739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbd1593d100a4a72842abe252e009cd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entities.Triggers.AddEventToQuest
-  _system: {fileID: 1692990482}
+  _system: {fileID: 0}
   _quest: {fileID: 11400000, guid: a9e9c62c3d64ab84c976824ede64ab0c, type: 2}
   _event:
     m_PersistentCalls:
@@ -82183,43 +82178,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1692990483}
-  - component: {fileID: 1692990482}
+  - component: {fileID: 1692990484}
   m_Layer: 0
-  m_Name: QuestSystem
+  m_Name: QuestVisuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1692990482
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1692990481}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46684abaf92f4e47ae3375d9324b0dde, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Systems.QuestSystem
-  _allQuests:
-  - {fileID: 11400000, guid: a9e9c62c3d64ab84c976824ede64ab0c, type: 2}
-  - {fileID: 11400000, guid: 78aa2b19327b20d4d808476383c995b6, type: 2}
-  - {fileID: 11400000, guid: 94b21be415ce2f04bbab2d67ce80ca55, type: 2}
-  - {fileID: 11400000, guid: c157059172963d4409bc21527944bb42, type: 2}
-  - {fileID: 11400000, guid: 3fe2484c1014a8c45a7a34eebb84f64f, type: 2}
-  - {fileID: 11400000, guid: 4ec9451037cd367418c931ec0bf30fbf, type: 2}
-  - {fileID: 11400000, guid: 0c7633a663c55d740b05338e9a5352e6, type: 2}
-  - {fileID: 11400000, guid: 7f69db8cb1a15ac448d53bbe9c1f9c58, type: 2}
-  - {fileID: 11400000, guid: 56f437edbb8080249a589b9fe742f9c2, type: 2}
-  - {fileID: 11400000, guid: 980bef62f5c17544c8ede9e0cba56188, type: 2}
-  _offset: {x: 0.1, y: 0.3, z: 0.2}
-  _cam: {fileID: 404321504}
-  _markPrefab: {fileID: 6468248855787613119, guid: e374e174dc25cce4a946958607fc9975, type: 3}
-  _markHud: {fileID: 4157835090695304207}
-  _questPrefab: {fileID: 9198985309621230281, guid: dfc1f7d1234a9bc41bd397b469b9a1f4, type: 3}
-  _questParent: {fileID: 176545613}
 --- !u!4 &1692990483
 Transform:
   m_ObjectHideFlags: 0
@@ -82235,6 +82201,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1204636205}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1692990484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692990481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b94735800a9a459681f079f3f88db243, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Entities.UI.QuestVisuals
+  _markOffset: {x: 0, y: 0, z: 0}
+  _cam: {fileID: 404321504}
+  _markPrefab: {fileID: 0}
+  _markHud: {fileID: 0}
+  _questPrefab: {fileID: 0}
+  _questHud: {fileID: 0}
 --- !u!1001 &1694251656
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -92602,7 +92586,7 @@ MonoBehaviour:
   _event:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1692990482}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Entities.NPC.QuestSystem, Assembly-CSharp
         m_MethodName: EndQuest
         m_Mode: 2
@@ -97802,7 +97786,7 @@ PrefabInstance:
     - target: {fileID: 1539591286633304879, guid: 7d006ea03dcf8324a9f0a7eb45f7ab5a, type: 3}
       propertyPath: OnSolved.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1692990482}
+      objectReference: {fileID: 0}
     - target: {fileID: 1539591286633304879, guid: 7d006ea03dcf8324a9f0a7eb45f7ab5a, type: 3}
       propertyPath: OnSolved.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -105360,6 +105344,7 @@ MonoBehaviour:
   _surfacingSystem: {fileID: 1469490765}
   _swarmController: {fileID: 1483867789}
   _freezeVisuals: {fileID: 295732116}
+  _questVisuals: {fileID: 1692990484}
 --- !u!114 &2050093932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109065,7 +109050,7 @@ PrefabInstance:
     - target: {fileID: 8993835040725342029, guid: 5ecb33a813d6d2d42b1edbd921cae07b, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[1].m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1692990482}
+      objectReference: {fileID: 0}
     - target: {fileID: 8993835040725342029, guid: 5ecb33a813d6d2d42b1edbd921cae07b, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[1].m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
@@ -109073,7 +109058,7 @@ PrefabInstance:
     - target: {fileID: 8993835040725342029, guid: 5ecb33a813d6d2d42b1edbd921cae07b, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[2].m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1692990482}
+      objectReference: {fileID: 0}
     - target: {fileID: 8993835040725342029, guid: 5ecb33a813d6d2d42b1edbd921cae07b, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[2].m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
@@ -109081,7 +109066,7 @@ PrefabInstance:
     - target: {fileID: 8993835040725342029, guid: 5ecb33a813d6d2d42b1edbd921cae07b, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1692990482}
+      objectReference: {fileID: 0}
     - target: {fileID: 8993835040725342029, guid: 5ecb33a813d6d2d42b1edbd921cae07b, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[3].m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -109204,11 +109189,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81db9e2702253ce4f8ef46913b81c238, type: 3}
---- !u!224 &4157835090695304207 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 4253318843041039975, guid: 81db9e2702253ce4f8ef46913b81c238, type: 3}
-  m_PrefabInstance: {fileID: 4157835090695304206}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4157835090695304208 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6745564414925296009, guid: 81db9e2702253ce4f8ef46913b81c238, type: 3}
@@ -109320,7 +109300,7 @@ PrefabInstance:
     - target: {fileID: 2677430010170927980, guid: dcc5131821300a148aa95c91e81e9540, type: 3}
       propertyPath: _actions.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1692990482}
+      objectReference: {fileID: 0}
     - target: {fileID: 2677430010170927980, guid: dcc5131821300a148aa95c91e81e9540, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[0].m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -109440,7 +109420,7 @@ PrefabInstance:
     - target: {fileID: 2677430010170927980, guid: dcc5131821300a148aa95c91e81e9540, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1692990482}
+      objectReference: {fileID: 0}
     - target: {fileID: 2677430010170927980, guid: dcc5131821300a148aa95c91e81e9540, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[1].m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -109496,7 +109476,7 @@ PrefabInstance:
     - target: {fileID: 2677430010170927980, guid: dcc5131821300a148aa95c91e81e9540, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[3].m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 1692990482}
+      objectReference: {fileID: 0}
     - target: {fileID: 2677430010170927980, guid: dcc5131821300a148aa95c91e81e9540, type: 3}
       propertyPath: <Actions>k__BackingField.Array.data[3].m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 

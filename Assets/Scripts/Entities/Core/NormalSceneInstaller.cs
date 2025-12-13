@@ -29,6 +29,7 @@ namespace Entities.Core
         [SerializeField] private SurfacingSystem _surfacingSystem;
         [SerializeField] private SwarmController _swarmController;
         [SerializeField] private FreezeVisuals _freezeVisuals;
+        [SerializeField] private QuestVisuals _questVisuals;
        
         public override void InstallBindings()
         {
@@ -45,6 +46,7 @@ namespace Entities.Core
             Container.Bind<UIStateSystem>().FromInstance(_uiStateSystem).AsSingle();
             Container.Bind<CinemachineCamera>().FromInstance(_cam).AsSingle();
             Container.Bind<FreezeVisuals>().FromInstance(_freezeVisuals).AsSingle();
+            Container.Bind<QuestVisuals>().FromInstance(_questVisuals).AsSingle();
            
             Container.Inject(new KeysDebug());
             Container.Inject(new WarmthSystem());
