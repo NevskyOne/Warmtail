@@ -1,12 +1,13 @@
 <div align="center">
 
-# 🌊 Warmtail  
+# 🌊 Warmtail
+
 ### A cozy puzzle-adventure about warmth, care, and saving a frozen ocean
 
-🐟 *You are a small axolotl born from a fallen star.*  
+🐟 *You are a small axolotl born without memories.*  
 🔥 *Your warmth is the only thing keeping this world alive.*
 
-[Steam — coming soon] • [VK Play] • [Itch] • [Releases]
+\[Steam — coming soon] • \[VK Play — coming soon] • \[Itch — coming soon] • \[[Releases](https://github.com/NevskyOne/Warmtail/releases)]
 
 </div>
 
@@ -42,14 +43,14 @@ Bring a piece of the world back home.
 
 Each action makes the ocean a little warmer.
 
-## 💛 Atmosphere & Themes
+## 💛 Atmosphere \& Themes
 
 Warmtail is a game about:
 
-- kindness without reward  
-- warmth as a shared resource  
-- belonging in an unfamiliar world  
-- helping others to find yourself  
+* kindness without reward
+* warmth as a shared resource
+* belonging in an unfamiliar world
+* helping others to find yourself
 
 The world reacts to your care.
 Ice melts. Colors return.
@@ -59,7 +60,7 @@ Characters open up.
 
 Warmtail is currently in active development by **Nova Team**.
 
-- ✔ Core mechanics implemented  
-- ✔ Vertical slice playable  
-- 🔄 Visual polish & content expansion  
-- 🎯 Target platforms: PC (Steam, Itch, VK Play)
+* ✔ Core mechanics implemented
+* ✔ Vertical slice playable
+* 🔄 Visual polish \& content expansion
+* 🎯 Target platforms: PC (Steam, Itch, VK Play)
