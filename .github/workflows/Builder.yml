@@ -1,19 +1,22 @@
 name: Builder
 
 on:
-  workflow_dispatch
+  workflow_dispatch:
 
 jobs:
   build:
     permissions: write-all
     name: Build my project ✨
     runs-on: ubuntu-latest
+    outputs:
+      buildVersion: ${{ steps.unity_build.outputs.buildVersion }}
     steps:
       - name: Checkout repository 😶‍🌫️
         uses: actions/checkout@v4
         with:
           lfs: true
           fetch-depth: 0
+
       - name: Free up disk space
         uses: jlumbroso/free-disk-space@v1.3.1
         with:
@@ -24,11 +27,13 @@ jobs:
           large-packages: true
           docker-images: true
           swap-storage: true
+
       - name: Clean Docker
         run: |
           docker system prune --all --force --volumes
-          docker image prune -f  
-      - name: Cashing... 👾
+          docker image prune -f
+
+      - name: Caching... 👾
         uses: actions/cache@v3
         with:
           path: Library
@@ -37,7 +42,7 @@ jobs:
             Library-
 
       - name: Building project... 💪
-        id: unity_build               
+        id: unity_build
         uses: game-ci/unity-builder@v4
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
@@ -46,11 +51,10 @@ jobs:
         with:
           allowDirtyBuild: true
           versioning: Semantic
-          buildName: ${{vars.GAME_NAME}}
+          buildName: ${{ vars.GAME_NAME }}
           targetPlatform: StandaloneWindows64
 
-    
-      - name: Heres new version 🧙‍♂️
+      - name: Validate build version 🧙‍♂️
         run: |
           echo "buildVersion from builder: '${{ steps.unity_build.outputs.buildVersion }}'"
           if [ -z "${{ steps.unity_build.outputs.buildVersion }}" ]; then
@@ -62,26 +66,60 @@ jobs:
         uses: ihiroky/archive-action@v1
         with:
           root_dir: build
-          file_path: ../build.zip
+          file_path: build.zip
 
-      - name: Create release 🥞
+      - name: Upload artifact (for release/itch)
+        uses: actions/upload-artifact@v4
+        with:
+          name: game-build
+          path: build.zip
+
+  release:
+    name: Release & publish 🚀
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: Production
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: game-build
+          path: .
+
+      - name: Create GitHub release 🥞
         id: create-release
         uses: actions/create-release@v1
         with:
-          tag_name: ${{ steps.unity_build.outputs.buildVersion }}
-          release_name: New Release ${{ steps.unity_build.outputs.buildVersion }}
+          tag_name: ${{ needs.build.outputs.buildVersion }}
+          release_name: New Release ${{ needs.build.outputs.buildVersion }}
           body: "Automated release created by CI"
           draft: false
           prerelease: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Adding build to release 🥳
+      - name: Upload build to GitHub release 🥳
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Upload build to GitHub release 🥳
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create-release.outputs.upload_url }}
-          asset_path: ../build.zip
-          asset_name: ${{vars.GAME_NAME}}-win-v${{ steps.unity_build.outputs.buildVersion }}.zip
+          asset_path: build.zip
+          asset_name: ${{ vars.GAME_NAME }}-win-v${{ needs.build.outputs.buildVersion }}.zip
           asset_content_type: application/zip
+
+      - name: Upload build to itch.io 🎮
+        uses: yeslayla/butler-publish-itchio-action@master
+        env:
+          BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
+          ITCH_USER: ${{ vars.ITCH_USER }}
+          ITCH_GAME: ${{ vars.ITCH_GAME }}
+          CHANNEL: windows
+          VERSION: ${{ needs.build.outputs.buildVersion }}
+          PACKAGE: build.zip
+          upload_url: ${{ steps.create-release.outputs.upload_url }}
