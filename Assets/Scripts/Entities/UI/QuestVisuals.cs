@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 using Data;
 using Data.Player;
 using Entities.Localization;
+using Systems.Environment;
 using TMPro;
 using TriInspector;
 using UnityEngine;
@@ -12,8 +14,14 @@ namespace Entities.UI
     public class QuestVisuals : MonoBehaviour
     {
         [Title("Settings")]
+        [SerializeField] private List<QuestData> _allQuests;
         [SerializeField, Tooltip("x: horizontal\ny: top\nz:bottom")] private Vector3 _markOffset;
         [SerializeField] private Camera _cam;
+
+        [SerializeField, Dropdown(nameof(GetDropdownStrings))]
+        private string _correctLayerState;
+        [SerializeField, Dropdown(nameof(GetDropdownStrings))]
+        private string _incorrectLayerState;
         [Title("UI")]
         [SerializeField] private RectTransform _markPrefab;
         [SerializeField] private RectTransform _markHud;
@@ -22,15 +30,24 @@ namespace Entities.UI
 
         private readonly Dictionary<QuestData, List<MarkUIData>> _createdMarks = new();
         private readonly Dictionary<QuestData, GameObject> _createdQuests = new();
-        
+
+        public List<QuestData> AllQuests => _allQuests;
+
         private DiContainer _diContainer;
         private GlobalData _globalData;
+        private SurfacingSystem _surfacingSystem;
+
+        public QuestVisuals(List<QuestData> allQuests)
+        {
+            _allQuests = allQuests;
+        }
 
         [Inject]
-        private void Construct(DiContainer diContainer, GlobalData globalData)
+        private void Construct(DiContainer diContainer, GlobalData globalData, SurfacingSystem surfacingSystem)
         {
             _diContainer = diContainer;
             _globalData = globalData;
+            _surfacingSystem = surfacingSystem;
         }
 
         public void SpawnQuest(QuestData data)
@@ -38,12 +55,24 @@ namespace Entities.UI
             var newQuest = _diContainer.InstantiatePrefab(_questPrefab, _questHud).transform;
             newQuest.GetChild(0).GetComponent<LocalizedText>().SetNewKey("quest_header_" + data.Id);
             newQuest.GetChild(1).GetComponent<LocalizedText>().SetNewKey("quest_desc_" + data.Id);
-            var allQuestCount = 0;
-            data.Sequence.ForEach(x => allQuestCount += x.Tasks.Count);
-            var questState = _globalData.Get<SavablePlayerData>().QuestIds[data.Id];
-            newQuest.GetChild(2).GetComponent<TMP_Text>().text = ((questState + 1)/allQuestCount).ToString();
+            CheckLayer(data, newQuest);
             _createdQuests.Add(data, newQuest.gameObject);
             _createdMarks.Add(data, new());
+        }
+
+        private void CheckLayer(QuestData data, Transform questObj)
+        {
+            if(_surfacingSystem.CurrentLayerIndex == data.Layer){
+                var allQuestCount = data.Sequence.Count;
+                var questState = _globalData.Get<SavablePlayerData>().QuestIds[data.Id];
+                questObj.GetChild(2).GetComponent<LocalizedText>().SetNewKey(_correctLayerState);
+                questObj.GetChild(2).GetChild(0).GetComponent<TMP_Text>().text = ((questState + 1)/allQuestCount).ToString();
+            }
+            else
+            {
+                questObj.GetChild(2).GetComponent<LocalizedText>().SetNewKey(_correctLayerState);
+                questObj.GetChild(2).GetChild(0).GetComponent<TMP_Text>().text = "";
+            }
         }
         
         public void DestroyQuest(QuestData data)
@@ -54,24 +83,21 @@ namespace Entities.UI
             _createdQuests.Remove(data);
         }
         
-        public void SpawnMarks(QuestData data, List<Vector2> marksPos)
+        public void SpawnMarks(QuestData data, Vector2 markPos)
         {
-            foreach (var markPos in marksPos)
+            var newMark = Instantiate(_markPrefab, _markHud);
+            _createdMarks[data].Add(new MarkUIData
             {
-                var newMark = Instantiate(_markPrefab, _markHud);
-                _createdMarks[data].Add(new MarkUIData
-                {
-                    Object = newMark.gameObject,
-                    WorldPos = markPos
-                });
-            }
+                Object = newMark.gameObject,
+                WorldPos = markPos
+            });
         }
 
-        public void DestroyMark(QuestData data, int index)
+        public void DestroyMark(QuestData data, Vector2 markPos)
         {
-            var mark = _createdMarks[data][index];
+            var mark = _createdMarks[data].Find(x => x.WorldPos == markPos);
             Destroy(mark.Object);
-            _createdMarks[data].RemoveAt(index);
+            _createdMarks[data].Remove(mark);
         }
 
         private void DestroyMarks(QuestData data)
@@ -122,6 +148,24 @@ namespace Entities.UI
                 }
                 marks[i].Object.transform.position = newScreenPos;
             }
+        }
+        
+        private IEnumerable<TriDropdownItem<string>> GetDropdownStrings()
+        {
+            TriDropdownList<string> list = new();
+            foreach (var tableName in LocalizationManager.NameToGid.Keys)
+            {
+                var table = File.ReadAllText(Path.Combine(Application.streamingAssetsPath, "Localization", $"{tableName}.tsv"));
+                string[] lines = table.Split('\n');
+                for (int i = 1; i < lines.Length; i++)
+                {
+                    var key = lines[i].Split("\t")[0];
+                    list.Add(new TriDropdownItem<string>{ 
+                        Text = $"{tableName}/{key}", Value = key});
+                }
+            }
+
+            return list;
         }
     }
 }

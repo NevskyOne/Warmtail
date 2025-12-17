@@ -37,6 +37,7 @@ namespace Entities.Core
             Container.Bind<SurfacingSystem>().FromInstance(_surfacingSystem).AsSingle();
             Container.Bind<DialogueSystem>().FromNew().AsSingle();
             Container.Bind<WarmthSystem>().FromNew().AsSingle();
+            Container.Bind<QuestSystem>().FromNew().AsSingle();
             Container.Bind<PlayerConfig>().FromInstance(_playerConfig).AsSingle();
             Container.Bind<Player>().FromInstance(_player).AsSingle();
             Container.Bind<PlayerInput>().FromInstance(_playerInput).AsSingle();

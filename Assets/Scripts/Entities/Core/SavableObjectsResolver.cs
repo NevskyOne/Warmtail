@@ -1,4 +1,5 @@
-﻿using Data;
+﻿using System.Collections.Generic;
+using Data;
 using Entities.NPC;
 using Entities.Probs;
 using UnityEngine;
@@ -9,6 +10,7 @@ namespace Entities.Core
     public class SavableObjectsResolver : MonoBehaviour
     {
         [Inject] private GlobalData _data;
+        private static Dictionary<string, GameObject> _objects;
 
         private void Start()
         {
@@ -17,6 +19,7 @@ namespace Entities.Core
 
             foreach (var obj in FindObjectsByType<SavableStateObject>(FindObjectsInactive.Include,FindObjectsSortMode.None))
             {
+                _objects.Add(obj.Id, obj.gameObject);
                 if (changed.ContainsKey(obj.Id))
                 {
                     obj.gameObject.SetActive(changed[obj.Id]);
@@ -27,6 +30,20 @@ namespace Entities.Core
                     ((SpeakableCharacter)obj).SavableState[changedNpc[obj.Id]].Invoke();
                 }
             }
+        }
+
+        public static GameObject FindObjectById(string id)
+        {
+            _objects.TryGetValue(id, out var o);
+            return o;
+        }
+        
+        public static T FindObjectById<T>(string id) where T : MonoBehaviour
+        {
+            _objects.TryGetValue(id, out var o);
+            T t = null;
+            o?.TryGetComponent(out t);
+            return t;
         }
     }
 }

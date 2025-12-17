@@ -48,3 +48,5 @@ surface	Поверхность	Surface
 loading	Загрузка...	Loading...
 thanks	Спасибо за игру!  \nМы вложили много сил в этот проект и надеемся на его дальнейшее развитие. \nБез вас не было бы ни этой игры, ни, возможно, нас самих как личностей. \nВы можете продолжить играть, так как история на этом не закончивается! \nИ конечно, не переставайте сиять!	Thank you for playing! \nWe've put a lot of effort into this project and look forward to its continued development. \nWithout you, this game, and perhaps even us as individuals, wouldn't exist. \nYou can keep playing, because the story doesn't end here! \nAnd of course, keep shining!
 command	Команда \n• Валя — тимлид, техлид, геймдизайнер, сценарист, технический художник  \n• Тимур — программист \n• Ира — программист \n• Диана — 2D художник	Team \n• Valya — Team Lead, Tech Lead, Game Designer, Writer, Technical Artist \n• Timur — Programmer \n• Ira — Programmer \n• Diana — 2D Artist
+quest_progress	Прогресс квеста:	Quest progress:
+incorrect_layer	Квест находится на другом слое	The quest is on a different layer

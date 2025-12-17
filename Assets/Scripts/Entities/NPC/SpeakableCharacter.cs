@@ -24,16 +24,14 @@ namespace Entities.NPC
         private DialogueSystem _dialogueSystem;
         private DialogueVisuals _visuals;
         private float _warmPercent;
-        private new GlobalData _globalData;
         private UIStateSystem _uiStateSystem;
         
         
         [Inject]
-        private void Construct(DialogueSystem dialogueSystem, DialogueVisuals visuals, GlobalData globalData, UIStateSystem uiStateSystem)
+        private void Construct(DialogueSystem dialogueSystem, DialogueVisuals visuals, UIStateSystem uiStateSystem)
         {
             _dialogueSystem = dialogueSystem;
             _visuals = visuals;
-            _globalData = globalData;
             _uiStateSystem = uiStateSystem;
             Reset();
         }

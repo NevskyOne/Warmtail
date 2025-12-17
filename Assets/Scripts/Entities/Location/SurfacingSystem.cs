@@ -23,6 +23,7 @@ namespace Systems.Environment
         private PlayerConfig _config;
         private MusicStateSystem _music;
         private int _currentLayerIndex;
+        public int CurrentLayerIndex => _currentLayerIndex;
 
         [Inject]
         public void Construct(GlobalData globalData, PlayerInput input, Player player, PlayerConfig config, MusicStateSystem music)

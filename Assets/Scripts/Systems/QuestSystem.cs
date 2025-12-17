@@ -5,14 +5,13 @@ using Data.Player;
 using Entities.UI;
 using Interfaces;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Zenject;
 
 namespace Systems
 {
     public class QuestSystem
     {
-        [SerializeField] private List<QuestData> _allQuests;
-        private readonly Dictionary<QuestData, List<int>> _createdMarksInd = new();
         private GlobalData _globalData;
         private QuestVisuals _questVisuals;
 
@@ -23,7 +22,7 @@ namespace Systems
             _questVisuals = visuals;
             foreach (var id in _globalData.Get<SavablePlayerData>().QuestIds)
             {
-                StartQuest(_allQuests.Find(x => x.Id == id.Key), id.Value);
+                StartQuest(visuals.AllQuests.Find(x => x.Id == id.Key), id.Value);
             }
         }
         
@@ -32,24 +31,49 @@ namespace Systems
             if(!_globalData.Get<SavablePlayerData>().QuestIds.Keys.Contains(data.Id))
                 _globalData.Edit<SavablePlayerData>(playerData => playerData.QuestIds.Add(data.Id, questState));
 
+            if (data.Scene != SceneManager.GetActiveScene().name) return;
+            
             _questVisuals.SpawnQuest(data);
-            for (int i = 0; i <= questState; i++)
+            for (int i = 0; i < questState; i++)
             {
-                data.Sequence[i].Action.Invoke();
+                data.Sequence[i].Actions.ForEach(x => x.Invoke());
+            }
+
+            foreach (var task in data.Sequence[questState].Tasks)
+            {
+                task.OnComplete += () => TryIterateSequence(data);
             }
         }
 
-        public void TryIterateSequence(QuestData data)
+        private void TryIterateSequence(QuestData data)
         {
             var currentState = _globalData.Get<SavablePlayerData>().QuestIds[data.Id];
-            var sequence = data.Sequence[currentState];
-            bool result = false;
-            sequence.Tasks.ForEach(x => result = x.Completed || result);
-            if(sequence.Tasks.Count == 0 || result)
+   
+            var element = data.Sequence[currentState];
+            if (element.Tasks.Count != 0 && !element.Tasks.TrueForAll(x => x.Completed)) 
+                return;
+        
+            element.Actions.ForEach(x => x.Invoke());
+
+            if (currentState == data.Sequence.Count - 1)
             {
-                sequence.Action.Invoke();
-                _globalData.Edit<SavablePlayerData>(playerData => 
-                    playerData.QuestIds.Add(data.Id, currentState + 1));
+                EndQuest(data);
+            }
+            else
+            {
+                currentState++;
+                _globalData.Edit<SavablePlayerData>(playerData =>
+                    playerData.QuestIds.Add(data.Id, currentState));
+                
+                if (data.Sequence[currentState].Tasks.Count > 0)
+                {
+                    foreach (var task in data.Sequence[currentState].Tasks)
+                    {
+                        task.OnComplete += () => TryIterateSequence(data);
+                    }
+                }
+                else
+                    TryIterateSequence(data);
             }
         }
         

@@ -15,6 +15,13 @@
       "source": "local-tarball",
       "dependencies": {}
     },
+    "com.pokeblokdude.ulayout": {
+      "version": "https://github.com/pokeblokdude/uLayout.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "a6af0eda6dc25e389455fe59603f028233ebd348"
+    },
     "com.qiaozhilei.easy-text-effects": {
       "version": "https://github.com/LeiQiaoZhi/Easy-Text-Effect.git",
       "depth": 0,

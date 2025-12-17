@@ -15,9 +15,17 @@ MonoBehaviour:
   <Id>k__BackingField: 2
   <Scene>k__BackingField: Assets/Scenes/Gameplay.unity
   <Layer>k__BackingField: 0
-  <Sequence>k__BackingField: []
+  <Sequence>k__BackingField:
+  - Action:
+      rid: 4204129316913545216
+    Tasks: []
   <OnComplete>k__BackingField: []
   <OnFail>k__BackingField: []
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 4204129316913545216
+      type: {class: ActivateObjectsAction, ns: Systems.SequenceActions, asm: Assembly-CSharp}
+      data:
+        _active: 0
+        _objectIds: []

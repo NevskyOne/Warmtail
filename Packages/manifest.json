@@ -2,6 +2,7 @@
   "dependencies": {
     "com.codewriter.triinspector": "https://github.com/codewriter-packages/Tri-Inspector.git",
     "com.kyrylokuzyk.primetween": "file:../Assets/Plugins/PrimeTween/internal/com.kyrylokuzyk.primetween.tgz",
+    "com.pokeblokdude.ulayout": "https://github.com/pokeblokdude/uLayout.git",
     "com.qiaozhilei.easy-text-effects": "https://github.com/LeiQiaoZhi/Easy-Text-Effect.git",
     "com.unity.cinemachine": "3.1.4",
     "com.unity.feature.2d": "2.0.1",

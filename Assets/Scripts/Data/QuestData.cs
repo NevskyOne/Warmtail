@@ -13,7 +13,7 @@ namespace Data
     {
         [field: SerializeField,Title("Quest Id"),HideLabel, InfoBox("$" + nameof(HeaderPreview))] public int Id { get; private set; }
         public string HeaderPreview => LocalizationManager.GetStringFromKey("quest_header_" + Id);
-
+        [field: SerializeField, Scene] public bool IsPermanent { get; private set; } = true;
         [field: Title("Scene Settings"), SerializeField, Scene] public string Scene { get; private set; }
         [field: SerializeField, Dropdown(nameof(_layers))] public int Layer { get; private set; }
         
@@ -32,7 +32,7 @@ namespace Data
     [DeclareBoxGroup("horizontal/two", Title = "Conditions")]
     public struct QuestElement
     {
-        [SerializeReference, HideLabel, Group("horizontal/one")] public ISequenceAction Action;
+        [SerializeReference, HideLabel, Group("horizontal/one")] public List<ISequenceAction> Actions;
         [SerializeReference, HideLabel, Group("horizontal/two")] public List<ITask> Tasks;
     }
 }

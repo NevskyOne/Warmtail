@@ -22,6 +22,7 @@ namespace Entities.Core
         [SerializeField] private UIStateSystem _uiStateSystem;
         [SerializeField] private ShoppingManager _shoppingManager;
         [SerializeField] private DialogueVisuals _dialogueVisuals;
+        [SerializeField] private QuestVisuals _questVisuals;
         [SerializeField] private CinemachineCamera _cam;
 
         public override void InstallBindings()
@@ -34,10 +35,12 @@ namespace Entities.Core
             Container.Bind<ShoppingManager>().FromInstance(_shoppingManager).AsSingle();
             Container.Bind<CinemachineCamera>().FromInstance(_cam).AsSingle();
             Container.Bind<DialogueVisuals>().FromInstance(_dialogueVisuals).AsSingle();
+            Container.Bind<QuestVisuals>().FromInstance(_questVisuals).AsSingle();
             Container.Bind<NPCMethods>().FromNew().AsSingle();
             Container.Bind<ShoppingSystem>().FromNew().AsSingle();
             Container.Bind<PlacementSystem>().FromNew().AsSingle();
             Container.Bind<DialogueSystem>().FromNew().AsSingle();
+            Container.Bind<QuestSystem>().FromNew().AsSingle();
             
             Container.Bind<List<IAbility>>()
                 .FromInstance(_playerConfig.Abilities)
