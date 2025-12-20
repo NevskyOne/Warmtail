@@ -14,7 +14,7 @@ namespace Data
     }
 
     [Serializable]
-    public struct CharacterConfig
+    public record CharacterConfig
     {
         public Characters Character;
         public AudioClip Sound;

@@ -24,6 +24,8 @@ namespace Entities.Probs
         public void Construct(GlobalData globalData)
         {
             _globalData = globalData;
+            Daily.OnLoadedResources += LoadShell;
+            Daily.OnDiscardedResources += DiscardShell;
         }
 
         private void Start()
@@ -31,14 +33,13 @@ namespace Entities.Probs
             _propertyBlock = new();
             _renderer = GetComponent<SpriteRenderer>();
             Reset();
-            Daily.OnLodedRecources += LoadShell;
-            Daily.OnDiscardedRecources += DiscardShell;
+            
         }
 
         private void OnDestroy()
         {
-            Daily.OnLodedRecources -= LoadShell;
-            Daily.OnDiscardedRecources -= DiscardShell;
+            Daily.OnLoadedResources -= LoadShell;
+            Daily.OnDiscardedResources -= DiscardShell;
         }
         
         public void Warm()

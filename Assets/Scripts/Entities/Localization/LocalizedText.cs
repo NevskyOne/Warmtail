@@ -4,29 +4,26 @@ using R3;
 using TMPro;
 using TriInspector;
 using UnityEngine;
-using Zenject;
 
 namespace Entities.Localization
 {
     [RequireComponent(typeof(TMP_Text))]
     public class LocalizedText : MonoBehaviour
     {
-        [SerializeField, Dropdown(nameof(GetDropdownStrings))] private string _key;
+        [SerializeField, Dropdown(nameof(GetDropdownStrings)), InfoBox("$" + nameof(HeaderPreview))] private string _key;
+        public string HeaderPreview => LocalizationManager.GetStringFromKey(_key);
         private TMP_Text _text;
-        private LocalizationManager _localization;
-    
-        [Inject]
-        private void Construct(LocalizationManager localization)
+        
+        private void Start()
         {
             _text = GetComponent<TMP_Text>();
-            _localization = localization;
-            _localization.CurrentLanguage.Subscribe(_ => UpdateString());
+            LocalizationManager.CurrentLanguage.Subscribe(_ => UpdateString());
         }
 
         [Button("UpdateString")]
         public void UpdateString()
         {
-            _text.text = _localization.GetStringFromKey(_key);
+            _text.text = LocalizationManager.GetStringFromKey(_key);
         }
 
         public void SetNewKey(string key)

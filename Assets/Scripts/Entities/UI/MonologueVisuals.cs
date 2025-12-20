@@ -63,7 +63,7 @@ namespace Entities.UI
         {
             _currentText.localPosition = ChooseRandomPosition();
             _currentText.GetComponent<TMP_Text>().text = 
-                _localizationManager.GetStringFromKey("cutscene_"+ _dialogueSystem.DialogueGraph.DialogueId+ "_" + node.TextId);
+                LocalizationManager.GetStringFromKey("cutscene_"+ _dialogueSystem.DialogueGraph.DialogueId+ "_" + node.TextId);
             _currentText.GetComponent<TextEffect>().Refresh();
         }
         
@@ -72,7 +72,7 @@ namespace Entities.UI
             _currentText = Instantiate(_textPrefab, _textBounds).GetComponent<RectTransform>();
             _currentText.localPosition = ChooseRandomPosition();
             _currentText.GetComponent<TMP_Text>().text = 
-                _localizationManager.GetStringFromKey("fragment_" + id);
+                LocalizationManager.GetStringFromKey("fragment_" + id);
             _currentText.GetComponent<TextEffect>().Refresh();
             await UniTask.Delay(TimeSpan.FromSeconds(_textFadeSpeed));
             Destroy(_currentText.gameObject);

@@ -1,0 +1,171 @@
+﻿using System.Collections.Generic;
+using System.IO;
+using Data;
+using Data.Player;
+using Entities.Localization;
+using Systems.Environment;
+using TMPro;
+using TriInspector;
+using UnityEngine;
+using Zenject;
+
+namespace Entities.UI
+{
+    public class QuestVisuals : MonoBehaviour
+    {
+        [Title("Settings")]
+        [SerializeField] private List<QuestData> _allQuests;
+        [SerializeField, Tooltip("x: horizontal\ny: top\nz:bottom")] private Vector3 _markOffset;
+        [SerializeField] private Camera _cam;
+
+        [SerializeField, Dropdown(nameof(GetDropdownStrings))]
+        private string _correctLayerState;
+        [SerializeField, Dropdown(nameof(GetDropdownStrings))]
+        private string _incorrectLayerState;
+        [Title("UI")]
+        [SerializeField] private RectTransform _markPrefab;
+        [SerializeField] private RectTransform _markHud;
+        [SerializeField] private RectTransform _questPrefab;
+        [SerializeField] private RectTransform _questHud;
+
+        private readonly Dictionary<QuestData, List<MarkUIData>> _createdMarks = new();
+        private readonly Dictionary<QuestData, GameObject> _createdQuests = new();
+
+        public List<QuestData> AllQuests => _allQuests;
+
+        private DiContainer _diContainer;
+        private GlobalData _globalData;
+        private SurfacingSystem _surfacingSystem;
+
+        public QuestVisuals(List<QuestData> allQuests)
+        {
+            _allQuests = allQuests;
+        }
+
+        [Inject]
+        private void Construct(DiContainer diContainer, GlobalData globalData, SurfacingSystem surfacingSystem)
+        {
+            _diContainer = diContainer;
+            _globalData = globalData;
+            _surfacingSystem = surfacingSystem;
+        }
+
+        public void SpawnQuest(QuestData data)
+        {
+            var newQuest = _diContainer.InstantiatePrefab(_questPrefab, _questHud).transform;
+            newQuest.GetChild(0).GetComponent<LocalizedText>().SetNewKey("quest_header_" + data.Id);
+            newQuest.GetChild(1).GetComponent<LocalizedText>().SetNewKey("quest_desc_" + data.Id);
+            CheckLayer(data, newQuest);
+            _createdQuests.Add(data, newQuest.gameObject);
+            _createdMarks.Add(data, new());
+        }
+
+        private void CheckLayer(QuestData data, Transform questObj)
+        {
+            if(_surfacingSystem.CurrentLayerIndex == data.Layer){
+                var allQuestCount = data.Sequence.Count;
+                var questState = _globalData.Get<SavablePlayerData>().QuestIds[data.Id];
+                questObj.GetChild(2).GetComponent<LocalizedText>().SetNewKey(_correctLayerState);
+                questObj.GetChild(2).GetChild(0).GetComponent<TMP_Text>().text = ((questState + 1)/allQuestCount).ToString();
+            }
+            else
+            {
+                questObj.GetChild(2).GetComponent<LocalizedText>().SetNewKey(_correctLayerState);
+                questObj.GetChild(2).GetChild(0).GetComponent<TMP_Text>().text = "";
+            }
+        }
+        
+        public void DestroyQuest(QuestData data)
+        {
+            Destroy(_createdQuests[data]);
+            DestroyMarks(data);
+            _createdMarks.Remove(data);
+            _createdQuests.Remove(data);
+        }
+        
+        public void SpawnMarks(QuestData data, Vector2 markPos)
+        {
+            var newMark = Instantiate(_markPrefab, _markHud);
+            _createdMarks[data].Add(new MarkUIData
+            {
+                Object = newMark.gameObject,
+                WorldPos = markPos
+            });
+        }
+
+        public void DestroyMark(QuestData data, Vector2 markPos)
+        {
+            var mark = _createdMarks[data].Find(x => x.WorldPos == markPos);
+            Destroy(mark.Object);
+            _createdMarks[data].Remove(mark);
+        }
+
+        private void DestroyMarks(QuestData data)
+        {
+            foreach (var mark in _createdMarks[data])
+            {
+                Destroy(mark.Object);
+            }
+        }
+        
+        public void Update()
+        {
+            foreach (var mark in _createdMarks)
+            {
+                CalculateMarksPositions(mark.Value);
+            }
+        }
+        
+        private void CalculateMarksPositions(List<MarkUIData> marks)
+        {
+            for (var i = 0; i < marks.Count; i++)
+            {
+                var screenPos = _cam.WorldToScreenPoint(marks[i].WorldPos);
+
+                Vector2 newScreenPos = new Vector2(screenPos.x, screenPos.y);
+                if (screenPos.x > Screen.width - Screen.width * _markOffset.x)
+                {
+                    newScreenPos.x = Screen.width - Screen.width * _markOffset.x;
+                }
+                else if (screenPos.x < Screen.width * _markOffset.x)
+                {
+                    newScreenPos.x = Screen.width * _markOffset.x;
+                }
+                
+                if (screenPos.y > Screen.height - Screen.height * _markOffset.y)
+                {
+                    newScreenPos.y = Screen.height - Screen.height * _markOffset.y;
+                }
+                else if (screenPos.y < Screen.height * _markOffset.z)
+                {
+                    newScreenPos.y = Screen.height * _markOffset.z;
+                }
+                Vector2 toTarget = (Vector2)screenPos - newScreenPos;
+                if (toTarget.sqrMagnitude > 0.0001f)
+                {
+                    float angle = Mathf.Atan2(toTarget.y, toTarget.x) * Mathf.Rad2Deg;
+                    marks[i].Object.transform.localRotation = Quaternion.Euler(0f, 0f, angle + 90);
+                }
+                marks[i].Object.transform.position = newScreenPos;
+            }
+        }
+        
+        private IEnumerable<TriDropdownItem<string>> GetDropdownStrings()
+        {
+            TriDropdownList<string> list = new();
+            foreach (var tableName in LocalizationManager.NameToGid.Keys)
+            {
+                var table = File.ReadAllText(Path.Combine(Application.streamingAssetsPath, "Localization", $"{tableName}.tsv"));
+                string[] lines = table.Split('\n');
+                for (int i = 1; i < lines.Length; i++)
+                {
+                    var key = lines[i].Split("\t")[0];
+                    list.Add(new TriDropdownItem<string>{ 
+                        Text = $"{tableName}/{key}", Value = key});
+                }
+            }
+
+            return list;
+        }
+    }
+}

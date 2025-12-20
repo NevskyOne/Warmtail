@@ -31,14 +31,12 @@ namespace Entities.UI
 
         private GlobalData _globalData;
         private SettingsData _localData;
-        private LocalizationManager _localizationManager;
         private bool _isSaving;
         
         [Inject]
-        private void Construct(GlobalData globalData, LocalizationManager localization)
+        private void Construct(GlobalData globalData)
         {
             _globalData = globalData;
-            _localizationManager = localization;
         }
 
         private void Awake()
@@ -48,8 +46,8 @@ namespace Entities.UI
             //Apply Data
             Screen.fullScreenMode = _localData.FullscreenMode ? 
                 FullScreenMode.FullScreenWindow : FullScreenMode.MaximizedWindow;
-            _localizationManager.CurrentLanguage.Value = (Language)_localData.Language;
-            _localizationManager.CurrentLanguage.ForceNotify();
+            LocalizationManager.CurrentLanguage.Value = (Language)_localData.Language;
+            LocalizationManager.CurrentLanguage.ForceNotify();
             QualitySettings.SetQualityLevel(_localData.QualityLevel);
             ChangeVolume("MainVolume", _localData.MainSoundVolume);
             ChangeVolume("MusicVolume", _localData.MusicVolume);
@@ -86,7 +84,7 @@ namespace Entities.UI
         
         public void ChangeLanguage(int value)
         {
-            _localizationManager.CurrentLanguage.Value = (Language)value;
+            LocalizationManager.CurrentLanguage.Value = (Language)value;
             _localData.Language = value;
             SaveData();
         }

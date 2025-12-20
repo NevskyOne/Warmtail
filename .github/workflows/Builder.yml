@@ -1,44 +1,88 @@
 name: Builder
 
 on:
-  push:
-    branches: ['main']
+  workflow_dispatch:
+
+concurrency:
+  group: release
+  cancel-in-progress: false
 
 jobs:
-  build:
-    permissions: write-all
-    name: Build my project ✨
+  version-check:
+    name: Version preflight (game-ci compatible) 🔎
     runs-on: ubuntu-latest
+    outputs:
+      buildVersion: ${{ steps.calc.outputs.version }}
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Calculate semantic version (game-ci logic)
+        id: calc
+        run: |
+          set -e
+
+          echo "🔍 Fetching tags..."
+          git fetch --tags
+
+          LAST_TAG=$(git tag --list 'v*' --sort=-v:refname | head -n 1)
+
+          if [ -z "$LAST_TAG" ]; then
+            echo "ℹ️ No tags found, using base 0.0"
+            BASE_VERSION="0.0"
+            PATCH=$(git rev-list HEAD --count)
+          else
+            echo "ℹ️ Last tag: $LAST_TAG"
+            BASE_VERSION=$(echo "$LAST_TAG" | sed -E 's/^v?([0-9]+\.[0-9]+).*/\1/')
+            PATCH=$(git rev-list "$LAST_TAG"..HEAD --count)
+          fi
+
+          VERSION="${BASE_VERSION}.${PATCH}"
+
+          echo "✅ Computed version: $VERSION"
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Validate version
+        run: |
+          if [ -z "${{ steps.calc.outputs.version }}" ]; then
+            echo "❌ Version is empty"
+            exit 1
+          fi
+
+      - name: Check tag does not exist
+        run: |
+          if git rev-parse "v${{ steps.calc.outputs.version }}" >/dev/null 2>&1; then
+            echo "❌ Tag v${{ steps.calc.outputs.version }} already exists!"
+            exit 1
+          fi
+
+  build:
+    name: Build Unity project 💪
+    needs: version-check
+    runs-on: ubuntu-latest
+    outputs:
+      buildVersion: ${{ needs.version-check.outputs.buildVersion }}
+
     steps:
       - name: Checkout repository 😶‍🌫️
         uses: actions/checkout@v4
         with:
           lfs: true
           fetch-depth: 0
+
       - name: Free up disk space
         uses: jlumbroso/free-disk-space@v1.3.1
-        with:
-          tool-cache: true
-          android: true
-          dotnet: true
-          haskell: true
-          large-packages: true
-          docker-images: true
-          swap-storage: true
-      - name: Clean Docker
-        run: |
-          docker system prune --all --force --volumes
-          docker image prune -f  
-      - name: Cashing... 👾
+
+      - name: Cache Library 👾
         uses: actions/cache@v3
         with:
           path: Library
           key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
-          restore-keys: |
-            Library-
 
-      - name: Building project... 💪
-        id: unity_build               
+      - name: Build project
         uses: game-ci/unity-builder@v4
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
@@ -46,43 +90,69 @@ jobs:
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
           allowDirtyBuild: true
-          versioning: Semantic
-          buildName: ${{vars.GAME_NAME}}
+          versioning: None
+          buildName: ${{ vars.GAME_NAME }}
           targetPlatform: StandaloneWindows64
+          customParameters: >
+            -buildVersion ${{ needs.version-check.outputs.buildVersion }}
 
-    
-      - name: Heres new version 🧙‍♂️
-        run: |
-          echo "buildVersion from builder: '${{ steps.unity_build.outputs.buildVersion }}'"
-          if [ -z "${{ steps.unity_build.outputs.buildVersion }}" ]; then
-            echo "ERROR: buildVersion is empty!"
-            exit 1
-          fi
-
-      - name: Creating zip-file... 🔥
+      - name: Create zip
         uses: ihiroky/archive-action@v1
         with:
           root_dir: build
-          file_path: ../build.zip
+          file_path: build.zip
 
-      - name: Create release 🥞
-        id: create-release
-        uses: actions/create-release@v1
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
         with:
-          tag_name: ${{ steps.unity_build.outputs.buildVersion }}
-          release_name: New Release ${{ steps.unity_build.outputs.buildVersion }}
-          body: "Automated release created by CI"
-          draft: false
-          prerelease: false
+          name: game-build
+          path: build.zip
+
+  release:
+    name: Release & publish 🚀
+    needs: build
+    runs-on: ubuntu-latest
+    environment: 
+        name: Production
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: game-build
+
+      - name: Create GitHub tag
+        run: |
+          git tag v${{ needs.build.outputs.buildVersion }}
+          git push origin v${{ needs.build.outputs.buildVersion }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Adding build to release 🥳
+      - name: Create GitHub release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v${{ needs.build.outputs.buildVersion }}
+          release_name: Release v${{ needs.build.outputs.buildVersion }}
+          draft: false
+          prerelease: false
+
+      - name: Upload build to release
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create-release.outputs.upload_url }}
-          asset_path: ../build.zip
-          asset_name: ${{vars.GAME_NAME}}-win-v${{ steps.unity_build.outputs.buildVersion }}.zip
+          asset_path: build.zip
+          asset_name: ${{ vars.GAME_NAME }}-win-v${{ needs.build.outputs.buildVersion }}.zip
           asset_content_type: application/zip
+
+      - name: Upload to itch.io 🎮
+        uses: yeslayla/butler-publish-itchio-action@master
+        env:
+          BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
+          ITCH_USER: ${{ vars.ITCH_USER }}
+          ITCH_GAME: ${{ vars.ITCH_GAME }}
+          CHANNEL: windows
+          VERSION: ${{ needs.build.outputs.buildVersion }}
+          PACKAGE: build.zip

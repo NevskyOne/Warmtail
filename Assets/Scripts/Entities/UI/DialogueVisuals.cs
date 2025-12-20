@@ -93,7 +93,7 @@ namespace Entities.UI
             IsComplete = false;
             var character = _holder.Characters.Find(x => x.Character == node.Character);
 
-            var text = _localizationManager.GetStringFromKey(
+            var text = LocalizationManager.GetStringFromKey(
                 character.Character + "_" + _system.DialogueGraph.DialogueId + "_" + node.TextId);
             
             if (_audioSource != null)
@@ -103,7 +103,7 @@ namespace Entities.UI
             }
 
             var displayName = node.DisplayName == "" ? 
-                _localizationManager.GetStringFromKey(node.Character.ToString()) : node.DisplayName;
+                LocalizationManager.GetStringFromKey(node.Character.ToString()) : node.DisplayName;
             if(displayName == "player")
             {
                 displayName = _globalData.Get<DialogueVarData>().Variables.Find(var => var.Name == "playerName").Value;
@@ -123,7 +123,7 @@ namespace Entities.UI
             _input.SwitchCurrentActionMap("UI");
             foreach (var choiceInd in choices)
             {
-                var text = _localizationManager.GetStringFromKey(
+                var text = LocalizationManager.GetStringFromKey(
                     "player_" + _system.DialogueGraph.DialogueId + "_" + choiceInd);
                 var boxObj = await InstantiateAsync(_boxOptionsPrefab, _boxOptionsGroup);
                 boxObj[0].GetComponentInChildren<TMP_Text>().text = text;
