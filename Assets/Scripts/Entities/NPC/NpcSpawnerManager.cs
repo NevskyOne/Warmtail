@@ -17,14 +17,14 @@ namespace Entities.NPC
 
         private void Awake()
         {
-            Daily.OnLoadedResources += LoadNpc;
-            Daily.OnDiscardedResources += DiscardNpc;
+            DailySystem.OnLoadedResources += LoadNpc;
+            DailySystem.OnDiscardedResources += DiscardNpc;
         }
 
         private void OnDestroy()
         {
-            Daily.OnLoadedResources -= LoadNpc;
-            Daily.OnDiscardedResources -= DiscardNpc;
+            DailySystem.OnLoadedResources -= LoadNpc;
+            DailySystem.OnDiscardedResources -= DiscardNpc;
         }
 
         private void LoadNpc()

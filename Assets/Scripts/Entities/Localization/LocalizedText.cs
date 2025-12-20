@@ -16,13 +16,14 @@ namespace Entities.Localization
         
         private void Start()
         {
-            _text = GetComponent<TMP_Text>();
+            if(!_text) _text = GetComponent<TMP_Text>();
             LocalizationManager.CurrentLanguage.Subscribe(_ => UpdateString());
         }
 
         [Button("UpdateString")]
         public void UpdateString()
         {
+            if(!_text) _text = GetComponent<TMP_Text>();
             _text.text = LocalizationManager.GetStringFromKey(_key);
         }
 

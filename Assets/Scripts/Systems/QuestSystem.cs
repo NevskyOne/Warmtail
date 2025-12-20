@@ -12,12 +12,13 @@ namespace Systems
 {
     public class QuestSystem
     {
-        private GlobalData _globalData;
-        private QuestVisuals _questVisuals;
+        private static GlobalData _globalData;
+        private static QuestVisuals _questVisuals;
 
         [Inject]
         private void Construct(GlobalData globalData, QuestVisuals visuals)
         {
+            Debug.Log("quest system");
             _globalData = globalData;
             _questVisuals = visuals;
             foreach (var id in _globalData.Get<SavablePlayerData>().QuestIds)
@@ -26,7 +27,7 @@ namespace Systems
             }
         }
         
-        public void StartQuest(QuestData data, int questState = 0)
+        public static void StartQuest(QuestData data, int questState = 0)
         {
             if(!_globalData.Get<SavablePlayerData>().QuestIds.Keys.Contains(data.Id))
                 _globalData.Edit<SavablePlayerData>(playerData => playerData.QuestIds.Add(data.Id, questState));
@@ -45,40 +46,23 @@ namespace Systems
             }
         }
 
-        private void TryIterateSequence(QuestData data)
+        public static void TryIterateSequence(QuestData data)
         {
-            var currentState = _globalData.Get<SavablePlayerData>().QuestIds[data.Id];
-   
-            var element = data.Sequence[currentState];
-            if (element.Tasks.Count != 0 && !element.Tasks.TrueForAll(x => x.Completed)) 
-                return;
-        
-            element.Actions.ForEach(x => x.Invoke());
-
-            if (currentState == data.Sequence.Count - 1)
-            {
-                EndQuest(data);
-            }
+            var questIds = _globalData.Get<SavablePlayerData>().QuestIds;
+            if (!questIds.Keys.Contains(data.Id)) return;
+            var questState = questIds[data.Id];
+            if (questState >= data.Sequence.Count - 1) EndQuest(data);
             else
             {
-                currentState++;
-                _globalData.Edit<SavablePlayerData>(playerData =>
-                    playerData.QuestIds.Add(data.Id, currentState));
-                
-                if (data.Sequence[currentState].Tasks.Count > 0)
-                {
-                    foreach (var task in data.Sequence[currentState].Tasks)
-                    {
-                        task.OnComplete += () => TryIterateSequence(data);
-                    }
-                }
-                else
-                    TryIterateSequence(data);
+                SequenceIterationSystem.TryIterateSequence(data.Sequence, questState,
+                x => _globalData.Edit<SavablePlayerData>(
+                    playerData => playerData.QuestIds.Add(data.Id, x)));
             }
         }
         
-        public void EndQuest(QuestData data)
+        public static void EndQuest(QuestData data)
         {
+            data.OnComplete.ForEach(x => x.Invoke());
             if(_globalData.Get<SavablePlayerData>().QuestIds.Keys.Contains(data.Id))
                 _globalData.Edit<SavablePlayerData>(playerData=> playerData.QuestIds.Remove(data.Id));
             _questVisuals.DestroyQuest(data);

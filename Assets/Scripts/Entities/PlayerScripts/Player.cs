@@ -24,6 +24,7 @@ namespace Entities.PlayerScripts
 
         private GlobalData _globalData;
         private PlayerConfig _config;
+        private DiContainer _container;
 
         private DashAbility _dashAbility;
         private PlayerMovement _movement;
@@ -34,37 +35,38 @@ namespace Entities.PlayerScripts
 
         [SerializeField] private Rigidbody2D _originalPlayerRb;  
         [SerializeField] private Rigidbody2D _swarmRb;          
-        public bool IsInResonance => _swarmRb != null;
-       
-
 
         [Inject]
         private void Construct(GlobalData globalData, PlayerConfig config, DiContainer container)
         {
             _globalData = globalData;
             _config = config;
+            _container = container;
+        }
 
+        private void Start()
+        {
             foreach (var ability in _config.Abilities)
             {
-                container.Inject(ability);
+                _container.Inject(ability);
 
                 if (ability is IDisposable disposable)
                     _disposables.Add(disposable);
 
                 if (ability.Visual != null)
                 {
-                    container.Inject(ability.Visual);
+                    _container.Inject(ability.Visual);
                     if (ability.Visual is IDisposable disposableVisual)
                         _disposables.Add(disposableVisual);
                 }
             }
 
             _movement = (PlayerMovement)_config.Abilities[0];
-            if(_config.Abilities.Count > 4)
+            if (_config.Abilities.Count > 4)
                 _dashAbility = (DashAbility)_config.Abilities[5];
 
             _rbs = GetComponentsInChildren<Rigidbody2D>().ToList();
-            if(_sleepAwake) Sleep();
+            if (_sleepAwake) Sleep();
             else WakeUp();
             _originalPlayerRb = Rigidbody;
         }

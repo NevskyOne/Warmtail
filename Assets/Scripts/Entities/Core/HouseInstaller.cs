@@ -41,6 +41,7 @@ namespace Entities.Core
             Container.Bind<PlacementSystem>().FromNew().AsSingle();
             Container.Bind<DialogueSystem>().FromNew().AsSingle();
             Container.Bind<QuestSystem>().FromNew().AsSingle();
+            Container.Bind<DailySystem>().FromNew().AsSingle();
             
             Container.Bind<List<IAbility>>()
                 .FromInstance(_playerConfig.Abilities)

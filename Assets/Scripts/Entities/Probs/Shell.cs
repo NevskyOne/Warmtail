@@ -24,8 +24,8 @@ namespace Entities.Probs
         public void Construct(GlobalData globalData)
         {
             _globalData = globalData;
-            Daily.OnLoadedResources += LoadShell;
-            Daily.OnDiscardedResources += DiscardShell;
+            DailySystem.OnLoadedResources += LoadShell;
+            DailySystem.OnDiscardedResources += DiscardShell;
         }
 
         private void Start()
@@ -38,8 +38,8 @@ namespace Entities.Probs
 
         private void OnDestroy()
         {
-            Daily.OnLoadedResources -= LoadShell;
-            Daily.OnDiscardedResources -= DiscardShell;
+            DailySystem.OnLoadedResources -= LoadShell;
+            DailySystem.OnDiscardedResources -= DiscardShell;
         }
         
         public void Warm()

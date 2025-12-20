@@ -9,18 +9,18 @@ namespace Systems.Tasks
     {
         public bool Completed { get; set; }
         public Action OnComplete { get; set; }
-        [SerializeField] private InputAction _action;
+        [SerializeField] private InputActionReference _action;
 
         public void Activate()
         {
-            _action.performed += MarkComplete;
+            _action.action.performed += MarkComplete;
         }
 
         private void MarkComplete(InputAction.CallbackContext _)
         {
             Completed = true;
             OnComplete?.Invoke();
-            _action.performed -= MarkComplete;
+            _action.action.performed -= MarkComplete;
         }
     }
 }

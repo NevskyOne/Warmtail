@@ -10,7 +10,7 @@ namespace Entities.Core
     public class SavableObjectsResolver : MonoBehaviour
     {
         [Inject] private GlobalData _data;
-        private static Dictionary<string, GameObject> _objects;
+        private static Dictionary<string, GameObject> _objects = new();
 
         private void Start()
         {

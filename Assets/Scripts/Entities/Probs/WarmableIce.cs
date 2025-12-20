@@ -63,7 +63,6 @@ namespace Entities.Probs
                     _tween?.Stop();
                     return;
                 }
-                print(x);
                 _propertyBlock.SetFloat(DissolveAmount, x);
                 _renderer.SetPropertyBlock(_propertyBlock);
             });

@@ -15,7 +15,12 @@ namespace Entities.Probs
         
         public string Id => _id.Value;
 
-        [ContextMenu("Force reset ID")]
+        [Button("Copy")]
+        private void Copy()
+        {
+            GUIUtility.systemCopyBuffer = Id;
+        }
+        
         private void ResetId()
         {
             _id.Value = Guid.NewGuid().ToString();

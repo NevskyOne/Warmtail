@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c4070cd336c40d49e12729844b7cb32, type: 3}
+  m_Name: PC
+  m_EditorClassIdentifier: Assembly-CSharp::Data.TutorData
+  <Sequence>k__BackingField:
+  - Actions:
+    - rid: 4204129410323054672
+    Tasks: []
+  - Actions:
+    - rid: 4204129410323054673
+    - rid: 4204129410323054675
+    Tasks:
+    - rid: 4204129410323054674
+  references:
+    version: 2
+    RefIds:
+    - rid: 4204129410323054672
+      type: {class: ActivateObjectsAction, ns: Systems.SequenceActions, asm: Assembly-CSharp}
+      data:
+        _active: 1
+        _objectIds:
+        - 71ff479c-1a67-454c-a376-234bc69d0179
+    - rid: 4204129410323054673
+      type: {class: StartQuestAction, ns: Systems.SequenceActions, asm: Assembly-CSharp}
+      data:
+        _quest: {fileID: 11400000, guid: a9e9c62c3d64ab84c976824ede64ab0c, type: 2}
+    - rid: 4204129410323054674
+      type: {class: KeyPressTask, ns: Systems.Tasks, asm: Assembly-CSharp}
+      data:
+        _action: {fileID: -976601615030702448, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+    - rid: 4204129410323054675
+      type: {class: ActivateObjectsAction, ns: Systems.SequenceActions, asm: Assembly-CSharp}
+      data:
+        _active: 0
+        _objectIds:
+        - 71ff479c-1a67-454c-a376-234bc69d0179

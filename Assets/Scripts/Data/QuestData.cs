@@ -13,13 +13,13 @@ namespace Data
     {
         [field: SerializeField,Title("Quest Id"),HideLabel, InfoBox("$" + nameof(HeaderPreview))] public int Id { get; private set; }
         public string HeaderPreview => LocalizationManager.GetStringFromKey("quest_header_" + Id);
-        [field: SerializeField, Scene] public bool IsPermanent { get; private set; } = true;
+        [field: SerializeField] public bool IsPermanent { get; private set; } = true;
         [field: Title("Scene Settings"), SerializeField, Scene] public string Scene { get; private set; }
         [field: SerializeField, Dropdown(nameof(_layers))] public int Layer { get; private set; }
         
         private int[] _layers = {0,1,2};
 
-        [field: Title("Sequence"),SerializeField] public List<QuestElement> Sequence { get; private set; }
+        [field: Title("Sequence"),SerializeField] public List<SequenceElement> Sequence { get; private set; }
         
         [field: Title("Actions"), SerializeReference] 
         public List<ISequenceAction> OnComplete{ get; private set; }
@@ -30,7 +30,7 @@ namespace Data
     [DeclareHorizontalGroup("horizontal")]
     [DeclareBoxGroup("horizontal/one", Title = "Action")]
     [DeclareBoxGroup("horizontal/two", Title = "Conditions")]
-    public struct QuestElement
+    public struct SequenceElement
     {
         [SerializeReference, HideLabel, Group("horizontal/one")] public List<ISequenceAction> Actions;
         [SerializeReference, HideLabel, Group("horizontal/two")] public List<ITask> Tasks;

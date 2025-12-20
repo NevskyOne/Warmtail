@@ -110,6 +110,7 @@ namespace Entities.UI
         
         public void Update()
         {
+            if (_createdMarks == null) return;
             foreach (var mark in _createdMarks)
             {
                 CalculateMarksPositions(mark.Value);

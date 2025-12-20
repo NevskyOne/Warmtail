@@ -74,7 +74,11 @@ namespace Entities.Localization
             SetValuesForTextsId();
         }
 #endif
-    
+        public void Start()
+        {
+            SetValuesForTextsId();
+        }
+        
         public static void SetValuesForTextsId()
         {
             foreach (var tableName in NameToGid.Keys)

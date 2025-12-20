@@ -1,53 +1,59 @@
-using System;
-using System.Collections.Generic;
+using AYellowpaper.SerializedCollections;
 using Data;
 using Data.Player;
-using Interfaces;
 using UnityEngine;
-using UnityEngine.Events;
+using UnityEngine.InputSystem;
 using Zenject;
 
 namespace Systems.Tutorial
 {
     public class TutorialSystem : MonoBehaviour
     {
-        [SerializeField] private List<TutorStep> _steps;
-        public List<TutorStep> Steps => _steps;
-        private int _currentIndex;
+        [SerializeField] private SerializedDictionary<string, TutorData> _tutors;
 
-        [Inject] private GlobalData _globalData;
+        private int _currentIndex;
+        private TutorData _currentTutor;
+        private GlobalData _globalData;
+        private PlayerInput _input;
+        
+        [Inject]
+        private void Construct(GlobalData globalData, PlayerInput input)
+        {
+            _globalData = globalData;
+            _input = input;
+            _currentIndex = _globalData.Get<SavablePlayerData>().TutorState;
+        }
         
         private void Start()
         {
-            _currentIndex = _globalData.Get<SavablePlayerData>().TutorState;
-            foreach (var step in _steps)
+            _tutors.TryGetValue(_input.currentControlScheme, out _currentTutor);
+            if (!_currentTutor) return;
+            for (int i = 0; i < _currentIndex; i++)
             {
-                foreach (var stepEvent in step.Events)
-                {
-                    step.Trigger.Event += stepEvent.Invoke;
-                }
-                step.Trigger.Event += IterateNewStep;
+                _currentTutor.Sequence[i].Actions.ForEach(x => x.Invoke());
             }
-            if(_steps.Count > 0)
-                _steps[_currentIndex].Trigger.Activate();
-        }
 
-        private void IterateNewStep()
-        {
-            _steps[_currentIndex].Trigger.Deactivate();
-            if (_currentIndex < _steps.Count - 1)
+            if (_currentTutor.Sequence[_currentIndex].Tasks.Count > 0)
             {
-                _currentIndex++;
-                _steps[_currentIndex].Trigger.Activate();
-                _globalData.Edit<SavablePlayerData>(data => data.TutorState = _currentIndex);
+                foreach (var task in _currentTutor.Sequence[_currentIndex].Tasks)
+                {
+                    task.Activate();
+                    task.OnComplete += TryIterateSequence;
+                }
             }
+            else
+                TryIterateSequence();
         }
-    }
-    
-    [Serializable]
-    public struct TutorStep
-    { 
-        [SerializeReference] public ITutorTrigger Trigger;
-        [SerializeField] public List<UnityEvent> Events; 
+        
+        public void TryIterateSequence()
+        {
+            var state = _globalData.Get<SavablePlayerData>().TutorState;
+            SequenceIterationSystem.TryIterateSequence(_currentTutor.Sequence, state,
+                x =>
+                {
+                    print(x);
+                    _globalData.Edit<SavablePlayerData>(playerData => playerData.TutorState = _currentIndex);
+                });
+        }
     }
 }

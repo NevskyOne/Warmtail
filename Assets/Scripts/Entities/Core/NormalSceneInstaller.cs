@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using Data.Player;
-using EditorOnly;
 using Entities.PlayerScripts;
 using Entities.UI;
 using Interfaces;
@@ -30,14 +29,12 @@ namespace Entities.Core
         [SerializeField] private SwarmController _swarmController;
         [SerializeField] private FreezeVisuals _freezeVisuals;
         [SerializeField] private QuestVisuals _questVisuals;
+        private QuestSystem _questSystem = new();
        
         public override void InstallBindings()
         {
             Container.Bind<SwarmController>().FromInstance(_swarmController).AsSingle();
             Container.Bind<SurfacingSystem>().FromInstance(_surfacingSystem).AsSingle();
-            Container.Bind<DialogueSystem>().FromNew().AsSingle();
-            Container.Bind<WarmthSystem>().FromNew().AsSingle();
-            Container.Bind<QuestSystem>().FromNew().AsSingle();
             Container.Bind<PlayerConfig>().FromInstance(_playerConfig).AsSingle();
             Container.Bind<Player>().FromInstance(_player).AsSingle();
             Container.Bind<PlayerInput>().FromInstance(_playerInput).AsSingle();
@@ -48,9 +45,12 @@ namespace Entities.Core
             Container.Bind<CinemachineCamera>().FromInstance(_cam).AsSingle();
             Container.Bind<FreezeVisuals>().FromInstance(_freezeVisuals).AsSingle();
             Container.Bind<QuestVisuals>().FromInstance(_questVisuals).AsSingle();
-           
-            Container.Inject(new KeysDebug());
-            Container.Inject(new WarmthSystem());
+            
+            Container.Bind<DialogueSystem>().FromNew().AsSingle();
+            Container.Bind<WarmthSystem>().FromNew().AsSingle();
+            Container.Bind<DailySystem>().FromNew().AsSingle();
+            Container.Bind<QuestSystem>().FromInstance(_questSystem).AsSingle();
+            Container.Inject(_questSystem);
             
             Container.Bind<List<IAbility>>()
                 .FromInstance(_playerConfig.Abilities)

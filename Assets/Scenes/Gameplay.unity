@@ -15165,7 +15165,7 @@ GameObject:
   - component: {fileID: 295732115}
   - component: {fileID: 295732116}
   m_Layer: 0
-  m_Name: Freeze
+  m_Name: FreezeVisuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34086,35 +34086,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbd1593d100a4a72842abe252e009cd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entities.Triggers.AddEventToQuest
-  _system: {fileID: 0}
-  _quest: {fileID: 11400000, guid: 78aa2b19327b20d4d808476383c995b6, type: 2}
-  _event:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 631191971}
-        m_TargetAssemblyTypeName: Entities.Triggers.UnityEventTrigger, Assembly-CSharp
-        m_MethodName: ChangeState
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Entities.NPC.QuestSystem, Assembly-CSharp
-        m_MethodName: StartQuest
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 0c7633a663c55d740b05338e9a5352e6, type: 2}
-          m_ObjectArgumentAssemblyTypeName: Data.QuestData, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
 --- !u!1001 &640513224
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39699,6 +39670,7 @@ GameObject:
   - component: {fileID: 762961391}
   - component: {fileID: 762961393}
   - component: {fileID: 762961392}
+  - component: {fileID: 762961394}
   m_Layer: 5
   m_Name: WASD
   m_TagString: Untagged
@@ -39764,6 +39736,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 762961390}
   m_CullTransparentMesh: 1
+--- !u!114 &762961394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762961390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af2f3f295d904a1496486c18c69a4958, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Entities.Probs.SavableStateObject
+  _id:
+    Value: 71ff479c-1a67-454c-a376-234bc69d0179
 --- !u!1001 &765896859
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42095,23 +42081,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbd1593d100a4a72842abe252e009cd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entities.Triggers.AddEventToQuest
-  _system: {fileID: 0}
-  _quest: {fileID: 11400000, guid: 3fe2484c1014a8c45a7a34eebb84f64f, type: 2}
-  _event:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1256471015}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
 --- !u!1 &812994766
 GameObject:
   m_ObjectHideFlags: 0
@@ -42424,50 +42393,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6285138707954580736, guid: e9b026b4814dacf47876df6d4442193b, type: 3}
   m_PrefabInstance: {fileID: 825000496}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &832871015
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 832871016}
-  - component: {fileID: 832871017}
-  m_Layer: 0
-  m_Name: Daily
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &832871016
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 832871015}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1204636205}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &832871017
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 832871015}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e918622c4741eb4d97195e26abe219f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Systems.Daily
 --- !u!1 &835553914
 GameObject:
   m_ObjectHideFlags: 0
@@ -56798,23 +56723,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbd1593d100a4a72842abe252e009cd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entities.Triggers.AddEventToQuest
-  _system: {fileID: 0}
-  _quest: {fileID: 11400000, guid: 94b21be415ce2f04bbab2d67ce80ca55, type: 2}
-  _event:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1096018993}
-        m_TargetAssemblyTypeName: Entities.NPC.SpeakableCharacter, Assembly-CSharp
-        m_MethodName: set_Graph
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: fa1de6729dfca7d4e9860b99f5c7c47d, type: 2}
-          m_ObjectArgumentAssemblyTypeName: Data.Nodes.DialogueGraph, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1001 &1098156123
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -59455,18 +59363,17 @@ Transform:
   m_Children:
   - {fileID: 2050093930}
   - {fileID: 424214787}
+  - {fileID: 1634806254}
+  - {fileID: 1469490764}
   - {fileID: 1836109678}
+  - {fileID: 55780066}
+  - {fileID: 1943702222}
   - {fileID: 952794402}
   - {fileID: 2122345}
   - {fileID: 1692990483}
-  - {fileID: 1634806254}
-  - {fileID: 55780066}
-  - {fileID: 1469490764}
-  - {fileID: 1483867788}
-  - {fileID: 1943702222}
-  - {fileID: 832871016}
   - {fileID: 295732115}
   - {fileID: 1855422054}
+  - {fileID: 1483867788}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1207031595
@@ -61624,23 +61531,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbd1593d100a4a72842abe252e009cd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entities.Triggers.AddEventToQuest
-  _system: {fileID: 0}
-  _quest: {fileID: 11400000, guid: 7f69db8cb1a15ac448d53bbe9c1f9c58, type: 2}
-  _event:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1233405732}
-        m_TargetAssemblyTypeName: Entities.NPC.SpeakableCharacter, Assembly-CSharp
-        m_MethodName: set_Graph
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 9c1fedb754dd8bf468047a43990dabb3, type: 2}
-          m_ObjectArgumentAssemblyTypeName: Data.Nodes.DialogueGraph, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1233405734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80355,7 +80245,7 @@ GameObject:
   - component: {fileID: 1634806254}
   - component: {fileID: 1634806255}
   m_Layer: 0
-  m_Name: Tutorial
+  m_Name: TutorialSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80388,274 +80278,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d62ac56deb95144aa09c76180e7bd58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Systems.Tutorial.TutorialSystem
-  _steps:
-  - Trigger:
-      rid: 1601399705563299920
-    Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2122346}
-          m_TargetAssemblyTypeName: Entities.UI.MonologueVisuals, Assembly-CSharp
-          m_MethodName: RequestSingleLine
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 30
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 762961390}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 1292111649}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - Trigger:
-      rid: 1601399705563299922
-    Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 762961390}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - Trigger:
-      rid: 1601399705563299923
-    Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2122346}
-          m_TargetAssemblyTypeName: Entities.UI.MonologueVisuals, Assembly-CSharp
-          m_MethodName: RequestSingleLine
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 31
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 474870389}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 1959002005}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - Trigger:
-      rid: 1601399705563299924
-    Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 474870389}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - Trigger:
-      rid: 1601399705563299925
-    Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2122346}
-          m_TargetAssemblyTypeName: Entities.UI.MonologueVisuals, Assembly-CSharp
-          m_MethodName: RequestSingleLine
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 32
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 1403555672}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 281163771}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - Trigger:
-      rid: 1601399705563299926
-    Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1403555672}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - Trigger:
-      rid: 1601399705563299927
-    Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2122346}
-          m_TargetAssemblyTypeName: Entities.UI.MonologueVisuals, Assembly-CSharp
-          m_MethodName: RequestSingleLine
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 33
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 2017717863}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 1023618393}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - Trigger:
-      rid: 1601399705563299928
-    Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2017717863}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  references:
-    version: 2
-    RefIds:
-    - rid: 1601399705563299920
-      type: {class: RealTrigger, ns: Systems.Tutorial, asm: Assembly-CSharp}
-      data:
-        _target: {fileID: 1292111649}
-    - rid: 1601399705563299922
-      type: {class: KeyBindTrigger, ns: Systems.Tutorial, asm: Assembly-CSharp}
-      data:
-        _actionRef: {fileID: -976601615030702448, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
-    - rid: 1601399705563299923
-      type: {class: RealTrigger, ns: Systems.Tutorial, asm: Assembly-CSharp}
-      data:
-        _target: {fileID: 1959002005}
-    - rid: 1601399705563299924
-      type: {class: KeyBindTrigger, ns: Systems.Tutorial, asm: Assembly-CSharp}
-      data:
-        _actionRef: {fileID: 4602290827261701698, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
-    - rid: 1601399705563299925
-      type: {class: RealTrigger, ns: Systems.Tutorial, asm: Assembly-CSharp}
-      data:
-        _target: {fileID: 281163771}
-    - rid: 1601399705563299926
-      type: {class: KeyBindTrigger, ns: Systems.Tutorial, asm: Assembly-CSharp}
-      data:
-        _actionRef: {fileID: 7562409743370973709, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
-    - rid: 1601399705563299927
-      type: {class: RealTrigger, ns: Systems.Tutorial, asm: Assembly-CSharp}
-      data:
-        _target: {fileID: 1023618393}
-    - rid: 1601399705563299928
-      type: {class: KeyBindTrigger, ns: Systems.Tutorial, asm: Assembly-CSharp}
-      data:
-        _actionRef: {fileID: -3218134202904356782, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  _tutors:
+    _serializedList:
+    - Key: Keyboard&Mouse
+      Value: {fileID: 11400000, guid: 7aa1453e52b6fd147b0948e75758a24f, type: 2}
 --- !u!1001 &1644510635
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -80739,35 +80365,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbd1593d100a4a72842abe252e009cd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entities.Triggers.AddEventToQuest
-  _system: {fileID: 0}
-  _quest: {fileID: 11400000, guid: a9e9c62c3d64ab84c976824ede64ab0c, type: 2}
-  _event:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 328641787}
-        m_TargetAssemblyTypeName: Entities.NPC.SpeakableCharacter, Assembly-CSharp
-        m_MethodName: set_Graph
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: f6ce9fc218d9c4d408f93ce1f98f4283, type: 2}
-          m_ObjectArgumentAssemblyTypeName: Data.Nodes.DialogueGraph, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 328641787}
-        m_TargetAssemblyTypeName: Entities.NPC.SpeakableCharacter, Assembly-CSharp
-        m_MethodName: SaveNpcState
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1001 &1649046335
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -104008,6 +103605,7 @@ GameObject:
   - component: {fileID: 2017717864}
   - component: {fileID: 2017717866}
   - component: {fileID: 2017717865}
+  - component: {fileID: 2017717867}
   m_Layer: 5
   m_Name: QE
   m_TagString: Untagged
@@ -104073,6 +103671,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2017717863}
   m_CullTransparentMesh: 1
+--- !u!114 &2017717867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017717863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af2f3f295d904a1496486c18c69a4958, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Entities.Probs.SavableStateObject
+  _id:
+    Value: c9622f9e-9822-4adc-87d6-dd5652746d29
 --- !u!1001 &2018412704
 PrefabInstance:
   m_ObjectHideFlags: 0
