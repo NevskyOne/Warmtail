@@ -12,7 +12,7 @@ namespace Entities.Triggers
 {
     public class MonologueTrigger : SavableStateObject, IEventInvoker
     {
-        [SerializeField] private DialogueGraph _graph;
+        [SerializeField] private RuntimeDialogueGraph _graph;
         [field : SerializeField] public List<UnityEvent> Actions { get; set; }
         [Inject] private MonologueVisuals _monologueVisuals;
         [Inject] private GlobalData _data;

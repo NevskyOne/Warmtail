@@ -1,4 +1,6 @@
-﻿namespace Interfaces
+﻿using Data.Nodes;
+
+namespace Interfaces
 {
     public interface ITextVisual
     {

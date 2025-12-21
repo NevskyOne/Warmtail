@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using Data;
 using Data.Nodes;
 using Interfaces;
 using UnityEngine.InputSystem;
@@ -8,16 +10,17 @@ namespace Systems
     
     public class DialogueSystem
     {
-        private DialogueGraph _dialogueGraph;
+        private RuntimeDialogueGraph _dialogueGraph;
         private DiContainer _diContainer;
         private ITextVisual _visuals;
-
-        public ITextVisual Visuals => _visuals;
-
         private PlayerInput _input;
-
         private string _prevActionMap;
-        public DialogueGraph DialogueGraph => _dialogueGraph;
+        private Dictionary<string, RuntimeNode> _nodeLookup = new();
+        private RuntimeNode _currentNode;
+        
+        public ITextVisual Visuals => _visuals;
+        
+        public RuntimeDialogueGraph DialogueGraph => _dialogueGraph;
         public IEventInvoker Character { get; private set; }
 
         [Inject]
@@ -29,40 +32,43 @@ namespace Systems
         
         public void RequestNewNode()
         {
-            if (_dialogueGraph != null && _dialogueGraph.Current != null)
+            if (_dialogueGraph != null && _currentNode!= null)
             {
                 ActivateNewNode();
             }
         }
         
-        public void StartDialogue(DialogueGraph graph, ITextVisual visual, IEventInvoker character = null)
+        public void StartDialogue(RuntimeDialogueGraph graph, ITextVisual visual, IEventInvoker character = null)
         {
-            if(graph.StartNode == null) return;
+            if(graph.EntryNodeId == null) return;
+            graph.AllNodes.ForEach(x => _nodeLookup.Add(x.NodeId, x));
             _visuals = visual;
             _visuals.ShowVisuals();
             Character = character;
             _prevActionMap = "Player";
             _input.SwitchCurrentActionMap("Dialogue");
             _dialogueGraph = graph;
-            _dialogueGraph.Current = _dialogueGraph.StartNode;
+            _currentNode = _nodeLookup[_dialogueGraph.EntryNodeId];
             SetNewNode();
             ActivateNewNode();
-            
         }
 
-        public void SetNewNode(string portName = "_exit")
+        public void SetNewNode(string portName = "out")
         {
-            _dialogueGraph.Current = (BaseNode)_dialogueGraph.Current.GetOutputPort(portName).Connection.node;
+            var nextNode = _currentNode.NextNodeIds.Find(x => x == portName);
+            if(nextNode != null) _currentNode = _nodeLookup[nextNode];
+            else EndDialogue();
         }
 
         public void ActivateNewNode()
         {
-            _diContainer.Inject(_dialogueGraph.Current);
-            _dialogueGraph.Current.Activate();
+            _diContainer.Inject(_currentNode);
+            _currentNode.Activate();
         }
         
-        public void EndDialogue()
+        private void EndDialogue()
         {
+            _nodeLookup.Clear();
             Character = null;
             _dialogueGraph = null;
             _visuals.HideVisuals();

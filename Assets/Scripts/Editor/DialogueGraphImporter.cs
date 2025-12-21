@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Data;
 using Data.Nodes;
+using Entities.Localization;
+using Systems;
 using Unity.GraphToolkit.Editor;
 using UnityEditor.AssetImporters;
 using UnityEngine;
@@ -25,39 +27,29 @@ namespace Editor
             }
 
             var startNode = editorGraph.GetNodes().OfType<StartNode>().FirstOrDefault();
+            runtimeGraph.DialogueId = NodePortHelper.GetPortValue<int>(startNode?.GetInputPortByName("Dialogue Id"));
             var entryPort = startNode?.GetOutputPorts().FirstOrDefault()?.firstConnectedPort;
             if(entryPort != null) runtimeGraph.EntryNodeId = nodeIdMap[entryPort.GetNode()];
 
             foreach (var iNode in editorGraph.GetNodes())
             {
                 if (iNode is StartNode or EndNode) continue;
-            }
-        }
 
-        private void ProcessNode(Node node, RuntimeNode runtimeNode, ref Dictionary<INode, string> nodeIdMap)
-        {
-            var fields = runtimeNode.GetType().GetFields();
-            for (int i = 0; i < fields.Length; i++)
-            {
-                //fields[i].SetValue(GetPortValue<>(node.GetInputPort(i)));
-            }
-        }
-
-        private T GetPortValue<T>(IPort port)
-        {
-            if (port == null) return default;
-
-            if (port.isConnected)
-            {
-                if (port.firstConnectedPort.GetNode() is IVariableNode variableNode)
+                RuntimeNode runtimeNode = iNode switch
                 {
-                    variableNode.variable.TryGetDefaultValue(out T value);
-                    return value;
-                }
+                    TextNode _  => new Data.Nodes.TextNode {NodeId = nodeIdMap[iNode]},
+                    ActionNode _  => new Data.Nodes.ActionNode{NodeId = nodeIdMap[iNode]},
+                    ChoiceNode _  => new Data.Nodes.ChoiceNode {NodeId = nodeIdMap[iNode]},
+                    ConditionNode _  => new Data.Nodes.ConditionNode {NodeId = nodeIdMap[iNode]},
+                    SetNode _  => new Data.Nodes.SetNode {NodeId = nodeIdMap[iNode]},
+                };
+                runtimeNode.Setup(iNode, nodeIdMap);
+                runtimeGraph.AllNodes.Add(runtimeNode);
             }
 
-            port.TryGetValue(out T fallBackValue);
-            return fallBackValue;
+            LocalizationManager.UploadToSheets(runtimeGraph);
+            ctx.AddObjectToAsset("RuntimeData", runtimeGraph);
+            ctx.SetMainObject(runtimeGraph);
         }
     }
 }

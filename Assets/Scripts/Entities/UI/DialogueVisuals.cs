@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Data;
+using Data.Nodes;
 using EasyTextEffects;
 using EasyTextEffects.Effects;
 using Entities.Localization;
@@ -94,7 +95,7 @@ namespace Entities.UI
             var character = _holder.Characters.Find(x => x.Character == node.Character);
 
             var text = LocalizationManager.GetStringFromKey(
-                character.Character + "_" + _system.DialogueGraph.DialogueId + "_" + node.TextId);
+                character.Character + "_" + _system.DialogueGraph.DialogueId + "_" + node.NodeId);
             
             if (_audioSource != null)
             {
@@ -118,13 +119,13 @@ namespace Entities.UI
             _boxTextEffect.StartOnStartEffects();
         }
         
-        public async void ShowOptions(List<int> choices)
+        public async void ShowOptions(RuntimeNode node, int choiceCount)
         {
             _input.SwitchCurrentActionMap("UI");
-            foreach (var choiceInd in choices)
+            for (int i = 0; i < choiceCount; i++)
             {
                 var text = LocalizationManager.GetStringFromKey(
-                    "player_" + _system.DialogueGraph.DialogueId + "_" + choiceInd);
+                    $"player_{_system.DialogueGraph.DialogueId}_{node.NodeId}_{i}");
                 var boxObj = await InstantiateAsync(_boxOptionsPrefab, _boxOptionsGroup);
                 boxObj[0].GetComponentInChildren<TMP_Text>().text = text;
                 _diContainer.Inject(boxObj[0]);

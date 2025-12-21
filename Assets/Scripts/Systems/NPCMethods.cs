@@ -10,16 +10,16 @@ namespace Systems
         [Inject] private ShoppingManager _shoppingManager;
         [Inject] private GlobalData _globalData;
 
-        public void OpenNPCShop(int num) => _shoppingManager.OpenNPCShop((Characters)num);
+        public void OpenNPCShop(int num) => _shoppingManager.OpenNPCShop((Character)num);
 
-        public void RaiseFriendship(int num) => RaiseFriendship((Characters)num);
-        public void RaiseFriendship(Characters character)
+        public void RaiseFriendship(int num) => RaiseFriendship((Character)num);
+        public void RaiseFriendship(Character character)
         {
             CheckNpcData(character);
             _globalData.Edit<NPCData>(data =>{data.Levels[character] ++;});
         }
 
-        public void CheckNpcData(Characters character)
+        public void CheckNpcData(Character character)
         {
             if (_globalData.Get<NPCData>().Levels == null)
                 _globalData.Edit<NPCData>(data =>{data.Levels = new();});

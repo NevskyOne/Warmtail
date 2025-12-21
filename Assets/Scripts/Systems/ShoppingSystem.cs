@@ -13,7 +13,7 @@ namespace Systems
         [Inject] private GlobalData _globalData;
         [Inject] private ShoppingManager _shoppingManager;
         
-        public void BuyItem(HouseItemData item, Characters character, bool isLast)
+        public void BuyItem(HouseItemData item, Character character, bool isLast)
         {
             int shells = _globalData.Get<SavablePlayerData>().Shells;
             if (shells < item.Price) Debug.Log("не хватает ракушек!");
@@ -31,7 +31,7 @@ namespace Systems
                 });
             }
         }
-        private void PurchaseLastItem(Characters character)
+        private void PurchaseLastItem(Character character)
         {
             _globalData.Edit<NPCData>(data => {data.BoughtLastItem[character] = true;});
             _shoppingManager.OpenNPCShop(character);

@@ -30,7 +30,7 @@ namespace Entities.UI
             _dialogueSystem = dialogueSystem;
         }
 
-        public void StartMonologue(DialogueGraph graph, IEventInvoker invoker)
+        public void StartMonologue(RuntimeDialogueGraph graph, IEventInvoker invoker)
         {
             _dialogueSystem.StartDialogue(graph, this, invoker);
             ProcessDialogue();
@@ -63,7 +63,7 @@ namespace Entities.UI
         {
             _currentText.localPosition = ChooseRandomPosition();
             _currentText.GetComponent<TMP_Text>().text = 
-                LocalizationManager.GetStringFromKey("cutscene_"+ _dialogueSystem.DialogueGraph.DialogueId+ "_" + node.TextId);
+                LocalizationManager.GetStringFromKey("cutscene_"+ _dialogueSystem.DialogueGraph.DialogueId+ "_" + node.NodeId);
             _currentText.GetComponent<TextEffect>().Refresh();
         }
         

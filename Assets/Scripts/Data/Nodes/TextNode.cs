@@ -1,34 +1,37 @@
+using System.Collections.Generic;
 using Systems;
-using UnityEngine;
+using Unity.GraphToolkit.Editor;
 using Zenject;
 
-[NodeWidth(330)]
-public class TextNode : BaseNode
+namespace Data.Nodes
 {
-    [Input, SerializeField] private int _entry;
-    [Output, SerializeField] private int _exit;
-    [SerializeField] private int _textId;
-    [SerializeField] private Characters _character;
-    [SerializeField] private CharactersEmotions _emotion;
-    [SerializeField] private string _displayName;
-
-    public int Entry => _entry;
-
-    public int Exit => _exit;
-
-    public int TextId => _textId;
-
-    public Characters Character => _character;
-
-    public CharactersEmotions Emotion => _emotion;
-
-    public string DisplayName => _displayName;
-    
-    [Inject] private DialogueSystem _dialogueSystem;
-
-    public override void Activate()
+    public class TextNode : RuntimeNode
     {
-        _dialogueSystem.Visuals.RequestNewLine(this);
-        _dialogueSystem.SetNewNode();
+        public string Text { get; private set; }
+
+        public Character Character { get; private set; }
+
+        public CharacterEmotion Emotion { get; private set; }
+
+        public string DisplayName { get; private set; }
+    
+        [Inject] private DialogueSystem _dialogueSystem;
+
+        public override void Setup(INode node, Dictionary<INode, string> nodeIdMap)
+        {
+            var nextNode = node.GetOutputPortByName("out")?.firstConnectedPort;
+            if(nextNode != null)
+                NextNodeIds.Add(nodeIdMap[nextNode.GetNode()]);
+            Character = NodePortHelper.GetPortValue<Character>(node.GetInputPortByName("Character"));
+            Emotion = NodePortHelper.GetPortValue<CharacterEmotion>(node.GetInputPortByName("Emotion"));
+            DisplayName = NodePortHelper.GetPortValue<string>(node.GetInputPortByName("Override Name"));
+            Text = NodePortHelper.GetPortValue<string>(node.GetInputPortByName("Text"));
+        }
+
+        public override void Activate()
+        {
+            _dialogueSystem.Visuals.RequestNewLine(this);
+            _dialogueSystem.SetNewNode();
+        }
     }
 }

@@ -6,7 +6,8 @@ namespace Data
 {
     public class RuntimeDialogueGraph : ScriptableObject
     {
-        public string EntryNodeId {get; set;}
+        [field: SerializeField] public string EntryNodeId {get; set;}
         public List<RuntimeNode> AllNodes { get; set; } = new();
+        [field: SerializeField] public int DialogueId { get; set; }
     }
 }

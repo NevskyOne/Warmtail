@@ -16,8 +16,8 @@ namespace Data
     [Serializable]
     public record CharacterConfig
     {
-        public Characters Character;
+        public Character Character;
         public AudioClip Sound;
-        public SerializedDictionary<CharactersEmotions, Sprite> EmotionSprites;
+        public SerializedDictionary<CharacterEmotion, Sprite> EmotionSprites;
     }
 }

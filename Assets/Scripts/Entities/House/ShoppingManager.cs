@@ -28,11 +28,11 @@ namespace Entities.NPC
         }
 
         //TEST
-        public void RaiseFriendship(int num) => _npcMethods.RaiseFriendship((Characters)num);
+        public void RaiseFriendship(int num) => _npcMethods.RaiseFriendship((Character)num);
 
 
-        public void OpenNPCShop(int num) => OpenNPCShop((Characters)num);
-        public void OpenNPCShop(Characters character)
+        public void OpenNPCShop(int num) => OpenNPCShop((Character)num);
+        public void OpenNPCShop(Character character)
         {
             _npcMethods.CheckNpcData(character);
 

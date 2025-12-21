@@ -1,9 +1,9 @@
-public enum Characters
+public enum Character
 {
-    player, tertilus, finix, octoboss, skyper, jelica
+    Player, Tertilus, Finix, Octoboss, Skyper, Jelica
 }
 
-public enum CharactersEmotions
+public enum CharacterEmotion
 {
     Happy, Sad, Surprised, Scared
 }

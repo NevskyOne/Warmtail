@@ -11,7 +11,7 @@ namespace Entities.House
     public class HouseManager : MonoBehaviour
     {
         [SerializeField] private ItemsHouseIdConf _itemsHouseIdConf;
-        [SerializeField] private SerializedDictionary<Characters,SpeakableCharacter> _npc;
+        [SerializeField] private SerializedDictionary<Character,SpeakableCharacter> _npc;
         [HideInInspector] public HouseItemData[] IdsForHouseItemsData;
         [Inject] private PlacementSystem _placementSystem; 
         [Inject] private GlobalData _globalData; 
@@ -31,7 +31,7 @@ namespace Entities.House
             _placementSystem.CancelAll();
         }
 
-        private void EnableNpc(Characters? character)
+        private void EnableNpc(Character? character)
         {
             if(character != null && _npc.ContainsKey(character.Value))
                 _npc[character.Value].ChangeState(true);

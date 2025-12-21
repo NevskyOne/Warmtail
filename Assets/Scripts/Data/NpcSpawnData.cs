@@ -7,6 +7,6 @@ namespace Data
     public class NpcSpawnData : ISavableData
     {
         public SerializedDictionary<int, int> NpcSpawnerData; //[character] = [idPrefab]
-        public Characters CurrentHomeNpc;
+        public Character CurrentHomeNpc;
     }
 }

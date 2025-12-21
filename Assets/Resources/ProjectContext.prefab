@@ -93,7 +93,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36340a6fd50c1e1469ff32c985fe25e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entities.Localization.LocalizationManager
-  _tableId: 1PEswgSetu71j068EhzqhuEPMUwGHdLbFa2sXZ9EeWAg
 --- !u!114 &6645744535049247407
 MonoBehaviour:
   m_ObjectHideFlags: 0

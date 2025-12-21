@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Globalization;
-using Data.Nodes;
 using Entities.Probs;
 using Entities.UI;
 using Interfaces;
@@ -14,7 +13,7 @@ namespace Entities.NPC
 {
     public class SpeakableCharacter : SavableStateObject, IInteractable, IWarmable, IEventInvoker
     {
-        [field: SerializeField] public DialogueGraph Graph { get; set; }
+        [field: SerializeField] public RuntimeDialogueGraph Graph { get; set; }
         [field: SerializeField] public List<UnityEvent> Actions { get; set; }
         [SerializeField, Range(0,1f)] private float _maxWarmPercent;
         [field: SerializeField] public bool CanWarm { get; set; } = true;
@@ -70,7 +69,7 @@ namespace Entities.NPC
 
         public void AddNpcToHome(int character)
         {
-            _globalData.Edit<NpcSpawnData>(data => data.CurrentHomeNpc = (Characters)character);
+            _globalData.Edit<NpcSpawnData>(data => data.CurrentHomeNpc = (Character)character);
         }
     }
     

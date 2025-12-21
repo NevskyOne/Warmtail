@@ -16,11 +16,11 @@ namespace Entities.UI
         [SerializeField] private string _currencyString;
 
         private ShopItem _shopItem;
-        private Characters _character;
+        private Character _character;
         [Inject] private ShoppingSystem _shoppingSystem;
         [Inject] private GlobalData _globalData;
 
-        public void Initialize(ShopItem shopItem, Characters character, bool interactable)
+        public void Initialize(ShopItem shopItem, Character character, bool interactable)
         {
             _button.interactable = interactable;
             if (!interactable) _icon.color = new (0.5f, 0.5f, 0.5f, 1f);
