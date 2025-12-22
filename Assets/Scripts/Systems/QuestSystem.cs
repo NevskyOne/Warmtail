@@ -18,7 +18,6 @@ namespace Systems
         [Inject]
         private void Construct(GlobalData globalData, QuestVisuals visuals)
         {
-            Debug.Log("quest system");
             _globalData = globalData;
             _questVisuals = visuals;
             foreach (var id in _globalData.Get<SavablePlayerData>().QuestIds)
@@ -32,8 +31,8 @@ namespace Systems
             if(!_globalData.Get<SavablePlayerData>().QuestIds.Keys.Contains(data.Id))
                 _globalData.Edit<SavablePlayerData>(playerData => playerData.QuestIds.Add(data.Id, questState));
 
-            if (data.Scene != SceneManager.GetActiveScene().name) return;
-            
+            if (data.Scene != SceneManager.GetActiveScene().path) return;
+
             _questVisuals.SpawnQuest(data);
             for (int i = 0; i < questState; i++)
             {

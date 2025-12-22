@@ -53,11 +53,12 @@ namespace Entities.UI
         public void SpawnQuest(QuestData data)
         {
             var newQuest = _diContainer.InstantiatePrefab(_questPrefab, _questHud).transform;
+            if (!newQuest) return;
             newQuest.GetChild(0).GetComponent<LocalizedText>().SetNewKey("quest_header_" + data.Id);
             newQuest.GetChild(1).GetComponent<LocalizedText>().SetNewKey("quest_desc_" + data.Id);
+            _createdQuests[data] = newQuest.gameObject;
+            _createdMarks[data] = new();
             CheckLayer(data, newQuest);
-            _createdQuests.Add(data, newQuest.gameObject);
-            _createdMarks.Add(data, new());
         }
 
         private void CheckLayer(QuestData data, Transform questObj)

@@ -87,8 +87,8 @@ namespace Systems.Abilities.Concrete
                 var hits = Physics2D.OverlapCircleAll(_playerTransform.position, currentRadius);
                 foreach (var hit in hits)
                 {
-                    if (hit.TryGetComponent<IWarmable>(out var warmable))
-                        warmable.WarmExplosion();
+                    if (hit.TryGetComponent<Warmable>(out var warmable))
+                        warmable.WarmComplete();
                 }
                 await UniTask.Yield();
             }
@@ -107,7 +107,7 @@ namespace Systems.Abilities.Concrete
             bool success = false;
             foreach (var hit in hits)
             {
-                if (hit.TryGetComponent<IWarmable>(out var warmable))
+                if (hit.TryGetComponent<Warmable>(out var warmable))
                 {
                     warmable.Warm();
                     success = true;

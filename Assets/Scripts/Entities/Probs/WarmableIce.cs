@@ -2,16 +2,16 @@
 using PrimeTween;
 using Systems;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.U2D;
 
 namespace Entities.Probs
 {
-    public class WarmableIce : MonoBehaviour, IWarmable
+    public class WarmableIce : Warmable
     {
         private static readonly int DissolveAmount = Shader.PropertyToID("_DissolveAmount");
         [SerializeField] private SpriteShapeRenderer _renderer;
-        [SerializeField] private int _warmCapacity;
-        private int _warm;
+        
         private ResettableTimer _timer;
         private Tween? _tween;
         private MaterialPropertyBlock _propertyBlock;
@@ -22,16 +22,12 @@ namespace Entities.Probs
             Reset();
         }
         
-        public void Warm()
+        public override void Warm()
         {
-            UpdateRenderer((_warmCapacity - _warm) * 1.0f / _warmCapacity,
-                (_warmCapacity - _warm - 1) * 1.0f / _warmCapacity);
-            _warm -= 1;
-            if (_warm <= 0)
-            {
-                WarmExplosion();
-            }
-            else
+            UpdateRenderer((_maxWarmthAmount - _warmthAmount) * 1.0f / _maxWarmthAmount,
+                (_maxWarmthAmount - _warmthAmount - _warmFactor) * 1.0f / _maxWarmthAmount);
+            base.Warm();
+            if(_warmthAmount > 0)
             {
                 if (_timer != null)
                     _timer.Start();
@@ -40,16 +36,16 @@ namespace Entities.Probs
             }
         }
 
-        public void WarmExplosion()
+        public override void WarmComplete()
         {
             _timer.Stop();
             Destroy(gameObject);
         }
 
-        public void Reset()
+        public override void Reset()
         {
-            UpdateRenderer((_warmCapacity - _warm) * 1.0f / _warmCapacity, 0);
-            _warm = _warmCapacity;
+            UpdateRenderer((_maxWarmthAmount - _warmthAmount) * 1.0f / _maxWarmthAmount, 0);
+            base.Reset();
         }
         
         private async void UpdateRenderer(float lastAmount, float newAmount)

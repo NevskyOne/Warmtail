@@ -5,15 +5,13 @@ using Systems;
 
 namespace Entities.Puzzle
 {
-    public class Lever : MonoBehaviour, IWarmable
+    public class Lever : Warmable
     {
-        [SerializeField] private int _warmCapacity;
         [SerializeField] private float _during;
         [SerializeField] private SpriteRenderer _spriteRenderer;
         [SerializeField] private Sprite _enableSprite;
         [SerializeField] private Sprite _disableSprite;
-
-        private int _warm;
+        
         private ResettableTimer _timerWarm;
 
         public static UnityEvent OnTurnedon = new();
@@ -24,27 +22,25 @@ namespace Entities.Puzzle
             Reset();
         }
 
-        public void Warm()
+        public override void Warm()
         {
-            if (_warm <= 0) return;
-            _warm -= 1;
-            if (_warm <= 0) WarmExplosion();
-            else 
+            base.Warm();
+            if(_warmthAmount > 0)
             {
-                if (_timerWarm == null) _timerWarm = new ResettableTimer(_during, TurnOff);
+                _timerWarm ??= new ResettableTimer(_during, TurnOff);
                 _timerWarm.Start();
             }
         }
 
-        public void WarmExplosion()
+        public override void WarmComplete()
         {
             OnTurnedon.Invoke();
             _spriteRenderer.sprite = _enableSprite;
         }
 
-        public void Reset()
+        public override void Reset()
         {
-            _warm = _warmCapacity;
+            base.Reset();
             _spriteRenderer.sprite = _disableSprite;
         }
 

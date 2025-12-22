@@ -586,7 +586,6 @@ GameObject:
   - component: {fileID: 586961673186772449}
   - component: {fileID: 2356475354616360923}
   - component: {fileID: 3687782231284160495}
-  - component: {fileID: 3400799402358772483}
   m_Layer: 5
   m_Name: Progress Text
   m_TagString: Untagged
@@ -712,16 +711,3 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &3400799402358772483
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7056393576454739538}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be22ae9941c092d4c9021bfca176d2bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Entities.Localization.LocalizedText
-  _key: quest_desc_0

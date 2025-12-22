@@ -4,22 +4,21 @@ using Interfaces;
 using PrimeTween;
 using Systems;
 using UnityEngine;
+using UnityEngine.Events;
 using Zenject;
 
 namespace Entities.Probs
 {
-    public class Shell : MonoBehaviour, IWarmable
+    public class Shell : Warmable
     {
         private static readonly int DissolveAmount = Shader.PropertyToID("_DissolveAmount");
-        [SerializeField] private int _warmCapacity;
         [SerializeField] private int _shellsAmount;
         private GlobalData _globalData;
-        private int _warm;
         private ResettableTimer _timer;
         private MaterialPropertyBlock _propertyBlock;
         private SpriteRenderer _renderer;
         private Tween? _tween;
-    
+ 
         [Inject]
         public void Construct(GlobalData globalData)
         {
@@ -32,8 +31,6 @@ namespace Entities.Probs
         {
             _propertyBlock = new();
             _renderer = GetComponent<SpriteRenderer>();
-            Reset();
-            
         }
 
         private void OnDestroy()
@@ -42,16 +39,12 @@ namespace Entities.Probs
             DailySystem.OnDiscardedResources -= DiscardShell;
         }
         
-        public void Warm()
+        public override void Warm()
         {
-            UpdateRenderer((_warmCapacity - _warm) * 1.0f / _warmCapacity,
-                (_warmCapacity - _warm - 1) * 1.0f / _warmCapacity);
-            _warm -= 1;
-            if (_warm == 0)
-            {
-                WarmExplosion();
-            }
-            else
+            UpdateRenderer((_maxWarmthAmount - _warmthAmount) * 1.0f / _maxWarmthAmount,
+                (_maxWarmthAmount - _warmthAmount - _warmFactor) * 1.0f / _maxWarmthAmount);
+            base.Warm();
+            if(_warmthAmount > 0)
             {
                 if (_timer != null)
                     _timer.Start();
@@ -60,7 +53,7 @@ namespace Entities.Probs
             }
         }
 
-        public void WarmExplosion()
+        public override void WarmComplete()
         {
             _globalData.Edit<SavablePlayerData>((playerData) =>
             {
@@ -73,10 +66,10 @@ namespace Entities.Probs
             Destroy(gameObject);
         }
         
-        public void Reset()
+        public override void Reset()
         {
-            UpdateRenderer((_warmCapacity - _warm) * 1.0f / _warmCapacity, 0);
-            _warm = _warmCapacity;
+            UpdateRenderer((_maxWarmthAmount - _warmthAmount) * 1.0f / _maxWarmthAmount, 0);
+            base.Reset();
         }
 
         private void LoadShell()

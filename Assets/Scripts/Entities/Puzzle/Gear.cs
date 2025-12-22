@@ -5,14 +5,12 @@ using Systems;
 
 namespace Entities.Puzzle
 {
-    public class Gear : MonoBehaviour, IWarmable
+    public class Gear : Warmable
     {
-        [SerializeField] private int _warmCapacity;
         [SerializeField] private SpriteRenderer _spriteRenderer;
         [SerializeField] private Sprite _twistingSprite;
         [SerializeField] private Sprite _untwistSprite;
-
-        private int _warm;
+        
         private int _gearId;
         private ResettableTimer _timerWarm;
 
@@ -24,17 +22,15 @@ namespace Entities.Puzzle
             Reset();
             GearsPuzzle.OnReseted.AddListener(Reset);
         }
-
-        public void Warm()
+        
+        public override void Warm()
         {
-            if (_warm <= 0) return;
-            _warm -= 1;
-            if (_warm <= 0) WarmExplosion();
-            else if (_timerWarm != null) _timerWarm.Start();
-            else _timerWarm = new ResettableTimer(_warmCapacity, WarmLost);
+            base.Warm();
+            if (_warmthAmount > 0 && _timerWarm != null) _timerWarm.Start();
+            else if(_warmthAmount > 0) _timerWarm = new ResettableTimer(_maxWarmthAmount, WarmLost);
         }
 
-        public void WarmExplosion() // twisting
+        public override void WarmComplete() // twisting
         {
             _spriteRenderer.sprite = _twistingSprite;
             OnTwisted.Invoke(_gearId);
@@ -42,12 +38,12 @@ namespace Entities.Puzzle
 
         private void WarmLost() // untwist
         {
-            if (_warm > 0) Reset();
+            if (_warmthAmount > 0) Reset();
         }
 
-        public void Reset() // untwist
+        public override void Reset() // untwist
         {
-            _warm = _warmCapacity;
+            base.Reset();
             _spriteRenderer.sprite = _untwistSprite;
         }
     }

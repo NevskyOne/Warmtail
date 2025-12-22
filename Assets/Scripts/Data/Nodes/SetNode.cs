@@ -102,12 +102,13 @@ namespace Data.Nodes
     }
 
     [Serializable]
-    public struct SetStruct
+    public class SetStruct
     {
         public string VarName;
         public MathOperation Operation;
         public string Value;
     }
-
+    
+    [Serializable]
     public enum MathOperation {Assign, Add, Subtract, Multiply, Divide}
 }
