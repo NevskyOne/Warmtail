@@ -28,7 +28,7 @@ jobs:
           echo "🔍 Fetching tags..."
           git fetch --tags
 
-          LAST_TAG=$(git tag --list 'v*' --sort=-v:refname | head -n 1)
+          LAST_TAG=$(git tag --list '[0-9]*.[0-9]*' --sort=-v:refname | head -n 1)
 
           if [ -z "$LAST_TAG" ]; then
             echo "ℹ️ No tags found, using base 0.0"

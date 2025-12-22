@@ -144,13 +144,10 @@ namespace Entities.Localization
 
         private static SheetsService CreateService()
         {
-            GoogleCredential credential;
-            using (var stream = new FileStream("Assets/Settings/credentials.json", FileMode.Open))
-            {
-                credential = GoogleCredential.FromStream(stream)
-                    .CreateScoped(SheetsService.Scope.Spreadsheets);
-            }
-
+            var credential = GoogleCredential
+                .GetApplicationDefault()
+                .CreateScoped(SheetsService.Scope.Spreadsheets);
+        
             return new SheetsService(new BaseClientService.Initializer
             {
                 HttpClientInitializer = credential,
