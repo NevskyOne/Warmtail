@@ -1,6 +1,7 @@
 using Systems.Abilities;
 using Systems.Abilities.Concrete;
 using UnityEngine;
+using Interfaces;
 using Zenject;
 
 namespace Entities.Puzzle
@@ -11,7 +12,9 @@ namespace Entities.Puzzle
         private int _triggerId;
         private bool _isActive = true;
         private DrawPuzzle _drawPuzzle;
-        [Inject] private AbilitiesManager _abilitiesManager;
+        [Inject] [SerializeField] private AbilitiesManager _abilitiesManager;
+        [SerializeField] private IAbilityExtended i1;
+        [SerializeField] private IAbilityExtended i2;
         
         public void Initialize(int id, DrawPuzzle puzzle)
         {
@@ -22,9 +25,13 @@ namespace Entities.Puzzle
 
         private void OnTriggerEnter2D(Collider2D other)
         {
+            Debug.Log("Ira collider " );
+            i1 = _abilitiesManager.ActiveAbility;
+            i2 = _abilitiesManager.ComboAbility;
             if (other.CompareTag("Player") && _abilitiesManager.ActiveAbility is WarmingAbility or DashAbility && 
                 _abilitiesManager.ComboAbility is WarmingAbility or DashAbility)
             {
+                Debug.Log("Ira collider player");
                 if (_drawPuzzle.TriggerConform(_triggerId, _isActive))
                 {
                     Disable();
