@@ -27,8 +27,7 @@ namespace Entities.NPC
         public void TakeQuest()
         {
             _globalData.Edit<WorldData>(data => data.SavableNpcState["2bb32deb-1b68-477a-b458-2cdec049ce57"] = 5);
-            Debug.Log("Ira 5");
-            _globalData.Edit<NpcSpawnData>(data => data.CurrentHomeNpc = Characters.tertilus);
+            _globalData.Edit<NpcSpawnData>(data => data.CurrentHomeNpc = Character.Tertilus);
         }
     }
 }
