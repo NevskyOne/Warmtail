@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Data.Nodes;
+using TriInspector;
 using UnityEngine;
 
 namespace Data
@@ -7,7 +8,7 @@ namespace Data
     public class RuntimeDialogueGraph : ScriptableObject
     {
         [field: SerializeField] public string EntryNodeId {get; set;}
-        public List<RuntimeNode> AllNodes { get; set; } = new();
+        [field: SerializeReference, ReadOnly] public List<RuntimeNode> AllNodes { get; set; }
         [field: SerializeField] public int DialogueId { get; set; }
     }
 }

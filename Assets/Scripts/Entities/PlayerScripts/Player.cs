@@ -127,6 +127,7 @@ namespace Entities.PlayerScripts
         
         public async void WakeUp()
         {
+            DisableAllAbilities();
             Animator.enabled = false;
             await UniTask.Delay(50);
             Animator.enabled = true;

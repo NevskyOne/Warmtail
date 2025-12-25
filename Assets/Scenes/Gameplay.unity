@@ -7381,17 +7381,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94d4ec781b32447ea1df47582e8c5c8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entities.Triggers.WarmEventTrigger
-  _id:
-    Value: 87c4b94f-5c4a-44c8-aeca-0e531e097783
-  _globalData: {fileID: 0}
-  <WarmFactor>k__BackingField: 0.1
-  <WarmEvent>k__BackingField:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  <WarmthAmount>k__BackingField: 1
-  <MaxWarmthAmount>k__BackingField: 1
-  _warm: 0
 --- !u!61 &218002496
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -41931,17 +41920,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94d4ec781b32447ea1df47582e8c5c8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entities.Triggers.WarmEventTrigger
-  _id:
-    Value: 52a8cc79-a359-4bf6-8e04-718c87918ae2
-  _globalData: {fileID: 0}
-  <WarmFactor>k__BackingField: 0.1
-  <WarmEvent>k__BackingField:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  <WarmthAmount>k__BackingField: 1
-  <MaxWarmthAmount>k__BackingField: 1
-  _warm: 0
 --- !u!114 &811469949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84667,17 +84645,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94d4ec781b32447ea1df47582e8c5c8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entities.Triggers.WarmEventTrigger
-  _id:
-    Value: a700592a-5164-4b42-b553-63401f3526c6
-  _globalData: {fileID: 0}
-  <WarmFactor>k__BackingField: 0.1
-  <WarmEvent>k__BackingField:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  <WarmthAmount>k__BackingField: 1
-  <MaxWarmthAmount>k__BackingField: 1
-  _warm: 0
 --- !u!61 &1790267877
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -108615,56 +108582,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8993835040725342029, guid: 5ecb33a813d6d2d42b1edbd921cae07b, type: 3}
       propertyPath: _id.Value
-      value: e6bf0ad9-c28a-4b69-888a-a363116664e3
+      value: c0a4e396-bc2b-4d82-8d44-a5455874d1a0
       objectReference: {fileID: 0}
     - target: {fileID: 8993835040725342029, guid: 5ecb33a813d6d2d42b1edbd921cae07b, type: 3}
-      propertyPath: <Actions>k__BackingField.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      propertyPath: <Graph>k__BackingField
       value: 
-      objectReference: {fileID: 1959002005}
-    - target: {fileID: 8993835040725342029, guid: 5ecb33a813d6d2d42b1edbd921cae07b, type: 3}
-      propertyPath: <Actions>k__BackingField.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1353704131}
-    - target: {fileID: 8993835040725342029, guid: 5ecb33a813d6d2d42b1edbd921cae07b, type: 3}
-      propertyPath: <Actions>k__BackingField.Array.data[1].m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8993835040725342029, guid: 5ecb33a813d6d2d42b1edbd921cae07b, type: 3}
-      propertyPath: <Actions>k__BackingField.Array.data[1].m_PersistentCalls.m_Calls.Array.data[3].m_Target
-      value: 
-      objectReference: {fileID: 648476694}
-    - target: {fileID: 8993835040725342029, guid: 5ecb33a813d6d2d42b1edbd921cae07b, type: 3}
-      propertyPath: <Actions>k__BackingField.Array.data[2].m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8993835040725342029, guid: 5ecb33a813d6d2d42b1edbd921cae07b, type: 3}
-      propertyPath: <Actions>k__BackingField.Array.data[2].m_PersistentCalls.m_Calls.Array.data[2].m_Target
-      value: 
-      objectReference: {fileID: 877077958}
-    - target: {fileID: 8993835040725342029, guid: 5ecb33a813d6d2d42b1edbd921cae07b, type: 3}
-      propertyPath: <Actions>k__BackingField.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8993835040725342029, guid: 5ecb33a813d6d2d42b1edbd921cae07b, type: 3}
-      propertyPath: <Actions>k__BackingField.Array.data[3].m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 688160441}
-    - target: {fileID: 8993835040725342029, guid: 5ecb33a813d6d2d42b1edbd921cae07b, type: 3}
-      propertyPath: <Actions>k__BackingField.Array.data[3].m_PersistentCalls.m_Calls.Array.data[3].m_Target
-      value: 
-      objectReference: {fileID: 328641787}
-    - target: {fileID: 8993835040725342029, guid: 5ecb33a813d6d2d42b1edbd921cae07b, type: 3}
-      propertyPath: <Actions>k__BackingField.Array.data[3].m_PersistentCalls.m_Calls.Array.data[4].m_Target
-      value: 
-      objectReference: {fileID: 607902558}
-    - target: {fileID: 8993835040725342029, guid: 5ecb33a813d6d2d42b1edbd921cae07b, type: 3}
-      propertyPath: <Actions>k__BackingField.Array.data[1].m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
-      value: ChangeState
-      objectReference: {fileID: 0}
-    - target: {fileID: 8993835040725342029, guid: 5ecb33a813d6d2d42b1edbd921cae07b, type: 3}
-      propertyPath: <Actions>k__BackingField.Array.data[1].m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
-      value: Entities.Triggers.UnityEventTrigger, Assembly-CSharp
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 3965311268370046156, guid: 4f0394a28e7f5204ea0446cf9a4f720b, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

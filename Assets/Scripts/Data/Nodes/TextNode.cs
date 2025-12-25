@@ -1,19 +1,20 @@
 using System.Collections.Generic;
 using Systems;
 using Unity.GraphToolkit.Editor;
+using UnityEngine;
 using Zenject;
 
 namespace Data.Nodes
 {
     public class TextNode : RuntimeNode
     {
-        public string Text { get; private set; }
+        [field: SerializeField] public string Text { get; private set; }
 
-        public Character Character { get; private set; }
+        [field: SerializeField] public Character Character { get; private set; }
 
-        public CharacterEmotion Emotion { get; private set; }
+        [field: SerializeField] public CharacterEmotion Emotion { get; private set; }
 
-        public string DisplayName { get; private set; }
+        [field: SerializeField] public string DisplayName { get; private set; }
     
         [Inject] private DialogueSystem _dialogueSystem;
 

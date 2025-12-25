@@ -28,8 +28,8 @@ namespace Entities.UI
         [SerializeField] private RectTransform _questPrefab;
         [SerializeField] private RectTransform _questHud;
 
-        private readonly Dictionary<QuestData, List<MarkUIData>> _createdMarks = new();
-        private readonly Dictionary<QuestData, GameObject> _createdQuests = new();
+        private Dictionary<QuestData, List<MarkUIData>> _createdMarks;
+        private Dictionary<QuestData, GameObject> _createdQuests;
 
         public List<QuestData> AllQuests => _allQuests;
 
@@ -37,27 +37,25 @@ namespace Entities.UI
         private GlobalData _globalData;
         private SurfacingSystem _surfacingSystem;
 
-        public QuestVisuals(List<QuestData> allQuests)
-        {
-            _allQuests = allQuests;
-        }
-
         [Inject]
         private void Construct(DiContainer diContainer, GlobalData globalData, SurfacingSystem surfacingSystem)
         {
             _diContainer = diContainer;
             _globalData = globalData;
             _surfacingSystem = surfacingSystem;
+            _createdMarks = new();
+            _createdQuests = new();
         }
 
         public void SpawnQuest(QuestData data)
         {
+            if (data == null) return;
             var newQuest = _diContainer.InstantiatePrefab(_questPrefab, _questHud).transform;
             if (!newQuest) return;
             newQuest.GetChild(0).GetComponent<LocalizedText>().SetNewKey("quest_header_" + data.Id);
             newQuest.GetChild(1).GetComponent<LocalizedText>().SetNewKey("quest_desc_" + data.Id);
-            _createdQuests[data] = newQuest.gameObject;
-            _createdMarks[data] = new();
+            _createdQuests.Add(data,newQuest.gameObject);
+            _createdMarks.Add(data, new());
             CheckLayer(data, newQuest);
         }
 

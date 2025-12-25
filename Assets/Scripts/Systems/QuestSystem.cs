@@ -22,7 +22,8 @@ namespace Systems
             _questVisuals = visuals;
             foreach (var id in _globalData.Get<SavablePlayerData>().QuestIds)
             {
-                StartQuest(visuals.AllQuests.Find(x => x.Id == id.Key), id.Value);
+                var quest = visuals.AllQuests.Find(x => x.Id == id.Key);
+                if(quest) StartQuest(quest, id.Value);
             }
         }
         
@@ -43,6 +44,8 @@ namespace Systems
             {
                 task.OnComplete += () => TryIterateSequence(data);
             }
+
+            TryIterateSequence(data);
         }
 
         public static void TryIterateSequence(QuestData data)
@@ -50,12 +53,15 @@ namespace Systems
             var questIds = _globalData.Get<SavablePlayerData>().QuestIds;
             if (!questIds.Keys.Contains(data.Id)) return;
             var questState = questIds[data.Id];
-            if (questState >= data.Sequence.Count - 1) EndQuest(data);
+            if (questState >= data.Sequence.Count) EndQuest(data);
             else
             {
                 SequenceIterationSystem.TryIterateSequence(data.Sequence, questState,
-                x => _globalData.Edit<SavablePlayerData>(
-                    playerData => playerData.QuestIds.Add(data.Id, x)));
+                x =>
+                {
+                    if (x == data.Sequence.Count) EndQuest(data);
+                    else _globalData.Edit<SavablePlayerData>(playerData => playerData.QuestIds[data.Id] = x);
+                });
             }
         }
         

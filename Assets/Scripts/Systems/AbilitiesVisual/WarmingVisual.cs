@@ -16,6 +16,7 @@ namespace Systems.AbilitiesVisual
         [SerializeField, Range(0, 1f)] private float _opacityUsing;
         [SerializeField] private AudioClip _sfx;
         private ObjectSfx _playerSfx;
+        private IAbility _ability;
 
         [Inject]
         private void Construct(PlayerConfig config, Player player)
@@ -25,10 +26,12 @@ namespace Systems.AbilitiesVisual
             ability.UsingAbility += UsingAbility;
             ability.EndAbility += EndAbility;
             _playerSfx = player.ObjectSfx;
+            _ability = ability;
         }
         
         public void StartAbility()
         {
+            if (!_ability.Enabled) return;
             _warmthMaterial.SetFloat(OpacityMax, _opacityNotUsing);
             _playerSfx.PlayLoopSfx(_sfx);
         }

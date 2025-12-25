@@ -5,5 +5,5 @@ public enum Character
 
 public enum CharacterEmotion
 {
-    Happy, Sad, Surprised, Scared
+    Default, Happy, Sad, Surprised, Scared, Shy
 }

@@ -9,19 +9,20 @@ using UnityEngine.Networking;
 
 namespace Systems
 {
-    public class DailySystem
+    public class DailySystem : IInitializable
     {
         [Inject] private GlobalData _globalData;
         public static Action OnDiscardedResources = delegate {};
         public static Action OnLoadedResources = delegate {};
 
-        public DailySystem()
+        public void Initialize()
         {
-            CheckTime();
+            //CheckTime();
         }
 
         public async void CheckTime()
         {
+            Debug.Log("Send time request"); 
             string url = "https://worldtimeapi.org/api/timezone/Etc/UTC";
             DateTime timeNow = DateTime.UtcNow.AddHours(3);
             using (UnityWebRequest request = UnityWebRequest.Get(url))

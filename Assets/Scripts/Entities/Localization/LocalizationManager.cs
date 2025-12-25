@@ -37,8 +37,13 @@ namespace Entities.Localization
 
         public static ReactiveProperty<Language> CurrentLanguage { get; } = new(Language.ru);
 
-        [Inject] private static GlobalData _globalData;
+        private static GlobalData _globalData;
         
+        [Inject]
+        private void Construct(GlobalData globalData)
+        {
+            _globalData = globalData;
+        }
 
         [Button("Pull Table")]
         private void LoadLocalizationTable()
@@ -85,7 +90,7 @@ namespace Entities.Localization
             SetValuesForTextsId();
         }
         
-        public static void SetValuesForTextsId()
+        public void SetValuesForTextsId()
         {
             foreach (var tableName in NameToGid.Keys)
             {
@@ -126,6 +131,7 @@ namespace Entities.Localization
                 if (c == '}' && inKey)
                 {
                     inKey = false;
+                    
                     if (_globalData.Get<DialogueVarData>().Variables.Exists(
                             x => x.Name == key.ToString()))
                     {

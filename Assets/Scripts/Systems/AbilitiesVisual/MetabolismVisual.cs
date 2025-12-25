@@ -19,6 +19,7 @@ namespace Systems.AbilitiesVisual
         private ObjectSfx _playerSfx;
         private MetabolismVisualSt _struct;
         private List<Texture2D> _lastTextures = new();
+        private IAbility _ability;
         
         [Inject]
         private void Construct(PlayerConfig config, Player player, MetabolismVisualSt st)
@@ -26,12 +27,14 @@ namespace Systems.AbilitiesVisual
             var ability = config.Abilities[AbilityIndex];
             ability.StartAbility += StartAbility;
             ability.EndAbility += EndAbility;
+            _ability = ability;
             _playerSfx = player.ObjectSfx;
             _struct = st;
         }
         
         public void StartAbility()
         {
+            if (!_ability.Enabled) return;
             _playerSfx.PlaySfx(_sfx);
             Tween.Custom(0, 1f, 1f, x => _struct.Volume.weight = x);
             _lastTextures.Clear();

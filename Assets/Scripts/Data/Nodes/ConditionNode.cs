@@ -47,7 +47,7 @@ namespace Data.Nodes
                 targetOutput++;
             }
         
-            _dialogueSystem.SetNewNode(targetOutput.ToString());
+            _dialogueSystem.SetNewNode(targetOutput);
             _dialogueSystem.ActivateNewNode();
         }
     }

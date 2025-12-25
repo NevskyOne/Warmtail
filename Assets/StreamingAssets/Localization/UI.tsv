@@ -28,12 +28,12 @@ from_auto_save	С автосохранения	From autosave
 load	Загрузить	Load
 delete	Удалить	Delete
 confirm_all	Подтвердить всё	Confirm all
-tertilus	Тертилус	Tertilus
-finix	Финикс	Finix
-octoboss	Октобосс	Octoboss
-skyper	Скайпер	Skyper
-jelica	Джелика	Jelica
-player	{playerName}	{playerName}
+Tertilus	Тертилус	Tertilus
+Finix	Финикс	Finix
+Octoboss	Октобосс	Octoboss
+Skyper	Скайпер	Skyper
+Jelica	Джелика	Jelica
+Player	{playerName}	{playerName}
 language_example	Русский	English
 low	Низкая	Low
 medium	Средная	Medium

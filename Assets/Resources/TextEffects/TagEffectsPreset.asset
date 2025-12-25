@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bcc54b9eb6e4693b413fe1c691a7241, type: 3}
+  m_Name: TagEffectsPreset
+  m_EditorClassIdentifier: EasyTextEffects::EasyTextEffects.TagEffectsPreset
+  tagEffects:
+  - triggerWhen: 0
+    effect: {fileID: 11400000, guid: 4cdf7bf70c6302340acce781067fcb8b, type: 2}
+    onEffectCompleted:
+      m_PersistentCalls:
+        m_Calls: []
+  - triggerWhen: 0
+    effect: {fileID: 11400000, guid: 108e394886dd7ee47b63882890bd29e3, type: 2}
+    onEffectCompleted:
+      m_PersistentCalls:
+        m_Calls: []

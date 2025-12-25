@@ -75,7 +75,7 @@ namespace Entities.UI
                 ChangeEffectSpeed();
                 return;
             }
-            _system.RequestNewNode();
+            _system.ActivateNewNode();
         }
 
         public void ShowVisuals()
@@ -93,9 +93,8 @@ namespace Entities.UI
         {
             IsComplete = false;
             var character = _holder.Characters.Find(x => x.Character == node.Character);
-
-            var text = LocalizationManager.GetStringFromKey(
-                character.Character + "_" + _system.DialogueGraph.DialogueId + "_" + node.NodeId);
+            print(character.Character);
+            string text = LocalizationManager.GetStringFromKey(node.Character + "_" + _system.DialogueGraph.DialogueId + "_" + node.NodeId);
             
             if (_audioSource != null)
             {
@@ -105,7 +104,7 @@ namespace Entities.UI
 
             var displayName = node.DisplayName == "" ? 
                 LocalizationManager.GetStringFromKey(node.Character.ToString()) : node.DisplayName;
-            if(displayName == "player")
+            if(displayName == "Player")
             {
                 displayName = _globalData.Get<DialogueVarData>().Variables.Find(var => var.Name == "playerName").Value;
             }
@@ -149,7 +148,7 @@ namespace Entities.UI
             _boxImage.gameObject.SetActive(true);
             _boxOptionsGroup.gameObject.SetActive(false);
             
-            _system.SetNewNode(i.ToString());
+            _system.SetNewNode(i);
             _system.ActivateNewNode();
         }
 

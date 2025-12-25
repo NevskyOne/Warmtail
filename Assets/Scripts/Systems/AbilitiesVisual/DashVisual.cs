@@ -14,6 +14,7 @@ namespace Systems.AbilitiesVisual
         [SerializeField] private Material _waveMaterial;
         [SerializeField] private AudioClip _sfx;
         private ObjectSfx _playerSfx;
+        private IAbility _ability;
         
         [Inject]
         private void Construct(PlayerConfig config, Player player)
@@ -21,11 +22,13 @@ namespace Systems.AbilitiesVisual
             var ability = config.Abilities[AbilityIndex];
             ability.StartAbility += StartAbility;
             ability.EndAbility += EndAbility;
+            _ability = ability;
             _playerSfx = player.ObjectSfx;
         }
         
         public void StartAbility()
         {
+            if (!_ability.Enabled) return;
             _playerSfx.PlaySfx(_sfx);
             _waveMaterial.SetFloat(Opacity, 1);
         }

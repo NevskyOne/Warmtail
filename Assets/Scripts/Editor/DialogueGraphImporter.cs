@@ -18,7 +18,8 @@ namespace Editor
         {
             var editorGraph = GraphDatabase.LoadGraphForImporter<DialogueGraph>(ctx.assetPath);
             var runtimeGraph = ScriptableObject.CreateInstance<RuntimeDialogueGraph>();
-
+            runtimeGraph.AllNodes = new();
+            
             var nodeIdMap = new Dictionary<INode, string>();
 
             foreach (var node in editorGraph.GetNodes())

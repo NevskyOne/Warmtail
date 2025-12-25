@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Unity.GraphToolkit.Editor;
+using UnityEngine;
 
 namespace Data.Nodes
 {
@@ -8,7 +9,7 @@ namespace Data.Nodes
     public abstract class RuntimeNode
     {
         public string NodeId;
-        public readonly List<string> NextNodeIds = new();
+        [SerializeReference] public List<string> NextNodeIds = new();
         public abstract void Setup(INode node, Dictionary<INode, string> nodeIdMap);
         public abstract void Activate();
     }

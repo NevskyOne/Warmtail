@@ -30,38 +30,39 @@ namespace Systems
             _input = input;
         }
         
-        public void RequestNewNode()
-        {
-            if (_dialogueGraph != null && _currentNode!= null)
-            {
-                ActivateNewNode();
-            }
-        }
-        
         public void StartDialogue(RuntimeDialogueGraph graph, ITextVisual visual, IEventInvoker character = null)
         {
             if(graph.EntryNodeId == null) return;
             graph.AllNodes.ForEach(x => _nodeLookup.Add(x.NodeId, x));
+            _dialogueGraph = graph;
+            _currentNode = _nodeLookup[_dialogueGraph.EntryNodeId];
+            
             _visuals = visual;
             _visuals.ShowVisuals();
             Character = character;
             _prevActionMap = "Player";
             _input.SwitchCurrentActionMap("Dialogue");
-            _dialogueGraph = graph;
-            _currentNode = _nodeLookup[_dialogueGraph.EntryNodeId];
-            SetNewNode();
+            
             ActivateNewNode();
         }
 
-        public void SetNewNode(string portName = "out")
+        public void SetNewNode(int portIndex = 0)
         {
-            var nextNode = _currentNode.NextNodeIds.Find(x => x == portName);
-            if(nextNode != null) _currentNode = _nodeLookup[nextNode];
-            else EndDialogue();
+            if (portIndex < _currentNode.NextNodeIds.Count)
+            {
+                var nextNode = _currentNode.NextNodeIds[portIndex];
+                _currentNode = _nodeLookup[nextNode];
+            }
+            else _currentNode = null;
         }
 
         public void ActivateNewNode()
         {
+            if (_dialogueGraph == null || _currentNode == null)
+            {
+                EndDialogue();
+                return;
+            }
             _diContainer.Inject(_currentNode);
             _currentNode.Activate();
         }

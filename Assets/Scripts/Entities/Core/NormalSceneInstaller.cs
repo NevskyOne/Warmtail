@@ -48,7 +48,7 @@ namespace Entities.Core
             
             Container.Bind<DialogueSystem>().FromNew().AsSingle();
             Container.Bind<WarmthSystem>().FromNew().AsSingle();
-            Container.Bind<DailySystem>().FromNew().AsSingle();
+            Container.BindInterfacesAndSelfTo<DailySystem>().FromNew().AsSingle();
             Container.Bind<QuestSystem>().FromInstance(_questSystem).AsSingle();
             Container.Inject(_questSystem);
             

@@ -48,6 +48,7 @@ namespace Systems.AbilitiesVisual
 
         public async void StartAbility()
         {
+            if (!_ability.Enabled) return;
             var startObj = (await ObjectSpawnSystem.Spawn(_startVfx, _player.Rigidbody.position, _player.Rigidbody.transform)).transform;
             startObj.localRotation = Quaternion.Euler(new Vector3(0, 0, 160));
             startObj.localPosition += _vfxOffset;

@@ -1,6 +1,7 @@
 using AYellowpaper.SerializedCollections;
 using Data;
 using Data.Player;
+using Systems.SequenceActions;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Zenject;
@@ -30,9 +31,12 @@ namespace Systems.Tutorial
             if (!_currentTutor) return;
             for (int i = 0; i < _currentIndex; i++)
             {
-                _currentTutor.Sequence[i].Actions.ForEach(x => x.Invoke());
+                _currentTutor.Sequence[i].Actions.ForEach(x =>
+                {
+                    if (x is not StartQuestAction) x.Invoke();
+                });
             }
-
+            if (_currentIndex >= _currentTutor.Sequence.Count) return;
             if (_currentTutor.Sequence[_currentIndex].Tasks.Count > 0)
             {
                 foreach (var task in _currentTutor.Sequence[_currentIndex].Tasks)
@@ -51,8 +55,7 @@ namespace Systems.Tutorial
             SequenceIterationSystem.TryIterateSequence(_currentTutor.Sequence, state,
                 x =>
                 {
-                    print(x);
-                    _globalData.Edit<SavablePlayerData>(playerData => playerData.TutorState = _currentIndex);
+                    _globalData.Edit<SavablePlayerData>(playerData => playerData.TutorState = x);
                 });
         }
     }

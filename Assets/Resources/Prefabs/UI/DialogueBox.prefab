@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "New Text is soooo long? \nI cant wait to see it"
+  m_text: "\u041C\u0435\u043D\u044F \u0437\u043E\u0432\u0443\u0442 <link=H+M>\u0422\u0435\u0440\u0442\u0438\u043B\u0443\u0441!</link>"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 68d9785f6dbea7e49ae81997e80883ae, type: 2}
   m_sharedMaterial: {fileID: 1168332384871489589, guid: 68d9785f6dbea7e49ae81997e80883ae, type: 2}
@@ -150,8 +150,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: EasyTextEffects::EasyTextEffects.TextEffect
   text: {fileID: 5679840330024350931}
-  usePreset: 0
-  preset: {fileID: 0}
+  usePreset: 1
+  preset: {fileID: 11400000, guid: 0929c1ea6890bae408d5107ee1c09546, type: 2}
   tagEffects: []
   globalEffects:
   - triggerWhen: 0

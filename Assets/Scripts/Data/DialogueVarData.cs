@@ -9,7 +9,7 @@ namespace Data
     public class DialogueVarData : ISavableData
     {
         [SerializeField, TableList(Draggable = true, AlwaysExpanded = true)]
-        public List<DialogueVar> Variables;
+        public List<DialogueVar> Variables = new();
     }
 
     [Serializable]

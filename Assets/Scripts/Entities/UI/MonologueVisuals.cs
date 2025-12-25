@@ -41,7 +41,7 @@ namespace Entities.UI
             while(true){
                 await UniTask.Delay(TimeSpan.FromSeconds(_textFadeSpeed));
                 if(_isEnded) break;
-                _dialogueSystem.RequestNewNode();
+                _dialogueSystem.ActivateNewNode();
             }
         }
             
