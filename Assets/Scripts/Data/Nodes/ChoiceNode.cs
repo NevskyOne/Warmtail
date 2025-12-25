@@ -4,12 +4,13 @@ using Entities.UI;
 using Systems;
 using Unity.GraphToolkit.Editor;
 using Zenject;
+using UnityEngine;
 
 namespace Data.Nodes
 {
     public class ChoiceNode : RuntimeNode
     {
-        public List<string> Choices { get; private set; } = new();
+        [field: SerializeField] public List<string> Choices { get; private set; } = new();
     
         [Inject] private DialogueVisuals _dialogueVisuals;
 
@@ -17,9 +18,9 @@ namespace Data.Nodes
         {
             var inputs = node.GetInputPorts().ToArray();
             var outputs = node.GetOutputPorts().ToArray();
-            for (int i = 0; i < inputs.Length; i++)
+            for (int i = 0; i < outputs.Length; i++)
             {
-                Choices.Add(NodePortHelper.GetPortValue<string>(inputs[i]));
+                Choices.Add(NodePortHelper.GetPortValue<string>(inputs[i+1]));
                 var nextNode = outputs[i]?.firstConnectedPort;
                 if (nextNode != null)
                 {

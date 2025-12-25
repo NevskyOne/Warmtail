@@ -11,7 +11,7 @@ namespace Data.Nodes
 {
     public class SetNode : RuntimeNode
     {
-        private List<SetStruct> _variables;
+        [field: SerializeField] public List<SetStruct> _variables  { get; private set; } = new();
 
         [Inject] private GlobalData _globalData;
         [Inject] private DialogueSystem _dialogueSystem;

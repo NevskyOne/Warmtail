@@ -34,7 +34,7 @@ namespace Editor
 
             foreach (var iNode in editorGraph.GetNodes())
             {
-                if (iNode is StartNode or EndNode) continue;
+                if (iNode is StartNode) continue;
 
                 RuntimeNode runtimeNode = iNode switch
                 {

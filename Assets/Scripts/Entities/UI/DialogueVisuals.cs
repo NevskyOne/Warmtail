@@ -124,7 +124,7 @@ namespace Entities.UI
             for (int i = 0; i < choiceCount; i++)
             {
                 var text = LocalizationManager.GetStringFromKey(
-                    $"player_{_system.DialogueGraph.DialogueId}_{node.NodeId}_{i}");
+                    $"Player_{_system.DialogueGraph.DialogueId}_{node.NodeId}_{i}");
                 var boxObj = await InstantiateAsync(_boxOptionsPrefab, _boxOptionsGroup);
                 boxObj[0].GetComponentInChildren<TMP_Text>().text = text;
                 _diContainer.Inject(boxObj[0]);

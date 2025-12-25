@@ -108588,6 +108588,10 @@ PrefabInstance:
       propertyPath: <Graph>k__BackingField
       value: 
       objectReference: {fileID: 3965311268370046156, guid: 4f0394a28e7f5204ea0446cf9a4f720b, type: 3}
+    - target: {fileID: 8993835040725342029, guid: 5ecb33a813d6d2d42b1edbd921cae07b, type: 3}
+      propertyPath: <Actions>k__BackingField.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -2,12 +2,13 @@ using System.Collections.Generic;
 using Systems;
 using Unity.GraphToolkit.Editor;
 using Zenject;
+using UnityEngine;
 
 namespace Data.Nodes
 {
     public class ActionNode : RuntimeNode
     {
-        public int EventInd { get; private set; }
+        [field: SerializeField] public int EventInd { get; private set; }
 
         [Inject] private DialogueSystem _dialogueSystem;
 

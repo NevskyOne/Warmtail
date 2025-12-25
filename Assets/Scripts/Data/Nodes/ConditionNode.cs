@@ -4,12 +4,13 @@ using System.Linq;
 using Systems;
 using Unity.GraphToolkit.Editor;
 using Zenject;
+using UnityEngine;
 
 namespace Data.Nodes
 {
     public class ConditionNode : RuntimeNode
     {
-        private readonly List<ConditionStruct> _conditions = new();
+        [field: SerializeField] public List<ConditionStruct> _conditions{ get; private set; } = new();
 
         [Inject] private GlobalData _globalData;
         [Inject] private DialogueSystem _dialogueSystem;

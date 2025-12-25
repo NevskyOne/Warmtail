@@ -168,13 +168,4 @@ namespace Editor
         }
 #endif
     }
-    
-    [Serializable]
-    public class EndNode : Node
-    {
-        protected override void OnDefinePorts(IPortDefinitionContext context)
-        {
-            context.AddInputPort("in").Build();
-        }
-    }
 }

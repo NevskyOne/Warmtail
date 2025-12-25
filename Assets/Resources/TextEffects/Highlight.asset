@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16860026da54450394f6a38fe250e740, type: 3}
   m_Name: Highlight
   m_EditorClassIdentifier: EasyTextEffects::EasyTextEffects.Effects.Effect_Color
-  effectTag: H
+  effectTag: hlight
   startCharIndex: 0
   charLength: 0
   animationType: 2
