@@ -11,7 +11,7 @@ namespace Data.Nodes
 {
     public class SetNode : RuntimeNode
     {
-        [field: SerializeField] public List<SetStruct> _variables  { get; private set; } = new();
+        [SerializeField] private List<SetStruct> _variables = new();
 
         [Inject] private GlobalData _globalData;
         [Inject] private DialogueSystem _dialogueSystem;
@@ -20,9 +20,9 @@ namespace Data.Nodes
         {
             var inputs = node.GetInputPorts().ToArray();
             var outputs = node.GetOutputPorts().ToArray();
-            for (int i = 0; i < inputs.Length; i++)
+            for (int i = 0; i < outputs.Length; i++)
             {
-                _variables.Add(NodePortHelper.GetPortValue<SetStruct>(inputs[i]));
+                _variables.Add(NodePortHelper.GetPortValue<SetStruct>(inputs[i+1]));
               
                 var nextNode = outputs[i]?.firstConnectedPort;
                 if (nextNode != null)

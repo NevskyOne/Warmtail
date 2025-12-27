@@ -10,7 +10,7 @@ namespace Data.Nodes
 {
     public class ConditionNode : RuntimeNode
     {
-        [field: SerializeField] public List<ConditionStruct> _conditions{ get; private set; } = new();
+        [SerializeField] private List<ConditionStruct> _conditions  = new();
 
         [Inject] private GlobalData _globalData;
         [Inject] private DialogueSystem _dialogueSystem;
@@ -19,9 +19,9 @@ namespace Data.Nodes
         {
             var inputs = node.GetInputPorts().ToArray();
             var outputs = node.GetOutputPorts().ToArray();
-            for (int i = 0; i < inputs.Length; i++)
+            for (int i = 0; i < outputs.Length; i++)
             {
-                _conditions.Add(NodePortHelper.GetPortValue<ConditionStruct>(inputs[i]));
+                _conditions.Add(NodePortHelper.GetPortValue<ConditionStruct>(inputs[i+1]));
               
                 var nextNode = outputs[i]?.firstConnectedPort;
                 if (nextNode != null)

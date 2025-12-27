@@ -172,6 +172,12 @@ MonoBehaviour:
         - Type: 1
           Name: wonFinixRace
           Value: false
+        - Type: 1
+          Name: getStick
+          Value: false
+        - Type: 2
+          Name: inventory
+          Value: 0
     - rid: 4204128997775507585
       type: {class: ShellsData, ns: Data, asm: Assembly-CSharp}
       data:
